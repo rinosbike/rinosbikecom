@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review-section</title>
+<style>
+    .review-section-container{
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .review-section-title{
+        font-size: 35px;
+        font-weight: 600;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .review-section-content{
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 25px;
+        row-gap: 25px;
+    }
+
+    .review-section-card{
+        padding: 25px;
+        padding-bottom: 5px;
+        min-height: 375px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        border: 0.5px solid rgb(218, 218, 218);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        box-shadow: 0 0 15px -3px rgba(0,0,0,0.1);
+        -webkit-box-shadow: 0 0 15px -3px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0 0 15px -3px rgba(0,0,0,0.1);
+        position: relative;
+    }
+
+    :hover.review-section-card{
+        box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
+        -webkit-box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
+        -moz-box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
+        transform: scale(1.05);
+    }
+
+    .review-section-card-title{
+        text-align: left;
+        font-size: 25px;
+        color: black;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .review-section-card-star{
+        width: 25px;
+        height: 25px;
+    }
+
+    .review-section-card-name{
+        font-size: 20px;
+    }
+
+    .review-section-card-text{
+        font-size: 15px;
+        margin-top: -15px;
+    }
+
+    .gridelement-post-date {
+        position: absolute;
+        bottom: 10px;
+        left: 25px;
+        text-align: left;
+        color: gray;
+    }
+
+
+    @media screen and (max-width: 1200px){
+    .review-section-content{
+        row-gap: 15px;
+        column-gap: 15px;
+    }
+
+    .review-section-card-name{
+        font-size: 18px;
+    }
+
+    .review-section-card-text{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .review-section-content {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
+    .gridelement-post-date {
+        /* Adjust styles here for smaller screens */
+        font-size: 0.8em;
+        bottom: 10px;
+    }
+
+    .review-section-card-text {
+        /* Adjust styles here for smaller screens */
+        font-size: 0.9em;
+    }
+
+    .review-section-card-title{
+        font-size: 22.5px;
+    }
+
+    .review-section-title{
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 20px;
+    }
+
+    :hover.review-section-card{
+        transform: scale(1.01);
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .review-section-content {
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
+    
+}
+</style>
+</head>
+<body>
+    <section class="review-section">
+        <div class="review-section-container">
+            <h1 class="review-section-title">{{ 'reviews.customer_say' | t }}</h1>
+            <div class="review-section-content">
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review1.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review1.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review1.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review1.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review1.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review2.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review2.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review2.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review2.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review2.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review3.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review3.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review3.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review3.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review3.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review4.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review4.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review4.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review4.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review4.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review5.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review5.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review5.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review5.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review5.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review6.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review6.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review6.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review6.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review6.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review7.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review7.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review7.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review7.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review7.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review8.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review8.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review8.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review8.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review8.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review9.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review9.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review9.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review9.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review9.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review10.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review10.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review10.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review10.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review10.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review11.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review11.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review11.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review11.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review11.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review12.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review12.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review12.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review12.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review12.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review13.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review13.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review13.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review13.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review13.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review14.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review14.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review14.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review14.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review14.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review15.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review15.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review15.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review15.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review15.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review16.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review16.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review16.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review16.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review16.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review17.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review17.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review17.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review17.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review17.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review18.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review18.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review18.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review18.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review18.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review19.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review19.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review19.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review19.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review19.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review20.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review20.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review20.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review20.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review20.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review21.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review21.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review21.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review21.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review21.date' | t }}</p>
+                    </div>
+                </div>
+                <div class="review-section-card">
+                    <div class="review-section-card-content">
+                        <h2 class="review-section-card-title">{{ 'reviews.review22.title' | t }}</h2>
+                        <div class="review-section-card-rating" data-rating="{{ 'reviews.review22.rating' | t }}">
+                        </div>
+                        <p class="review-section-card-name">{{ 'reviews.review22.name' | t }}</p>
+                        <p class="review-section-card-text">{{ 'reviews.review22.text' | t }}</p>
+                        <p class="gridelement-post-date">{{ 'reviews.review22.date' | t }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.review-section-card-rating').forEach(function(starWrapper) {
+          const rating = parseFloat(starWrapper.getAttribute('data-rating'));
+          const fullStars = Math.floor(rating);
+          const halfStar = (rating % 1) >= 0.5 ? 1 : 0;
+          let starHtml = '';
+      
+          // Add full stars
+          for (let i = 0; i < fullStars; i++) {
+            starHtml += '<img src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/star.fill.svg?v=1714304941" alt="star" class="review-section-card-star">';
+          }
+      
+          // Add half star
+          if (halfStar) {
+            starHtml += '<img src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/star.leadinghalf.filled.svg?v=1714304941" alt="star" class="review-section-card-star">';
+          }
+      
+          // Add empty stars if any
+          for (let i = 0; i < (5 - fullStars - halfStar); i++) {
+            starHtml += '<img src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/star.svg?v=1714304940" alt="star" class="review-section-card-star">';
+          }
+      
+          starWrapper.innerHTML = starHtml;
+        });
+      });
+      
+</script>
+</html>
+
+{% schema %}
+  {
+    "presets": [
+        {
+            "name": "review-section",
+            "category": "Custom"
+        }
+    ]
+}
+{% endschema %}

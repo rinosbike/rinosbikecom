@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conversionbanner</title>
+
+<style>
+
+@media (min-width: 300px) {
+  .grid-container { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 600px) {
+  .grid-container { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .grid-container { grid-template-columns: repeat(4, 1fr); }
+}
+
+.grid-container{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    padding: 5px;
+    max-width: 700px;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.column-1{
+    font-family: sans-serif;
+    height: fit-content;
+    padding: 10px;
+    padding-top: 20px;
+
+    
+}
+
+.icon{
+    max-height: 30px;
+    max-width: auto;
+}
+
+.text-1{
+    font-size: small;
+    font-weight: bold;
+    color: black;
+}
+
+
+
+</style>
+
+</head>
+<body>
+    <section>
+        <container class="grid-container">
+            <div class="column-1">
+                <img class="icon" src="https://cdn.shopify.com/s/files/1/0720/5794/6377/files/checkmark.seal_50x_d42034e5-e3f9-4989-bc12-5cf78f88dca0.png?v=1707559188">
+                <p class="text-1">{{ settings.quality_text }}</p>
+            </div>
+            <div class="column-1">
+                <img class="icon" src="https://cdn.shopify.com/s/files/1/0720/5794/6377/files/creditcard_50x_53ac8ace-146a-42ef-b76b-1874811506b4.png?v=1707559188">
+                <p class="text-1">{{ settings.payment_text }}</p>
+            </div>
+            <div class="column-1">
+                <img class="icon" src="https://cdn.shopify.com/s/files/1/0720/5794/6377/files/shipping.png?v=1707559188">
+                <p class="text-1">{{ settings.delivery_text }}</p>
+            </div>
+            <div class="column-1">
+                <img class="icon" src="https://cdn.shopify.com/s/files/1/0720/5794/6377/files/return.left_50x_5fbc781f-b60f-4a4a-9878-6dfb3ab01dfa.png?v=1707559188">
+                <p class="text-1">{{ settings.return_text }}</p>
+            </div>
+        </container>
+    </section>
+</body>
+</html>
+
+{% schema %}
+{
+  "name": "conversionbanner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "quality_text",
+      "label": "Quality Text",
+      "default": "great quality"
+    },
+    {
+      "type": "text",
+      "id": "payment_text",
+      "label": "Payment Text",
+      "default": "secure payment"
+    },
+    {
+      "type": "text",
+      "id": "delivery_text",
+      "label": "Delivery Text",
+      "default": "fast delivery"
+    },
+    {
+      "type": "text",
+      "id": "return_text",
+      "label": "Return Text",
+      "default": "14 days return"
+    }
+  ],
+  "presets": [
+    {
+      "name": "conversionbanner"
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

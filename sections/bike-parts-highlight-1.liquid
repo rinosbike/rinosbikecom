@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conversionbanner</title>
+
+<style>
+
+@media (min-width: 300px) {
+  .grid-container { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 600px) {
+  .grid-container { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .grid-container { grid-template-columns: repeat(4, 1fr); }
+}
+
+.grid-container{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    padding: 5px;
+    max-width: 700px;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.column-1{
+    font-family: sans-serif;
+    height: fit-content;
+    padding: 10px;
+    padding-top: 20px;
+
+    
+}
+
+.icon{
+    max-height: 30px;
+    max-width: auto;
+}
+
+.text-1{
+    font-size: small;
+    font-weight: bold;
+    color: black;
+}
+
+.text-2{
+    font-size: small;
+    color: black;
+}
+
+
+
+</style>
+
+</head>
+<body>
+    <section>
+        <div class="grid-container">
+            <div class="column-1">
+                <img class="icon" src="https://cdn.shopify.com/s/files/1/0720/5794/6377/files/circle.dotted.circle_10x_5ce09042-0555-4b78-9702-cfd908302ec5.png?v=1707567850">
+                <p class="text-1">{{ section.settings.tire_size_text }}</p>
+                <p class="text-2">{{ section.settings.tire_size_variabel_text }}</p>
+            </div>
+            <div class="column-1">
+                <img class="icon" src="https://cdn.shopify.com/s/files/1/0720/5794/6377/files/gearshape.2_10x_b01c26e7-7a87-4d0c-ae83-d62a45137422.png?v=1707567850">
+                <p class="text-1">{{ section.settings.gear_shifter_text }}</p>
+                <p class="text-2">{{ section.settings.gear_shifter_variabel_text }}</p>
+            </div>
+            <div class="column-1">
+                <img class="icon" src="https://cdn.shopify.com/s/files/1/0720/5794/6377/files/scalemass_10x_67913550-d114-4e1e-ad76-330fc941a406.png?v=1707567850">
+                <p class="text-1">{{ section.settings.weight_text }}</p>
+                <p class="text-2">{{ section.settings.weight_variabel_text }}</p>
+            </div>
+            <div class="column-1">
+                <img class="icon" src="https://cdn.shopify.com/s/files/1/0720/5794/6377/files/aqi.medium_10x_0a461406-11cf-41ed-bb02-f38af0d468a0.png?v=1707567850">
+                <p class="text-1">{{ section.settings.material_text }}</p>
+                <p class="text-2">{{ section.settings.material_variabel_text }}</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+{% schema %}
+{
+    "name": "bike-parts-highlight",
+    "settings": [
+        {
+            "type": "text",
+            "id": "tire_size_text",
+            "label": "tire size Text",
+            "default": "tire size"
+        },
+        {
+            "type": "text",
+            "id": "gear_shifter_text",
+            "label": "gear shifter Text",
+            "default": "gear shifter"
+        },
+        {
+            "type": "text",
+            "id": "weight_text",
+            "label": "weight Text",
+            "default": "weight"
+        },
+        {
+            "type": "text",
+            "id": "material_text",
+            "label": "material Text",
+            "default": "frame material"
+        },
+        {
+            "type": "text",
+            "id": "tire_size_variabel_text",
+            "label": "tire size variabel Text",
+            "default": "tire size variabel"
+        },
+        {
+            "type": "text",
+            "id": "gear_shifter_variabel_text",
+            "label": "gear shifter variabel Text",
+            "default": "gear shifter variabel"
+        },
+        {
+            "type": "text",
+            "id": "weight_variabel_text",
+            "label": "weight variabel Text",
+            "default": "weight variabel"
+        },
+        {
+            "type": "text",
+            "id": "material_variabel_text",
+            "label": "material variabel Text",
+            "default": "material variabel"
+        }
+    ],
+    "presets": [
+        {
+            "name": "bike parts highlight",
+            "category": "Custom"
+        }
+    ]
+}
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
