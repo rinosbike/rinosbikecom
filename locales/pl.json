@@ -1,1 +1,750 @@
-{"general":{"password_page":{"login_form_heading":"Wejdź do sklepu, wpisując hasło:","login_password_button":"Wejdź, wpisując hasło","login_form_password_label":"Hasło","login_form_password_placeholder":"Twoje hasło","login_form_error":"Nieprawidłowe hasło!","login_form_submit":"Enter","admin_link_html":"Czy jesteś właścicielem sklepu? <a href=\"\/admin\" class=\"link underlined-link\">Zaloguj się tutaj<\/a>","powered_by_shopify_html":"Ten sklep będzie obsługiwany przez {{ shopify }}"},"social":{"alt_text":{"share_on_facebook":"Udostępnij na Facebooku","share_on_twitter":"Tweetuj na Twitterze","share_on_pinterest":"Przypnij do tablicy Pinterest"},"links":{"twitter":"Twitter","facebook":"Facebook","pinterest":"Pinterest","instagram":"Instagram","tumblr":"Tumblr","snapchat":"Snapchat","youtube":"Youtube","vimeo":"Vimeo","tiktok":"TikTok"}},"continue_shopping":"Kontynuuj zakupy","pagination":{"label":"Paginacja","page":"Strona {{ number }}","next":"Następna strona","previous":"Poprzednia strona"},"search":{"search":"Szukaj","reset":"Wyczyść szukany termin"},"cart":{"view":"Pokaż koszyk ({{ count }})","item_added":"Pozycję dodano do koszyka","view_empty_cart":"Pokaż koszyk"},"share":{"copy_to_clipboard":"Kopiuj link","share_url":"Link","success_message":"Link skopiowany do schowka","close":"Zamknij udostępnienie"},"slider":{"of":"z","next_slide":"Przesuń w prawo","previous_slide":"Przesuń w lewo","name":"Suwak"}},"newsletter":{"label":"E-mail","success":"Dziękujemy za subskrypcję","button_label":"Subskrybuj"},"accessibility":{"skip_to_text":"Przejdź do treści","close":"Zamknij","unit_price_separator":"na","vendor":"Dostawca:","error":"Błąd","refresh_page":"Zaznaczenie wyboru powoduje całkowite odświeżenie strony.","loading":"Ładowanie...","link_messages":{"new_window":"Otwiera się w nowym oknie.","external":"Otwiera zewnętrzną stronę internetową."},"skip_to_product_info":"Pomiń, aby przejść do informacji o produkcie","total_reviews":"suma recenzji","star_reviews_info":"{{ rating_value }} z {{ rating_max }} gwiazdek","collapsible_content_title":"Zwijana treść","complementary_products":"Produkty uzupełniające"},"blogs":{"article":{"blog":"Blog","read_more_title":"Czytaj dalej: {{ title }}","moderated":"Pamiętaj, że komentarze muszą zostać zatwierdzone przed ich opublikowaniem.","comment_form_title":"Zostaw komentarz","name":"Nazwa","email":"E-mail","message":"Komentarz","post":"Opublikuj komentarz","back_to_blog":"Powrót do blogu","share":"Udostępnij ten artykuł","success":"Twój komentarz został opublikowany pomyślnie! Dziękujemy!","success_moderated":"Twój komentarz został opublikowany pomyślnie. Opublikujemy go za chwilę, ponieważ nasz blog jest moderowany.","comments":{"one":"{{ count }} komentarz","other":"{{ count }} komentarze(-y)","few":"{{ count }} komentarze(-y)","many":"{{ count }} komentarze(-y)"}}},"onboarding":{"product_title":"Przykładowy tytuł produktu","collection_title":"Nazwa Twojej kolekcji"},"products":{"product":{"add_to_cart":"Dodaj do koszyka","description":"Opis","on_sale":"W promocji","share":"Udostępnij ten produkt","sold_out":"Wyprzedane","unavailable":"Niedostępny","vendor":"Dostawca","video_exit_message":"{{ title }} otwiera film w trybie pełnoekranowym w tym samym oknie.","xr_button":"Zobacz w swojej przestrzeni","xr_button_label":"„Widok w Twojej przestrzeni” wczytuje przedmiot do okna rzeczywistości rozszerzonej","quantity":{"label":"Ilość","input_label":"Ilość dla {{ product }}","increase":"Zwiększ ilość dla {{ product }}","decrease":"Zmniejsz ilość dla {{ product }}","minimum_of":"Minimum {{ quantity }}","maximum_of":"Maksimum {{ quantity }}","multiples_of":"Przyrost o {{ quantity }}","in_cart_html":"<span class=\"quantity-cart\">{{ quantity }}<\/span> w koszyku","note":"Wyświetl reguły ilości"},"price":{"from_price_html":"Od {{ price }}","regular_price":"Cena regularna","sale_price":"Cena promocyjna","unit_price":"Cena jednostkowa"},"pickup_availability":{"view_store_info":"Wyświetl informacje o sklepie","check_other_stores":"Sprawdź dostępność w innych sklepach","pick_up_available":"Odbiór jest możliwy","pick_up_available_at_html":"Odbiór możliwy w <span class=\"color-foreground\">{{ location_name }}<\/span>","pick_up_unavailable_at_html":"Odbiór w <span class=\"color-foreground\">{{ location_name }}<\/span> jest obecnie niemożliwy","unavailable":"Nie można załadować gotowości do odbioru","refresh":"Odśwież"},"media":{"open_media":"Otwórz multimedia {{ index }} w oknie modalnym","play_model":"Uruchom przeglądarkę 3D","play_video":"Odtwórz film","gallery_viewer":"Przeglądarka galerii","load_image":"Załaduj obraz {{ index }} do widoku galerii","load_model":"Załaduj model 3D {{ index }} do widoku galerii","load_video":"Odtwórz film {{ index }} w widoku galerii","image_available":"Obraz {{ index }} jest teraz dostępny w widoku galerii"},"view_full_details":"Pokaż kompletne dane","include_taxes":"Z wliczonym podatkiem.","shipping_policy_html":"<a href=\"{{ link }}\">Koszt wysyłki<\/a> obliczony przy realizacji zakupu.","choose_options":"Wybierz opcje","choose_product_options":"Wybierz opcje dla {{ product_name }}","value_unavailable":"{{ option_value }} - niedostępny","variant_sold_out_or_unavailable":"Wariant wyprzedany lub niedostępny","inventory_in_stock":"W magazynie","inventory_in_stock_show_count":"{{ quantity }} w magazynie","inventory_low_stock":"Niski poziom zapasów","inventory_low_stock_show_count":"Niski poziom zapasów: pozostało {{ quantity }}","inventory_out_of_stock":"Zapas wyczerpany","inventory_out_of_stock_continue_selling":"W magazynie","sku":"SKU","volume_pricing":{"title":"Ceny zależne od wolumenu","note":"Ceny zależne od wolumenu są dostępne","minimum":"{{ quantity }}+","price_at_each":"{{ price }}\/szt.","price_range":"{{ minimum }} - {{ maximum }}"},"product_variants":"Warianty produktów"},"modal":{"label":"Galeria multimediów"},"facets":{"apply":"Zastosuj","clear":"Wyczyść","clear_all":"Usuń wszystko","from":"Od","filter_and_sort":"Filtrowanie i sortowanie","filter_by_label":"Filtr:","filter_button":"Filtr","max_price":"Najwyższa cena to {{ price }}","reset":"Zresetuj","sort_button":"Sortuj","sort_by_label":"Sortuj według:","to":"Do","filters_selected":{"one":"Wybrane: {{ count }}","other":"Wybrane: {{ count }}","few":"Wybrane: {{ count }}","many":"Wybrane: {{ count }}"},"product_count":{"one":"{{ product_count }} z {{ count }} produktu","other":"{{ product_count }} z {{ count }} produktów","few":"{{ product_count }} z {{ count }} produktów","many":"{{ product_count }} z {{ count }} produktów"},"product_count_simple":{"one":"{{ count }} produkt","other":"{{ count }} produkty(-ów)","few":"{{ count }} produkty(-ów)","many":"{{ count }} produkty(-ów)"},"clear_filter":"Usuń filtr","filter_selected_accessibility":"{{ type }} (wybrano {{ count }} fitry(-ów))","show_more":"Pokaż więcej","show_less":"Pokaż mniej","filter_and_operator_subtitle":"Dopasuj wszystko"}},"templates":{"search":{"no_results":"Nie znaleziono wyników dla “{{ terms }}”. Sprawdź pisownię lub użyj innego słowa lub zwrotu.","page":"Strona","title":"Wyniki wyszukiwania","results_with_count":{"one":"{{ count }} wynik","other":"{{ count }} wyniki(-ów)","few":"{{ count }} wyniki(-ów)","many":"{{ count }} wyniki(-ów)"},"products":"Produkty","search_for":"Szukaj „{{ terms }}”","results_with_count_and_term":{"one":"Znaleziono {{ count }} wynik dla \"{{ terms }}\"","other":"Znaleziono {{ count }} wyniki(-ów) dla \"{{ terms }}\"","few":"Znaleziono {{ count }} wyniki(-ów) dla \"{{ terms }}\"","many":"Znaleziono {{ count }} wyniki(-ów) dla \"{{ terms }}\""},"results_pages_with_count":{"one":"{{ count }} strona","other":"{{ count }} stron(y)","few":"{{ count }} stron(y)","many":"{{ count }} stron(y)"},"results_suggestions_with_count":{"one":"{{ count }} podpowiedź","other":"Sugestie: {{ count }}","few":"Sugestie: {{ count }}","many":"Sugestie: {{ count }}"},"results_products_with_count":{"one":"{{ count }} produkt","other":"{{ count }} produkty(-ów)","few":"{{ count }} produkty(-ów)","many":"{{ count }} produkty(-ów)"},"suggestions":"Sugestie","pages":"Strony"},"cart":{"cart":"Koszyk"},"contact":{"form":{"name":"Nazwa","email":"E-mail","phone":"Numer telefonu","comment":"Komentarz","send":"Wyślij","post_success":"Dziękujemy za skontaktowanie się z nami. Skontaktujemy się z Tobą tak szybko, jak to możliwe.","error_heading":"Dostosuj następujące dane:","title":"Formularz kontaktowy"}},"404":{"title":"Nie znaleziono strony","subtext":"404"}},"sections":{"header":{"announcement":"Ogłoszenie","menu":"Menu","cart_count":{"one":"{{ count }} pozycja","other":"{{ count }} pozycje(-i)","few":"{{ count }} pozycje(-i)","many":"{{ count }} pozycje(-i)"}},"cart":{"title":"Twój koszyk","caption":"Pozycje w koszyku","remove_title":"Usuń {{ title }}","note":"Specjalne instrukcje do zamówienia","checkout":"Realizuj zakup","empty":"Twój koszyk jest pusty","cart_error":"Wystąpił błąd podczas aktualizowania Twojego koszyka. Spróbuj ponownie.","cart_quantity_error_html":"Możesz dodać do koszyka tylko {{ quantity }} sztuk(i) tej pozycji.","taxes_and_shipping_policy_at_checkout_html":"Podatki, rabaty i <a href=\"{{ link }}\">wysyłki<\/a> obliczane przy realizacji zakupu","taxes_included_but_shipping_at_checkout":"Podatek wliczony w cenę, koszty wysyłki i rabaty są obliczane przy realizacji zakupu","taxes_included_and_shipping_policy_html":"Z wliczonym podatkiem. Koszt wysyłki obliczony przy realizacji zakupu. <a href=\"{{ link }}\">Wysyłka<\/a> i rabaty obliczone przy realizacji zakupu.","taxes_and_shipping_at_checkout":"Podatki, rabaty i wysyłki obliczane przy realizacji zakupu","update":"Aktualizuj","headings":{"product":"Produkt","price":"Cena","total":"Suma","quantity":"Ilość","image":"Obraz produktu"},"login":{"title":"Masz już konto?","paragraph_html":"<a href=\"{{ link }}\" class=\"link underlined-link\">Zaloguj się<\/a>, aby szybciej realizować zakupy."},"estimated_total":"Przewidywana suma","new_estimated_total":"Nowa przewidywana suma"},"footer":{"payment":"Metody płatności"},"featured_blog":{"view_all":"Wyświetl wszystkie","onboarding_title":"Post na blogu","onboarding_content":"Przedstaw swoim klientom podsumowanie swojego wpisu na blogu"},"featured_collection":{"view_all":"Wyświetl wszystkie","view_all_label":"Wyświetl wszystkie produkty w kolekcji {{ collection_name }}"},"collection_list":{"view_all":"Wyświetl wszystkie"},"collection_template":{"title":"Kolekcja","empty":"Nie znaleziono produktów","use_fewer_filters_html":"Użyj mniejszej ilości filtrów lub <a class=\"{{ class }}\" href=\"{{ link }}\">usuń wszystko<\/a>"},"video":{"load_video":"Załaduj film: {{ description }}"},"slideshow":{"load_slide":"Wczytaj slajd","previous_slideshow":"Poprzedni slajd","next_slideshow":"Następny slajd","pause_slideshow":"Wstrzymaj pokaz slajdów","play_slideshow":"Odtwórz pokaz slajdów","carousel":"Karuzela","slide":"Slajd"},"page":{"title":"Tytuł strony"},"announcements":{"previous_announcement":"Poprzednie ogłoszenie","next_announcement":"Kolejne ogłoszenie","carousel":"Karuzela","announcement":"Ogłoszenie","announcement_bar":"Pasek ogłoszeń"},"quick_order_list":{"product_total":"Suma częściowa dla produktu","view_cart":"Pokaż koszyk","each":"{{ money }}\/szt.","product":"Produkt","variant":"Wariant","variant_total":"Suma wariantów","items_added":{"one":"Dodano {{ quantity }} pozycję","other":"Dodano {{ quantity }} pozycje(-i)","few":"Dodano {{ quantity }} pozycje(-i)","many":"Dodano {{ quantity }} pozycje(-i)"},"items_removed":{"one":"Usunięto {{ quantity }} pozycję","other":"Usunięto {{ quantity }} pozycje(-i)","few":"Usunięto {{ quantity }} pozycje(-i)","many":"Usunięto {{ quantity }} pozycje(-i)"},"product_variants":"Warianty produktów","total_items":"Pozycje łącznie","remove_all_items_confirmation":"Usunąć wszystkie {{ quantity }} pozycje(-i) z koszyka?","remove_all":"Usuń wszystko","cancel":"Anuluj"}},"localization":{"country_label":"Kraj\/region","language_label":"Język","update_language":"Aktualizuj język","update_country":"Aktualizuj kraj\/region"},"customer":{"account":{"title":"Konto","details":"Szczegóły konta","view_addresses":"Wyświetl adresy","return":"Wróć do szczegółów konta"},"account_fallback":"Konto","log_in":"Zaloguj się","log_out":"Wyloguj","activate_account":{"title":"Aktywuj konto","subtext":"Utwórz hasło, aby aktywować konto.","password":"Hasło","password_confirm":"Potwierdź hasło","submit":"Aktywuj konto","cancel":"Odrzuć zaproszenie"},"addresses":{"title":"Adresy","default":"Domyślne","add_new":"Dodaj nowy adres","edit_address":"Edytuj adres","first_name":"Imię","last_name":"Nazwisko","company":"Firma","address1":"Adres 1","address2":"Adres 2","city":"Miasto","country":"Kraj\/region","province":"Prowincja","zip":"Kod pocztowy","phone":"Telefon","set_default":"Ustaw jako adres domyślny","add":"Dodaj adres","update":"Zaktualizuj adres","cancel":"Anuluj","edit":"Edytuj","delete":"Usuń","delete_confirm":"Czy na pewno chcesz usunąć ten adres?"},"login_page":{"cancel":"Anuluj","create_account":"Utwórz konto","email":"E-mail","forgot_password":"Nie pamiętasz hasła?","guest_continue":"Kontynuuj","guest_title":"Kontynuuj jako gość","password":"Hasło","title":"Login","sign_in":"Zaloguj się","submit":"Prześlij"},"order":{"title":"Zamówienie {{ name }}","date_html":"Umieszczone dnia {{ date }}","cancelled_html":"Zamówienie anulowane dnia {{ date }}","cancelled_reason":"Powód: {{ reason }}","billing_address":"Adres rozliczeniowy","payment_status":"Status płatności","shipping_address":"Adres wysyłki","fulfillment_status":"Status realizacji","discount":"Rabat","shipping":"Wysyłka","tax":"Podatek","product":"Produkt","sku":"SKU","price":"Cena","quantity":"Ilość","total":"Suma","fulfilled_at_html":"Zrealizowano {{ date }}","track_shipment":"Śledź przesyłkę","tracking_url":"Link do śledzenia","tracking_company":"Przewoźnik","tracking_number":"Numer śledzenia","subtotal":"Suma częściowa","total_duties":"Cła","total_refunded":"Zwrócono koszty"},"orders":{"title":"Historia zamówień","order_number":"Zamówienie","order_number_link":"Nr zamówienia {{ number }}","date":"Data","payment_status":"Status płatności","fulfillment_status":"Status realizacji","total":"Suma","none":"Nie złożyłeś(-aś) jeszcze żadnych zamówień."},"recover_password":{"title":"Zresetuj swoje hasło","subtext":"Wyślemy Ci e-mail, aby zresetować Twoje hasło","success":"Wysłaliśmy do Ciebie e-mail z linkiem do aktualizacji hasła."},"register":{"title":"Utwórz konto","first_name":"Imię","last_name":"Nazwisko","email":"E-mail","password":"Hasło","submit":"Utwórz"},"reset_password":{"title":"Zresetuj hasło do konta","subtext":"Wprowadź nowe hasło","password":"Hasło","password_confirm":"Potwierdź hasło","submit":"Zresetuj hasło"}},"gift_cards":{"issued":{"title":"Oto Twoja karta prezentowa o wartości {{ value }} do {{ shop }}!","subtext":"Twoja karta prezentowa","gift_card_code":"Kod karty prezentowej","shop_link":"Odwiedź sklep online","add_to_apple_wallet":"Dodaj do Apple Wallet","qr_image_alt":"Kod QR – zeskanuj, aby wykorzystać kartę prezentową","copy_code":"Kopiuj kod karty prezentowej","expired":"Utraciła ważność","copy_code_success":"Kod został skopiowany","how_to_use_gift_card":"Użyj kodu karty prezentowej online lub kodu QR w sklepie","expiration_date":"Wygasa {{ expires_on }}"}},"recipient":{"form":{"checkbox":"Chcę to wysłać jako prezent","email_label":"E-mail odbiorcy","email":"E-mail","name_label":"Nazwa odbiorcy (opcjonalnie)","name":"Nazwisko","message_label":"Wiadomość (opcjonalna)","message":"Wiadomość","max_characters":"Maks. {{ max_chars }} znaki(-ów)","email_label_optional_for_no_js_behavior":"Adres e-mail odbiorcy (opcjonalnie)","send_on":"RRRR-MM-DD","send_on_label":"Wyślij dnia (opcjonalnie)","expanded":"Rozwinięty formularz odbiorcy karty prezentowej","collapsed":"Zwinięty formularz odbiorcy karty prezentowej"}},"reviews":{"customer_say":"Co mówią nasi klienci","review1":{"title":"Możliwe do zrobienia","name":"Hans Müller","text":"Kupiłem rower składany i jestem bardzo zadowolony z doświadczenia. Sam rower jest wysokiej jakości i spełnia wszystkie moje oczekiwania. Mogę tylko polecić ten sklep!","date":"04.04.2024","rating":"4.5"},"review2":{"title":"Dostawa i produkt ok👍","name":"L. Schneider","text":"Ostatnio zakupiłem dźwignię zmiany biegów Shimano w tym sklepie. Dźwignia zmiany biegów spełnia swoją funkcję, a jakość jest solidna.","date":"02.04.2024","rating":"3.5"},"review3":{"title":"Relaksujące zakupy","name":"J. Stabler","text":"Ostatnio kupiłem tutaj kask. Dobrze mi pasuje i wygląda normalnie. Dostawa była dość szybka.","date":"29.03.2024","rating":"4.5"},"review4":{"title":"Dobre zakupy","name":"Thierry A.","text":"Świetnie wygląda, świetnie działa, dobrze wyposażony i wygodny. Szybka dostawa i doskonała obsługa.","date":"01.03.2024","rating":"5"},"review5":{"title":"Szybka dostawa","name":"Tomas","text":"Bardzo stabilne ochronniki na rower. Lekkie i wygodne, szybka dostawa.","date":"16.02.2024","rating":"5"},"review6":{"title":"Wszystko dobrze👍","name":"Celine J","text":"Bardzo źle skrojony, ale szybka dostawa i dobra jakość materiału.","date":"14.01.2024","rating":"3.5"},"review7":{"title":"Bezpieczna na drodze","name":"Julien Delorme","text":"Lekka. Dobra jakość wykonania. Widzę na czas i bardzo dobra obróbka.","date":"13.01.2024","rating":"5"},"review8":{"title":"Codzienne wsparcie","name":"Morand Benoit","text":"Bardzo dobrze wykonany i bardzo praktyczny produkt. Pomaga mi codziennie!","date":"26.12.2023","rating":"5"},"review9":{"title":"Wygląda dobrze!","name":"Daniel Rossi","text":"Produkt zgodny z opisem. Jeszcze nie używany, ale wygląda dobrze.","date":"13.12.2023","rating":"4"},"review10":{"title":"Solidny wybór","name":"Peter Cauwels","text":"Bardzo dobry zakup, niezawodny i potężny.","date":"07.12.2023","rating":"5"},"review11":{"title":"Żadnych więcej łez.","name":"VISOIU IONUT RAZVAN","text":"Naprawdę. Zimne powietrze sprawiało, że oczy mi łzawiły, ale już nie z tym produktem.","date":"17.11.2023","rating":"5"},"review12":{"title":"Trochę drogie","name":"Antxon","text":"Trochę drogie","date":"31.10.2023","rating":"3"},"review13":{"title":"Solidny i odporny na wodę","name":"Hector","text":"Dobry metalowy podwozie, dobrze oświetla, odporny na wodę. Dobry produkt","date":"22.10.2023","rating":"5"},"review14":{"title":"Dobrze wykonany produkt wysokiej jakości","name":"Gregoire Marti","text":"Dobra jakość kaptura, dobrze wykonane szwy","date":"16.10.2023","rating":"5"},"review15":{"title":"Spełnia oczekiwania","name":"Quentin Borg","text":"Produkt odpowiadający potrzebom.","date":"04.10.2023","rating":"5"},"review16":{"title":"Szybka dostawa, wysokie zadowolenie","name":"Pierre BERTA","text":"Doskonały rower i bardzo szybka dostawa. Wykonałem kilka dostosowań i przejąłem kilka części mojego starego roweru Dahon Mu Uno: siodełko, błotniki i pedały.","date":"27.09.2023","rating":"5"},"review17":{"title":"Produkty najwyższej jakości","name":"hugues meth","text":"Top ! Świetne produkty 🌟","date":"18.09.2023","rating":"5"},"review18":{"title":"Dokładny opis","name":"bahran el fakh","text":"Zgodne z opisem, uważaj jednak, wskaźnik jednej z przyssawek pozostaje biały, mimo że nie ma już powietrza w przyssawce","date":"25.08.2023","rating":"4"},"review19":{"title":"Dobry produkt z drobnymi ulepszeniami potrzebnymi","name":"Jose V.","text":"Moim zdaniem, choć użyłem go tylko kilka razy, uważam, że to dobry produkt. Brakuje mi listy kompatybilnych pojazdów. Torba transportowa również byłaby dobra.","date":"08.08.2023","rating":"4"},"review20":{"title":"Dobrze zaprojektowany i praktyczny","name":"JEAN-PASCAL","text":"Jakość wydaje się być dobra, bardzo praktyczna dzięki swojej modularności, zobaczymy przy użyciu. Daję tylko 4 gwiazdki ze względu na mocowanie na rzep, ocenić po załadowaniu. Polecam","date":"15.07.2023","rating":"4"},"review21":{"title":"Doskonała opinia, szybka dostawa","name":"Troels Kristens","text":"Naprawdę dobra za tę cenę i szybka dostawa.","date":"28.06.2023","rating":"5"},"review22":{"title":"Pięknie zaprojektowany i wygodny","name":"Rob","text":"Dobry, ładny, pięknie wyceniony rower. Wydaje się solidny. Schludnie zgodnie z dostawą do domu. Super!","date":"23.06.2023","rating":"5"}}}
+{
+  "general": {
+    "password_page": {
+      "login_form_heading": "Wejdź do sklepu, wpisując hasło:",
+      "login_password_button": "Wejdź, wpisując hasło",
+      "login_form_password_label": "Hasło",
+      "login_form_password_placeholder": "Twoje hasło",
+      "login_form_error": "Nieprawidłowe hasło!",
+      "login_form_submit": "Enter",
+      "admin_link_html": "Czy jesteś właścicielem sklepu? <a href=\"/admin\" class=\"link underlined-link\">Zaloguj się tutaj</a>",
+      "powered_by_shopify_html": "Ten sklep będzie obsługiwany przez {{ shopify }}"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "Udostępnij na Facebooku",
+        "share_on_twitter": "Tweetuj na Twitterze",
+        "share_on_pinterest": "Przypnij do tablicy Pinterest"
+      },
+      "links": {
+        "twitter": "Twitter",
+        "facebook": "Facebook",
+        "pinterest": "Pinterest",
+        "instagram": "Instagram",
+        "tumblr": "Tumblr",
+        "snapchat": "Snapchat",
+        "youtube": "Youtube",
+        "vimeo": "Vimeo",
+        "tiktok": "TikTok"
+      }
+    },
+    "continue_shopping": "Kontynuuj zakupy",
+    "pagination": {
+      "label": "Paginacja",
+      "page": "Strona {{ number }}",
+      "next": "Następna strona",
+      "previous": "Poprzednia strona"
+    },
+    "search": { "search": "Szukaj", "reset": "Wyczyść szukany termin" },
+    "cart": {
+      "view": "Pokaż koszyk ({{ count }})",
+      "item_added": "Pozycję dodano do koszyka",
+      "view_empty_cart": "Pokaż koszyk"
+    },
+    "share": {
+      "copy_to_clipboard": "Kopiuj link",
+      "share_url": "Link",
+      "success_message": "Link skopiowany do schowka",
+      "close": "Zamknij udostępnienie"
+    },
+    "slider": {
+      "of": "z",
+      "next_slide": "Przesuń w prawo",
+      "previous_slide": "Przesuń w lewo",
+      "name": "Suwak"
+    }
+  },
+  "newsletter": {
+    "label": "E-mail",
+    "success": "Dziękujemy za subskrypcję",
+    "button_label": "Subskrybuj"
+  },
+  "accessibility": {
+    "skip_to_text": "Przejdź do treści",
+    "close": "Zamknij",
+    "unit_price_separator": "na",
+    "vendor": "Dostawca:",
+    "error": "Błąd",
+    "refresh_page": "Zaznaczenie wyboru powoduje całkowite odświeżenie strony.",
+    "loading": "Ładowanie...",
+    "link_messages": {
+      "new_window": "Otwiera się w nowym oknie.",
+      "external": "Otwiera zewnętrzną stronę internetową."
+    },
+    "skip_to_product_info": "Pomiń, aby przejść do informacji o produkcie",
+    "total_reviews": "suma recenzji",
+    "star_reviews_info": "{{ rating_value }} z {{ rating_max }} gwiazdek",
+    "collapsible_content_title": "Zwijana treść",
+    "complementary_products": "Produkty uzupełniające"
+  },
+  "blogs": {
+    "article": {
+      "blog": "Blog",
+      "read_more_title": "Czytaj dalej: {{ title }}",
+      "moderated": "Pamiętaj, że komentarze muszą zostać zatwierdzone przed ich opublikowaniem.",
+      "comment_form_title": "Zostaw komentarz",
+      "name": "Nazwa",
+      "email": "E-mail",
+      "message": "Komentarz",
+      "post": "Opublikuj komentarz",
+      "back_to_blog": "Powrót do blogu",
+      "share": "Udostępnij ten artykuł",
+      "success": "Twój komentarz został opublikowany pomyślnie! Dziękujemy!",
+      "success_moderated": "Twój komentarz został opublikowany pomyślnie. Opublikujemy go za chwilę, ponieważ nasz blog jest moderowany.",
+      "comments": {
+        "one": "{{ count }} komentarz",
+        "other": "{{ count }} komentarze(-y)",
+        "few": "{{ count }} komentarze(-y)",
+        "many": "{{ count }} komentarze(-y)"
+      }
+    }
+  },
+  "onboarding": {
+    "product_title": "Przykładowy tytuł produktu",
+    "collection_title": "Nazwa Twojej kolekcji"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Dodaj do koszyka",
+      "description": "Opis",
+      "on_sale": "W promocji",
+      "share": "Udostępnij ten produkt",
+      "sold_out": "Wyprzedane",
+      "unavailable": "Niedostępny",
+      "vendor": "Dostawca",
+      "video_exit_message": "{{ title }} otwiera film w trybie pełnoekranowym w tym samym oknie.",
+      "xr_button": "Zobacz w swojej przestrzeni",
+      "xr_button_label": "„Widok w Twojej przestrzeni” wczytuje przedmiot do okna rzeczywistości rozszerzonej",
+      "quantity": {
+        "label": "Ilość",
+        "input_label": "Ilość dla {{ product }}",
+        "increase": "Zwiększ ilość dla {{ product }}",
+        "decrease": "Zmniejsz ilość dla {{ product }}",
+        "minimum_of": "Minimum {{ quantity }}",
+        "maximum_of": "Maksimum {{ quantity }}",
+        "multiples_of": "Przyrost o {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> w koszyku",
+        "note": "Wyświetl reguły ilości"
+      },
+      "price": {
+        "from_price_html": "Od {{ price }}",
+        "regular_price": "Cena regularna",
+        "sale_price": "Cena promocyjna",
+        "unit_price": "Cena jednostkowa"
+      },
+      "pickup_availability": {
+        "view_store_info": "Wyświetl informacje o sklepie",
+        "check_other_stores": "Sprawdź dostępność w innych sklepach",
+        "pick_up_available": "Odbiór jest możliwy",
+        "pick_up_available_at_html": "Odbiór możliwy w <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Odbiór w <span class=\"color-foreground\">{{ location_name }}</span> jest obecnie niemożliwy",
+        "unavailable": "Nie można załadować gotowości do odbioru",
+        "refresh": "Odśwież"
+      },
+      "media": {
+        "open_media": "Otwórz multimedia {{ index }} w oknie modalnym",
+        "play_model": "Uruchom przeglądarkę 3D",
+        "play_video": "Odtwórz film",
+        "gallery_viewer": "Przeglądarka galerii",
+        "load_image": "Załaduj obraz {{ index }} do widoku galerii",
+        "load_model": "Załaduj model 3D {{ index }} do widoku galerii",
+        "load_video": "Odtwórz film {{ index }} w widoku galerii",
+        "image_available": "Obraz {{ index }} jest teraz dostępny w widoku galerii"
+      },
+      "view_full_details": "Pokaż kompletne dane",
+      "include_taxes": "Z wliczonym podatkiem.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Koszt wysyłki</a> obliczony przy realizacji zakupu.",
+      "choose_options": "Wybierz opcje",
+      "choose_product_options": "Wybierz opcje dla {{ product_name }}",
+      "value_unavailable": "{{ option_value }} - niedostępny",
+      "variant_sold_out_or_unavailable": "Wariant wyprzedany lub niedostępny",
+      "inventory_in_stock": "W magazynie",
+      "inventory_in_stock_show_count": "{{ quantity }} w magazynie",
+      "inventory_low_stock": "Niski poziom zapasów",
+      "inventory_low_stock_show_count": "Niski poziom zapasów: pozostało {{ quantity }}",
+      "inventory_out_of_stock": "Zapas wyczerpany",
+      "inventory_out_of_stock_continue_selling": "W magazynie",
+      "sku": "SKU",
+      "volume_pricing": {
+        "title": "Ceny zależne od wolumenu",
+        "note": "Ceny zależne od wolumenu są dostępne",
+        "minimum": "{{ quantity }}+",
+        "price_at_each": "{{ price }}/szt.",
+        "price_range": "{{ minimum }} - {{ maximum }}"
+      },
+      "product_variants": "Warianty produktów"
+    },
+    "modal": { "label": "Galeria multimediów" },
+    "facets": {
+      "apply": "Zastosuj",
+      "clear": "Wyczyść",
+      "clear_all": "Usuń wszystko",
+      "from": "Od",
+      "filter_and_sort": "Filtrowanie i sortowanie",
+      "filter_by_label": "Filtr:",
+      "filter_button": "Filtr",
+      "max_price": "Najwyższa cena to {{ price }}",
+      "reset": "Zresetuj",
+      "sort_button": "Sortuj",
+      "sort_by_label": "Sortuj według:",
+      "to": "Do",
+      "filters_selected": {
+        "one": "Wybrane: {{ count }}",
+        "other": "Wybrane: {{ count }}",
+        "few": "Wybrane: {{ count }}",
+        "many": "Wybrane: {{ count }}"
+      },
+      "product_count": {
+        "one": "{{ product_count }} z {{ count }} produktu",
+        "other": "{{ product_count }} z {{ count }} produktów",
+        "few": "{{ product_count }} z {{ count }} produktów",
+        "many": "{{ product_count }} z {{ count }} produktów"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} produkt",
+        "other": "{{ count }} produkty(-ów)",
+        "few": "{{ count }} produkty(-ów)",
+        "many": "{{ count }} produkty(-ów)"
+      },
+      "clear_filter": "Usuń filtr",
+      "filter_selected_accessibility": "{{ type }} (wybrano {{ count }} fitry(-ów))",
+      "show_more": "Pokaż więcej",
+      "show_less": "Pokaż mniej",
+      "filter_and_operator_subtitle": "Dopasuj wszystko"
+    }
+  },
+  "templates": {
+    "search": {
+      "no_results": "Nie znaleziono wyników dla “{{ terms }}”. Sprawdź pisownię lub użyj innego słowa lub zwrotu.",
+      "page": "Strona",
+      "title": "Wyniki wyszukiwania",
+      "results_with_count": {
+        "one": "{{ count }} wynik",
+        "other": "{{ count }} wyniki(-ów)",
+        "few": "{{ count }} wyniki(-ów)",
+        "many": "{{ count }} wyniki(-ów)"
+      },
+      "products": "Produkty",
+      "search_for": "Szukaj „{{ terms }}”",
+      "results_with_count_and_term": {
+        "one": "Znaleziono {{ count }} wynik dla \"{{ terms }}\"",
+        "other": "Znaleziono {{ count }} wyniki(-ów) dla \"{{ terms }}\"",
+        "few": "Znaleziono {{ count }} wyniki(-ów) dla \"{{ terms }}\"",
+        "many": "Znaleziono {{ count }} wyniki(-ów) dla \"{{ terms }}\""
+      },
+      "results_pages_with_count": {
+        "one": "{{ count }} strona",
+        "other": "{{ count }} stron(y)",
+        "few": "{{ count }} stron(y)",
+        "many": "{{ count }} stron(y)"
+      },
+      "results_suggestions_with_count": {
+        "one": "{{ count }} podpowiedź",
+        "other": "Sugestie: {{ count }}",
+        "few": "Sugestie: {{ count }}",
+        "many": "Sugestie: {{ count }}"
+      },
+      "results_products_with_count": {
+        "one": "{{ count }} produkt",
+        "other": "{{ count }} produkty(-ów)",
+        "few": "{{ count }} produkty(-ów)",
+        "many": "{{ count }} produkty(-ów)"
+      },
+      "suggestions": "Sugestie",
+      "pages": "Strony"
+    },
+    "cart": { "cart": "Koszyk" },
+    "contact": {
+      "form": {
+        "name": "Nazwa",
+        "email": "E-mail",
+        "phone": "Numer telefonu",
+        "comment": "Komentarz",
+        "send": "Wyślij",
+        "post_success": "Dziękujemy za skontaktowanie się z nami. Skontaktujemy się z Tobą tak szybko, jak to możliwe.",
+        "error_heading": "Dostosuj następujące dane:",
+        "title": "Formularz kontaktowy"
+      }
+    },
+    "404": { "title": "Nie znaleziono strony", "subtext": "404" }
+  },
+  "sections": {
+    "header": {
+      "announcement": "Ogłoszenie",
+      "menu": "Menu",
+      "cart_count": {
+        "one": "{{ count }} pozycja",
+        "other": "{{ count }} pozycje(-i)",
+        "few": "{{ count }} pozycje(-i)",
+        "many": "{{ count }} pozycje(-i)"
+      }
+    },
+    "cart": {
+      "title": "Twój koszyk",
+      "caption": "Pozycje w koszyku",
+      "remove_title": "Usuń {{ title }}",
+      "note": "Specjalne instrukcje do zamówienia",
+      "checkout": "Realizuj zakup",
+      "empty": "Twój koszyk jest pusty",
+      "cart_error": "Wystąpił błąd podczas aktualizowania Twojego koszyka. Spróbuj ponownie.",
+      "cart_quantity_error_html": "Możesz dodać do koszyka tylko {{ quantity }} sztuk(i) tej pozycji.",
+      "taxes_and_shipping_policy_at_checkout_html": "Podatki, rabaty i <a href=\"{{ link }}\">wysyłki</a> obliczane przy realizacji zakupu",
+      "taxes_included_but_shipping_at_checkout": "Podatek wliczony w cenę, koszty wysyłki i rabaty są obliczane przy realizacji zakupu",
+      "taxes_included_and_shipping_policy_html": "Z wliczonym podatkiem. Koszt wysyłki obliczony przy realizacji zakupu. <a href=\"{{ link }}\">Wysyłka</a> i rabaty obliczone przy realizacji zakupu.",
+      "taxes_and_shipping_at_checkout": "Podatki, rabaty i wysyłki obliczane przy realizacji zakupu",
+      "update": "Aktualizuj",
+      "headings": {
+        "product": "Produkt",
+        "price": "Cena",
+        "total": "Suma",
+        "quantity": "Ilość",
+        "image": "Obraz produktu"
+      },
+      "login": {
+        "title": "Masz już konto?",
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Zaloguj się</a>, aby szybciej realizować zakupy."
+      },
+      "estimated_total": "Przewidywana suma",
+      "new_estimated_total": "Nowa przewidywana suma"
+    },
+    "footer": { "payment": "Metody płatności" },
+    "featured_blog": {
+      "view_all": "Wyświetl wszystkie",
+      "onboarding_title": "Post na blogu",
+      "onboarding_content": "Przedstaw swoim klientom podsumowanie swojego wpisu na blogu"
+    },
+    "featured_collection": {
+      "view_all": "Wyświetl wszystkie",
+      "view_all_label": "Wyświetl wszystkie produkty w kolekcji {{ collection_name }}"
+    },
+    "collection_list": { "view_all": "Wyświetl wszystkie" },
+    "collection_template": {
+      "title": "Kolekcja",
+      "empty": "Nie znaleziono produktów",
+      "use_fewer_filters_html": "Użyj mniejszej ilości filtrów lub <a class=\"{{ class }}\" href=\"{{ link }}\">usuń wszystko</a>"
+    },
+    "video": { "load_video": "Załaduj film: {{ description }}" },
+    "slideshow": {
+      "load_slide": "Wczytaj slajd",
+      "previous_slideshow": "Poprzedni slajd",
+      "next_slideshow": "Następny slajd",
+      "pause_slideshow": "Wstrzymaj pokaz slajdów",
+      "play_slideshow": "Odtwórz pokaz slajdów",
+      "carousel": "Karuzela",
+      "slide": "Slajd"
+    },
+    "page": { "title": "Tytuł strony" },
+    "announcements": {
+      "previous_announcement": "Poprzednie ogłoszenie",
+      "next_announcement": "Kolejne ogłoszenie",
+      "carousel": "Karuzela",
+      "announcement": "Ogłoszenie",
+      "announcement_bar": "Pasek ogłoszeń"
+    },
+    "quick_order_list": {
+      "product_total": "Suma częściowa dla produktu",
+      "view_cart": "Pokaż koszyk",
+      "each": "{{ money }}/szt.",
+      "product": "Produkt",
+      "variant": "Wariant",
+      "variant_total": "Suma wariantów",
+      "items_added": {
+        "one": "Dodano {{ quantity }} pozycję",
+        "other": "Dodano {{ quantity }} pozycje(-i)",
+        "few": "Dodano {{ quantity }} pozycje(-i)",
+        "many": "Dodano {{ quantity }} pozycje(-i)"
+      },
+      "items_removed": {
+        "one": "Usunięto {{ quantity }} pozycję",
+        "other": "Usunięto {{ quantity }} pozycje(-i)",
+        "few": "Usunięto {{ quantity }} pozycje(-i)",
+        "many": "Usunięto {{ quantity }} pozycje(-i)"
+      },
+      "product_variants": "Warianty produktów",
+      "total_items": "Pozycje łącznie",
+      "remove_all_items_confirmation": "Usunąć wszystkie {{ quantity }} pozycje(-i) z koszyka?",
+      "remove_all": "Usuń wszystko",
+      "cancel": "Anuluj"
+    }
+  },
+  "localization": {
+    "country_label": "Kraj/region",
+    "language_label": "Język",
+    "update_language": "Aktualizuj język",
+    "update_country": "Aktualizuj kraj/region"
+  },
+  "customer": {
+    "account": {
+      "title": "Konto",
+      "details": "Szczegóły konta",
+      "view_addresses": "Wyświetl adresy",
+      "return": "Wróć do szczegółów konta"
+    },
+    "account_fallback": "Konto",
+    "log_in": "Zaloguj się",
+    "log_out": "Wyloguj",
+    "activate_account": {
+      "title": "Aktywuj konto",
+      "subtext": "Utwórz hasło, aby aktywować konto.",
+      "password": "Hasło",
+      "password_confirm": "Potwierdź hasło",
+      "submit": "Aktywuj konto",
+      "cancel": "Odrzuć zaproszenie"
+    },
+    "addresses": {
+      "title": "Adresy",
+      "default": "Domyślne",
+      "add_new": "Dodaj nowy adres",
+      "edit_address": "Edytuj adres",
+      "first_name": "Imię",
+      "last_name": "Nazwisko",
+      "company": "Firma",
+      "address1": "Adres 1",
+      "address2": "Adres 2",
+      "city": "Miasto",
+      "country": "Kraj/region",
+      "province": "Prowincja",
+      "zip": "Kod pocztowy",
+      "phone": "Telefon",
+      "set_default": "Ustaw jako adres domyślny",
+      "add": "Dodaj adres",
+      "update": "Zaktualizuj adres",
+      "cancel": "Anuluj",
+      "edit": "Edytuj",
+      "delete": "Usuń",
+      "delete_confirm": "Czy na pewno chcesz usunąć ten adres?"
+    },
+    "login_page": {
+      "cancel": "Anuluj",
+      "create_account": "Utwórz konto",
+      "email": "E-mail",
+      "forgot_password": "Nie pamiętasz hasła?",
+      "guest_continue": "Kontynuuj",
+      "guest_title": "Kontynuuj jako gość",
+      "password": "Hasło",
+      "title": "Login",
+      "sign_in": "Zaloguj się",
+      "submit": "Prześlij"
+    },
+    "order": {
+      "title": "Zamówienie {{ name }}",
+      "date_html": "Umieszczone dnia {{ date }}",
+      "cancelled_html": "Zamówienie anulowane dnia {{ date }}",
+      "cancelled_reason": "Powód: {{ reason }}",
+      "billing_address": "Adres rozliczeniowy",
+      "payment_status": "Status płatności",
+      "shipping_address": "Adres wysyłki",
+      "fulfillment_status": "Status realizacji",
+      "discount": "Rabat",
+      "shipping": "Wysyłka",
+      "tax": "Podatek",
+      "product": "Produkt",
+      "sku": "SKU",
+      "price": "Cena",
+      "quantity": "Ilość",
+      "total": "Suma",
+      "fulfilled_at_html": "Zrealizowano {{ date }}",
+      "track_shipment": "Śledź przesyłkę",
+      "tracking_url": "Link do śledzenia",
+      "tracking_company": "Przewoźnik",
+      "tracking_number": "Numer śledzenia",
+      "subtotal": "Suma częściowa",
+      "total_duties": "Cła",
+      "total_refunded": "Zwrócono koszty"
+    },
+    "orders": {
+      "title": "Historia zamówień",
+      "order_number": "Zamówienie",
+      "order_number_link": "Nr zamówienia {{ number }}",
+      "date": "Data",
+      "payment_status": "Status płatności",
+      "fulfillment_status": "Status realizacji",
+      "total": "Suma",
+      "none": "Nie złożyłeś(-aś) jeszcze żadnych zamówień."
+    },
+    "recover_password": {
+      "title": "Zresetuj swoje hasło",
+      "subtext": "Wyślemy Ci e-mail, aby zresetować Twoje hasło",
+      "success": "Wysłaliśmy do Ciebie e-mail z linkiem do aktualizacji hasła."
+    },
+    "register": {
+      "title": "Utwórz konto",
+      "first_name": "Imię",
+      "last_name": "Nazwisko",
+      "email": "E-mail",
+      "password": "Hasło",
+      "submit": "Utwórz"
+    },
+    "reset_password": {
+      "title": "Zresetuj hasło do konta",
+      "subtext": "Wprowadź nowe hasło",
+      "password": "Hasło",
+      "password_confirm": "Potwierdź hasło",
+      "submit": "Zresetuj hasło"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Oto Twoja karta prezentowa o wartości {{ value }} do {{ shop }}!",
+      "subtext": "Twoja karta prezentowa",
+      "gift_card_code": "Kod karty prezentowej",
+      "shop_link": "Odwiedź sklep online",
+      "add_to_apple_wallet": "Dodaj do Apple Wallet",
+      "qr_image_alt": "Kod QR – zeskanuj, aby wykorzystać kartę prezentową",
+      "copy_code": "Kopiuj kod karty prezentowej",
+      "expired": "Utraciła ważność",
+      "copy_code_success": "Kod został skopiowany",
+      "how_to_use_gift_card": "Użyj kodu karty prezentowej online lub kodu QR w sklepie",
+      "expiration_date": "Wygasa {{ expires_on }}"
+    }
+  },
+  "recipient": {
+    "form": {
+      "checkbox": "Chcę to wysłać jako prezent",
+      "email_label": "E-mail odbiorcy",
+      "email": "E-mail",
+      "name_label": "Nazwa odbiorcy (opcjonalnie)",
+      "name": "Nazwisko",
+      "message_label": "Wiadomość (opcjonalna)",
+      "message": "Wiadomość",
+      "max_characters": "Maks. {{ max_chars }} znaki(-ów)",
+      "email_label_optional_for_no_js_behavior": "Adres e-mail odbiorcy (opcjonalnie)",
+      "send_on": "RRRR-MM-DD",
+      "send_on_label": "Wyślij dnia (opcjonalnie)",
+      "expanded": "Rozwinięty formularz odbiorcy karty prezentowej",
+      "collapsed": "Zwinięty formularz odbiorcy karty prezentowej"
+    }
+  },
+  "reviews": {
+    "customer_say": "Co mówią nasi klienci",
+    "review1": {
+      "title": "Możliwe do zrobienia",
+      "name": "Hans Müller",
+      "text": "Kupiłem rower składany i jestem bardzo zadowolony z doświadczenia. Sam rower jest wysokiej jakości i spełnia wszystkie moje oczekiwania. Mogę tylko polecić ten sklep!",
+      "date": "04.04.2024",
+      "rating": "4.5"
+    },
+    "review2": {
+      "title": "Dostawa i produkt ok👍",
+      "name": "L. Schneider",
+      "text": "Ostatnio zakupiłem dźwignię zmiany biegów Shimano w tym sklepie. Dźwignia zmiany biegów spełnia swoją funkcję, a jakość jest solidna.",
+      "date": "02.04.2024",
+      "rating": "3.5"
+    },
+    "review3": {
+      "title": "Relaksujące zakupy",
+      "name": "J. Stabler",
+      "text": "Ostatnio kupiłem tutaj kask. Dobrze mi pasuje i wygląda normalnie. Dostawa była dość szybka.",
+      "date": "29.03.2024",
+      "rating": "4.5"
+    },
+    "review4": {
+      "title": "Dobre zakupy",
+      "name": "Thierry A.",
+      "text": "Świetnie wygląda, świetnie działa, dobrze wyposażony i wygodny. Szybka dostawa i doskonała obsługa.",
+      "date": "01.03.2024",
+      "rating": "5"
+    },
+    "review5": {
+      "title": "Szybka dostawa",
+      "name": "Tomas",
+      "text": "Bardzo stabilne ochronniki na rower. Lekkie i wygodne, szybka dostawa.",
+      "date": "16.02.2024",
+      "rating": "5"
+    },
+    "review6": {
+      "title": "Wszystko dobrze👍",
+      "name": "Celine J",
+      "text": "Bardzo źle skrojony, ale szybka dostawa i dobra jakość materiału.",
+      "date": "14.01.2024",
+      "rating": "3.5"
+    },
+    "review7": {
+      "title": "Bezpieczna na drodze",
+      "name": "Julien Delorme",
+      "text": "Lekka. Dobra jakość wykonania. Widzę na czas i bardzo dobra obróbka.",
+      "date": "13.01.2024",
+      "rating": "5"
+    },
+    "review8": {
+      "title": "Codzienne wsparcie",
+      "name": "Morand Benoit",
+      "text": "Bardzo dobrze wykonany i bardzo praktyczny produkt. Pomaga mi codziennie!",
+      "date": "26.12.2023",
+      "rating": "5"
+    },
+    "review9": {
+      "title": "Wygląda dobrze!",
+      "name": "Daniel Rossi",
+      "text": "Produkt zgodny z opisem. Jeszcze nie używany, ale wygląda dobrze.",
+      "date": "13.12.2023",
+      "rating": "4"
+    },
+    "review10": {
+      "title": "Solidny wybór",
+      "name": "Peter Cauwels",
+      "text": "Bardzo dobry zakup, niezawodny i potężny.",
+      "date": "07.12.2023",
+      "rating": "5"
+    },
+    "review11": {
+      "title": "Żadnych więcej łez.",
+      "name": "VISOIU IONUT RAZVAN",
+      "text": "Naprawdę. Zimne powietrze sprawiało, że oczy mi łzawiły, ale już nie z tym produktem.",
+      "date": "17.11.2023",
+      "rating": "5"
+    },
+    "review12": {
+      "title": "Trochę drogie",
+      "name": "Antxon",
+      "text": "Trochę drogie",
+      "date": "31.10.2023",
+      "rating": "3"
+    },
+    "review13": {
+      "title": "Solidny i odporny na wodę",
+      "name": "Hector",
+      "text": "Dobry metalowy podwozie, dobrze oświetla, odporny na wodę. Dobry produkt",
+      "date": "22.10.2023",
+      "rating": "5"
+    },
+    "review14": {
+      "title": "Dobrze wykonany produkt wysokiej jakości",
+      "name": "Gregoire Marti",
+      "text": "Dobra jakość kaptura, dobrze wykonane szwy",
+      "date": "16.10.2023",
+      "rating": "5"
+    },
+    "review15": {
+      "title": "Spełnia oczekiwania",
+      "name": "Quentin Borg",
+      "text": "Produkt odpowiadający potrzebom.",
+      "date": "04.10.2023",
+      "rating": "5"
+    },
+    "review16": {
+      "title": "Szybka dostawa, wysokie zadowolenie",
+      "name": "Pierre BERTA",
+      "text": "Doskonały rower i bardzo szybka dostawa. Wykonałem kilka dostosowań i przejąłem kilka części mojego starego roweru Dahon Mu Uno: siodełko, błotniki i pedały.",
+      "date": "27.09.2023",
+      "rating": "5"
+    },
+    "review17": {
+      "title": "Produkty najwyższej jakości",
+      "name": "hugues meth",
+      "text": "Top ! Świetne produkty 🌟",
+      "date": "18.09.2023",
+      "rating": "5"
+    },
+    "review18": {
+      "title": "Dokładny opis",
+      "name": "bahran el fakh",
+      "text": "Zgodne z opisem, uważaj jednak, wskaźnik jednej z przyssawek pozostaje biały, mimo że nie ma już powietrza w przyssawce",
+      "date": "25.08.2023",
+      "rating": "4"
+    },
+    "review19": {
+      "title": "Dobry produkt z drobnymi ulepszeniami potrzebnymi",
+      "name": "Jose V.",
+      "text": "Moim zdaniem, choć użyłem go tylko kilka razy, uważam, że to dobry produkt. Brakuje mi listy kompatybilnych pojazdów. Torba transportowa również byłaby dobra.",
+      "date": "08.08.2023",
+      "rating": "4"
+    },
+    "review20": {
+      "title": "Dobrze zaprojektowany i praktyczny",
+      "name": "JEAN-PASCAL",
+      "text": "Jakość wydaje się być dobra, bardzo praktyczna dzięki swojej modularności, zobaczymy przy użyciu. Daję tylko 4 gwiazdki ze względu na mocowanie na rzep, ocenić po załadowaniu. Polecam",
+      "date": "15.07.2023",
+      "rating": "4"
+    },
+    "review21": {
+      "title": "Doskonała opinia, szybka dostawa",
+      "name": "Troels Kristens",
+      "text": "Naprawdę dobra za tę cenę i szybka dostawa.",
+      "date": "28.06.2023",
+      "rating": "5"
+    },
+    "review22": {
+      "title": "Pięknie zaprojektowany i wygodny",
+      "name": "Rob",
+      "text": "Dobry, ładny, pięknie wyceniony rower. Wydaje się solidny. Schludnie zgodnie z dostawą do domu. Super!",
+      "date": "23.06.2023",
+      "rating": "5"
+    }
+  },
+  "bikes": {
+    "weight_label": "Waga",
+    "gear_label": "Przerzutki",
+    "gears_label": "Biegi",
+    "frame_label": "Rama",
+    "frameSize_label": "Rozmiar ramy",
+    "brakes_label": "Hamulce",
+    "wheelSize_label": "Rozmiar kół",
+    "rims_label": "Obręcze",
+    "sandman1": {
+      "title": "Sandman 1.0",
+      "description": "Dobrze i tanio",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/IMG_0133.png?v=1714209511",
+      "weight": "9,8kg",
+      "gear": "Shimano SORA",
+      "gears": "18",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optymalny dla rowerzystów o wzroście 175-195 cm",
+      "brakes": "Mechaniczne",
+      "wheelSize": "28 cali",
+      "rims": "Aluminium"
+    },
+    "sandman3": {
+      "title": "Sandman 3.0",
+      "description": "Uniwersalny",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/IMG_0170.png?v=1714209510",
+      "weight": "9,8kg",
+      "gear": "Shimano 105",
+      "gears": "22",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optymalny dla rowerzystów o wzroście 175-195 cm",
+      "brakes": "Mechaniczne",
+      "wheelSize": "28 cali",
+      "rims": "Aluminium"
+    },
+    "sandman4": {
+      "title": "Sandman 4.0",
+      "description": "Nasz bestseller",
+      "image": "https://cdn.shopify.com/s/files/1/0657/8415/2277/files/sandman4-6-changed.webp?v=1716034595",
+      "weight": "9,8kg",
+      "gear": "Shimano GRX 400",
+      "gears": "20",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optymalny dla rowerzystów o wzroście 175-195 cm",
+      "brakes": "Hydrauliczne",
+      "wheelSize": "28 cali",
+      "rims": "Aluminium"
+    },
+    "sandman5": {
+      "title": "Sandman 5.0",
+      "description": "Maksymalna wydajność",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/rinos-carbon-gravel-bike-sandman50-shimano-r8000-ultegra_2.webp?v=1691264716",
+      "weight": "8,3kg",
+      "gear": "Shimano Ultegra",
+      "gears": "22",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optymalny dla rowerzystów o wzroście 175-195 cm",
+      "brakes": "Mechaniczne",
+      "wheelSize": "28 cali",
+      "rims": "Carbon"
+    },
+    "sandman6": {
+      "title": "Sandman 6.0",
+      "description": "Najlepszy w swoim rodzaju",
+      "image": "https://cdn.shopify.com/s/files/1/0657/8415/2277/files/sandman4-6-changed.webp?v=1716034595",
+      "weight": "9,8kg",
+      "gear": "Shimano GRX 600",
+      "gears": "22",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optymalny dla rowerzystów o wzroście 175-195 cm",
+      "brakes": "Hydrauliczne",
+      "wheelSize": "28 cali",
+      "rims": "Aluminium"
+    }
+  }
+}
