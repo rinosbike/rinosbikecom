@@ -22,7 +22,7 @@
         "minimum_of": "Минимум от {{ quantity }}",
         "maximum_of": "Максимум {{ quantity }}",
         "multiples_of": "Увеличения от {{ quantity }}",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> в количката",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}<\/span> в количката",
         "note": "Вижте правилата за количество"
       },
       "share": "Споделете този продукт",
@@ -38,8 +38,8 @@
         "view_store_info": "Вижте информацията за магазина",
         "check_other_stores": "Проверете наличността в други магазини",
         "pick_up_available": "Възможност за вземане",
-        "pick_up_available_at_html": "Налично вземане от <span class=\"color-foreground\">{{ location_name }}</span>",
-        "pick_up_unavailable_at_html": "Понастоящем няма възможност за получаване от <span class=\"color-foreground\">{{ location_name }}</span>"
+        "pick_up_available_at_html": "Налично вземане от <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Понастоящем няма възможност за получаване от <span class=\"color-foreground\">{{ location_name }}<\/span>"
       },
       "price": {
         "from_price_html": "От {{ price }}",
@@ -47,7 +47,7 @@
         "sale_price": "Продажна цена",
         "unit_price": "Единична цена"
       },
-      "shipping_policy_html": "<a href=\"{{ link }}\">Доставката</a> се изчислява при плащане.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Доставката<\/a> се изчислява при плащане.",
       "media": {
         "gallery_viewer": "Преглед на галерия",
         "load_image": "Заредете изображение {{ index }} в изглед на галерия",
@@ -62,7 +62,7 @@
         "title": "Обемно ценообразуване",
         "note": "Налична цена за обем",
         "minimum": "{{ quantity }} +",
-        "price_at_each": "на {{ price }} /бр"
+        "price_at_each": "на {{ price }} \/бр"
       },
       "value_unavailable": "{{ option_value }} – Недостъпно",
       "video_exit_message": "{{ title }} отваря видео на цял екран в същия прозорец.",
@@ -100,7 +100,9 @@
       "filter_and_operator_subtitle": "Съвпадение на всички",
       "to": "Да се"
     },
-    "modal": { "label": "Медийна галерия" }
+    "modal": {
+      "label": "Медийна галерия"
+    }
   },
   "sections": {
     "announcements": {
@@ -129,9 +131,9 @@
       "empty": "Вашата количка е празна",
       "cart_error": "Възникна грешка при актуализирането на вашата количка. Моля, опитайте отново.",
       "cart_quantity_error_html": "Можете да добавите само {{ quantity }} от този артикул в количката си.",
-      "taxes_and_shipping_policy_at_checkout_html": "Данъци, отстъпки и <a href=\"{{ link }}\">доставка</a>, изчислени при плащане",
+      "taxes_and_shipping_policy_at_checkout_html": "Данъци, отстъпки и <a href=\"{{ link }}\">доставка<\/a>, изчислени при плащане",
       "taxes_included_but_shipping_at_checkout": "Включен данък и доставка и отстъпки, изчислени при плащане",
-      "taxes_included_and_shipping_policy_html": "С включен данък. <a href=\"{{ link }}\">Доставката</a> и отстъпките се изчисляват при плащане.",
+      "taxes_included_and_shipping_policy_html": "С включен данък. <a href=\"{{ link }}\">Доставката<\/a> и отстъпките се изчисляват при плащане.",
       "taxes_and_shipping_at_checkout": "Данъци, отстъпки и доставка, изчислени при плащане",
       "headings": {
         "product": "Продукт",
@@ -143,10 +145,12 @@
       "update": "Актуализация",
       "login": {
         "title": "Има акаунт?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Влезте</a>, за да платите по-бързо."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Влезте<\/a>, за да платите по-бързо."
       }
     },
-    "footer": { "payment": "Начини за плащане" },
+    "footer": {
+      "payment": "Начини за плащане"
+    },
     "featured_blog": {
       "view_all": "Вижте всички",
       "onboarding_title": "Блог пост",
@@ -156,13 +160,17 @@
       "view_all": "Вижте всички",
       "view_all_label": "Вижте всички продукти в колекцията {{ collection_name }}"
     },
-    "collection_list": { "view_all": "Виж всички" },
+    "collection_list": {
+      "view_all": "Виж всички"
+    },
     "collection_template": {
       "empty": "Няма намерени продукти",
       "title": "колекция",
-      "use_fewer_filters_html": "Използвайте по-малко филтри или <a class=\"&lt;span class='notranslate'&gt;{{ class }}&lt;/span&gt;\" href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">премахнете всички</a>"
+      "use_fewer_filters_html": "Използвайте по-малко филтри или <a class=\"&lt;span class='notranslate'&gt;{{ class }}&lt;\/span&gt;\" href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">премахнете всички<\/a>"
     },
-    "video": { "load_video": "Зареждане на видео: {{ description }}" },
+    "video": {
+      "load_video": "Зареждане на видео: {{ description }}"
+    },
     "slideshow": {
       "load_slide": "Заредете слайд",
       "previous_slideshow": "Предишен слайд",
@@ -172,11 +180,13 @@
       "carousel": "Въртележка",
       "slide": "пързалка"
     },
-    "page": { "title": "Заглавие на страница" },
+    "page": {
+      "title": "Заглавие на страница"
+    },
     "quick_order_list": {
       "product_total": "Продуктова междинна сума",
       "view_cart": "Вижте количката",
-      "each": "{{ money }} /бр",
+      "each": "{{ money }} \/бр",
       "product": "Продукт",
       "variant": "Вариант",
       "variant_total": "Вариант общо",
@@ -216,7 +226,7 @@
     "country_label": "Държавен регион",
     "language_label": "Език",
     "update_language": "Актуализиране на езика",
-    "update_country": "Актуализирайте държавата/региона"
+    "update_country": "Актуализирайте държавата\/региона"
   },
   "customer": {
     "account": {
@@ -374,7 +384,9 @@
           "external": "Отваря външен уебсайт.",
           "external_and_new_window": "Отваря външен уебсайт в нов прозорец."
         },
-        "checkout_context": { "step_one": "%{shop_name} - Плащане" },
+        "checkout_context": {
+          "step_one": "%{shop_name} - Плащане"
+        },
         "tooltip_accessibility_label": "Повече информация",
         "full_price": "Пълна цена:",
         "title": "Плащане - {{shopName}}",
@@ -643,13 +655,13 @@
         "optional_first_name_label": "Име",
         "last_name_label": "Фамилия",
         "company_label": "Компания",
-        "company_attention_label": "Фирма/Внимание",
+        "company_attention_label": "Фирма\/Внимание",
         "address1_label": "Адрес",
         "address2_label": "Апартамент, апартамент и др.",
         "optional_address2_label": "Апартамент, апартамент и др. (по избор)",
         "city_label": "град",
         "country_label": "Държавен регион",
-        "country_code": "Код на държава/регион",
+        "country_code": "Код на държава\/регион",
         "province_label": "Провинция",
         "province_placeholder": "Провинция",
         "county_label": "окръг",
@@ -676,8 +688,8 @@
         "governorate_placeholder": "Губернаторство",
         "emirate_label": "Емирство",
         "emirate_placeholder": "Емирство",
-        "state_and_territory_label": "Държава/територия",
-        "state_and_territory_placeholder": "Държава/територия",
+        "state_and_territory_label": "Държава\/територия",
+        "state_and_territory_placeholder": "Държава\/територия",
         "optional_phone_label": "телефон (по избор)",
         "pincode_label": "ПИН код",
         "pincode_placeholder": "ПИН код",
@@ -687,7 +699,7 @@
         "change_company_location_link_label": "Променете местоположението на компанията",
         "stored_addresses_label": "Запазени адреси",
         "new_address_label": "Използвайте нов адрес",
-        "optional_company_attention_label": "Компания/Внимание (по избор)",
+        "optional_company_attention_label": "Компания\/Внимание (по избор)",
         "optional_company_label": "Фирма (по избор)",
         "state_label": "състояние",
         "state_placeholder": "състояние"
@@ -793,7 +805,10 @@
         "order_name_label": "Поръчайте %{name}",
         "shopping_cart_label": "Карта за пазаруване",
         "discount_title": "Отстъпка",
-        "discount_title_stacking": { "one": "Отстъпка", "other": "Отстъпка" },
+        "discount_title_stacking": {
+          "one": "Отстъпка",
+          "other": "Отстъпка"
+        },
         "discount_order_stacking": {
           "one": "Поръчайте отстъпка",
           "other": "Поръчайте отстъпка"
@@ -809,7 +824,7 @@
         "free_shipping_discount_label": "Безплатна доставка",
         "apply_discount_button_label": "Приложи",
         "applied_discount_message": "%{amount} от общата цена на поръчката",
-        "discount_requires_customer_notice": "Въведете информацията си за доставка, за да приложите кода за отстъпка <strong style=\"text-transform:uppercase\">%{code}</strong>",
+        "discount_requires_customer_notice": "Въведете информацията си за доставка, за да приложите кода за отстъпка <strong style=\"text-transform:uppercase\">%{code}<\/strong>",
         "subtotal_label": "Междинна сума",
         "shipping_label": "Доставка",
         "shipping_default_value": "Въведете адрес за доставка",
@@ -831,7 +846,7 @@
         "description_label": "Описание",
         "price_per_item": {
           "accessibility_label": "%{price} за артикул",
-          "label": "%{price}/бр"
+          "label": "%{price}\/бр"
         },
         "product_change_label": "промяна",
         "product_image_label": "Изображение на продукта",
@@ -841,7 +856,9 @@
         "total_updated_label": "Актуализирана обща цена:",
         "order_total_updated_label": "Общо актуализирано",
         "total_already_paid_label": "Платено",
-        "unit_price": { "accessible_separator": "пер" },
+        "unit_price": {
+          "accessible_separator": "пер"
+        },
         "gift_card_ending": "Карта за подарък, завършваща на %{last_characters}",
         "estimated_tax_label": "Приблизителен данък",
         "multiple_shipping_lines_label": "Обща доставка",
@@ -849,7 +866,7 @@
         "recurring_total_label": "Повтаряща се сума",
         "recurring_total_tooltip": "Не включва доставка, данък, мита или други приложими отстъпки.",
         "confirmation_number_label": "Потвърждение #%{confirmation_number}",
-        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> не може да се използва със съществуващите ви отстъпки.",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> не може да се използва със съществуващите ви отстъпки.",
         "percent_off_shipping": "%{percent}% отстъпка от доставката",
         "amount_off_shipping": "%{amount} отстъпка от доставката",
         "deferred_payment_info": {
@@ -867,8 +884,8 @@
           "due_later_checkout_to_draft": "Общо дължимо по-късно",
           "total_paid": "Общо платено"
         },
-        "maximum_discount_code_limit_reached": "Достигнахте максималния брой кодове за отстъпка. Премахнете съществуващ код, за да използвате <strong style=\"text-transform:uppercase\">%{code}</strong> .",
-        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> не работи в момента. Свържете се с нас за помощ.",
+        "maximum_discount_code_limit_reached": "Достигнахте максималния брой кодове за отстъпка. Премахнете съществуващ код, за да използвате <strong style=\"text-transform:uppercase\">%{code}<\/strong> .",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> не работи в момента. Свържете се с нас за помощ.",
         "due_on_fulfillment": "Подлежи на изпълнение",
         "subscriptions": "Абонаменти",
         "duties_label": "Задължения",
@@ -913,10 +930,10 @@
         "gift_card_has_been_removed": "Картата за подарък е премахната",
         "gift_card_subscriptions_notice": "Подаръчните карти ще се прилагат само за първото ви плащане",
         "discount_already_applied": "Към тази поръчка е приложена отстъпка. Не можете да добавите друга отстъпка.",
-        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> кодът за отстъпка не е валиден за артикулите в количката ви",
-        "customer_does_not_meet_discount_requirements_notice": "Кодът за отстъпка <strong style=\"text-transform:uppercase\">%{code}</strong> не е достъпен за вас в момента",
-        "shipping_information_does_not_meet_discount_requirements_notice": "Кодът за отстъпка <strong style=\"text-transform:uppercase\">%{code}</strong> не е наличен за вашия адрес за доставка",
-        "customer_already_used_once_per_customer_discount_notice": "Кодът за отстъпка <strong style=\"text-transform:uppercase\">%{code}</strong> вече е използван",
+        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> кодът за отстъпка не е валиден за артикулите в количката ви",
+        "customer_does_not_meet_discount_requirements_notice": "Кодът за отстъпка <strong style=\"text-transform:uppercase\">%{code}<\/strong> не е достъпен за вас в момента",
+        "shipping_information_does_not_meet_discount_requirements_notice": "Кодът за отстъпка <strong style=\"text-transform:uppercase\">%{code}<\/strong> не е наличен за вашия адрес за доставка",
+        "customer_already_used_once_per_customer_discount_notice": "Кодът за отстъпка <strong style=\"text-transform:uppercase\">%{code}<\/strong> вече е използван",
         "pickup_label": "Вдигни",
         "no_pickup_location": "Взимането не е налично за тази поръчка. Изберете друг начин на доставка.",
         "tip_label": "Бакшиш",
@@ -1000,7 +1017,10 @@
             "other": "за %{count} доставки"
           },
           "subscription_delivery_frequency": {
-            "day": { "one": "всеки ден", "other": "на всеки %{count} дни" },
+            "day": {
+              "one": "всеки ден",
+              "other": "на всеки %{count} дни"
+            },
             "week": {
               "one": "всяка седмица",
               "other": "на всеки %{count} седмици"
@@ -1401,8 +1421,12 @@
           "title": "Проследяване на вашия телефон"
         },
         "shop_qr_with_sms_upsell": {
-          "qr_code": { "title": "Сканирайте с телефона си" },
-          "sms": { "title": "Или изпратете линк на телефона си" }
+          "qr_code": {
+            "title": "Сканирайте с телефона си"
+          },
+          "sms": {
+            "title": "Или изпратете линк на телефона си"
+          }
         },
         "view_business_customer_account": "Преглед на акаунта",
         "breadcrumbs_submitted": "Изпратено",
@@ -1461,10 +1485,22 @@
           }
         },
         "recurring_total_intervals": {
-          "day": { "one": "ден", "other": "%{count} дни" },
-          "week": { "one": "седмица", "other": "%{count} седмици" },
-          "month": { "one": "месец", "other": "%{count} месеца" },
-          "year": { "one": "година", "other": "%{count} години" }
+          "day": {
+            "one": "ден",
+            "other": "%{count} дни"
+          },
+          "week": {
+            "one": "седмица",
+            "other": "%{count} седмици"
+          },
+          "month": {
+            "one": "месец",
+            "other": "%{count} месеца"
+          },
+          "year": {
+            "one": "година",
+            "other": "%{count} години"
+          }
         },
         "recurring_totals": "%{total_price} всеки %{interval}",
         "recurring_totals_with_initial_order_shipping_discount": "Първо плащане %{total_price_with_discount}, след това %{recurring_total}",
@@ -1586,7 +1622,9 @@
         "terminal": {
           "title": "Имаше проблем с плащането ни",
           "message": "Опреснете тази страница или опитайте отново след няколко минути",
-          "action": { "cta": "Опресняване на страницата" },
+          "action": {
+            "cta": "Опресняване на страницата"
+          },
           "request_id": "ID на заявката: {{requestId}}"
         }
       },
@@ -1618,7 +1656,9 @@
           "link_label": "Правила и условия {{partnerDisplayName}}"
         }
       },
-      "online_store_chat": { "title": "въпроси? Чат с нас" },
+      "online_store_chat": {
+        "title": "въпроси? Чат с нас"
+      },
       "local_pickup": {
         "location_information": {
           "one": "Има %{count} магазин с наличност близо до %{address}",
@@ -1718,11 +1758,16 @@
       "markets": {
         "invalid_market_manager_error": "Прегледайте информацията си за контакт, преди да завършите плащането"
       },
-      "notifications": { "title": "Известия" },
+      "notifications": {
+        "title": "Известия"
+      },
       "order_payment_collection": {
         "custom_line_item_description": "Сума за плащане за поръчка %{order_name}",
         "changes_summary": {
-          "added": { "one": "Добавено", "other": "%{count} добавени" },
+          "added": {
+            "one": "Добавено",
+            "other": "%{count} добавени"
+          },
           "removed": "Премахнато",
           "subtracted": "%{count} премахнати",
           "returned": "%{count} върнати",
@@ -1746,7 +1791,7 @@
         "cart_and_currency_updated_based_on_country": "Вашата количка и валута са актуализирани въз основа на вашата държава за доставка."
       },
       "change_cart_localization": {
-        "verify_shipping_address": "Вашата държава/регион е актуализиран. Въведете своя адрес за доставка, за да продължите с плащането."
+        "verify_shipping_address": "Вашата държава\/регион е актуализиран. Въведете своя адрес за доставка, за да продължите с плащането."
       },
       "tips": {
         "title": "Добавете съвет",
@@ -1766,14 +1811,17 @@
         }
       },
       "contextual_availability": {
-        "title": { "one": "Неналичен продукт", "other": "Неналични продукти" },
+        "title": {
+          "one": "Неналичен продукт",
+          "other": "Неналични продукти"
+        },
         "products_not_available": {
-          "one": "Този продукт ще бъде премахнат от вашата количка, защото не е наличен във вашата държава/регион.",
-          "other": "Тези продукти ще бъдат премахнати от вашата количка, защото не са налични във вашата държава/регион."
+          "one": "Този продукт ще бъде премахнат от вашата количка, защото не е наличен във вашата държава\/регион.",
+          "other": "Тези продукти ще бъдат премахнати от вашата количка, защото не са налични във вашата държава\/регион."
         },
         "all_products_in_cart_unavailable": {
-          "one": "Този продукт не се предлага във вашата страна/регион.",
-          "other": "Тези продукти не се предлагат във вашата страна/регион."
+          "one": "Този продукт не се предлага във вашата страна\/регион.",
+          "other": "Тези продукти не се предлагат във вашата страна\/регион."
         },
         "unavailable_label": "Недостъпен"
       },
@@ -1822,7 +1870,7 @@
           "error_authorizing": "Грешка при разрешаване на плащането"
         },
         "account_connected": "Свързан акаунт.",
-        "mor_disclaimer_html": "Щраквайки по-долу и завършвайки поръчката си, вие се съгласявате да закупите вашия артикул(и) от Global-e като регистриран търговец\n за тази транзакция, съгласно <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Правилата и условията</a> на Global-e\n и <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Политика за поверителност</a> . Global-e е международен\n доставчик на услуги за изпълнение до %{shop_name}\n",
+        "mor_disclaimer_html": "Щраквайки по-долу и завършвайки поръчката си, вие се съгласявате да закупите вашия артикул(и) от Global-e като регистриран търговец\n за тази транзакция, съгласно <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Правилата и условията<\/a> на Global-e\n и <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Политика за поверителност<\/a> . Global-e е международен\n доставчик на услуги за изпълнение до %{shop_name}\n",
         "pending_payment": {
           "due_notice": "Вашето плащане от %{amount_due} е дължимо на %{due_date}.",
           "multibanco": {
@@ -1982,7 +2030,9 @@
         "apple_pay_payment_error": "Вашето плащане не можа да бъде извършено. Опитайте отново или използвайте друг метод на плащане.",
         "taxes_not_included": "Данъците не са включени",
         "no_taxes_banner_content": "Няма да се начисляват данъци върху тази поръчка. След като сте получили плащането, данъците вече не могат да се добавят.",
-        "paypal": { "connect": "Щракнете, за да свържете своя PayPal акаунт" },
+        "paypal": {
+          "connect": "Щракнете, за да свържете своя PayPal акаунт"
+        },
         "card_number_placeholder": "Номер на карта",
         "card_pay_with": "Плати с:",
         "card_security_notice": "Всички транзакции са защитени и криптирани.",
@@ -1992,8 +2042,8 @@
         "name_on_card_placeholder": "Име на карта",
         "card_nickname_label": "псевдоним (по избор)",
         "card_expired": "Просрочен",
-        "card_expiry_label": "Срок на годност (MM / YY)",
-        "card_expiry_placeholder": "Срок на годност (MM / YY)",
+        "card_expiry_label": "Срок на годност (MM \/ YY)",
+        "card_expiry_placeholder": "Срок на годност (MM \/ YY)",
         "credit_card_start_month": "Начален месец",
         "credit_card_start_year": "Начална година",
         "delete_customer_mandate_modal_title": "Да се ​​премахне ли тази платежна карта?",
@@ -2009,8 +2059,8 @@
         "card_verification_value_explanation": "3-цифрен код за сигурност, който обикновено се намира на гърба на вашата карта. Картите American Express имат 4-цифрен код, разположен отпред.",
         "card_verification_value_explanation_amex": "4-цифрен код за сигурност отпред на вашата карта",
         "card_verification_value_explanation_other": "3-цифрен код за сигурност на гърба на вашата карта",
-        "card_start_label": "Дата на издаване (ММ / ГГ)",
-        "card_start_placeholder": "Дата на издаване (ММ / ГГ)",
+        "card_start_label": "Дата на издаване (ММ \/ ГГ)",
+        "card_start_placeholder": "Дата на издаване (ММ \/ ГГ)",
         "card_issue_number_label": "Номер на изданието",
         "card_issue_number_placeholder": "Номер на изданието",
         "card_change_label": "промяна",
@@ -2018,8 +2068,8 @@
         "ends_with_label": "завършващ на %{last_digits}",
         "payment_method_saved": "Начинът на плащане е запазен",
         "card_vaulted_company_location": "Картата е запазена за това местоположение",
-        "expiry_long": "(Изтича %{month}/%{year})",
-        "expiry_short": "(Изтича %{month}/%{year})",
+        "expiry_long": "(Изтича %{month}\/%{year})",
+        "expiry_short": "(Изтича %{month}\/%{year})",
         "saved_by_payment_method": "Запазено от %{payment_method}",
         "pay_with_payment_method": "Платете с %{payment_method}",
         "different_credit_card_label": "Използвайте друга кредитна карта",
@@ -2027,7 +2077,7 @@
         "different_billing_address_label": "Използвайте различен адрес за фактуриране",
         "billing_address_associated_with_mandate": "Използвайте адрес, свързан с метода на плащане",
         "billing_address_associated_with_mandate_info": "Ако искате да промените адреса си за фактуриране, моля, премахнете и въведете отново данните за кредитната си карта",
-        "free_order_notice_html": "Вашата поръчка е <strong>безплатна</strong> . Не се изисква плащане.",
+        "free_order_notice_html": "Вашата поръчка е <strong>безплатна<\/strong> . Не се изисква плащане.",
         "express_checkout_free_order": "Няма да бъдете таксувани за безплатна поръчка",
         "order_covered_by_gift_cards_notice": {
           "one": "Вашата поръчка се покрива от вашата подаръчна карта.",
@@ -2042,8 +2092,8 @@
         "no_js_credit_card_fields_redirect_hint": "Ще бъдете пренасочени, за да добавите вашата информация за плащане.",
         "card_fields_container_prefix": "Полеви контейнер за:",
         "card_fields_unavailable_html": {
-          "one": "Плащанията с кредитни и дебитни карти не са налични в момента.<br> <a href=\"%{current_url}\">Опреснете тази страница</a> или опитайте отново по-късно.",
-          "other": "Плащанията с кредитни и дебитни карти не са налични в момента.<br> <a href=\"%{current_url}\">Опреснете тази страница</a> или опитайте друг метод на плащане."
+          "one": "Плащанията с кредитни и дебитни карти не са налични в момента.<br> <a href=\"%{current_url}\">Опреснете тази страница<\/a> или опитайте отново по-късно.",
+          "other": "Плащанията с кредитни и дебитни карти не са налични в момента.<br> <a href=\"%{current_url}\">Опреснете тази страница<\/a> или опитайте друг метод на плащане."
         },
         "card_fields_processing_error": "Възникна проблем при обработката на плащането. Опитайте да обновите тази страница или проверете връзката си с интернет.",
         "technical_error": "Плащанията не могат да бъдат обработени в момента поради технически проблем. Опитайте отново след няколко минути.",
@@ -2066,14 +2116,14 @@
         "ideal_label": "ИДЕАЛЕН",
         "bank_picker_label": "банка",
         "afterpay_label": "Доплащане",
-        "purchase_options_card_update_agreement_label_html": "Като актуализирате своя метод на плащане, вие разрешавате плащания за всяка повтаряща се или отложена покупка съгласно <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">правилата за анулиране</a> на този магазин.",
+        "purchase_options_card_update_agreement_label_html": "Като актуализирате своя метод на плащане, вие разрешавате плащания за всяка повтаряща се или отложена покупка съгласно <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">правилата за анулиране<\/a> на този магазин.",
         "subscription_card_update_agreement_label": "Промяната на метода на плащане ще актуализира вашия абонамент и бъдещи повтарящи се плащания.",
         "subscription_agreement_label": "Един или повече артикули във вашата количка са отложени или абонаментни покупки. Продължавайки с плащането си, вие се съгласявате, че вашият метод на плащане автоматично ще бъде таксуван на цената и честотата, посочени на тази страница, докато не приключи или не анулирате. Всички анулирания са предмет на %{cancelled}.",
         "subscription_agreement_cancelled": "политика за анулиране",
         "subscription_heading": "Договор за абонамент",
-        "subscription_agreement_label_html": "Разбирам, че съм съгласен с абонамент. Той ще се подновява на посочените цена и честота, докато приключи или приключи\n <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">отменен</a> .\n",
+        "subscription_agreement_label_html": "Разбирам, че съм съгласен с абонамент. Той ще се подновява на посочените цена и честота, докато приключи или приключи\n <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">отменен<\/a> .\n",
         "purchase_options_agreement_label": "Един или повече артикули във вашата количка са отложена или повтаряща се покупка. Продължавайки с плащането си, вие се съгласявате, че вашият метод на плащане автоматично ще бъде таксуван на цената и честотата, посочени на тази страница, докато не приключи или не анулирате. Всички анулирания са предмет на %{cancellation_policy_label}.",
-        "purchase_options_agreement_label_html": "Разбирам, че един или повече артикули в количката ми са отложена или повтаряща се покупка. Продължавайки, се съгласявам с\n <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">политика за анулиране</a>\n и ви упълномощавам да таксувате моя метод на плащане на цените, честотата и датите, посочени на тази страница, до моя\n поръчката е изпълнена или анулирам, ако е разрешено.\n",
+        "purchase_options_agreement_label_html": "Разбирам, че един или повече артикули в количката ми са отложена или повтаряща се покупка. Продължавайки, се съгласявам с\n <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">политика за анулиране<\/a>\n и ви упълномощавам да таксувате моя метод на плащане на цените, честотата и датите, посочени на тази страница, до моя\n поръчката е изпълнена или анулирам, ако е разрешено.\n",
         "purchase_options_agreement_label_wallets": "Продължавайки с плащането си, вие се съгласявате с бъдещите такси, посочени на тази страница, и правилата за анулиране.",
         "pay_in_installments_split_pay_short": "4 плащания на %{amount}"
       },
@@ -2093,10 +2143,12 @@
           "cancel": "Отказ"
         }
       },
-      "company_location": { "location_title": "Местоположение" },
+      "company_location": {
+        "location_title": "Местоположение"
+      },
       "payment_summary": {
         "gift_card_current_balance_notice": "Текущо салдо %{amount}",
-        "credit_card_expires_on_notice": "Изтича на %{month}/%{year}",
+        "credit_card_expires_on_notice": "Изтича на %{month}\/%{year}",
         "express_payment_gateway_label": "Експрес",
         "manual_payment_gateway_label": "Наръчник",
         "billing_address_title": "Адрес на плащане",
@@ -2135,10 +2187,10 @@
         "address_city_contains_emojis": "Градът не може да съдържа емотикони",
         "address_city_contains_html_tags": "Градът не може да съдържа HTML тагове.",
         "address_city_contains_mathematical_symbols": "Градът не може да съдържа математически символи",
-        "address_country_blank": "Изберете държава/регион",
+        "address_country_blank": "Изберете държава\/регион",
         "address_country_not_supported": "Ние не изпращаме до тази страна или регион. Въведете нов адрес за доставка и опитайте отново.",
-        "address_province_blank": "Изберете щат/провинция",
-        "address_province_invalid": "Изберете валиден щат/провинция",
+        "address_province_blank": "Изберете щат\/провинция",
+        "address_province_invalid": "Изберете валиден щат\/провинция",
         "address_company_blank": "Въведете име на фирма",
         "address_company_too_long": "Името на фирмата е твърде дълго (максимумът е 255 знака)",
         "address_company_contains_emojis": "Компанията не може да съдържа емотикони",
@@ -2192,15 +2244,15 @@
         "payment_gateway_unsupported_for_subscriptions": "Този метод на плащане не е наличен за поръчки за абонамент.",
         "payment_gateway_unsupported_for_deferred_purchase_options": "Този метод на плащане не е наличен за опции за отложена покупка.",
         "payment_gateway_unsupported_for_country": "Този метод на плащане не е наличен за вашата държава за доставка.",
-        "payment_gateway_unsupported_for_development_store_html": "За да направите тестова поръчка, ще трябва да използвате шлюз за тестови плащания. Научете повече за <a href=\"%{docs_link}\">поръчките за тестване в магазините за разработка</a> .",
-        "payment_gateway_unsupported_for_order_above_maximum_orders_html": "Достигнахте лимита за поръчки в магазина за разработка с този процесор за плащане. За да направите друга поръчка, ще трябва да използвате тестов шлюз за плащане. Научете повече за <a href=\"%{docs_link}\">поръчките за тестване в магазините за разработка</a> .",
+        "payment_gateway_unsupported_for_development_store_html": "За да направите тестова поръчка, ще трябва да използвате шлюз за тестови плащания. Научете повече за <a href=\"%{docs_link}\">поръчките за тестване в магазините за разработка<\/a> .",
+        "payment_gateway_unsupported_for_order_above_maximum_orders_html": "Достигнахте лимита за поръчки в магазина за разработка с този процесор за плащане. За да направите друга поръчка, ще трябва да използвате тестов шлюз за плащане. Научете повече за <a href=\"%{docs_link}\">поръчките за тестване в магазините за разработка<\/a> .",
         "purchase_options_agreement_blank": "За да продължите с покупката си, съгласете се с условията за отложена или повтаряща се покупка.",
         "physical_gift_card_invalid_quantity": "Обредените артикули с физически подаръчни карти трябва да имат количество, което съответства на броя кодове на подаръчни карти.",
         "physical_gift_card_duplicate_code": "Договорената позиция за физическа карта за подарък съдържа дублиран код.",
         "physical_gift_card_invalid_code": "Кодът на физическата карта за подарък е невалиден.",
         "email_blank": "Въведете имейл",
         "phone_blank": "Въведете телефонен номер",
-        "address_country_invalid": "Изберете държава/регион от списъка",
+        "address_country_invalid": "Изберете държава\/регион от списъка",
         "address_zip_invalid": "Въведете валиден пощенски код",
         "gift_card_invalid": "Картата за подарък „••••%{last_four_characters}“ вече не е валидна",
         "vaulting_agreement_blank": "За да продължите, трябва да запазите новата си кредитна карта, защото плащането за тази поръчка ще се извърши на по-късна дата.",
@@ -2209,7 +2261,9 @@
       },
       "captcha": {
         "title": "Попълнете CAPTCHA, за да продължите",
-        "errors": { "not_solved": "Попълнете CAPTCHA, за да продължите" }
+        "errors": {
+          "not_solved": "Попълнете CAPTCHA, за да продължите"
+        }
       },
       "discount_errors": {
         "generic_error": "Вашата поръчка не можа да бъде обработена, тъй като вашият код за отстъпка вече не е наличен. Прегледайте общата сума на поръчката си и опитайте отново."
@@ -2256,7 +2310,7 @@
             "billing_address": "Въведете валиден адрес за фактуриране",
             "shipping_option": "Изберете валидна опция за доставка",
             "email": "Въведете валиден имейл",
-            "zone": "Въведете валиден щат/провинция",
+            "zone": "Въведете валиден щат\/провинция",
             "postal_code": "Въведете валиден пощенски код",
             "reduction_code": "Въведете валиден код за отстъпка или карта за подарък",
             "billing_must_match_shipping": "Трябва да съответства на адреса за доставка"
@@ -2267,8 +2321,8 @@
             "address1": "Въведете адрес",
             "address2": "Въведете апартамент, апартамент и др.",
             "city": "Въведете град",
-            "province": "Изберете щат/провинция",
-            "country": "Изберете държава/регион",
+            "province": "Изберете щат\/провинция",
+            "country": "Изберете държава\/регион",
             "zip": "Въведете пощенски код",
             "phone": "Въведете телефонен номер"
           },
@@ -2355,9 +2409,13 @@
         "development_store_order_testing_docs_link": "поръчки за тестване в магазини за разработка"
       },
       "localized_fields": {
-        "additional_information": { "title": "Допълнителна информация" }
+        "additional_information": {
+          "title": "Допълнителна информация"
+        }
       },
-      "vaulted": { "change_button": "промяна" }
+      "vaulted": {
+        "change_button": "промяна"
+      }
     },
     "notices": {
       "cart": {
@@ -2370,7 +2428,7 @@
         "too_many_line_items_error": "Вашата количка не може да съдържа повече от %{max} артикула.",
         "link_expired": "Линкът е изтекъл",
         "link_no_longer_exists": "Връзката вече не съществува.",
-        "stock_problems_html": "Един или повече артикули вече не са налични. Предоставихме <a href=\"%{link}\">актуализирана количка</a> .",
+        "stock_problems_html": "Един или повече артикули вече не са налични. Предоставихме <a href=\"%{link}\">актуализирана количка<\/a> .",
         "changed": "Количката сменена",
         "items_changed": "Един или повече елементи са променени.",
         "product_sold_out": "Продуктът „%{name}“ вече е разпродаден.",
@@ -2457,7 +2515,7 @@
           "declined": "Плащането е отхвърлено",
           "inventory": "Артикулите не са налични",
           "fraud": "Измамна поръчка",
-          "customer": "Клиент промени/анулира поръчка",
+          "customer": "Клиент промени\/анулира поръчка",
           "staff": "Грешка на персонала",
           "other": "други"
         },
@@ -2477,29 +2535,29 @@
       },
       "open_tracking": {
         "opt_in": {
-          "opted_in_html": "<b>Избрали сте отворено проследяване по имейл.</b>",
+          "opted_in_html": "<b>Избрали сте отворено проследяване по имейл.<\/b>",
           "visibility": "Процентът на отворени имейли ще бъде докладван анонимно. Ще видим само дали сте отворили имейл като част от обобщения процент на отворени имейли.",
-          "opt_out_html": "Можете <a style=\"text-decoration:underline;\" href=\"%{link}\">да се откажете</a> от проследяването на отворени имейли, ако не искате да споделяте тази информация.",
+          "opt_out_html": "Можете <a style=\"text-decoration:underline;\" href=\"%{link}\">да се откажете<\/a> от проследяването на отворени имейли, ако не искате да споделяте тази информация.",
           "preview_bar": "Преглеждате какво ще видят клиентите, когато се включат за отворено проследяване по имейл."
         },
         "opt_out": {
-          "opted_out_html": "<b>Вие се отказахте от проследяването на отворени имейли.</b>",
+          "opted_out_html": "<b>Вие се отказахте от проследяването на отворени имейли.<\/b>",
           "visibility": "Няма да видим дали сте отворили нашите имейли.",
-          "opt_in_html": "<a style=\"text-decoration:underline;\" href=\"%{link}\">Включете се</a> за отворено проследяване по имейл.",
+          "opt_in_html": "<a style=\"text-decoration:underline;\" href=\"%{link}\">Включете се<\/a> за отворено проследяване по имейл.",
           "preview_bar": "Преглеждате какво ще видят клиентите, когато се откажат от проследяването на отваряне на имейл."
         },
         "no_longer_track": {
-          "status_html": "<b>Вече не проследяваме отваряния на имейли.</b>",
+          "status_html": "<b>Вече не проследяваме отваряния на имейли.<\/b>",
           "privacy_policy": "След като този имейл беше изпратен, актуализирахме нашата политика за поверителност и вече не проследяваме отваряния."
         },
         "track": {
-          "status_html": "<b>Отчита се проследяване на отваряне на имейл.</b>",
+          "status_html": "<b>Отчита се проследяване на отваряне на имейл.<\/b>",
           "visibility": "Ще видим само дали сте отворили имейла, като част от общия процент на отворени имейли."
         },
         "updated_policy": {
-          "status_html": "<b>Отчита се проследяване на отваряне на имейл.</b>",
+          "status_html": "<b>Отчита се проследяване на отваряне на имейл.<\/b>",
           "visibility": "Актуализирахме нашата политика и сега проследяваме отварянето на имейли. Процентът на отворени имейли ще бъде докладван анонимно. Ще видим само дали сте отворили имейл като част от общия процент на отворени имейли.",
-          "opt_out_html": "Ако не желаете да споделяте тази информация, можете <a style=\"text-decoration:underline;\" href=\"%{link}\">да се отпишете.</a>"
+          "opt_out_html": "Ако не желаете да споделяте тази информация, можете <a style=\"text-decoration:underline;\" href=\"%{link}\">да се отпишете.<\/a>"
         }
       }
     },
@@ -2510,7 +2568,10 @@
           "out_of_stock": "Изчерпано количество"
         }
       },
-      "boolean": { "true_label": "да", "false_label": "Не" }
+      "boolean": {
+        "true_label": "да",
+        "false_label": "Не"
+      }
     },
     "search": {
       "sorting": {
@@ -2538,7 +2599,9 @@
       "challenge": "Предизвикателство",
       "checkpoint": "КПП"
     },
-    "cart": { "discounts_with_count": "Приложени са %{count} отстъпки" },
+    "cart": {
+      "discounts_with_count": "Приложени са %{count} отстъпки"
+    },
     "challenge": {
       "message": "За да продължите, уведомете ни, че не сте робот.",
       "error": "Вашият отговор не беше правилен, моля, опитайте отново.",
@@ -2591,7 +2654,7 @@
       "expired": "изтече",
       "invalid_start_date_or_issue_number_for_debit": "изисква се валидна начална дата или номер на издаване",
       "invalid_expiry_year": "не е валидна година на изтичане",
-      "reset_password_html": "Този имейл адрес вече е свързан с акаунт. Ако този акаунт е ваш, можете <a href=\"/account/login#recover\">да нулирате паролата си</a>",
+      "reset_password_html": "Този имейл адрес вече е свързан с акаунт. Ако този акаунт е ваш, можете <a href=\"\/account\/login#recover\">да нулирате паролата си<\/a>",
       "verify_email": "Изпратихме имейл до %{customer_email}, моля, щракнете върху включената връзка, за да потвърдите своя имейл адрес.",
       "product_not_available": "продуктът не е публикуван за този клиент.",
       "shop_404": {
@@ -2621,7 +2684,7 @@
           },
           "open_a_store": {
             "header": "Отворете нов магазин Shopify",
-            "caption": "Започнете 3-дневен безплатен пробен период, след което продължете за $1/месец за следващите 3 месеца.",
+            "caption": "Започнете 3-дневен безплатен пробен период, след което продължете за $1\/месец за следващите 3 месеца.",
             "link_text": "Включи се сега"
           },
           "editions": {
@@ -2649,9 +2712,16 @@
       "gift_card_already_applied": "Кодът вече е приложен към плащането ви",
       "gift_card_code_invalid": "Кодът е невалиден"
     },
-    "pagination": { "previous": "Предишен", "next": "Следващия" },
-    "links": { "learn_more": "Научете повече" },
-    "feed": { "more": "| Повече ▼" },
+    "pagination": {
+      "previous": "Предишен",
+      "next": "Следващия"
+    },
+    "links": {
+      "learn_more": "Научете повече"
+    },
+    "feed": {
+      "more": "| Повече ▼"
+    },
     "attributes": {
       "email": "електронна поща",
       "password": "парола",
@@ -2670,7 +2740,7 @@
       "prefecture": "Префектура",
       "province": "Провинция",
       "state": "състояние",
-      "state_and_territory": "Държава/територия",
+      "state_and_territory": "Държава\/територия",
       "county": "окръг",
       "emirate": "Емирство",
       "governorate": "Губернаторство",
@@ -2731,7 +2801,7 @@
       "login_form_password_placeholder": "Твоята парола",
       "login_form_error": "Грешна парола!",
       "login_form_submit": "Въведете",
-      "admin_link_html": "Вие ли сте собственикът на магазина? <a href=\"/admin\" class=\"link underlined-link\">Влезте тук</a>",
+      "admin_link_html": "Вие ли сте собственикът на магазина? <a href=\"\/admin\" class=\"link underlined-link\">Влезте тук<\/a>",
       "powered_by_shopify_html": "Този магазин ще се захранва от {{ shopify }}"
     },
     "social": {
@@ -2867,7 +2937,10 @@
           "previous": "Предишен",
           "next": "Следващия"
         },
-        "items": { "one": "{{count}} елемент", "other": "{{count}} елемента" },
+        "items": {
+          "one": "{{count}} елемент",
+          "other": "{{count}} елемента"
+        },
         "list_view": "Показване на списъчен изглед",
         "no_filtered_results_description": "Премахнете или коригирайте филтрите, за да видите вашите поръчки",
         "no_filtered_results_title": "Няма филтрирани резултати",
@@ -2889,7 +2962,9 @@
             "estimated_delivery": "Очаквана {{date}}",
             "last_updated": "Последна актуализация {{date}}"
           },
-          "table_view": { "estimated_delivery": "Прогн. {{date}}" }
+          "table_view": {
+            "estimated_delivery": "Прогн. {{date}}"
+          }
         }
       },
       "order_status": {
@@ -3127,7 +3202,7 @@
       "tip": "Бакшиш",
       "title": "Поръчайте {{name}}",
       "total": "Обща сума",
-      "unit_price": "{{price}} /бр",
+      "unit_price": "{{price}} \/бр",
       "pagination": {
         "load_more": "Зареди още",
         "load_more_accessibility_label": "Заредете още елементи",
@@ -3460,12 +3535,12 @@
         "card_number_placeholder": "Номер на карта",
         "name_on_card_label": "Име на карта",
         "name_on_card_placeholder": "Име на карта",
-        "card_expiry_label": "Срок на годност (MM / YY)",
-        "card_expiry_placeholder": "Срок на годност (MM / YY)",
+        "card_expiry_label": "Срок на годност (MM \/ YY)",
+        "card_expiry_placeholder": "Срок на годност (MM \/ YY)",
         "card_verification_value_label": "Код за сигурност",
         "card_verification_value_placeholder": "Код за сигурност",
-        "card_start_label": "Дата на издаване (ММ / ГГ)",
-        "card_start_placeholder": "Дата на издаване (ММ / ГГ)",
+        "card_start_label": "Дата на издаване (ММ \/ ГГ)",
+        "card_start_placeholder": "Дата на издаване (ММ \/ ГГ)",
         "tooltip": {
           "tooltip_accessibility_label": "Повече информация",
           "card_verification_value_explanation_amex": "4-цифрен код за сигурност отпред на вашата карта",
@@ -3582,7 +3657,10 @@
       },
       "removeItem": "Премахване на {{label}}",
       "removeTag": "Премахване на етикет",
-      "month": { "one": "месец", "other": "месеца" }
+      "month": {
+        "one": "месец",
+        "other": "месеца"
+      }
     },
     "profile_preview_bar": {
       "customize_button": "Персонализиране",
@@ -3620,7 +3698,10 @@
       "close_menu_accessibility_label": "Затворете основната навигация",
       "contact_email_subject": "Контакт от онлайн магазин {{shopName}}",
       "contact_link": "Свържете се с нас",
-      "delete_confirmation": { "cancel": "Отказ", "delete": "Изтрий" },
+      "delete_confirmation": {
+        "cancel": "Отказ",
+        "delete": "Изтрий"
+      },
       "dismiss_toast": "Отхвърляне",
       "document_title": "{{sectionName}} - {{shopName}} - Акаунт",
       "go_to_store_link": "Отидете до магазина",
@@ -3681,7 +3762,7 @@
     },
     "address_form": {
       "attention": "внимание",
-      "attention_company": "Компания/внимание",
+      "attention_company": "Компания\/внимание",
       "attention_help_text": "Името на човек или отдел",
       "auto_complete_close_accessibility_label": "Затворете предложенията",
       "auto_complete_title": "Предложения",
@@ -3804,7 +3885,9 @@
       "suggestions": "Предложения",
       "pages": "Страници"
     },
-    "cart": { "cart": "Количка" },
+    "cart": {
+      "cart": "Количка"
+    },
     "contact": {
       "form": {
         "title": "Форма за контакти",
@@ -3817,7 +3900,9 @@
         "error_heading": "Моля, коригирайте следното:"
       }
     },
-    "404": { "title": "Страницата не е намерена" }
+    "404": {
+      "title": "Страницата не е намерена"
+    }
   },
   "reviews": {
     "customer_say": "Какво казват нашите клиенти",
@@ -4014,7 +4099,7 @@
     "sandman4": {
       "title": "Sandman 4.0",
       "description": "Нашият бестселър",
-      "image": "https://cdn.shopify.com/s/files/1/0657/8415/2277/files/sandman4-6-changed.webp?v=1716034595",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/sandman4-6-changed.webp?v=1716034595",
       "weight": "9,8kg",
       "gear": "Shimano GRX 400",
       "gears": "20",
@@ -4040,7 +4125,7 @@
     "sandman6": {
       "title": "Sandman 6.0",
       "description": "Най-добрият в своя клас",
-      "image": "https://cdn.shopify.com/s/files/1/0657/8415/2277/files/sandman4-6-changed.webp?v=1716034595",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/sandman4-6-changed.webp?v=1716034595",
       "weight": "9,8kg",
       "gear": "Shimano GRX 600",
       "gears": "22",
@@ -4051,5 +4136,4 @@
       "rims": "Алуминий"
     }
   }
-
 }
