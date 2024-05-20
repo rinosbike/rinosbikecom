@@ -744,6 +744,19 @@
       "brakes": "Hydraulic",
       "wheelSize": "28 inches",
       "rims": "Aluminum"
+    },
+    "sandman7": {
+      "title": "Sandman 7.0",
+      "description": "Top of the Line",
+      "image": "https://cdn.shopify.com/s/files/1/0657/8415/2277/files/sandman4-6-changed.webp?v=1716034595",
+      "weight": "9.6kg",
+      "gear": "Shimano GRX 820",
+      "gears": "24",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Hydraulic",
+      "wheelSize": "28 inches",
+      "rims": "Aluminum"
     }
   }
 }
