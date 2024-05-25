@@ -1,149 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Review-section</title>
-<style>
-    .review-section-container{
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .review-section-title{
-        font-size: 35px;
-        font-weight: 600;
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-
-    .review-section-content{
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 25px;
-        row-gap: 25px;
-    }
-
-    .review-section-card{
-        padding: 25px;
-        padding-bottom: 5px;
-        min-height: 375px;
-        background-color: rgb(255, 255, 255);
-        border-radius: 15px;
-        border: 0.5px solid rgb(218, 218, 218);
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        box-shadow: 0 0 15px -3px rgba(0,0,0,0.1);
-        -webkit-box-shadow: 0 0 15px -3px rgba(0,0,0,0.1);
-        -moz-box-shadow: 0 0 15px -3px rgba(0,0,0,0.1);
-        position: relative;
-    }
-
-    :hover.review-section-card{
-        box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
-        -webkit-box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
-        -moz-box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
-        transform: scale(1.05);
-    }
-
-    .review-section-card-title{
-        text-align: left;
-        font-size: 25px;
-        color: black;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    .review-section-card-star{
-        width: 25px;
-        height: 25px;
-    }
-
-    .review-section-card-name{
-        font-size: 20px;
-    }
-
-    .review-section-card-text{
-        font-size: 15px;
-        margin-top: -15px;
-    }
-
-    .gridelement-post-date {
-        position: absolute;
-        bottom: 10px;
-        left: 25px;
-        text-align: left;
-        color: gray;
-    }
-
-
-    @media screen and (max-width: 1200px){
-    .review-section-content{
-        row-gap: 15px;
-        column-gap: 15px;
-    }
-
-    .review-section-card-name{
-        font-size: 18px;
-    }
-
-    .review-section-card-text{
-        font-size: 13px;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .review-section-content {
-        grid-template-columns: repeat(2, 1fr);
-        margin-left: 10px;
-        margin-right: 10px;
-        column-gap: 10px;
-        row-gap: 10px;
-    }
-
-    .gridelement-post-date {
-        /* Adjust styles here for smaller screens */
-        font-size: 0.8em;
-        bottom: 10px;
-    }
-
-    .review-section-card-text {
-        /* Adjust styles here for smaller screens */
-        font-size: 0.9em;
-    }
-
-    .review-section-card-title{
-        font-size: 22.5px;
-    }
-
-    .review-section-title{
-        font-size: 30px;
-        font-weight: 600;
-        margin-top: 50px;
-        margin-bottom: 50px;
-        margin-left: 20px;
-    }
-
-    :hover.review-section-card{
-        transform: scale(1.01);
-    }
-
-}
-
-@media screen and (max-width: 500px) {
-    .review-section-content {
-        grid-template-columns: repeat(1, 1fr);
-        margin-left: 10px;
-        margin-right: 10px;
-        column-gap: 10px;
-        row-gap: 10px;
-    }
-
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Review-section</title>
+    <style>
+        .review-section-container{
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     
-}
+        .review-section-title{
+            font-size: 35px;
+            font-weight: 600;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    
+        .review-section-content{
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 25px;
+            row-gap: 25px;
+        }
+    
+        .review-section-card{
+            padding: 25px;
+            padding-bottom: 5px;
+            min-height: 390px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 15px;
+            border: 0.5px solid rgb(218, 218, 218);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 0 15px -3px rgba(0,0,0,0.1);
+            -webkit-box-shadow: 0 0 15px -3px rgba(0,0,0,0.1);
+            -moz-box-shadow: 0 0 15px -3px rgba(0,0,0,0.1);
+            position: relative;
+        }
+    
+        :hover.review-section-card{
+            box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
+            -webkit-box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
+            -moz-box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
+            transform: scale(1.05);
+        }
+    
+        .review-section-card-title{
+            text-align: left;
+            font-size: 25px;
+            color: black;
+            font-weight: 600;
+        }
+    
+        .review-section-card-star{
+            width: 25px;
+            height: 25px;
+        }
+    
+        .review-section-card-name{
+            font-size: 20px;
+        }
+    
+        .review-section-card-text{
+            font-size: 15px;
+            margin-top: -15px;
+        }
+    
+        .gridelement-post-date {
+            position: absolute;
+            bottom: 10px;
+            left: 25px;
+            text-align: left;
+            color: gray;
+        }
+    
+        .review-section-verified-badge{
+            display: flex;
+            align-items: center;
+            margin-top: -15px;
+            margin-bottom: -30px;
+        }
+    
+        .review-section-verified-badge-text{
+            font-size: 15px;
+            margin-right: 5px;
+        }
+    
+        @media screen and (max-width: 1200px){
+        .review-section-content{
+            row-gap: 15px;
+            column-gap: 15px;
+        }
+    
+        .review-section-card-name{
+            font-size: 18px;
+        }
+    
+        .review-section-card-text{
+            font-size: 13px;
+        }
+    }
+    
+    @media screen and (max-width: 800px) {
+        .review-section-content {
+            grid-template-columns: repeat(2, 1fr);
+            margin-left: 10px;
+            margin-right: 10px;
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+    
+        .gridelement-post-date {
+            /* Adjust styles here for smaller screens */
+            font-size: 0.8em;
+            bottom: 10px;
+        }
+    
+        .review-section-card-text {
+            /* Adjust styles here for smaller screens */
+            font-size: 0.9em;
+        }
+    
+        .review-section-card-title{
+            font-size: 22.5px;
+        }
+    
+        .review-section-title{
+            font-size: 30px;
+            font-weight: 600;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-left: 20px;
+        }
+    
+        :hover.review-section-card{
+            transform: scale(1.01);
+        }
+    
+    }
+    
+    @media screen and (max-width: 500px) {
+        .review-section-content {
+            grid-template-columns: repeat(1, 1fr);
+            margin-left: 10px;
+            margin-right: 10px;
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+    
+        
+    }
 </style>
 </head>
 <body>
@@ -156,6 +166,10 @@
                         <h2 class="review-section-card-title">{{ 'reviews.review1.title' | t }}</h2>
                         <div class="review-section-card-rating" data-rating="{{ 'reviews.review1.rating' | t }}">
                         </div>
+                        <div class="review-section-verified-badge">
+                            <p class="review-section-verified-badge-text">{{ 'reviews.verified_purchase' | t }}</p>
+                            <img class="review-section-verified-badge-img" src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/checkmark.seal.svg?v=1716629164" width="15px" height="15px">
+                        </div>
                         <p class="review-section-card-name">{{ 'reviews.review1.name' | t }}</p>
                         <p class="review-section-card-text">{{ 'reviews.review1.text' | t }}</p>
                         <p class="gridelement-post-date">{{ 'reviews.review1.date' | t }}</p>
@@ -166,6 +180,10 @@
                         <h2 class="review-section-card-title">{{ 'reviews.review2.title' | t }}</h2>
                         <div class="review-section-card-rating" data-rating="{{ 'reviews.review2.rating' | t }}">
                         </div>
+                        <div class="review-section-verified-badge">
+                            <p class="review-section-verified-badge-text">{{ 'reviews.verified_purchase' | t }}</p>
+                            <img class="review-section-verified-badge-img" src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/checkmark.seal.svg?v=1716629164" width="15px" height="15px">
+                        </div>
                         <p class="review-section-card-name">{{ 'reviews.review2.name' | t }}</p>
                         <p class="review-section-card-text">{{ 'reviews.review2.text' | t }}</p>
                         <p class="gridelement-post-date">{{ 'reviews.review2.date' | t }}</p>
@@ -175,6 +193,10 @@
                     <div class="review-section-card-content">
                         <h2 class="review-section-card-title">{{ 'reviews.review3.title' | t }}</h2>
                         <div class="review-section-card-rating" data-rating="{{ 'reviews.review3.rating' | t }}">
+                        </div>
+                        <div class="review-section-verified-badge">
+                            <p class="review-section-verified-badge-text">{{ 'reviews.verified_purchase' | t }}</p>
+                            <img class="review-section-verified-badge-img" src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/checkmark.seal.svg?v=1716629164" width="15px" height="15px">
                         </div>
                         <p class="review-section-card-name">{{ 'reviews.review3.name' | t }}</p>
                         <p class="review-section-card-text">{{ 'reviews.review3.text' | t }}</p>
