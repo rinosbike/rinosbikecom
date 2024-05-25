@@ -536,27 +536,6 @@
   "reviews": {
     "customer_say": "Co mówią nasi klienci",
     "verified_purchase": "Zweryfikowany zakup",
-    "review1": {
-      "title": "Możliwe do zrobienia",
-      "name": "Hans Müller",
-      "text": "Kupiłem rower składany i jestem bardzo zadowolony z doświadczenia. Sam rower jest wysokiej jakości i spełnia wszystkie moje oczekiwania. Mogę tylko polecić ten sklep!",
-      "date": "04.04.2024",
-      "rating": "4.5"
-    },
-    "review2": {
-      "title": "Dostawa i produkt ok👍",
-      "name": "L. Schneider",
-      "text": "Ostatnio zakupiłem dźwignię zmiany biegów Shimano w tym sklepie. Dźwignia zmiany biegów spełnia swoją funkcję, a jakość jest solidna.",
-      "date": "02.04.2024",
-      "rating": "3.5"
-    },
-    "review3": {
-      "title": "Relaksujące zakupy",
-      "name": "J. Stabler",
-      "text": "Ostatnio kupiłem tutaj kask. Dobrze mi pasuje i wygląda normalnie. Dostawa była dość szybka.",
-      "date": "29.03.2024",
-      "rating": "4.5"
-    },
     "review4": {
       "title": "Dobre zakupy",
       "name": "Thierry A.",
