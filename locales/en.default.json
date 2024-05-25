@@ -516,6 +516,7 @@
   },
   "reviews": {
     "customer_say": "What our customers say",
+    "verified_purchase": "verified",
     "review1": {
       "title": "Can do",
       "name": "Hans Müller",

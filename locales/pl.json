@@ -535,6 +535,7 @@
   },
   "reviews": {
     "customer_say": "Co mówią nasi klienci",
+    "verified_purchase": "Zweryfikowany zakup",
     "review1": {
       "title": "Możliwe do zrobienia",
       "name": "Hans Müller",
