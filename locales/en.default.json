@@ -652,7 +652,10 @@
     }
   },
   "bikes": {
-    "title": "Gravel bikes comparison",
+    "title": {
+      "mtb": "MTB comparison",
+      "gravel": "Gravel bike comparison"
+    },
     "weight_label": "Weight",
     "gear_label": "Gear",
     "gears_label": "Gears",
@@ -661,6 +664,8 @@
     "brakes_label": "Brakes",
     "wheelSize_label": "Wheel Size",
     "rims_label": "Rims",
+    "fork_label": "Fork",
+    "travel_label": "Travel",
     "sandman1": {
       "title": "Sandman 1.0",
       "description": "Good and Affordable",
@@ -738,6 +743,36 @@
       "brakes": "Hydraulic",
       "wheelSize": "28 inches",
       "rims": "Aluminum"
+    },
+    "gaia2": {
+      "title": "Gaia 2",
+      "description": "Cost-effective",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/files/IMG_5265.png?v=1716717476",
+      "weight": "11.9kg",
+      "gear": "Shimano Deore",
+      "gears": "12",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Hydraulic",
+      "wheelSize": "29x2.25 inches",
+      "rims": "Aluminum",
+      "fork": "ROCKSHOX Recon RL Remote",
+      "travel": "100mm"
+    },
+    "gaia4": {
+      "title": "Gaia 4",
+      "description": "The Professional's Choice",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/files/Gross_Gaia_4_main_bearbeitet.png?v=1716718730",
+      "weight": "10.8kg",
+      "gear": "Shimano SLX",
+      "gears": "12",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Hydraulic",
+      "wheelSize": "29x2.25 inches",
+      "rims": "Aluminum",
+      "fork": "FOX 32 Rhythm Remote",
+      "travel": "100mm"
     }
   }
 }

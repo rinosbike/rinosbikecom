@@ -4042,7 +4042,10 @@
     }
   },
   "bikes": {
-    "title": "сравнение на гравийни колела",
+    "title": {
+      "mtb": "Сравнение на планински велосипеди",
+      "gravel": "Сравнение на гравийни колела"
+    },
     "weight_label": "Тегло",
     "gear_label": "Скорости",
     "gears_label": "Предавки",
@@ -4051,6 +4054,8 @@
     "brakes_label": "Спирачки",
     "wheelSize_label": "Размер на колелата",
     "rims_label": "Обръчи",
+    "fork_label": "Вилка",
+    "travel_label": "Ход",
     "sandman1": {
       "title": "Sandman 1.0",
       "description": "Добре и евтино",
@@ -4128,6 +4133,36 @@
       "brakes": "Хидравлични",
       "wheelSize": "28 инча",
       "rims": "Алуминиеви"
+    },
+    "gaia2": {
+      "title": "Gaia 2",
+      "description": "Икономичен",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/files/IMG_5265.png?v=1716717476",
+      "weight": "11.9kg",
+      "gear": "Shimano Deore",
+      "gears": "12",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "оптимизиран за возачи между 175-195 см",
+      "brakes": "Хидравлични",
+      "wheelSize": "29x2.25 инча",
+      "rims": "Алуминий",
+      "fork": "ROCKSHOX Recon RL Remote",
+      "travel": "100mm"
+    },
+    "gaia4": {
+      "title": "Gaia 4",
+      "description": "Изборът на професионалистите",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/files/Gross_Gaia_4_main_bearbeitet.png?v=1716718730",
+      "weight": "10.8kg",
+      "gear": "Shimano SLX",
+      "gears": "12",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "оптимизиран за возачи между 175-195 см",
+      "brakes": "Хидравлични",
+      "wheelSize": "29x2.25 инча",
+      "rims": "Алуминий",
+      "fork": "FOX 32 Rhythm Remote",
+      "travel": "100mm"
     }
   }
 }

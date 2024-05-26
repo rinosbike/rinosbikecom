@@ -671,7 +671,10 @@
     }
   },
   "bikes": {
-    "title": "porównanie rowerów gravel",
+    "title": {
+      "gravel": "porównanie rowerów gravel",
+      "mtb": "porównanie rowerów MTB"
+    },
     "weight_label": "Waga",
     "gear_label": "Przerzutki",
     "gears_label": "Biegi",
@@ -680,6 +683,8 @@
     "brakes_label": "Hamulce",
     "wheelSize_label": "Rozmiar kół",
     "rims_label": "Obręcze",
+    "fork_label": "Widelec",
+    "travel_label": "Skok",
     "sandman1": {
       "title": "Sandman 1.0",
       "description": "Dobrze i tanio",
@@ -757,6 +762,36 @@
       "brakes": "Hydrauliczne",
       "wheelSize": "28 cali",
       "rims": "Aluminiowe"
+    },
+    "gaia2": {
+      "title": "Gaia 2",
+      "description": "Koszt-efektywny",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/files/IMG_5265.png?v=1716717476",
+      "weight": "11.9kg",
+      "gear": "Shimano Deore",
+      "gears": "12",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "zoptymalizowany dla rowerzystów między 175-195 cm",
+      "brakes": "Hydrauliczne",
+      "wheelSize": "29x2.25 cali",
+      "rims": "Aluminium",
+      "fork": "ROCKSHOX Recon RL Remote",
+      "travel": "100mm"
+    },
+    "gaia4": {
+      "title": "Gaia 4",
+      "description": "Wybór profesjonalistów",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/files/Gross_Gaia_4_main_bearbeitet.png?v=1716718730",
+      "weight": "10.8kg",
+      "gear": "Shimano SLX",
+      "gears": "12",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "zoptymalizowany dla rowerzystów między 175-195 cm",
+      "brakes": "Hydrauliczne",
+      "wheelSize": "29x2.25 cali",
+      "rims": "Aluminium",
+      "fork": "FOX 32 Rhythm Remote",
+      "travel": "100mm"
     }
   }
 }
