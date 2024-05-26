@@ -68,7 +68,7 @@
         "button_bJAVRa": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
+            "button_label": "configure",
             "button_link": "shopify:\/\/products\/sandman-6",
             "button_style_secondary": false
           }
