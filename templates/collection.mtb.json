@@ -1,0 +1,140 @@
+{
+  "sections": {
+    "image_banner_ByDxLc": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_mhpLLH": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>gravel<\/em>",
+            "heading_size": "h2"
+          }
+        },
+        "text_mxBWgA": {
+          "type": "text",
+          "settings": {
+            "text": "discover our gravel bikes",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mhpLLH",
+        "text_mxBWgA"
+      ],
+      "custom_css": [
+        ".banner__text {color: #e5e4e2;}",
+        ".banner__heading {color: #black;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/gravelly-mountain-road.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "image_with_text_tTF9w7": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_MnKeae": {
+          "type": "caption",
+          "settings": {
+            "caption": "Featured Bike",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "large"
+          }
+        },
+        "heading_YrNYkg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sandman 3",
+            "heading_size": "h1"
+          }
+        },
+        "text_6deyMt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Experience the Freedom of Riding with Sandman 3 Gravel Bike!<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_bJAVRa": {
+          "type": "button",
+          "settings": {
+            "button_label": "configure",
+            "button_link": "shopify:\/\/products\/sandman-6",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "caption_MnKeae",
+        "heading_YrNYkg",
+        "text_6deyMt",
+        "button_bJAVRa"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/image0.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 2,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "drawer",
+        "enable_sorting": true,
+        "columns_mobile": "1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rinos_comparison_table_nz48Wf": {
+      "type": "rinos-comparison-table",
+      "settings": {
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    }
+  },
+  "order": [
+    "image_banner_ByDxLc",
+    "image_with_text_tTF9w7",
+    "product-grid",
+    "rinos_comparison_table_nz48Wf",
+    "banner"
+  ]
+}
