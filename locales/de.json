@@ -649,7 +649,8 @@
   "bikes": {
     "title": {
       "gravel": "Gravel Bikes Vergleich",
-      "mtb": "MTB Vergleich"
+      "mtb": "MTB Vergleich",
+      "road": "Rennrad Vergleich"
     },
     "weight_label": "Gewicht",
     "gear_label": "Schaltung",
@@ -738,6 +739,58 @@
       "brakes": "Hydraulisch",
       "wheelSize": "28 Zoll",
       "rims": "Aluminium"
+    },
+    "odin1": {
+      "title": "Odin 1",
+      "description": "Gut und Preiswert",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/products/1_00d58ab3-d3ab-4e73-a70c-5969e095121d.jpg?v=1705745069",
+      "weight": "9.8kg",
+      "gear": "Shimano SORA",
+      "gears": "18",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimiert für Fahrer zwischen 175-195 cm",
+      "brakes": "Mechanisch",
+      "wheelSize": "28 Zoll",
+      "rims": "Aluminium"
+    },
+    "odin3": {
+      "title": "Odin 3",
+      "description": "Der Alleskönner",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/products/IMG_5673-PhotoRoom.jpg?v=1705744957",
+      "weight": "9.8kg",
+      "gear": "Shimano 105",
+      "gears": "22",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimiert für Fahrer zwischen 175-195 cm",
+      "brakes": "Mechanisch",
+      "wheelSize": "28 Zoll",
+      "rims": "Aluminium"
+    },
+    "odin4": {
+      "title": "Odin 4",
+      "description": "Neuankömmling",
+      "image": "",
+      "weight": "9.8kg",
+      "gear": "Shimano GRX 400",
+      "gears": "20",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimiert für Fahrer zwischen 175-195 cm",
+      "brakes": "Hydraulisch",
+      "wheelSize": "28 Zoll",
+      "rims": "Aluminium"
+    },
+    "odin5": {
+      "title": "Odin 5",
+      "description": "Ultimative Leistung",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/products/1_c416a5f9-949c-4751-897d-78d90ee65c85.jpg?v=1705745002",
+      "weight": "8.3kg",
+      "gear": "Shimano Ultegra",
+      "gears": "22",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimiert für Fahrer zwischen 175-195 cm",
+      "brakes": "Mechanisch",
+      "wheelSize": "28 Zoll",
+      "rims": "Carbon"
     },
     "gaia2": {
       "title": "Gaia 2",

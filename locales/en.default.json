@@ -654,7 +654,8 @@
   "bikes": {
     "title": {
       "mtb": "MTB comparison",
-      "gravel": "Gravel bike comparison"
+      "gravel": "Gravel bike comparison",
+      "road": "Road bike comparison"
     },
     "weight_label": "Weight",
     "gear_label": "Gear",
@@ -667,7 +668,7 @@
     "fork_label": "Fork",
     "travel_label": "Travel",
     "sandman1": {
-      "title": "Sandman 1.0",
+      "title": "Sandman 1",
       "description": "Good and Affordable",
       "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/IMG_0133.png?v=1714209511",
       "weight": "9.8kg",
@@ -680,7 +681,7 @@
       "rims": "Aluminum"
     },
     "sandman3": {
-      "title": "Sandman 3.0",
+      "title": "Sandman 3",
       "description": "The All-Rounder",
       "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/IMG_0170.png?v=1714209510",
       "weight": "9.8kg",
@@ -693,7 +694,7 @@
       "rims": "Aluminum"
     },
     "sandman4": {
-      "title": "Sandman 4.0",
+      "title": "Sandman 4",
       "description": "Our Bestseller",
       "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/sandman4-6-changed.webp?v=1716034595",
       "weight": "9.8kg",
@@ -706,7 +707,7 @@
       "rims": "Aluminum"
     },
     "sandman5": {
-      "title": "Sandman 5.0",
+      "title": "Sandman 5",
       "description": "Ultimate Performance",
       "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/rinos-carbon-gravel-bike-sandman50-shimano-r8000-ultegra_2.webp?v=1691264716",
       "weight": "8.3kg",
@@ -719,7 +720,7 @@
       "rims": "Carbon"
     },
     "sandman6": {
-      "title": "Sandman 6.0",
+      "title": "Sandman 6",
       "description": "The Best of Its Kind",
       "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/sandman4-6-changed.webp?v=1716034595",
       "weight": "9.8kg",
@@ -732,7 +733,7 @@
       "rims": "Aluminum"
     },
     "sandman7": {
-      "title": "Sandman 7.0",
+      "title": "Sandman 7",
       "description": "Top of the Line",
       "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/sandman4-6-changed.webp?v=1716034595",
       "weight": "9.6kg",
@@ -743,6 +744,58 @@
       "brakes": "Hydraulic",
       "wheelSize": "28 inches",
       "rims": "Aluminum"
+    },
+    "odin1": {
+      "title": "Odin 1",
+      "description": "Good and Affordable",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/products/1_00d58ab3-d3ab-4e73-a70c-5969e095121d.jpg?v=1705745069",
+      "weight": "9.8kg",
+      "gear": "Shimano SORA",
+      "gears": "18",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Mechanical",
+      "wheelSize": "28 inches",
+      "rims": "Aluminum"
+    },
+    "odin3": {
+      "title": "Odin 3",
+      "description": "The All-Rounder",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/products/IMG_5673-PhotoRoom.jpg?v=1705744957",
+      "weight": "9.8kg",
+      "gear": "Shimano 105",
+      "gears": "22",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Mechanical",
+      "wheelSize": "28 inches",
+      "rims": "Aluminum"
+    },
+    "odin4": {
+      "title": "odin 4",
+      "description": "New arrival",
+      "image": "",
+      "weight": "9.8kg",
+      "gear": "Shimano GRX 400",
+      "gears": "20",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Hydraulic",
+      "wheelSize": "28 inches",
+      "rims": "Aluminum"
+    },
+    "odin5": {
+      "title": "Odin 5",
+      "description": "Ultimate Performance",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/products/1_c416a5f9-949c-4751-897d-78d90ee65c85.jpg?v=1705745002",
+      "weight": "8.3kg",
+      "gear": "Shimano Ultegra",
+      "gears": "22",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Mechanical",
+      "wheelSize": "28 inches",
+      "rims": "Carbon"
     },
     "gaia2": {
       "title": "Gaia 2",

@@ -4044,7 +4044,8 @@
   "bikes": {
     "title": {
       "mtb": "Сравнение на планински велосипеди",
-      "gravel": "Сравнение на гравийни колела"
+      "gravel": "Сравнение на гравийни колела",
+      "road": "Сравнение на шосейни велосипеди"
     },
     "weight_label": "Тегло",
     "gear_label": "Скорости",
@@ -4133,6 +4134,58 @@
       "brakes": "Хидравлични",
       "wheelSize": "28 инча",
       "rims": "Алуминиеви"
+    },
+    "odin1": {
+      "title": "Odin 1",
+      "description": "Добър и достъпен",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/products/1_00d58ab3-d3ab-4e73-a70c-5969e095121d.jpg?v=1705745069",
+      "weight": "9.8kg",
+      "gear": "Shimano SORA",
+      "gears": "18",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "оптимизиран за карачи между 175-195 см",
+      "brakes": "Механични",
+      "wheelSize": "28 инча",
+      "rims": "Алуминий"
+    },
+    "odin3": {
+      "title": "Odin 3",
+      "description": "Всестранен",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/products/IMG_5673-PhotoRoom.jpg?v=1705744957",
+      "weight": "9.8kg",
+      "gear": "Shimano 105",
+      "gears": "22",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "оптимизиран за карачи между 175-195 см",
+      "brakes": "Механични",
+      "wheelSize": "28 инча",
+      "rims": "Алуминий"
+    },
+    "odin4": {
+      "title": "Odin 4",
+      "description": "Нов модел",
+      "image": "",
+      "weight": "9.8kg",
+      "gear": "Shimano GRX 400",
+      "gears": "20",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "оптимизиран за карачи между 175-195 см",
+      "brakes": "Хидравлични",
+      "wheelSize": "28 инча",
+      "rims": "Алуминий"
+    },
+    "odin5": {
+      "title": "Odin 5",
+      "description": "Крайна производителност",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/products/1_c416a5f9-949c-4751-897d-78d90ee65c85.jpg?v=1705745002",
+      "weight": "8.3kg",
+      "gear": "Shimano Ultegra",
+      "gears": "22",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "оптимизиран за карачи между 175-195 см",
+      "brakes": "Механични",
+      "wheelSize": "28 инча",
+      "rims": "Въглерод"
     },
     "gaia2": {
       "title": "Gaia 2",
