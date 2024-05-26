@@ -24,10 +24,10 @@
       ],
       "custom_css": [
         ".banner__text {color: #e5e4e2;}",
-        ".banner__heading {color: #black;}"
+        ".banner__heading {color: #e5e4e2;}"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/gravelly-mountain-road.jpg",
+        "image": "shopify:\/\/shop_images\/mountains-forest-and-clouds.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
