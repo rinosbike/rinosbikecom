@@ -116,6 +116,11 @@
         "padding_bottom": 36
       }
     },
+    "rinos_comparison_table_mtb_edition_a6tYjw": {
+      "type": "rinos-comparison-table-mtb-edition",
+      "settings": {
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "settings": {
@@ -129,6 +134,7 @@
     "image_banner_ByDxLc",
     "image_with_text_tTF9w7",
     "product-grid",
+    "rinos_comparison_table_mtb_edition_a6tYjw",
     "banner"
   ]
 }
