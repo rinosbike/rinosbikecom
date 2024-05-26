@@ -6,14 +6,14 @@
         "heading_mhpLLH": {
           "type": "heading",
           "settings": {
-            "heading": "<em>gravel<\/em>",
+            "heading": "<em>mtb<\/em>",
             "heading_size": "h2"
           }
         },
         "text_mxBWgA": {
           "type": "text",
           "settings": {
-            "text": "discover our gravel bikes",
+            "text": "discover our MTBs",
             "text_style": "body"
           }
         }
@@ -54,14 +54,14 @@
         "heading_YrNYkg": {
           "type": "heading",
           "settings": {
-            "heading": "Sandman 3",
+            "heading": "Gaia 2",
             "heading_size": "h1"
           }
         },
         "text_6deyMt": {
           "type": "text",
           "settings": {
-            "text": "<p>Experience the Freedom of Riding with Sandman 3 Gravel Bike!<\/p>",
+            "text": "<p>Discover the Joy of Riding with Gaia 2 Gravel Bike!<\/p>",
             "text_style": "body"
           }
         },
@@ -81,7 +81,7 @@
         "button_bJAVRa"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/image0.jpg",
+        "image": "shopify:\/\/shop_images\/Gaia2.0outdoor2.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
