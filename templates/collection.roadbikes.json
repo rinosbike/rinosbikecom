@@ -116,11 +116,6 @@
         "padding_bottom": 36
       }
     },
-    "rinos_comparison_table_nz48Wf": {
-      "type": "rinos-comparison-table",
-      "settings": {
-      }
-    },
     "banner": {
       "type": "main-collection-banner",
       "settings": {
@@ -134,7 +129,6 @@
     "image_banner_ByDxLc",
     "image_with_text_tTF9w7",
     "product-grid",
-    "rinos_comparison_table_nz48Wf",
     "banner"
   ]
 }
