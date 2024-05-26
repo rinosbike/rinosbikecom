@@ -647,6 +647,7 @@
     }
   },
   "bikes": {
+    "title": "Gravel Bikes Vergleich",
     "weight_label": "Gewicht",
     "gear_label": "Schaltung",
     "gears_label": "Gänge",

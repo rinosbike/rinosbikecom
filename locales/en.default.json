@@ -652,6 +652,7 @@
     }
   },
   "bikes": {
+    "title": "Gravel bikes comparison",
     "weight_label": "Weight",
     "gear_label": "Gear",
     "gears_label": "Gears",

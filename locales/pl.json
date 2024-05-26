@@ -671,6 +671,7 @@
     }
   },
   "bikes": {
+    "title": "porównanie rowerów gravel",
     "weight_label": "Waga",
     "gear_label": "Przerzutki",
     "gears_label": "Biegi",
