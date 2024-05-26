@@ -1,5 +1,45 @@
 {
   "sections": {
+    "image_banner_ByDxLc": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_mhpLLH": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>gravel<\/em>",
+            "heading_size": "h2"
+          }
+        },
+        "text_mxBWgA": {
+          "type": "text",
+          "settings": {
+            "text": "discover our gravel bikes",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mhpLLH",
+        "text_mxBWgA"
+      ],
+      "custom_css": [
+        ".banner__text {color: #E5E4E2;}",
+        ".banner__heading{color: #black;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/gravelly-mountain-road.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -35,6 +75,7 @@
     }
   },
   "order": [
+    "image_banner_ByDxLc",
     "product-grid",
     "rinos_comparison_table_nz48Wf",
     "banner"
