@@ -6,14 +6,14 @@
         "heading_mhpLLH": {
           "type": "heading",
           "settings": {
-            "heading": "<em>gravel<\/em>",
+            "heading": "<em>road<\/em>",
             "heading_size": "h2"
           }
         },
         "text_mxBWgA": {
           "type": "text",
           "settings": {
-            "text": "discover our gravel bikes",
+            "text": "discover our road bikes",
             "text_style": "body"
           }
         }
@@ -24,10 +24,10 @@
       ],
       "custom_css": [
         ".banner__text {color: #e5e4e2;}",
-        ".banner__heading {color: #black;}"
+        ".banner__heading {color: #e5e4e2;}"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/gravelly-mountain-road.jpg",
+        "image": "shopify:\/\/shop_images\/the-curve-in-the-road.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
@@ -54,14 +54,14 @@
         "heading_YrNYkg": {
           "type": "heading",
           "settings": {
-            "heading": "Sandman 3",
+            "heading": "Odin 3",
             "heading_size": "h1"
           }
         },
         "text_6deyMt": {
           "type": "text",
           "settings": {
-            "text": "<p>Experience the Freedom of Riding with Sandman 3 Gravel Bike!<\/p>",
+            "text": "<p>Feel the Thrill of Riding with odin 3 Gravel Bike!<\/p>",
             "text_style": "body"
           }
         },
@@ -69,7 +69,7 @@
           "type": "button",
           "settings": {
             "button_label": "configure",
-            "button_link": "shopify:\/\/products\/sandman-6",
+            "button_link": "shopify:\/\/products\/odin-3",
             "button_style_secondary": false
           }
         }
