@@ -1,1 +1,71 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"footer":{"type":"footer","blocks":{"link_list_rxKrTn":{"type":"link_list","settings":{"heading":"Information","menu":"information"}},"link_list_ny86gJ":{"type":"link_list","settings":{"heading":"Legal Information","menu":"legal-information"}},"link_list_q4CT74":{"type":"link_list","settings":{"heading":"Help & Services","menu":"help-services"}},"link_list_qGAXyh":{"type":"link_list","settings":{"heading":"Secured Site","menu":"secured-site"}}},"block_order":["link_list_rxKrTn","link_list_ny86gJ","link_list_q4CT74","link_list_qGAXyh"],"settings":{"color_scheme":"background-1","newsletter_enable":true,"newsletter_heading":"Subscribe to our emails","enable_follow_on_shop":true,"show_social":true,"enable_country_selector":true,"enable_language_selector":true,"payment_enable":true,"show_policy":false,"margin_top":0,"padding_top":36,"padding_bottom":36}}},"order":["footer"]}
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_rxKrTn": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Information",
+            "menu": "information"
+          }
+        },
+        "link_list_ny86gJ": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Legal Information",
+            "menu": "legal-information"
+          }
+        },
+        "link_list_q4CT74": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Help & Services",
+            "menu": "help-services"
+          }
+        },
+        "link_list_qGAXyh": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Secured Site",
+            "menu": "secured-site"
+          }
+        },
+        "image_TcpRhG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/images.png",
+            "image_width": 100,
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_rxKrTn",
+        "link_list_ny86gJ",
+        "link_list_q4CT74",
+        "link_list_qGAXyh",
+        "image_TcpRhG"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
