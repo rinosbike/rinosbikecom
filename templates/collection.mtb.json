@@ -6,14 +6,14 @@
         "heading_mhpLLH": {
           "type": "heading",
           "settings": {
-            "heading": "<em>mtb<\/em>",
+            "heading": "<em>MTB<\/em>",
             "heading_size": "h2"
           }
         },
         "text_mxBWgA": {
           "type": "text",
           "settings": {
-            "text": "discover our MTBs",
+            "text": "Discover our MTBs",
             "text_style": "body"
           }
         }
