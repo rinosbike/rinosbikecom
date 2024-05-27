@@ -6,14 +6,14 @@
         "heading_mhpLLH": {
           "type": "heading",
           "settings": {
-            "heading": "<em>gravel<\/em>",
+            "heading": "<em>Gravel<\/em>",
             "heading_size": "h2"
           }
         },
         "text_mxBWgA": {
           "type": "text",
           "settings": {
-            "text": "discover our gravel bikes",
+            "text": "Discover our gravel bikes",
             "text_style": "body"
           }
         }
