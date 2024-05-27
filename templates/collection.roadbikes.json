@@ -6,14 +6,14 @@
         "heading_mhpLLH": {
           "type": "heading",
           "settings": {
-            "heading": "<em>road<\/em>",
+            "heading": "<em>Road<\/em>",
             "heading_size": "h2"
           }
         },
         "text_mxBWgA": {
           "type": "text",
           "settings": {
-            "text": "discover our road bikes",
+            "text": "Discover our road bikes",
             "text_style": "body"
           }
         }
