@@ -1,1 +1,63 @@
-{"name":"t:sections.header.name","type":"header","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement-bar-0":{"type":"announcement","settings":{"text":"2024 NEW MODEL | Save up to €300 on Gravel Bikes | Free Shipping","link":"shopify:\/\/collections\/gravel-bikes"}},"announcement_TgxU3m":{"type":"announcement","settings":{"text":"See our reviews on Trustpilot(100+) 4.5*","link":"https:\/\/uk.trustpilot.com\/review\/rinosbike.eu"}}},"block_order":["announcement-bar-0","announcement_TgxU3m"],"settings":{"color_scheme":"background-1","show_line_separator":true,"show_social":false,"auto_rotate":true,"change_slides_speed":3,"enable_country_selector":true,"enable_language_selector":true}},"header":{"type":"header","custom_css":[],"settings":{"logo_position":"middle-left","menu":"categories","menu_type_desktop":"dropdown","sticky_header_type":"on-scroll-up","show_line_separator":false,"color_scheme":"background-1","menu_color_scheme":"background-1","enable_country_selector":false,"enable_language_selector":false,"mobile_logo_position":"center","margin_bottom":0,"padding_top":4,"padding_bottom":4}}},"order":["announcement-bar","header"]}
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "2024 NEW MODEL | Save up to €300 on Gravel Bikes | Free Shipping",
+            "link": "shopify:\/\/collections\/gravel-bikes"
+          }
+        },
+        "announcement_TgxU3m": {
+          "type": "announcement",
+          "settings": {
+            "text": "See our reviews on Trustpilot(100+) 4.5*",
+            "link": "https:\/\/uk.trustpilot.com\/review\/rinosbike.eu"
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0",
+        "announcement_TgxU3m"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "enable_country_selector": true,
+        "enable_language_selector": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "logo_position": "middle-left",
+        "menu": "categories",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": false,
+        "color_scheme": "background-1",
+        "menu_color_scheme": "background-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}
