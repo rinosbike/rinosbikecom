@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "conversionbanner_2_D9aHDL": {
@@ -12,13 +21,27 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "title": { "type": "title", "settings": {} },
-        "price": { "type": "price", "settings": {} },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
-          "settings": { "picker_type": "button" }
+          "settings": {
+            "picker_type": "button"
+          }
         },
-        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -63,14 +86,23 @@
         "material_variabel_text": "{{ product.metafields.custom.material_highlight.value }}"
       }
     },
+    "klarna_banner_1_g363fF": {
+      "type": "klarna-banner-1",
+      "settings": {
+      }
+    },
     "product_description_sec1_Nn4UXc": {
       "type": "product-description-sec1",
-      "settings": {}
+      "settings": {
+      }
     },
     "review_section_small_fKwkg6": {
       "type": "review-section-small",
-      "custom_css": [".review-section {margin-bottom: 25px;}"],
-      "settings": {}
+      "custom_css": [
+        ".review-section {margin-bottom: 25px;}"
+      ],
+      "settings": {
+      }
     },
     "rich_text_7we9KY": {
       "type": "rich-text",
@@ -79,7 +111,7 @@
           "type": "button",
           "settings": {
             "button_label": "see more",
-            "button_link": "shopify://pages/what-our-customers-say",
+            "button_link": "shopify:\/\/pages\/what-our-customers-say",
             "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -87,8 +119,12 @@
           }
         }
       },
-      "block_order": ["button_fWXxPJ"],
-      "custom_css": [".rich-text {border: none;}"],
+      "block_order": [
+        "button_fWXxPJ"
+      ],
+      "custom_css": [
+        ".rich-text {border: none;}"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -121,6 +157,7 @@
     "conversionbanner_2_D9aHDL",
     "main",
     "bike_parts_highlight_1_6XGKyM",
+    "klarna_banner_1_g363fF",
     "product_description_sec1_Nn4UXc",
     "review_section_small_fKwkg6",
     "rich_text_7we9KY",
