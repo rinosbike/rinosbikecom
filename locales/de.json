@@ -822,5 +822,26 @@
       "fork": "FOX 32 Rhythm Remote",
       "travel": "100mm"
     }
+  },
+  "klarna": {
+    "shop_now_pay_with_klarna": "Shoppe jetzt. Bezahle mit Klarna.",
+    "learn_more": "Mehr erfahren",
+    "flexible_payment_methods": "Flexible Zahlungsmethoden",
+    "pay_in_up_to_30_days": "Bezahle in bis zu 30 Tagen",
+    "receive_order_then_pay": "Erst Bestellung erhalten, dann bezahlen.",
+    "installments": "Ratenzahlung",
+    "split_into_smaller_payments": "Teile den Betrag in kleinere Zahlungen auf.",
+    "pay_now": "Sofort bezahlen",
+    "pay_full_amount_today": "Bezahle heute den Gesamtbetrag mit Karte.",
+    "payment_availability": "Die Verfügbarkeit der Zahlungsmethoden kann je nach Shop und Betrag unterschiedlich ausfallen. Vorbehaltlich Kreditwürdigkeitsprüfung. Es können zusätzliche Zahlungsbedingungen gelten.",
+    "payment_conditions": "Zahlungsbedingungen",
+    "buyer_protection": "Klarna's Käuferschutz schließt bestimmte Zahlungsmethoden und Käufe aus, z.B. Reisen, Veranstaltungstickets oder Geschenkkarten.",
+    "how_it_works": "So funktioniert's:",
+    "choose_klarna_at_checkout": "Wähle Klarna am Checkout",
+    "choose_payment_plan": "Entscheide dich für einen Zahlungsplan",
+    "different_plans_based_on_amount": "Je nach Kaufbetrag und Kreditwürdigkeit werden dir möglicherweise andere Zahlungspläne angezeigt.",
+    "complete_order": "Schließe deine Bestellung ab",
+    "automatic_deduction": "Wir buchen die Ratenzahlungen je nach deinem Zahlungsplan automatisch ab.",
+    "close": "Schließen"
   }
 }

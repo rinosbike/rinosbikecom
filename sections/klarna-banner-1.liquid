@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      .klarna-sec {
+        max-width: 600px;
+        margin: auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+
+      .klarna-img {
+        max-width: 100px;
+      }
+
+      .div-klarna-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 20px;
+        background-color: rgb(237, 234, 230);
+        max-width: 600px;
+        border-radius: 15px;
+      }
+
+      .p-klarna-1 {
+        font-size: 17px;
+        line-height: 115%;
+        font-weight: 500;
+        color: black;
+      }
+
+      .link-klarna {
+        color: black;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+
+      .popup {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.212);
+      }
+
+      .popup-content {
+        background-color: #f4f4f4;
+        padding: 20px;
+        margin: auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        width: 90%;
+        max-width: 468px;
+        position: relative;
+        border-radius: 10px;
+      }
+
+      .payment-options {
+        display: grid;
+        grid-template-areas:
+          'item1 item1'
+          'item2 item3';
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .option {
+        flex: 1;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: white;
+      }
+
+      .item1 {
+        grid-area: item1;
+      }
+
+      .item2 {
+        grid-area: item2;
+      }
+
+      .item3 {
+        grid-area: item3;
+      }
+
+      .header-logos {
+        display: flex;
+        justify-content: center; /* Center children */
+        align-items: center; /* Align children vertically */
+        position: relative; /* Allows absolute positioning relative to this container */
+      }
+
+      .klarna-logo img,
+      .closeBtn img {
+        height: 50px; /* Set the height for both images */
+      }
+
+      .closeBtn {
+        position: absolute;
+        right: 0; /* Align the close button to the right */
+        top: 50%; /* Align the top of the button to the center vertically */
+        transform: translateY(-50%); /* Offset the button by half its height to truly center it */
+      }
+
+      .closeBtn-2 {
+        padding: 15px 20px;
+        font-size: 17px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: 50ms ease-in-out;
+      }
+
+      .closeBtn-2:active {
+        scale: 0.9;
+      }
+
+      .closeBtn:hover,
+      .closeBtn:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .popup-h2 {
+        font-size: 25px;
+        font-weight: 600;
+      }
+
+      .popup-icon-1 {
+        height: 40px;
+      }
+
+      .option-h3 {
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 5px;
+      }
+
+      .option-p {
+        font-size: 13px;
+        margin-top: -20px;
+      }
+
+      .Zahlungsbedingungen-p {
+        font-size: 11px;
+        color: rgb(81, 81, 81);
+      }
+
+      .so-funkt-h3 {
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 35px;
+      }
+
+      .steps {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+      }
+
+      .step {
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        padding-left: 20px; /* Adjust to ensure enough space for dot */
+      }
+
+      .step .dot {
+        position: absolute;
+        left: 0;
+        width: 12px;
+        height: 12px;
+        background-color: black;
+        border-radius: 50%;
+      }
+
+      .dot {
+        margin-top: 7.5px;
+        font-size: 0px;
+      }
+
+      .step p {
+        margin: 0;
+      }
+
+      .span-title-1 {
+        font-size: 17px;
+      }
+
+      .span-p-1 {
+        font-size: 11px;
+      }
+
+      .line-1 {
+        width: 1.5px;
+        height: 25px;
+        background-color: black;
+        margin-left: 5px;
+        font-size: 0px;
+      }
+
+      .line-2 {
+        width: 1.5px;
+        height: 62px;
+        background-color: black;
+        margin-left: 5px;
+        margin-top: -55px;
+        font-size: 0px;
+      }
+
+      @media (max-width: 400px) {
+        .line-1 {
+          margin-top: -5px;
+          height: 30px;
+        }
+
+        .line-2 {
+          height: 145px;
+          margin-top: -120px;
+        }
+
+        .option-h3 {
+          font-size: 17px;
+        }
+
+        .klarna-sec {
+          max-width: 600px;
+          margin: 10px;
+        }
+
+        .div-klarna-1 {
+          max-width: 400px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="klarna-sec">
+      <div class="div-klarna-1">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/Marketing_Badge_With_Clear_Space.png?v=1719052109"
+          class="klarna-img"
+        >
+        <p class="p-klarna-1">
+          {{ 'klarna.shop_now_pay_with_klarna' | t }}
+          <a href="#" id="openPopupBtn" class="link-klarna">{{ 'klarna.learn_more' | t }}</a>
+        </p>
+      </div>
+    </div>
+
+    <div id="klarnaPopup" class="popup">
+      <div class="popup-content">
+        <div class="header-logos">
+          <div class="klarna-logo">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/Wordmark_Transparent_And_Pink.png?v=1719066820"
+              alt="Klarna Logo"
+            >
+          </div>
+          <div class="closeBtn">
+            <img src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/1099163-200.png?v=1719067239" alt="Close">
+          </div>
+        </div>
+        <h2 class="popup-h2">{{ 'klarna.flexible_payment_methods' | t }}</h2>
+        <div class="payment-options">
+          <div class="option item1">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/calendar_10x_53ed82b1-348c-4855-935f-2d2bba4c6979.png?v=1719069487"
+              alt="calendar"
+              class="popup-icon-1"
+            >
+            <h3 class="option-h3">{{ 'klarna.pay_in_up_to_30_days' | t }}</h3>
+            <p class="option-p">{{ 'klarna.receive_order_then_pay' | t }}</p>
+          </div>
+          <div class="option item2">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/hourglass_10x_d13c5049-3766-46d8-a526-9aa946c74231.png?v=1719070229"
+              alt="Ratenzahlung"
+              class="popup-icon-1"
+            >
+            <h3 class="option-h3">{{ 'klarna.installments' | t }}</h3>
+            <p class="option-p">{{ 'klarna.split_into_smaller_payments' | t }}</p>
+          </div>
+          <div class="option item3">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/bolt.fill_10x_4bb78ea6-084d-44ae-8bb7-dc2e9742d671.png?v=1719070223"
+              alt="now"
+              class="popup-icon-1"
+            >
+            <h3 class="option-h3">{{ 'klarna.pay_now' | t }}</h3>
+            <p class="option-p">{{ 'klarna.pay_full_amount_today' | t }}</p>
+          </div>
+        </div>
+        <p class="Zahlungsbedingungen-p">
+          {{ 'klarna.payment_availability' | t }}
+          <a href="https://www.klarna.com/de/agb/" class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>.
+          {{ 'klarna.buyer_protection' | t }}
+          <a href="https://www.klarna.com/de/agb/" class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>.
+        </p>
+        <h3 class="so-funkt-h3">{{ 'klarna.how_it_works' | t }}</h3>
+        <div class="steps">
+          <div class="step">
+            <div class="dot">+</div>
+            <p>
+              <span class="span-title-1">{{ 'klarna.choose_klarna_at_checkout' | t }}</span>
+            </p>
+          </div>
+          <div class="line-1">+</div>
+          <div class="step">
+            <div class="dot">+</div>
+            <p>
+              <span class="span-title-1">{{ 'klarna.choose_payment_plan' | t }}</span><br>
+              <span class="span-p-1">{{ 'klarna.different_plans_based_on_amount' | t }}</span>
+            </p>
+          </div>
+          <div class="line-2">+</div>
+          <div class="step">
+            <div class="dot">+</div>
+            <p>
+              <span class="span-title-1">{{ 'klarna.complete_order' | t }}</span><br>
+              <span class="span-p-1">{{ 'klarna.automatic_deduction' | t }}</span>
+            </p>
+          </div>
+        </div>
+        <div class="closeBtn-2">{{ 'klarna.close' | t }}</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const openPopupBtn = document.getElementById('openPopupBtn');
+      const popup = document.getElementById('klarnaPopup');
+      const closeBtns = document.querySelectorAll('.closeBtn, .closeBtn-2');
+
+      openPopupBtn.addEventListener('click', () => {
+        popup.style.display = 'block';
+      });
+
+      closeBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          popup.style.display = 'none';
+        });
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target == popup) {
+          popup.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</html>
+
+{% schema %}
+{
+  "name": "Klarna Banner 1",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Klarna Banner 1",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
