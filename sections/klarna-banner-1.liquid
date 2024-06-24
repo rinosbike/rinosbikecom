@@ -1,3 +1,5 @@
+{% if customer.language == 'Bulgarian' and customer.location == 'Bulgaria' %}
+  {% else %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -312,9 +314,9 @@
         </div>
         <p class="Zahlungsbedingungen-p">
           {{ 'klarna.payment_availability' | t }}
-          <a href="https://www.klarna.com/de/agb/" class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>.
+          <a href="{{ 'klarna.agb_link' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>.
           {{ 'klarna.buyer_protection' | t }}
-          <a href="https://www.klarna.com/de/agb/" class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>.
+          <a href="{{ 'klarna.agb_link' | t }}" class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>.
         </p>
         <h3 class="so-funkt-h3">{{ 'klarna.how_it_works' | t }}</h3>
         <div class="steps">
@@ -369,7 +371,7 @@
     });
   </script>
 </html>
-
+{% endif %}
 {% schema %}
 {
   "name": "Klarna Banner 1",

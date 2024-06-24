@@ -849,6 +849,7 @@
     "pay_full_amount_today": "Pay the full amount today with a card.",
     "payment_availability": "The availability of payment methods may vary by shop and amount. Subject to credit check. Additional payment conditions may apply.",
     "payment_conditions": "Payment conditions",
+    "agb_link": "https://www.klarna.com/uk/terms-and-conditions/",
     "buyer_protection": "Klarna's buyer protection excludes certain payment methods and purchases, e.g. travel, event tickets, or gift cards.",
     "how_it_works": "How it works:",
     "choose_klarna_at_checkout": "Choose Klarna at checkout",
