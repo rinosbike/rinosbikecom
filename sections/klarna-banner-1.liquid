@@ -320,8 +320,8 @@
         </div>
         <p class="Zahlungsbedingungen-p">
           {{ 'klarna.payment_availability' | t }}
-          {% assign customer_location = 'default' %} 
-          {% case customer_location %}
+          {% assign customer.location = 'default' %} 
+          {% case customer.location %}
             {% comment %}Determine the customer's location and set customer_location accordingly.{% endcomment %}
              {% when 'Germany' %}
               <a href="{{ 'klarna.agb_link_de' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>
@@ -332,8 +332,8 @@
         {% endcase %}.
           {{ 'klarna.buyer_protection' | t }}
           {{ 'klarna.payment_availability' | t }}
-          {% assign customer_location = 'default' %} 
-          {% case customer_location %}
+          {% assign customer.location = 'default' %} 
+          {% case customer.location %}
             {% comment %}Determine the customer's location and set customer_location accordingly.{% endcomment %}
              {% when 'Germany' %}
               <a href="{{ 'klarna.agb_link_de' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>
