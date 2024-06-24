@@ -1,11 +1,11 @@
-{% comment %}
-Check if the customer's language and location are set to Bulgarian.
-If so, do not render the section.
-{% endcomment %}
-{% if customer.location == 'Bulgaria' or localization.language == 'Bulgarian'% or store.language == 'Bulgarian' %}
-  {% comment %}Do not render anything if the customer is from Bulgaria and uses Bulgarian.{% endcomment %}
-  {% else %}
-  {% comment %}Your section content goes here if the customer is not from Bulgaria or does not use Bulgarian.{% endcomment %}
+{% assign language_is_bulgarian = false %}
+{% if request.path contains '/bg/' %}
+  {% assign language_is_bulgarian = true %}
+{% endif %}
+
+{% if customer.location == 'Bulgaria' or localization.language == 'Bulgarian' or language_is_bulgarian %}
+  {% comment %}Do not render anything if the customer is from Bulgaria, uses Bulgarian, or the store's language inferred from the URL is Bulgarian.{% endcomment %}
+{% else %}
 <!doctype html>
 <html lang="en">
   <head>
