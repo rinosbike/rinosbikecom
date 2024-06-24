@@ -2,7 +2,7 @@
 Check if the customer's language and location are set to Bulgarian.
 If so, do not render the section.
 {% endcomment %}
-{% if customer.location == 'Bulgaria' %}
+{% if customer.location == 'Bulgaria' or localization.language == 'bulgarian'%}
   {% comment %}Do not render anything if the customer is from Bulgaria and uses Bulgarian.{% endcomment %}
   {% else %}
   {% comment %}Your section content goes here if the customer is not from Bulgaria or does not use Bulgarian.{% endcomment %}
