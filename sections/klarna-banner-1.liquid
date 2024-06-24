@@ -1,11 +1,11 @@
-{% assign language_is_bulgarian = false %}
-{% if request.path contains '/bg/' %}
-  {% assign language_is_bulgarian = true %}
-{% endif %}
-
-{% if customer.location == 'Bulgaria' or localization.language == 'Bulgarian' or language_is_bulgarian %}
-  {% comment %}Do not render anything if the customer is from Bulgaria, uses Bulgarian, or the store's language inferred from the URL is Bulgarian.{% endcomment %}
-{% else %}
+{% comment %}
+Check if the customer's language and location are set to Bulgarian.
+If so, do not render the section.
+{% endcomment %}
+{% if customer.location == 'Bulgaria' or localization.language == 'Bulgarian'% or store.language == 'Bulgarian' %}
+  {% comment %}Do not render anything if the customer is from Bulgaria and uses Bulgarian.{% endcomment %}
+  {% else %}
+  {% comment %}Your section content goes here if the customer is not from Bulgaria or does not use Bulgarian.{% endcomment %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -320,28 +320,9 @@
         </div>
         <p class="Zahlungsbedingungen-p">
           {{ 'klarna.payment_availability' | t }}
-          {% assign customer.location = 'default' %} 
-          {% case customer.location %}
-            {% comment %}Determine the customer's location and set customer_location accordingly.{% endcomment %}
-             {% when 'Germany' %}
-              <a href="{{ 'klarna.agb_link_de' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>
-              {% when 'Poland' %}
-                <a href="{{ 'klarna.agb_link_pl' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>
-            {% else %}
-            <a href="{{ 'klarna.agb_link_default' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>
-        {% endcase %}.
+          <a href="{{ 'klarna.agb_link' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>.
           {{ 'klarna.buyer_protection' | t }}
-          {{ 'klarna.payment_availability' | t }}
-          {% assign customer.location = 'default' %} 
-          {% case customer.location %}
-            {% comment %}Determine the customer's location and set customer_location accordingly.{% endcomment %}
-             {% when 'Germany' %}
-              <a href="{{ 'klarna.agb_link_de' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>
-              {% when 'Poland' %}
-                <a href="{{ 'klarna.agb_link_pl' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>
-            {% else %}
-            <a href="{{ 'klarna.agb_link_default' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>
-        {% endcase %}.
+          <a href="{{ 'klarna.agb_link' | t }}" class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>.
         </p>
         <h3 class="so-funkt-h3">{{ 'klarna.how_it_works' | t }}</h3>
         <div class="steps">
