@@ -320,9 +320,28 @@
         </div>
         <p class="Zahlungsbedingungen-p">
           {{ 'klarna.payment_availability' | t }}
-          <a href="{{ 'klarna.agb_link' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>.
+          {% assign customer_location = 'default' %} 
+          {% case customer_location %}
+            {% comment %}Determine the customer's location and set customer_location accordingly.{% endcomment %}
+             {% when 'Germany' %}
+              <a href="{{ 'klarna.agb_link_de' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>
+              {% when 'Poland' %}
+                <a href="{{ 'klarna.agb_link_pl' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>
+            {% else %}
+            <a href="{{ 'klarna.agb_link_default' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>
+        {% endcase %}.
           {{ 'klarna.buyer_protection' | t }}
-          <a href="{{ 'klarna.agb_link' | t }}" class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>.
+          {{ 'klarna.payment_availability' | t }}
+          {% assign customer_location = 'default' %} 
+          {% case customer_location %}
+            {% comment %}Determine the customer's location and set customer_location accordingly.{% endcomment %}
+             {% when 'Germany' %}
+              <a href="{{ 'klarna.agb_link_de' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>
+              {% when 'Poland' %}
+                <a href="{{ 'klarna.agb_link_pl' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>
+            {% else %}
+            <a href="{{ 'klarna.agb_link_default' | t }}"  class="link-klarna">{{ 'klarna.payment_conditions' | t }}</a>
+        {% endcase %}.
         </p>
         <h3 class="so-funkt-h3">{{ 'klarna.how_it_works' | t }}</h3>
         <div class="steps">
