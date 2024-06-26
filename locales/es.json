@@ -147,8 +147,8 @@
         "view_store_info": "Ver información de la tienda",
         "check_other_stores": "Verificar disponibilidad en otras tiendas",
         "pick_up_available": "Recogida disponible",
-        "pick_up_available_at_html": "Recogida disponible en <span class=\"color-foreground\">{{ location_name }}<\/span>",
-        "pick_up_unavailable_at_html": "Re no disponible actualmente en <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "pick_up_available_at_html": "Retiro disponible en <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Retiro no disponible actualmente en <span class=\"color-foreground\">{{ location_name }}<\/span>",
         "unavailable": "No se pudo cargar la disponibilidad de retiro",
         "refresh": "Actualizar"
       },
@@ -534,135 +534,135 @@
     "customer_say": "Lo que dicen nuestros clientes",
     "verified_purchase": "verificado",
     "review4": {
-      "title": "Buena compra",
+      "title": "Good Shopping",
       "name": "Thierry A.",
-      "text": "Se ve genial, funciona genial, bien equipado y cómodo. Entrega rápida y excelente servicio.",
+      "text": "Looks great, runs great, well equipped and comfortable. Fast delivery and excellent service.",
       "date": "01.03.2024",
       "rating": "5"
     },
     "review5": {
-      "title": "Entrega rápida",
+      "title": "Fast Delivery",
       "name": "Tomas",
-      "text": "Guardias muy estables para la bicicleta. Ligero y cómodo, entrega rápida.",
+      "text": "Very stable guards for bike. Light and comfortable, fast delivery.",
       "date": "16.02.2024",
       "rating": "5"
     },
     "review6": {
-      "title": "Todo bien👍",
+      "title": "Everything good👍",
       "name": "Celine J",
-      "text": "Corte muy pobre, pero entrega rápida y buena calidad del material.",
+      "text": "Very poorly cut, but fast delivery and good material quality.",
       "date": "14.01.2024",
       "rating": "3.5"
     },
     "review7": {
-      "title": "Seguro en la carretera",
+      "title": "Safe on the Road",
       "name": "Julien Delorme",
-      "text": "Ligero. Buena fabricación. Ver con el tiempo y muy buen procesamiento.",
+      "text": "Light. Good manufacturing. See in time and very good processing.",
       "date": "13.01.2024",
       "rating": "5"
     },
     "review8": {
-      "title": "Ayuda diaria",
+      "title": "Daily Help",
       "name": "Morand Benoit",
-      "text": "Producto muy bien hecho y muy práctico. ¡Me ayuda a diario!",
+      "text": "Very well made and very practical product. Helps me daily!",
       "date": "26.12.2023",
       "rating": "5"
     },
     "review9": {
-      "title": "¡Se ve bien!",
+      "title": "Looks Good!",
       "name": "Daniel Rossi",
-      "text": "Producto según la descripción. Aún no lo he usado, pero se ve bien.",
+      "text": "Product according to the description. Not used yet, but looks good.",
       "date": "13.12.2023",
       "rating": "4"
     },
     "review10": {
-      "title": "Una elección sólida",
+      "title": "A Solid Choice",
       "name": "Peter Cauwels",
-      "text": "Muy buena compra, confiable y potente.",
+      "text": "Very good purchase, reliable and powerful.",
       "date": "07.12.2023",
       "rating": "5"
     },
     "review11": {
-      "title": "No más lágrimas.",
+      "title": "No More Tears.",
       "name": "VISOIU IONUT RAZVAN",
-      "text": "En serio. El aire frío hacía que mis ojos lagrimearan, pero ya no con este producto.",
+      "text": "Really. The cold air made my eyes water, but not anymore with this product.",
       "date": "17.11.2023",
       "rating": "5"
     },
     "review12": {
-      "title": "Un poco caro",
+      "title": "A Bit Pricey",
       "name": "Antxon",
-      "text": "Un poco caro",
+      "text": "A little expensive",
       "date": "31.10.2023",
       "rating": "3"
     },
     "review13": {
-      "title": "Robusto y resistente al agua",
+      "title": "Robust and Water Resistant",
       "name": "Hector",
-      "text": "Buen chasis metálico, ilumina bien, resistente al agua. Buen producto",
+      "text": "Good metallic chassis, it illuminates well, water resistant. Good product",
       "date": "22.10.2023",
       "rating": "5"
     },
     "review14": {
-      "title": "Producto de calidad bien hecho",
+      "title": "Well-Made Quality Product",
       "name": "Gregoire Marti",
-      "text": "Capucha de buena calidad, costuras bien hechas",
+      "text": "Good quality hood, well-made seams",
       "date": "16.10.2023",
       "rating": "5"
     },
     "review15": {
-      "title": "Cumple con las expectativas",
+      "title": "Meets Expectations",
       "name": "Quentin Borg",
-      "text": "Producto correspondiente a la necesidad.",
+      "text": "Product corresponding to the need.",
       "date": "04.10.2023",
       "rating": "5"
     },
     "review16": {
-      "title": "Entrega rápida, alta satisfacción",
+      "title": "Fast Delivery, High Satisfaction",
       "name": "Pierre BERTA",
-      "text": "Excelente bicicleta y entrega muy rápida. He hecho algunos ajustes y tomé algunas partes de mi vieja bicicleta Dahon Mu Uno: el sillín, los guardabarros y los pedales.",
+      "text": "Excellent bike and very fast delivery. I have made a few adjustments and took over some parts of my old Dahon Mu Uno bike: the saddle, the mudguards and the pedals.",
       "date": "27.09.2023",
       "rating": "5"
     },
     "review17": {
-      "title": "Productos de máxima calidad",
+      "title": "Top Quality Products",
       "name": "hugues meth",
-      "text": "¡Genial! Excelentes productos 🌟",
+      "text": "Top ! Great products 🌟",
       "date": "18.09.2023",
       "rating": "5"
     },
     "review18": {
-      "title": "Descripción precisa",
+      "title": "Accurate Description",
       "name": "bahran el fakh",
-      "text": "Conforme a la descripción, atención sin embargo, el indicador de una de las ventosas permanece marcado en blanco aunque ya no haya aire en la ventosa",
+      "text": "Conforme à la description, attention néanmoins, l'indicateur d'une des ventouse reste marqué en blanc alors qu'il n'y a plus d'air dans la ventouse",
       "date": "25.08.2023",
       "rating": "4"
     },
     "review19": {
-      "title": "Buen producto con mejoras menores necesarias",
+      "title": "Good Product with Minor Improvements Needed",
       "name": "Jose V.",
-      "text": "En mi opinión, aunque solo lo he usado un par de veces, creo que es un buen producto. Echo de menos una lista de vehículos compatibles. También sería bueno una bolsa de transporte.",
+      "text": "In my opinion, although I have only used it a couple of times I think it is a good product. I miss a list of compatible vehicles. A transport bag would also be good.",
       "date": "08.08.2023",
       "rating": "4"
     },
     "review20": {
-      "title": "Bien diseñado y práctico",
+      "title": "Well-Designed and Practical",
       "name": "JEAN-PASCAL",
-      "text": "La calidad parece estar ahí, muy práctico por su modularidad, a ver en uso. Solo le di 4 estrellas debido a la fijación por Velcro, para evaluar una vez cargado. Recomiendo",
+      "text": "The quality seems to be there, very practical by its modularity, to be seen for use. I only put 4 stars due to the fixation by Velcro, to assess once loaded. I recommend",
       "date": "15.07.2023",
       "rating": "4"
     },
     "review21": {
-      "title": "Comentarios excelentes, entrega rápida",
+      "title": "Excellent Feedback, Fast Delivery",
       "name": "Troels Kristens",
-      "text": "Realmente bueno por el precio y entrega rápida.",
+      "text": "Really good for the price and fast delivery.",
       "date": "28.06.2023",
       "rating": "5"
     },
     "review22": {
-      "title": "Hermoso diseño y conveniente",
+      "title": "Beautifully Designed and Convenient",
       "name": "Rob",
-      "text": "Buena bicicleta a buen precio. Se siente sólida. Acorde con la entrega a domicilio. ¡Excelente!",
+      "text": "Good nice beautifully priced bike. Feels solid. Neatly in accordance with home delivery. Top!",
       "date": "23.06.2023",
       "rating": "5"
     }
