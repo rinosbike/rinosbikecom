@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "general": {
     "password_page": {
@@ -7,7 +16,7 @@
       "login_form_password_placeholder": "Tu contraseña",
       "login_form_error": "Contraseña incorrecta",
       "login_form_submit": "Ingresar",
-      "admin_link_html": "¿Eres el propietario de la tienda? <a href=\"/admin\" class=\"link underlined-link\">Inicia sesión aquí</a>",
+      "admin_link_html": "¿Eres el propietario de la tienda? <a href=\"\/admin\" class=\"link underlined-link\">Inicia sesión aquí<\/a>",
       "powered_by_shopify_html": "Esta tienda contará con tecnología Shopify {{ shopify }}"
     },
     "social": {
@@ -118,7 +127,7 @@
         "minimum_of": "Mínimo de {{ quantity }}",
         "maximum_of": "Máximo de {{ quantity }}",
         "multiples_of": "Incrementos de {{ quantity }}",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> en el carrito",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}<\/span> en el carrito",
         "note": "Ver reglas de cantidad"
       },
       "price": {
@@ -138,8 +147,8 @@
         "view_store_info": "Ver información de la tienda",
         "check_other_stores": "Verificar disponibilidad en otras tiendas",
         "pick_up_available": "Retiro disponible",
-        "pick_up_available_at_html": "Retiro disponible en <span class=\"color-foreground\">{{ location_name }}</span>",
-        "pick_up_unavailable_at_html": "Retiro no disponible actualmente en <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_available_at_html": "Retiro disponible en <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Retiro no disponible actualmente en <span class=\"color-foreground\">{{ location_name }}<\/span>",
         "unavailable": "No se pudo cargar la disponibilidad de retiro",
         "refresh": "Actualizar"
       },
@@ -155,7 +164,7 @@
       },
       "view_full_details": "Ver todos los detalles",
       "include_taxes": "Impuesto incluido.",
-      "shipping_policy_html": "Los <a href=\"{{ link }}\">gastos de envío</a> se calculan en la pantalla de pago.",
+      "shipping_policy_html": "Los <a href=\"{{ link }}\">gastos de envío<\/a> se calculan en la pantalla de pago.",
       "choose_options": "Seleccionar opciones",
       "choose_product_options": "Elegir opciones para {{ product_name }}",
       "value_unavailable": "{{ option_value }}: no disponible",
@@ -288,9 +297,9 @@
       "empty": "Tu carrito esta vacío",
       "cart_error": "Hubo un error al actualizar tu carrito de compra. Inténtalo de nuevo.",
       "cart_quantity_error_html": "Solo puedes agregar {{ quantity }} de este artículo a tu carrito.",
-      "taxes_and_shipping_policy_at_checkout_html": "Impuestos, descuentos y <a href=\"{{ link }}\">envío</a> calculados en la pantalla de pago",
+      "taxes_and_shipping_policy_at_checkout_html": "Impuestos, descuentos y <a href=\"{{ link }}\">envío<\/a> calculados en la pantalla de pago",
       "taxes_included_but_shipping_at_checkout": "Impuesto incluido, envío y descuentos calculados en la pantalla de pago",
-      "taxes_included_and_shipping_policy_html": "Impuesto incluido. <a href=\"{{ link }}\">Envío</a> y descuentos calculados en la pantalla de pago.",
+      "taxes_included_and_shipping_policy_html": "Impuesto incluido. <a href=\"{{ link }}\">Envío<\/a> y descuentos calculados en la pantalla de pago.",
       "taxes_and_shipping_at_checkout": "Impuestos, descuentos y envío calculados en la pantalla de pago",
       "headings": {
         "product": "Producto",
@@ -302,7 +311,7 @@
       "update": "Actualizar",
       "login": {
         "title": "¿Tienes una cuenta?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Inicia sesión</a> para finalizar tus compras con mayor rapidez."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Inicia sesión<\/a> para finalizar tus compras con mayor rapidez."
       },
       "estimated_total": "Total estimado",
       "new_estimated_total": "Nuevo total estimado"
@@ -325,7 +334,7 @@
     "collection_template": {
       "title": "Colección",
       "empty": "No se encontró ningún producto",
-      "use_fewer_filters_html": "Usa menos filtros o <a class=\"{{ class }}\" href=\"{{ link }}\">elimínalos todos</a>"
+      "use_fewer_filters_html": "Usa menos filtros o <a class=\"{{ class }}\" href=\"{{ link }}\">elimínalos todos<\/a>"
     },
     "video": {
       "load_video": "Cargar video: {{ description }}"
@@ -352,7 +361,7 @@
     "quick_order_list": {
       "product_total": "Subtotal de productos",
       "view_cart": "Ver carrito",
-      "each": "{{ money }}/unidad",
+      "each": "{{ money }}\/unidad",
       "product": "Producto",
       "variant": "Variante",
       "variant_total": "Total de variantes",
@@ -374,10 +383,10 @@
     }
   },
   "localization": {
-    "country_label": "País/región",
+    "country_label": "País\/región",
     "language_label": "Idioma",
     "update_language": "Actualizar idioma",
-    "update_country": "Actualizar país/región"
+    "update_country": "Actualizar país\/región"
   },
   "customer": {
     "account": {
@@ -406,7 +415,7 @@
       "address1": "Dirección 1",
       "address2": "Dirección 2",
       "city": "Ciudad",
-      "country": "País/región",
+      "country": "País\/región",
       "province": "Provincia",
       "zip": "Código postal",
       "phone": "Teléfono",
@@ -416,7 +425,7 @@
       "cancel": "Cancelar",
       "edit": "Editar",
       "delete": "Eliminar",
-      "delete_confirm": "¿Está seguro/a de que deseas eliminar esta dirección?"
+      "delete_confirm": "¿Está seguro\/a de que deseas eliminar esta dirección?"
     },
     "log_in": "Iniciar sesión",
     "log_out": "Cerrar sesión",
@@ -520,5 +529,341 @@
       "expanded": "Formulario del destinatario de la tarjeta de regalo expandido",
       "collapsed": "Formulario del destinatario de tarjeta de regalo contraído"
     }
+  },
+  "reviews": {
+    "customer_say": "What our customers say",
+    "verified_purchase": "verified",
+    "review4": {
+      "title": "Good Shopping",
+      "name": "Thierry A.",
+      "text": "Looks great, runs great, well equipped and comfortable. Fast delivery and excellent service.",
+      "date": "01.03.2024",
+      "rating": "5"
+    },
+    "review5": {
+      "title": "Fast Delivery",
+      "name": "Tomas",
+      "text": "Very stable guards for bike. Light and comfortable, fast delivery.",
+      "date": "16.02.2024",
+      "rating": "5"
+    },
+    "review6": {
+      "title": "Everything good👍",
+      "name": "Celine J",
+      "text": "Very poorly cut, but fast delivery and good material quality.",
+      "date": "14.01.2024",
+      "rating": "3.5"
+    },
+    "review7": {
+      "title": "Safe on the Road",
+      "name": "Julien Delorme",
+      "text": "Light. Good manufacturing. See in time and very good processing.",
+      "date": "13.01.2024",
+      "rating": "5"
+    },
+    "review8": {
+      "title": "Daily Help",
+      "name": "Morand Benoit",
+      "text": "Very well made and very practical product. Helps me daily!",
+      "date": "26.12.2023",
+      "rating": "5"
+    },
+    "review9": {
+      "title": "Looks Good!",
+      "name": "Daniel Rossi",
+      "text": "Product according to the description. Not used yet, but looks good.",
+      "date": "13.12.2023",
+      "rating": "4"
+    },
+    "review10": {
+      "title": "A Solid Choice",
+      "name": "Peter Cauwels",
+      "text": "Very good purchase, reliable and powerful.",
+      "date": "07.12.2023",
+      "rating": "5"
+    },
+    "review11": {
+      "title": "No More Tears.",
+      "name": "VISOIU IONUT RAZVAN",
+      "text": "Really. The cold air made my eyes water, but not anymore with this product.",
+      "date": "17.11.2023",
+      "rating": "5"
+    },
+    "review12": {
+      "title": "A Bit Pricey",
+      "name": "Antxon",
+      "text": "A little expensive",
+      "date": "31.10.2023",
+      "rating": "3"
+    },
+    "review13": {
+      "title": "Robust and Water Resistant",
+      "name": "Hector",
+      "text": "Good metallic chassis, it illuminates well, water resistant. Good product",
+      "date": "22.10.2023",
+      "rating": "5"
+    },
+    "review14": {
+      "title": "Well-Made Quality Product",
+      "name": "Gregoire Marti",
+      "text": "Good quality hood, well-made seams",
+      "date": "16.10.2023",
+      "rating": "5"
+    },
+    "review15": {
+      "title": "Meets Expectations",
+      "name": "Quentin Borg",
+      "text": "Product corresponding to the need.",
+      "date": "04.10.2023",
+      "rating": "5"
+    },
+    "review16": {
+      "title": "Fast Delivery, High Satisfaction",
+      "name": "Pierre BERTA",
+      "text": "Excellent bike and very fast delivery. I have made a few adjustments and took over some parts of my old Dahon Mu Uno bike: the saddle, the mudguards and the pedals.",
+      "date": "27.09.2023",
+      "rating": "5"
+    },
+    "review17": {
+      "title": "Top Quality Products",
+      "name": "hugues meth",
+      "text": "Top ! Great products 🌟",
+      "date": "18.09.2023",
+      "rating": "5"
+    },
+    "review18": {
+      "title": "Accurate Description",
+      "name": "bahran el fakh",
+      "text": "Conforme à la description, attention néanmoins, l'indicateur d'une des ventouse reste marqué en blanc alors qu'il n'y a plus d'air dans la ventouse",
+      "date": "25.08.2023",
+      "rating": "4"
+    },
+    "review19": {
+      "title": "Good Product with Minor Improvements Needed",
+      "name": "Jose V.",
+      "text": "In my opinion, although I have only used it a couple of times I think it is a good product. I miss a list of compatible vehicles. A transport bag would also be good.",
+      "date": "08.08.2023",
+      "rating": "4"
+    },
+    "review20": {
+      "title": "Well-Designed and Practical",
+      "name": "JEAN-PASCAL",
+      "text": "The quality seems to be there, very practical by its modularity, to be seen for use. I only put 4 stars due to the fixation by Velcro, to assess once loaded. I recommend",
+      "date": "15.07.2023",
+      "rating": "4"
+    },
+    "review21": {
+      "title": "Excellent Feedback, Fast Delivery",
+      "name": "Troels Kristens",
+      "text": "Really good for the price and fast delivery.",
+      "date": "28.06.2023",
+      "rating": "5"
+    },
+    "review22": {
+      "title": "Beautifully Designed and Convenient",
+      "name": "Rob",
+      "text": "Good nice beautifully priced bike. Feels solid. Neatly in accordance with home delivery. Top!",
+      "date": "23.06.2023",
+      "rating": "5"
+    }
+  },
+  "bikes": {
+    "title": {
+      "mtb": "MTB comparison",
+      "gravel": "Gravel bike comparison",
+      "road": "Road bike comparison"
+    },
+    "weight_label": "Weight",
+    "gear_label": "Gear",
+    "gears_label": "Gears",
+    "frame_label": "Frame",
+    "frameSize_label": "Frame Size",
+    "brakes_label": "Brakes",
+    "wheelSize_label": "Wheel Size",
+    "rims_label": "Rims",
+    "fork_label": "Fork",
+    "travel_label": "Travel",
+    "sandman1": {
+      "title": "Sandman 1",
+      "description": "Good and Affordable",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/IMG_0133.png?v=1714209511",
+      "weight": "9.8kg",
+      "gear": "Shimano SORA",
+      "gears": "18",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Mechanical",
+      "wheelSize": "28 inches",
+      "rims": "Aluminum"
+    },
+    "sandman3": {
+      "title": "Sandman 3",
+      "description": "The All-Rounder",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/IMG_0170.png?v=1714209510",
+      "weight": "9.8kg",
+      "gear": "Shimano 105",
+      "gears": "22",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Mechanical",
+      "wheelSize": "28 inches",
+      "rims": "Aluminum"
+    },
+    "sandman4": {
+      "title": "Sandman 4",
+      "description": "Our Bestseller",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/sandman4-6-changed.webp?v=1716034595",
+      "weight": "9.8kg",
+      "gear": "Shimano GRX 400",
+      "gears": "20",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Hydraulic",
+      "wheelSize": "28 inches",
+      "rims": "Aluminum"
+    },
+    "sandman5": {
+      "title": "Sandman 5",
+      "description": "Ultimate Performance",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/rinos-carbon-gravel-bike-sandman50-shimano-r8000-ultegra_2.webp?v=1691264716",
+      "weight": "8.3kg",
+      "gear": "Shimano Ultegra",
+      "gears": "22",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Mechanical",
+      "wheelSize": "28 inches",
+      "rims": "Carbon"
+    },
+    "sandman6": {
+      "title": "Sandman 6",
+      "description": "The Best of Its Kind",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/sandman4-6-changed.webp?v=1716034595",
+      "weight": "9.8kg",
+      "gear": "Shimano GRX 600",
+      "gears": "22",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Hydraulic",
+      "wheelSize": "28 inches",
+      "rims": "Aluminum"
+    },
+    "sandman7": {
+      "title": "Sandman 7",
+      "description": "Top of the Line",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0657\/8415\/2277\/files\/sandman4-6-changed.webp?v=1716034595",
+      "weight": "9.6kg",
+      "gear": "Shimano GRX 820",
+      "gears": "24",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Hydraulic",
+      "wheelSize": "28 inches",
+      "rims": "Aluminum"
+    },
+    "odin1": {
+      "title": "Odin 1",
+      "description": "Good and Affordable",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0720\/5794\/6377\/products\/1_00d58ab3-d3ab-4e73-a70c-5969e095121d.jpg?v=1705745069",
+      "weight": "9.8kg",
+      "gear": "Shimano SORA",
+      "gears": "18",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Mechanical",
+      "wheelSize": "28 inches",
+      "rims": "Aluminum"
+    },
+    "odin3": {
+      "title": "Odin 3",
+      "description": "The All-Rounder",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0720\/5794\/6377\/products\/IMG_5673-PhotoRoom.jpg?v=1705744957",
+      "weight": "9.8kg",
+      "gear": "Shimano 105",
+      "gears": "22",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Mechanical",
+      "wheelSize": "28 inches",
+      "rims": "Aluminum"
+    },
+    "odin4": {
+      "title": "odin 4",
+      "description": "our newcomer",
+      "image": "https:\/\/rinosbike.eu\/cdn\/shop\/files\/IMG-6896.jpg?v=1716727167&width=4096",
+      "weight": "9.2kg",
+      "gear": "Shimano 105",
+      "gears": "24",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Shimano 105 hydraulic",
+      "wheelSize": "28 inches",
+      "rims": "Aluminum"
+    },
+    "odin5": {
+      "title": "Odin 5",
+      "description": "Ultimate Performance",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0720\/5794\/6377\/products\/1_c416a5f9-949c-4751-897d-78d90ee65c85.jpg?v=1705745002",
+      "weight": "8.3kg",
+      "gear": "Shimano Ultegra",
+      "gears": "22",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Mechanical",
+      "wheelSize": "28 inches",
+      "rims": "Carbon"
+    },
+    "gaia2": {
+      "title": "Gaia 2",
+      "description": "Cost-effective",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0720\/5794\/6377\/files\/IMG_5265.png?v=1716717476",
+      "weight": "11.9kg",
+      "gear": "Shimano Deore",
+      "gears": "12",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Hydraulic",
+      "wheelSize": "29x2.25 inches",
+      "rims": "Aluminum",
+      "fork": "ROCKSHOX Recon RL Remote",
+      "travel": "100mm"
+    },
+    "gaia4": {
+      "title": "Gaia 4",
+      "description": "The Professional's Choice",
+      "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0720\/5794\/6377\/files\/Gaia_4_main_bearbeitet-2.webp?v=1716723872",
+      "weight": "10.8kg",
+      "gear": "Shimano SLX",
+      "gears": "12",
+      "frame": "TORAY T800 Carbon",
+      "frameSize": "optimized for riders between 175-195 cm",
+      "brakes": "Hydraulic",
+      "wheelSize": "29x2.25 inches",
+      "rims": "Aluminum",
+      "fork": "FOX 32 Rhythm Remote",
+      "travel": "100mm"
+    }
+  },
+  "klarna": {
+    "shop_now_pay_with_klarna": "Shop now. Pay with Klarna.",
+    "learn_more": "Learn more",
+    "flexible_payment_methods": "Flexible payment methods",
+    "pay_in_up_to_30_days": "Pay in up to 30 days",
+    "receive_order_then_pay": "Receive your order first, then pay.",
+    "installments": "Installments",
+    "split_into_smaller_payments": "Split the amount into smaller payments.",
+    "pay_now": "Pay now",
+    "pay_full_amount_today": "Pay the full amount today with a card.",
+    "payment_availability": "The availability of payment methods may vary by shop and amount. Subject to credit check. Additional payment conditions may apply.",
+    "payment_conditions": "Payment conditions",
+    "agb_link": "https:\/\/www.klarna.com\/uk\/terms-and-conditions\/",
+    "buyer_protection": "Klarna's buyer protection excludes certain payment methods and purchases, e.g. travel, event tickets, or gift cards.",
+    "how_it_works": "How it works:",
+    "choose_klarna_at_checkout": "Choose Klarna at checkout",
+    "choose_payment_plan": "Choose a payment plan",
+    "different_plans_based_on_amount": "Depending on the purchase amount and creditworthiness, different payment plans may be displayed.",
+    "complete_order": "Complete your order",
+    "automatic_deduction": "We automatically deduct the installments according to your payment plan.",
+    "close": "Close"
   }
 }
