@@ -693,7 +693,7 @@
       "frame": "TORAY T800 Carbon",
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Mechanical",
-      "wheelSize": "28 inches",
+      "wheelSize": "28 pulgadas",
       "rims": "Aluminio"
     },
     "sandman3": {
@@ -706,7 +706,7 @@
       "frame": "TORAY T800 Carbon",
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Mechanical",
-      "wheelSize": "28 inches",
+      "wheelSize": "28 pulgadas",
       "rims": "Aluminio"
     },
     "sandman4": {
@@ -719,7 +719,7 @@
       "frame": "TORAY T800 Carbon",
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Hydraulic",
-      "wheelSize": "28 inches",
+      "wheelSize": "28 pulgadas",
       "rims": "Aluminio"
     },
     "sandman5": {
@@ -732,7 +732,7 @@
       "frame": "TORAY T800 Carbon",
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Mechanical",
-      "wheelSize": "28 inches",
+      "wheelSize": "28 pulgadas",
       "rims": "Carbono"
     },
     "sandman6": {
@@ -745,7 +745,7 @@
       "frame": "TORAY T800 Carbon",
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Hydraulic",
-      "wheelSize": "28 inches",
+      "wheelSize": "28 pulgadas",
       "rims": "Aluminio"
     },
     "sandman7": {
@@ -758,7 +758,7 @@
       "frame": "TORAY T800 Carbon",
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Hydraulic",
-      "wheelSize": "28 inches",
+      "wheelSize": "28 pulgadas",
       "rims": "Aluminio"
     },
     "odin1": {
@@ -771,7 +771,7 @@
       "frame": "TORAY T800 Carbon",
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Mechanical",
-      "wheelSize": "28 inches",
+      "wheelSize": "28 pulgadas",
       "rims": "Aluminio"
     },
     "odin3": {
@@ -784,7 +784,7 @@
       "frame": "TORAY T800 Carbon",
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Mechanical",
-      "wheelSize": "28 inches",
+      "wheelSize": "28 pulgadas",
       "rims": "Aluminio"
     },
     "odin4": {
@@ -797,7 +797,7 @@
       "frame": "TORAY T800 Carbon",
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Shimano 105 hydraulic",
-      "wheelSize": "28 inches",
+      "wheelSize": "28 pulgadas",
       "rims": "Aluminio"
     },
     "odin5": {
@@ -810,7 +810,7 @@
       "frame": "TORAY T800 Carbon",
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Mechanical",
-      "wheelSize": "28 inches",
+      "wheelSize": "28 pulgadas",
       "rims": "Carbono"
     },
     "gaia2": {
@@ -823,7 +823,7 @@
       "frame": "TORAY T800 Carbon",
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Hydraulic",
-      "wheelSize": "29x2.25 inches",
+      "wheelSize": "29x2.25 pulgadas",
       "rims": "Aluminio",
       "fork": "ROCKSHOX Recon RL Remote",
       "travel": "100mm"
@@ -838,7 +838,7 @@
       "frame": "TORAY T800 Carbon",
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Hydraulic",
-      "wheelSize": "29x2.25 inches",
+      "wheelSize": "29x2.25 pulgadas",
       "rims": "Aluminio",
       "fork": "FOX 32 Rhythm Remote",
       "travel": "100mm"
