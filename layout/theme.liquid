@@ -304,7 +304,11 @@
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
-
+{% if shop.locale == 'de' %}
+  {% section 'header-group' %}
+{% else %}
+  {% section 'header' %}
+{% endif %}
     {% sections 'footer-group' %}
 
     <ul hidden>
