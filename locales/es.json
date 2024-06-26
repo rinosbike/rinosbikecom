@@ -669,20 +669,20 @@
   },
   "bikes": {
     "title": {
-      "mtb": "MTB comparison",
-      "gravel": "Gravel bike comparison",
-      "road": "Road bike comparison"
+      "mtb": "Comparativa de MTB",
+      "gravel": "Comparativa de bicicletas Gravel",
+      "road": "Comparativa de bicicletas de carretera"
     },
-    "weight_label": "Weight",
-    "gear_label": "Gear",
-    "gears_label": "Gears",
-    "frame_label": "Frame",
-    "frameSize_label": "Frame Size",
-    "brakes_label": "Brakes",
-    "wheelSize_label": "Wheel Size",
-    "rims_label": "Rims",
-    "fork_label": "Fork",
-    "travel_label": "Travel",
+    "weight_label": "Peso",
+    "gear_label": "Cambio",
+    "gears_label": "Cambios",
+    "frame_label": "Cuadro",
+    "frameSize_label": "Tamaño del Cuadro",
+    "brakes_label": "Frenos",
+    "wheelSize_label": "Tamaño de Rueda",
+    "rims_label": "Llantas",
+    "fork_label": "Horquilla",
+    "travel_label": "Recorrido",
     "sandman1": {
       "title": "Sandman 1",
       "description": "Good and Affordable",
@@ -694,7 +694,7 @@
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Mechanical",
       "wheelSize": "28 inches",
-      "rims": "Aluminum"
+      "rims": "Aluminio"
     },
     "sandman3": {
       "title": "Sandman 3",
@@ -707,7 +707,7 @@
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Mechanical",
       "wheelSize": "28 inches",
-      "rims": "Aluminum"
+      "rims": "Aluminio"
     },
     "sandman4": {
       "title": "Sandman 4",
@@ -720,7 +720,7 @@
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Hydraulic",
       "wheelSize": "28 inches",
-      "rims": "Aluminum"
+      "rims": "Aluminio"
     },
     "sandman5": {
       "title": "Sandman 5",
@@ -733,7 +733,7 @@
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Mechanical",
       "wheelSize": "28 inches",
-      "rims": "Carbon"
+      "rims": "Carbono"
     },
     "sandman6": {
       "title": "Sandman 6",
@@ -746,7 +746,7 @@
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Hydraulic",
       "wheelSize": "28 inches",
-      "rims": "Aluminum"
+      "rims": "Aluminio"
     },
     "sandman7": {
       "title": "Sandman 7",
@@ -759,7 +759,7 @@
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Hydraulic",
       "wheelSize": "28 inches",
-      "rims": "Aluminum"
+      "rims": "Aluminio"
     },
     "odin1": {
       "title": "Odin 1",
@@ -772,7 +772,7 @@
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Mechanical",
       "wheelSize": "28 inches",
-      "rims": "Aluminum"
+      "rims": "Aluminio"
     },
     "odin3": {
       "title": "Odin 3",
@@ -785,7 +785,7 @@
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Mechanical",
       "wheelSize": "28 inches",
-      "rims": "Aluminum"
+      "rims": "Aluminio"
     },
     "odin4": {
       "title": "odin 4",
@@ -798,7 +798,7 @@
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Shimano 105 hydraulic",
       "wheelSize": "28 inches",
-      "rims": "Aluminum"
+      "rims": "Aluminio"
     },
     "odin5": {
       "title": "Odin 5",
@@ -811,7 +811,7 @@
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Mechanical",
       "wheelSize": "28 inches",
-      "rims": "Carbon"
+      "rims": "Carbono"
     },
     "gaia2": {
       "title": "Gaia 2",
@@ -824,7 +824,7 @@
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Hydraulic",
       "wheelSize": "29x2.25 inches",
-      "rims": "Aluminum",
+      "rims": "Aluminio",
       "fork": "ROCKSHOX Recon RL Remote",
       "travel": "100mm"
     },
@@ -839,7 +839,7 @@
       "frameSize": "optimized for riders between 175-195 cm",
       "brakes": "Hydraulic",
       "wheelSize": "29x2.25 inches",
-      "rims": "Aluminum",
+      "rims": "Aluminio",
       "fork": "FOX 32 Rhythm Remote",
       "travel": "100mm"
     }
