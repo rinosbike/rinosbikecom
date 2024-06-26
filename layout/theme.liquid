@@ -1,4 +1,3 @@
-```liquid
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
@@ -137,9 +136,7 @@
         --collection-card-corner-radius: {{ settings.collection_card_corner_radius | divided_by: 10.0 }}rem;
         --collection-card-text-alignment: {{ settings.collection_card_text_alignment }};
         --collection-card-border-width: {{ settings.collection_card_border_thickness | divided_by: 10.0 }}rem;
-        --collection-card-border-opacity: {{
-
- settings.collection_card_border_opacity | divided_by: 100.0 }};
+        --collection-card-border-opacity: {{ settings.collection_card_border_opacity | divided_by: 100.0 }};
         --collection-card-shadow-opacity: {{ settings.collection_card_shadow_opacity | divided_by: 100.0 }};
         --collection-card-shadow-visible: {% if settings.collection_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
         --collection-card-shadow-horizontal-offset: {{ settings.collection_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
@@ -279,9 +276,7 @@
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-      if (Shopify.design
-
-Mode) {
+      if (Shopify.designMode) {
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
@@ -304,11 +299,7 @@ Mode) {
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% if shop.locale == 'es' %}
-      {% section 'header-group-es.json' %}
-    {% else %}
-      {% section 'header-group' %}
-    {% endif %}
+    {% sections 'header-group' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
@@ -367,6 +358,3 @@ Mode) {
     {%- endif -%}
   </body>
 </html>
-```
-
-In this code, I have replaced the original section rendering of `header-group` with a conditional check for the locale. If the locale is Spanish (`es`), it renders `header-group-es`. Otherwise, it defaults to `header-group`. Adjust the locale codes and section names according to your actual setup and requirements.
