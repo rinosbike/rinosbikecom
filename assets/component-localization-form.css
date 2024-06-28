@@ -66,7 +66,7 @@
   margin-bottom: 1.5rem;
   padding-left: 1rem;
   text-align: left;
-  min-height: calc(8rem + var(--inputs-border-width) * 2);
+  min-height: calc(4rem + var(--inputs-border-width) * 2);
   min-width: calc(7rem + var(--inputs-border-width) * 2);
 }
 
@@ -241,7 +241,7 @@ noscript .localization-selector.link {
 .js .header-localization:not(.menu-drawer__localization) .localization-form__select {
   padding: 0 2.7rem 0 1.2rem;
   width: max-content;
-  height: 3.8rem;
+  height: 10rem;
 }
 
 .header-localization:not(.menu-drawer__localization) .localization-form:only-child .localization-form__select {
