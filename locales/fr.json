@@ -520,5 +520,26 @@
       "expanded": "Formulaire de destinataire de carte-cadeau agrandi",
       "collapsed": "Formulaire de destinataire de carte-cadeau réduit"
     }
+  },
+  "klarna": {
+    "shop_now_pay_with_klarna": "Achetez maintenant. Payez avec Klarna.",
+    "learn_more": "En savoir plus",
+    "flexible_payment_methods": "Méthodes de paiement flexibles",
+    "pay_in_up_to_30_days": "Payez en jusqu'à 30 jours",
+    "receive_order_then_pay": "Recevez d'abord votre commande, puis payez.",
+    "installments": "Paiement en plusieurs fois",
+    "split_into_smaller_payments": "Divisez le montant en paiements plus petits.",
+    "pay_now": "Payez maintenant",
+    "pay_full_amount_today": "Payez le montant total aujourd'hui avec une carte.",
+    "payment_availability": "La disponibilité des méthodes de paiement peut varier selon le magasin et le montant. Sous réserve d'une vérification de crédit. Des conditions de paiement supplémentaires peuvent s'appliquer.",
+    "payment_conditions": "Conditions de paiement",
+    "buyer_protection": "La protection de l'acheteur de Klarna exclut certaines méthodes de paiement et achats, par ex. les voyages, les billets d'événements ou les cartes-cadeaux.",
+    "how_it_works": "Comment ça marche:",
+    "choose_klarna_at_checkout": "Choisissez Klarna à la caisse",
+    "choose_payment_plan": "Choisissez un plan de paiement",
+    "different_plans_based_on_amount": "Selon le montant de l'achat et la solvabilité, différents plans de paiement peuvent être affichés.",
+    "complete_order": "Complétez votre commande",
+    "automatic_deduction": "Nous déduisons automatiquement les paiements selon votre plan de paiement.",
+    "close": "Fermer"
   }
 }
