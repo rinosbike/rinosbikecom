@@ -521,6 +521,320 @@
       "collapsed": "Formulaire de destinataire de carte-cadeau réduit"
     }
   },
+  "reviews": {
+    "customer_say": "Ce que nos clients disent",
+    "verified_purchase": "vérifié",
+    "review4": {
+      "title": "Bon shopping",
+      "name": "Thierry A.",
+      "text": "A l'air super, fonctionne super, bien équipé et confortable. Livraison rapide et excellent service.",
+      "date": "01.03.2024",
+      "rating": "5"
+    },
+    "review5": {
+      "title": "Livraison rapide",
+      "name": "Tomas",
+      "text": "Garde-boue très stable pour vélo. Léger et confortable, livraison rapide.",
+      "date": "16.02.2024",
+      "rating": "5"
+    },
+    "review6": {
+      "title": "Tout va bien👍",
+      "name": "Celine J",
+      "text": "Très mal coupé, mais livraison rapide et bonne qualité du matériel.",
+      "date": "14.01.2024",
+      "rating": "3.5"
+    },
+    "review7": {
+      "title": "Sûr sur la route",
+      "name": "Julien Delorme",
+      "text": "Léger. Bonne fabrication. À voir dans le temps et très bonne transformation.",
+      "date": "13.01.2024",
+      "rating": "5"
+    },
+    "review8": {
+      "title": "Aide quotidienne",
+      "name": "Morand Benoit",
+      "text": "Produit très bien fait et très pratique. M'aide au quotidien !",
+      "date": "26.12.2023",
+      "rating": "5"
+    },
+    "review9": {
+      "title": "Bonne apparence!",
+      "name": "Daniel Rossi",
+      "text": "Produit conforme à la description. Pas encore utilisé, mais a l'air bien.",
+      "date": "13.12.2023",
+      "rating": "4"
+    },
+    "review10": {
+      "title": "Un choix solide",
+      "name": "Peter Cauwels",
+      "text": "Très bon achat, fiable et puissant.",
+      "date": "07.12.2023",
+      "rating": "5"
+    },
+    "review11": {
+      "title": "Plus de larmes.",
+      "name": "VISOIU IONUT RAZVAN",
+      "text": "Vraiment. L'air froid faisait pleurer mes yeux, mais plus maintenant avec ce produit.",
+      "date": "17.11.2023",
+      "rating": "5"
+    },
+    "review12": {
+      "title": "Un peu cher",
+      "name": "Antxon",
+      "text": "Un peu cher",
+      "date": "31.10.2023",
+      "rating": "3"
+    },
+    "review13": {
+      "title": "Robuste et résistant à l'eau",
+      "name": "Hector",
+      "text": "Bon châssis métallique, il illumine bien, résistant à l'eau. Bon produit",
+      "date": "22.10.2023",
+      "rating": "5"
+    },
+    "review14": {
+      "title": "Produit de qualité bien fait",
+      "name": "Gregoire Marti",
+      "text": "Capuche de bonne qualité, coutures bien faites",
+      "date": "16.10.2023",
+      "rating": "5"
+    },
+    "review15": {
+      "title": "Répond aux attentes",
+      "name": "Quentin Borg",
+      "text": "Produit correspondant au besoin.",
+      "date": "04.10.2023",
+      "rating": "5"
+    },
+    "review16": {
+      "title": "Livraison rapide, grande satisfaction",
+      "name": "Pierre BERTA",
+      "text": "Excellent vélo et livraison très rapide. J'ai fait quelques ajustements et repris certaines pièces de mon ancien vélo Dahon Mu Uno : la selle, les garde-boue et les pédales.",
+      "date": "27.09.2023",
+      "rating": "5"
+    },
+    "review17": {
+      "title": "Produits de qualité supérieure",
+      "name": "hugues meth",
+      "text": "Top ! Super produits 🌟",
+      "date": "18.09.2023",
+      "rating": "5"
+    },
+    "review18": {
+      "title": "Description précise",
+      "name": "bahran el fakh",
+      "text": "Conforme à la description, attention néanmoins, l'indicateur d'une des ventouses reste marqué en blanc alors qu'il n'y a plus d'air dans la ventouse",
+      "date": "25.08.2023",
+      "rating": "4"
+    },
+    "review19": {
+      "title": "Bon produit avec quelques améliorations nécessaires",
+      "name": "Jose V.",
+      "text": "À mon avis, bien que je ne l'aie utilisé que quelques fois, je pense que c'est un bon produit. Il me manque une liste de véhicules compatibles. Un sac de transport serait également bien.",
+      "date": "08.08.2023",
+      "rating": "4"
+    },
+    "review20": {
+      "title": "Bien conçu et pratique",
+      "name": "JEAN-PASCAL",
+      "text": "La qualité semble être là, très pratique par sa modularité, à voir à l'usage. Je n'ai mis que 4 étoiles à cause de la fixation par Velcro, à évaluer une fois chargé. Je recommande",
+      "date": "15.07.2023",
+      "rating": "4"
+    },
+    "review21": {
+      "title": "Excellents retours, livraison rapide",
+      "name": "Troels Kristens",
+      "text": "Vraiment bon pour le prix et livraison rapide.",
+      "date": "28.06.2023",
+      "rating": "5"
+    },
+    "review22": {
+      "title": "Magnifiquement conçu et pratique",
+      "name": "Rob",
+      "text": "Bon vélo bien conçu à un bon prix. Se sent solide. Livré conforme à la commande à domicile. Top !",
+      "date": "23.06.2023",
+      "rating": "5"
+    }
+  },
+  "bikes": {
+    "title": {
+      "mtb": "Comparaison VTT",
+      "gravel": "Comparaison vélos gravel",
+      "road": "Comparaison vélos de route"
+    },
+    "weight_label": "Poids",
+    "gear_label": "Vitesse",
+    "gears_label": "Vitesses",
+    "frame_label": "Cadre",
+    "frameSize_label": "Taille du cadre",
+    "brakes_label": "Freins",
+    "wheelSize_label": "Taille des roues",
+    "rims_label": "Jantes",
+    "fork_label": "Fourche",
+    "travel_label": "Débattement",
+    "sandman1": {
+      "title": "Sandman 1",
+      "description": "Bon et abordable",
+      "image": "https://cdn.shopify.com/s/files/1/0657/8415/2277/files/IMG_0133.png?v=1714209511",
+      "weight": "9.8kg",
+      "gear": "Shimano SORA",
+      "gears": "18",
+      "frame": "TORAY T800 Carbone",
+      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "brakes": "Mécaniques",
+      "wheelSize": "28 pouces",
+      "rims": "Aluminium"
+    },
+    "sandman3": {
+      "title": "Sandman 3",
+      "description": "Le polyvalent",
+      "image": "https://cdn.shopify.com/s/files/1/0657/8415/2277/files/IMG_0170.png?v=1714209510",
+      "weight": "9.8kg",
+      "gear": "Shimano 105",
+      "gears": "22",
+      "frame": "TORAY T800 Carbone",
+      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "brakes": "Mécaniques",
+      "wheelSize": "28 pouces",
+      "rims": "Aluminium"
+    },
+    "sandman4": {
+      "title": "Sandman 4",
+      "description": "Notre best-seller",
+      "image": "https://cdn.shopify.com/s/files/1/0657/8415/2277/files/sandman4-6-changed.webp?v=1716034595",
+      "weight": "9.8kg",
+      "gear": "Shimano GRX 400",
+      "gears": "20",
+      "frame": "TORAY T800 Carbone",
+      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "brakes": "Hydrauliques",
+      "wheelSize": "28 pouces",
+      "rims": "Aluminium"
+    },
+    "sandman5": {
+      "title": "Sandman 5",
+      "description": "Performance ultime",
+      "image": "https://cdn.shopify.com/s/files/1/0657/8415/2277/files/rinos-carbon-gravel-bike-sandman50-shimano-r8000-ultegra_2.webp?v=1691264716",
+      "weight": "8.3kg",
+      "gear": "Shimano Ultegra",
+      "gears": "22",
+      "frame": "TORAY T800 Carbone",
+      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "brakes": "Mécaniques",
+      "wheelSize": "28 pouces",
+      "rims": "Carbone"
+    },
+    "sandman6": {
+      "title": "Sandman 6",
+      "description": "Le meilleur de sa catégorie",
+      "image": "https://cdn.shopify.com/s/files/1/0657/8415/2277/files/sandman4-6-changed.webp?v=1716034595",
+      "weight": "9.8kg",
+      "gear": "Shimano GRX 600",
+      "gears": "22",
+      "frame": "TORAY T800 Carbone",
+      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "brakes": "Hydrauliques",
+      "wheelSize": "28 pouces",
+      "rims": "Aluminium"
+    },
+    "sandman7": {
+      "title": "Sandman 7",
+      "description": "Haut de gamme",
+      "image": "https://cdn.shopify.com/s/files/1/0657/8415/2277/files/sandman4-6-changed.webp?v=1716034595",
+      "weight": "9.6kg",
+      "gear": "Shimano GRX 820",
+      "gears": "24",
+      "frame": "TORAY T800 Carbone",
+      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "brakes": "Hydrauliques",
+      "wheelSize": "28 pouces",
+      "rims": "Aluminium"
+    },
+    "odin1": {
+      "title": "Odin 1",
+      "description": "Bon et abordable",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/products/1_00d58ab3-d3ab-4e73-a70c-5969e095121d.jpg?v=1705745069",
+      "weight": "9.8kg",
+      "gear": "Shimano SORA",
+      "gears": "18",
+      "frame": "TORAY T800 Carbone",
+      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "brakes": "Mécaniques",
+      "wheelSize": "28 pouces",
+      "rims": "Aluminium"
+    },
+    "odin3": {
+      "title": "Odin 3",
+      "description": "Le polyvalent",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/products/IMG_5673-PhotoRoom.jpg?v=1705744957",
+      "weight": "9.8kg",
+      "gear": "Shimano 105",
+      "gears": "22",
+      "frame": "TORAY T800 Carbone",
+      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "brakes": "Mécaniques",
+      "wheelSize": "28 pouces",
+      "rims": "Aluminium"
+    },
+    "odin4": {
+      "title": "Odin 4",
+      "description": "Notre nouveauté",
+      "image": "https://rinosbike.eu/cdn/shop/files/IMG-6896.jpg?v=1716727167&width=4096",
+      "weight": "9.2kg",
+      "gear": "Shimano 105",
+      "gears": "24",
+      "frame": "TORAY T800 Carbone",
+      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "brakes": "Shimano 105 hydrauliques",
+      "wheelSize": "28 pouces",
+      "rims": "Aluminium"
+    },
+    "odin5": {
+      "title": "Odin 5",
+      "description": "Performance ultime",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/products/1_c416a5f9-949c-4751-897d-78d90ee65c85.jpg?v=1705745002",
+      "weight": "8.3kg",
+      "gear": "Shimano Ultegra",
+      "gears": "22",
+      "frame": "TORAY T800 Carbone",
+      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "brakes": "Mécaniques",
+      "wheelSize": "28 pouces",
+      "rims": "Carbone"
+    },
+    "gaia2": {
+      "title": "Gaia 2",
+      "description": "Rentable",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/files/IMG_5265.png?v=1716717476",
+      "weight": "11.9kg",
+      "gear": "Shimano Deore",
+      "gears": "12",
+      "frame": "TORAY T800 Carbone",
+      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "brakes": "Hydrauliques",
+      "wheelSize": "29x2.25 pouces",
+      "rims": "Aluminium",
+      "fork": "ROCKSHOX Recon RL Remote",
+      "travel": "100mm"
+    },
+    "gaia4": {
+      "title": "Gaia 4",
+      "description": "Le choix des professionnels",
+      "image": "https://cdn.shopify.com/s/files/1/0720/5794/6377/files/Gaia_4_main_bearbeitet-2.webp?v=1716723872",
+      "weight": "10.8kg",
+      "gear": "Shimano SLX",
+      "gears": "12",
+      "frame": "TORAY T800 Carbone",
+      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "brakes": "Hydrauliques",
+      "wheelSize": "29x2.25 pouces",
+      "rims": "Aluminium",
+      "fork": "FOX 32 Rhythm Remote",
+      "travel": "100mm"
+    }
+  },
   "klarna": {
     "shop_now_pay_with_klarna": "Achetez maintenant. Payez avec Klarna.",
     "learn_more": "En savoir plus",
@@ -530,6 +844,7 @@
     "installments": "Paiement en plusieurs fois",
     "split_into_smaller_payments": "Divisez le montant en paiements plus petits.",
     "pay_now": "Payez maintenant",
+    "agb_link": "https://www.klarna.com/fr/legal/",
     "pay_full_amount_today": "Payez le montant total aujourd'hui avec une carte.",
     "payment_availability": "La disponibilité des méthodes de paiement peut varier selon le magasin et le montant. Sous réserve d'une vérification de crédit. Des conditions de paiement supplémentaires peuvent s'appliquer.",
     "payment_conditions": "Conditions de paiement",
