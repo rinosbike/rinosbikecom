@@ -158,8 +158,8 @@ noscript .localization-selector.link {
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
   scroll-padding: 0.5rem 0;
-  min-height: fit-content;
-  max-height: fit-content;
+  min-height: 20.65rem;
+  max-height: 20.65rem;
   max-width: 22rem;
   min-width: 12rem;
   width: max-content;
