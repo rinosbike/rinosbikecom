@@ -861,6 +861,7 @@
   },
   "bannerhomepage": {
     "text": "Discover the components of our new gravel bike!",
-    "buttontext": "Learn more"
+    "buttontext": "Learn more",
+    "link": "https://rinosbike.com/products/sandman-4"
   }
 }
