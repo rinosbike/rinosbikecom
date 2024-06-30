@@ -1,5 +1,19 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
+    "banner_video_tx3irV": {
+      "type": "banner-video",
+      "settings": {
+      }
+    },
     "image_banner_qQDHCk": {
       "type": "image-banner",
       "blocks": {
@@ -225,6 +239,7 @@
     }
   },
   "order": [
+    "banner_video_tx3irV",
     "image_banner_qQDHCk",
     "image_banner_cR6hqL",
     "image_banner_TA7mXD",
