@@ -865,5 +865,9 @@
     "complete_order": "Completa tu pedido",
     "automatic_deduction": "Deducimos automáticamente las cuotas según tu plan de pago.",
     "close": "Cerrar"
+  },
+  "bannerhomepage": {
+    "text": "¡Descubre los componentes de nuestra nueva bicicleta de gravel!",
+    "buttontext": "Saber más",
   }
 }

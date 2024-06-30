@@ -877,5 +877,9 @@
     "complete_order": "Zakończ zamówienie",
     "automatic_deduction": "Automatycznie potrącamy raty zgodnie z Twoim planem płatności.",
     "close": "Zamknij"
+  },
+  "bannerhomepage": {
+    "text": "Odkryj komponenty naszego nowego roweru gravelowego!",
+    "buttontext": "Dowiedz się więcej",
   }
 }

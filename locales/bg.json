@@ -4226,5 +4226,9 @@
       "fork": "FOX 32 Rhythm Remote",
       "travel": "100mm"
     }
+  },
+  "bannerhomepage": {
+    "text": "Открийте компонентите на нашия нов гравел байк!",
+    "buttontext": "Научете повече",
   }
 }

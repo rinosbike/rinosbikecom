@@ -856,5 +856,9 @@
     "complete_order": "Complétez votre commande",
     "automatic_deduction": "Nous déduisons automatiquement les paiements selon votre plan de paiement.",
     "close": "Fermer"
+  },
+  "bannerhomepage": {
+    "text": "Découvrez les composants de notre nouveau vélo de gravel !",
+    "buttontext": "En savoir plus",
   }
 }

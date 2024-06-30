@@ -853,5 +853,9 @@
     "complete_order": "Schließe deine Bestellung ab",
     "automatic_deduction": "Wir buchen die Ratenzahlungen je nach deinem Zahlungsplan automatisch ab.",
     "close": "Schließen"
+  },
+  "bannerhomepage": {
+    "text": "Entdecke die Komponenten von unserem neuem Gravelbike!",
+    "buttontext": "Erfahre mehr",
   }
 }
