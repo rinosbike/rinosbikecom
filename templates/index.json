@@ -20,7 +20,7 @@
         "heading_hmWCx7": {
           "type": "heading",
           "settings": {
-            "heading": "<em>Performance<\/em>",
+            "heading": "",
             "heading_size": "h0"
           }
         },
@@ -45,12 +45,12 @@
         ".button {background-color: white; color: black;}"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/image1.jpg",
+        "image_2": "shopify:\/\/shop_images\/Frame_24_521646a8-0acd-460a-aa63-0da727d2475a.png",
         "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image_height": "small",
         "desktop_content_position": "bottom-center",
         "show_text_box": false,
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "left",
         "color_scheme": "",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
