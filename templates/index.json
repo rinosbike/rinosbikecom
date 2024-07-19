@@ -64,7 +64,7 @@
         "text_CpXchY": {
           "type": "text",
           "settings": {
-            "text": "Sandman 1",
+            "text": "Gaia Series",
             "text_style": "body"
           }
         },
@@ -93,7 +93,7 @@
         "buttons_ND9C77"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/test_63a62a16-66b4-4020-9a18-9cf9362cc400.webp",
+        "image": "shopify:\/\/shop_images\/Frame_25_b3c4c023-7d6e-4da4-a3bd-1e6e93d9e3bf.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "top-right",
