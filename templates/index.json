@@ -113,6 +113,7 @@
       "blocks": {
         "text_9zrraz": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "Sandman 5",
             "text_style": "body"
@@ -120,6 +121,7 @@
         },
         "heading_MhzxKU": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "",
             "heading_size": "h0"
@@ -145,8 +147,8 @@
       "settings": {
         "image_2": "shopify:\/\/shop_images\/Frame_26_98479a0b-aa9a-49c4-8990-5e55171d2dd1.png",
         "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "top-right",
+        "image_height": "medium",
+        "desktop_content_position": "middle-right",
         "show_text_box": false,
         "desktop_content_alignment": "right",
         "color_scheme": "",
@@ -161,6 +163,7 @@
       "blocks": {
         "text_4ebLTM": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "Gaia 2",
             "text_style": "body"
@@ -169,7 +172,7 @@
         "heading_yLHH3C": {
           "type": "heading",
           "settings": {
-            "heading": "<em>Light<\/em> <strong>weight<\/strong>",
+            "heading": "<em>Light<\/em> <strong>weight <\/strong><em><strong>Gravel<\/strong><\/em>",
             "heading_size": "h0"
           }
         },
@@ -191,7 +194,7 @@
         "buttons_QBWJYA"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Gaia_2_website_banner.png",
+        "image": "shopify:\/\/shop_images\/IMG_1808_1.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "top-center",
