@@ -9,46 +9,6 @@
 */
 {
   "sections": {
-    "image_banner_cpPmMm": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_yLHH3C": {
-          "type": "heading",
-          "settings": {
-            "heading": "<em>Light<\/em> <strong>weight <\/strong><em><strong>Gravel<\/strong><\/em>",
-            "heading_size": "h0"
-          }
-        },
-        "buttons_QBWJYA": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Explore excellence with Sandman 6",
-            "button_link_1": "shopify:\/\/products\/sandman-6",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_yLHH3C",
-        "buttons_QBWJYA"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/IMG_1808_1.png",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "top-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-38faf34d-a426-4407-9d9c-ac5eec626dd9",
-        "image_behavior": "fixed",
-        "mobile_content_alignment": "right",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
     "image_banner_qQDHCk": {
       "type": "image-banner",
       "blocks": {
@@ -193,6 +153,46 @@
         "show_text_below": false
       }
     },
+    "image_banner_cpPmMm": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_yLHH3C": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Light<\/em> <strong>weight <\/strong><em><strong>Gravel<\/strong><\/em>",
+            "heading_size": "h0"
+          }
+        },
+        "buttons_QBWJYA": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Explore excellence with Sandman 6",
+            "button_link_1": "shopify:\/\/products\/sandman-6",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yLHH3C",
+        "buttons_QBWJYA"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/IMG_1808_1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "top-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-38faf34d-a426-4407-9d9c-ac5eec626dd9",
+        "image_behavior": "fixed",
+        "mobile_content_alignment": "right",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
     "banner_video_tx3irV": {
       "type": "banner-video",
       "settings": {
@@ -235,10 +235,10 @@
     }
   },
   "order": [
-    "image_banner_cpPmMm",
     "image_banner_qQDHCk",
     "image_banner_cR6hqL",
     "image_banner_TA7mXD",
+    "image_banner_cpPmMm",
     "banner_video_tx3irV",
     "rich_text_MfXaWd"
   ]
