@@ -130,8 +130,8 @@
         "buttons_ijJJyE": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Explore",
-            "button_link_1": "shopify:\/\/products\/sandman-5",
+            "button_label_1": "Configure your new Roadbike",
+            "button_link_1": "shopify:\/\/collections\/road-bikes",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
