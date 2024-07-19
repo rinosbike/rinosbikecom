@@ -161,14 +161,6 @@
     "image_banner_cpPmMm": {
       "type": "image-banner",
       "blocks": {
-        "text_4ebLTM": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "Gaia 2",
-            "text_style": "body"
-          }
-        },
         "heading_yLHH3C": {
           "type": "heading",
           "settings": {
@@ -179,8 +171,8 @@
         "buttons_QBWJYA": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Explore",
-            "button_link_1": "shopify:\/\/products\/gaia-2",
+            "button_label_1": "Explore excellence with Sandman 6",
+            "button_link_1": "shopify:\/\/products\/sandman-6",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -189,7 +181,6 @@
         }
       },
       "block_order": [
-        "text_4ebLTM",
         "heading_yLHH3C",
         "buttons_QBWJYA"
       ],
