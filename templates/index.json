@@ -121,7 +121,7 @@
         "heading_MhzxKU": {
           "type": "heading",
           "settings": {
-            "heading": "Every underground everywhere",
+            "heading": "",
             "heading_size": "h0"
           }
         },
@@ -143,7 +143,7 @@
         "buttons_ijJJyE"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/text3.webp",
+        "image_2": "shopify:\/\/shop_images\/Frame_26_98479a0b-aa9a-49c4-8990-5e55171d2dd1.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "top-right",
