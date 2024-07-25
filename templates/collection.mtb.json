@@ -177,6 +177,64 @@
         "padding_bottom": 36
       }
     },
+    "multirow_7b4JV3": {
+      "type": "multirow",
+      "blocks": {
+        "row_ctQ9Ti": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_9463_1.jpg",
+            "caption": "Gaia 2 series",
+            "heading": "Shimano Deore",
+            "text": "<p>When you're out cycling, versatility is key. The Shimano Deore M6100 has a 12-speed cassette with an impressive 10-51T range. This means you can smoothly transition from powering up steep inclines to flying down rapid descents, always finding the perfect gear to match your riding conditions.<\/p>",
+            "button_label": "Rediscover the Mountain",
+            "button_link": "shopify:\/\/products\/gaia-2"
+          }
+        },
+        "row_FLp4Bx": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_9438_1_1.jpg",
+            "caption": "Gaia 2 Series",
+            "heading": "Hyperglide+",
+            "text": "<p>Imagine the confidence of knowing your gears will shift seamlessly, no matter the pressure. The M6100 integrates Shimano’s renowned Hyperglide+ technology, ensuring quick and precise gear changes even under heavy load, so you don't have to worry about anything.<br\/><\/p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "row_KzGaPG": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_9439_1.jpg",
+            "caption": "Gaia 2 Series",
+            "heading": "Rockshox Recon RL Remote",
+            "text": "<p>Crafted from high-quality aluminum, the Recon RL is both robust and lightweight, reducing the overall weight of your bike without compromising durability. This means you can enjoy a smoother ride and better handling, especially on challenging terrains.<\/p>",
+            "button_label": "Discover more",
+            "button_link": "shopify:\/\/products\/gaia-2"
+          }
+        }
+      },
+      "block_order": [
+        "row_ctQ9Ti",
+        "row_FLp4Bx",
+        "row_KzGaPG"
+      ],
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -215,6 +273,7 @@
     "image_banner_ByDxLc",
     "featured_product_mN74yJ",
     "image_with_text_tTF9w7",
+    "multirow_7b4JV3",
     "product-grid",
     "rinos_comparison_table_mtb_edition_MNMfHm",
     "banner"
