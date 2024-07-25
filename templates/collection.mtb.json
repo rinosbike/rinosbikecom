@@ -54,17 +54,6 @@
     "multirow_7b4JV3": {
       "type": "multirow",
       "blocks": {
-        "row_ctQ9Ti": {
-          "type": "row",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_9463_1.jpg",
-            "caption": "Gaia 2 series",
-            "heading": "Shimano Deore",
-            "text": "<p>When you're out cycling, versatility is key. The Shimano Deore M6100 has a 12-speed cassette with an impressive 10-51T range. This means you can smoothly transition from powering up steep inclines to flying down rapid descents, always finding the perfect gear to match your riding conditions.<\/p>",
-            "button_label": "Rediscover the Mountain",
-            "button_link": "shopify:\/\/products\/gaia-2"
-          }
-        },
         "row_FLp4Bx": {
           "type": "row",
           "settings": {
@@ -73,6 +62,17 @@
             "heading": "Lighweight",
             "text": "<p>At only 11,9kg, the Gaia 2 makes uphill cycling easier, alongside with acceleration and maneuvers in general.<br\/><\/p>",
             "button_label": "Discover more",
+            "button_link": "shopify:\/\/products\/gaia-2"
+          }
+        },
+        "row_ctQ9Ti": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_9463_1.jpg",
+            "caption": "Gaia 2 series",
+            "heading": "Shimano Deore",
+            "text": "<p>When you're out cycling, versatility is key. The Shimano Deore M6100 has a 12-speed cassette with an impressive 10-51T range. This means you can smoothly transition from powering up steep inclines to flying down rapid descents, always finding the perfect gear to match your riding conditions.<\/p>",
+            "button_label": "Rediscover the Mountain",
             "button_link": "shopify:\/\/products\/gaia-2"
           }
         },
@@ -86,12 +86,24 @@
             "button_label": "Discover more",
             "button_link": "shopify:\/\/products\/gaia-2"
           }
+        },
+        "row_77JW4m": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_9461_1.jpg",
+            "caption": "Gaia 2",
+            "heading": "Schwalbe Tires",
+            "text": "<p>Prepared for every terrain. <\/p><p>Known for endurance, performance and aesthetics. <\/p>",
+            "button_label": "Discover more",
+            "button_link": ""
+          }
         }
       },
       "block_order": [
-        "row_ctQ9Ti",
         "row_FLp4Bx",
-        "row_KzGaPG"
+        "row_ctQ9Ti",
+        "row_KzGaPG",
+        "row_77JW4m"
       ],
       "settings": {
         "image_height": "medium",
