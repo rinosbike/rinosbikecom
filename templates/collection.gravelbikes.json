@@ -15,14 +15,14 @@
         "heading_mhpLLH": {
           "type": "heading",
           "settings": {
-            "heading": "<em>Gravel<\/em>",
-            "heading_size": "h2"
+            "heading": "<strong>Rediscover<\/strong><em> Gravel<\/em>",
+            "heading_size": "h0"
           }
         },
         "text_mxBWgA": {
           "type": "text",
           "settings": {
-            "text": "Discover Sandman Series",
+            "text": "Discover Sandman Serie",
             "text_style": "body"
           }
         }
@@ -36,13 +36,13 @@
         ".banner__heading {color: #black;}"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/gravelly-mountain-road.jpg",
+        "image": "shopify:\/\/shop_images\/Frame_24_da023887-a5e8-4e50-9a92-6dc7ab59b34f.png",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "inverse",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
