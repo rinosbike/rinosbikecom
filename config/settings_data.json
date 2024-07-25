@@ -229,11 +229,11 @@
       },
       "scheme-38faf34d-a426-4407-9d9c-ac5eec626dd9": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#969675",
           "background_gradient": "",
           "text": "#f1f1f1",
           "button": "#243b30",
-          "button_label": "#ffffff",
+          "button_label": "#842727",
           "secondary_button_label": "#121212",
           "shadow": "#121212"
         }

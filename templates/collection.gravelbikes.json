@@ -18,18 +18,10 @@
             "heading": "<strong>Rediscover<\/strong><em> Gravel<\/em>",
             "heading_size": "h0"
           }
-        },
-        "text_mxBWgA": {
-          "type": "text",
-          "settings": {
-            "text": "",
-            "text_style": "body"
-          }
         }
       },
       "block_order": [
-        "heading_mhpLLH",
-        "text_mxBWgA"
+        "heading_mhpLLH"
       ],
       "custom_css": [
         ".banner__text {color: #e5e4e2;}",
@@ -47,6 +39,76 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": false
+      }
+    },
+    "featured_product_yMyWe8": {
+      "type": "featured-product",
+      "blocks": {
+        "text_JrUmdT": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_DJMfLA": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_VqPJNg": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker_TVG9LD": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector_tBtYJ6": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons_9qwQ9R": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_KpALyb": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_JrUmdT",
+        "title_DJMfLA",
+        "price_VqPJNg",
+        "variant_picker_TVG9LD",
+        "quantity_selector_tBtYJ6",
+        "buy_buttons_9qwQ9R",
+        "share_KpALyb"
+      ],
+      "settings": {
+        "product": "sandman-3",
+        "color_scheme": "scheme-38faf34d-a426-4407-9d9c-ac5eec626dd9",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "media_position": "right",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "image_with_text_tTF9w7": {
@@ -98,7 +160,7 @@
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
         "section_color_scheme": "",
-        "color_scheme": "",
+        "color_scheme": "background-2",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 36,
@@ -141,6 +203,7 @@
   },
   "order": [
     "image_banner_ByDxLc",
+    "featured_product_yMyWe8",
     "image_with_text_tTF9w7",
     "product-grid",
     "rinos_comparison_table_nz48Wf",
