@@ -15,12 +15,13 @@
         "heading_mhpLLH": {
           "type": "heading",
           "settings": {
-            "heading": "<em>MTB<\/em>",
+            "heading": "<em><strong>Rediscover <\/strong><\/em><strong>the Mountains<\/strong>",
             "heading_size": "h2"
           }
         },
         "text_mxBWgA": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "Discover our MTBs",
             "text_style": "body"
@@ -36,7 +37,7 @@
         ".banner__heading {color: #e5e4e2;}"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/mountains-forest-and-clouds.jpg",
+        "image": "shopify:\/\/shop_images\/Frame_25_b3c4c023-7d6e-4da4-a3bd-1e6e93d9e3bf.png",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
@@ -89,6 +90,7 @@
         "text_6deyMt",
         "button_bJAVRa"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Gaia2.0outdoor2.jpg",
         "height": "adapt",
@@ -137,6 +139,76 @@
         "show_collection_image": false,
         "color_scheme": "background-1"
       }
+    },
+    "featured_product_mN74yJ": {
+      "type": "featured-product",
+      "blocks": {
+        "text_JQUrpE": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_G46VdD": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_prF6K7": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker_hMLNdr": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector_HimtkB": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons_86pDyY": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_VqnEFt": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_JQUrpE",
+        "title_G46VdD",
+        "price_prF6K7",
+        "variant_picker_hMLNdr",
+        "quantity_selector_HimtkB",
+        "buy_buttons_86pDyY",
+        "share_VqnEFt"
+      ],
+      "settings": {
+        "product": "gaia-2",
+        "color_scheme": "scheme-38faf34d-a426-4407-9d9c-ac5eec626dd9",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -144,6 +216,7 @@
     "image_with_text_tTF9w7",
     "product-grid",
     "rinos_comparison_table_mtb_edition_MNMfHm",
-    "banner"
+    "banner",
+    "featured_product_mN74yJ"
   ]
 }
