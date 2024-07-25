@@ -14,6 +14,7 @@
       "blocks": {
         "heading_mhpLLH": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "<em><strong>Rediscover <\/strong><\/em><strong>the Mountains<\/strong>",
             "heading_size": "h2"
@@ -67,10 +68,10 @@
         "row_FLp4Bx": {
           "type": "row",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_9438_1_1.jpg",
+            "image": "shopify:\/\/shop_images\/IMG_9455_1.jpg",
             "caption": "Gaia 2 Series",
-            "heading": "Hyperglide+",
-            "text": "<p>Imagine the confidence of knowing your gears will shift seamlessly, no matter the pressure. The M6100 integrates Shimano’s renowned Hyperglide+ technology, ensuring quick and precise gear changes even under heavy load, so you don't have to worry about anything.<br\/><\/p>",
+            "heading": "Lighweight",
+            "text": "<p>At only 11,9kg, the Gaia 2 makes uphill cycling easier, alongside with acceleration and maneuvers in general.<br\/><\/p>",
             "button_label": "Discover more",
             "button_link": "shopify:\/\/products\/gaia-2"
           }
