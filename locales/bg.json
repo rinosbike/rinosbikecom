@@ -4230,6 +4230,11 @@
   "bannerhomepage": {
     "text": "Открийте компонентите на нашия нов гравел байк!",
     "buttontext": "Научете повече",
-    "link": "https://rinosbike.com/bg/products/sandman-4"
+    "link": "https:\/\/rinosbike.com\/bg\/products\/sandman-4"
+  },
+  "klarna": {
+    "learn_more": "Научете повече",
+    "pay_now": "Плати сега",
+    "close": "Близо"
   }
 }
