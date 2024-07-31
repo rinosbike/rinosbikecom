@@ -51,6 +51,59 @@
         "padding_bottom": 52
       }
     },
+    "multicolumn_Y4ydFP": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_pPWkxH": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Lifetime <\/strong><em>Support<\/em>",
+            "text": "<p>At Rinosbike, we stand firmly behind the quality of our engineering and craftsmanship with a comprehensive <em>2-year warranty and lifetime support <\/em>on your bike. <\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_UUaPfw": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Your Bike,                                               <\/strong><em>Your Warranty<\/em>",
+            "text": "<p>Whether you’re the first owner or you’ve acquired your Rinosbike second-hand, the warranty follows the bike. If your bike is still within its 2-year warranty period, you’re covered. Proof of purchase might be required, but rest assured, your journey is protected. We do not leave our clients hanging, and it is our top mission to provide a hassle free experience from start to end. <\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_mcpmir": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_pPWkxH",
+        "column_UUaPfw",
+        "column_mcpmir"
+      ],
+      "settings": {
+        "title": "Discover our Warranty.",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -61,6 +114,7 @@
   },
   "order": [
     "rich_text_mNe3TB",
+    "multicolumn_Y4ydFP",
     "main"
   ]
 }
