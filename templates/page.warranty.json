@@ -58,7 +58,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Lifetime <\/strong><em>Support<\/em>",
-            "text": "<p>At Rinosbike, we stand firmly behind the quality of our engineering and craftsmanship with a comprehensive <em>2-year warranty and lifetime support <\/em>on your bike. <\/p>",
+            "text": "<p>At Rinosbike, we stand firmly behind the quality of our engineering and craftsmanship with a comprehensive <em>2-year warranty  and lifetime support <\/em>on your bike. <\/p>",
             "link_label": "",
             "link": ""
           }
@@ -115,6 +115,15 @@
     "collapsible_content_HVChMC": {
       "type": "collapsible-content",
       "blocks": {
+        "collapsible_row_9jHCkX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the guarantee and what does it cover?",
+            "icon": "question_mark",
+            "row_content": "<p>In addition to the warranty, Rinosbike offers a guarantee on parts from original component manufacturers. This guarantee also applies for at least two years unless otherwise stated. The guarantee only covers material and workmanship defects that were present at the time of delivery.<\/p>",
+            "page": ""
+          }
+        },
         "collapsible_row_bD3zfN": {
           "type": "collapsible_row",
           "settings": {
@@ -153,6 +162,7 @@
         }
       },
       "block_order": [
+        "collapsible_row_9jHCkX",
         "collapsible_row_bD3zfN",
         "collapsible_row_aTVrYX",
         "collapsible_row_XHDEqk",
