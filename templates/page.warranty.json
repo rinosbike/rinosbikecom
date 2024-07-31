@@ -75,8 +75,8 @@
         "column_mcpmir": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "<em><strong>Hassle-Free<\/strong><\/em><strong> <\/strong>Claims",
+            "text": "<p>In the rare event of a defect, we take care of you. Rinosbike will handle any necessary rebuilding, shipping, and customs charges for successful warranty claims, so you can get back to what you love—riding. Contact us through our email at info@rinosbike.eu.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -95,9 +95,9 @@
         "columns_desktop": 3,
         "column_alignment": "left",
         "background_style": "primary",
-        "button_label": "Button label",
-        "button_link": "",
-        "color_scheme": "",
+        "button_label": "Need help? Send us an e-mail!",
+        "button_link": "shopify:\/\/pages\/contact",
+        "color_scheme": "background-1",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
@@ -110,11 +110,63 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "collapsible_content_HVChMC": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_bD3zfN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "A specific component broke, what can I do?",
+            "icon": "leaf",
+            "row_content": "<p><\/p><ul><li><strong>Rinosbike Manufactured Components:<\/strong> Our guarantee is exclusively valid for Rinosbike manufactured components. If you experience any issues with these components, we are here to assist you.<\/li><li><strong>Other Components:<\/strong> For guarantee claims related to components from other manufacturers, please contact the respective manufacturer directly. They will be able to assist you with their specific warranty processes. If you need help finding these resources, you can also mail us. <\/li><\/ul><p><strong>Claims Process:<\/strong><\/p><ul><li><strong>Replacement Costs:<\/strong> In the case of a valid guarantee claim, you will not have to pay for the replaced frame or fork. We will handle the replacement and ensure your bike is back to its best condition.<\/li><li><strong>Shipping and Labour Costs:<\/strong> Please note that there are associated costs for shipping and labour during the guarantee claim process. These costs will be charged to you.<\/li><li><strong>Additional Services:<\/strong> When you send your bike back for a guarantee claim, you can also take advantage of our other services. We will provide a separate invoice for any additional services requested.<\/li><\/ul><p><\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_aTVrYX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if the replacement I need is not available anymore?",
+            "icon": "eye",
+            "row_content": "<p>If replacement part’s aren’t available in the same way as you purchased you will be offered an alternative that would cover the same exact need.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_XHDEqk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is not covered?",
+            "icon": "clipboard",
+            "row_content": "<p>While our warranty is comprehensive, there are certain situations and types of damage that it does not cover. Here are a few examples:<\/p><p><strong>1. Accidental Damage<\/strong><\/p><ul><li><em>What is accidental damage?<\/em><\/li><\/ul><p><strong>2. Wear and Tear<\/strong><\/p><ul><li><em>What is considered wear and tear?<\/em><\/li><\/ul><p><strong>3. Corrosion Damage<\/strong><\/p><ul><li><em>What kind of corrosion damage is not covered?<\/em><\/li><\/ul><p><strong>4. Misuse of the Bike<\/strong><\/p><ul><li><em>What does using the bike outside of its intended category rating mean?<\/em><\/li><\/ul><p><strong>5. Colour Changes<\/strong><\/p><ul><li><em>What causes colour changes that are not covered?<\/em><\/li><\/ul>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_bD3zfN",
+        "collapsible_row_aTVrYX",
+        "collapsible_row_XHDEqk"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "<strong>More questions?<\/strong>",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "section",
+        "color_scheme": "scheme-7caf5152-a928-4609-a494-5f682c04b5fb",
+        "container_color_scheme": "background-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "rich_text_mNe3TB",
     "multicolumn_Y4ydFP",
-    "main"
+    "main",
+    "collapsible_content_HVChMC"
   ]
 }
