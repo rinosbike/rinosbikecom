@@ -106,6 +106,7 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
@@ -140,12 +141,22 @@
             "row_content": "<p>While our warranty is comprehensive, there are certain situations and types of damage that it does not cover. Here are a few examples:<\/p><p><strong>1. Accidental Damage<\/strong><\/p><ul><li><em>What is accidental damage?<\/em><\/li><\/ul><p><strong>2. Wear and Tear<\/strong><\/p><ul><li><em>What is considered wear and tear?<\/em><\/li><\/ul><p><strong>3. Corrosion Damage<\/strong><\/p><ul><li><em>What kind of corrosion damage is not covered?<\/em><\/li><\/ul><p><strong>4. Misuse of the Bike<\/strong><\/p><ul><li><em>What does using the bike outside of its intended category rating mean?<\/em><\/li><\/ul><p><strong>5. Colour Changes<\/strong><\/p><ul><li><em>What causes colour changes that are not covered?<\/em><\/li><\/ul>",
             "page": ""
           }
+        },
+        "collapsible_row_8LAJQg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is a \"Successful warranty claim\"?",
+            "icon": "check_mark",
+            "row_content": "<p><strong>What is a Successful Warranty Claim?<\/strong><\/p><p>A successful warranty claim occurs when a reported issue with your Rinosbike is verified to be covered under the terms of our warranty. This typically involves the following steps:<\/p><ol><li><strong>Initial Assessment: <\/strong>You report a problem with your bike, such as a defect in the frame, forks, cockpit, or seatpost, or any other component covered under our 2-year warranty.<\/li><li><strong>Verification: <\/strong>Our team, or an authorized partner, inspects the bike to determine if the issue is due to a material or workmanship defect that existed at the time of delivery. This step may involve providing proof of purchase and detailed information about the problem.<\/li><li><strong>Approval: <\/strong>Once it is confirmed that the defect falls under the warranty coverage, your claim is approved. This means that the defect is not due to misuse, accidental damage, wear and tear, corrosion, or any other exclusion specified in our warranty policy.<\/li><li><strong>Resolution: <\/strong>Upon approval, we proceed with the necessary actions to resolve the issue. This includes covering the costs of repairing or replacing the defective parts. Rinosbike also takes care of any associated rebuilding, shipping, and customs fees, ensuring you do not incur additional expenses.<\/li><\/ol><p><\/p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
         "collapsible_row_bD3zfN",
         "collapsible_row_aTVrYX",
-        "collapsible_row_XHDEqk"
+        "collapsible_row_XHDEqk",
+        "collapsible_row_8LAJQg"
       ],
       "settings": {
         "caption": "",
