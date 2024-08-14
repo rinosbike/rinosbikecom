@@ -15,14 +15,14 @@
         "heading_Uptmyt": {
           "type": "heading",
           "settings": {
-            "heading": "<em><strong>You never ride alone.<\/strong><\/em>",
+            "heading": "<em><strong>Assembling your new Rinos?<\/strong><\/em>",
             "heading_size": "h1"
           }
         },
         "text_RtQBg3": {
           "type": "text",
           "settings": {
-            "text": "<p>Discover our compromise with long lasting quality bicycles.<\/p><p><strong>2 years of complete warranty.<\/strong><\/p><p><strong>Lifetime support.<\/strong><\/p>"
+            "text": "<p>No problem, we will try to guide you here in how to start riding as soon as possible!<\/p>"
           }
         },
         "button_cpXkyt": {
@@ -51,59 +51,6 @@
         "padding_bottom": 52
       }
     },
-    "multicolumn_Y4ydFP": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_pPWkxH": {
-          "type": "column",
-          "settings": {
-            "title": "<strong>Lifetime <\/strong><em>Support<\/em>",
-            "text": "<p>At Rinosbike, we stand firmly behind the quality of our engineering and craftsmanship with a comprehensive <em>2-year warranty  and lifetime support <\/em>on your bike. <\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_UUaPfw": {
-          "type": "column",
-          "settings": {
-            "title": "<strong>Your Bike,                                               <\/strong><em>Your Warranty<\/em>",
-            "text": "<p>Whether you’re the first owner or you’ve acquired your Rinosbike second-hand, the warranty follows the bike. If your bike is still within its 2-year warranty period, you’re covered. Proof of purchase might be required, but rest assured, your journey is protected. We do not leave our clients hanging, and it is our top mission to provide a hassle free experience from start to end. <\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_mcpmir": {
-          "type": "column",
-          "settings": {
-            "title": "<em><strong>Hassle-Free<\/strong><\/em><strong> <\/strong>Claims",
-            "text": "<p>In the rare event of a defect, we take care of you. Rinosbike will handle any necessary rebuilding, shipping, and customs charges for successful warranty claims, so you can get back to what you love—riding. Contact us through our email at info@rinosbike.eu.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_pPWkxH",
-        "column_UUaPfw",
-        "column_mcpmir"
-      ],
-      "settings": {
-        "title": "Discover our Warranty.",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "button_label": "Need help? Send us an e-mail!",
-        "button_link": "shopify:\/\/pages\/contact",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -112,83 +59,12 @@
         "padding_bottom": 28
       }
     },
-    "collapsible_content_HVChMC": {
-      "type": "collapsible-content",
-      "blocks": {
-        "collapsible_row_9jHCkX": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "What is the guarantee and what does it cover?",
-            "icon": "question_mark",
-            "row_content": "<p>In addition to the warranty, Rinosbike offers a guarantee on parts from original component manufacturers. This guarantee also applies for at least two years unless otherwise stated. The guarantee only covers material and workmanship defects that were present at the time of delivery.<\/p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_bD3zfN": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "A specific component broke, what can I do?",
-            "icon": "leaf",
-            "row_content": "<p><\/p><ul><li><strong>Rinosbike Manufactured Components:<\/strong> Our guarantee is exclusively valid for Rinosbike manufactured components. If you experience any issues with these components, we are here to assist you.<\/li><li><strong>Other Components:<\/strong> For guarantee claims related to components from other manufacturers, please contact the respective manufacturer directly. They will be able to assist you with their specific warranty processes. If you need help finding these resources, you can also mail us. <\/li><\/ul><p><strong>Claims Process:<\/strong><\/p><ul><li><strong>Replacement Costs:<\/strong> In the case of a valid guarantee claim, you will not have to pay for the replaced frame or fork. We will handle the replacement and ensure your bike is back to its best condition.<\/li><li><strong>Shipping and Labour Costs:<\/strong> Please note that there are associated costs for shipping and labour during the guarantee claim process. These costs will be charged to you.<\/li><li><strong>Additional Services:<\/strong> When you send your bike back for a guarantee claim, you can also take advantage of our other services. We will provide a separate invoice for any additional services requested.<\/li><\/ul><p><\/p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_aTVrYX": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "What if the replacement I need is not available anymore?",
-            "icon": "eye",
-            "row_content": "<p>If replacement part’s aren’t available in the same way as you purchased you will be offered an alternative that would cover the same exact need.<\/p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_XHDEqk": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "What is not covered?",
-            "icon": "clipboard",
-            "row_content": "<p>While our warranty is comprehensive, there are certain situations and types of damage that it does not cover. Here are a few examples:<\/p><p><strong>1. Accidental Damage<\/strong><\/p><ul><li><em>What is accidental damage?<\/em><\/li><\/ul><p><strong>2. Wear and Tear<\/strong><\/p><ul><li><em>What is considered wear and tear?<\/em><\/li><\/ul><p><strong>3. Corrosion Damage<\/strong><\/p><ul><li><em>What kind of corrosion damage is not covered?<\/em><\/li><\/ul><p><strong>4. Misuse of the Bike<\/strong><\/p><ul><li><em>What does using the bike outside of its intended category rating mean?<\/em><\/li><\/ul><p><strong>5. Colour Changes<\/strong><\/p><ul><li><em>What causes colour changes that are not covered?<\/em><\/li><\/ul>",
-            "page": ""
-          }
-        },
-        "collapsible_row_JF3tzw": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How can I make a claim and what can I expect?",
-            "icon": "stopwatch",
-            "row_content": "<p>If your Rinosbike meets the warranty or guarantee criteria and you need to file a claim, follow these steps to ensure a smooth process:<br\/><br\/>Submit Your Claim:<br\/>Use the provided links to submit your claim. Please include a detailed description of the issue along with clear, clean photos of your bike. You can also email us at info@rinosbike.eu. <br\/><\/p><p>Assessment:<br\/>If you’re not a skilled mechanic or unsure about the issue, don’t worry—our team will conduct a thorough review of your case. Depending on the problem, we may need to inspect your bike or specific components to determine if it falls under warranty. <\/p><p><br\/>Communication:<br\/>A member of our technical service team will reach out to discuss your claim and guide you through the next steps. If repairs or parts replacements are necessary and not covered by the warranty, we will provide you with our recommendations and options.<br\/><\/p><p>Process Timeline:<br\/>The entire process typically takes between 2 to 6 weeks. We will keep you informed throughout, ensuring you know the status of your claim.<br\/><\/p><p>Expert Assistance:<br\/>For those who prefer expert help, you can take your bike back to us for an inspection and professional opinion.<br\/><\/p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_8LAJQg": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "What is a \"Successful warranty claim\"?",
-            "icon": "check_mark",
-            "row_content": "<p><strong>What is a Successful Warranty Claim?<\/strong><\/p><p>A successful warranty claim occurs when a reported issue with your Rinosbike is verified to be covered under the terms of our warranty. This typically involves the following steps:<\/p><ol><li><strong>Initial Assessment: <\/strong>You report a problem with your bike, such as a defect in the frame, forks, cockpit, or seatpost, or any other component covered under our 2-year warranty.<\/li><li><strong>Verification: <\/strong>Our team, or an authorized partner, inspects the bike to determine if the issue is due to a material or workmanship defect that existed at the time of delivery. This step may involve providing proof of purchase and detailed information about the problem.<\/li><li><strong>Approval: <\/strong>Once it is confirmed that the defect falls under the warranty coverage, your claim is approved. This means that the defect is not due to misuse, accidental damage, wear and tear, corrosion, or any other exclusion specified in our warranty policy.<\/li><li><strong>Resolution: <\/strong>Upon approval, we proceed with the necessary actions to resolve the issue. This includes covering the costs of repairing or replacing the defective parts. Rinosbike also takes care of any associated rebuilding, shipping, and customs fees, ensuring you do not incur additional expenses.<\/li><\/ol><p><\/p>",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_row_9jHCkX",
-        "collapsible_row_bD3zfN",
-        "collapsible_row_aTVrYX",
-        "collapsible_row_XHDEqk",
-        "collapsible_row_JF3tzw",
-        "collapsible_row_8LAJQg"
-      ],
+    "page_zKi9Y9": {
+      "type": "page",
       "settings": {
-        "caption": "",
-        "heading": "<strong>More questions?<\/strong>",
+        "page": "rinos-assembly-guide",
         "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "section",
-        "color_scheme": "scheme-7caf5152-a928-4609-a494-5f682c04b5fb",
-        "container_color_scheme": "background-1",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
+        "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -196,8 +72,7 @@
   },
   "order": [
     "rich_text_mNe3TB",
-    "multicolumn_Y4ydFP",
     "main",
-    "collapsible_content_HVChMC"
+    "page_zKi9Y9"
   ]
 }
