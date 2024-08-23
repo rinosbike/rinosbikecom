@@ -38,7 +38,7 @@
             "button_label": "Button label",
             "link": "",
             "button_style_secondary": false,
-            "box_align": "bottom-center",
+            "box_align": "bottom-right",
             "show_text_box": false,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
@@ -52,7 +52,7 @@
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
+        "slide_height": "adapt_image",
         "slider_visual": "counter",
         "auto_rotate": false,
         "change_slides_speed": 5,
