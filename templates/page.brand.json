@@ -165,8 +165,8 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/Thinner_made_white.png",
-            "heading": "<em><strong>Community<\/strong><\/em>",
-            "heading_size": "h1",
+            "heading": "Join the <strong>Community<\/strong>",
+            "heading_size": "h2",
             "subheading": "",
             "button_label": "",
             "link": "",
