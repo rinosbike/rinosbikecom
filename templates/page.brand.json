@@ -107,8 +107,8 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/IMG_2131.png",
-            "heading": "Discover the community.",
-            "heading_size": "h0",
+            "heading": "<em><strong>Community.<\/strong><\/em>",
+            "heading_size": "h1",
             "subheading": "",
             "button_label": "",
             "link": "",
@@ -118,7 +118,7 @@
             "text_alignment": "left",
             "image_overlay_opacity": 0,
             "color_scheme": "",
-            "text_alignment_mobile": "center"
+            "text_alignment_mobile": "left"
           }
         },
         "slide_YN3QXb": {
@@ -170,7 +170,7 @@
         "auto_rotate": false,
         "change_slides_speed": 5,
         "image_behavior": "none",
-        "show_text_below": true,
+        "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
       }
     },
@@ -203,7 +203,7 @@
           "type": "row",
           "settings": {
             "image": "shopify:\/\/shop_images\/coaching-mentoring-emberin-diversity-and-inclusion-programs-scaled-1024x683.jpg",
-            "caption": "Caption",
+            "caption": "Rinos Bicycles",
             "heading": "The <em><strong>People<\/strong><\/em>",
             "text": "<p>We are a global community of riders, builders, and dreamers from all walks of life.<\/p><p>We believe that the love of cycling transcends borders, cultures, and backgrounds, and we are committed to fostering an inclusive, multicultural workplace where everyone is welcome. <\/p><p>Our team is a vibrant mix of talents and perspectives, all united by a shared passion for cycling and a commitment to making the world a better place, one ride at a time.<\/p>",
             "button_label": "",
