@@ -32,7 +32,7 @@
         "slide_DYw4cU": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/20_logo_opacity_b48a1607-a83d-4805-8ecc-3e45e9e07587.png",
+            "image": "shopify:\/\/shop_images\/Rinos_LogoNOTEXTNOBG_1_61e6940e-034a-4a88-adc3-13bda4d642ca.png",
             "heading": "Discover why Rinos is Synonym of <em><strong>Excellence.<\/strong><\/em>",
             "heading_size": "h1",
             "subheading": "",
@@ -59,79 +59,6 @@
         "change_slides_speed": 5,
         "image_behavior": "none",
         "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
-      }
-    },
-    "slideshow_qrKnJF": {
-      "type": "slideshow",
-      "blocks": {
-        "slide_YN3QXb": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_2518_3153016c-8fe2-4e2b-a5d3-4c9ad8d9b45b.png",
-            "heading": "",
-            "heading_size": "h0",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "top-right",
-            "show_text_box": false,
-            "text_alignment": "right",
-            "image_overlay_opacity": 0,
-            "color_scheme": "inverse",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_xCcaNx": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_2131.png",
-            "heading": "Discover the community.",
-            "heading_size": "h0",
-            "subheading": "",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "bottom-left",
-            "show_text_box": false,
-            "text_alignment": "left",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_FUBQNG": {
-          "type": "slide",
-          "settings": {
-            "heading": "Image slide",
-            "heading_size": "h2",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "slide_YN3QXb",
-        "slide_xCcaNx",
-        "slide_FUBQNG"
-      ],
-      "settings": {
-        "layout": "full_bleed",
-        "slide_height": "large",
-        "slider_visual": "numbers",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
       }
     },
@@ -171,6 +98,80 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
+      }
+    },
+    "slideshow_qrKnJF": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_xCcaNx": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_2131.png",
+            "heading": "Discover the community.",
+            "heading_size": "h0",
+            "subheading": "",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_YN3QXb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_2518_3153016c-8fe2-4e2b-a5d3-4c9ad8d9b45b.png",
+            "heading": "",
+            "heading_size": "h0",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "top-right",
+            "show_text_box": false,
+            "text_alignment": "right",
+            "image_overlay_opacity": 0,
+            "color_scheme": "inverse",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_FUBQNG": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Image slide",
+            "heading_size": "h2",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_xCcaNx",
+        "slide_YN3QXb",
+        "slide_FUBQNG"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "slider_visual": "numbers",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
     "multirow_XtVHtB": {
@@ -235,9 +236,9 @@
   "order": [
     "image_banner_EVFcNK",
     "slideshow_iwNJRQ",
-    "slideshow_qrKnJF",
     "main",
     "rich_text_RBjCTU",
+    "slideshow_qrKnJF",
     "multirow_XtVHtB"
   ]
 }
