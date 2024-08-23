@@ -208,10 +208,10 @@
       "accent-2": {
         "settings": {
           "background": "#a9a9a9",
-          "background_gradient": "linear-gradient(2deg, rgba(207, 201, 210, 1) 6%, rgba(140, 140, 140, 1) 93%)",
-          "text": "#ffffff",
+          "background_gradient": "linear-gradient(2deg, rgba(0, 0, 0, 1) 6%, rgba(140, 140, 140, 1) 93%)",
+          "text": "#000000",
           "button": "#ffffff",
-          "button_label": "#334fb4",
+          "button_label": "#000000",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212"
         }

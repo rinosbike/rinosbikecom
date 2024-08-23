@@ -11,6 +11,7 @@
   "sections": {
     "image_banner_EVFcNK": {
       "type": "image-banner",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Rinos_LogoNOTEXTNOBG_1_6c731259-1c82-40e4-bb3c-538820dfaf6b.png",
         "image_overlay_opacity": 0,
@@ -31,18 +32,18 @@
         "slide_DYw4cU": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rinos_LogoNOTEXTNOBG_1_f61415d5-dca2-4ac3-9ade-7421aa67ecac.png",
-            "heading": "Join us in the                                        Ride of a Lifetime.",
+            "image": "shopify:\/\/shop_images\/20_logo_opacity_b48a1607-a83d-4805-8ecc-3e45e9e07587.png",
+            "heading": "Discover why Rinos is Synonym of <em><strong>Excellence.<\/strong><\/em>",
             "heading_size": "h1",
             "subheading": "",
-            "button_label": "Button label",
+            "button_label": "",
             "link": "",
             "button_style_secondary": false,
-            "box_align": "bottom-right",
+            "box_align": "middle-center",
             "show_text_box": false,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
-            "color_scheme": "",
+            "color_scheme": "background-1",
             "text_alignment_mobile": "center"
           }
         }
