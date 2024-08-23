@@ -9,15 +9,102 @@
 */
 {
   "sections": {
+    "rich_text_RBjCTU": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_P9KpWJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join us in the ride of a <strong>lifetime<\/strong>.",
+            "heading_size": "h1"
+          }
+        },
+        "text_HYex67": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cycling isn’t just a sport; it’s a way of life—a journey that pushes you to your limits, connects you with the world, and brings you closer to who you really are. <\/p><p>At Rinos, we’re more than just a bike company; we’re a community of riders who live and breathe this passion.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_P9KpWJ",
+        "text_HYex67"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "multirow_XtVHtB": {
+      "type": "multirow",
+      "blocks": {
+        "row_fjgV6h": {
+          "type": "row",
+          "settings": {
+            "caption": "Caption",
+            "heading": "Row",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "row_7Kchtf": {
+          "type": "row",
+          "settings": {
+            "caption": "Caption",
+            "heading": "Row",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "row_H9rGzN": {
+          "type": "row",
+          "settings": {
+            "caption": "Caption",
+            "heading": "Row",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_fjgV6h",
+        "row_7Kchtf",
+        "row_H9rGzN"
+      ],
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "rich_text_RBjCTU",
+    "main",
+    "multirow_XtVHtB"
   ]
 }
