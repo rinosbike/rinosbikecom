@@ -16,7 +16,7 @@
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "top-center",
-        "show_text_box": false,
+        "show_text_box": true,
         "desktop_content_alignment": "center",
         "color_scheme": "",
         "image_behavior": "none",
@@ -71,9 +71,9 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/sandman_front.png",
             "caption": "Rinos bycicles",
-            "heading": "Our <em><strong>mission<\/strong><\/em>",
+            "heading": "The <em><strong>mission<\/strong><\/em>",
             "text": "<p>When you ride with Rinos, you’re not just buying a bike; you’re joining a tribe of adventurers, explorers, and dreamers who see every road and trail as an opportunity to discover something new. <\/p><p>Our bikes are built for those who ride with heart, who embrace the grind, and who never settle for anything less than the best.<\/p>",
-            "button_label": "Button label",
+            "button_label": "",
             "button_link": ""
           }
         },
@@ -84,17 +84,18 @@
             "caption": "Rinos bicycles",
             "heading": "The <em><strong>Vision <\/strong><\/em>",
             "text": "<p>Our story began with a single vision—to create a bike that embodies the true spirit of cycling, where every turn of the pedal brings you closer to the road, the environment, and yourself. <\/p><p>In 2023, we introduced our first model, the Sandman 1, a gravel bike that set the stage for our journey of innovation and excellence. <\/p><p>We’ve continued to refine our designs, making the joy of cycling accessible to more people around the world and never settling for what we have. <\/p>",
-            "button_label": "Button label",
+            "button_label": "",
             "button_link": ""
           }
         },
         "row_H9rGzN": {
           "type": "row",
           "settings": {
+            "image": "shopify:\/\/shop_images\/coaching-mentoring-emberin-diversity-and-inclusion-programs-scaled-1024x683.jpg",
             "caption": "Caption",
-            "heading": "Row",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "button_label": "Button label",
+            "heading": "The <em><strong>People<\/strong><\/em>",
+            "text": "<p>We are a global community of riders, builders, and dreamers from all walks of life.<\/p><p>We believe that the love of cycling transcends borders, cultures, and backgrounds, and we are committed to fostering an inclusive, multicultural workplace where everyone is welcome. <\/p><p>Our team is a vibrant mix of talents and perspectives, all united by a shared passion for cycling and a commitment to making the world a better place, one ride at a time.<\/p>",
+            "button_label": "",
             "button_link": ""
           }
         }
@@ -126,13 +127,14 @@
         "slide_xCcaNx": {
           "type": "slide",
           "settings": {
-            "heading": "Image slide",
+            "image": "shopify:\/\/shop_images\/image2.jpg",
+            "heading": "Discover <em><strong>Gravel<\/strong><\/em>.",
             "heading_size": "h0",
-            "subheading": "Tell your brand's story through images",
+            "subheading": "",
             "button_label": "Button label",
             "link": "",
             "button_style_secondary": false,
-            "box_align": "middle-center",
+            "box_align": "bottom-left",
             "show_text_box": false,
             "text_alignment": "left",
             "image_overlay_opacity": 0,
@@ -140,32 +142,33 @@
             "text_alignment_mobile": "center"
           }
         },
-        "slide_xrLjhN": {
+        "slide_YN3QXb": {
           "type": "slide",
           "settings": {
-            "heading": "Image slide",
+            "image": "shopify:\/\/shop_images\/IMG_2518.png",
+            "heading": "Join our community.                         Ride <em><strong>your dreams.<\/strong><\/em>",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
+            "subheading": "Join a community of dedicated, conscious and sophisticated riders.",
             "button_label": "Button label",
             "link": "",
             "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
+            "box_align": "top-right",
+            "show_text_box": false,
+            "text_alignment": "right",
             "image_overlay_opacity": 0,
-            "color_scheme": "",
+            "color_scheme": "background-1",
             "text_alignment_mobile": "center"
           }
         }
       },
       "block_order": [
         "slide_xCcaNx",
-        "slide_xrLjhN"
+        "slide_YN3QXb"
       ],
       "settings": {
         "layout": "full_bleed",
         "slide_height": "adapt_image",
-        "slider_visual": "counter",
+        "slider_visual": "numbers",
         "auto_rotate": false,
         "change_slides_speed": 5,
         "image_behavior": "none",
