@@ -25,6 +25,42 @@
         "show_text_below": true
       }
     },
+    "slideshow_iwNJRQ": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_DYw4cU": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rinos_LogoNOTEXTNOBG_1_f61415d5-dca2-4ac3-9ade-7421aa67ecac.png",
+            "heading": "Join us in the                                        Ride of a Lifetime.",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "bottom-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_DYw4cU"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -124,6 +160,24 @@
     "slideshow_qrKnJF": {
       "type": "slideshow",
       "blocks": {
+        "slide_YN3QXb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_2518.png",
+            "heading": "Join our community.                         <em><strong>Ride<\/strong><\/em> <em><strong>your dreams.<\/strong><\/em>",
+            "heading_size": "h0",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "top-center",
+            "show_text_box": false,
+            "text_alignment": "right",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_xCcaNx": {
           "type": "slide",
           "settings": {
@@ -142,19 +196,18 @@
             "text_alignment_mobile": "center"
           }
         },
-        "slide_YN3QXb": {
+        "slide_FUBQNG": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_2518.png",
-            "heading": "Join our community.                         Ride <em><strong>your dreams.<\/strong><\/em>",
-            "heading_size": "h1",
-            "subheading": "Join a community of dedicated, conscious and sophisticated riders.",
+            "heading": "Image slide",
+            "heading_size": "h2",
+            "subheading": "Tell your brand's story through images",
             "button_label": "Button label",
             "link": "",
             "button_style_secondary": false,
-            "box_align": "top-right",
-            "show_text_box": false,
-            "text_alignment": "right",
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
             "image_overlay_opacity": 0,
             "color_scheme": "background-1",
             "text_alignment_mobile": "center"
@@ -162,8 +215,9 @@
         }
       },
       "block_order": [
+        "slide_YN3QXb",
         "slide_xCcaNx",
-        "slide_YN3QXb"
+        "slide_FUBQNG"
       ],
       "settings": {
         "layout": "full_bleed",
@@ -172,13 +226,14 @@
         "auto_rotate": false,
         "change_slides_speed": 5,
         "image_behavior": "none",
-        "show_text_below": true,
+        "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
       }
     }
   },
   "order": [
     "image_banner_EVFcNK",
+    "slideshow_iwNJRQ",
     "main",
     "rich_text_RBjCTU",
     "multirow_XtVHtB",
