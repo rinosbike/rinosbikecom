@@ -14,15 +14,13 @@
       "blocks": {
         "heading_mhpLLH": {
           "type": "heading",
-          "disabled": true,
           "settings": {
-            "heading": "<em><strong>Rediscover <\/strong><\/em><strong>the Mountains<\/strong>",
+            "heading": "<em><strong>Rediscover <\/strong><\/em><strong>the mountains<\/strong>",
             "heading_size": "h2"
           }
         },
         "text_mxBWgA": {
           "type": "text",
-          "disabled": true,
           "settings": {
             "text": "Discover our MTBs",
             "text_style": "body"
@@ -38,7 +36,7 @@
         ".banner__heading {color: #e5e4e2;}"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Frame_25_b3c4c023-7d6e-4da4-a3bd-1e6e93d9e3bf.png",
+        "image": "shopify:\/\/shop_images\/Gaia2_Fotoshooting_Slubice_Forest2_c7c24f41-967d-48b2-b227-3f7b5f498c20.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
