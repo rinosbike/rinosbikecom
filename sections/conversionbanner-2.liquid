@@ -8,15 +8,15 @@
 <style>
 
 @media (min-width: 300px) {
-  .grid-container { grid-template-columns: repeat(4, 1fr); }
+  .grid-container { grid-template-columns: repeat(5, 1fr); }
 }
 
 @media (min-width: 600px) {
-  .grid-container { grid-template-columns: repeat(4, 1fr); }
+  .grid-container { grid-template-columns: repeat(5, 1fr); }
 }
 
 @media (min-width: 900px) {
-  .grid-container { grid-template-columns: repeat(4, 1fr); }
+  .grid-container { grid-template-columns: repeat(5, 1fr); }
 }
 
 .grid-container{
@@ -27,23 +27,20 @@
     padding: 5px;
     max-width: 700px;
     display: grid;
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 }
 
 .column-1{
     font-family: sans-serif;
-    height: fit-content;
-    padding: 10px;
-    padding-top: 20px;
-
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .icon{
-    max-height: 30px;
+    max-height: 20px;
     max-width: auto;
 }
 
@@ -77,6 +74,10 @@
                 <img class="icon" src="https://cdn.shopify.com/s/files/1/0720/5794/6377/files/return.left_50x_5fbc781f-b60f-4a4a-9878-6dfb3ab01dfa.png?v=1707559188">
                 <p class="text-1">{{ section.settings.return_text }}</p>
             </div>
+            <div class="column-1">
+                <img class="icon" src="https://cdn.shopify.com/s/files/1/0720/5794/6377/files/clock.arrow.2.circlepath_10x_8810601c-f67e-42d7-8886-cf026214dd6b.png?v=1724910713">
+                <p class="text-1">{{ section.settings.support_text }}</p>
+            </div>
         </div>
     </section>
 </body>
@@ -109,6 +110,12 @@
             "id": "return_text",
             "label": "Return Text",
             "default": "14 days return"
+        },
+        {
+            "type": "text",
+            "id": "support_text",
+            "label": "Support Text",
+            "default": "Lifetime return"
         }
     ],
     "presets": [
