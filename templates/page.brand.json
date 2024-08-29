@@ -120,7 +120,7 @@
             "image": "shopify:\/\/shop_images\/IMG_1808_1.png",
             "caption": "Rinos bicycles",
             "heading": "The <em><strong>Vision <\/strong><\/em>",
-            "text": "<p>Our story began with a single vision—to create a bike that embodies the true spirit of cycling, where every turn of the pedal brings you closer to the road, the environment, and yourself. <\/p><p>In 2023, we introduced our first model, the Sandman 1, a gravel bike that set the stage for our journey of innovation and excellence. <\/p><p>We’ve continued to refine our designs, making the joy of cycling accessible to more people around the world and never settling for what we have. <\/p>",
+            "text": "<p>Our story began in Germany with a single vision—to create a bike that embodies the true spirit of cycling, where every turn of the pedal brings you closer to the road, the environment, and yourself. That's why we decided to assemble our own bikes responsibly and in small scale. <\/p><p>In 2023, we introduced our first model, the Sandman 1, a gravel bike that set the stage for our journey of innovation and excellence. <\/p><p>We’ve continued to refine our designs, making the joy of cycling accessible to more people around the world and never settling for what we have. <\/p><p><\/p>",
             "button_label": "",
             "button_link": ""
           }
@@ -153,6 +153,53 @@
         "image_layout": "alternate-left",
         "section_color_scheme": "",
         "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_afxbCf": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_6aW8w7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Don't <em>just <\/em>take<strong> our word...<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_V3fhim": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Many are already enjoying the world of Rinos, like our rider Vanya Stayanov, who put our Sandman through a good warm-up.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_8tn7ce": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_6aW8w7",
+        "text_V3fhim",
+        "button_8tn7ce"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/450543773_855500629966357_8893933130621336481_n.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
@@ -294,6 +341,7 @@
     "main",
     "rich_text_RBjCTU",
     "multirow_XtVHtB",
+    "image_with_text_afxbCf",
     "slideshow_xJw9p8",
     "slideshow_qrKnJF"
   ]
