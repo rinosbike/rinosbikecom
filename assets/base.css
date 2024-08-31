@@ -3511,3 +3511,9 @@ details-disclosure > details {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
 }
+
+@font-face {
+  font-family: "Font name";
+  src: url("{{ '[Graphik-Regular-Trial]' | asset_url }}") format("[font-format]");
+}
+
