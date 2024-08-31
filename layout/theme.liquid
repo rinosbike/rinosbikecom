@@ -248,6 +248,13 @@
           font-size: 1.6rem;
         }
       }
+
+
+    @font-face {
+      font-family: "Graphik-Regular-Trial";
+      src: url("{{ 'Graphik-Regular-Trial.otf' | asset_url }}") format("otf");
+    }
+
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}

@@ -3512,8 +3512,3 @@ details-disclosure > details {
   }
 }
 
-@font-face {
-  font-family: "Graphik-Regular-Trial";
-  src: url("{{ '[Graphik-Regular-Trial]' | asset_url }}") format("[font-format]");
-}
-
