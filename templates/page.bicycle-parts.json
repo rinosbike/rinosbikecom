@@ -23,20 +23,20 @@
         "heading_P8P8e8": {
           "type": "heading",
           "settings": {
-            "heading": "Bicycle Parts and Replacements",
+            "heading": "<em><strong>All you need <\/strong><\/em>for your <strong>Rinos<\/strong>.",
             "heading_size": "h1"
           }
         },
         "text_CPfYkV": {
           "type": "text",
           "settings": {
-            "text": "<p>Need a replacement for your Rinos? You are in the right place. All these components fit our Rinos bicycles and are designed and tested for optimal performance. <\/p>"
+            "text": "<p>Need a replacement? You are in the right place. <\/p><p>All these components fit our Rinos bicycles and are designed, manufactured and tested for optimal performance. <\/p>"
           }
         },
         "button_Rm3V6w": {
           "type": "button",
           "settings": {
-            "button_label": "Have a question?",
+            "button_label": "",
             "button_link": "",
             "button_style_secondary": false,
             "button_label_2": "",
@@ -62,7 +62,7 @@
     "featured_collection_KKRjCP": {
       "type": "featured-collection",
       "settings": {
-        "title": "All you need for your Rinos.",
+        "title": "",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
