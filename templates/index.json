@@ -62,6 +62,54 @@
         "show_text_below": false
       }
     },
+    "image_banner_TA7mXD": {
+      "type": "image-banner",
+      "blocks": {
+        "text_9zrraz": {
+          "type": "text",
+          "settings": {
+            "text": "Odin series",
+            "text_style": "body"
+          }
+        },
+        "heading_MhzxKU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Be the fastest in the Road.",
+            "heading_size": "h1"
+          }
+        },
+        "buttons_ijJJyE": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Configure your new Roadbike",
+            "button_link_1": "shopify:\/\/collections\/road-bikes",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_9zrraz",
+        "heading_MhzxKU",
+        "buttons_ijJJyE"
+      ],
+      "settings": {
+        "image_2": "shopify:\/\/shop_images\/Group_58.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "bottom-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "right",
+        "color_scheme": "background-1",
+        "image_behavior": "fixed",
+        "mobile_content_alignment": "right",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
     "image_banner_qQDHCk": {
       "type": "image-banner",
       "blocks": {
@@ -103,56 +151,6 @@
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
-        "show_text_below": false
-      }
-    },
-    "image_banner_TA7mXD": {
-      "type": "image-banner",
-      "blocks": {
-        "text_9zrraz": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "Sandman 5",
-            "text_style": "body"
-          }
-        },
-        "heading_MhzxKU": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "",
-            "heading_size": "h0"
-          }
-        },
-        "buttons_ijJJyE": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Configure your new Roadbike",
-            "button_link_1": "shopify:\/\/collections\/road-bikes",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "text_9zrraz",
-        "heading_MhzxKU",
-        "buttons_ijJJyE"
-      ],
-      "settings": {
-        "image_2": "shopify:\/\/shop_images\/Frame_26_98479a0b-aa9a-49c4-8990-5e55171d2dd1.png",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "desktop_content_position": "middle-right",
-        "show_text_box": false,
-        "desktop_content_alignment": "right",
-        "color_scheme": "inverse",
-        "image_behavior": "fixed",
-        "mobile_content_alignment": "right",
-        "stack_images_on_mobile": false,
         "show_text_below": false
       }
     },
@@ -236,8 +234,8 @@
   "order": [
     "banner_video_tx3irV",
     "image_banner_cR6hqL",
-    "image_banner_qQDHCk",
     "image_banner_TA7mXD",
+    "image_banner_qQDHCk",
     "image_banner_cpPmMm",
     "rich_text_MfXaWd"
   ]
