@@ -14,6 +14,54 @@
       "settings": {
       }
     },
+    "image_banner_cR6hqL": {
+      "type": "image-banner",
+      "blocks": {
+        "text_CpXchY": {
+          "type": "text",
+          "settings": {
+            "text": "Gaia Series",
+            "text_style": "body"
+          }
+        },
+        "heading_dKjWV3": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover                                             Rinos MTB Series: <em><strong>Gaia<\/strong><\/em>",
+            "heading_size": "h2"
+          }
+        },
+        "buttons_ND9C77": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Discover Gaia Series Now",
+            "button_link_1": "shopify:\/\/collections\/mtb",
+            "button_style_secondary_1": false,
+            "button_label_2": "Discover Gaia 2 in our blog",
+            "button_link_2": "shopify:\/\/blogs\/news\/component-spotlight-mtb-gaia-2-and-shimano-deore",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_CpXchY",
+        "heading_dKjWV3",
+        "buttons_ND9C77"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Group_55.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-right",
+        "show_text_box": false,
+        "desktop_content_alignment": "right",
+        "color_scheme": "background-1",
+        "image_behavior": "ambient",
+        "mobile_content_alignment": "right",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
     "image_banner_qQDHCk": {
       "type": "image-banner",
       "blocks": {
@@ -54,56 +102,6 @@
         "color_scheme": "",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": false
-      }
-    },
-    "image_banner_cR6hqL": {
-      "type": "image-banner",
-      "blocks": {
-        "text_CpXchY": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "Gaia Series",
-            "text_style": "body"
-          }
-        },
-        "heading_dKjWV3": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "Discover the mountain",
-            "heading_size": "h0"
-          }
-        },
-        "buttons_ND9C77": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Discover Gaia  2 Now",
-            "button_link_1": "shopify:\/\/products\/gaia-2",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "text_CpXchY",
-        "heading_dKjWV3",
-        "buttons_ND9C77"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Group_36_a5f4cc9f-5287-4420-9fcf-5c5c2e7ac3ee.png",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "bottom-right",
-        "show_text_box": false,
-        "desktop_content_alignment": "right",
-        "color_scheme": "inverse",
-        "image_behavior": "fixed",
-        "mobile_content_alignment": "right",
         "stack_images_on_mobile": true,
         "show_text_below": false
       }
@@ -184,6 +182,7 @@
         "heading_yLHH3C",
         "buttons_QBWJYA"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/IMG_1808_1.png",
         "image_overlay_opacity": 0,
@@ -236,8 +235,8 @@
   },
   "order": [
     "banner_video_tx3irV",
-    "image_banner_qQDHCk",
     "image_banner_cR6hqL",
+    "image_banner_qQDHCk",
     "image_banner_TA7mXD",
     "image_banner_cpPmMm",
     "rich_text_MfXaWd"
