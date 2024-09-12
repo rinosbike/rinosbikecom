@@ -9,9 +9,60 @@
 */
 {
   "sections": {
-    "banner_video_tx3irV": {
-      "type": "banner-video",
+    "image_with_text_WYccVP": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ktKTQh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Until End of September:           10% off  <strong>Gaia Series<\/strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_PqB6wq": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "caption_4anBB6": {
+          "type": "caption",
+          "settings": {
+            "caption": "Use the code  GAIA10  to get a 10% discount on checkout",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "large"
+          }
+        },
+        "button_Pw3rbn": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ktKTQh",
+        "text_PqB6wq",
+        "caption_4anBB6",
+        "button_Pw3rbn"
+      ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/IMG_9455_1_90487139-fcbc-45e9-8db4-4c46242be9c0.jpg",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "right",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-7caf5152-a928-4609-a494-5f682c04b5fb",
+        "image_behavior": "none",
+        "mobile_content_alignment": "right",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "image_banner_cR6hqL": {
@@ -27,7 +78,7 @@
         "heading_dKjWV3": {
           "type": "heading",
           "settings": {
-            "heading": "Get ready for September.",
+            "heading": "Conquer the <strong>Mountain<\/strong>",
             "heading_size": "h2"
           }
         },
@@ -156,6 +207,11 @@
         "mobile_content_alignment": "left",
         "stack_images_on_mobile": false,
         "show_text_below": true
+      }
+    },
+    "banner_video_tx3irV": {
+      "type": "banner-video",
+      "settings": {
       }
     },
     "image_banner_qQDHCk": {
@@ -287,10 +343,11 @@
     }
   },
   "order": [
-    "banner_video_tx3irV",
+    "image_with_text_WYccVP",
     "image_banner_cR6hqL",
     "image_banner_TA7mXD",
     "image_banner_QyiEmb",
+    "banner_video_tx3irV",
     "image_banner_qQDHCk",
     "image_banner_cpPmMm",
     "rich_text_MfXaWd"
