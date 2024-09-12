@@ -209,11 +209,6 @@
         "show_text_below": true
       }
     },
-    "banner_video_tx3irV": {
-      "type": "banner-video",
-      "settings": {
-      }
-    },
     "image_banner_qQDHCk": {
       "type": "image-banner",
       "blocks": {
@@ -306,6 +301,11 @@
         "show_text_below": false
       }
     },
+    "banner_video_tx3irV": {
+      "type": "banner-video",
+      "settings": {
+      }
+    },
     "rich_text_MfXaWd": {
       "type": "rich-text",
       "blocks": {
@@ -347,9 +347,9 @@
     "image_banner_cR6hqL",
     "image_banner_TA7mXD",
     "image_banner_QyiEmb",
-    "banner_video_tx3irV",
     "image_banner_qQDHCk",
     "image_banner_cpPmMm",
+    "banner_video_tx3irV",
     "rich_text_MfXaWd"
   ]
 }
