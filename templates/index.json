@@ -303,6 +303,7 @@
     },
     "banner_video_tx3irV": {
       "type": "banner-video",
+      "disabled": true,
       "settings": {
       }
     },
