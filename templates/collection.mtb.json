@@ -125,12 +125,12 @@
         "button_FJnFjX"
       ],
       "settings": {
-        "desktop_content_position": "center",
+        "desktop_content_position": "left",
         "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 52
+        "padding_bottom": 40
       }
     },
     "multirow_7b4JV3": {
@@ -202,6 +202,48 @@
         "mobile_content_alignment": "center",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "rich_text_tdKfb4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_cR6VfW": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Time to make your choice...<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_LyDLtP": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "button_77cF9L": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_cR6VfW",
+        "text_LyDLtP",
+        "button_77cF9L"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "image_with_text_tTF9w7": {
@@ -355,6 +397,7 @@
     "image_banner_ByDxLc",
     "rich_text_pxgrh6",
     "multirow_7b4JV3",
+    "rich_text_tdKfb4",
     "image_with_text_tTF9w7",
     "image_with_text_cUahfJ",
     "product-grid",
