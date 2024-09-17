@@ -210,8 +210,8 @@
         "heading_cR6VfW": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Time to make your choice...<\/strong>",
-            "heading_size": "h1"
+            "heading": "<em><strong>Time to make your choice...<\/strong><\/em>",
+            "heading_size": "h0"
           }
         },
         "text_LyDLtP": {
@@ -238,8 +238,8 @@
         "button_77cF9L"
       ],
       "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
+        "desktop_content_position": "right",
+        "content_alignment": "right",
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
