@@ -9,37 +9,79 @@
 */
 {
   "sections": {
-    "image_banner_ByDxLc": {
-      "type": "image-banner",
+    "rich_text_AWEEg6": {
+      "type": "rich-text",
       "blocks": {
-        "heading_mhpLLH": {
+        "heading_mTp3HM": {
           "type": "heading",
           "settings": {
-            "heading": "<em><strong>Rediscover <\/strong><\/em><strong>the mountains<\/strong>",
-            "heading_size": "h2"
+            "heading": "Welcome to <em><strong>Gaia Series<\/strong><\/em>",
+            "heading_size": "h0"
           }
         },
-        "text_mxBWgA": {
+        "text_x8UDi4": {
           "type": "text",
           "settings": {
-            "text": "Discover our MTBs",
-            "text_style": "body"
+            "text": "<p>Discover our high quality MTB assembled in Germany and join the Rinos Family.<\/p><p><\/p>"
+          }
+        },
+        "text_FcDxci": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "button_CbYXCf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Configure Gaia 2 Now",
+            "button_link": "shopify:\/\/products\/gaia-2",
+            "button_style_secondary": false,
+            "button_label_2": "Configure Gaia 4 Now",
+            "button_link_2": "shopify:\/\/products\/gaia-4",
+            "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "heading_mhpLLH",
-        "text_mxBWgA"
+        "heading_mTp3HM",
+        "text_x8UDi4",
+        "text_FcDxci",
+        "button_CbYXCf"
+      ],
+      "settings": {
+        "desktop_content_position": "right",
+        "content_alignment": "right",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "image_banner_ByDxLc": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_r7ahtP": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_r7ahtP"
       ],
       "custom_css": [
         ".banner__text {color: #e5e4e2;}",
         ".banner__heading {color: #e5e4e2;}"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Gaia2_Fotoshooting_Slubice_Forest2_c7c24f41-967d-48b2-b227-3f7b5f498c20.jpg",
+        "image": "shopify:\/\/shop_images\/IMG_9455_1_5ed594f3-c027-42cd-b795-8dd6b46bba9f.png",
         "image_overlay_opacity": 0,
         "image_height": "small",
-        "desktop_content_position": "middle-center",
+        "desktop_content_position": "top-right",
         "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "",
@@ -103,6 +145,7 @@
         "row_KzGaPG",
         "row_77JW4m"
       ],
+      "disabled": true,
       "settings": {
         "image_height": "small",
         "desktop_image_width": "medium",
@@ -111,10 +154,10 @@
         "button_style": "primary",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
-        "image_layout": "alternate-left",
+        "image_layout": "alternate-right",
         "section_color_scheme": "background-2",
         "row_color_scheme": "",
-        "mobile_content_alignment": "left",
+        "mobile_content_alignment": "center",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -125,7 +168,7 @@
         "caption_MnKeae": {
           "type": "caption",
           "settings": {
-            "caption": "Featured Bike",
+            "caption": "",
             "text_style": "caption-with-letter-spacing",
             "text_size": "large"
           }
@@ -133,21 +176,21 @@
         "heading_YrNYkg": {
           "type": "heading",
           "settings": {
-            "heading": "Gaia 2",
+            "heading": "Gaia 2: <strong>Mountain Choice.<\/strong>",
             "heading_size": "h1"
           }
         },
         "text_6deyMt": {
           "type": "text",
           "settings": {
-            "text": "<p>Discover the Joy of Riding with Gaia 2 MTB!<\/p>",
+            "text": "<p>RockShox Recon RL Remote Fork.<\/p><p>Shimano Deore M6100. <\/p><p>Hydraulic Disc Brakes.<\/p><p>Only 11,6kg.<\/p>",
             "text_style": "body"
           }
         },
         "button_bJAVRa": {
           "type": "button",
           "settings": {
-            "button_label": "configure",
+            "button_label": "Buy Gaia 2 Now",
             "button_link": "shopify:\/\/products\/gaia-2",
             "button_style_secondary": false
           }
@@ -159,14 +202,69 @@
         "text_6deyMt",
         "button_bJAVRa"
       ],
-      "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Gaia2.0outdoor2.jpg",
-        "height": "adapt",
+        "image": "shopify:\/\/shop_images\/gaia_2.png",
+        "height": "small",
         "desktop_image_width": "medium",
-        "layout": "image_first",
+        "layout": "text_first",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_cUahfJ": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_QC83w6": {
+          "type": "caption",
+          "settings": {
+            "caption": "",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "large"
+          }
+        },
+        "heading_iY7fCV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Gaia 4: <em><strong>Through everything<\/strong><\/em>",
+            "heading_size": "h1"
+          }
+        },
+        "text_HHeDJf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>FOX 32 Rhythm Remote fork.<\/p><p>Shimano SLX M7100. <\/p><p>Hydraulic Disc Brakes.<\/p><p>Even lighter.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_L9Pfzp": {
+          "type": "button",
+          "settings": {
+            "button_label": "Buy Gaia 4 Now",
+            "button_link": "shopify:\/\/products\/gaia-2",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "caption_QC83w6",
+        "heading_iY7fCV",
+        "text_HHeDJf",
+        "button_L9Pfzp"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Group_55_ec5f7177-26f3-4ee0-9a77-9e228e60141d.png",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "right",
         "content_layout": "no-overlap",
         "section_color_scheme": "",
         "color_scheme": "",
@@ -211,9 +309,11 @@
     }
   },
   "order": [
+    "rich_text_AWEEg6",
     "image_banner_ByDxLc",
     "multirow_7b4JV3",
     "image_with_text_tTF9w7",
+    "image_with_text_cUahfJ",
     "product-grid",
     "rinos_comparison_table_mtb_edition_MNMfHm",
     "banner"
