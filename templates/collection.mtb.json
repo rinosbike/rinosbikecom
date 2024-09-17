@@ -91,6 +91,48 @@
         "show_text_below": false
       }
     },
+    "rich_text_pxgrh6": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6bhjKr": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Discover more about our compromise with quality Mountain Bikes.<\/em>",
+            "heading_size": "h1"
+          }
+        },
+        "text_K9pWkd": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Remember, with Rinos, you are covered.<\/strong> Any problem you might have is covered by the 2 Year Warranty and an astonishing Lifetime Support.<\/p>"
+          }
+        },
+        "button_FJnFjX": {
+          "type": "button",
+          "settings": {
+            "button_label": "Find out more",
+            "button_link": "shopify:\/\/pages\/discover-our-brand",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_6bhjKr",
+        "text_K9pWkd",
+        "button_FJnFjX"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "multirow_7b4JV3": {
       "type": "multirow",
       "blocks": {
@@ -311,6 +353,7 @@
   "order": [
     "rich_text_AWEEg6",
     "image_banner_ByDxLc",
+    "rich_text_pxgrh6",
     "multirow_7b4JV3",
     "image_with_text_tTF9w7",
     "image_with_text_cUahfJ",
