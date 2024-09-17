@@ -260,7 +260,7 @@
         "heading_YrNYkg": {
           "type": "heading",
           "settings": {
-            "heading": "Gaia 2: <strong>Mountain Choice.<\/strong>",
+            "heading": "Gaia 2: <em><strong>Classic Choice.<\/strong><\/em>",
             "heading_size": "h1"
           }
         },
@@ -316,7 +316,7 @@
         "heading_iY7fCV": {
           "type": "heading",
           "settings": {
-            "heading": "Gaia 4: <em><strong>Through everything<\/strong><\/em>",
+            "heading": "Gaia 4: <em><strong>Professional's Choice<\/strong><\/em>",
             "heading_size": "h1"
           }
         },
