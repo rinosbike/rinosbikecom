@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "image_banner_ByDxLc": {
@@ -6,14 +15,14 @@
         "heading_mhpLLH": {
           "type": "heading",
           "settings": {
-            "heading": "<em>Road<\/em>",
-            "heading_size": "h2"
+            "heading": "<em><strong>Discover Odin Series<\/strong><\/em>",
+            "heading_size": "h0"
           }
         },
         "text_mxBWgA": {
           "type": "text",
           "settings": {
-            "text": "Discover our road bikes",
+            "text": "",
             "text_style": "body"
           }
         }
@@ -27,8 +36,8 @@
         ".banner__heading {color: #e5e4e2;}"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/the-curve-in-the-road.jpg",
-        "image_overlay_opacity": 0,
+        "image": "shopify:\/\/shop_images\/snowcapped-mountain-peak.jpg",
+        "image_overlay_opacity": 30,
         "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": false,
@@ -40,11 +49,60 @@
         "show_text_below": false
       }
     },
+    "image_banner_eXY6tL": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_RKhKA3": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Classic Road Choice<\/strong>: Odin 3",
+            "heading_size": "h2"
+          }
+        },
+        "text_KJj3h7": {
+          "type": "text",
+          "settings": {
+            "text": "Peso ultraligero de 9.8 kg. Desviador trasero Shimano 105 R7000.",
+            "text_style": "body"
+          }
+        },
+        "buttons_VkczNy": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Discover more",
+            "button_link_1": "shopify:\/\/products\/odin-3",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_RKhKA3",
+        "text_KJj3h7",
+        "buttons_VkczNy"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Group_5226.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "image_with_text_tTF9w7": {
       "type": "image-with-text",
       "blocks": {
         "caption_MnKeae": {
           "type": "caption",
+          "disabled": true,
           "settings": {
             "caption": "Featured Bike",
             "text_style": "caption-with-letter-spacing",
@@ -53,6 +111,7 @@
         },
         "heading_YrNYkg": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "Odin 3",
             "heading_size": "h1"
@@ -60,6 +119,7 @@
         },
         "text_6deyMt": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>Feel the Thrill of Riding with odin 3 Road Bike!<\/p>",
             "text_style": "body"
@@ -80,11 +140,12 @@
         "text_6deyMt",
         "button_bJAVRa"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Gross_IMG_0391.webp",
         "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
+        "desktop_image_width": "large",
+        "layout": "text_first",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
@@ -132,6 +193,7 @@
   },
   "order": [
     "image_banner_ByDxLc",
+    "image_banner_eXY6tL",
     "image_with_text_tTF9w7",
     "product-grid",
     "rinos_comparison_table_road_KQ4AUd",
