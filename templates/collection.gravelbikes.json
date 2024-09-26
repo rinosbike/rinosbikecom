@@ -9,93 +9,283 @@
 */
 {
   "sections": {
-    "image_banner_ByDxLc": {
-      "type": "image-banner",
+    "rich_text_8yxfAz": {
+      "type": "rich-text",
       "blocks": {
-        "heading_mhpLLH": {
+        "heading_c3mLDw": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Rediscover<\/strong><em> Gravel<\/em>",
-            "heading_size": "h0"
-          }
-        }
-      },
-      "block_order": [
-        "heading_mhpLLH"
-      ],
-      "custom_css": [
-        ".banner__text {color: #e5e4e2;}",
-        ".banner__heading {color: #black;}"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Frame_24_da023887-a5e8-4e50-9a92-6dc7ab59b34f.png",
-        "image_overlay_opacity": 0,
-        "image_height": "small",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "inverse",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": false
-      }
-    },
-    "image_with_text_tTF9w7": {
-      "type": "image-with-text",
-      "blocks": {
-        "caption_MnKeae": {
-          "type": "caption",
-          "settings": {
-            "caption": "Featured Bike",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "large"
-          }
-        },
-        "heading_YrNYkg": {
-          "type": "heading",
-          "settings": {
-            "heading": "Sandman 3",
+            "heading": "Welcome to Gravel. <em><strong>With Rinos.</strong></em>",
             "heading_size": "h1"
           }
         },
-        "text_6deyMt": {
+        "text_tEAged": {
           "type": "text",
           "settings": {
-            "text": "<p>Experience the Freedom of Riding with Sandman 3 Gravel Bike!<\/p>",
-            "text_style": "body"
+            "text": "<p>Discover our wide catalog of our Gravel Bikes: The Sandman</p>"
           }
         },
-        "button_bJAVRa": {
+        "button_3XynMG": {
           "type": "button",
           "settings": {
-            "button_label": "configure",
-            "button_link": "shopify:\/\/products\/sandman-3",
-            "button_style_secondary": false
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "caption_MnKeae",
-        "heading_YrNYkg",
-        "text_6deyMt",
-        "button_bJAVRa"
+        "heading_c3mLDw",
+        "text_tEAged",
+        "button_3XynMG"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "slideshow_9NMB7c": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_P7htGq": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Sanman1.png",
+            "heading": "Sandman<strong> 1</strong>",
+            "heading_size": "h1",
+            "subheading": "Equipped with the <strong>Shimano SORA R3000</strong> groupset, it's the most entry-level option, weighing <strong>9.8 kg</strong> with a carbon frame. Designed for beginner gravel riders looking for a solid, reliable bike at a lower price point​",
+            "button_label": "Buy now",
+            "link": "shopify://products/sandman-1",
+            "button_style_secondary": false,
+            "box_align": "middle-right",
+            "show_text_box": false,
+            "text_alignment": "right",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-2",
+            "text_alignment_mobile": "right"
+          }
+        },
+        "slide_CPwdtX": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/sanmdna3.png",
+            "heading": "Sandman <strong>3</strong>",
+            "heading_size": "h1",
+            "subheading": "Features the <strong>Shimano 105</strong> groupset, offering more precise shifting and a slightly higher performance level than the Sandman 1.",
+            "button_label": "Buy Now",
+            "link": "shopify://products/sandman-3",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "right",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-2",
+            "text_alignment_mobile": "right"
+          }
+        }
+      },
+      "block_order": [
+        "slide_P7htGq",
+        "slide_CPwdtX"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "rich_text_b3NKQm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AMctPH": {
+          "type": "heading",
+          "settings": {
+            "heading": "There’s something about gravel that pulls you in—the unpredictability, the rawness of it.",
+            "heading_size": "h2"
+          }
+        },
+        "text_yF9Aee": {
+          "type": "text",
+          "settings": {
+            "text": "<p></p><p>After being experienced on a bike, you stop caring about the easy routes and start craving the ride that makes you feel alive. </p><p>Sandman is built for that exact moment—the second you leave the smooth pavement behind, and the world gets a little wilder. </p><p>The Sandman thrives on chaos, and keeps you steady when everything around you isn’t. </p>"
+          }
+        },
+        "button_mdnyjd": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_AMctPH",
+        "text_yF9Aee",
+        "button_mdnyjd"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "slideshow_ABJHGn": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_jqkgB7": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_7340.jpg",
+            "heading": "Sandman <strong>GRX</strong>",
+            "heading_size": "h0",
+            "subheading": "Each model offers a different level of componentry and weight, catering to different types of gravel riders—from those just starting out to those who demand top-tier performance.",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_VE6zkL": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_7336.jpg",
+            "heading": "Sandman <strong>GRX 4</strong>",
+            "heading_size": "h1",
+            "subheading": "A solid entry into gravel biking, with Shimano GRX400 for reliability and performance without compromising quality.",
+            "button_label": "Buy Now",
+            "link": "shopify://products/sandman-4",
+            "button_style_secondary": false,
+            "box_align": "top-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "left"
+          }
+        },
+        "slide_bxHJRF": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_7334.png",
+            "heading": "Sandman <strong>GRX 6</strong>",
+            "heading_size": "h1",
+            "subheading": "Featuring the Shimano GRX600, it offers a refined riding experience with smoother shifting for more demanding gravel terrains.",
+            "button_label": "Buy Now",
+            "link": "shopify://products/sandman-6",
+            "button_style_secondary": false,
+            "box_align": "top-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "left"
+          }
+        },
+        "slide_GzzJDX": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ld-export-18403df2-09182024.png",
+            "heading": "Sandman <strong>GRX 7</strong>",
+            "heading_size": "h1",
+            "subheading": "Equipped with the premium Shimano GRX820 groupset, the Sandman 7 delivers top-tier performance and the lightest frame for serious riders.",
+            "button_label": "Buy Now",
+            "link": "shopify://products/sandman-7",
+            "button_style_secondary": false,
+            "box_align": "bottom-right",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "left"
+          }
+        }
+      },
+      "block_order": [
+        "slide_jqkgB7",
+        "slide_VE6zkL",
+        "slide_bxHJRF",
+        "slide_GzzJDX"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "rich_text_EXtbUx": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_KLgbpF": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Welcome to Gravel.",
+            "heading_size": "h1"
+          }
+        },
+        "text_WCeyyX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Discover our high-quality, fairly produced and fairly priced Gravel Series. </p>"
+          }
+        },
+        "button_nwWUpe": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_KLgbpF",
+        "text_WCeyyX",
+        "button_nwWUpe"
       ],
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/image0.jpg",
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "background-2",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "product-grid": {
@@ -133,8 +323,11 @@
     }
   },
   "order": [
-    "image_banner_ByDxLc",
-    "image_with_text_tTF9w7",
+    "rich_text_8yxfAz",
+    "slideshow_9NMB7c",
+    "rich_text_b3NKQm",
+    "slideshow_ABJHGn",
+    "rich_text_EXtbUx",
     "product-grid",
     "rinos_comparison_table_nz48Wf",
     "banner"
