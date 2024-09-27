@@ -9,6 +9,55 @@
 */
 {
   "sections": {
+    "image_banner_LVww3J": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_yFGEjq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover the Odin 4. <em><strong>Light-Speed Racing</strong></em>",
+            "heading_size": "h1"
+          }
+        },
+        "text_HUkwQR": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_PAfJCc": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Buy Odin 4 Now",
+            "button_link_1": "shopify://products/odin-4",
+            "button_style_secondary_1": false,
+            "button_label_2": "Buy Odin 4.1 Now",
+            "button_link_2": "shopify://products/odin-4-1",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yFGEjq",
+        "text_HUkwQR",
+        "buttons_PAfJCc"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/IMG_5919.jpg",
+        "image_overlay_opacity": 20,
+        "image_height": "large",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": true
+      }
+    },
     "rich_text_Dq3EFa": {
       "type": "rich-text",
       "blocks": {
@@ -215,54 +264,6 @@
         "padding_bottom": 36
       }
     },
-    "image_banner_LVww3J": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_yFGEjq": {
-          "type": "heading",
-          "settings": {
-            "heading": "Discover the Odin 4. <em><strong>Light-Speed Racing</strong></em>",
-            "heading_size": "h1"
-          }
-        },
-        "text_HUkwQR": {
-          "type": "text",
-          "settings": {
-            "text": "",
-            "text_style": "body"
-          }
-        },
-        "buttons_PAfJCc": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Buy Odin 4 Now",
-            "button_link_1": "shopify://products/odin-4",
-            "button_style_secondary_1": false,
-            "button_label_2": "Buy Odin 4.1 Now",
-            "button_link_2": "shopify://products/odin-4-1",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_yFGEjq",
-        "text_HUkwQR",
-        "buttons_PAfJCc"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/IMG_5919.jpg",
-        "image_overlay_opacity": 20,
-        "image_height": "large",
-        "desktop_content_position": "top-left",
-        "show_text_box": false,
-        "desktop_content_alignment": "left",
-        "color_scheme": "background-2",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": false
-      }
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -298,11 +299,11 @@
     }
   },
   "order": [
+    "image_banner_LVww3J",
     "rich_text_Dq3EFa",
     "slideshow_fdGqNT",
     "image_banner_eXY6tL",
     "image_with_text_tTF9w7",
-    "image_banner_LVww3J",
     "product-grid",
     "rinos_comparison_table_road_KQ4AUd",
     "banner"
