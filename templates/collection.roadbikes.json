@@ -71,7 +71,7 @@
         "text_mCe49j": {
           "type": "text",
           "settings": {
-            "text": "<h2>Discover<strong> Odin </strong>Series</h2><p>Named after Odin, the powerful and wise god from Norse mythology, this name reflects the speed, precision, and strategy required in road cycling. </p><p>Odin was known for his far-reaching vision and leadership, symbolizing how our road bikes are designed for those who seek high performance, endurance, and agility. </p>"
+            "text": "<h2><strong>Rinos Odin </strong>Series</h2><p>Named after Odin, the powerful and wise god from Norse mythology, this name reflects the speed, precision, and strategy required in road cycling. </p><p>Odin was known for his far-reaching vision and leadership, symbolizing how our road bikes are designed for those who seek high performance, endurance, and agility. </p>"
           }
         },
         "button_RCzapT": {
@@ -92,8 +92,8 @@
         "button_RCzapT"
       ],
       "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
+        "desktop_content_position": "right",
+        "content_alignment": "right",
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
