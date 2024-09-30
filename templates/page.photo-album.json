@@ -15,9 +15,107 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "rich_text_qAYtcF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_DT9QBL": {
+          "type": "heading",
+          "settings": {
+            "heading": "RINOS Sandman6.0",
+            "heading_size": "h1"
+          }
+        },
+        "text_KL8EkG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A companion for bikepacking and discovery </p>"
+          }
+        },
+        "button_ccXCD3": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_DT9QBL",
+        "text_KL8EkG",
+        "button_ccXCD3"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "slideshow_6Ha9cE": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_6eqaHP": {
+          "type": "slide",
+          "settings": {
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_eWFTxk": {
+          "type": "slide",
+          "settings": {
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_6eqaHP",
+        "slide_eWFTxk"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_qAYtcF",
+    "slideshow_6Ha9cE"
   ]
 }
