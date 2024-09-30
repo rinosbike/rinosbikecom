@@ -215,12 +215,55 @@
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
       }
+    },
+    "rich_text_wrUNFi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PLdiCF": {
+          "type": "heading",
+          "settings": {
+            "heading": "RINOS Sandman1.0",
+            "heading_size": "h1"
+          }
+        },
+        "text_dBJbF3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The companion to start your bikepacking adventures</p>"
+          }
+        },
+        "button_N3aiyU": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_PLdiCF",
+        "text_dBJbF3",
+        "button_N3aiyU"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
     "rich_text_qAYtcF",
     "image_with_text_DycaaT",
-    "slideshow_Ry4Tp8"
+    "slideshow_Ry4Tp8",
+    "rich_text_wrUNFi"
   ]
 }
