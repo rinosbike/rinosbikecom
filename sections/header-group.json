@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -9,14 +18,14 @@
           "type": "announcement",
           "settings": {
             "text": "2024 NEW MODEL | Save up to €300 on Gravel Bikes | Free Shipping",
-            "link": "shopify:\/\/collections\/gravel-bikes"
+            "link": "shopify://collections/gravel-bikes"
           }
         },
         "announcement_TgxU3m": {
           "type": "announcement",
           "settings": {
             "text": "See our reviews on Trustpilot(100+) 4.5*",
-            "link": "https:\/\/uk.trustpilot.com\/review\/rinosbike.eu"
+            "link": "https://uk.trustpilot.com/review/rinosbike.eu"
           }
         }
       },
@@ -44,11 +53,11 @@
         "menu": "categories",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
-        "show_line_separator": false,
+        "show_line_separator": true,
         "color_scheme": "background-1",
         "menu_color_scheme": "background-1",
-        "enable_country_selector": false,
-        "enable_language_selector": false,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 0,
