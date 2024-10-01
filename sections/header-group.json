@@ -46,7 +46,8 @@
     "header": {
       "type": "header",
       "custom_css": [
-
+        ".site-header {background-color: transparent; position: absolute; width: 100%; z-index: 1000;}",
+        ".main-content {padding-top: 100px; /* Adjust depending on your header height */}"
       ],
       "settings": {
         "logo_position": "middle-left",
