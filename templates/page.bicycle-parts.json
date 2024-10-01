@@ -9,6 +9,54 @@
 */
 {
   "sections": {
+    "image_banner_4zF6hD": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_kEBRdy": {
+          "type": "heading",
+          "settings": {
+            "heading": "All you need for your Rinos.",
+            "heading_size": "h0"
+          }
+        },
+        "text_7wyUWM": {
+          "type": "text",
+          "settings": {
+            "text": "Need a replacement? You are in the right place. All these components fit our Rinos bicycles and are designed, manufactured and tested for optimal performance.",
+            "text_style": "subtitle"
+          }
+        },
+        "buttons_VJQdJm": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_kEBRdy",
+        "text_7wyUWM",
+        "buttons_VJQdJm"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/ld-export-18403df2-09182024.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -23,14 +71,14 @@
         "heading_P8P8e8": {
           "type": "heading",
           "settings": {
-            "heading": "<em><strong>All you need </strong></em>for your <strong>Rinos</strong>.",
+            "heading": "So you can get back to riding.<em><strong> As  fast as possible.</strong></em>",
             "heading_size": "h1"
           }
         },
         "text_CPfYkV": {
           "type": "text",
           "settings": {
-            "text": "<p>Need a replacement? You are in the right place. </p><p>All these components fit our Rinos bicycles and are designed, manufactured and tested for optimal performance. </p>"
+            "text": ""
           }
         },
         "button_Rm3V6w": {
@@ -117,6 +165,7 @@
     }
   },
   "order": [
+    "image_banner_4zF6hD",
     "main",
     "rich_text_xypHbN",
     "featured_collection_KKRjCP",
