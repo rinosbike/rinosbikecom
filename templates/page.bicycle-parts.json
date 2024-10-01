@@ -71,24 +71,24 @@
         "heading_P8P8e8": {
           "type": "heading",
           "settings": {
-            "heading": "So you can get back to riding.<em><strong> As  fast as possible.</strong></em>",
+            "heading": "\"So you can get back to riding.<em><strong> As  fast as possible.\"</strong></em>",
             "heading_size": "h1"
           }
         },
         "text_CPfYkV": {
           "type": "text",
           "settings": {
-            "text": ""
+            "text": "<p>In Rinos, we strive for having a strong connection to our customers and cyclists. That's why, if you ever need clarification, do not hesitate in asking us through email or social media. </p>"
           }
         },
         "button_Rm3V6w": {
           "type": "button",
           "settings": {
-            "button_label": "",
-            "button_link": "",
+            "button_label": "Contact Us",
+            "button_link": "shopify://pages/contact",
             "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
+            "button_label_2": "Contact Through Instagram",
+            "button_link_2": "https://www.instagram.com/rinosbicycles/",
             "button_style_secondary_2": false
           }
         }
@@ -100,7 +100,7 @@
       ],
       "settings": {
         "desktop_content_position": "center",
-        "content_alignment": "center",
+        "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
