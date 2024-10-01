@@ -58,6 +58,54 @@
         "show_text_below": true
       }
     },
+    "image_banner_xRFkHT": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_eEGGfY": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Odin 5. </strong>The Ultimate Road God.",
+            "heading_size": "h0"
+          }
+        },
+        "text_BXYVep": {
+          "type": "text",
+          "settings": {
+            "text": "Shimano Ultegra R8000 22-speed drivetrain. An astonishing lightness of 8.6kg.",
+            "text_style": "body"
+          }
+        },
+        "buttons_pxUy9H": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Buy Odin 5 Now",
+            "button_link_1": "shopify://products/odin-5",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_eEGGfY",
+        "text_BXYVep",
+        "buttons_pxUy9H"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/22.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-right",
+        "show_text_box": false,
+        "desktop_content_alignment": "right",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "right",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "rich_text_Dq3EFa": {
       "type": "rich-text",
       "blocks": {
@@ -300,6 +348,7 @@
   },
   "order": [
     "image_banner_LVww3J",
+    "image_banner_xRFkHT",
     "rich_text_Dq3EFa",
     "slideshow_fdGqNT",
     "image_banner_eXY6tL",
