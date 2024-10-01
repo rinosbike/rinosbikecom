@@ -46,8 +46,7 @@
     "header": {
       "type": "header",
       "custom_css": [
-        ".site-header {background-color: transparent; position: absolute; width: 100%; z-index: 1000;}",
-        ".main-content {padding-top: 100px; /* Adjust depending on your header height */}"
+
       ],
       "settings": {
         "logo_position": "middle-left",
@@ -60,7 +59,7 @@
         "enable_country_selector": false,
         "enable_language_selector": false,
         "mobile_logo_position": "center",
-        "margin_bottom": 0,
+        "margin_bottom": 20,
         "padding_top": 0,
         "padding_bottom": 0
       }

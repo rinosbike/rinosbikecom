@@ -9,8 +9,8 @@
 */
 {
   "current": {
-    "logo": "shopify://shop_images/Rinoslogo_d59faafe-6658-42ab-a74c-62625c956478.png",
-    "logo_width": 80,
+    "logo": "shopify://shop_images/Rinos_LogoNOBG.png",
+    "logo_width": 210,
     "favicon": "shopify://shop_images/Rinoslogo_d59faafe-6658-42ab-a74c-62625c956478.png",
     "type_header_font": "ibm_plex_sans_n5",
     "heading_scale": 130,
@@ -219,7 +219,7 @@
       "scheme-7caf5152-a928-4609-a494-5f682c04b5fb": {
         "settings": {
           "background": "#ffffff",
-          "background_gradient": "",
+          "background_gradient": "linear-gradient(180deg, rgba(252, 255, 236, 1), rgba(0, 0, 0, 1) 99%)",
           "text": "#121212",
           "button": "#121212",
           "button_label": "#ffffff",
