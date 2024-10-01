@@ -57,6 +57,48 @@
         "show_text_below": false
       }
     },
+    "rich_text_WYitJR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yng3iL": {
+          "type": "heading",
+          "settings": {
+            "heading": "The  Gravel Sandman GRX. <em><strong>On the Spotlight.</strong></em>",
+            "heading_size": "h2"
+          }
+        },
+        "text_ECWzkV": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Enjoy Autumn rides without worries. Extra light, tested for performance. GRX.</h4>"
+          }
+        },
+        "button_a9fCKq": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yng3iL",
+        "text_ECWzkV",
+        "button_a9fCKq"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "image_banner_yY7Hzf": {
       "type": "image-banner",
       "blocks": {
@@ -103,48 +145,6 @@
         "mobile_content_alignment": "left",
         "stack_images_on_mobile": true,
         "show_text_below": false
-      }
-    },
-    "rich_text_WYitJR": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_yng3iL": {
-          "type": "heading",
-          "settings": {
-            "heading": "The  Gravel Sandman GRX. <em><strong>On the Spotlight.</strong></em>",
-            "heading_size": "h2"
-          }
-        },
-        "text_ECWzkV": {
-          "type": "text",
-          "settings": {
-            "text": "<h4>Enjoy Autumn rides without worries. Extra light, tested for performance. GRX.</h4>"
-          }
-        },
-        "button_a9fCKq": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_yng3iL",
-        "text_ECWzkV",
-        "button_a9fCKq"
-      ],
-      "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 20,
-        "padding_bottom": 20
       }
     },
     "image_with_text_WYccVP": {
