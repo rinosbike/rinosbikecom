@@ -9,13 +9,151 @@
 */
 {
   "sections": {
+    "image_banner_XyQx3D": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_HEXJgw": {
+          "type": "heading",
+          "settings": {
+            "heading": "Welcome to Rinos  <strong>Gravel Autumn. </strong>",
+            "heading_size": "h0"
+          }
+        },
+        "text_bEKVEj": {
+          "type": "text",
+          "settings": {
+            "text": "Discover our collection of Gravelbikes: The Sandman. GRX, or classic, each adapts to different riders and their needs.",
+            "text_style": "caption-with-letter-spacing"
+          }
+        },
+        "buttons_wJ3xRV": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Discover the Sandman Now",
+            "button_link_1": "shopify://collections/gravel-bikes",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_HEXJgw",
+        "text_bEKVEj",
+        "buttons_wJ3xRV"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/IMG_2584.png",
+        "image_overlay_opacity": 20,
+        "image_height": "adapt",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "image_banner_yY7Hzf": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_PJncgk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sandman GRX.",
+            "heading_size": "h1"
+          }
+        },
+        "text_7f6Fwh": {
+          "type": "text",
+          "settings": {
+            "text": "Super-light, high performance Gravel. With Shimano GRX400, ,GRX600 or Shimano GRX820",
+            "text_style": "body"
+          }
+        },
+        "buttons_PqHq8P": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Discover more",
+            "button_link_1": "shopify://collections/sandman-grx",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_PJncgk",
+        "text_7f6Fwh",
+        "buttons_PqHq8P"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/IMG_7340.jpg",
+        "image_overlay_opacity": 20,
+        "image_height": "large",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "rich_text_WYitJR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yng3iL": {
+          "type": "heading",
+          "settings": {
+            "heading": "The  Gravel Sandman GRX. <em><strong>On the Spotlight.</strong></em>",
+            "heading_size": "h2"
+          }
+        },
+        "text_ECWzkV": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Enjoy Autumn rides without worries. Extra light, tested for performance. GRX.</h4>"
+          }
+        },
+        "button_a9fCKq": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yng3iL",
+        "text_ECWzkV",
+        "button_a9fCKq"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "image_with_text_WYccVP": {
       "type": "image-with-text",
       "blocks": {
         "heading_ktKTQh": {
           "type": "heading",
           "settings": {
-            "heading": "Until End of September:           10% off  <strong>Gaia Series<\/strong>",
+            "heading": "Until End of September:           10% off  <strong>Gaia Series</strong>",
             "heading_size": "h2"
           }
         },
@@ -49,8 +187,9 @@
         "caption_4anBB6",
         "button_Pw3rbn"
       ],
+      "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/IMG_9455_1_90487139-fcbc-45e9-8db4-4c46242be9c0.jpg",
+        "image": "shopify://shop_images/IMG_9455_1_90487139-fcbc-45e9-8db4-4c46242be9c0.jpg",
         "height": "small",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -71,14 +210,14 @@
         "text_CpXchY": {
           "type": "text",
           "settings": {
-            "text": "Discover the Mountains with <strong>Gaia<\/strong> Series",
+            "text": "Discover the Mountains with <strong>Gaia</strong> Series",
             "text_style": "body"
           }
         },
         "heading_dKjWV3": {
           "type": "heading",
           "settings": {
-            "heading": "Conquer the <strong>Mountain<\/strong>",
+            "heading": "Conquer the <strong>Mountain</strong>",
             "heading_size": "h2"
           }
         },
@@ -86,10 +225,10 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Discover Gaia Series Now",
-            "button_link_1": "shopify:\/\/collections\/mtb",
+            "button_link_1": "shopify://collections/mtb",
             "button_style_secondary_1": false,
             "button_label_2": "Discover Gaia 2 in our blog",
-            "button_link_2": "shopify:\/\/blogs\/news\/component-spotlight-mtb-gaia-2-and-shimano-deore",
+            "button_link_2": "shopify://blogs/news/component-spotlight-mtb-gaia-2-and-shimano-deore",
             "button_style_secondary_2": false
           }
         }
@@ -100,7 +239,7 @@
         "buttons_ND9C77"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Group_55.png",
+        "image": "shopify://shop_images/Group_55.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-right",
@@ -119,14 +258,14 @@
         "text_9zrraz": {
           "type": "text",
           "settings": {
-            "text": "Road Series <strong>Odin 3<\/strong>. <em>Fast. Light. Versatile. <\/em>",
+            "text": "Road Series <strong>Odin 3</strong>. <em>Fast. Light. Versatile. </em>",
             "text_style": "body"
           }
         },
         "heading_MhzxKU": {
           "type": "heading",
           "settings": {
-            "heading": "Speed on the <strong>Road<\/strong>.",
+            "heading": "Speed on the <strong>Road</strong>.",
             "heading_size": "h2"
           }
         },
@@ -134,10 +273,10 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Buy now",
-            "button_link_1": "shopify:\/\/collections\/road-bikes",
+            "button_link_1": "shopify://collections/road-bikes",
             "button_style_secondary_1": false,
             "button_label_2": "Have a question? Need help?",
-            "button_link_2": "shopify:\/\/policies\/contact-information",
+            "button_link_2": "shopify://policies/contact-information",
             "button_style_secondary_2": false
           }
         }
@@ -148,7 +287,7 @@
         "buttons_ijJJyE"
       ],
       "settings": {
-        "image_2": "shopify:\/\/shop_images\/Group_58.png",
+        "image_2": "shopify://shop_images/Group_58.png",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "top-left",
@@ -167,14 +306,14 @@
         "text_888H4G": {
           "type": "text",
           "settings": {
-            "text": "Our top pick: <strong>Sandman 6<\/strong>",
+            "text": "Our top pick: <strong>Sandman 6</strong>",
             "text_style": "body"
           }
         },
         "heading_W4xCJQ": {
           "type": "heading",
           "settings": {
-            "heading": "Graveling <em><strong>excellence<\/strong><\/em>.",
+            "heading": "Graveling <em><strong>excellence</strong></em>.",
             "heading_size": "h2"
           }
         },
@@ -182,10 +321,10 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Buy Sandman 6 now",
-            "button_link_1": "shopify:\/\/products\/sandman-6",
+            "button_link_1": "shopify://products/sandman-6",
             "button_style_secondary_1": false,
             "button_label_2": "Explore our Sandman Collection",
-            "button_link_2": "shopify:\/\/collections\/gravel-bikes",
+            "button_link_2": "shopify://collections/gravel-bikes",
             "button_style_secondary_2": false
           }
         }
@@ -196,7 +335,7 @@
         "buttons_FjJkMU"
       ],
       "settings": {
-        "image_2": "shopify:\/\/shop_images\/Group_60.png",
+        "image_2": "shopify://shop_images/Group_60.png",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "top-right",
@@ -215,7 +354,7 @@
         "heading_hmWCx7": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>You are not alone.<\/strong>",
+            "heading": "<strong>You are not alone.</strong>",
             "heading_size": "h1"
           }
         },
@@ -230,10 +369,10 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Rinos Warranty",
-            "button_link_1": "shopify:\/\/pages\/warranty",
+            "button_link_1": "shopify://pages/warranty",
             "button_style_secondary_1": false,
             "button_label_2": "Our Brand",
-            "button_link_2": "shopify:\/\/pages\/discover-our-brand",
+            "button_link_2": "shopify://pages/discover-our-brand",
             "button_style_secondary_2": false
           }
         }
@@ -247,13 +386,13 @@
 
       ],
       "settings": {
-        "image_2": "shopify:\/\/shop_images\/image2_8ffd217f-d834-44da-97d3-aea2027666c5.jpg",
+        "image_2": "shopify://shop_images/image2_8ffd217f-d834-44da-97d3-aea2027666c5.jpg",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "desktop_content_position": "bottom-left",
         "show_text_box": false,
         "desktop_content_alignment": "left",
-        "color_scheme": "background-1",
+        "color_scheme": "background-2",
         "image_behavior": "ambient",
         "mobile_content_alignment": "left",
         "stack_images_on_mobile": true,
@@ -266,7 +405,7 @@
         "heading_yLHH3C": {
           "type": "heading",
           "settings": {
-            "heading": "<em>Light<\/em> <strong>weight <\/strong><em><strong>Gravel<\/strong><\/em>",
+            "heading": "<em>Light</em> <strong>weight </strong><em><strong>Gravel</strong></em>",
             "heading_size": "h0"
           }
         },
@@ -274,7 +413,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Explore excellence with Sandman 6",
-            "button_link_1": "shopify:\/\/products\/sandman-6",
+            "button_link_1": "shopify://products/sandman-6",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -288,7 +427,7 @@
       ],
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/IMG_1808_1.png",
+        "image": "shopify://shop_images/IMG_1808_1.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "top-center",
@@ -321,7 +460,7 @@
           "type": "button",
           "settings": {
             "button_label": "Discover now",
-            "button_link": "https:\/\/www.instagram.com\/rinosbicycles\/",
+            "button_link": "https://www.instagram.com/rinosbicycles/",
             "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -344,6 +483,9 @@
     }
   },
   "order": [
+    "image_banner_XyQx3D",
+    "rich_text_WYitJR",
+    "image_banner_yY7Hzf",
     "image_with_text_WYccVP",
     "image_banner_cR6hqL",
     "image_banner_TA7mXD",
