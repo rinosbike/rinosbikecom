@@ -51,54 +51,6 @@
         "padding_bottom": 52
       }
     },
-    "image_banner_cAFV3z": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_ghBgKq": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>Sandman 5. </strong>Peak Performance.",
-            "heading_size": "h1"
-          }
-        },
-        "text_j7HzNk": {
-          "type": "text",
-          "settings": {
-            "text": "Shimano Ultegra R8000 22-speed drivetrain. An astonishing lightness of 8.6kg.",
-            "text_style": "subtitle"
-          }
-        },
-        "buttons_qdPzAT": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Discover Sandman 5 now",
-            "button_link_1": "shopify://products/sandman-5",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_ghBgKq",
-        "text_j7HzNk",
-        "buttons_qdPzAT"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/Ultegra.png",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "bottom-right",
-        "show_text_box": false,
-        "desktop_content_alignment": "right",
-        "color_scheme": "background-2",
-        "image_behavior": "none",
-        "mobile_content_alignment": "right",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
     "slideshow_9NMB7c": {
       "type": "slideshow",
       "blocks": {
@@ -152,6 +104,54 @@
         "image_behavior": "none",
         "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "image_banner_cAFV3z": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_ghBgKq": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Sandman 5. </strong>Peak Performance.",
+            "heading_size": "h1"
+          }
+        },
+        "text_j7HzNk": {
+          "type": "text",
+          "settings": {
+            "text": "Shimano Ultegra R8000 22-speed drivetrain. An astonishing lightness of 8.6kg.",
+            "text_style": "subtitle"
+          }
+        },
+        "buttons_qdPzAT": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Discover Sandman 5 now",
+            "button_link_1": "shopify://products/sandman-5",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ghBgKq",
+        "text_j7HzNk",
+        "buttons_qdPzAT"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Ultegra.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-right",
+        "show_text_box": false,
+        "desktop_content_alignment": "right",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "right",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "featured_collection_4VrLDz": {
@@ -472,8 +472,8 @@
   },
   "order": [
     "rich_text_8yxfAz",
-    "image_banner_cAFV3z",
     "slideshow_9NMB7c",
+    "image_banner_cAFV3z",
     "featured_collection_4VrLDz",
     "rich_text_b3NKQm",
     "slideshow_ABJHGn",
