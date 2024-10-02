@@ -391,4 +391,20 @@
   dots[0].style.backgroundColor = '#717171';
 </script>
   </body>
+  header {
+  background-color: transparent; /* Makes the header background transparent */
+  position: absolute; /* Positions it over the image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Ensures the header stays above other elements */
+}
+
+header .site-header {
+  border-bottom: none; /* Removes any default border */
+}
+
+body {
+  margin-top: 0; /* Makes sure there's no margin above the header */
+}
 </html>
