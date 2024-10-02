@@ -15,14 +15,14 @@
         "heading_mTp3HM": {
           "type": "heading",
           "settings": {
-            "heading": "Welcome to <em><strong>Gaia Series<\/strong><\/em>",
+            "heading": "Welcome to <em><strong>Gaia Series</strong></em>",
             "heading_size": "h0"
           }
         },
         "text_x8UDi4": {
           "type": "text",
           "settings": {
-            "text": "<p>Discover our high quality MTB assembled in Germany and join the Rinos Family.<\/p><p><\/p>"
+            "text": "<p>Discover our high quality MTB assembled in Germany and join the Rinos Family.</p><p></p>"
           }
         },
         "text_FcDxci": {
@@ -36,10 +36,10 @@
           "disabled": true,
           "settings": {
             "button_label": "Configure Gaia 2 Now",
-            "button_link": "shopify:\/\/products\/gaia-2",
+            "button_link": "shopify://products/gaia-2",
             "button_style_secondary": false,
             "button_label_2": "Configure Gaia 4 Now",
-            "button_link_2": "shopify:\/\/products\/gaia-4",
+            "button_link_2": "shopify://products/gaia-4",
             "button_style_secondary_2": false
           }
         }
@@ -78,7 +78,7 @@
         ".banner__heading {color: #e5e4e2;}"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/IMG_9455_1_5ed594f3-c027-42cd-b795-8dd6b46bba9f.png",
+        "image": "shopify://shop_images/IMG_9455_1_5ed594f3-c027-42cd-b795-8dd6b46bba9f.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "top-right",
@@ -97,21 +97,21 @@
         "heading_6bhjKr": {
           "type": "heading",
           "settings": {
-            "heading": "<em>Discover more about our compromise with quality Mountain Bikes.<\/em>",
+            "heading": "<em>Discover more about our compromise with quality Mountain Bikes.</em>",
             "heading_size": "h1"
           }
         },
         "text_K9pWkd": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Remember, with Rinos, you are covered.<\/strong> Any problem you might have is covered by the 2 Year Warranty and an astonishing Lifetime Support.<\/p>"
+            "text": "<p><strong>Remember, with Rinos, you are covered.</strong> Any problem you might have is covered by the 2 Year Warranty and an astonishing Lifetime Support.</p>"
           }
         },
         "button_FJnFjX": {
           "type": "button",
           "settings": {
             "button_label": "Find out more",
-            "button_link": "shopify:\/\/pages\/discover-our-brand",
+            "button_link": "shopify://pages/discover-our-brand",
             "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -139,45 +139,45 @@
         "row_FLp4Bx": {
           "type": "row",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_9455_1.jpg",
+            "image": "shopify://shop_images/IMG_9455_1.jpg",
             "caption": "Gaia 2 Series",
             "heading": "Lighweight",
-            "text": "<p>At only 11,9kg, the Gaia 2 with carbon frame makes uphill cycling easier, alongside with acceleration and maneuvers in general.<br\/><\/p>",
+            "text": "<p>At only 11,9kg, the Gaia 2 with carbon frame makes uphill cycling easier, alongside with acceleration and maneuvers in general.<br/></p>",
             "button_label": "Discover more",
-            "button_link": "shopify:\/\/products\/gaia-2"
+            "button_link": "shopify://products/gaia-2"
           }
         },
         "row_ctQ9Ti": {
           "type": "row",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_9463_1.jpg",
+            "image": "shopify://shop_images/IMG_9463_1.jpg",
             "caption": "Gaia 2 series",
             "heading": "Shimano Deore",
-            "text": "<p>When you're out cycling, versatility is key. The Shimano Deore M6100 has a 12-speed cassette with an impressive 10-51T range. This means you can smoothly transition from powering up steep inclines to flying down rapid descents, always finding the perfect gear to match your riding conditions.<\/p>",
+            "text": "<p>When you're out cycling, versatility is key. The Shimano Deore M6100 has a 12-speed cassette with an impressive 10-51T range. This means you can smoothly transition from powering up steep inclines to flying down rapid descents, always finding the perfect gear to match your riding conditions.</p>",
             "button_label": "Rediscover the Mountain",
-            "button_link": "shopify:\/\/products\/gaia-2"
+            "button_link": "shopify://products/gaia-2"
           }
         },
         "row_KzGaPG": {
           "type": "row",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_9439_1.jpg",
+            "image": "shopify://shop_images/IMG_9439_1.jpg",
             "caption": "Gaia 2 Series",
             "heading": "Rockshox Recon RL Remote",
-            "text": "<p>Crafted from high-quality aluminum, the Recon RL is both robust and lightweight, reducing the overall weight of your bike without compromising durability. This means you can enjoy a smoother ride and better handling, especially on challenging terrains.<\/p>",
+            "text": "<p>Crafted from high-quality aluminum, the Recon RL is both robust and lightweight, reducing the overall weight of your bike without compromising durability. This means you can enjoy a smoother ride and better handling, especially on challenging terrains.</p>",
             "button_label": "Discover more",
-            "button_link": "shopify:\/\/products\/gaia-2"
+            "button_link": "shopify://products/gaia-2"
           }
         },
         "row_77JW4m": {
           "type": "row",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_9461_1.jpg",
+            "image": "shopify://shop_images/IMG_9461_1.jpg",
             "caption": "Gaia 2",
             "heading": "Schwalbe Tires",
-            "text": "<p>Prepared for every terrain. <\/p><p>Known for endurance, performance and aesthetics. <\/p>",
+            "text": "<p>Prepared for every terrain. </p><p>Known for endurance, performance and aesthetics. </p>",
             "button_label": "Discover more",
-            "button_link": "shopify:\/\/products\/gaia-2"
+            "button_link": "shopify://products/gaia-2"
           }
         }
       },
@@ -210,7 +210,7 @@
         "heading_cR6VfW": {
           "type": "heading",
           "settings": {
-            "heading": "<em><strong>Time to make your choice...<\/strong><\/em>",
+            "heading": "<em><strong>Time to make your choice...</strong></em>",
             "heading_size": "h0"
           }
         },
@@ -260,14 +260,14 @@
         "heading_YrNYkg": {
           "type": "heading",
           "settings": {
-            "heading": "Gaia 2: <em><strong>Classic Choice.<\/strong><\/em>",
+            "heading": "Gaia 2: <em><strong>Classic Choice.</strong></em>",
             "heading_size": "h1"
           }
         },
         "text_6deyMt": {
           "type": "text",
           "settings": {
-            "text": "<p>RockShox Recon RL Remote Fork.<\/p><p>Shimano Deore M6100. <\/p><p>Hydraulic Disc Brakes.<\/p><p>Only 11,6kg.<\/p>",
+            "text": "<p>RockShox Recon RL Remote Fork.</p><p>Shimano Deore M6100. </p><p>Hydraulic Disc Brakes.</p><p>Only 11,6kg.</p>",
             "text_style": "body"
           }
         },
@@ -275,7 +275,7 @@
           "type": "button",
           "settings": {
             "button_label": "Buy Gaia 2 Now",
-            "button_link": "shopify:\/\/products\/gaia-2",
+            "button_link": "shopify://products/gaia-2",
             "button_style_secondary": false
           }
         }
@@ -287,7 +287,7 @@
         "button_bJAVRa"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/gaia_2.png",
+        "image": "shopify://shop_images/gaia_2.png",
         "height": "small",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -316,14 +316,14 @@
         "heading_iY7fCV": {
           "type": "heading",
           "settings": {
-            "heading": "Gaia 4: <em><strong>Professional's Choice<\/strong><\/em>",
+            "heading": "Gaia 4: <em><strong>Professional's Choice</strong></em>",
             "heading_size": "h1"
           }
         },
         "text_HHeDJf": {
           "type": "text",
           "settings": {
-            "text": "<p>FOX 32 Rhythm Remote fork.<\/p><p>Shimano SLX M7100. <\/p><p>Hydraulic Disc Brakes.<\/p><p>Even lighter.<\/p>",
+            "text": "<p>FOX 32 Rhythm Remote fork.</p><p>Shimano SLX M7100. </p><p>Hydraulic Disc Brakes.</p><p>Even lighter.</p>",
             "text_style": "body"
           }
         },
@@ -331,7 +331,7 @@
           "type": "button",
           "settings": {
             "button_label": "Buy Gaia 4 Now",
-            "button_link": "shopify:\/\/products\/gaia-2",
+            "button_link": "shopify://products/gaia-4",
             "button_style_secondary": false
           }
         }
@@ -343,7 +343,7 @@
         "button_L9Pfzp"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Group_55_ec5f7177-26f3-4ee0-9a77-9e228e60141d.png",
+        "image": "shopify://shop_images/Group_55_ec5f7177-26f3-4ee0-9a77-9e228e60141d.png",
         "height": "small",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -385,10 +385,58 @@
     },
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
         "color_scheme": "background-1"
+      }
+    },
+    "image_with_text_xTa6Qh": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_HhwPgE": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Rinos Gaia</strong> <em> The Mountain Conqueror.</em>",
+            "heading_size": "h2"
+          }
+        },
+        "text_7tr6T8": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><em>\"The </em><em><strong>Rinos Gaia Series</strong></em><em> is built for mountain bikers looking to conquer the toughest terrains with agility and strength. The Gaia mountain bikes deliver top performance with lightweight carbon frames, wide tires, and high-quality components.\"</em></h3><h4></h4><p>Rinos Gaia mountain bikes are crafted to withstand the challenges of off-road cycling. Tested under extreme conditions and assembled in Germany, adhering to all the <strong>Carbon frame,</strong> Lightweight yet robust, it optimizes stability and control on the most challenging trails.</p><p><strong>With 29-inch Tires with Deep Tread</strong>, as they provide excellent grip and shock absorption on loose or uneven terrain.</p><p><strong>With Advanced Suspension</strong>: The Gaia 4, for instance, is equipped with a <strong>FOX 32 Rhythm Remote</strong> fork, designed to offer smooth control on steep descents and technical terrain.</p><p><strong>With Shimano SLX Drivetrain</strong>: With 12 speeds, it’s ideal for cyclists who seek precise, efficient shifting across all kinds of terrain.</p><h3><strong>How to Choose the Right Rinos Gaia for You</strong></h3><p><strong>Rinos Gaia 2</strong>: Perfect for riders seeking a versatile and reliable mountain bike, great for both beginners and experienced cyclists.</p><p><strong>Rinos Gaia 4</strong>: Designed for demanding cyclists who want top performance in cross-country riding, with advanced components and high-end suspension for the toughest terrains.</p><h4>What Kind of Terrain Can the Rinos Gaia Handle?</h4><p>Rinos Gaia mountain bikes are designed to handle a wide variety of terrains, from mountainous trails to technical descents. With optimized frame geometry, these bikes provide stability on climbs and confidence on steep, fast descents, making it a perfect choice for anyone that does cross-country or mountain biking. </p>",
+            "text_style": "body"
+          }
+        },
+        "button_Jqkwte": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "shopify://products/gaia-2",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_HhwPgE",
+        "text_7tr6T8",
+        "button_Jqkwte"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/IMG_9455_1_5ed594f3-c027-42cd-b795-8dd6b46bba9f.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
@@ -402,6 +450,7 @@
     "image_with_text_cUahfJ",
     "product-grid",
     "rinos_comparison_table_mtb_edition_MNMfHm",
-    "banner"
+    "banner",
+    "image_with_text_xTa6Qh"
   ]
 }
