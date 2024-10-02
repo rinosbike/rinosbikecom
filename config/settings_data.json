@@ -219,7 +219,7 @@
       "scheme-7caf5152-a928-4609-a494-5f682c04b5fb": {
         "settings": {
           "background": "#ffffff",
-          "background_gradient": "linear-gradient(180deg, rgba(252, 255, 236, 1), rgba(0, 0, 0, 1) 99%)",
+          "background_gradient": "linear-gradient(140deg, rgba(252, 255, 236, 1), rgba(249, 255, 237, 1) 92.446%, rgba(0, 0, 0, 1) 99%)",
           "text": "#121212",
           "button": "#121212",
           "button_label": "#ffffff",

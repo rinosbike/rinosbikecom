@@ -480,12 +480,83 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "featured_product_JN6Rwj": {
+      "type": "featured-product",
+      "blocks": {
+        "text_8RMCyU": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_pmpaP9": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "price_xHQqyr": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker_Lf8xtb": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown"
+          }
+        },
+        "quantity_selector_7HzBgf": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons_Jrcrew": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "share_wEbCCa": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_8RMCyU",
+        "title_pmpaP9",
+        "price_xHQqyr",
+        "variant_picker_Lf8xtb",
+        "quantity_selector_7HzBgf",
+        "buy_buttons_Jrcrew",
+        "share_wEbCCa"
+      ],
+      "settings": {
+        "product": "sandman-4",
+        "color_scheme": "background-1",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "media_position": "right",
+        "image_zoom": "hover",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "image_banner_XyQx3D",
-    "rich_text_WYitJR",
     "image_banner_yY7Hzf",
+    "rich_text_WYitJR",
+    "featured_product_JN6Rwj",
     "image_with_text_WYccVP",
     "image_banner_cR6hqL",
     "image_banner_TA7mXD",
