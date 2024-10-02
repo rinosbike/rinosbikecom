@@ -15,9 +15,58 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "image_banner_DB34aM": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_awN6Vx": {
+          "type": "heading",
+          "settings": {
+            "heading": "Welcome to <strong>Rinos Affiliate Program</strong>",
+            "heading_size": "h0"
+          }
+        },
+        "text_qnPGhf": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_ce396L": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_awN6Vx",
+        "text_qnPGhf",
+        "buttons_ce396L"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/IMG_2574.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "top-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "image_banner_DB34aM"
   ]
 }
