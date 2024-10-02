@@ -58,6 +58,49 @@
         "show_text_below": true
       }
     },
+    "rich_text_Dq3EFa": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_63hhJD": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<em><strong>\"The fastest in the Road.\"</strong></em>",
+            "heading_size": "h1"
+          }
+        },
+        "text_mCe49j": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>Rinos Odin </strong>Series</h2><p>Named after Odin, the powerful and wise god from Norse mythology, this name reflects the speed, precision, and strategy required in road cycling. </p><p>Odin was known for his far-reaching vision and leadership, symbolizing how our road bikes are designed for those who seek high performance, endurance, and agility. </p>"
+          }
+        },
+        "button_RCzapT": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_63hhJD",
+        "text_mCe49j",
+        "button_RCzapT"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "image_banner_xRFkHT": {
       "type": "image-banner",
       "blocks": {
@@ -104,48 +147,6 @@
         "mobile_content_alignment": "right",
         "stack_images_on_mobile": true,
         "show_text_below": true
-      }
-    },
-    "rich_text_Dq3EFa": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_63hhJD": {
-          "type": "heading",
-          "settings": {
-            "heading": "<em><strong>\"The fastest in the Road.\"</strong></em>",
-            "heading_size": "h1"
-          }
-        },
-        "text_mCe49j": {
-          "type": "text",
-          "settings": {
-            "text": "<h2><strong>Rinos Odin </strong>Series</h2><p>Named after Odin, the powerful and wise god from Norse mythology, this name reflects the speed, precision, and strategy required in road cycling. </p><p>Odin was known for his far-reaching vision and leadership, symbolizing how our road bikes are designed for those who seek high performance, endurance, and agility. </p>"
-          }
-        },
-        "button_RCzapT": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_63hhJD",
-        "text_mCe49j",
-        "button_RCzapT"
-      ],
-      "settings": {
-        "desktop_content_position": "right",
-        "content_alignment": "right",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
       }
     },
     "slideshow_fdGqNT": {
@@ -332,6 +333,53 @@
         "padding_bottom": 36
       }
     },
+    "image_with_text_HzzrmH": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_nyyAxV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why the <strong>Rinos Odin Series</strong> is Your Ultimate Road Bike Choice",
+            "heading_size": "h1"
+          }
+        },
+        "text_maiBpJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Designed with a lightweight carbon frame, thin tires, and aerodynamic features, these bikes excel on paved surfaces, whether you're racing, training, or just enjoying a ride.</p><p><strong>Aerodynamic Frame Geometry</strong>: Optimized for speed and efficiency, enhancing your performance on every ride.</p><p><strong>High-Pressure Tires</strong>: Narrow and designed to minimize rolling resistance, these tires allow for maximum speed on smooth surfaces.</p><p><strong>Streamlined Components</strong>: Lightweight parts that boost performance, including efficient gearing systems for smooth shifting and advanced brake systems for safety.</p><h3><strong>Which Odin to choose? </strong></h3><p><strong>Rinos Odin 1</strong>: Ideal for newcomers, the Odin 1 combines a lightweight carbon frame with a Shimano SORA groupset, offering a smooth, dependable ride that’s perfect for those just starting their cycling journey.</p><p><strong>Rinos Odin 3</strong>: For intermediate cyclists looking to enhance performance, the Odin 3 features a Shimano 105 drivetrain, delivering precise shifting and improved handling, making it suitable for both training and competitive rides.</p><p><strong>Rinos Odin 4</strong>: A step up in speed and stability, the Odin 4 is designed for serious riders who want to push their limits. Its aerodynamic frame geometry makes it perfect for those who prioritize performance in races.</p><p><strong>Rinos Odin 5</strong>: The ultimate performance bike, the Odin 5 features Shimano Ultegra components, lightweight design, and exceptional agility, making it the go-to choice for competitive cyclists aiming for peak performance on every ride.</p><h3><strong>Experience the Rinos Difference</strong></h3><p>Join the Rinos community and elevate your cycling experience with the Odin Series. If you have any questions or issues choosing your new bike you can always contact us in social media or email at info@rinosbike.eu.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_TFdjPy": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contact us if you need further help",
+            "button_link": "shopify://pages/contact",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_nyyAxV",
+        "text_maiBpJ",
+        "button_TFdjPy"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/IMG_5242.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "rinos_comparison_table_road_KQ4AUd": {
       "type": "rinos-comparison-table-road",
       "settings": {
@@ -379,6 +427,7 @@
         "text_h8n6MA",
         "button_mghgCk"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "left",
@@ -387,66 +436,19 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
-    },
-    "image_with_text_HzzrmH": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_nyyAxV": {
-          "type": "heading",
-          "settings": {
-            "heading": "Why the <strong>Rinos Odin Series</strong> is Your Ultimate Road Bike Choice",
-            "heading_size": "h1"
-          }
-        },
-        "text_maiBpJ": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Designed with a lightweight carbon frame, thin tires, and aerodynamic features, these bikes excel on paved surfaces, whether you're racing, training, or just enjoying a ride.</p><p><strong>Aerodynamic Frame Geometry</strong>: Optimized for speed and efficiency, enhancing your performance on every ride.</p><p><strong>High-Pressure Tires</strong>: Narrow and designed to minimize rolling resistance, these tires allow for maximum speed on smooth surfaces.</p><p><strong>Streamlined Components</strong>: Lightweight parts that boost performance, including efficient gearing systems for smooth shifting and advanced brake systems for safety.</p><h3><strong>Which Odin to choose? </strong></h3><p><strong>Rinos Odin 1</strong>: Ideal for newcomers, the Odin 1 combines a lightweight carbon frame with a Shimano SORA groupset, offering a smooth, dependable ride that’s perfect for those just starting their cycling journey.</p><p><strong>Rinos Odin 3</strong>: For intermediate cyclists looking to enhance performance, the Odin 3 features a Shimano 105 drivetrain, delivering precise shifting and improved handling, making it suitable for both training and competitive rides.</p><p><strong>Rinos Odin 4</strong>: A step up in speed and stability, the Odin 4 is designed for serious riders who want to push their limits. Its aerodynamic frame geometry makes it perfect for those who prioritize performance in races.</p><p><strong>Rinos Odin 5</strong>: The ultimate performance bike, the Odin 5 features Shimano Ultegra components, lightweight design, and exceptional agility, making it the go-to choice for competitive cyclists aiming for peak performance on every ride.</p><h3><strong>Experience the Rinos Difference</strong></h3><p>Join the Rinos community and elevate your cycling experience with the Odin Series. If you have any questions or issues choosing your new bike you can always contact us in social media or email at info@rinosbike.eu.</p>",
-            "text_style": "body"
-          }
-        },
-        "button_TFdjPy": {
-          "type": "button",
-          "settings": {
-            "button_label": "Contact us if you need further help",
-            "button_link": "shopify://pages/contact",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_nyyAxV",
-        "text_maiBpJ",
-        "button_TFdjPy"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/IMG_5242.jpg",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "image_banner_LVww3J",
-    "image_banner_xRFkHT",
     "rich_text_Dq3EFa",
+    "image_banner_xRFkHT",
     "slideshow_fdGqNT",
     "image_banner_eXY6tL",
     "image_with_text_tTF9w7",
     "product-grid",
+    "image_with_text_HzzrmH",
     "rinos_comparison_table_road_KQ4AUd",
     "banner",
-    "rich_text_KHpmwC",
-    "image_with_text_HzzrmH"
+    "rich_text_KHpmwC"
   ]
 }
