@@ -339,10 +339,53 @@
     },
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
         "color_scheme": "background-1"
+      }
+    },
+    "rich_text_KHpmwC": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_YPyjPF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why the <strong>Rinos Odin Series</strong> is Your Ultimate Road Bike Choice",
+            "heading_size": "h1"
+          }
+        },
+        "text_h8n6MA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Designed with a lightweight carbon frame, thin tires, and aerodynamic features, these bikes excel on paved surfaces, whether you're racing, training, or just enjoying a ride.</p><h4>Key Features of the Rinos Odin Series:</h4><ul><li><strong>Aerodynamic Frame Geometry</strong>: Optimized for speed and efficiency, enhancing your performance on every ride.</li><li><strong>High-Pressure Tires</strong>: Narrow and designed to minimize rolling resistance, these tires allow for maximum speed on smooth surfaces.</li><li><strong>Streamlined Components</strong>: Lightweight parts that boost performance, including efficient gearing systems for smooth shifting and advanced brake systems for safety.</li></ul><h3><strong>Which Odin to choose? </strong></h3><p><strong>Rinos Odin 1</strong>: Ideal for newcomers, the Odin 1 combines a lightweight carbon frame with a Shimano SORA groupset, offering a smooth, dependable ride that’s perfect for those just starting their cycling journey.</p><p><strong>Rinos Odin 3</strong>: For intermediate cyclists looking to enhance performance, the Odin 3 features a Shimano 105 drivetrain, delivering precise shifting and improved handling, making it suitable for both training and competitive rides.</p><p><strong>Rinos Odin 4</strong>: A step up in speed and stability, the Odin 4 is designed for serious riders who want to push their limits. Its aerodynamic frame geometry makes it perfect for those who prioritize performance in races.</p><p><strong>Rinos Odin 5</strong>: The ultimate performance bike, the Odin 5 features Shimano Ultegra components, lightweight design, and exceptional agility, making it the go-to choice for competitive cyclists aiming for peak performance on every ride.</p><h3><strong>Experience the Rinos Difference</strong></h3><p>Join the Rinos community and elevate your cycling experience with the Odin Series. If you have any questions or issues choosing your new bike you can always contact us in social media or email at info@rinosbike.eu.</p>"
+          }
+        },
+        "button_mghgCk": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_YPyjPF",
+        "text_h8n6MA",
+        "button_mghgCk"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
@@ -355,6 +398,7 @@
     "image_with_text_tTF9w7",
     "product-grid",
     "rinos_comparison_table_road_KQ4AUd",
-    "banner"
+    "banner",
+    "rich_text_KHpmwC"
   ]
 }

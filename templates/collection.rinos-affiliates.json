@@ -11,6 +11,7 @@
   "sections": {
     "product-grid": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 2,
@@ -29,17 +30,121 @@
         "padding_bottom": 36
       }
     },
+    "image_banner_pbnq7Q": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_rHXfEM": {
+          "type": "heading",
+          "settings": {
+            "heading": "Welcome to the <strong>Rinos Affiliate Program</strong>",
+            "heading_size": "h0"
+          }
+        },
+        "text_c6qRb7": {
+          "type": "text",
+          "settings": {
+            "text": "<em><strong>Join the Rinos Affiliate Program and elevate your cycling experience! </strong></em>As a valued affiliate, you'll share our passion for Rinos bikes and gear while earning competitive commissions on every sale. Enjoy exclusive access to promotional materials, insider discounts, and a supportive community of cycling enthusiasts. Together, we’ll inspire others to embrace the joy of cycling. <strong>Sign up today and pedal towards a rewarding partnership with Rinos!</strong>",
+            "text_style": "body"
+          }
+        },
+        "buttons_3PcUha": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_rHXfEM",
+        "text_c6qRb7",
+        "buttons_3PcUha"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/IMG_2574.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "top-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": false,
+        "show_text_below": true
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
         "color_scheme": "background-1"
       }
+    },
+    "rich_text_kTzGNN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_NyUjAW": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover the <strong>benefits</strong> .",
+            "heading_size": "h1"
+          }
+        },
+        "text_HfyRrQ": {
+          "type": "text",
+          "settings": {
+            "text": "<h4></h4><h4></h4><h4><strong>Competitive Commissions </strong>on every sale generated through your unique links.</h4><h4><strong>Exclusive Discounts</strong>: Access special discounts for your audience, making it easier to promote our products.</h4><h4></h4><h4><strong>Early Access to New Products</strong>: Be the first to showcase our latest bikes and gear to your followers.</h4><h4><strong>Dedicated Support</strong>: Enjoy personalized support and resources to help you maximize your affiliate success with Rinos.<br/><br/><strong>Discover Rinos News faster than anyone else in Instagram Close Friends.</strong></h4><h4></h4>"
+          }
+        },
+        "button_kh9XHC": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_NyUjAW",
+        "text_HfyRrQ",
+        "button_kh9XHC"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "contact_form_4fBQwk": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Become an Affiliate now",
+        "heading_size": "h2",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "product-grid",
-    "banner"
+    "image_banner_pbnq7Q",
+    "banner",
+    "rich_text_kTzGNN",
+    "contact_form_4fBQwk"
   ]
 }
