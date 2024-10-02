@@ -11,6 +11,7 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
@@ -29,17 +30,17 @@
         "text_qnPGhf": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text": "<em><strong>Join the Rinos Affiliate Program and elevate your cycling experience! </strong></em>As a valued affiliate, you'll share our passion for Rinos bikes and gear while earning competitive commissions on every sale. Enjoy exclusive access to promotional materials, insider discounts, and a supportive community of cycling enthusiasts. Together, we’ll inspire others to embrace the joy of cycling. <strong>Sign up today and pedal towards a rewarding partnership with Rinos!</strong>",
             "text_style": "body"
           }
         },
         "buttons_ce396L": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Button label",
+            "button_label_1": "",
             "button_link_1": "",
             "button_style_secondary_1": false,
-            "button_label_2": "Button label",
+            "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
           }
@@ -63,10 +64,117 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
+    },
+    "rich_text_nbNKp6": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_eJwAmP": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover the Benefits.",
+            "heading_size": "h0"
+          }
+        },
+        "text_rPKAbE": {
+          "type": "text",
+          "settings": {
+            "text": "<h4></h4><h4></h4><h4><strong>Competitive Commissions </strong>on every sale generated through your unique links.</h4><h4><strong>Exclusive Discounts</strong>: Access special discounts for your audience, making it easier to promote our products.</h4><h4></h4><h4><strong>Early Access to New Products</strong>: Be the first to showcase our latest bikes and gear to your followers.</h4><h4><strong>Dedicated Support</strong>: Enjoy personalized support and resources to help you maximize your affiliate success with Rinos.<br/><br/><strong>Discover Rinos News faster than anyone else in Instagram Close Friends.</strong></h4><h4></h4>"
+          }
+        },
+        "button_mqcB4w": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_eJwAmP",
+        "text_rPKAbE",
+        "button_mqcB4w"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "collapsible_content_Pp4cH4": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_cbbJqK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When do I get the money I earned for the referral purchases?",
+            "icon": "check_mark",
+            "row_content": "<p>You will receive your earned commissions from referral purchases at the end of each month. After sales are confirmed, payments are processed and typically issued on the first week of the following month. This ensures that all transactions are verified and accounted for before commissions are paid out, allowing for accurate tracking of your earnings.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_M4A9Di": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the exact commissions that I will get for each sale?",
+            "icon": "check_mark",
+            "row_content": "<p>Bikes priced at €1,499 (Odin 1, Gaia 2): €40 per sale<br/>Bikes priced at €1,699 (Gaia 4): €50 per sale<br/>Bikes priced at €1,899 (Odin 3, Sandman 4): €60 per sale<br/>Bikes priced at €1,999 (Sandman 6): €60 per sale<br/>Bikes priced at €2,199 (Odin 4): €70 per sale<br/>Bikes priced at €2,599 (Odin 5, Sandman 5): €80 per sale</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_AFJxFn": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I enter the program?",
+            "icon": "check_mark",
+            "row_content": "<p>Just send us an email at info@rinosbike.eu or send us a message in social media - We will set everything up for you</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_cbbJqK",
+        "collapsible_row_M4A9Di",
+        "collapsible_row_AFJxFn"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "<em><strong>More questions?</strong></em>",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "",
+        "container_color_scheme": "background-1",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/IMG_2807.jpg",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "contact_form_w74cA9": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Join the <strong>Rinos Affiliate Program</strong>",
+        "heading_size": "h0",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "image_banner_DB34aM"
+    "image_banner_DB34aM",
+    "rich_text_nbNKp6",
+    "contact_form_w74cA9",
+    "collapsible_content_Pp4cH4"
   ]
 }
