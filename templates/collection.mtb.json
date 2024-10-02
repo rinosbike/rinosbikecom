@@ -358,6 +358,53 @@
         "padding_bottom": 36
       }
     },
+    "image_with_text_xTa6Qh": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_HhwPgE": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Rinos Gaia</strong> <em> The Mountain Conqueror.</em>",
+            "heading_size": "h2"
+          }
+        },
+        "text_7tr6T8": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><em>\"The </em><em><strong>Rinos Gaia Series</strong></em><em> is built for mountain bikers looking to conquer the toughest terrains with agility and strength. The Gaia mountain bikes deliver top performance with lightweight carbon frames, wide tires, and high-quality components.\"</em></h3><h4></h4><p>Rinos Gaia mountain bikes are crafted to withstand the challenges of off-road cycling. Tested under extreme conditions and assembled in Germany, adhering to all the <strong>Carbon frame,</strong> Lightweight yet robust, it optimizes stability and control on the most challenging trails.</p><p><strong>With 29-inch Tires with Deep Tread</strong>, as they provide excellent grip and shock absorption on loose or uneven terrain.</p><p><strong>With Advanced Suspension</strong>: The Gaia 4, for instance, is equipped with a <strong>FOX 32 Rhythm Remote</strong> fork, designed to offer smooth control on steep descents and technical terrain.</p><p><strong>With Shimano SLX Drivetrain</strong>: With 12 speeds, it’s ideal for cyclists who seek precise, efficient shifting across all kinds of terrain.</p><h3><strong>How to Choose the Right Rinos Gaia for You</strong></h3><p><strong>Rinos Gaia 2</strong>: Perfect for riders seeking a versatile and reliable mountain bike, great for both beginners and experienced cyclists.</p><p><strong>Rinos Gaia 4</strong>: Designed for demanding cyclists who want top performance in cross-country riding, with advanced components and high-end suspension for the toughest terrains.</p><h3><strong>What Kind of Terrain Can the Rinos Gaia Handle?</strong></h3><p>Rinos Gaia mountain bikes are designed to handle a wide variety of terrains, from mountainous trails to technical descents. With optimized frame geometry, these bikes provide stability on climbs and confidence on steep, fast descents, making it a perfect choice for anyone that does cross-country or mountain biking. </p>",
+            "text_style": "body"
+          }
+        },
+        "button_Jqkwte": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "shopify://products/gaia-2",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_HhwPgE",
+        "text_7tr6T8",
+        "button_Jqkwte"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/IMG_9439_1.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -391,53 +438,6 @@
         "show_collection_image": false,
         "color_scheme": "background-1"
       }
-    },
-    "image_with_text_xTa6Qh": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_HhwPgE": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>Rinos Gaia</strong> <em> The Mountain Conqueror.</em>",
-            "heading_size": "h2"
-          }
-        },
-        "text_7tr6T8": {
-          "type": "text",
-          "settings": {
-            "text": "<h3><em>\"The </em><em><strong>Rinos Gaia Series</strong></em><em> is built for mountain bikers looking to conquer the toughest terrains with agility and strength. The Gaia mountain bikes deliver top performance with lightweight carbon frames, wide tires, and high-quality components.\"</em></h3><h4></h4><p>Rinos Gaia mountain bikes are crafted to withstand the challenges of off-road cycling. Tested under extreme conditions and assembled in Germany, adhering to all the <strong>Carbon frame,</strong> Lightweight yet robust, it optimizes stability and control on the most challenging trails.</p><p><strong>With 29-inch Tires with Deep Tread</strong>, as they provide excellent grip and shock absorption on loose or uneven terrain.</p><p><strong>With Advanced Suspension</strong>: The Gaia 4, for instance, is equipped with a <strong>FOX 32 Rhythm Remote</strong> fork, designed to offer smooth control on steep descents and technical terrain.</p><p><strong>With Shimano SLX Drivetrain</strong>: With 12 speeds, it’s ideal for cyclists who seek precise, efficient shifting across all kinds of terrain.</p><h3><strong>How to Choose the Right Rinos Gaia for You</strong></h3><p><strong>Rinos Gaia 2</strong>: Perfect for riders seeking a versatile and reliable mountain bike, great for both beginners and experienced cyclists.</p><p><strong>Rinos Gaia 4</strong>: Designed for demanding cyclists who want top performance in cross-country riding, with advanced components and high-end suspension for the toughest terrains.</p><h4>What Kind of Terrain Can the Rinos Gaia Handle?</h4><p>Rinos Gaia mountain bikes are designed to handle a wide variety of terrains, from mountainous trails to technical descents. With optimized frame geometry, these bikes provide stability on climbs and confidence on steep, fast descents, making it a perfect choice for anyone that does cross-country or mountain biking. </p>",
-            "text_style": "body"
-          }
-        },
-        "button_Jqkwte": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": "shopify://products/gaia-2",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_HhwPgE",
-        "text_7tr6T8",
-        "button_Jqkwte"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/IMG_9455_1_5ed594f3-c027-42cd-b795-8dd6b46bba9f.jpg",
-        "height": "adapt",
-        "desktop_image_width": "small",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -448,9 +448,9 @@
     "rich_text_tdKfb4",
     "image_with_text_tTF9w7",
     "image_with_text_cUahfJ",
+    "image_with_text_xTa6Qh",
     "product-grid",
     "rinos_comparison_table_mtb_edition_MNMfHm",
-    "banner",
-    "image_with_text_xTa6Qh"
+    "banner"
   ]
 }
