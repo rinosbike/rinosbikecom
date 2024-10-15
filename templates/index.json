@@ -57,54 +57,6 @@
         "show_text_below": false
       }
     },
-    "image_banner_yY7Hzf": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_PJncgk": {
-          "type": "heading",
-          "settings": {
-            "heading": "Sandman GRX.",
-            "heading_size": "h1"
-          }
-        },
-        "text_7f6Fwh": {
-          "type": "text",
-          "settings": {
-            "text": "Super-light, high performance Gravel. With Shimano GRX400, GRX600 or Shimano GRX820.",
-            "text_style": "body"
-          }
-        },
-        "buttons_PqHq8P": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Discover more",
-            "button_link_1": "shopify://collections/sandman-grx",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_PJncgk",
-        "text_7f6Fwh",
-        "buttons_PqHq8P"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/IMG_7340.jpg",
-        "image_overlay_opacity": 20,
-        "image_height": "large",
-        "desktop_content_position": "top-left",
-        "show_text_box": false,
-        "desktop_content_alignment": "left",
-        "color_scheme": "background-2",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "stack_images_on_mobile": true,
-        "show_text_below": false
-      }
-    },
     "rich_text_WYitJR": {
       "type": "rich-text",
       "blocks": {
@@ -118,7 +70,7 @@
         "text_ECWzkV": {
           "type": "text",
           "settings": {
-            "text": "<h4>Enjoy Autumn rides without worries. Extra light, tested for performance. GRX. Reviewed and loved by professionals. </h4>"
+            "text": "<h4>Enjoy Autumn rides without worries. Extra light, tested for performance. Shimano GRX. Reviewed and loved by professionals.</h4>"
           }
         },
         "button_a9fCKq": {
@@ -230,6 +182,54 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "image_banner_yY7Hzf": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_PJncgk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sandman GRX.",
+            "heading_size": "h1"
+          }
+        },
+        "text_7f6Fwh": {
+          "type": "text",
+          "settings": {
+            "text": "Super-light, high performance Gravel. With Shimano GRX400, GRX600 or Shimano GRX820.",
+            "text_style": "body"
+          }
+        },
+        "buttons_PqHq8P": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Discover more",
+            "button_link_1": "shopify://collections/sandman-grx",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_PJncgk",
+        "text_7f6Fwh",
+        "buttons_PqHq8P"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/IMG_7340.jpg",
+        "image_overlay_opacity": 20,
+        "image_height": "large",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
       }
     },
     "image_with_text_WYccVP": {
@@ -569,10 +569,10 @@
   },
   "order": [
     "image_banner_XyQx3D",
-    "image_banner_yY7Hzf",
     "rich_text_WYitJR",
     "video_h6JYmU",
     "featured_product_JN6Rwj",
+    "image_banner_yY7Hzf",
     "image_with_text_WYccVP",
     "image_banner_cR6hqL",
     "image_banner_TA7mXD",
