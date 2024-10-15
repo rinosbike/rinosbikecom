@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "rich_text_8yxfAz": {
@@ -195,7 +195,7 @@
         "text_yF9Aee": {
           "type": "text",
           "settings": {
-            "text": "<p></p><p>After being experienced on a bike, you stop caring about the easy routes and start craving the ride that makes you feel alive. </p><p>Sandman is built for that exact moment—the second you leave the smooth pavement behind, and the world gets a little wilder. </p><p><em><strong>The Sandman thrives on chaos, and keeps you steady when everything around you isn’t. </strong></em></p>"
+            "text": "<p>After being experienced on a bike, you stop caring about the easy routes and start craving the ride that makes you feel alive. </p><p>Sandman is built for that exact moment—the second you leave the smooth pavement behind, and the world gets a little wilder. </p><p><em><strong>The Sandman thrives on chaos, and keeps you steady when everything around you isn’t. </strong></em></p>"
           }
         },
         "button_mdnyjd": {
