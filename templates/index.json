@@ -118,7 +118,7 @@
         "text_ECWzkV": {
           "type": "text",
           "settings": {
-            "text": "<h4>Enjoy Autumn rides without worries. Extra light, tested for performance. GRX.</h4>"
+            "text": "<h4>Enjoy Autumn rides without worries. Extra light, tested for performance. GRX. Reviewed and loved by professionals. </h4>"
           }
         },
         "button_a9fCKq": {
@@ -150,8 +150,8 @@
     "video_h6JYmU": {
       "type": "video",
       "settings": {
-        "heading": "Review of Sandman GRX",
-        "heading_size": "h1",
+        "heading": "Don't just take our word...",
+        "heading_size": "h2",
         "enable_video_looping": true,
         "video_url": "https://www.youtube.com/watch?v=_o6VpvHrBpQ&t=47s",
         "cover_image": "shopify://shop_images/Q14A6113.jpg",
