@@ -152,8 +152,9 @@
       "settings": {
         "heading": "Review of Sandman GRX",
         "heading_size": "h1",
-        "enable_video_looping": false,
+        "enable_video_looping": true,
         "video_url": "https://www.youtube.com/watch?v=_o6VpvHrBpQ&t=47s",
+        "cover_image": "shopify://shop_images/Q14A6113.jpg",
         "description": "",
         "full_width": false,
         "color_scheme": "",
