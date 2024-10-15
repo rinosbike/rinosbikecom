@@ -46,7 +46,7 @@
       "settings": {
         "image": "shopify://shop_images/IMG_2574.jpg",
         "image_overlay_opacity": 20,
-        "image_height": "adapt",
+        "image_height": "large",
         "desktop_content_position": "top-left",
         "show_text_box": false,
         "desktop_content_alignment": "left",
@@ -102,13 +102,13 @@
     "video_h6JYmU": {
       "type": "video",
       "settings": {
-        "heading": "Don't just take our word... <em><strong>Click and watch the review of the best Gravel bike under 2000€</strong></em>",
+        "heading": "Don't just take our word...",
         "heading_size": "h2",
         "enable_video_looping": true,
         "video_url": "https://www.youtube.com/watch?v=_o6VpvHrBpQ&t=47s",
         "cover_image": "shopify://shop_images/Q14A6113.jpg",
         "description": "",
-        "full_width": true,
+        "full_width": false,
         "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
