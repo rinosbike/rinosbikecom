@@ -102,7 +102,7 @@
     "video_h6JYmU": {
       "type": "video",
       "settings": {
-        "heading": "Don't just take our word... Click and watch the review of the best Gravel bike under 2000€",
+        "heading": "Don't just take our word... <em><strong>Click and watch the review of the best Gravel bike under 2000€</strong></em>",
         "heading_size": "h2",
         "enable_video_looping": true,
         "video_url": "https://www.youtube.com/watch?v=_o6VpvHrBpQ&t=47s",
