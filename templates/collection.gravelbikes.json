@@ -320,6 +320,24 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "video_xq8bfY": {
+      "type": "video",
+      "custom_css": [
+        "@media (min-width: 750px) {.video-section__media {max-width: 1000px !important; padding-bottom: 600px !important; margin: 0 auto; height: auto; }}"
+      ],
+      "settings": {
+        "heading": "Watch the <strong>Sandman GRX</strong> Unboxing",
+        "heading_size": "h2",
+        "enable_video_looping": true,
+        "video": "shopify://files/videos/327B745F-AAF0-4FD9-9209-9124CE1F7E49.MOV",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection_bCpCC8": {
       "type": "featured-collection",
       "settings": {
@@ -468,24 +486,6 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
-    },
-    "video_xq8bfY": {
-      "type": "video",
-      "custom_css": [
-        "@media (min-width: 750px) {.video-section__media {max-width: 1000px !important; padding-bottom: 600px !important; margin: 0 auto; height: auto; }}"
-      ],
-      "settings": {
-        "heading": "Watch the Sandman GRX Unboxing",
-        "heading_size": "h2",
-        "enable_video_looping": true,
-        "video": "shopify://files/videos/327B745F-AAF0-4FD9-9209-9124CE1F7E49.MOV",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -495,12 +495,12 @@
     "featured_collection_4VrLDz",
     "rich_text_b3NKQm",
     "slideshow_ABJHGn",
+    "video_xq8bfY",
     "featured_collection_bCpCC8",
     "rich_text_EXtbUx",
     "product-grid",
     "rinos_comparison_table_nz48Wf",
     "banner",
-    "rich_text_Yt9dAG",
-    "video_xq8bfY"
+    "rich_text_Yt9dAG"
   ]
 }
