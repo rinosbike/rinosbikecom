@@ -15,14 +15,14 @@
         "heading_HEXJgw": {
           "type": "heading",
           "settings": {
-            "heading": "Welcome to Rinos  <strong>Gravel Autumn. </strong>",
-            "heading_size": "h0"
+            "heading": "Autumn. <em><strong>With Gravel. </strong></em>",
+            "heading_size": "h2"
           }
         },
         "text_bEKVEj": {
           "type": "text",
           "settings": {
-            "text": "Discover our collection of Gravelbikes: The Sandman. GRX, or classic, each adapts to different riders and their needs.",
+            "text": "",
             "text_style": "caption-with-letter-spacing"
           }
         },
@@ -44,7 +44,7 @@
         "buttons_wJ3xRV"
       ],
       "settings": {
-        "image": "shopify://shop_images/IMG_2574.jpg",
+        "image": "shopify://shop_images/IMG_6120_2.jpg",
         "image_overlay_opacity": 20,
         "image_height": "large",
         "desktop_content_position": "top-left",
@@ -132,8 +132,7 @@
         },
         "price_xHQqyr": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker_Lf8xtb": {
           "type": "variant_picker",
@@ -143,8 +142,7 @@
         },
         "quantity_selector_7HzBgf": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons_Jrcrew": {
           "type": "buy_buttons",
@@ -467,9 +465,7 @@
         "text_r7mjYL",
         "buttons_zCfNke"
       ],
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "image_2": "shopify://shop_images/image2_8ffd217f-d834-44da-97d3-aea2027666c5.jpg",
         "image_overlay_opacity": 0,
@@ -528,8 +524,7 @@
     "banner_video_tx3irV": {
       "type": "banner-video",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "rich_text_MfXaWd": {
       "type": "rich-text",
