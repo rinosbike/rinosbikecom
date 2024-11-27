@@ -15,8 +15,8 @@
         "heading_HEXJgw": {
           "type": "heading",
           "settings": {
-            "heading": "Autumn. <em><strong>With Gravel. </strong></em>",
-            "heading_size": "h1"
+            "heading": "Autumn. <em><strong>With Gravel.</strong></em>",
+            "heading_size": "h2"
           }
         },
         "text_bEKVEj": {
@@ -44,8 +44,8 @@
         "buttons_wJ3xRV"
       ],
       "settings": {
-        "image": "shopify://shop_images/IMG_6120_2.jpg",
-        "image_overlay_opacity": 20,
+        "image": "shopify://shop_images/DSCF2585_d2b58051-e7e5-4d9f-8a60-c35a48142aae.jpg",
+        "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "top-left",
         "show_text_box": false,
