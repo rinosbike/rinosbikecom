@@ -172,7 +172,7 @@
         "color_scheme": "",
         "image_ratio": "adapt",
         "image_shape": "default",
-        "show_secondary_image": false,
+        "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
@@ -306,9 +306,7 @@
         "slide_bxHJRF",
         "slide_GzzJDX"
       ],
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "layout": "full_bleed",
         "slide_height": "large",
@@ -433,8 +431,7 @@
     },
     "rinos_comparison_table_nz48Wf": {
       "type": "rinos-comparison-table",
-      "settings": {
-      }
+      "settings": {}
     },
     "banner": {
       "type": "main-collection-banner",
