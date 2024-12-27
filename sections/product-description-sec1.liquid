@@ -1,14 +1,13 @@
 {% schema %}
   {
-    "name": "product-discription-sec1",
+    "name": "product-description-sec1",
     "settings": [],
     "presets": [
       {
-        "name": "product-discription-sec1"
+        "name": "product-description-sec1"
       }
     ]
   }
-
 {% endschema %}
 
 <style>
@@ -22,13 +21,11 @@
 
 <div class="product-description" style="max-width: 1125px; margin-left: auto; margin-right: auto; margin-top: 10px; margin-bottom: 20px;">
   {%- if product.description != blank -%}
-    <div class="product__description rte" style="text-align: justify;>
+    <div class="product__description rte" style="text-align: justify;">
       {{ product.description }}
     </div>
   {%- endif -%}
 </div>
-
-
 
 {% stylesheet %}
 {% endstylesheet %}
