@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "password_page": {
@@ -682,7 +691,7 @@
       "gear": "Shimano SORA",
       "gears": "18",
       "frame": "TORAY T800 Carbone",
-      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "frameSize": "optimisé pour les cyclistes entre 165-195 cm",
       "brakes": "Mécaniques",
       "wheelSize": "28 pouces",
       "rims": "Aluminium"
@@ -695,7 +704,7 @@
       "gear": "Shimano 105",
       "gears": "22",
       "frame": "TORAY T800 Carbone",
-      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "frameSize": "optimisé pour les cyclistes entre 165-195 cm",
       "brakes": "Mécaniques",
       "wheelSize": "28 pouces",
       "rims": "Aluminium"
@@ -708,7 +717,7 @@
       "gear": "Shimano GRX 400",
       "gears": "20",
       "frame": "TORAY T800 Carbone",
-      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "frameSize": "optimisé pour les cyclistes entre 165-195 cm",
       "brakes": "Hydrauliques",
       "wheelSize": "28 pouces",
       "rims": "Aluminium"
@@ -721,7 +730,7 @@
       "gear": "Shimano Ultegra",
       "gears": "22",
       "frame": "TORAY T800 Carbone",
-      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "frameSize": "optimisé pour les cyclistes entre 165-195 cm",
       "brakes": "Mécaniques",
       "wheelSize": "28 pouces",
       "rims": "Carbone"
@@ -734,7 +743,7 @@
       "gear": "Shimano GRX 600",
       "gears": "22",
       "frame": "TORAY T800 Carbone",
-      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "frameSize": "optimisé pour les cyclistes entre 165-195 cm",
       "brakes": "Hydrauliques",
       "wheelSize": "28 pouces",
       "rims": "Aluminium"
@@ -747,7 +756,7 @@
       "gear": "Shimano GRX 820",
       "gears": "24",
       "frame": "TORAY T800 Carbone",
-      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "frameSize": "optimisé pour les cyclistes entre 165-195 cm",
       "brakes": "Hydrauliques",
       "wheelSize": "28 pouces",
       "rims": "Aluminium"
@@ -760,7 +769,7 @@
       "gear": "Shimano SORA",
       "gears": "18",
       "frame": "TORAY T800 Carbone",
-      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "frameSize": "optimisé pour les cyclistes entre 165-195 cm",
       "brakes": "Mécaniques",
       "wheelSize": "28 pouces",
       "rims": "Aluminium"
@@ -773,7 +782,7 @@
       "gear": "Shimano 105",
       "gears": "22",
       "frame": "TORAY T800 Carbone",
-      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "frameSize": "optimisé pour les cyclistes entre 165-195 cm",
       "brakes": "Mécaniques",
       "wheelSize": "28 pouces",
       "rims": "Aluminium"
@@ -786,7 +795,7 @@
       "gear": "Shimano 105",
       "gears": "24",
       "frame": "TORAY T800 Carbone",
-      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "frameSize": "optimisé pour les cyclistes entre 165-195 cm",
       "brakes": "Shimano 105 hydrauliques",
       "wheelSize": "28 pouces",
       "rims": "Aluminium"
@@ -799,7 +808,7 @@
       "gear": "Shimano Ultegra",
       "gears": "22",
       "frame": "TORAY T800 Carbone",
-      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "frameSize": "optimisé pour les cyclistes entre 165-195 cm",
       "brakes": "Mécaniques",
       "wheelSize": "28 pouces",
       "rims": "Carbone"
@@ -812,7 +821,7 @@
       "gear": "Shimano Deore",
       "gears": "12",
       "frame": "TORAY T800 Carbone",
-      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "frameSize": "optimisé pour les cyclistes entre 165-195 cm",
       "brakes": "Hydrauliques",
       "wheelSize": "29x2.25 pouces",
       "rims": "Aluminium",
@@ -827,7 +836,7 @@
       "gear": "Shimano SLX",
       "gears": "12",
       "frame": "TORAY T800 Carbone",
-      "frameSize": "optimisé pour les cyclistes entre 175-195 cm",
+      "frameSize": "optimisé pour les cyclistes entre 165-195 cm",
       "brakes": "Hydrauliques",
       "wheelSize": "29x2.25 pouces",
       "rims": "Aluminium",
