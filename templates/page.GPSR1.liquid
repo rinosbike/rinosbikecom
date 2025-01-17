@@ -3,102 +3,181 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Grouped Bike Models - Compliance</title>
+  <title>Bike Groups - Compliance (Apple-Style)</title>
   <style>
-    /* Container & General Typography */
-    .gpsr-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 2rem;
-      font-family: Arial, sans-serif;
+    /* ------------------------------
+       GLOBAL RESET & BASE STYLES
+    ------------------------------ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #F5F5F7;
       color: #333;
-    }
-    h1, h2, h3 {
-      margin: 0.5em 0;
-      text-align: center;
-    }
-    p {
       line-height: 1.5;
     }
-    /* Header Style */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      color: #1D1D1F;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    
+    /* ------------------------------
+       CONTAINER
+    ------------------------------ */
+    .gpsr-container {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: #FFFFFF;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+
+    /* ------------------------------
+       HEADER
+    ------------------------------ */
     .gpsr-header {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #E2E2E2;
+      padding-bottom: 1.5rem;
       margin-bottom: 2rem;
     }
-    /* Contact Info */
+    .gpsr-header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .gpsr-header p {
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    /* ------------------------------
+       CONTACT INFO
+    ------------------------------ */
     .contact-info {
-      margin: 1rem 0 2rem;
-      background: #f9f9f9;
-      padding: 1rem;
-      border-radius: 8px;
+      background: #F9F9FA;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
     }
     .contact-info p {
-      margin: 0.3rem 0;
+      margin: 0.25rem 0;
+      color: #555;
     }
-    /* Bike Selector */
+    .contact-info strong {
+      color: #000;
+    }
+
+    /* ------------------------------
+       BIKE SELECTOR
+    ------------------------------ */
     .bike-selector {
-      margin: 2rem 0;
       text-align: center;
+      margin-bottom: 2rem;
     }
     .bike-selector label {
+      font-weight: 500;
       margin-right: 0.5rem;
-      font-weight: bold;
+      color: #333;
     }
     .bike-selector select {
-      padding: 0.5rem;
+      padding: 0.6rem;
       font-size: 1rem;
+      border: 1px solid #CED4DA;
+      border-radius: 6px;
+      transition: border 0.2s ease;
+      outline: none;
     }
-    /* Default Content Message */
+    .bike-selector select:focus {
+      border-color: #0071E3; /* Apple-like accent color */
+    }
+
+    /* ------------------------------
+       DEFAULT CONTENT
+    ------------------------------ */
     #content-default {
       text-align: center;
+      color: #666;
       margin-top: 2rem;
     }
-    /* Group Content: hidden by default, displayed in 2-column layout */
+
+    /* ------------------------------
+       GROUP CONTENT
+    ------------------------------ */
     .group-content {
       display: none;
-      margin-top: 2rem;
+      margin-bottom: 3rem;
     }
+    .group-content h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Layout: two columns for each group */
     .group-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 2rem;
-      align-items: start;
+      align-items: flex-start;
     }
-    .group-details {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    /* Each column panel */
+    .group-details,
+    .group-download {
+      background: #FAFAFA;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      padding: 1.5rem;
     }
+
+    /* Bike details list */
     .group-details ul {
       list-style: none;
       padding: 0;
-      margin: 1rem 0;
+      margin-top: 1rem;
     }
     .group-details li {
-      margin-bottom: 0.5rem;
-      line-height: 1.4;
+      margin-bottom: 0.75rem;
+      color: #444;
     }
-    .group-download {
-      background: #f7f7f7;
-      padding: 1rem;
-      border-radius: 6px;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-    }
+
+    /* Download / Verify panel */
     .group-download label {
       display: block;
-      font-weight: bold;
+      font-weight: 500;
       margin-bottom: 0.5rem;
+      color: #333;
     }
     .group-download select {
-      padding: 0.5rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
       width: 100%;
-      max-width: 300px;
+      max-width: 320px;
+      padding: 0.6rem;
+      font-size: 1rem;
+      border: 1px solid #CED4DA;
+      border-radius: 6px;
+      margin-top: 0.5rem;
+      transition: border 0.2s ease;
+      outline: none;
+    }
+    .group-download select:focus {
+      border-color: #0071E3;
+    }
+
+    /* Responsive spacing at smaller screens */
+    @media (max-width: 600px) {
+      .gpsr-container {
+        margin: 2rem 1rem;
+        padding: 1rem;
+      }
+      .gpsr-header h1 {
+        font-size: 1.75rem;
+      }
     }
   </style>
 </head>
@@ -141,7 +220,7 @@
   <!-- Sandman 1,3,5 -->
   <div id="content-sandman135" class="group-content">
     <div class="group-grid">
-      <!-- Left column: details -->
+      <!-- Details Column -->
       <div class="group-details">
         <h2>Sandman 1,3,5</h2>
         <ul>
@@ -150,11 +229,10 @@
           <li><strong>Sandman 5:</strong> Weight: 8.3kg | Gear: Shimano Ultegra | Gears: 22 | Brakes: Mechanical</li>
         </ul>
       </div>
-      <!-- Right column: PDF download -->
+      <!-- Download Column -->
       <div class="group-download">
         <label for="language-switcher-sandman135">Verify or Download Compliance Manual:</label>
-        <select id="language-switcher-sandman135" 
-                onchange="downloadPDF('sandman135', this.value)">
+        <select id="language-switcher-sandman135" onchange="downloadPDF('sandman135', this.value)">
           <option value="" disabled selected>Select Language</option>
           <option value="en">English</option>
           <option value="de">German</option>
@@ -188,8 +266,7 @@
       </div>
       <div class="group-download">
         <label for="language-switcher-sandman467">Verify or Download Compliance Manual:</label>
-        <select id="language-switcher-sandman467" 
-                onchange="downloadPDF('sandman467', this.value)">
+        <select id="language-switcher-sandman467" onchange="downloadPDF('sandman467', this.value)">
           <option value="" disabled selected>Select Language</option>
           <option value="en">English</option>
           <option value="de">German</option>
@@ -223,8 +300,7 @@
       </div>
       <div class="group-download">
         <label for="language-switcher-odin135">Verify or Download Compliance Manual:</label>
-        <select id="language-switcher-odin135" 
-                onchange="downloadPDF('odin135', this.value)">
+        <select id="language-switcher-odin135" onchange="downloadPDF('odin135', this.value)">
           <option value="" disabled selected>Select Language</option>
           <option value="en">English</option>
           <option value="de">German</option>
@@ -257,8 +333,7 @@
       </div>
       <div class="group-download">
         <label for="language-switcher-odin44_1">Verify or Download Compliance Manual:</label>
-        <select id="language-switcher-odin44_1" 
-                onchange="downloadPDF('odin44_1', this.value)">
+        <select id="language-switcher-odin44_1" onchange="downloadPDF('odin44_1', this.value)">
           <option value="" disabled selected>Select Language</option>
           <option value="en">English</option>
           <option value="de">German</option>
@@ -286,13 +361,12 @@
         <h2>Gaia</h2>
         <ul>
           <li><strong>Gaia (Example):</strong> Weight: 10.8kg | Gear: Shimano SLX | Gears: 12 | Brakes: Hydraulic</li>
-          <!-- Add more Gaia models here if needed -->
+          <!-- Add more Gaia models if needed -->
         </ul>
       </div>
       <div class="group-download">
         <label for="language-switcher-gaia">Verify or Download Compliance Manual:</label>
-        <select id="language-switcher-gaia" 
-                onchange="downloadPDF('gaia', this.value)">
+        <select id="language-switcher-gaia" onchange="downloadPDF('gaia', this.value)">
           <option value="" disabled selected>Select Language</option>
           <option value="en">English</option>
           <option value="de">German</option>
@@ -312,23 +386,23 @@
       </div>
     </div>
   </div>
-</div>
+
+</div> <!-- end gpsr-container -->
 
 <script>
   /**
-   * changeBikeGroup: Show/hide the correct group of bikes
+   * Shows the chosen bike group, hides all others.
    */
   function changeBikeGroup(selectedGroup) {
-    // Hide the default content
+    // Hide default text
     document.getElementById('content-default').style.display = 'none';
 
-    // Hide all group-content sections
-    const groupContents = document.querySelectorAll('.group-content');
-    groupContents.forEach(section => {
+    // Hide every group-content
+    document.querySelectorAll('.group-content').forEach(section => {
       section.style.display = 'none';
     });
 
-    // Show the selected group if it exists
+    // Show the selected group
     if (selectedGroup) {
       const groupId = 'content-' + selectedGroup;
       const selectedSection = document.getElementById(groupId);
@@ -339,13 +413,13 @@
   }
 
   /**
-   * downloadPDF: "Simulates" downloading/verification of compliance manuals
-   * Adjust the URL to match your actual PDF file locations/names.
+   * Simulate "Downloading" or verifying compliance PDF in the chosen language.
+   * Adjust path or logic as necessary.
    */
   function downloadPDF(groupName, language) {
-    if (!language) return; // No language chosen => do nothing
+    if (!language) return;  // If no language selected, do nothing
     if (!groupName) {
-      alert('Please select a group first.');
+      alert('Please select a bike group first.');
       return;
     }
     // Example PDF path: /pdfs/sandman135-en.pdf
