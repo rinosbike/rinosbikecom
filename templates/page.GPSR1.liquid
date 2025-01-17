@@ -254,72 +254,68 @@
               }
           }
       }
+  <script>
+      function changeBike(bike) {
+          document.getElementById('content-default').style.display = 'none';
+          document.querySelectorAll('.bike-details').forEach(content => content.style.display = 'none');
+          const contentId = 'content-' + bike;
+          const selectedContent = document.getElementById(contentId);
+          if (selectedContent) {
+              selectedContent.style.display = 'grid';
+          }
+      }
+
+      function downloadPDF(language) {
+          if (language) {
+              const bikeName = document.querySelector('#bike-switcher').value;
+              if (bikeName) {
+                  window.location.href = `/pdfs/${bikeName}-${language}.pdf`;
+              } else {
+                  alert('Please select a bike model first.');
+              }
+          }
+      }
   </script>
 
   <style>
       .gpsr-container {
-          max-width: 800px;
+          max-width: 1000px;
           margin: 0 auto;
-          padding: 40px 20px;
+          padding: 40px;
           font-family: Arial, sans-serif;
           text-align: center;
       }
 
-      .gpsr-header h1 {
-          font-size: 32px;
-          font-weight: bold;
-          margin-bottom: 10px;
+      .bike-details-grid {
+          display: grid;
+          grid-template-columns: 1fr 2fr 1fr;
+          gap: 20px;
+          align-items: center;
+          margin-top: 30px;
       }
 
-      .gpsr-header p {
-          font-size: 18px;
-          margin-bottom: 30px;
-          color: #555;
-      }
-
-      .bike-selector {
-          margin: 30px 0;
-      }
-
-      .bike-selector label {
-          display: block;
-          font-size: 18px;
-          margin-bottom: 10px;
-          color: #333;
-      }
-
-      .bike-selector select {
-          padding: 12px;
-          font-size: 16px;
-          border: 1px solid #ccc;
-          border-radius: 8px;
+      .bike-image img {
           width: 100%;
-          max-width: 400px;
-          margin: 0 auto;
+          border-radius: 8px;
       }
 
-      #content-default p {
-          font-size: 16px;
-          color: #777;
-      }
-
-      h2 {
-          font-size: 28px;
-          margin-top: 20px;
-          margin-bottom: 15px;
-          color: #222;
-      }
-
-      ul {
+      .bike-info ul {
           list-style: none;
           padding: 0;
-          margin: 20px 0;
       }
 
-      ul li {
+      .bike-info ul li {
+          margin-bottom: 10px;
           font-size: 16px;
-          margin: 5px 0;
           color: #444;
+      }
+
+      .bike-download select {
+          padding: 10px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          width: 100%;
       }
   </style>
 {% endif %}
