@@ -3,61 +3,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Grouped Bike Models</title>
+  <title>Grouped Bike Models - Compliance</title>
   <style>
+    /* Container & General Typography */
     .gpsr-container {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 40px;
+      padding: 2rem;
       font-family: Arial, sans-serif;
-      text-align: center;
+      color: #333;
     }
-
     h1, h2, h3 {
       margin: 0.5em 0;
+      text-align: center;
     }
-
+    p {
+      line-height: 1.5;
+    }
+    /* Header Style */
+    .gpsr-header {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+    /* Contact Info */
     .contact-info {
-      margin-top: 1em;
-      text-align: left;
+      margin: 1rem 0 2rem;
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 8px;
     }
-
+    .contact-info p {
+      margin: 0.3rem 0;
+    }
+    /* Bike Selector */
     .bike-selector {
-      margin: 2em 0;
+      margin: 2rem 0;
+      text-align: center;
     }
-
+    .bike-selector label {
+      margin-right: 0.5rem;
+      font-weight: bold;
+    }
+    .bike-selector select {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    /* Default Content Message */
+    #content-default {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    /* Group Content: hidden by default, displayed in 2-column layout */
     .group-content {
       display: none;
-      text-align: left;
-      margin-top: 2em;
+      margin-top: 2rem;
     }
-
-    .group-content ul {
-      list-style: none;
-      padding-left: 0;
+    .group-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
     }
-
-    .group-content li {
-      margin-bottom: 10px;
-      font-size: 16px;
-      color: #444;
-    }
-
-    .bike-download {
-      margin-top: 1.5em;
-    }
-
-    .bike-download label,
-    .bike-download select {
-      display: block;
-      margin-bottom: 0.5em;
-    }
-
-    .bike-download select {
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
+    .group-details {
+      background: #fff;
+      padding: 1rem;
       border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .group-details ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    .group-details li {
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .group-download {
+      background: #f7f7f7;
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    .group-download label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .group-download select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
       width: 100%;
       max-width: 300px;
     }
@@ -66,11 +105,13 @@
 <body>
 
 <div class="gpsr-container">
+  <!-- Page Header -->
   <header class="gpsr-header">
     <h1>GPSR Compliance Information</h1>
-    <p>Your trusted guide to product safety and compliance. Select your bike group below to explore specific details.</p>
+    <p>Your trusted guide to product safety and compliance.</p>
   </header>
 
+  <!-- Contact Details -->
   <div class="contact-info">
     <h2>Contact Information</h2>
     <p><strong>Responsible Person:</strong> Rinos Handels GmbH</p>
@@ -81,7 +122,7 @@
 
   <!-- Bike Group Selector -->
   <div class="bike-selector">
-    <label for="bike-switcher">Select Your Bike Group:</label>
+    <label for="bike-switcher">Select a Bike Group:</label>
     <select id="bike-switcher" onchange="changeBikeGroup(this.value)">
       <option value="" selected disabled>-- Choose a group --</option>
       <option value="sandman135">Sandman 1,3,5</option>
@@ -92,139 +133,190 @@
     </select>
   </div>
 
-  <!-- Default Content -->
+  <!-- Default message (shown until a group is selected) -->
   <div id="content-default">
-    <p>Please select a bike group to view the compliance information.</p>
+    <p>Please select a bike group above to view the compliance information.</p>
   </div>
 
-  <!-- SANDMAN 1,3,5 -->
+  <!-- Sandman 1,3,5 -->
   <div id="content-sandman135" class="group-content">
-    <h2>Sandman 1, 3, 5 - Compliance Information</h2>
-    <ul>
-      <li>
-        <strong>Sandman 1:</strong>  
-        Weight: 9.8kg | Gear: Shimano SORA | Gears: 18 | Brakes: Mechanical
-      </li>
-      <li>
-        <strong>Sandman 3:</strong>  
-        Weight: 9.8kg | Gear: Shimano 105 | Gears: 22 | Brakes: Mechanical
-      </li>
-      <li>
-        <strong>Sandman 5:</strong>  
-        Weight: 8.3kg | Gear: Shimano Ultegra | Gears: 22 | Brakes: Mechanical
-      </li>
-    </ul>
-    <div class="bike-download">
-      <label for="language-switcher-sandman135">Download Compliance PDF:</label>
-      <select id="language-switcher-sandman135" onchange="downloadPDF('sandman135', this.value)">
-        <option value="" selected disabled>Select Language</option>
-        <option value="en">English</option>
-        <option value="de">German</option>
-      </select>
+    <div class="group-grid">
+      <!-- Left column: details -->
+      <div class="group-details">
+        <h2>Sandman 1,3,5</h2>
+        <ul>
+          <li><strong>Sandman 1:</strong> Weight: 9.8kg | Gear: Shimano SORA | Gears: 18 | Brakes: Mechanical</li>
+          <li><strong>Sandman 3:</strong> Weight: 9.8kg | Gear: Shimano 105 | Gears: 22 | Brakes: Mechanical</li>
+          <li><strong>Sandman 5:</strong> Weight: 8.3kg | Gear: Shimano Ultegra | Gears: 22 | Brakes: Mechanical</li>
+        </ul>
+      </div>
+      <!-- Right column: PDF download -->
+      <div class="group-download">
+        <label for="language-switcher-sandman135">Verify or Download Compliance Manual:</label>
+        <select id="language-switcher-sandman135" 
+                onchange="downloadPDF('sandman135', this.value)">
+          <option value="" disabled selected>Select Language</option>
+          <option value="en">English</option>
+          <option value="de">German</option>
+          <option value="fr">French</option>
+          <option value="es">Spanish</option>
+          <option value="it">Italian</option>
+          <option value="nl">Dutch</option>
+          <option value="pl">Polish</option>
+          <option value="pt">Portuguese</option>
+          <option value="sv">Swedish</option>
+          <option value="da">Danish</option>
+          <option value="fi">Finnish</option>
+          <option value="cs">Czech</option>
+          <option value="hu">Hungarian</option>
+          <option value="sk">Slovak</option>
+        </select>
+      </div>
     </div>
   </div>
 
-  <!-- SANDMAN 4,6,7 -->
+  <!-- Sandman 4,6,7 -->
   <div id="content-sandman467" class="group-content">
-    <h2>Sandman 4, 6, 7 - Compliance Information</h2>
-    <ul>
-      <li>
-        <strong>Sandman 4:</strong>  
-        Weight: 9.8kg | Gear: Shimano GRX 400 | Gears: 20 | Brakes: Hydraulic
-      </li>
-      <li>
-        <strong>Sandman 6:</strong>  
-        Weight: 9.8kg | Gear: Shimano GRX 600 | Gears: 22 | Brakes: Hydraulic
-      </li>
-      <li>
-        <strong>Sandman 7:</strong>  
-        Weight: 9.6kg | Gear: Shimano GRX 820 | Gears: 24 | Brakes: Hydraulic
-      </li>
-    </ul>
-    <div class="bike-download">
-      <label for="language-switcher-sandman467">Download Compliance PDF:</label>
-      <select id="language-switcher-sandman467" onchange="downloadPDF('sandman467', this.value)">
-        <option value="" selected disabled>Select Language</option>
-        <option value="en">English</option>
-        <option value="de">German</option>
-      </select>
+    <div class="group-grid">
+      <div class="group-details">
+        <h2>Sandman 4,6,7</h2>
+        <ul>
+          <li><strong>Sandman 4:</strong> Weight: 9.8kg | Gear: Shimano GRX 400 | Gears: 20 | Brakes: Hydraulic</li>
+          <li><strong>Sandman 6:</strong> Weight: 9.8kg | Gear: Shimano GRX 600 | Gears: 22 | Brakes: Hydraulic</li>
+          <li><strong>Sandman 7:</strong> Weight: 9.6kg | Gear: Shimano GRX 820 | Gears: 24 | Brakes: Hydraulic</li>
+        </ul>
+      </div>
+      <div class="group-download">
+        <label for="language-switcher-sandman467">Verify or Download Compliance Manual:</label>
+        <select id="language-switcher-sandman467" 
+                onchange="downloadPDF('sandman467', this.value)">
+          <option value="" disabled selected>Select Language</option>
+          <option value="en">English</option>
+          <option value="de">German</option>
+          <option value="fr">French</option>
+          <option value="es">Spanish</option>
+          <option value="it">Italian</option>
+          <option value="nl">Dutch</option>
+          <option value="pl">Polish</option>
+          <option value="pt">Portuguese</option>
+          <option value="sv">Swedish</option>
+          <option value="da">Danish</option>
+          <option value="fi">Finnish</option>
+          <option value="cs">Czech</option>
+          <option value="hu">Hungarian</option>
+          <option value="sk">Slovak</option>
+        </select>
+      </div>
     </div>
   </div>
 
-  <!-- ODIN 1,3,5 -->
+  <!-- Odin 1,3,5 -->
   <div id="content-odin135" class="group-content">
-    <h2>Odin 1, 3, 5 - Compliance Information</h2>
-    <ul>
-      <li>
-        <strong>Odin 1:</strong>  
-        Weight: 9.8kg | Gear: Shimano SORA | Gears: 18 | Brakes: Mechanical
-      </li>
-      <li>
-        <strong>Odin 3:</strong>  
-        Weight: 9.8kg | Gear: Shimano 105 | Gears: 22 | Brakes: Mechanical
-      </li>
-      <li>
-        <strong>Odin 5:</strong>  
-        Weight: 8.3kg | Gear: Shimano Ultegra | Gears: 22 | Brakes: Mechanical
-      </li>
-    </ul>
-    <div class="bike-download">
-      <label for="language-switcher-odin135">Download Compliance PDF:</label>
-      <select id="language-switcher-odin135" onchange="downloadPDF('odin135', this.value)">
-        <option value="" selected disabled>Select Language</option>
-        <option value="en">English</option>
-        <option value="de">German</option>
-      </select>
+    <div class="group-grid">
+      <div class="group-details">
+        <h2>Odin 1,3,5</h2>
+        <ul>
+          <li><strong>Odin 1:</strong> Weight: 9.8kg | Gear: Shimano SORA | Gears: 18 | Brakes: Mechanical</li>
+          <li><strong>Odin 3:</strong> Weight: 9.8kg | Gear: Shimano 105 | Gears: 22 | Brakes: Mechanical</li>
+          <li><strong>Odin 5:</strong> Weight: 8.3kg | Gear: Shimano Ultegra | Gears: 22 | Brakes: Mechanical</li>
+        </ul>
+      </div>
+      <div class="group-download">
+        <label for="language-switcher-odin135">Verify or Download Compliance Manual:</label>
+        <select id="language-switcher-odin135" 
+                onchange="downloadPDF('odin135', this.value)">
+          <option value="" disabled selected>Select Language</option>
+          <option value="en">English</option>
+          <option value="de">German</option>
+          <option value="fr">French</option>
+          <option value="es">Spanish</option>
+          <option value="it">Italian</option>
+          <option value="nl">Dutch</option>
+          <option value="pl">Polish</option>
+          <option value="pt">Portuguese</option>
+          <option value="sv">Swedish</option>
+          <option value="da">Danish</option>
+          <option value="fi">Finnish</option>
+          <option value="cs">Czech</option>
+          <option value="hu">Hungarian</option>
+          <option value="sk">Slovak</option>
+        </select>
+      </div>
     </div>
   </div>
 
-  <!-- ODIN 4,4.1 -->
+  <!-- Odin 4,4.1 -->
   <div id="content-odin44_1" class="group-content">
-    <h2>Odin 4, 4.1 - Compliance Information</h2>
-    <ul>
-      <li>
-        <strong>Odin 4:</strong>  
-        Weight: 9.2kg | Gear: Shimano 105 | Gears: 24 | Brakes: Shimano 105 Hydraulic
-      </li>
-      <li>
-        <strong>Odin 4.1:</strong>  
-        Weight: 9.0kg | Gear: Shimano Ultegra | Gears: 24 | Brakes: Hydraulic
-      </li>
-    </ul>
-    <div class="bike-download">
-      <label for="language-switcher-odin44_1">Download Compliance PDF:</label>
-      <select id="language-switcher-odin44_1" onchange="downloadPDF('odin44_1', this.value)">
-        <option value="" selected disabled>Select Language</option>
-        <option value="en">English</option>
-        <option value="de">German</option>
-      </select>
+    <div class="group-grid">
+      <div class="group-details">
+        <h2>Odin 4,4.1</h2>
+        <ul>
+          <li><strong>Odin 4:</strong> Weight: 9.2kg | Gear: Shimano 105 | Gears: 24 | Brakes: Shimano 105 Hydraulic</li>
+          <li><strong>Odin 4.1:</strong> Weight: 9.0kg | Gear: Shimano Ultegra | Gears: 24 | Brakes: Hydraulic</li>
+        </ul>
+      </div>
+      <div class="group-download">
+        <label for="language-switcher-odin44_1">Verify or Download Compliance Manual:</label>
+        <select id="language-switcher-odin44_1" 
+                onchange="downloadPDF('odin44_1', this.value)">
+          <option value="" disabled selected>Select Language</option>
+          <option value="en">English</option>
+          <option value="de">German</option>
+          <option value="fr">French</option>
+          <option value="es">Spanish</option>
+          <option value="it">Italian</option>
+          <option value="nl">Dutch</option>
+          <option value="pl">Polish</option>
+          <option value="pt">Portuguese</option>
+          <option value="sv">Swedish</option>
+          <option value="da">Danish</option>
+          <option value="fi">Finnish</option>
+          <option value="cs">Czech</option>
+          <option value="hu">Hungarian</option>
+          <option value="sk">Slovak</option>
+        </select>
+      </div>
     </div>
   </div>
 
-  <!-- GAIA -->
+  <!-- Gaia -->
   <div id="content-gaia" class="group-content">
-    <h2>Gaia - Compliance Information</h2>
-    <ul>
-      <li>
-        <strong>Gaia:</strong>  
-        Weight: 10.8kg | Gear: Shimano SLX | Gears: 12 | Brakes: Hydraulic
-      </li>
-      <!-- Add more Gaia models here if needed -->
-    </ul>
-    <div class="bike-download">
-      <label for="language-switcher-gaia">Download Compliance PDF:</label>
-      <select id="language-switcher-gaia" onchange="downloadPDF('gaia', this.value)">
-        <option value="" selected disabled>Select Language</option>
-        <option value="en">English</option>
-        <option value="de">German</option>
-      </select>
+    <div class="group-grid">
+      <div class="group-details">
+        <h2>Gaia</h2>
+        <ul>
+          <li><strong>Gaia (Example):</strong> Weight: 10.8kg | Gear: Shimano SLX | Gears: 12 | Brakes: Hydraulic</li>
+          <!-- Add more Gaia models here if needed -->
+        </ul>
+      </div>
+      <div class="group-download">
+        <label for="language-switcher-gaia">Verify or Download Compliance Manual:</label>
+        <select id="language-switcher-gaia" 
+                onchange="downloadPDF('gaia', this.value)">
+          <option value="" disabled selected>Select Language</option>
+          <option value="en">English</option>
+          <option value="de">German</option>
+          <option value="fr">French</option>
+          <option value="es">Spanish</option>
+          <option value="it">Italian</option>
+          <option value="nl">Dutch</option>
+          <option value="pl">Polish</option>
+          <option value="pt">Portuguese</option>
+          <option value="sv">Swedish</option>
+          <option value="da">Danish</option>
+          <option value="fi">Finnish</option>
+          <option value="cs">Czech</option>
+          <option value="hu">Hungarian</option>
+          <option value="sk">Slovak</option>
+        </select>
+      </div>
     </div>
   </div>
 </div>
 
 <script>
   /**
-   * Show/hide the correct group of bikes based on user selection
+   * changeBikeGroup: Show/hide the correct group of bikes
    */
   function changeBikeGroup(selectedGroup) {
     // Hide the default content
@@ -247,16 +339,18 @@
   }
 
   /**
-   * Download PDF function (demo logic)
+   * downloadPDF: "Simulates" downloading/verification of compliance manuals
+   * Adjust the URL to match your actual PDF file locations/names.
    */
   function downloadPDF(groupName, language) {
-    if (!language) return; // If user hasn't chosen a language, do nothing
+    if (!language) return; // No language chosen => do nothing
     if (!groupName) {
       alert('Please select a group first.');
       return;
     }
-    // Example URL: /pdfs/sandman135-en.pdf
-    window.location.href = `/pdfs/${groupName}-${language}.pdf`;
+    // Example PDF path: /pdfs/sandman135-en.pdf
+    const pdfUrl = `/pdfs/${groupName}-${language}.pdf`;
+    window.location.href = pdfUrl;
   }
 </script>
 
