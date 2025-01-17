@@ -220,6 +220,23 @@
               }
           }
       }
+ <script>
+      function changeBike(bike) {
+          // Hide all content blocks
+          document.getElementById('content-default').style.display = 'none';
+          document.querySelectorAll('[id^="content-"]').forEach(function(content) {
+              content.style.display = 'none';
+          });
+
+          // Show the selected bike's content block
+          if (bike) {
+              const contentId = 'content-' + bike;
+              const selectedContent = document.getElementById(contentId);
+              if (selectedContent) {
+                  selectedContent.style.display = 'block';
+              }
+          }
+      }
   </script>
 
   <style>
@@ -229,6 +246,23 @@
           padding: 40px 20px;
           font-family: Arial, sans-serif;
           text-align: center;
+      }
+
+      .contact-info {
+          text-align: left;
+          margin-bottom: 30px;
+      }
+
+      .contact-info h2 {
+          font-size: 24px;
+          margin-bottom: 10px;
+          color: #222;
+      }
+
+      .contact-info p {
+          font-size: 16px;
+          margin: 5px 0;
+          color: #555;
       }
 
       .gpsr-header h1 {
@@ -254,14 +288,34 @@
           color: #333;
       }
 
-      .bike-selector select {
-          padding: 12px;
+      .custom-select-wrapper {
+          position: relative;
+          display: inline-block;
+          width: 100%;
+          max-width: 400px;
+      }
+
+      .custom-select-wrapper select {
+          padding: 14px 20px;
           font-size: 16px;
           border: 1px solid #ccc;
           border-radius: 8px;
+          background-color: #f9f9f9;
+          color: #333;
+          appearance: none;
           width: 100%;
-          max-width: 400px;
-          margin: 0 auto;
+          text-align: left;
+          cursor: pointer;
+      }
+
+      .custom-select-wrapper::after {
+          content: '\25BC';
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          transform: translateY(-50%);
+          pointer-events: none;
+          color: #555;
       }
 
       #content-default p {
