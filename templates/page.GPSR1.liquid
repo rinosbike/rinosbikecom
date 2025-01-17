@@ -1,16 +1,17 @@
 {% if true %}
-   <div class="gpsr-container">
-      <header class="gpsr-header">
-          <h1>GPSR Compliance Information</h1>
-          <p>Your trusted guide to product safety and compliance. Select your bike model below to explore specific details.</p>
-      </header>
-      <div class="contact-info">
-              <h2>Contact Information</h2>
-              <p><strong>Responsible Person:</strong> Rinos Handels GmbH</p>
-              <p><strong>Address:</strong> Goethestr. 11E, 15234 Frankfurt (Oder), Germany</p>
-              <p><strong>Phone:</strong> +49 163 370 3902</p>
-              <p><strong>Email:</strong> info@rinosbike.eu</p>
-          </div>
+<div class="gpsr-container">
+  <header class="gpsr-header">
+    <h1>GPSR Compliance Information</h1>
+    <p>Your trusted guide to product safety and compliance. Select your bike model below to explore specific details.</p>
+  </header>
+
+  <div class="contact-info">
+    <h2>Contact Information</h2>
+    <p><strong>Responsible Person:</strong> Rinos Handels GmbH</p>
+    <p><strong>Address:</strong> Goethestr. 11E, 15234 Frankfurt (Oder), Germany</p>
+    <p><strong>Phone:</strong> +49 163 370 3902</p>
+    <p><strong>Email:</strong> info@rinosbike.eu</p>
+  </div>
       <!-- Bike Selector Dropdown -->
       <div class="bike-selector">
           <label for="bike-switcher">Select Your Bike Model:</label>
@@ -34,12 +35,6 @@
           </select>
       </div>
 
-      <!-- Default Content -->
-      <div id="content-default">
-          <p>Please select a bike model to view the compliance information.</p>
-      </div>
-
-      <!-- Sandman Models -->
       <!-- Default Content -->
       <div id="content-default">
           <p>Please select a bike model to view the compliance information.</p>
@@ -237,45 +232,39 @@
       </div>
   </div>
 
-   <script>
-      function changeBike(bike) {
-          // Hide all content blocks
-          document.getElementById('content-default').style.display = 'none';
-          document.querySelectorAll('[id^="content-"]').forEach(function(content) {
-              content.style.display = 'none';
-          });
+</div>
 
-          // Show the selected bike's content block
-          if (bike) {
-              const contentId = 'content-' + bike;
-              const selectedContent = document.getElementById(contentId);
-              if (selectedContent) {
-                  selectedContent.style.display = 'block';
-              }
-          }
-      }
-  <script>
-      function changeBike(bike) {
-          document.getElementById('content-default').style.display = 'none';
-          document.querySelectorAll('.bike-details').forEach(content => content.style.display = 'none');
-          const contentId = 'content-' + bike;
-          const selectedContent = document.getElementById(contentId);
-          if (selectedContent) {
-              selectedContent.style.display = 'grid';
-          }
-      }
+<script>
+  function changeBike(bike) {
+    // Hide default content
+    document.getElementById('content-default').style.display = 'none';
 
-      function downloadPDF(language) {
-          if (language) {
-              const bikeName = document.querySelector('#bike-switcher').value;
-              if (bikeName) {
-                  window.location.href = `/pdfs/${bikeName}-${language}.pdf`;
-              } else {
-                  alert('Please select a bike model first.');
-              }
-          }
+    // Hide all bike-details
+    document.querySelectorAll('.bike-details').forEach(content => {
+      content.style.display = 'none';
+    });
+
+    // Show the selected bike
+    if (bike) {
+      const contentId = 'content-' + bike;
+      const selectedContent = document.getElementById(contentId);
+      if (selectedContent) {
+        selectedContent.style.display = 'grid'; // or 'block'
       }
-  </script>
+    }
+  }
+
+  function downloadPDF(language) {
+    if (language) {
+      const bikeName = document.querySelector('#bike-switcher').value;
+      if (bikeName) {
+        window.location.href = `/pdfs/${bikeName}-${language}.pdf`;
+      } else {
+        alert('Please select a bike model first.');
+      }
+    }
+  }
+</script>
 
   <style>
       .gpsr-container {
