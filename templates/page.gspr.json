@@ -15,9 +15,100 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "rich_text_tm4wxT": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_7MTwpb": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Rinos Handels GmbH</strong> is the responsible entity under the GPSR for ensuring product safety.",
+            "heading_size": "h2"
+          }
+        },
+        "text_8JWXhY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We are located in Goethestr. 11E, 15234 Frankfurt (Oder), Germany</p><p>Reach us by phone at +49 163 370 3902</p><p>Or by email, at <a>info@rinosbike.eu</a></p>"
+          }
+        },
+        "button_eW6WKW": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_7MTwpb",
+        "text_8JWXhY",
+        "button_eW6WKW"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_zt4BqB": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_fzEiL6": {
+          "type": "heading",
+          "settings": {
+            "heading": "Information About Sandman 4,6,7.",
+            "heading_size": "h1"
+          }
+        },
+        "text_3NDb4f": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_TBRMYJ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_fzEiL6",
+        "text_3NDb4f",
+        "button_TBRMYJ"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/9_344c43db-6098-4a01-ba50-e26f11c3b6f7.jpg",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_tm4wxT",
+    "image_with_text_zt4BqB"
   ]
 }
