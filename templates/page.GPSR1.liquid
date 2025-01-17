@@ -26,7 +26,7 @@
     p {
       margin-bottom: 1rem;
     }
-    
+
     /* ------------------------------
        CONTAINER
     ------------------------------ */
@@ -127,16 +127,13 @@
       align-items: flex-start;
     }
 
-    /* Each column panel */
-    .group-details,
-    .group-download {
+    /* Bike details left column */
+    .group-details {
       background: #FAFAFA;
       border-radius: 10px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       padding: 1.5rem;
     }
-
-    /* Bike details list */
     .group-details ul {
       list-style: none;
       padding: 0;
@@ -147,7 +144,28 @@
       color: #444;
     }
 
+    /* Right column: image + download box stacked */
+    .group-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Bike Image */
+    .group-image {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
     /* Download / Verify panel */
+    .group-download {
+      background: #FAFAFA;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+      text-align: center;
+    }
     .group-download label {
       display: block;
       font-weight: 500;
@@ -220,7 +238,7 @@
   <!-- Sandman 1,3,5 -->
   <div id="content-sandman135" class="group-content">
     <div class="group-grid">
-      <!-- Details Column -->
+      <!-- Left: Bike details -->
       <div class="group-details">
         <h2>Sandman 1,3,5</h2>
         <ul>
@@ -229,26 +247,36 @@
           <li><strong>Sandman 5:</strong> Weight: 8.3kg | Gear: Shimano Ultegra | Gears: 22 | Brakes: Mechanical</li>
         </ul>
       </div>
-      <!-- Download Column -->
-      <div class="group-download">
-        <label for="language-switcher-sandman135">Verify or Download Compliance Manual:</label>
-        <select id="language-switcher-sandman135" onchange="downloadPDF('sandman135', this.value)">
-          <option value="" disabled selected>Select Language</option>
-          <option value="en">English</option>
-          <option value="de">German</option>
-          <option value="fr">French</option>
-          <option value="es">Spanish</option>
-          <option value="it">Italian</option>
-          <option value="nl">Dutch</option>
-          <option value="pl">Polish</option>
-          <option value="pt">Portuguese</option>
-          <option value="sv">Swedish</option>
-          <option value="da">Danish</option>
-          <option value="fi">Finnish</option>
-          <option value="cs">Czech</option>
-          <option value="hu">Hungarian</option>
-          <option value="sk">Slovak</option>
-        </select>
+      <!-- Right: Image + PDF Download -->
+      <div class="group-right">
+        <img
+          class="group-image"
+          src="/images/sandman135.jpg"
+          alt="Sandman 1,3,5"
+        />
+        <div class="group-download">
+          <label for="language-switcher-sandman135">Verify or Download Compliance Manual:</label>
+          <select
+            id="language-switcher-sandman135"
+            onchange="downloadPDF('sandman135', this.value)"
+          >
+            <option value="" disabled selected>Select Language</option>
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <option value="it">Italian</option>
+            <option value="nl">Dutch</option>
+            <option value="pl">Polish</option>
+            <option value="pt">Portuguese</option>
+            <option value="sv">Swedish</option>
+            <option value="da">Danish</option>
+            <option value="fi">Finnish</option>
+            <option value="cs">Czech</option>
+            <option value="hu">Hungarian</option>
+            <option value="sk">Slovak</option>
+          </select>
+        </div>
       </div>
     </div>
   </div>
@@ -264,25 +292,35 @@
           <li><strong>Sandman 7:</strong> Weight: 9.6kg | Gear: Shimano GRX 820 | Gears: 24 | Brakes: Hydraulic</li>
         </ul>
       </div>
-      <div class="group-download">
-        <label for="language-switcher-sandman467">Verify or Download Compliance Manual:</label>
-        <select id="language-switcher-sandman467" onchange="downloadPDF('sandman467', this.value)">
-          <option value="" disabled selected>Select Language</option>
-          <option value="en">English</option>
-          <option value="de">German</option>
-          <option value="fr">French</option>
-          <option value="es">Spanish</option>
-          <option value="it">Italian</option>
-          <option value="nl">Dutch</option>
-          <option value="pl">Polish</option>
-          <option value="pt">Portuguese</option>
-          <option value="sv">Swedish</option>
-          <option value="da">Danish</option>
-          <option value="fi">Finnish</option>
-          <option value="cs">Czech</option>
-          <option value="hu">Hungarian</option>
-          <option value="sk">Slovak</option>
-        </select>
+      <div class="group-right">
+        <img
+          class="group-image"
+          src="/images/sandman467.jpg"
+          alt="Sandman 4,6,7"
+        />
+        <div class="group-download">
+          <label for="language-switcher-sandman467">Verify or Download Compliance Manual:</label>
+          <select
+            id="language-switcher-sandman467"
+            onchange="downloadPDF('sandman467', this.value)"
+          >
+            <option value="" disabled selected>Select Language</option>
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <option value="it">Italian</option>
+            <option value="nl">Dutch</option>
+            <option value="pl">Polish</option>
+            <option value="pt">Portuguese</option>
+            <option value="sv">Swedish</option>
+            <option value="da">Danish</option>
+            <option value="fi">Finnish</option>
+            <option value="cs">Czech</option>
+            <option value="hu">Hungarian</option>
+            <option value="sk">Slovak</option>
+          </select>
+        </div>
       </div>
     </div>
   </div>
@@ -298,25 +336,35 @@
           <li><strong>Odin 5:</strong> Weight: 8.3kg | Gear: Shimano Ultegra | Gears: 22 | Brakes: Mechanical</li>
         </ul>
       </div>
-      <div class="group-download">
-        <label for="language-switcher-odin135">Verify or Download Compliance Manual:</label>
-        <select id="language-switcher-odin135" onchange="downloadPDF('odin135', this.value)">
-          <option value="" disabled selected>Select Language</option>
-          <option value="en">English</option>
-          <option value="de">German</option>
-          <option value="fr">French</option>
-          <option value="es">Spanish</option>
-          <option value="it">Italian</option>
-          <option value="nl">Dutch</option>
-          <option value="pl">Polish</option>
-          <option value="pt">Portuguese</option>
-          <option value="sv">Swedish</option>
-          <option value="da">Danish</option>
-          <option value="fi">Finnish</option>
-          <option value="cs">Czech</option>
-          <option value="hu">Hungarian</option>
-          <option value="sk">Slovak</option>
-        </select>
+      <div class="group-right">
+        <img
+          class="group-image"
+          src="/images/odin135.jpg"
+          alt="Odin 1,3,5"
+        />
+        <div class="group-download">
+          <label for="language-switcher-odin135">Verify or Download Compliance Manual:</label>
+          <select
+            id="language-switcher-odin135"
+            onchange="downloadPDF('odin135', this.value)"
+          >
+            <option value="" disabled selected>Select Language</option>
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <option value="it">Italian</option>
+            <option value="nl">Dutch</option>
+            <option value="pl">Polish</option>
+            <option value="pt">Portuguese</option>
+            <option value="sv">Swedish</option>
+            <option value="da">Danish</option>
+            <option value="fi">Finnish</option>
+            <option value="cs">Czech</option>
+            <option value="hu">Hungarian</option>
+            <option value="sk">Slovak</option>
+          </select>
+        </div>
       </div>
     </div>
   </div>
@@ -331,25 +379,35 @@
           <li><strong>Odin 4.1:</strong> Weight: 9.0kg | Gear: Shimano Ultegra | Gears: 24 | Brakes: Hydraulic</li>
         </ul>
       </div>
-      <div class="group-download">
-        <label for="language-switcher-odin44_1">Verify or Download Compliance Manual:</label>
-        <select id="language-switcher-odin44_1" onchange="downloadPDF('odin44_1', this.value)">
-          <option value="" disabled selected>Select Language</option>
-          <option value="en">English</option>
-          <option value="de">German</option>
-          <option value="fr">French</option>
-          <option value="es">Spanish</option>
-          <option value="it">Italian</option>
-          <option value="nl">Dutch</option>
-          <option value="pl">Polish</option>
-          <option value="pt">Portuguese</option>
-          <option value="sv">Swedish</option>
-          <option value="da">Danish</option>
-          <option value="fi">Finnish</option>
-          <option value="cs">Czech</option>
-          <option value="hu">Hungarian</option>
-          <option value="sk">Slovak</option>
-        </select>
+      <div class="group-right">
+        <img
+          class="group-image"
+          src="/images/odin44_1.jpg"
+          alt="Odin 4,4.1"
+        />
+        <div class="group-download">
+          <label for="language-switcher-odin44_1">Verify or Download Compliance Manual:</label>
+          <select
+            id="language-switcher-odin44_1"
+            onchange="downloadPDF('odin44_1', this.value)"
+          >
+            <option value="" disabled selected>Select Language</option>
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <option value="it">Italian</option>
+            <option value="nl">Dutch</option>
+            <option value="pl">Polish</option>
+            <option value="pt">Portuguese</option>
+            <option value="sv">Swedish</option>
+            <option value="da">Danish</option>
+            <option value="fi">Finnish</option>
+            <option value="cs">Czech</option>
+            <option value="hu">Hungarian</option>
+            <option value="sk">Slovak</option>
+          </select>
+        </div>
       </div>
     </div>
   </div>
@@ -364,25 +422,35 @@
           <!-- Add more Gaia models if needed -->
         </ul>
       </div>
-      <div class="group-download">
-        <label for="language-switcher-gaia">Verify or Download Compliance Manual:</label>
-        <select id="language-switcher-gaia" onchange="downloadPDF('gaia', this.value)">
-          <option value="" disabled selected>Select Language</option>
-          <option value="en">English</option>
-          <option value="de">German</option>
-          <option value="fr">French</option>
-          <option value="es">Spanish</option>
-          <option value="it">Italian</option>
-          <option value="nl">Dutch</option>
-          <option value="pl">Polish</option>
-          <option value="pt">Portuguese</option>
-          <option value="sv">Swedish</option>
-          <option value="da">Danish</option>
-          <option value="fi">Finnish</option>
-          <option value="cs">Czech</option>
-          <option value="hu">Hungarian</option>
-          <option value="sk">Slovak</option>
-        </select>
+      <div class="group-right">
+        <img
+          class="group-image"
+          src="/images/gaia.jpg"
+          alt="Gaia"
+        />
+        <div class="group-download">
+          <label for="language-switcher-gaia">Verify or Download Compliance Manual:</label>
+          <select
+            id="language-switcher-gaia"
+            onchange="downloadPDF('gaia', this.value)"
+          >
+            <option value="" disabled selected>Select Language</option>
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <option value="it">Italian</option>
+            <option value="nl">Dutch</option>
+            <option value="pl">Polish</option>
+            <option value="pt">Portuguese</option>
+            <option value="sv">Swedish</option>
+            <option value="da">Danish</option>
+            <option value="fi">Finnish</option>
+            <option value="cs">Czech</option>
+            <option value="hu">Hungarian</option>
+            <option value="sk">Slovak</option>
+          </select>
+        </div>
       </div>
     </div>
   </div>
