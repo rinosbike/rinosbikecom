@@ -40,18 +40,52 @@
       </div>
 
       <!-- Sandman Models -->
-      <div id="content-sandman1" style="display: none;">
-          <h2>Sandman 1 - Compliance Information</h2>
-          <ul>
-              <li>Weight: 9.8kg</li>
-              <li>Gear: Shimano SORA</li>
-              <li>Gears: 18</li>
-              <li>Frame: TORAY T800 Carbon</li>
-              <li>Brakes: Mechanical</li>
-              <li>Wheel Size: 28 inches</li>
-              <li>Rims: Aluminum</li>
-          </ul>
+      <!-- Default Content -->
+      <div id="content-default">
+          <p>Please select a bike model to view the compliance information.</p>
       </div>
+
+      <!-- Example Content for Bike Details -->
+      <div id="content-sandman1" class="bike-details" style="display: none;">
+          <div class="bike-details-grid">
+              <div class="bike-image">
+                  <img src="/images/sandman1.jpg" alt="Sandman 1">
+              </div>
+              <div class="bike-info">
+                  <h2>Sandman 1 - Compliance Information</h2>
+                  <ul>
+                      <li><strong>Weight:</strong> 9.8kg</li>
+                      <li><strong>Gear:</strong> Shimano SORA</li>
+                      <li><strong>Gears:</strong> 18</li>
+                      <li><strong>Frame:</strong> TORAY T800 Carbon</li>
+                      <li><strong>Brakes:</strong> Mechanical</li>
+                      <li><strong>Wheel Size:</strong> 28 inches</li>
+                      <li><strong>Rims:</strong> Aluminum</li>
+                  </ul>
+              </div>
+              <div class="bike-download">
+                  <label for="language-switcher">Download Compliance PDF:</label>
+                  <select id="language-switcher" onchange="downloadPDF(this.value)">
+                      <option value="" selected disabled>Select Language</option>
+                      <option value="en">English</option>
+                      <option value="de">German</option>
+                      <option value="fr">French</option>
+                      <option value="es">Spanish</option>
+                      <option value="it">Italian</option>
+                      <option value="nl">Dutch</option>
+                      <option value="pl">Polish</option>
+                      <option value="pt">Portuguese</option>
+                      <option value="sv">Swedish</option>
+                      <option value="da">Danish</option>
+                      <option value="fi">Finnish</option>
+                      <option value="cs">Czech</option>
+                      <option value="hu">Hungarian</option>
+                  </select>
+              </div>
+          </div>
+      </div>
+  </div>
+
 
       <div id="content-sandman3" style="display: none;">
           <h2>Sandman 3 - Compliance Information</h2>
