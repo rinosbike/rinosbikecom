@@ -1,37 +1,37 @@
-{% if true %}
-   <div class="gpsr-container">
+{% if template == 'page.gpsr' %}
+  <div class="gpsr-container">
       <header class="gpsr-header">
-          <h1>GPSR Compliance Information</h1>
-          <p>Your trusted guide to product safety and compliance. Select your bike model below to explore specific details.</p>
-      </header>
-      <div class="contact-info">
+          <div class="contact-info">
               <h2>Contact Information</h2>
               <p><strong>Responsible Person:</strong> Rinos Handels GmbH</p>
               <p><strong>Address:</strong> Goethestr. 11E, 15234 Frankfurt (Oder), Germany</p>
               <p><strong>Phone:</strong> +49 163 370 3902</p>
               <p><strong>Email:</strong> info@rinosbike.eu</p>
           </div>
+          <h1>GPSR Compliance Information</h1>
+          <p>Select your bike model to view details and download compliance information in your preferred language.</p>
+      </header>
+
       <!-- Bike Selector Dropdown -->
       <div class="bike-selector">
           <label for="bike-switcher">Select Your Bike Model:</label>
-          <select id="bike-switcher" onchange="changeBike(this.value)">
-              <option value="" selected disabled>Choose a bike model</option>
-              <!-- Sandman Models -->
-              <option value="sandman1">Sandman 1 </option>
-              <option value="sandman3">Sandman 3 </option>
-              <option value="sandman4">Sandman 4 </option>
-              <option value="sandman5">Sandman 5 </option>
-              <option value="sandman6">Sandman 6 </option>
-              <option value="sandman7">Sandman 7 </option>
-              <!-- Odin Models -->
-              <option value="odin1">Odin 1 </option>
-              <option value="odin3">Odin 3 </option>
-              <option value="odin4">Odin 4 </option>
-              <option value="odin5">Odin 5 </option>
-              <!-- Gaia Models -->
-              <option value="gaia2">Gaia 2 </option>
-              <option value="gaia4">Gaia 4 </option>
-          </select>
+          <div class="custom-select-wrapper">
+              <select id="bike-switcher" onchange="changeBike(this.value)">
+                  <option value="" selected disabled>Choose a bike model</option>
+                  <option value="sandman1">Sandman 1 - Good and Affordable</option>
+                  <option value="sandman3">Sandman 3 - The All-Rounder</option>
+                  <option value="sandman4">Sandman 4 - Our Bestseller</option>
+                  <option value="sandman5">Sandman 5 - Ultimate Performance</option>
+                  <option value="sandman6">Sandman 6 - The Best of Its Kind</option>
+                  <option value="sandman7">Sandman 7 - Top of the Line</option>
+                  <option value="odin1">Odin 1 - Good and Affordable</option>
+                  <option value="odin3">Odin 3 - The All-Rounder</option>
+                  <option value="odin4">Odin 4 - Our Newcomer</option>
+                  <option value="odin5">Odin 5 - Ultimate Performance</option>
+                  <option value="gaia2">Gaia 2 - Cost-effective</option>
+                  <option value="gaia4">Gaia 4 - The Professional's Choice</option>
+              </select>
+          </div>
       </div>
 
       <!-- Default Content -->
@@ -80,174 +80,6 @@
       </div>
   </div>
 
-
-      <div id="content-sandman3" style="display: none;">
-          <h2>Sandman 3 - Compliance Information</h2>
-          <ul>
-              <li>Weight: 9.8kg</li>
-              <li>Gear: Shimano 105</li>
-              <li>Gears: 22</li>
-              <li>Frame: TORAY T800 Carbon</li>
-              <li>Brakes: Mechanical</li>
-              <li>Wheel Size: 28 inches</li>
-              <li>Rims: Aluminum</li>
-          </ul>
-      </div>
-
-      <div id="content-sandman4" style="display: none;">
-          <h2>Sandman 4 - Compliance Information</h2>
-          <ul>
-              <li>Weight: 9.8kg</li>
-              <li>Gear: Shimano GRX 400</li>
-              <li>Gears: 20</li>
-              <li>Frame: TORAY T800 Carbon</li>
-              <li>Brakes: Hydraulic</li>
-              <li>Wheel Size: 28 inches</li>
-              <li>Rims: Aluminum</li>
-          </ul>
-      </div>
-
-      <div id="content-sandman5" style="display: none;">
-          <h2>Sandman 5 - Compliance Information</h2>
-          <ul>
-              <li>Weight: 8.3kg</li>
-              <li>Gear: Shimano Ultegra</li>
-              <li>Gears: 22</li>
-              <li>Frame: TORAY T800 Carbon</li>
-              <li>Brakes: Mechanical</li>
-              <li>Wheel Size: 28 inches</li>
-              <li>Rims: Carbon</li>
-          </ul>
-      </div>
-
-      <div id="content-sandman6" style="display: none;">
-          <h2>Sandman 6 - Compliance Information</h2>
-          <ul>
-              <li>Weight: 9.8kg</li>
-              <li>Gear: Shimano GRX 600</li>
-              <li>Gears: 22</li>
-              <li>Frame: TORAY T800 Carbon</li>
-              <li>Brakes: Hydraulic</li>
-              <li>Wheel Size: 28 inches</li>
-              <li>Rims: Aluminum</li>
-          </ul>
-      </div>
-
-      <div id="content-sandman7" style="display: none;">
-          <h2>Sandman 7 - Compliance Information</h2>
-          <ul>
-              <li>Weight: 9.6kg</li>
-              <li>Gear: Shimano GRX 820</li>
-              <li>Gears: 24</li>
-              <li>Frame: TORAY T800 Carbon</li>
-              <li>Brakes: Hydraulic</li>
-              <li>Wheel Size: 28 inches</li>
-              <li>Rims: Aluminum</li>
-          </ul>
-      </div>
-
-      <!-- Odin Models -->
-      <div id="content-odin1" style="display: none;">
-          <h2>Odin 1 - Compliance Information</h2>
-          <ul>
-              <li>Weight: 9.8kg</li>
-              <li>Gear: Shimano SORA</li>
-              <li>Gears: 18</li>
-              <li>Frame: TORAY T800 Carbon</li>
-              <li>Brakes: Mechanical</li>
-              <li>Wheel Size: 28 inches</li>
-              <li>Rims: Aluminum</li>
-          </ul>
-      </div>
-
-      <div id="content-odin3" style="display: none;">
-          <h2>Odin 3 - Compliance Information</h2>
-          <ul>
-              <li>Weight: 9.8kg</li>
-              <li>Gear: Shimano 105</li>
-              <li>Gears: 22</li>
-              <li>Frame: TORAY T800 Carbon</li>
-              <li>Brakes: Mechanical</li>
-              <li>Wheel Size: 28 inches</li>
-              <li>Rims: Aluminum</li>
-          </ul>
-      </div>
-
-      <div id="content-odin4" style="display: none;">
-          <h2>Odin 4 - Compliance Information</h2>
-          <ul>
-              <li>Weight: 9.2kg</li>
-              <li>Gear: Shimano 105</li>
-              <li>Gears: 24</li>
-              <li>Frame: TORAY T800 Carbon</li>
-              <li>Brakes: Shimano 105 Hydraulic</li>
-              <li>Wheel Size: 28 inches</li>
-              <li>Rims: Aluminum</li>
-          </ul>
-      </div>
-
-      <div id="content-odin5" style="display: none;">
-          <h2>Odin 5 - Compliance Information</h2>
-          <ul>
-              <li>Weight: 8.3kg</li>
-              <li>Gear: Shimano Ultegra</li>
-              <li>Gears: 22</li>
-              <li>Frame: TORAY T800 Carbon</li>
-              <li>Brakes: Mechanical</li>
-              <li>Wheel Size: 28 inches</li>
-              <li>Rims: Carbon</li>
-          </ul>
-      </div>
-
-      <!-- Gaia Models -->
-      <div id="content-gaia2" style="display: none;">
-          <h2>Gaia 2 - Compliance Information</h2>
-          <ul>
-              <li>Weight: 11.9kg</li>
-              <li>Gear: Shimano Deore</li>
-              <li>Gears: 12</li>
-              <li>Fork: ROCKSHOX Recon RL Remote</li>
-              <li>Travel: 100mm</li>
-              <li>Frame: TORAY T800 Carbon</li>
-              <li>Brakes: Hydraulic</li>
-              <li>Wheel Size: 29x2.25 inches</li>
-              <li>Rims: Aluminum</li>
-          </ul>
-      </div>
-
-      <div id="content-gaia4" style="display: none;">
-          <h2>Gaia 4 - Compliance Information</h2>
-          <ul>
-              <li>Weight: 10.8kg</li>
-              <li>Gear: Shimano SLX</li>
-              <li>Gears: 12</li>
-              <li>Fork: FOX 32 Rhythm Remote</li>
-              <li>Travel: 100mm</li>
-              <li>Frame: TORAY T800 Carbon</li>
-              <li>Brakes: Hydraulic</li>
-              <li>Wheel Size: 29x2.25 inches</li>
-              <li>Rims: Aluminum</li>
-          </ul>
-      </div>
-  </div>
-
-   <script>
-      function changeBike(bike) {
-          // Hide all content blocks
-          document.getElementById('content-default').style.display = 'none';
-          document.querySelectorAll('[id^="content-"]').forEach(function(content) {
-              content.style.display = 'none';
-          });
-
-          // Show the selected bike's content block
-          if (bike) {
-              const contentId = 'content-' + bike;
-              const selectedContent = document.getElementById(contentId);
-              if (selectedContent) {
-                  selectedContent.style.display = 'block';
-              }
-          }
-      }
   <script>
       function changeBike(bike) {
           document.getElementById('content-default').style.display = 'none';
