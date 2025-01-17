@@ -1,0 +1,159 @@
+{% if template == 'page.gpsr' %}
+  <div class="gpsr-container">
+      <h1>GPSR Compliance Information</h1>
+      <p>Welcome to the Rinos GPSR Compliance page. Select your bike model below to view the compliance information specific to your bike.</p>
+
+      <!-- Bike Selector Dropdown -->
+      <div class="bike-selector">
+          <label for="bike-switcher">Select Your Bike Model:</label>
+          <select id="bike-switcher" onchange="changeBike(this.value)">
+              <option value="" selected disabled>Choose a bike model</option>
+              <option value="sandman1">Sandman 1 - Good and Affordable</option>
+              <option value="sandman3">Sandman 3 - The All-Rounder</option>
+              <option value="sandman4">Sandman 4 - Our Bestseller</option>
+              <option value="sandman5">Sandman 5 - Ultimate Performance</option>
+              <option value="sandman6">Sandman 6 - The Best of Its Kind</option>
+              <option value="sandman7">Sandman 7 - Top of the Line</option>
+          </select>
+      </div>
+
+      <!-- Example Content for Selected Bikes -->
+      <div id="content-default">
+          <p>Please select a bike model to view the compliance information.</p>
+      </div>
+
+      <div id="content-sandman1" style="display: none;">
+          <h2>Sandman 1 - Compliance Information</h2>
+          <ul>
+              <li>Weight: 9.8kg</li>
+              <li>Gear: Shimano SORA</li>
+              <li>Gears: 18</li>
+              <li>Frame: TORAY T800 Carbon</li>
+              <li>Brakes: Mechanical</li>
+              <li>Wheel Size: 28 inches</li>
+              <li>Rims: Aluminum</li>
+          </ul>
+      </div>
+
+      <div id="content-sandman3" style="display: none;">
+          <h2>Sandman 3 - Compliance Information</h2>
+          <ul>
+              <li>Weight: 9.8kg</li>
+              <li>Gear: Shimano 105</li>
+              <li>Gears: 22</li>
+              <li>Frame: TORAY T800 Carbon</li>
+              <li>Brakes: Mechanical</li>
+              <li>Wheel Size: 28 inches</li>
+              <li>Rims: Aluminum</li>
+          </ul>
+      </div>
+
+      <div id="content-sandman4" style="display: none;">
+          <h2>Sandman 4 - Compliance Information</h2>
+          <ul>
+              <li>Weight: 9.8kg</li>
+              <li>Gear: Shimano GRX 400</li>
+              <li>Gears: 20</li>
+              <li>Frame: TORAY T800 Carbon</li>
+              <li>Brakes: Hydraulic</li>
+              <li>Wheel Size: 28 inches</li>
+              <li>Rims: Aluminum</li>
+          </ul>
+      </div>
+
+      <div id="content-sandman5" style="display: none;">
+          <h2>Sandman 5 - Compliance Information</h2>
+          <ul>
+              <li>Weight: 8.3kg</li>
+              <li>Gear: Shimano Ultegra</li>
+              <li>Gears: 22</li>
+              <li>Frame: TORAY T800 Carbon</li>
+              <li>Brakes: Mechanical</li>
+              <li>Wheel Size: 28 inches</li>
+              <li>Rims: Carbon</li>
+          </ul>
+      </div>
+
+      <div id="content-sandman6" style="display: none;">
+          <h2>Sandman 6 - Compliance Information</h2>
+          <ul>
+              <li>Weight: 9.8kg</li>
+              <li>Gear: Shimano GRX 600</li>
+              <li>Gears: 22</li>
+              <li>Frame: TORAY T800 Carbon</li>
+              <li>Brakes: Hydraulic</li>
+              <li>Wheel Size: 28 inches</li>
+              <li>Rims: Aluminum</li>
+          </ul>
+      </div>
+
+      <div id="content-sandman7" style="display: none;">
+          <h2>Sandman 7 - Compliance Information</h2>
+          <ul>
+              <li>Weight: 9.6kg</li>
+              <li>Gear: Shimano GRX 820</li>
+              <li>Gears: 24</li>
+              <li>Frame: TORAY T800 Carbon</li>
+              <li>Brakes: Hydraulic</li>
+              <li>Wheel Size: 28 inches</li>
+              <li>Rims: Aluminum</li>
+          </ul>
+      </div>
+  </div>
+
+  <script>
+      function changeBike(bike) {
+          // Hide all content blocks
+          document.getElementById('content-default').style.display = 'none';
+          document.querySelectorAll('[id^="content-"]').forEach(function(content) {
+              content.style.display = 'none';
+          });
+
+          // Show the selected bike's content block
+          if (bike) {
+              const contentId = 'content-' + bike;
+              const selectedContent = document.getElementById(contentId);
+              if (selectedContent) {
+                  selectedContent.style.display = 'block';
+              }
+          }
+      }
+  </script>
+
+  <style>
+      .gpsr-container {
+          padding: 20px;
+          font-family: Arial, sans-serif;
+      }
+      .bike-selector {
+          margin: 20px 0;
+      }
+      .bike-selector label {
+          margin-right: 10px;
+          font-size: 16px;
+      }
+      .bike-selector select {
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          background-color: #f9f9f9;
+          color: #333;
+      }
+      .gpsr-container h1 {
+          font-size: 24px;
+          margin-bottom: 10px;
+      }
+      .gpsr-container p {
+          font-size: 16px;
+          line-height: 1.5;
+      }
+      .gpsr-container ul {
+          margin: 10px 0;
+          padding-left: 20px;
+      }
+      .gpsr-container ul li {
+          font-size: 16px;
+          line-height: 1.5;
+      }
+  </style>
+{% endif %}
