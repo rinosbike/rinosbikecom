@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Bike Groups - Compliance (Apple-Style)</title>
+  <title>Bike Groups - Compliance (Responsive Apple-Style)</title>
   <style>
     /* ------------------------------
        GLOBAL RESET & BASE STYLES
@@ -119,10 +119,10 @@
       margin-bottom: 1rem;
     }
 
-    /* Layout: two columns for each group */
+    /* Layout: two columns for larger screens */
     .group-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: 1fr 1fr;
       gap: 2rem;
       align-items: flex-start;
     }
@@ -187,14 +187,35 @@
       border-color: #0071E3;
     }
 
-    /* Responsive spacing at smaller screens */
+    /* ------------------------------
+       RESPONSIVE MEDIA QUERIES
+    ------------------------------ */
+    @media (max-width: 900px) {
+      /* Slightly reduce margins and font sizes for medium screens */
+      .gpsr-container {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+      }
+      .gpsr-header h1 {
+        font-size: 1.8rem;
+      }
+    }
+
     @media (max-width: 600px) {
+      /* Switch to a single-column layout for each group */
+      .group-grid {
+        display: block;
+      }
+      .group-right {
+        margin-top: 1.5rem;
+      }
+      /* Fine-tune spacing for smaller devices */
+      .gpsr-header h1 {
+        font-size: 1.6rem;
+      }
       .gpsr-container {
         margin: 2rem 1rem;
         padding: 1rem;
-      }
-      .gpsr-header h1 {
-        font-size: 1.75rem;
       }
     }
   </style>
@@ -454,7 +475,6 @@
       </div>
     </div>
   </div>
-
 </div> <!-- end gpsr-container -->
 
 <script>
