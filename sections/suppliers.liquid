@@ -14,14 +14,18 @@
   <input type="text" id="supplierSearch" placeholder="Search Supplier..." onkeyup="filterSuppliers()">
 
   <div id="supplierList">
-    {% for supplier in shop.metaobjects.suppliers.values %}
-      <div class="supplier-card" data-name="{{ supplier.name }}">
-        <h3>{{ supplier.name }}</h3>
-        <p><strong>Contact:</strong> {{ supplier.contact }}</p>
-        <p><strong>Address:</strong> {{ supplier.address }}</p>
-        <button onclick="showDetails('{{ supplier.name }}')">View More</button>
-      </div>
-    {% endfor %}
+   {% for supplier in shop.metaobjects.suppliers.values %}
+  <div class="supplier-card">
+    <img src="{{ supplier.logo | img_url: 'medium' }}" alt="{{ supplier.name }}">
+    <h3>{{ supplier.name }}</h3>
+    <p><strong>Contact:</strong> {{ supplier.contact }}</p>
+    <p><strong>Email:</strong> <a href="mailto:{{ supplier.email }}">{{ supplier.email }}</a></p>
+    <p><strong>Phone:</strong> {{ supplier.phone }}</p>
+    <p><strong>Category:</strong> {{ supplier.category }}</p>
+    <p><strong>Address:</strong> {{ supplier.address }}</p>
+    <p><strong>Website:</strong> <a href="{{ supplier.website }}" target="_blank">Visit</a></p>
+  </div>
+{% endfor %}
   </div>
 </div>
 
