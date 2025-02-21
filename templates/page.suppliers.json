@@ -9,12 +9,55 @@
  */
 {
   "sections": {
+    "rich_text_dQA3Pk": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_iahp39": {
+          "type": "heading",
+          "settings": {
+            "heading": "Need to contact any of our partners?",
+            "heading_size": "h2"
+          }
+        },
+        "text_C7QGHj": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In Rinos we have your back! Here you can find all the suppliers we work with, for full transparency.</p>"
+          }
+        },
+        "button_Da6zBc": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_iahp39",
+        "text_C7QGHj",
+        "button_Da6zBc"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "suppliers": {
       "type": "suppliers",
       "settings": {}
     }
   },
   "order": [
+    "rich_text_dQA3Pk",
     "suppliers"
   ]
 }
