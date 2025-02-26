@@ -287,6 +287,64 @@
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
       }
+    },
+    "multirow_j9BnXM": {
+      "type": "multirow",
+      "blocks": {
+        "row_R3UhaE": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/17.png",
+            "caption": "",
+            "heading": "Why titanium over carbon?",
+            "text": "<p>Because carbon might be fast, but titanium is forever. Where carbon can crack under impact, titanium just shrugs it off. Where carbon is all about delicate care, titanium says “Bring it on!” every ride, every day. It’s the perfect fusion of strength, comfort, and raw longevity. No fading, no flaking—just that timeless brushed metal glow that never goes out of style. If you want a bike that’ll stick with you from first race to last call, titanium’s the answer.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_kAANtn": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/14_ed9ab25b-ed69-451b-8ba0-15eac4422804.png",
+            "caption": "",
+            "heading": "Why Gravel With Shimano GRX?",
+            "text": "<p>Because gravel demands equipment that’s built for the rough stuff—and Shimano GRX is engineered to handle it. You get flawless shifting, unbeatable braking power, and rugged reliability—everything you need for exploring backroads, singletrack, and beyond. Paired with our titanium frame, it’s a match made for conquering any surface in style. </p><p>Welcome to the next level of off-road adventure.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_fbVCKN": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/19_0c3d8b0a-2ba0-46c2-a942-ff29d693ccdf.png",
+            "caption": "",
+            "heading": "And... Why Rinos?",
+            "text": "<p>Because we refuse to settle. At Rinos, we’re all about pushing limits—starting with the pure strength of titanium, and ending with ride experiences that last a lifetime. We’re not another cookie-cutter bike brand. We’re the ones who say “Yes, let’s do that,” even when everyone else says it’s too hard. Every weld is a labor of love. Every design is a masterpiece in performance and longevity. We build bikes for those who crave the adventure and demand gear that can keep up. That’s why Rinos. That’s why titanium.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_R3UhaE",
+        "row_kAANtn",
+        "row_fbVCKN"
+      ],
+      "settings": {
+        "image_height": "adapt",
+        "desktop_image_width": "small",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -295,6 +353,7 @@
     "image_banner_w3bnBq",
     "image_with_text_4U7LfC",
     "rich_text_bDYAUy",
-    "slideshow_4QjeM8"
+    "slideshow_4QjeM8",
+    "multirow_j9BnXM"
   ]
 }
