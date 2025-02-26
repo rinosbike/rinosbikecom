@@ -9,6 +9,54 @@
  */
 {
   "sections": {
+    "image_banner_HXtDzL": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_Jxxw3x": {
+          "type": "heading",
+          "settings": {
+            "heading": "Welcome to a new era. Welcome to the Atlas.",
+            "heading_size": "h1"
+          }
+        },
+        "text_f38yTA": {
+          "type": "text",
+          "settings": {
+            "text": "Discover the new Titanium gravel bike Atlas 1. <strong>Made to last forever.</strong>",
+            "text_style": "subtitle"
+          }
+        },
+        "buttons_HeY7mP": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Discover more",
+            "button_link_1": "https://rinosbike.com/collections/rinos-atlas-titanium",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Jxxw3x",
+        "text_f38yTA",
+        "buttons_HeY7mP"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/12_604d86ed-e135-4034-87c4-14f763974dab.png",
+        "image_overlay_opacity": 20,
+        "image_height": "medium",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "image_banner_XyQx3D": {
       "type": "image-banner",
       "blocks": {
@@ -44,7 +92,7 @@
         "buttons_wJ3xRV"
       ],
       "settings": {
-        "image": "shopify://shop_images/DSCF2585_d2b58051-e7e5-4d9f-8a60-c35a48142aae.jpg",
+        "image": "shopify://shop_images/9_66cd1f80-808c-4701-a33f-831cee282cad.jpg",
         "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "top-left",
@@ -551,6 +599,7 @@
     }
   },
   "order": [
+    "image_banner_HXtDzL",
     "image_banner_XyQx3D",
     "rich_text_WYitJR",
     "multicolumn_irCchU",
