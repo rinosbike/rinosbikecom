@@ -1,6 +1,119 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "RINOS Titanium Comparison",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Titanium Bike Comparison",
+      "category": "Custom"
+    }
+  ]
+}
 {% endschema %}
+
+<section class="table-wrapper">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>
+          <img src="{{ 'atlas1.png' | asset_url }}" alt="Atlas 1">
+          <div class="bike-title">{{ 'Atlas 1' | t }}</div>
+        </th>
+        <th class="highlight-column">
+          <img src="{{ 'atlas2.png' | asset_url }}" alt="Atlas 2">
+          <div class="bike-title" style="color:#F04A00;">{{ 'Atlas 2' | t }}</div>
+        </th>
+        <th>
+          <img src="{{ 'atlas3.png' | asset_url }}" alt="Atlas 3">
+          <div class="bike-title">{{ 'Atlas 3' | t }}</div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ 'Frame Material' | t }}</td>
+        <td>{{ 'Titanium (Grade 9)' | t }}</td>
+        <td class="highlight-column">{{ 'Titanium (Aerospace Grade)' | t }}</td>
+        <td>{{ 'Titanium (Grade 9 Butted)' | t }}</td>
+      </tr>
+      <tr>
+        <td>{{ 'Weight' | t }}</td>
+        <td>{{ '10.2 kg' | t }}</td>
+        <td class="highlight-column">{{ '9.8 kg' | t }}</td>
+        <td>{{ '10.5 kg' | t }}</td>
+      </tr>
+      <tr>
+        <td>{{ 'Fork' | t }}</td>
+        <td>{{ 'Carbon Fiber' | t }}</td>
+        <td class="highlight-column">{{ 'Full Carbon (Toray T800)' | t }}</td>
+        <td>{{ 'Carbon Fiber' | t }}</td>
+      </tr>
+      <tr>
+        <td>{{ 'Groupset' | t }}</td>
+        <td>{{ 'Shimano GRX 400' | t }}</td>
+        <td class="highlight-column">{{ 'Shimano GRX 600' | t }}</td>
+        <td>{{ 'Shimano GRX 820' | t }}</td>
+      </tr>
+      <tr>
+        <td>{{ 'Brakes' | t }}</td>
+        <td>{{ 'Hydraulic Disc' | t }}</td>
+        <td class="highlight-column">{{ 'Hydraulic Disc' | t }}</td>
+        <td>{{ 'Hydraulic Disc' | t }}</td>
+      </tr>
+      <tr>
+        <td>{{ 'Max Tire Clearance' | t }}</td>
+        <td>{{ '700x45C' | t }}</td>
+        <td class="highlight-column">{{ '700x50C' | t }}</td>
+        <td>{{ '700x47C' | t }}</td>
+      </tr>
+      <tr>
+        <td>{{ 'Handlebar' | t }}</td>
+        <td>{{ 'Aluminum, 420mm' | t }}</td>
+        <td class="highlight-column">{{ 'Carbon, 440mm' | t }}</td>
+        <td>{{ 'Aluminum, 420mm' | t }}</td>
+      </tr>
+      <tr>
+        <td>{{ 'Seatpost' | t }}</td>
+        <td>{{ 'Aluminum' | t }}</td>
+        <td class="highlight-column">{{ 'Carbon' | t }}</td>
+        <td>{{ 'Aluminum' | t }}</td>
+      </tr>
+      <tr>
+        <td>{{ 'Warranty' | t }}</td>
+        <td>{{ '5 Years' | t }}</td>
+        <td class="highlight-column">{{ 'Lifetime' | t }}</td>
+        <td>{{ '5 Years' | t }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<style>
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .comparison-table th, .comparison-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #4b4b4b;
+  }
+  .highlight-column {
+    border-right: 2px solid #F04A00;
+    border-left: 2px solid #F04A00;
+  }
+  .comparison-table img {
+    max-width: 175px;
+  }
+  .table-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    overflow-x: auto;
+  }
+  .bike-title {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+</style>
