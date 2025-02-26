@@ -377,6 +377,48 @@
     "titaniumcomparison_tw9kaj": {
       "type": "titaniumcomparison",
       "settings": {}
+    },
+    "rich_text_nQkjQy": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6VHtHm": {
+          "type": "heading",
+          "settings": {
+            "heading": "Compare the Atlas Models",
+            "heading_size": "h1"
+          }
+        },
+        "text_e3fE9c": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "button_9CnwcE": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_6VHtHm",
+        "text_e3fE9c",
+        "button_9CnwcE"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -388,6 +430,7 @@
     "slideshow_4QjeM8",
     "multirow_j9BnXM",
     "featured_collection_rJXFR3",
+    "rich_text_nQkjQy",
     "titaniumcomparison_tw9kaj"
   ]
 }
