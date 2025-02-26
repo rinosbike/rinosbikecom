@@ -46,7 +46,7 @@
           "type": "heading",
           "settings": {
             "heading": "Welcome to a new era.",
-            "heading_size": "h1"
+            "heading_size": "h0"
           }
         },
         "text_aeQ9Vx": {
@@ -75,11 +75,11 @@
       ],
       "settings": {
         "image": "shopify://shop_images/12.png",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "desktop_content_position": "top-right",
+        "image_overlay_opacity": 20,
+        "image_height": "small",
+        "desktop_content_position": "top-left",
         "show_text_box": false,
-        "desktop_content_alignment": "right",
+        "desktop_content_alignment": "left",
         "color_scheme": "background-2",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
