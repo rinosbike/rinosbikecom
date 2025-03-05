@@ -364,6 +364,7 @@
         "text_maiBpJ",
         "button_TFdjPy"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/IMG_5242.jpg",
         "height": "adapt",
@@ -435,6 +436,67 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "collapsible_content_HECa7X": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_HNPmxB": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the pros and cons of aluminum rims?",
+            "icon": "check_mark",
+            "row_content": "<p>Aluminum rims are like the reliable all-rounder of bike wheels. They offer some great practical benefits, with a few drawbacks to consider:</p><p>• <strong>Affordable & Durable:</strong> Aluminum wheels cost much less than carbon and can take a beating. A hard hit might dent an aluminum rim instead of shattering it, and a small dent often won’t stop you from riding (plus it’s cheaper to replace if needed) .</p><p>• <strong>Comfortable Ride:</strong> Aluminum rims have a bit of flex, which helps absorb bumps and vibrations. This makes them feel more compliant and comfortable on rough roads or gravel trails .</p><p>• <strong>Heavier & Less Aero:</strong> On the downside, aluminum rims usually weigh more than carbon. That extra weight can make climbs and quick accelerations a tad slower. Also, aluminum wheels are typically shallower in profile (deep-section aluminum rims would be very heavy), so they’re not as aerodynamic as carbon wheels.</p><p>• <strong>Braking Performance:</strong> One bonus – if you use rim brakes, aluminum brake tracks give you better braking power, especially in wet conditions, and there’s no risk of overheating the rim on long descents. (With disc brakes, this isn’t an issue, since braking is on the rotor.)</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_CQkFrM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the pros and cons of carbon rims?",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_g4RxMW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": " Which wheels are better for road cycling – aluminum or carbon?",
+            "icon": "check_mark",
+            "row_content": "<p>For road riding, it really depends on your priorities. Carbon rims shine on paved roads if you crave performance. </p><p>They’re lighter and more aerodynamic, which helps you ride faster with less effort . If you’re racing or love pushing your speed, carbon wheels can give you that extra edge in acceleration and a cool aero look. </p><p>However, you’ll pay a premium for that advantage. Aluminum wheels, on the other hand, are perfectly capable for most road cycling. They’re a bit heavier, so you might notice slightly slower acceleration or climbing, but they are tough and cost-effective. Many cyclists actually use aluminum wheels for training or everyday rides, and save their pricey carbon set for race day. Unless you’re chasing every watt of advantage, a good set of aluminum wheels will serve you well on the road without breaking the bank.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_tUtMHH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Which rims are better for riding – aluminum or carbon?",
+            "icon": "check_mark",
+            "row_content": "<p>On rough roads, durability and comfort often matter more than outright speed. <strong>Aluminum rims</strong> are a popular choice for cycling because they can handle the bangs and bumps with less worry. </p><p>Hit a rock or pothole hard, and an aluminum wheel is more likely to dent than explode, meaning you might be able to keep riding and it’s cheaper to fix or replace. They also offer a bit of flex, adding comfort and grip on uneven terrain (like adding a tiny bit of suspension) . </p><p><strong>Carbon rims</strong> are used in gravel too, especially by riders looking to lighten their bike. They can make your gravel bike feel sprightlier on climbs and smooth dirt sections. But remember, carbon wheels are costly and not invincible – a bad rock strike can ruin your day (and your wheel). If your gravel adventures involve really rough trails or you’re on a budget, tough aluminum wheels are probably the best value and peace of mind . If you stick to lighter-duty gravel or racing and you want every performance boost you can get (and don’t mind the cost), a good set of carbon gravel wheels can be the cherry on top of your build.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_HNPmxB",
+        "collapsible_row_CQkFrM",
+        "collapsible_row_g4RxMW",
+        "collapsible_row_tUtMHH"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -448,6 +510,7 @@
     "image_with_text_HzzrmH",
     "rinos_comparison_table_road_KQ4AUd",
     "banner",
-    "rich_text_KHpmwC"
+    "rich_text_KHpmwC",
+    "collapsible_content_HECa7X"
   ]
 }
