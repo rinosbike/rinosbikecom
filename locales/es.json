@@ -870,5 +870,46 @@
     "text": "¡Descubre los componentes de nuestra nueva bicicleta de gravel!",
     "buttontext": "Saber más",
     "link": "https://rinosbike.com/es/products/sandman-4"
+  },
+  "rinostitanium": {
+    "atlas_1": "Atlas 1",
+    "atlas_3": "Atlas 3",
+    "atlas_5": "Atlas 5",
+
+    "frame_material": "Material del cuadro",
+    "fork": "Horquilla",
+    "groupset": "Grupo",
+    "brakes": "Frenos",
+    "cassette": "Cassette",
+    "crankset": "Bielas",
+    "wheelset": "Juego de ruedas",
+    "tire": "Neumático",
+    "seatpost": "Tija de sillín",
+    "handlebar": "Manillar",
+    "weight": "Peso",
+
+    "titanium": "Titanio",
+    "toray_t800_carbon": "Fibra de carbono Toray T800",
+
+    "shimano_grx_400_20": "Shimano GRX 400 (20 velocidades)",
+    "shimano_grx_600_22": "Shimano GRX 600 (22 velocidades)",
+    "shimano_grx_820_24": "Shimano GRX 820 (24 velocidades)",
+
+    "shimano_grx_400_hydraulic": "Shimano GRX 400 (Frenos hidráulicos)",
+    "shimano_grx_600_hydraulic": "Shimano GRX 600 (Frenos hidráulicos)",
+    "shimano_grx_820_hydraulic": "Shimano GRX 820 (Frenos hidráulicos)",
+
+    "hg500_11_34t": "Shimano CS-HG500-10 (11-34D)",
+    "r8100_11_34t": "Shimano CS-R8100 (11-34D)",
+
+    "grx_fc_rx600_46_30t": "Shimano GRX FC-RX600 (46-30D)",
+    "grx_fc_rx820_48_31t": "Shimano GRX FC-RX820 (48-31D)",
+
+    "rinos_28h_38mm_depth": "Rinos 28H, 38 mm de profundidad",
+    "700x40c": "700×40C",
+    "rinos_carbon_31_6x400": "Rinos Carbon 31,6 × 400 mm",
+    "rinos_carbon_420_440": "Rinos Carbon 420/440 mm",
+
+    "approx_103kg": "~10,3 kg"
   }
 }
