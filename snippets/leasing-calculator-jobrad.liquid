@@ -1,0 +1,170 @@
+{% comment %}
+  Snippet: leasing-jobrad.liquid
+  Purpose: Show JobRad leasing calculator (German only) with approximate rates, logo, disclaimers, and portal redirect.
+{% endcomment %}
+
+{% if localization.language.iso_code == 'de' %}
+<div class="jobrad-calculator" style="border:1px solid #ccc; padding:1em; margin-top:1em;">
+  <!-- JobRad Logo -->
+  <div style="text-align:center; margin-bottom:1em;">
+    <img 
+      src="https://i.goopics.net/gbrwrq.png" 
+      alt="JobRad Logo" 
+      style="max-width:180px;"
+    />
+  </div>
+
+  <h2 style="margin-top:0;">Leasingratenrechner (JobRad)</h2>
+  <p>
+    Diese Kalkulation zeigt ungefähre Leasingraten für dein Wunschrad über JobRad. 
+    Für genaue und endgültige Raten kontaktiere uns oder besuche das 
+    <strong>JobRad-Portal</strong>.
+  </p>
+
+  <!-- Brutto Input -->
+  <div style="margin-bottom:1em;">
+    <label for="JobRadBruttoInput" style="display:block; margin-bottom:0.3em;">
+      Bruttokaufpreis (EUR):
+    </label>
+    <input
+      type="number"
+      id="JobRadBruttoInput"
+      value="1299.00"
+      step="0.01"
+      style="width:100%; max-width:300px; padding:0.5em;"
+    />
+  </div>
+
+  <!-- Calculate Button -->
+  <button
+    type="button"
+    onclick="calculateJobRadRates()"
+    style="display:inline-block; background:#333; color:#fff; padding:0.6em 1em; border:none; cursor:pointer;"
+  >
+    Ungefähre Raten berechnen
+  </button>
+
+  <p style="margin-top:0.5em; font-size:0.9em; color:#555;">
+    Alle Werte in Nettopreisen (ohne MwSt.). Wir kalkulieren pauschal mit 19&nbsp;% MwSt.
+    Versicherungsbeitrag (netto) = 4,41&nbsp;€/Monat. Laufzeit = 36&nbsp;Monate.
+  </p>
+
+  <hr style="margin:1em 0;">
+
+  <!-- Container for the 3 leasing models -->
+  <div id="JobRadModels" style="display:none;">
+
+    <!-- Model 1: 20% residual -->
+    <div id="ModelA" style="border:1px solid #aaa; padding:1em; margin-top:1em;">
+      <h4 style="margin-top:0;">Option 1: Niedrigere monatliche Rate</h4>
+      <p style="margin:0.5em 0;">
+        <strong>Restwert: 20 %</strong> (höherer Endwert, niedrigere Monatsrate)
+      </p>
+      <p style="font-size:1.2em; font-weight:bold; margin:0.5em 0;">
+        <span id="ModelA_Monthly"></span> € <br>
+        <span style="font-size:0.9em;">pro Monat</span>
+      </p>
+      <p style="margin:0.5em 0 0;">
+        <strong id="ModelA_Residual"></strong> € <br>
+        <span style="font-size:0.9em;">Restwert am Ende</span>
+      </p>
+      <hr>
+      <p style="margin:0.5em 0;">
+        <strong>Details:</strong><br>
+        <span id="ModelA_Lease"></span> € Leasingrate + <span id="ModelA_Insurance"></span> € Versicherung<br>
+        <strong id="ModelA_ResidualDetail"></strong> € (20 % vom Netto-Kaufpreis)
+      </p>
+    </div>
+
+    <!-- Model 2: 15% residual -->
+    <div id="ModelB" style="border:1px solid #aaa; padding:1em; margin-top:1em;">
+      <h4 style="margin-top:0;">Option 2: Ausgewogene Variante</h4>
+      <p style="margin:0.5em 0;">
+        <strong>Restwert: 15 %</strong> (mittlere Rate, mittlerer Endwert)
+      </p>
+      <p style="font-size:1.2em; font-weight:bold; margin:0.5em 0;">
+        <span id="ModelB_Monthly"></span> € <br>
+        <span style="font-size:0.9em;">pro Monat</span>
+      </p>
+      <p style="margin:0.5em 0 0;">
+        <strong id="ModelB_Residual"></strong> € <br>
+        <span style="font-size:0.9em;">Restwert am Ende</span>
+      </p>
+      <hr>
+      <p style="margin:0.5em 0;">
+        <strong>Details:</strong><br>
+        <span id="ModelB_Lease"></span> € Leasingrate + <span id="ModelB_Insurance"></span> € Versicherung<br>
+        <strong id="ModelB_ResidualDetail"></strong> € (15 % vom Netto-Kaufpreis)
+      </p>
+    </div>
+
+    <!-- Model 3: 10% residual -->
+    <div id="ModelC" style="border:1px solid #aaa; padding:1em; margin-top:1em;">
+      <h4 style="margin-top:0;">Option 3: Geringer Restwert</h4>
+      <p style="margin:0.5em 0;">
+        <strong>Restwert: 10 %</strong> (höhere Rate, geringerer Endwert)
+      </p>
+      <p style="font-size:1.2em; font-weight:bold; margin:0.5em 0;">
+        <span id="ModelC_Monthly"></span> € <br>
+        <span style="font-size:0.9em;">pro Monat</span>
+      </p>
+      <p style="margin:0.5em 0 0;">
+        <strong id="ModelC_Residual"></strong> € <br>
+        <span style="font-size:0.9em;">Restwert am Ende</span>
+      </p>
+      <hr>
+      <p style="margin:0.5em 0;">
+        <strong>Details:</strong><br>
+        <span id="ModelC_Lease"></span> € Leasingrate + <span id="ModelC_Insurance"></span> € Versicherung<br>
+        <strong id="ModelC_ResidualDetail"></strong> € (10 % vom Netto-Kaufpreis)
+      </p>
+    </div>
+
+    <p style="margin-top:1em; font-size:0.85em; color:#555;">
+      <em>Achtung:</em> Diese Raten sind nur ungefähre Richtwerte. 
+      Bitte wende dich an <strong>JobRad</strong> oder nutze unseren 
+      <a href="https://www.jobrad.org/" target="_blank" style="color:blue; text-decoration:underline;">
+        JobRad-Kontakt/Portal
+      </a>
+      für verbindliche Konditionen.
+    </p>
+  </div><!-- /JobRadModels -->
+</div>
+
+<script>
+function calculateJobRadRates() {
+  // 1. Get brutto input
+  const bruttoStr = document.getElementById('JobRadBruttoInput').value;
+  const brutto = parseFloat(bruttoStr) || 0;
+
+  // 2. Calculate net price (19% VAT)
+  const netPrice = brutto / 1.19;
+  // 3. Fixed insurance (net)
+  const insurance = 4.41;
+  // 4. Term in months
+  const months = 36;
+
+  // Show the container
+  document.getElementById('JobRadModels').style.display = 'block';
+
+  // Helper function
+  function fillModel(modelId, residualPercent) {
+    const residual = netPrice * residualPercent;
+    const finance = netPrice - residual;
+    const leaseRate = finance / months;
+    const totalMonthly = leaseRate + insurance;
+
+    // Fill fields
+    document.getElementById(modelId+'_Monthly').textContent       = totalMonthly.toFixed(2);
+    document.getElementById(modelId+'_Residual').textContent      = residual.toFixed(2);
+    document.getElementById(modelId+'_Lease').textContent         = leaseRate.toFixed(2);
+    document.getElementById(modelId+'_Insurance').textContent     = insurance.toFixed(2);
+    document.getElementById(modelId+'_ResidualDetail').textContent= residual.toFixed(2);
+  }
+
+  fillModel('ModelA', 0.20);
+  fillModel('ModelB', 0.15);
+  fillModel('ModelC', 0.10);
+}
+</script>
+{% endif %}
