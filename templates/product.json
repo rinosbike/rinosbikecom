@@ -46,12 +46,6 @@
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
           }
-        },
-        "custom_liquid_EycJxh": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": ""
-          }
         }
       },
       "block_order": [
@@ -59,8 +53,7 @@
         "price",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons",
-        "custom_liquid_EycJxh"
+        "buy_buttons"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -153,6 +146,15 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "custom_liquid_fFQWdd": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -160,6 +162,7 @@
     "main",
     "bike_parts_highlight_1_6XGKyM",
     "klarna_banner_1_g363fF",
+    "custom_liquid_fFQWdd",
     "product_description_sec1_Nn4UXc",
     "review_section_small_fKwkg6",
     "rich_text_7we9KY",
