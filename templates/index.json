@@ -74,6 +74,87 @@
         "padding_bottom": 36
       }
     },
+    "rich_text_XJLMej": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AmWW6m": {
+          "type": "heading",
+          "settings": {
+            "heading": "Start your cycling journey with premium quality that won’t break the bank. ",
+            "heading_size": "h2"
+          }
+        },
+        "text_R4RVii": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Imagine someone longing to pedal down unexplored roads, only to be held back by cost barriers. That’s where RINOS steps in. Our mission is to make cycling more accessible, combining reliable performance with approachable pricing so that riders of all levels can embrace the open road.</h4><h5>Discover Sandman 1 and 3, our entry models equipped with SHIMANO SORA and Shimano 105.</h5><h5>Light as a feather and ready to discover.</h5>"
+          }
+        },
+        "button_krjQPM": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_AmWW6m",
+        "text_R4RVii",
+        "button_krjQPM"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "collage_6aUkii": {
+      "type": "collage",
+      "blocks": {
+        "product_FTUb3R": {
+          "type": "product",
+          "settings": {
+            "product": "sandman-3",
+            "second_image": false
+          }
+        },
+        "image_NpGUGy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group116.png"
+          }
+        },
+        "image_meNHGL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group118.png"
+          }
+        }
+      },
+      "block_order": [
+        "product_FTUb3R",
+        "image_NpGUGy",
+        "image_meNHGL"
+      ],
+      "settings": {
+        "heading": "The Classic Sandman.",
+        "heading_size": "h2",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "174117020079d74a17": {
       "type": "apps",
       "blocks": {
@@ -641,6 +722,8 @@
   "order": [
     "image_banner_HXtDzL",
     "featured_blog_iNPmwD",
+    "rich_text_XJLMej",
+    "collage_6aUkii",
     "174117020079d74a17",
     "image_banner_XyQx3D",
     "rich_text_WYitJR",
