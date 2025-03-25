@@ -3511,22 +3511,34 @@ details-disclosure > details {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
 
-  .global-reviews {
-  max-width: 900px;
-  margin: 4rem auto;
-  padding: 2rem;
-  background: #fff;
+  /* --- IBM Plex Sans Font Override for Review Block --- */
+.global-reviews,
+.review-heading,
+.review-block,
+.review-meta,
+.review-stars,
+.review-text {
+  font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+.global-reviews {
+  max-width: 800px;
+  margin: 6rem auto;
+  padding: 4rem;
+  background: #fafafa;
   color: #111;
-  font-family: var(--font-body-family, sans-serif);
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 2px solid rgba(0, 0, 0, 0.05);
+  border-right: 2px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.03);
 }
 
 .review-heading {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-family: var(--font-heading-family, serif);
   margin-bottom: 3rem;
 }
 
@@ -3546,7 +3558,7 @@ details-disclosure > details {
 }
 
 .review-stars {
-  color: var(--color-accent, #000);
+  color: #000;
   font-size: 1rem;
   margin-bottom: 1rem;
 }
@@ -3571,6 +3583,7 @@ details-disclosure > details {
   vertical-align: -0.3em;
   margin-left: 0.1em;
 }
+
 }
 
 
