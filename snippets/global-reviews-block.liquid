@@ -1,0 +1,26 @@
+<div class="global-reviews">
+  <h2 class="review-heading">What Our Customers Say</h2>
+  {% assign current_lang = request.locale %}
+  {% assign all_reviews = shop.metafields.custom.translated_reviews_global | parse_json %}
+
+  {% if all_reviews[current_lang] %}
+    {% for review in all_reviews[current_lang] %}
+      <div class="review-block">
+        <div class="review-meta">
+          <span>{{ review.name }}</span>
+          <span>{{ review.date }}</span>
+        </div>
+        <div class="review-stars">
+          {% for i in (1..review.stars) %}
+            ★
+          {% endfor %}
+        </div>
+        <div class="review-text">
+          {{ review.text }}
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No reviews available in your language yet.</p>
+  {% endif %}
+</div>
