@@ -3510,6 +3510,67 @@ details-disclosure > details {
   .animate--hover-vertical-lift .button:not([disabled]).button--secondary:hover:after {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
+
+  .global-reviews {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #fff;
+  color: #111;
+  font-family: var(--font-body-family, sans-serif);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.review-heading {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-heading-family, serif);
+  margin-bottom: 3rem;
+}
+
+.review-block {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.review-meta {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.review-stars {
+  color: var(--color-accent, #000);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  quotes: "“" "”";
+  position: relative;
+}
+
+.review-text::before {
+  content: open-quote;
+  font-size: 2rem;
+  vertical-align: -0.3em;
+  margin-right: 0.1em;
+}
+
+.review-text::after {
+  content: close-quote;
+  font-size: 2rem;
+  vertical-align: -0.3em;
+  margin-left: 0.1em;
+}
 }
 
 
