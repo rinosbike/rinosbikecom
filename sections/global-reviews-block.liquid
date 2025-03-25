@@ -1,6 +1,56 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Global Reviews",
+  "tag": "section",
+  "class": "section global-reviews-wrapper",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Global Reviews Block",
+      "category": "Custom"
+    }
+  ]
+}
 {% endschema %}
+
+<div class="global-reviews">
+  <h2 class="review-heading">
+    {% case request.locale %}
+      {% when 'de' %} Was unsere Kund:innen sagen
+      {% when 'fr' %} Ce que disent nos clients
+      {% when 'es' %} Lo que dicen nuestros clientes
+      {% when 'it' %} Cosa dicono i nostri clienti
+      {% when 'nl' %} Wat onze klanten zeggen
+      {% else %} What Our Customers Say
+    {% endcase %}
+  </h2>
+
+  {% assign current_lang = request.locale %}
+  {% assign all_reviews = shop.metafields.custom.translated_reviews_global | parse_json %}
+
+  {% if all_reviews[current_lang] %}
+    {% for review in all_reviews[current_lang] %}
+      <div class="review-block">
+        <div class="review-meta">
+          <span>{{ review.name }}</span>
+          <span>{{ review.date }}</span>
+        </div>
+        <div class="review-stars">
+          {% for i in (1..review.stars) %}★{% endfor %}
+        </div>
+        <div class="review-text">{{ review.text }}</div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>
+      {% case request.locale %}
+        {% when 'de' %} Noch keine Bewertungen in deiner Sprache.
+        {% when 'fr' %} Aucun avis disponible dans votre langue pour le moment.
+        {% when 'es' %} Aún no hay reseñas en tu idioma.
+        {% when 'it' %} Nessuna recensione disponibile nella tua lingua.
+        {% when 'nl' %} Nog geen beoordelingen in jouw taal.
+        {% else %} No reviews available in your language yet.
+      {% endcase %}
+    </p>
+  {% endif %}
+</div>
