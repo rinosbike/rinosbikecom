@@ -542,141 +542,218 @@
       "collapsed": "Zwinięty formularz odbiorcy karty prezentowej"
     }
   },
-  "reviews": {
-    "customer_say": "Co mówią nasi klienci",
-    "verified_purchase": "Zweryfikowany zakup",
-    "review4": {
-      "title": "Dobre zakupy",
-      "name": "Thierry A.",
-      "text": "Świetnie wygląda, świetnie działa, dobrze wyposażony i wygodny. Szybka dostawa i doskonała obsługa.",
-      "date": "01.03.2024",
-      "rating": "5"
-    },
-    "review5": {
-      "title": "Szybka dostawa",
-      "name": "Tomas",
-      "text": "Bardzo stabilne ochronniki na rower. Lekkie i wygodne, szybka dostawa.",
-      "date": "16.02.2024",
-      "rating": "5"
-    },
-    "review6": {
-      "title": "Wszystko dobrze👍",
-      "name": "Celine J",
-      "text": "Bardzo źle skrojony, ale szybka dostawa i dobra jakość materiału.",
-      "date": "14.01.2024",
-      "rating": "3.5"
-    },
-    "review7": {
-      "title": "Bezpieczna na drodze",
-      "name": "Julien Delorme",
-      "text": "Lekka. Dobra jakość wykonania. Widzę na czas i bardzo dobra obróbka.",
-      "date": "13.01.2024",
-      "rating": "5"
-    },
-    "review8": {
-      "title": "Codzienne wsparcie",
-      "name": "Morand Benoit",
-      "text": "Bardzo dobrze wykonany i bardzo praktyczny produkt. Pomaga mi codziennie!",
-      "date": "26.12.2023",
-      "rating": "5"
-    },
-    "review9": {
-      "title": "Wygląda dobrze!",
-      "name": "Daniel Rossi",
-      "text": "Produkt zgodny z opisem. Jeszcze nie używany, ale wygląda dobrze.",
-      "date": "13.12.2023",
-      "rating": "4"
-    },
-    "review10": {
-      "title": "Solidny wybór",
-      "name": "Peter Cauwels",
-      "text": "Bardzo dobry zakup, niezawodny i potężny.",
-      "date": "07.12.2023",
-      "rating": "5"
-    },
-    "review11": {
-      "title": "Żadnych więcej łez.",
-      "name": "VISOIU IONUT RAZVAN",
-      "text": "Naprawdę. Zimne powietrze sprawiało, że oczy mi łzawiły, ale już nie z tym produktem.",
-      "date": "17.11.2023",
-      "rating": "5"
-    },
-    "review12": {
-      "title": "Trochę drogie",
-      "name": "Antxon",
-      "text": "Trochę drogie",
-      "date": "31.10.2023",
-      "rating": "3"
-    },
-    "review13": {
-      "title": "Solidny i odporny na wodę",
-      "name": "Hector",
-      "text": "Dobry metalowy podwozie, dobrze oświetla, odporny na wodę. Dobry produkt",
-      "date": "22.10.2023",
-      "rating": "5"
-    },
-    "review14": {
-      "title": "Dobrze wykonany produkt wysokiej jakości",
-      "name": "Gregoire Marti",
-      "text": "Dobra jakość kaptura, dobrze wykonane szwy",
-      "date": "16.10.2023",
-      "rating": "5"
-    },
-    "review15": {
-      "title": "Spełnia oczekiwania",
-      "name": "Quentin Borg",
-      "text": "Produkt odpowiadający potrzebom.",
-      "date": "04.10.2023",
-      "rating": "5"
-    },
-    "review16": {
-      "title": "Szybka dostawa, wysokie zadowolenie",
-      "name": "Pierre BERTA",
-      "text": "Doskonały rower i bardzo szybka dostawa. Wykonałem kilka dostosowań i przejąłem kilka części mojego starego roweru Dahon Mu Uno: siodełko, błotniki i pedały.",
-      "date": "27.09.2023",
-      "rating": "5"
-    },
-    "review17": {
-      "title": "Produkty najwyższej jakości",
-      "name": "hugues meth",
-      "text": "Top ! Świetne produkty 🌟",
-      "date": "18.09.2023",
-      "rating": "5"
-    },
-    "review18": {
-      "title": "Dokładny opis",
-      "name": "bahran el fakh",
-      "text": "Zgodne z opisem, uważaj jednak, wskaźnik jednej z przyssawek pozostaje biały, mimo że nie ma już powietrza w przyssawce",
-      "date": "25.08.2023",
-      "rating": "4"
-    },
-    "review19": {
-      "title": "Dobry produkt z drobnymi ulepszeniami potrzebnymi",
-      "name": "Jose V.",
-      "text": "Moim zdaniem, choć użyłem go tylko kilka razy, uważam, że to dobry produkt. Brakuje mi listy kompatybilnych pojazdów. Torba transportowa również byłaby dobra.",
-      "date": "08.08.2023",
-      "rating": "4"
-    },
-    "review20": {
-      "title": "Dobrze zaprojektowany i praktyczny",
-      "name": "JEAN-PASCAL",
-      "text": "Jakość wydaje się być dobra, bardzo praktyczna dzięki swojej modularności, zobaczymy przy użyciu. Daję tylko 4 gwiazdki ze względu na mocowanie na rzep, ocenić po załadowaniu. Polecam",
-      "date": "15.07.2023",
-      "rating": "4"
-    },
-    "review21": {
-      "title": "Doskonała opinia, szybka dostawa",
-      "name": "Troels Kristens",
-      "text": "Naprawdę dobra za tę cenę i szybka dostawa.",
-      "date": "28.06.2023",
-      "rating": "5"
-    },
-    "review22": {
-      "title": "Pięknie zaprojektowany i wygodny",
-      "name": "Rob",
-      "text": "Dobry, ładny, pięknie wyceniony rower. Wydaje się solidny. Schludnie zgodnie z dostawą do domu. Super!",
-      "date": "23.06.2023",
-      "rating": "5"
+ "reviews": {
+  "customer_say": "Co mówią nasi klienci 🗣️",
+  "verified_purchase": "Zweryfikowany zakup ✅",
+  "review4": {
+    "title": "RINOS Sandman 4.0",
+    "name": "Jochen Becker 🇩🇪",
+    "text": "🚲 Świetny rower, szybka dostawa i bardzo dobrze zapakowany! Stosunek jakości do ceny doskonały! 💸",
+    "date": "08.07.2024",
+    "rating": "5"
+  },
+  "review5": {
+    "title": "RINOS Sandman 3.0",
+    "name": "Ernest Gałan 🇵🇱",
+    "text": "💨 Bardzo sztywny i szybki! Na żywo wygląda lepiej niż na zdjęciach. 🎁 Prezent dla żony i bardzo jej się podoba!",
+    "date": "13.10.2024",
+    "rating": "5"
+  },
+  "review6": {
+    "title": "RINOS Sandman 2.0",
+    "name": "Henryk Spierewka 🇵🇱",
+    "text": "📦 Idealny zakup. Obsługa klienta doskonała, szybka dostawa kurierem. Cena nie do pobicia! 👍",
+    "date": "29.07.2024",
+    "rating": "5"
+  },
+  "review7": {
+    "title": "RINOS Odin 1",
+    "name": "Wieslaw 🇩🇪",
+    "text": "💰 Dobry stosunek jakości do ceny – świetna opcja dla początkujących!",
+    "date": "28.11.2024",
+    "rating": "5"
+  },
+  "review8": {
+    "title": "RINOS Sandman 4.0",
+    "name": "Thomas 🇳🇱",
+    "text": "🔥 TOP GRAVELBIKE! Jakość i obsługa na najwyższym poziomie – dużo tańszy niż w Holandii.",
+    "date": "30.04.2023",
+    "rating": "5"
+  },
+  "review9": {
+    "title": "RINOS Odin 4",
+    "name": "Cristina Rodriguez 🇪🇸",
+    "text": "🎨 Piękne wykończenie i lakier. Wszystko było perfekcyjnie przygotowane. Dziękuję! 🙌",
+    "date": "15.03.2025",
+    "rating": "5"
+  },
+  "review10": {
+    "title": "RINOS Część zamienna",
+    "name": "Cristina Rodriguez 🇪🇸",
+    "text": "👍 Dobrze mieć to jako zapasową część pod ręką!",
+    "date": "15.03.2025",
+    "rating": "5"
+  },
+  "review11": {
+    "title": "RINOS Sandman 5.0",
+    "name": "Tomasz Stańczyk 🇵🇱",
+    "text": "⚡ Doskonały rower – super lekki i szybki! Bardzo zadowolony.",
+    "date": "21.05.2023",
+    "rating": "5"
+  },
+  "review12": {
+    "title": "RINOS Sandman 3.0",
+    "name": "Thomas 🇩🇪",
+    "text": "🏆 Piękny rower gravel, szybki i dobrze wykonany. Cena bezkonkurencyjna!",
+    "date": "30.04.2023",
+    "rating": "5"
+  },
+  "review13": {
+    "title": "ROCKBROS Pedały",
+    "name": "Fero Saeed 🇩🇪",
+    "text": "🔧 Świetnie pasują. Polecam! 👍",
+    "date": "14.02.2025",
+    "rating": "5"
+  },
+  "review14": {
+    "title": "VICO Buty",
+    "name": "Liya Weng 🇨🇳",
+    "text": "👟 Buty są fantastyczne! Jestem super szczęśliwa! 😍",
+    "date": "16.04.2022",
+    "rating": "5"
+  },
+  "review15": {
+    "title": "KABON Składak",
+    "name": "Thierry A. 🇫🇷",
+    "text": "🚴‍♂️ Jeździ świetnie, lekki, z błotnikami i bagażnikiem. Jestem zadowolony! 😄",
+    "date": "01.03.2024",
+    "rating": "5"
+  },
+  "review16": {
+    "title": "ROCKBROS Kurtka",
+    "name": "Celine J 🇫🇷",
+    "text": "👎 Bardzo zły krój. Dość rozczarowujące.",
+    "date": "14.01.2024",
+    "rating": "1"
+  },
+  "review17": {
+    "title": "ROCKBROS Światło",
+    "name": "Julien Delorme 🇫🇷",
+    "text": "💡 Lekkie i dobrze wykonane. Mam nadzieję, że ekran będzie trwały!",
+    "date": "13.01.2024",
+    "rating": "5"
+  },
+  "review18": {
+    "title": "ROCKBROS Torba",
+    "name": "Morand Benoit 🇫🇷",
+    "text": "🎒 Dobrze wykonana i praktyczna. Szybka dostawa!",
+    "date": "26.12.2023",
+    "rating": "5"
+  },
+  "review19": {
+    "title": "ROCKBROS Dzwonek",
+    "name": "Alexandre Colas 🇫🇷",
+    "text": "🔔 Bardzo dobrze! Robi, co powinien.",
+    "date": "19.12.2023",
+    "rating": "4"
+  },
+  "review20": {
+    "title": "ROCKBROS Akcesorium",
+    "name": "Daniel Rossi 🇮🇹",
+    "text": "🎁 Prezent, wygląda dobrze, jeszcze nie testowany.",
+    "date": "13.12.2023",
+    "rating": "5"
+  },
+  "review21": {
+    "title": "ROCKBROS Uchwyt na bidon",
+    "name": "Cet 🇩🇪",
+    "text": "🥤 Tak dobry, że kupiłem drugi zestaw! 😄",
+    "date": "27.06.2024",
+    "rating": "5"
+  },
+  "review22": {
+    "title": "ROCKBROS Tylne światło",
+    "name": "Calin Balea 🇷🇴",
+    "text": "🔋 Działa jak należy.",
+    "date": "07.08.2024",
+    "rating": "5"
+  },
+  "review23": {
+    "title": "ROCKBROS Akcesorium",
+    "name": "Pep Bosch 🇪🇸",
+    "text": "🏅 Bardzo dobra jakość – jestem bardzo zadowolony.",
+    "date": "31.07.2024",
+    "rating": "5"
+  },
+  "review24": {
+    "title": "ROCKBROS Bagażnik dachowy",
+    "name": "Carmen 🇧🇪",
+    "text": "🚘 Idealny do mojego roweru szosowego. Bardzo stabilny!",
+    "date": "30.05.2024",
+    "rating": "5"
+  },
+  "review25": {
+    "title": "ROCKBROS Pedały",
+    "name": "Cet 🇩🇪",
+    "text": "⚙️ Super lekkie, ładny design i świetna przyczepność!",
+    "date": "06.06.2024",
+    "rating": "5"
+  },
+  "review26": {
+    "title": "ROCKBROS Kurtka przeciwdeszczowa",
+    "name": "Carmen 🇧🇪",
+    "text": "🌧️ Idealna – nawet w deszczu. Zachwycona!",
+    "date": "30.05.2024",
+    "rating": "5"
+  },
+  "review27": {
+    "title": "KABON Składak",
+    "name": "Nieznany 🇩🇪",
+    "text": "⚠️ Dobrze wykonany, ale nie nadaje się dla wysokich osób.",
+    "date": "09.04.2024",
+    "rating": "4"
+  },
+  "review28": {
+    "title": "KABON Składak",
+    "name": "Peter Hvala 🇦🇹",
+    "text": "💪 Bardzo dobra jakość, lekki i stabilny – idealny dla osób starszych.",
+    "date": "25.04.2024",
+    "rating": "5"
+  },
+  "review29": {
+    "title": "KABON Gravelbike",
+    "name": "Andreas Heil 🇩🇪",
+    "text": "✅ Wzorcowa obsługa, przerzutka idealnie ustawiona! Fantastycznie!",
+    "date": "16.06.2024",
+    "rating": "5"
+  },
+  "review30": {
+    "title": "ROCKBROS Błotnik",
+    "name": "Thomas Grißmer 🇩🇪",
+    "text": "🔧 Spełnia swoje zadanie.",
+    "date": "29.09.2024",
+    "rating": "4"
+  },
+  "review31": {
+    "title": "ROCKBROS Ochraniacze",
+    "name": "Tomas 🇨🇿",
+    "text": "🛡️ Bardzo stabilne, łatwe do zamontowania. Błyskawiczna dostawa! 🚀",
+    "date": "16.02.2024",
+    "rating": "5"
+  },
+  "review32": {
+    "title": "ROCKBROS Akcesorium",
+    "name": "ERDEI ROMEO 🇭🇺",
+    "text": "🥳 Bardzo zadowolony!",
+    "date": "17.03.2024",
+    "rating": "5"
+  },
+  "review33": {
+    "title": "Amity Dekoracja",
+    "name": "Kuila 🇩🇪",
+    "text": "🎨 Bogate detale, świetna jakość. Piękny element dekoracyjny.",
+    "date": "16.03.2024",
+    "rating": "5"
     }
   },
   "bikes": {
