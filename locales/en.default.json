@@ -523,140 +523,217 @@
       "powered_by_shopify": " "
     }
   },
-  "reviews": {
+   "reviews": {
     "customer_say": "What our customers say",
     "verified_purchase": "verified",
+    "review1": {
+      "title": "RINOS",
+      "name": "Herr Jochen Becker 🇩🇪",
+      "text": "Great bike 🚴‍♂️, fast delivery 📦, well packed, no damage. Excellent value for money 💸.",
+      "date": "08.07.2024",
+      "rating": "5"
+    },
+    "review2": {
+      "title": "RINOS",
+      "name": "Ernest Gałan 🇵🇱",
+      "text": "Stiff and fast 🚴‍♂️💨. Looks better in person than in pictures. 9.4 kg in size S. Gift for my wife – she’s thrilled 🎁❤️.",
+      "date": "13.10.2024",
+      "rating": "5"
+    },
+    "review3": {
+      "title": "RINOS",
+      "name": "Henryk Spierewka 🇵🇱",
+      "text": "Perfect purchase ✅. Filip answered all questions 🙌. Great price and fast courier delivery. Took it to service for setup 🔧.",
+      "date": "29.07.2024",
+      "rating": "5"
+    },
     "review4": {
-      "title": "Good Shopping",
-      "name": "Thierry A.",
-      "text": "Looks great, runs great, well equipped and comfortable. Fast delivery and excellent service.",
-      "date": "01.03.2024",
+      "title": "RINOS",
+      "name": "Wieslaw 🇵🇱",
+      "text": "Amazing value for the price 💯.",
+      "date": "28.11.2024",
       "rating": "5"
     },
     "review5": {
-      "title": "Fast Delivery",
-      "name": "Tomas",
-      "text": "Very stable guards for bike. Light and comfortable, fast delivery.",
-      "date": "16.02.2024",
+      "title": "RINOS",
+      "name": "Thomas 🇳🇱",
+      "text": "TOP gravel bike 🚵! Great quality and service for a fair price 🔥 – way cheaper than here in the Netherlands.",
+      "date": "30.04.2023",
       "rating": "5"
     },
     "review6": {
-      "title": "Everything good👍",
-      "name": "Celine J",
-      "text": "Very poorly cut, but fast delivery and good material quality.",
-      "date": "14.01.2024",
-      "rating": "3.5"
+      "title": "RINOS",
+      "name": "Cristina Rodriguez 🇪🇸",
+      "text": "Perfect finish and paint 🎨👌. Everything fits. Great that all parts were included 🔩.",
+      "date": "15.03.2025",
+      "rating": "5"
     },
     "review7": {
-      "title": "Safe on the Road",
-      "name": "Julien Delorme",
-      "text": "Light. Good manufacturing. See in time and very good processing.",
-      "date": "13.01.2024",
+      "title": "RINOS",
+      "name": "Cristina Rodriguez 🇪🇸",
+      "text": "Good to have as a spare ✅.",
+      "date": "15.03.2025",
       "rating": "5"
     },
     "review8": {
-      "title": "Daily Help",
-      "name": "Morand Benoit",
-      "text": "Very well made and very practical product. Helps me daily!",
-      "date": "26.12.2023",
+      "title": "RINOS",
+      "name": "Tomasz Stańczyk 🇵🇱",
+      "text": "Excellent bike 🚵! Super lightweight ⚖️!",
+      "date": "21.05.2023",
       "rating": "5"
     },
     "review9": {
-      "title": "Looks Good!",
-      "name": "Daniel Rossi",
-      "text": "Product according to the description. Not used yet, but looks good.",
-      "date": "13.12.2023",
-      "rating": "4"
+      "title": "RINOS",
+      "name": "Thomas 🇳🇱",
+      "text": "Beautiful and fast gravel bike 🚴‍♂️💨. Well built. Very happy, especially for the price 💰.",
+      "date": "30.04.2023",
+      "rating": "5"
     },
     "review10": {
-      "title": "A Solid Choice",
-      "name": "Peter Cauwels",
-      "text": "Very good purchase, reliable and powerful.",
-      "date": "07.12.2023",
+      "title": "ROCKBROS",
+      "name": "Fero Saeed 🇩🇪",
+      "text": "Fits great ✅. Highly recommended 👍",
+      "date": "14.02.2025",
       "rating": "5"
     },
     "review11": {
-      "title": "No More Tears.",
-      "name": "VISOIU IONUT RAZVAN",
-      "text": "Really. The cold air made my eyes water, but not anymore with this product.",
-      "date": "17.11.2023",
+      "title": "VICO",
+      "name": "Liya Weng 🇩🇪",
+      "text": "Great! The shoes are fantastic 👟✨. I'm sooo happy 🥰!",
+      "date": "16.04.2022",
       "rating": "5"
     },
     "review12": {
-      "title": "A Bit Pricey",
-      "name": "Antxon",
-      "text": "A little expensive",
-      "date": "31.10.2023",
-      "rating": "3"
-    },
-    "review13": {
-      "title": "Robust and Water Resistant",
-      "name": "Hector",
-      "text": "Good metallic chassis, it illuminates well, water resistant. Good product",
-      "date": "22.10.2023",
+      "title": "KABON",
+      "name": "Thierry A. 🇫🇷",
+      "text": "Looks great 😍, rides smooth 🚴‍♀️, light as expected. 11.3 kg with fenders and rack. I'm satisfied! ✅",
+      "date": "01.03.2024",
       "rating": "5"
     },
+    "review13": {
+      "title": "ROCKBROS",
+      "name": "Celine J 🇫🇷",
+      "text": "Very poorly cut ❌.",
+      "date": "14.01.2024",
+      "rating": "1"
+    },
     "review14": {
-      "title": "Well-Made Quality Product",
-      "name": "Gregoire Marti",
-      "text": "Good quality hood, well-made seams",
-      "date": "16.10.2023",
+      "title": "ROCKBROS",
+      "name": "Julien Delorme 🇫🇷",
+      "text": "Lightweight ✅. Good quality ⚙️. Let’s see how long the display lasts ⏱️.",
+      "date": "13.01.2024",
       "rating": "5"
     },
     "review15": {
-      "title": "Meets Expectations",
-      "name": "Quentin Borg",
-      "text": "Product corresponding to the need.",
-      "date": "04.10.2023",
+      "title": "ROCKBROS",
+      "name": "Morand Benoit 🇫🇷",
+      "text": "Well built and useful 🔧. Let's see how durable it is. Fast and well-packed delivery 📦.",
+      "date": "26.12.2023",
       "rating": "5"
     },
     "review16": {
-      "title": "Fast Delivery, High Satisfaction",
-      "name": "Pierre BERTA",
-      "text": "Excellent bike and very fast delivery. I have made a few adjustments and took over some parts of my old Dahon Mu Uno bike: the saddle, the mudguards and the pedals.",
-      "date": "27.09.2023",
-      "rating": "5"
+      "title": "ROCKBROS",
+      "name": "Alexandre Colas 🇫🇷",
+      "text": "Very good! 👍",
+      "date": "19.12.2023",
+      "rating": "4"
     },
     "review17": {
-      "title": "Top Quality Products",
-      "name": "hugues meth",
-      "text": "Top ! Great products 🌟",
-      "date": "18.09.2023",
+      "title": "ROCKBROS",
+      "name": "Daniel Rossi 🇮🇹",
+      "text": "Product as described 📦✅. Haven’t tested yet, it's a Christmas gift 🎁.",
+      "date": "13.12.2023",
       "rating": "5"
     },
     "review18": {
-      "title": "Accurate Description",
-      "name": "bahran el fakh",
-      "text": "Conforme à la description, attention néanmoins, l'indicateur d'une des ventouse reste marqué en blanc alors qu'il n'y a plus d'air dans la ventouse",
-      "date": "25.08.2023",
-      "rating": "4"
+      "title": "ROCKBROS",
+      "name": "Cet 🇫🇷",
+      "text": "So good I bought another pair for my other bike! 🚲🚲 ++++",
+      "date": "27.06.2024",
+      "rating": "5"
     },
     "review19": {
-      "title": "Good Product with Minor Improvements Needed",
-      "name": "Jose V.",
-      "text": "In my opinion, although I have only used it a couple of times I think it is a good product. I miss a list of compatible vehicles. A transport bag would also be good.",
-      "date": "08.08.2023",
-      "rating": "4"
+      "title": "ROCKBROS",
+      "name": "Calin Balea 🇷🇴",
+      "text": "Works as expected ✅.",
+      "date": "07.08.2024",
+      "rating": "5"
     },
     "review20": {
-      "title": "Well-Designed and Practical",
-      "name": "JEAN-PASCAL",
-      "text": "The quality seems to be there, very practical by its modularity, to be seen for use. I only put 4 stars due to the fixation by Velcro, to assess once loaded. I recommend",
-      "date": "15.07.2023",
-      "rating": "4"
+      "title": "ROCKBROS",
+      "name": "Pep Bosch Noguerol 🇪🇸",
+      "text": "Very good quality 🔝.",
+      "date": "31.07.2024",
+      "rating": "5"
     },
     "review21": {
-      "title": "Excellent Feedback, Fast Delivery",
-      "name": "Troels Kristens",
-      "text": "Really good for the price and fast delivery.",
-      "date": "28.06.2023",
+      "title": "ROCKBROS",
+      "name": "Carmen Vermincksel 🇧🇪",
+      "text": "Perfect fit with Rockbros roof rack and my road bike 🚴‍♀️🚗.",
+      "date": "30.05.2024",
       "rating": "5"
     },
     "review22": {
-      "title": "Beautifully Designed and Convenient",
-      "name": "Rob",
-      "text": "Good nice beautifully priced bike. Feels solid. Neatly in accordance with home delivery. Top!",
-      "date": "23.06.2023",
+      "title": "ROCKBROS",
+      "name": "Cet 🇫🇷",
+      "text": "Super light pedals, beautiful design, great grip 👌✨!",
+      "date": "06.06.2024",
+      "rating": "5"
+    },
+    "review23": {
+      "title": "ROCKBROS",
+      "name": "Carmen Vermincksel 🇧🇪",
+      "text": "Perfect – even in the rain ☔🚴‍♀️.",
+      "date": "30.05.2024",
+      "rating": "5"
+    },
+    "review24": {
+      "title": "KABON",
+      "name": "Customer 🇩🇪",
+      "text": "Well built, rack already mounted 🔧. Easy to fold. Not ideal for riders over 175cm 🧍‍♂️.",
+      "date": "09.04.2024",
+      "rating": "4"
+    },
+    "review25": {
+      "title": "KABON",
+      "name": "Peter Hvala 🇸🇮",
+      "text": "Very high quality ✅ and light, which is important for me (79 years old) 🙏.",
+      "date": "25.04.2024",
+      "rating": "5"
+    },
+    "review26": {
+      "title": "KABON",
+      "name": "Andreas Heil 🇩🇪",
+      "text": "Great service 💬, super fast shipping 🚚, prompt answers. Everything well adjusted upon delivery ✅. Very satisfied!",
+      "date": "16.06.2024",
+      "rating": "5"
+    },
+    "review27": {
+      "title": "ROCKBROS",
+      "name": "Thomas Grißmer 🇩🇪",
+      "text": "Does the job ✔️.",
+      "date": "29.09.2024",
+      "rating": "4"
+    },
+    "review28": {
+      "title": "ROCKBROS",
+      "name": "Tomas 🇩🇪",
+      "text": "Very sturdy guards for the bike 🔧. Easy to install. Lightning fast delivery ⚡.",
+      "date": "16.02.2024",
+      "rating": "5"
+    },
+    "review29": {
+      "title": "ROCKBROS",
+      "name": "ERDEI ROMEO 🇭🇺",
+      "text": "Very pleased! 😄",
+      "date": "17.03.2024",
+      "rating": "5"
+    },
+    "review30": {
+      "title": "Amity",
+      "name": "kuila 🇩🇪",
+      "text": "Luxurious attention to detail in excellent craftsmanship 🛠️💎. A delightful piece.",
+      "date": "16.03.2024",
       "rating": "5"
     }
   },
