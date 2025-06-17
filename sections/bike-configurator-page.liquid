@@ -49,51 +49,27 @@
           
           <div class="configurator-badges">
             <div class="badge">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L3 7L12 12L21 7L12 2Z" stroke="currentColor" stroke-width="2"/>
-                <path d="M3 17L12 22L21 17" stroke="currentColor" stroke-width="2"/>
-                <path d="M3 12L12 17L21 12" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              <span>200+ Service-Standorte</span>
+              {% render 'icon-location' %}
+              <span>Hergestellt in Europa</span>
             </div>
             <div class="badge">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2"/>
-                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              <span>14 Tage Rücknahmegarantie</span>
-            </div>
-            <div class="badge">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
-                <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2"/>
-              </svg>
+              {% render 'icon-calendar' %}
               <span>2 Jahre Garantie</span>
+            </div>
+            <div class="badge">
+              {% render 'icon-credit-card' %}
+              <span>14 Tage Rücknahmegarantie</span>
             </div>
           </div>
         </div>
 
         <!-- Configuration Panel -->
         <div class="configurator-panel">
-          
-          <!-- Product Title -->
-          <div class="configurator-product-title">
-            <h2>{{ configurator_product.title }}</h2>
-          </div>
-
-          <!-- Price Display -->
-          <div class="configurator-pricing">
-            <div class="price-display">
-              <span class="price-label">Total</span>
-              <span class="price-amount">
-                {{ configurator_product.selected_or_first_available_variant.price | money }}
-              </span>
+          <div class="configurator-panel-content">
+            <!-- Product Title -->
+            <div class="configurator-product-title">
+              <h2>{{ configurator_product.title }}</h2>
             </div>
-            <div class="shipping-info">
-              <span>Versand</span>
-              <span>Beim Checkout berechnet</span>
-            </div>
-          </div>
 
           <!-- Variant Selection -->
           <div class="configurator-variants">
@@ -107,6 +83,7 @@
                   {%- if option.name contains 'Color' or option.name contains 'Farbe' -%}
                     <div class="color-options">
                       {%- for value in option.values -%}
+                        {%- assign variant_for_color = configurator_product.variants | where: option.name, value | first -%}
                         <input
                           type="radio"
                           id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
@@ -120,12 +97,19 @@
                           class="color-swatch-label"
                           title="{{ value }}"
                         >
-                          <div class="color-swatch color-swatch--{{ value | handleize }}"
-                               style="background-color: {% if value contains 'Black' or value contains 'Schwarz' %}#000{% elsif value contains 'Sand' %}#D4C5A0{% elsif value contains 'White' or value contains 'Weiß' %}#fff{% elsif value contains 'Red' or value contains 'Rot' %}#dc2626{% elsif value contains 'Blue' or value contains 'Blau' %}#2563eb{% elsif value contains 'Green' or value contains 'Grün' %}#16a34a{% else %}#6b7280{% endif %}">
+                          <div class="color-swatch">
+                            {%- if variant_for_color.featured_media -%}
+                              <img 
+                                src="{{ variant_for_color.featured_media | image_url: width: 70 }}" 
+                                alt="{{ value }}"
+                                class="color-swatch-image"
+                                width="70"
+                                height="70"
+                              >
+                            {%- else -%}
+                              <div class="color-swatch--fallback" style="--color: {% if value contains 'Black' or value contains 'Schwarz' %}#000{% elsif value contains 'Sand' %}#D4C5A0{% elsif value contains 'White' or value contains 'Weiß' %}#fff{% elsif value contains 'Red' or value contains 'Rot' %}#dc2626{% elsif value contains 'Blue' or value contains 'Blau' %}#2563eb{% elsif value contains 'Green' or value contains 'Grün' %}#16a34a{% else %}#6b7280{% endif %}"></div>
+                            {%- endif -%}
                           </div>
-                          <svg class="color-check" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M13.5 4.5L6 12L2.5 8.5" stroke="currentColor" stroke-width="2"/>
-                          </svg>
                         </label>
                       {%- endfor -%}
                     </div>
@@ -145,7 +129,8 @@
                           for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                           class="size-option-label"
                         >
-                          {{ value }}
+                          <span class="size-value">{{ value }}</span>
+                          <span class="size-label">Größe</span>
                         </label>
                       {%- endfor -%}
                     </div>
@@ -170,43 +155,52 @@
                 </div>
               {%- endfor -%}
               
-              <div class="product-form__buttons">
-                <button
-                  type="submit"
-                  name="add"
-                  class="btn product-form__cart-submit btn--primary btn--full-width"
-                  {% if configurator_product.selected_or_first_available_variant.available == false %}disabled{% endif %}
-                >
-                  <span>
-                    {%- if configurator_product.selected_or_first_available_variant.available -%}
-                      In den Einkaufswagen
-                    {%- else -%}
-                      {{ 'products.product.sold_out' | t }}
-                    {%- endif -%}
-                  </span>
-                  <div class="loading__spinner hidden">
-                    {% render 'icon-spinner' %}
-                  </div>
-                </button>
-              </div>
             {%- endform -%}
           </div>
+          </div>
 
-          <!-- Delivery Info -->
-          <div class="configurator-delivery">
-            <div class="delivery-info">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <rect x="2" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M8 3V1M12 3V1M2 7H18" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-              <div>
-                <span class="delivery-label">Voraussichtliche Lieferung</span>
-                <span class="delivery-date">August 2025</span>
-              </div>
+          <!-- Sticky Price & Actions Section -->
+          <div class="configurator-pricing">
+            <div class="price-display">
+              <span class="price-label">Total</span>
+              <span class="price-amount">
+                {{ configurator_product.selected_or_first_available_variant.price | money }}
+              </span>
             </div>
-            <p class="payment-info">
-              Bezahle in 3 zinsfreien Teilzahlungen. Mit Käuferschutz* von Klarna
-            </p>
+            
+            <div class="delivery-info-compact">
+              {% render 'icon-clock' %}
+              <span>Lieferung in 7-14 Tagen</span>
+            </div>
+            
+            <div class="configurator-actions">
+              <button
+                type="submit"
+                form="{{ product_form_id }}"
+                name="add"
+                class="product-form__cart-submit"
+                {% if configurator_product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+              >
+                <span>
+                  {%- if configurator_product.selected_or_first_available_variant.available -%}
+                    In den Warenkorb
+                  {%- else -%}
+                    {{ 'products.product.sold_out' | t }}
+                  {%- endif -%}
+                </span>
+                <div class="loading__spinner hidden">
+                  {% render 'icon-spinner' %}
+                </div>
+              </button>
+              
+              <a href="/checkout" class="checkout-direct-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="3" width="12" height="10" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                  <path d="M6 7h4M8 5v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                Direkt zur Kasse
+              </a>
+            </div>
           </div>
 
         </div>
@@ -232,6 +226,37 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // Force remove header elements and cart drawer via JavaScript
+  const elementsToRemove = [
+    '[id*="shopify-section-sections"][id*="header"]',
+    '.shopify-section-header',
+    '.shopify-section-group-header-group',
+    '.section-header',
+    '.shopify-section-header-sticky',
+    '.header-wrapper',
+    'sticky-header',
+    '.shopify-section:has(.header)',
+    '.shopify-section:has(.header-wrapper)',
+    '.shopify-section:has(sticky-header)',
+    'cart-drawer',
+    '.cart-drawer',
+    '.drawer'
+  ];
+  
+  elementsToRemove.forEach(selector => {
+    try {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach(el => {
+        if (el) {
+          el.style.display = 'none';
+          el.remove();
+        }
+      });
+    } catch (e) {
+      // Ignore selector errors for older browsers
+    }
+  });
+  
   const form = document.getElementById('{{ product_form_id }}');
   if (!form) return;
   
@@ -328,11 +353,38 @@ document.addEventListener('DOMContentLoaded', function() {
     .finally(() => {
       setTimeout(() => {
         if (addButton) addButton.disabled = false;
-        if (addButtonText) addButtonText.textContent = 'In den Einkaufswagen';
+        if (addButtonText) addButtonText.textContent = 'In den Warenkorb';
         if (spinner) spinner.classList.add('hidden');
       }, 1000);
     });
   });
+  
+  // Handle direct checkout button
+  const checkoutBtn = document.querySelector('.checkout-direct-btn');
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      
+      // Add to cart first, then redirect to checkout
+      fetch('/cart/add.js', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.id) {
+          window.location.href = '/checkout';
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Fallback: just go to checkout
+        window.location.href = '/checkout';
+      });
+    });
+  }
 });
 </script>
 

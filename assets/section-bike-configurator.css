@@ -1,8 +1,34 @@
-/* Hide navbar and footer on configurator pages */
+/* Hide navbar, footer, announcement bar, chat, cart drawer and other elements on configurator pages */
 body:has(.bike-configurator-page) .shopify-section-header,
+body:has(.bike-configurator-page) [id*="shopify-section-sections"][id*="header"],
+body:has(.bike-configurator-page) .shopify-section-group-header-group,
+body:has(.bike-configurator-page) .section-header,
+body:has(.bike-configurator-page) .shopify-section-header-sticky,
+body:has(.bike-configurator-page) .header-wrapper,
+body:has(.bike-configurator-page) sticky-header,
 body:has(.bike-configurator-page) header,
 body:has(.bike-configurator-page) .header,
-body:has(.bike-configurator-page) nav {
+body:has(.bike-configurator-page) nav,
+body:has(.bike-configurator-page) .shopify-section-announcement-bar,
+body:has(.bike-configurator-page) .announcement-bar,
+body:has(.bike-configurator-page) .utility-bar,
+body:has(.bike-configurator-page) .header-localization,
+body:has(.bike-configurator-page) .localization-wrapper,
+body:has(.bike-configurator-page) .desktop-localization-wrapper,
+body:has(.bike-configurator-page) .shopify-chat,
+body:has(.bike-configurator-page) #shopify-chat,
+body:has(.bike-configurator-page) .chat-widget,
+body:has(.bike-configurator-page) .chat-button,
+body:has(.bike-configurator-page) .chat,
+body:has(.bike-configurator-page) iframe[src*="chat"],
+body:has(.bike-configurator-page) .gorgias-chat-container,
+body:has(.bike-configurator-page) .crisp-client,
+body:has(.bike-configurator-page) .intercom-frame,
+body:has(.bike-configurator-page) .zendesk-chat,
+body:has(.bike-configurator-page) .tawk-chat,
+body:has(.bike-configurator-page) cart-drawer,
+body:has(.bike-configurator-page) .cart-drawer,
+body:has(.bike-configurator-page) .drawer {
   display: none !important;
 }
 
@@ -14,9 +40,29 @@ body:has(.bike-configurator-page) .footer {
 
 /* Fallback for browsers that don't support :has() */
 .template-page .bike-configurator-page ~ * .shopify-section-header,
+.template-page .bike-configurator-page ~ * [id*="shopify-section-sections"][id*="header"],
+.template-page .bike-configurator-page ~ * .shopify-section-group-header-group,
+.template-page .bike-configurator-page ~ * .section-header,
+.template-page .bike-configurator-page ~ * .shopify-section-header-sticky,
+.template-page .bike-configurator-page ~ * .header-wrapper,
+.template-page .bike-configurator-page ~ * sticky-header,
 .template-page .bike-configurator-page ~ * header,
 .template-page .bike-configurator-page ~ * .header,
-.template-page .bike-configurator-page ~ * nav {
+.template-page .bike-configurator-page ~ * nav,
+.template-page .bike-configurator-page ~ * .shopify-section-announcement-bar,
+.template-page .bike-configurator-page ~ * .announcement-bar,
+.template-page .bike-configurator-page ~ * .utility-bar,
+.template-page .bike-configurator-page ~ * .header-localization,
+.template-page .bike-configurator-page ~ * .localization-wrapper,
+.template-page .bike-configurator-page ~ * .desktop-localization-wrapper,
+.template-page .bike-configurator-page ~ * .shopify-chat,
+.template-page .bike-configurator-page ~ * #shopify-chat,
+.template-page .bike-configurator-page ~ * .chat-widget,
+.template-page .bike-configurator-page ~ * .chat-button,
+.template-page .bike-configurator-page ~ * .chat,
+.template-page .bike-configurator-page ~ * cart-drawer,
+.template-page .bike-configurator-page ~ * .cart-drawer,
+.template-page .bike-configurator-page ~ * .drawer {
   display: none !important;
 }
 
@@ -28,71 +74,127 @@ body:has(.bike-configurator-page) .footer {
 
 /* Alternative targeting using page template class */
 .template-page[data-template*="bike-configurator"] .shopify-section-header,
+.template-page[data-template*="bike-configurator"] [id*="shopify-section-sections"][id*="header"],
+.template-page[data-template*="bike-configurator"] .shopify-section-group-header-group,
+.template-page[data-template*="bike-configurator"] .section-header,
+.template-page[data-template*="bike-configurator"] .shopify-section-header-sticky,
+.template-page[data-template*="bike-configurator"] .header-wrapper,
+.template-page[data-template*="bike-configurator"] sticky-header,
 .template-page[data-template*="bike-configurator"] header,
 .template-page[data-template*="bike-configurator"] .header,
 .template-page[data-template*="bike-configurator"] nav,
+.template-page[data-template*="bike-configurator"] .shopify-section-announcement-bar,
+.template-page[data-template*="bike-configurator"] .announcement-bar,
+.template-page[data-template*="bike-configurator"] .utility-bar,
+.template-page[data-template*="bike-configurator"] .header-localization,
+.template-page[data-template*="bike-configurator"] .localization-wrapper,
+.template-page[data-template*="bike-configurator"] .desktop-localization-wrapper,
+.template-page[data-template*="bike-configurator"] .shopify-chat,
+.template-page[data-template*="bike-configurator"] #shopify-chat,
+.template-page[data-template*="bike-configurator"] .chat-widget,
+.template-page[data-template*="bike-configurator"] .chat-button,
+.template-page[data-template*="bike-configurator"] .chat,
 .template-page[data-template*="bike-configurator"] .shopify-section-footer,
 .template-page[data-template*="bike-configurator"] footer,
-.template-page[data-template*="bike-configurator"] .footer {
+.template-page[data-template*="bike-configurator"] .footer,
+.template-page[data-template*="bike-configurator"] cart-drawer,
+.template-page[data-template*="bike-configurator"] .cart-drawer,
+.template-page[data-template*="bike-configurator"] .drawer {
   display: none !important;
 }
 
-/* Ensure full viewport usage */
+/* Ensure full viewport usage and remove any spacing issues */
+html:has(.bike-configurator-page),
 body:has(.bike-configurator-page),
 .template-page[data-template*="bike-configurator"] {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Force remove any cart drawer or fixed positioned elements that might cause spacing */
+body:has(.bike-configurator-page) *[style*="position: fixed"],
+body:has(.bike-configurator-page) *[style*="z-index"],
+.template-page[data-template*="bike-configurator"] *[style*="position: fixed"],
+.template-page[data-template*="bike-configurator"] *[style*="z-index"] {
+  position: static !important;
+  z-index: auto !important;
+}
+
+/* Ensure no margin/padding from any elements */
+body:has(.bike-configurator-page) > *:not(.bike-configurator-page),
+.template-page[data-template*="bike-configurator"] > *:not(.bike-configurator-page) {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Ultra-specific header hiding using ID patterns */
+div[id*="shopify-section-sections"][id*="header"] {
+  display: none !important;
+}
+
+/* Hide any section that contains header-related classes */
+.shopify-section:has(.header),
+.shopify-section:has(.header-wrapper),
+.shopify-section:has(sticky-header) {
+  display: none !important;
+}
+
+/* Remove any page-width containers on configurator pages */
+body:has(.bike-configurator-page) .page-width,
+.template-page[data-template*="bike-configurator"] .page-width {
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .bike-configurator-page {
   min-height: 100vh;
-  background: #f8f8f8;
+  height: 100vh;
+  background: #fff;
   padding: 0;
+  margin: 0;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
 }
 
 .configurator-header {
-  text-align: center;
-  padding: 4rem 0 2rem;
-}
-
-.configurator-title {
-  font-size: 3rem;
-  font-weight: 300;
-  margin: 0 0 1rem;
-  color: #000;
-}
-
-.configurator-subtitle {
-  font-size: 1.25rem;
-  color: #666;
-  margin: 0;
+  display: none;
 }
 
 .configurator-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 80vh;
+  grid-template-columns: 1fr 400px;
+  height: 100vh;
+  max-height: 100vh;
   background: #fff;
-  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .configurator-media {
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
-  background: #fafafa;
+  background: #fff;
+  overflow: hidden;
 }
 
 .media-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
-  aspect-ratio: 4/3;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
 }
 
 .configurator-image {
@@ -113,6 +215,7 @@ body:has(.bike-configurator-page),
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: center;
 }
 
 .configurator-badges {
@@ -121,8 +224,9 @@ body:has(.bike-configurator-page),
   left: 2rem;
   right: 2rem;
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 10;
 }
 
 .badge {
@@ -130,70 +234,104 @@ body:has(.bike-configurator-page),
   align-items: center;
   gap: 0.5rem;
   font-size: 0.875rem;
-  color: #666;
+  color: #000;
   background: rgba(255, 255, 255, 0.9);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .badge svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.delivery-info-compact svg {
+  width: 16px;
+  height: 16px;
+  color: #10b981;
+  flex-shrink: 0;
 }
 
 .configurator-panel {
-  padding: 3rem;
+  background: #f8f9fa;
+  padding: 0;
   overflow-y: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.configurator-panel-content {
+  padding: 2rem;
+  flex: 1;
+  padding-bottom: 180px;
 }
 
 .configurator-product-title h2 {
   font-size: 2.5rem;
-  font-weight: 300;
-  margin: 0 0 2rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem;
   color: #000;
+  line-height: 1.1;
 }
 
 .configurator-pricing {
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid #eee;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
 }
 
 .price-display {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .price-label {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 500;
-  color: #000;
+  color: #6b7280;
 }
 
 .price-amount {
   font-size: 1.75rem;
-  font-weight: 600;
+  font-weight: 800;
   color: #000;
 }
 
-.shipping-info {
+.delivery-info-compact {
   display: flex;
-  justify-content: space-between;
-  color: #666;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
   font-size: 0.875rem;
+  color: #6b7280;
 }
 
+
+
 .variant-option-group {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  flex-shrink: 0;
 }
 
 .option-title {
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
   color: #000;
   display: flex;
   align-items: center;
@@ -212,6 +350,7 @@ body:has(.bike-configurator-page),
   margin: 0;
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .color-options input[type="radio"] {
@@ -227,22 +366,34 @@ body:has(.bike-configurator-page),
 }
 
 .color-swatch {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  border: 3px solid transparent;
-  transition: all 0.2s ease;
+  border: 3px solid #e5e5e5;
+  transition: all 0.3s ease;
   position: relative;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.color-swatch--white,
-.color-swatch--weiß {
-  border-color: #ddd !important;
+.color-swatch-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.color-swatch--fallback {
+  background: var(--color, #ccc);
 }
 
 .color-options input[type="radio"]:checked + .color-swatch-label .color-swatch {
   border-color: #000;
-  transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .color-check {
@@ -265,8 +416,8 @@ body:has(.bike-configurator-page),
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .size-options input[type="radio"] {
@@ -276,25 +427,48 @@ body:has(.bike-configurator-page),
 }
 
 .size-option-label {
-  display: block;
-  padding: 1rem 1.5rem;
-  border: 2px solid #eee;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border: 2px solid #d1d5db;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  font-weight: 500;
-  min-width: 80px;
-  text-align: center;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-align: left;
+  background: #fff;
+  position: relative;
+  width: 100%;
 }
 
 .size-option-label:hover {
-  border-color: #ddd;
+  border-color: #9ca3af;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .size-options input[type="radio"]:checked + .size-option-label {
   border-color: #000;
   background-color: #000;
   color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.size-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.size-label {
+  font-size: 0.875rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
 }
 
 /* Default Options */
@@ -335,31 +509,61 @@ body:has(.bike-configurator-page),
 
 /* Actions */
 .configurator-actions {
-  margin-bottom: 2rem;
+  display: flex;
+  gap: 0.75rem;
 }
 
 .product-form__cart-submit {
-  width: 100%;
+  flex: 1;
   background: #000;
   color: white;
   border: none;
-  padding: 1.25rem 2rem;
-  font-size: 1.125rem;
-  font-weight: 500;
+  padding: 0.875rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
 }
 
+.checkout-direct-btn {
+  flex: 1;
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.checkout-direct-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
 .product-form__cart-submit:hover:not(:disabled) {
-  background: #333;
+  background: #1f2937;
   transform: translateY(-1px);
 }
 
 .product-form__cart-submit:disabled {
-  background: #ccc;
+  background: #9ca3af;
   cursor: not-allowed;
+}
+
+.checkout-direct-btn:hover {
+  background: #059669;
+  transform: translateY(-1px);
 }
 
 .loading__spinner {
@@ -369,41 +573,7 @@ body:has(.bike-configurator-page),
   transform: translate(-50%, -50%);
 }
 
-/* Delivery Info */
-.configurator-delivery {
-  border-top: 1px solid #eee;
-  padding-top: 2rem;
-}
-
-.delivery-info {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.delivery-info svg {
-  color: #666;
-}
-
-.delivery-label {
-  display: block;
-  color: #666;
-  font-size: 0.875rem;
-}
-
-.delivery-date {
-  display: block;
-  font-weight: 500;
-  color: #000;
-}
-
-.payment-info {
-  color: #666;
-  font-size: 0.875rem;
-  margin: 0;
-  line-height: 1.4;
-}
+/* Remove old delivery section - now in sticky bottom */
 
 /* Error State */
 .configurator-error {
@@ -424,42 +594,71 @@ body:has(.bike-configurator-page),
 @media (max-width: 768px) {
   .configurator-container {
     grid-template-columns: 1fr;
-    grid-template-rows: 50vh 1fr;
+    grid-template-rows: 60vh 1fr;
   }
   
   .configurator-media {
-    padding: 2rem 1rem;
+    height: 60vh;
   }
   
-  .configurator-panel {
-    padding: 2rem 1rem;
+  .media-container {
+    height: 60vh;
+    padding: 2rem;
   }
   
-  .configurator-title {
-    font-size: 2rem;
+  .configurator-panel-content {
+    padding: 1.5rem;
+    padding-bottom: 200px;
   }
   
   .configurator-product-title h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
   
   .configurator-badges {
-    flex-direction: column;
-    gap: 0.5rem;
-    position: static;
-    margin-top: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    gap: 1rem;
+  }
+  
+  .badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
   }
   
   .color-options {
-    justify-content: center;
+    gap: 0.75rem;
   }
   
   .color-swatch {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .size-options {
+    gap: 0.5rem;
+  }
+  
+  .size-option-label {
+    padding: 1rem 1.25rem;
+  }
+  
+  .variant-option-group {
+    margin-bottom: 1.5rem;
   }
   
   .price-amount {
     font-size: 1.5rem;
+  }
+  
+  .configurator-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .configurator-pricing {
+    padding: 1.25rem 1.5rem;
   }
 } 
