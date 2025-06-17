@@ -50,15 +50,15 @@
           <div class="configurator-badges">
             <div class="badge">
               {% render 'icon-location' %}
-              <span>Hergestellt in Europa</span>
+              <span>{{ 'products.product.made_in_europe' | t | default: 'Made in Europe' }}</span>
             </div>
             <div class="badge">
               {% render 'icon-calendar' %}
-              <span>2 Jahre Garantie</span>
+              <span>{{ 'products.product.warranty_years' | t | default: '2 Year Warranty' }}</span>
             </div>
             <div class="badge">
               {% render 'icon-credit-card' %}
-              <span>14 Tage Rücknahmegarantie</span>
+              <span>{{ 'products.product.return_guarantee' | t | default: '14 Day Return Guarantee' }}</span>
             </div>
           </div>
         </div>
@@ -130,7 +130,7 @@
                           class="size-option-label"
                         >
                           <span class="size-value">{{ value }}</span>
-                          <span class="size-label">Größe</span>
+                          <span class="size-label">{{ 'products.product.size' | t }}</span>
                         </label>
                       {%- endfor -%}
                     </div>
@@ -170,7 +170,7 @@
             
             <div class="delivery-info-compact">
               {% render 'icon-clock' %}
-              <span>Lieferung in 7-14 Tagen</span>
+              <span>{{ 'products.product.delivery_time' | t | default: 'Delivery in 7-14 days' }}</span>
             </div>
             
             <div class="configurator-actions">
@@ -181,13 +181,13 @@
                 class="product-form__cart-submit"
                 {% if configurator_product.selected_or_first_available_variant.available == false %}disabled{% endif %}
               >
-                <span>
-                  {%- if configurator_product.selected_or_first_available_variant.available -%}
-                    In den Warenkorb
-                  {%- else -%}
-                    {{ 'products.product.sold_out' | t }}
-                  {%- endif -%}
-                </span>
+                              <span>
+                {%- if configurator_product.selected_or_first_available_variant.available -%}
+                  {{ 'products.product.add_to_cart' | t }}
+                {%- else -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- endif -%}
+              </span>
                 <div class="loading__spinner hidden">
                   {% render 'icon-spinner' %}
                 </div>
@@ -198,7 +198,7 @@
                   <rect x="2" y="3" width="12" height="10" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
                   <path d="M6 7h4M8 5v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
-                Direkt zur Kasse
+                {{ 'products.product.direct_checkout' | t | default: 'Direct to Checkout' }}
               </a>
             </div>
           </div>
@@ -367,11 +367,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (selectedVariant.available) {
           addButton.disabled = false;
           addButton.classList.remove('unavailable');
-          addButtonText.textContent = 'In den Einkaufswagen';
+          addButtonText.textContent = '{{ 'products.product.add_to_cart' | t | escape }}';
         } else {
           addButton.disabled = true;
           addButton.classList.add('unavailable');
-          addButtonText.textContent = 'Ausverkauft';
+          addButtonText.textContent = '{{ 'products.product.sold_out' | t | escape }}';
         }
       }
       
@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (addButton && addButtonText) {
         addButton.disabled = true;
         addButton.classList.add('unavailable');
-        addButtonText.textContent = 'Kombination nicht verfügbar';
+        addButtonText.textContent = '{{ 'products.product.combination_unavailable' | t | default: 'Combination not available' | escape }}';
       }
     }
   }
@@ -411,7 +411,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentVariant = variantData.find(v => v.id == currentVariantId);
     
     if (!currentVariant || !currentVariant.available) {
-      if (addButtonText) addButtonText.textContent = 'Nicht verfügbar';
+      if (addButtonText) addButtonText.textContent = '{{ 'products.product.not_available' | t | default: 'Not available' | escape }}';
       return;
     }
     
@@ -419,7 +419,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const spinner = form.querySelector('.loading__spinner');
     
     if (addButton) addButton.disabled = true;
-    if (addButtonText) addButtonText.textContent = 'Wird hinzugefügt...';
+    if (addButtonText) addButtonText.textContent = '{{ 'products.product.adding' | t | default: 'Adding...' | escape }}';
     if (spinner) spinner.classList.remove('hidden');
     
     fetch('/cart/add.js', {
@@ -436,13 +436,13 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .catch(error => {
       console.error('Error:', error);
-      if (addButtonText) addButtonText.textContent = 'Fehler - Erneut versuchen';
+      if (addButtonText) addButtonText.textContent = '{{ 'products.product.error_retry' | t | default: 'Error - Try again' | escape }}';
     })
     .finally(() => {
       setTimeout(() => {
         if (addButton && currentVariant && currentVariant.available) {
           addButton.disabled = false;
-          if (addButtonText) addButtonText.textContent = 'In den Einkaufswagen';
+          if (addButtonText) addButtonText.textContent = '{{ 'products.product.add_to_cart' | t | escape }}';
         }
         if (spinner) spinner.classList.add('hidden');
       }, 1000);
@@ -460,7 +460,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const currentVariant = variantData.find(v => v.id == currentVariantId);
       
       if (!currentVariant || !currentVariant.available) {
-        alert('Diese Konfiguration ist nicht verfügbar. Bitte wählen Sie eine andere Kombination.');
+        alert('{{ 'products.product.configuration_unavailable' | t | default: 'This configuration is not available. Please select a different combination.' | escape }}');
         return;
       }
       
@@ -476,12 +476,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (data.id) {
           window.location.href = '/checkout';
         } else if (data.message) {
-          alert('Fehler beim Hinzufügen zum Warenkorb: ' + data.message);
+          alert('{{ 'products.product.cart_error' | t | default: 'Error adding to cart' | escape }}: ' + data.message);
         }
       })
       .catch(error => {
         console.error('Error:', error);
-        alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.');
+        alert('{{ 'products.product.general_error' | t | default: 'An error occurred. Please try again.' | escape }}');
       });
     });
   }

@@ -182,7 +182,20 @@
       "xr_button": "View in your space",
       "xr_button_label": "View in your space, loads item in augmented reality window",
       "include_taxes": "Tax included.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout."
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
+      "made_in_europe": "Made in Europe",
+      "warranty_years": "2 Year Warranty",
+      "return_guarantee": "14 Day Return Guarantee",
+      "delivery_time": "Delivery in 7-14 days",
+      "direct_checkout": "Direct to Checkout",
+      "size": "Size",
+      "combination_unavailable": "Combination not available",
+      "not_available": "Not available",
+      "adding": "Adding...",
+      "error_retry": "Error - Try again",
+      "configuration_unavailable": "This configuration is not available. Please select a different combination.",
+      "cart_error": "Error adding to cart",
+      "general_error": "An error occurred. Please try again."
     },
     "modal": {
       "label": "Media gallery"

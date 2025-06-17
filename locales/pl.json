@@ -184,7 +184,20 @@
         "price_at_each": "{{ price }}\/szt.",
         "price_range": "{{ minimum }} - {{ maximum }}"
       },
-      "product_variants": "Warianty produktów"
+      "product_variants": "Warianty produktów",
+      "made_in_europe": "Wyprodukowano w Europie",
+      "warranty_years": "2 lata gwarancji",
+      "return_guarantee": "14 dni gwarancji zwrotu",
+      "delivery_time": "Dostawa w ciągu 7-14 dni",
+      "direct_checkout": "Bezpośrednio do kasy",
+      "size": "Rozmiar",
+      "combination_unavailable": "Kombinacja niedostępna",
+      "not_available": "Niedostępny",
+      "adding": "Dodawanie...",
+      "error_retry": "Błąd - Spróbuj ponownie",
+      "configuration_unavailable": "Ta konfiguracja jest niedostępna. Proszę wybrać inną kombinację.",
+      "cart_error": "Błąd podczas dodawania do koszyka",
+      "general_error": "Wystąpił błąd. Proszę spróbować ponownie."
     },
     "modal": {
       "label": "Galeria multimediów"
