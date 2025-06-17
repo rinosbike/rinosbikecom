@@ -1,0 +1,58 @@
+{% comment %}
+  Renders a configure button for products
+  
+  Accepts:
+  - product: {Object} Product object
+  - button_text: {String} Button text (optional)
+  - button_class: {String} Additional CSS classes (optional)
+  
+  Usage:
+  {% render 'configure-button', product: product %}
+{% endcomment %}
+
+{%- liquid
+  assign button_text = button_text | default: 'Configure Your Bike'
+  assign button_class = button_class | default: ''
+  assign configure_url = '/pages/configure-' | append: product.handle
+-%}
+
+<div class="configure-button-wrapper">
+  <a href="{{ configure_url }}" class="btn btn--secondary configure-button {{ button_class }}">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="3"></circle>
+      <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+    </svg>
+    <span>{{ button_text }}</span>
+  </a>
+</div>
+
+<style>
+.configure-button-wrapper {
+  margin: 1rem 0;
+}
+
+.configure-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 2px solid #000;
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.configure-button:hover {
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+
+.configure-button svg {
+  width: 18px;
+  height: 18px;
+}
+</style> 

@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "bike-configurator-page",
+      "settings": {
+        "product_handle": "",
+        "heading": "Configure Your Bike",
+        "subheading": "Customize your bike to your exact specifications"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+} 
