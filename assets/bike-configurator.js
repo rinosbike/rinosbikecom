@@ -1,328 +1,434 @@
 class BikeConfigurator extends HTMLElement {
   constructor() {
     super();
-    
-    this.productHandle = this.dataset.productHandle;
-    this.productId = this.dataset.productId;
-    this.sectionId = this.dataset.section;
-    
-    // Get variant data from the existing script tag
-    this.variantData = this.getVariantData();
-    this.currentVariant = this.variantData[0]; // Default to first variant
+    this.variants = JSON.parse(this.querySelector('[type="application/json"]').textContent);
+    this.currentVariant = this.variants.find(variant => variant.available) || this.variants[0];
     
     this.init();
   }
 
   init() {
-    this.setupVariantRadios();
-    this.setupImageSwitching();
-    this.setupPriceUpdates();
-    this.updateInitialState();
+    this.setupEventListeners();
+    this.updateDisplay();
   }
 
-  getVariantData() {
-    const variantScript = this.querySelector('script[type="application/json"]');
-    if (variantScript) {
-      try {
-        return JSON.parse(variantScript.textContent);
-      } catch (e) {
-        console.error('Error parsing variant data:', e);
-        return [];
-      }
-    }
-    return [];
-  }
-
-  setupVariantRadios() {
-    const variantRadios = this.querySelector('variant-radios');
-    if (!variantRadios) return;
-
-    // Listen for changes on all radio inputs
-    const radioInputs = this.querySelectorAll('input[type="radio"]');
-    radioInputs.forEach(input => {
-      input.addEventListener('change', this.handleVariantChange.bind(this));
-    });
-  }
-
-  handleVariantChange() {
-    this.updateCurrentVariant();
-    this.updateProductImage();
-    this.updatePrice();
-    this.updateSelectedColorDisplay();
-    this.updateVariantInput();
-    this.updateAddToCartButton();
-  }
-
-  updateCurrentVariant() {
-    // Get all selected options
-    const selectedOptions = [];
-    const fieldsets = this.querySelectorAll('fieldset');
+  setupEventListeners() {
+    // Listen for variant changes
+    this.addEventListener('change', this.onVariantChange.bind(this));
     
-    fieldsets.forEach((fieldset, index) => {
-      const checkedInput = fieldset.querySelector('input[type="radio"]:checked');
-      if (checkedInput) {
-        selectedOptions[index] = checkedInput.value;
-      }
+    // Listen for form submission
+    const form = this.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', this.onSubmitHandler.bind(this));
+    }
+  }
+
+  onVariantChange(event) {
+    this.updateOptions();
+    this.updateVariant();
+    this.updateDisplay();
+  }
+
+  updateOptions() {
+    const fieldsets = Array.from(this.querySelectorAll('fieldset'));
+    const values = fieldsets.map((fieldset) => {
+      return Array.from(fieldset.querySelectorAll('input')).find((radio) => radio.checked)?.value;
     });
 
-    // Find matching variant
-    this.currentVariant = this.variantData.find(variant => {
-      return variant.options.every((option, index) => option === selectedOptions[index]);
+    this.currentVariant = this.variants.find((variant) => {
+      return !variant.options.map((option, index) => {
+        return values[index] === option;
+      }).includes(false);
     });
 
     if (!this.currentVariant) {
-      this.currentVariant = this.variantData[0];
+      this.currentVariant = this.variants[0];
     }
   }
 
-  updateProductImage() {
-    const images = document.querySelectorAll('.configurator-image');
-    if (!images.length) return;
+  updateVariant() {
+    // Update hidden variant ID input
+    const variantIdInput = this.querySelector('.product-variant-id');
+    if (variantIdInput) {
+      variantIdInput.value = this.currentVariant.id;
+    }
 
-    // Hide all images
-    images.forEach(img => img.classList.remove('active'));
-
-    // Get selected color
-    const colorInput = this.querySelector('input[data-color]:checked');
-    const selectedColor = colorInput ? colorInput.dataset.color : null;
-
-    let targetImage = null;
-
-    // Try to find image by variant ID first
+    // Update URL without page reload
     if (this.currentVariant) {
-      targetImage = document.querySelector(`[data-variant-id="${this.currentVariant.id}"]`);
+      const url = new URL(window.location);
+      url.searchParams.set('variant', this.currentVariant.id);
+      window.history.replaceState({}, '', url);
     }
+  }
 
-    // If not found, try by color
-    if (!targetImage && selectedColor) {
-      targetImage = document.querySelector(`[data-color*="${selectedColor}"]`);
-    }
-
-    // If still not found, try by color name in alt text
-    if (!targetImage && selectedColor) {
-      images.forEach(img => {
-        const imgElement = img.querySelector('img');
-        const altText = imgElement ? imgElement.alt.toLowerCase() : '';
-        if (altText.includes(selectedColor.toLowerCase())) {
-          targetImage = img;
-        }
-      });
-    }
-
-    // Fallback to first image
-    if (!targetImage) {
-      targetImage = images[0];
-    }
-
-    // Show the target image
-    if (targetImage) {
-      targetImage.classList.add('active');
-    }
+  updateDisplay() {
+    this.updatePrice();
+    this.updateProductAvailability();
+    this.updateMedia();
+    this.updateSelectedColorText();
   }
 
   updatePrice() {
+    const priceDisplay = this.querySelector('[data-price-display]');
+    if (priceDisplay && this.currentVariant) {
+      const price = new Intl.NumberFormat('de-DE', {
+        style: 'currency',
+        currency: 'EUR'
+      }).format(this.currentVariant.price / 100);
+      
+      priceDisplay.textContent = price;
+    }
+  }
+
+  updateProductAvailability() {
+    const addButton = this.querySelector('[name="add"]');
+    const addButtonText = addButton?.querySelector('span');
+
+    if (!addButton) return;
+
+    if (this.currentVariant) {
+      if (this.currentVariant.available) {
+        addButton.disabled = false;
+        if (addButtonText) {
+          addButtonText.textContent = 'In den Einkaufswagen';
+        }
+      } else {
+        addButton.disabled = true;
+        if (addButtonText) {
+          addButtonText.textContent = 'Ausverkauft';
+        }
+      }
+    }
+  }
+
+  updateMedia() {
     if (!this.currentVariant) return;
 
-    const priceDisplay = this.querySelector('[data-price-display]');
-    if (priceDisplay) {
-      // Format price using Shopify's money format
-      const formattedPrice = this.formatMoney(this.currentVariant.price);
-      priceDisplay.textContent = formattedPrice;
+    const mediaContainer = document.querySelector('.media-container');
+    if (!mediaContainer) return;
+
+    const allImages = mediaContainer.querySelectorAll('.configurator-image');
+    
+    // Hide all images first
+    allImages.forEach(img => {
+      img.classList.remove('active');
+    });
+
+    let activeImage = null;
+
+    // Method 1: Try to find image by variant ID (most reliable)
+    if (this.currentVariant.featured_media) {
+      activeImage = mediaContainer.querySelector(`[data-media-id="${this.currentVariant.featured_media.id}"]`);
+    }
+
+    // Method 2: Try to find image by variant ID match
+    if (!activeImage) {
+      activeImage = mediaContainer.querySelector(`[data-variant-id="${this.currentVariant.id}"]`);
+    }
+
+    // Method 3: Fallback to first non-fallback image
+    if (!activeImage) {
+      activeImage = mediaContainer.querySelector('.configurator-image:not([data-fallback])');
+    }
+
+    // Method 4: Ultimate fallback to first image
+    if (!activeImage) {
+      activeImage = mediaContainer.querySelector('.configurator-image');
+    }
+
+    // Show the selected image
+    if (activeImage) {
+      activeImage.classList.add('active');
     }
   }
 
-  updateSelectedColorDisplay() {
+  updateSelectedColorText() {
+    const colorDisplay = this.querySelector('[data-selected-color]');
     const colorInput = this.querySelector('input[data-color]:checked');
-    const selectedColorDisplay = this.querySelector('[data-selected-color]');
     
-    if (colorInput && selectedColorDisplay) {
-      selectedColorDisplay.textContent = colorInput.value;
+    if (colorDisplay && colorInput) {
+      colorDisplay.textContent = colorInput.value;
     }
   }
 
-  updateVariantInput() {
-    const variantInput = this.querySelector('.product-variant-id');
-    if (variantInput && this.currentVariant) {
-      variantInput.value = this.currentVariant.id;
-    }
-  }
-
-  updateAddToCartButton() {
-    const addButton = this.querySelector('.product-form__cart-submit');
-    const buttonText = addButton ? addButton.querySelector('span') : null;
+  onSubmitHandler(evt) {
+    evt.preventDefault();
     
-    if (!addButton || !buttonText) return;
+    const form = evt.target;
+    const formData = new FormData(form);
+    const addButton = form.querySelector('[name="add"]');
+    const addButtonText = addButton?.querySelector('span');
+    const spinner = form.querySelector('.loading__spinner');
 
-    if (this.currentVariant && this.currentVariant.available) {
-      addButton.disabled = false;
-      buttonText.textContent = 'In den Einkaufswagen';
-      addButton.classList.remove('disabled');
-    } else {
-      addButton.disabled = true;
-      buttonText.textContent = 'Ausverkauft';
-      addButton.classList.add('disabled');
-    }
-  }
+    // Show loading state
+    if (addButton) addButton.disabled = true;
+    if (addButtonText) addButtonText.textContent = 'Wird hinzugefügt...';
+    if (spinner) spinner.classList.remove('hidden');
 
-  updateInitialState() {
-    // Set initial variant based on first checked options
-    this.updateCurrentVariant();
-    this.updateProductImage();
-    this.updatePrice();
-    this.updateSelectedColorDisplay();
-    this.updateVariantInput();
-    this.updateAddToCartButton();
-  }
-
-  setupImageSwitching() {
-    // Additional setup for image switching if needed
-    const images = document.querySelectorAll('.configurator-image img');
-    images.forEach(img => {
-      img.addEventListener('load', () => {
-        // Image loaded successfully
-      });
-      
-      img.addEventListener('error', () => {
-        console.warn('Failed to load image:', img.src);
-      });
-    });
-  }
-
-  setupPriceUpdates() {
-    // Listen for variant changes from Shopify's native system
-    document.addEventListener('variant:change', (event) => {
-      if (event.detail && event.detail.variant) {
-        this.currentVariant = event.detail.variant;
-        this.updatePrice();
-        this.updateAddToCartButton();
+    fetch('/cart/add.js', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Success - redirect to cart or show success message
+      if (data.id) {
+        // Trigger cart drawer or redirect
+        if (typeof window.cartDrawer !== 'undefined') {
+          window.cartDrawer.open();
+        } else {
+          window.location.href = '/cart';
+        }
       }
+    })
+    .catch(error => {
+      console.error('Error adding to cart:', error);
+      // Show error message
+      if (addButtonText) {
+        addButtonText.textContent = 'Fehler - Erneut versuchen';
+      }
+    })
+    .finally(() => {
+      // Reset button state
+      setTimeout(() => {
+        if (addButton && this.currentVariant?.available) {
+          addButton.disabled = false;
+        }
+        if (addButtonText && this.currentVariant?.available) {
+          addButtonText.textContent = 'In den Einkaufswagen';
+        }
+        if (spinner) {
+          spinner.classList.add('hidden');
+        }
+      }, 1000);
     });
-  }
-
-  formatMoney(cents) {
-    // Basic money formatting - you might want to use Shopify's money format
-    const euros = cents / 100;
-    return new Intl.NumberFormat('de-DE', {
-      style: 'currency',
-      currency: 'EUR'
-    }).format(euros);
   }
 }
 
-// Define the custom element
+// Register the custom element
 customElements.define('bike-configurator', BikeConfigurator);
 
-// Enhanced VariantRadios class to work with our configurator
-class ConfiguratorVariantRadios extends HTMLElement {
+// Also handle the variant-radios component from Shopify's system
+class VariantRadios extends HTMLElement {
   constructor() {
     super();
-    this.addEventListener('change', this.onVariantChange.bind(this));
+    this.addEventListener('change', this.onVariantChange);
   }
 
   onVariantChange() {
     this.updateOptions();
-    this.updateMasterId();
-    this.updateVariantInput();
-    
-    // Dispatch custom event for our configurator
-    const event = new CustomEvent('variant:change', {
-      detail: {
-        variant: this.currentVariant,
-        options: this.options
-      },
-      bubbles: true
-    });
-    
-    this.dispatchEvent(event);
+    this.updateMasterProductForm();
+    this.toggleAddButton(true, '', false);
+    this.updatePickupAvailability();
+    this.removeErrorMessage();
+    this.updateVariantStatuses();
+
+    if (!this.currentVariant) {
+      this.toggleAddButton(true, '', true);
+      this.setUnavailable();
+    } else {
+      this.updateMedia();
+      this.updateURL();
+      this.updateVariantInput();
+      this.renderProductInfo();
+      this.updateShareUrl();
+    }
   }
 
   updateOptions() {
-    this.options = Array.from(this.querySelectorAll('input[type="radio"]:checked'), (input) => input.value);
+    const fieldsets = Array.from(this.querySelectorAll('fieldset'));
+    this.options = fieldsets.map((fieldset) => {
+      return Array.from(fieldset.querySelectorAll('input')).find((radio) => radio.checked)?.value;
+    });
   }
 
-  updateMasterId() {
-    this.currentVariant = this.getVariantData().find((variant) => {
-      return !variant.options
-        .map((option, index) => {
-          return this.options[index] === option;
-        })
-        .includes(false);
+  updateMasterProductForm() {
+    const masterProductForm = document.querySelector(`#product-form-${this.dataset.section}, #product-form-installment-${this.dataset.section}`);
+    if (!masterProductForm) return;
+    
+    const variants = this.getVariantData();
+    this.currentVariant = variants.find((variant) => {
+      return !variant.options.map((option, index) => {
+        return this.options[index] === option;
+      }).includes(false);
     });
+  }
+
+  updateMedia() {
+    if (!this.currentVariant) return;
+    if (!this.currentVariant.featured_media) return;
+
+    const mediaGalleries = document.querySelectorAll(`[id^="MediaGallery-${this.dataset.section}"]`);
+    mediaGalleries.forEach((mediaGallery) =>
+      mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true)
+    );
+
+    const modalContent = document.querySelector(`#ProductModal-${this.dataset.section} .product-media-modal__content`);
+    if (!modalContent) return;
+    const newMediaModal = modalContent.querySelector(`[data-media-id="${this.currentVariant.featured_media.id}"]`);
+    if (newMediaModal) modalContent.prepend(newMediaModal);
+
+    // Update configurator images
+    const configuratorImages = document.querySelectorAll('.configurator-image');
+    configuratorImages.forEach(img => img.classList.remove('active'));
+    
+    const activeImage = document.querySelector(`[data-media-id="${this.currentVariant.featured_media.id}"]`);
+    if (activeImage) {
+      activeImage.classList.add('active');
+    }
+  }
+
+  updateURL() {
+    if (!this.currentVariant || this.dataset.updateUrl === 'false') return;
+    window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
   }
 
   updateVariantInput() {
-    const productForms = document.querySelectorAll(`#product-form-configurator`);
+    const productForms = document.querySelectorAll(`#product-form-${this.dataset.section}, #product-form-installment-${this.dataset.section}`);
     productForms.forEach((productForm) => {
       const input = productForm.querySelector('input[name="id"]');
-      if (input && this.currentVariant) {
-        input.value = this.currentVariant.id;
-        input.dispatchEvent(new Event('change', { bubbles: true }));
+      input.value = this.currentVariant.id;
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+  }
+
+  updatePickupAvailability() {
+    const pickUpAvailability = document.querySelector('pickup-availability');
+    if (!pickUpAvailability) return;
+
+    if (this.currentVariant && this.currentVariant.available) {
+      pickUpAvailability.fetchAvailability(this.currentVariant.id);
+    } else {
+      pickUpAvailability.removeAttribute('available');
+      pickUpAvailability.innerHTML = '';
+    }
+  }
+
+  updateVariantStatuses() {
+    const selectedOptionOneVariants = this.variantData.filter(variant => this.querySelector(':checked').value === variant.option1);
+    const inputWrappers = [...this.querySelectorAll('.product-form__input')];
+    inputWrappers.forEach((option, index) => {
+      if (index === 0) return;
+      const optionInputs = [...option.querySelectorAll('input[type="radio"], option')];
+      const previousOptionSelected = inputWrappers[index - 1].querySelector(':checked').value;
+      const availableOptionInputsValue = selectedOptionOneVariants.filter(variant => variant.available && variant[`option${index}`] === previousOptionSelected).map(variantOption => variantOption[`option${index + 1}`]);
+      this.setInputAvailability(optionInputs, availableOptionInputsValue);
+    });
+  }
+
+  setInputAvailability(listOfOptions, listOfAvailableOptions) {
+    listOfOptions.forEach(input => {
+      if (listOfAvailableOptions.includes(input.getAttribute('value'))) {
+        input.innerText = input.getAttribute('value');
+      } else {
+        input.innerText = window.variantStrings.unavailable_with_option.replace('[value]', input.getAttribute('value'));
       }
     });
+  }
+
+  renderProductInfo() {
+    const requestedVariantId = this.currentVariant.id;
+    const sectionId = this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section;
+
+    fetch(`${this.dataset.url}?variant=${requestedVariantId}&section_id=${sectionId}`)
+      .then((response) => response.text())
+      .then((responseText) => {
+        const html = new DOMParser().parseFromString(responseText, 'text/html');
+        const destination = document.getElementById(`price-${this.dataset.section}`);
+        const source = html.getElementById(`price-${sectionId}`);
+        const skuSource = html.getElementById(`Sku-${sectionId}`);
+        const skuDestination = document.getElementById(`Sku-${this.dataset.section}`);
+        const inventorySource = html.getElementById(`Inventory-${sectionId}`);
+        const inventoryDestination = document.getElementById(`Inventory-${this.dataset.section}`);
+
+        const volumePricingSource = html.getElementById(`Volume-${sectionId}`);
+
+        const pricePerItemDestination = document.getElementById(`Price-Per-Item-${this.dataset.section}`);
+        const pricePerItemSource = html.getElementById(`Price-Per-Item-${sectionId}`);
+
+        const volumePricingDestination = document.getElementById(`Volume-${this.dataset.section}`);
+        if (source && destination) destination.innerHTML = source.innerHTML;
+        if (inventorySource && inventoryDestination) inventoryDestination.innerHTML = inventorySource.innerHTML;
+        if (skuSource && skuDestination) {
+          skuDestination.innerHTML = skuSource.innerHTML;
+          skuDestination.classList.toggle('visibility-hidden', skuSource.classList.contains('visibility-hidden'));
+        }
+
+        if (volumePricingSource && volumePricingDestination) {
+          volumePricingDestination.innerHTML = volumePricingSource.innerHTML;
+        }
+
+        if (pricePerItemSource && pricePerItemDestination) {
+          pricePerItemDestination.innerHTML = pricePerItemSource.innerHTML;
+          pricePerItemDestination.classList.toggle('visibility-hidden', pricePerItemSource.classList.contains('visibility-hidden'));
+        }
+
+        const price = document.getElementById(`price-${this.dataset.section}`);
+
+        if (price) price.classList.remove('visibility-hidden');
+
+        if (inventoryDestination) inventoryDestination.classList.toggle('visibility-hidden', inventorySource.classList.contains('visibility-hidden'));
+
+        this.toggleAddButton(!this.currentVariant.available, window.variantStrings.soldOut);
+
+        publish(PUB_SUB_EVENTS.variantChange, {
+          data: {
+            sectionId: this.dataset.section,
+            html,
+            variant: this.currentVariant,
+            url: `${this.dataset.url}?variant=${requestedVariantId}`
+          }
+        });
+      });
+  }
+
+  toggleAddButton(disable = true, text, modifyClass = true) {
+    const productForm = document.getElementById(`product-form-${this.dataset.section}`);
+    if (!productForm) return;
+
+    const addButton = productForm.querySelector('[name="add"]');
+    const addButtonText = productForm.querySelector('[name="add"] > span');
+    if (!addButton) return;
+
+    if (disable) {
+      addButton.setAttribute('disabled', 'disabled');
+      if (text) addButtonText.textContent = text;
+    } else {
+      addButton.removeAttribute('disabled');
+      addButtonText.textContent = window.variantStrings.addToCart;
+    }
+
+    if (!modifyClass) return;
+  }
+
+  setUnavailable() {
+    const button = document.getElementById(`product-form-${this.dataset.section}`);
+    const addButton = button.querySelector('[name="add"]');
+    const addButtonText = button.querySelector('[name="add"] > span');
+    const price = document.getElementById(`price-${this.dataset.section}`);
+    if (!addButton) return;
+    addButtonText.textContent = window.variantStrings.unavailable;
+    if (price) price.classList.add('visibility-hidden');
   }
 
   getVariantData() {
-    const variantScript = this.querySelector('script[type="application/json"]');
-    if (variantScript) {
-      try {
-        return JSON.parse(variantScript.textContent);
-      } catch (e) {
-        console.error('Error parsing variant data:', e);
-        return [];
-      }
-    }
-    return [];
+    this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
+    return this.variantData;
+  }
+
+  removeErrorMessage() {
+    const section = this.closest('section');
+    if (!section) return;
+
+    const productForm = section.querySelector('product-form');
+    if (productForm) productForm.handleErrorMessage();
+  }
+
+  updateShareUrl() {
+    const shareButton = document.getElementById(`Share-${this.dataset.section}`);
+    if (!shareButton || !shareButton.updateUrl) return;
+    shareButton.updateUrl(`${window.shopUrl}${this.dataset.url}?variant=${this.currentVariant.id}`);
   }
 }
 
-// Register the enhanced variant radios
-if (!customElements.get('variant-radios')) {
-  customElements.define('variant-radios', ConfiguratorVariantRadios);
-}
-
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
-  // Setup form submission
-  const configuratorForm = document.querySelector('#product-form-configurator');
-  if (configuratorForm) {
-    configuratorForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const formData = new FormData(this);
-      const addButton = this.querySelector('.product-form__cart-submit');
-      const spinner = this.querySelector('.loading__spinner');
-      const buttonText = this.querySelector('.product-form__cart-submit span');
-      
-      // Show loading state
-      if (addButton) addButton.disabled = true;
-      if (spinner) spinner.classList.remove('hidden');
-      if (buttonText) buttonText.style.opacity = '0.5';
-      
-      // Add to cart
-      fetch('/cart/add.js', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.status === 422) {
-          console.error('Error adding to cart:', data.description);
-          alert('Error: ' + data.description);
-        } else {
-          // Success - redirect to cart or show success message
-          window.location.href = '/cart';
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred while adding to cart');
-      })
-      .finally(() => {
-        // Reset button state
-        if (addButton) addButton.disabled = false;
-        if (spinner) spinner.classList.add('hidden');
-        if (buttonText) buttonText.style.opacity = '1';
-      });
-    });
-  }
-}); 
+customElements.define('variant-radios', VariantRadios); 

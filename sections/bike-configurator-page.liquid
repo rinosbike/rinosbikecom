@@ -29,19 +29,57 @@
         <!-- Product Media -->
         <div class="configurator-media">
           <div class="media-container">
-            {%- for media in configurator_product.media -%}
-              {%- if media.media_type == 'image' -%}
+            {%- if configurator_product.selected_or_first_available_variant.featured_media -%}
+              {%- assign featured_media = configurator_product.selected_or_first_available_variant.featured_media -%}
+              <div 
+                class="configurator-image active"
+                data-media-id="{{ featured_media.id }}"
+                data-variant-id="{{ configurator_product.selected_or_first_available_variant.id }}"
+              >
+                <img
+                  src="{{ featured_media | image_url: width: 800 }}"
+                  alt="{{ featured_media.alt | escape }}"
+                  width="{{ featured_media.width }}"
+                  height="{{ featured_media.height }}"
+                  loading="eager"
+                >
+              </div>
+            {%- endif -%}
+            
+            {%- comment -%} Render all variant images for switching {%- endcomment -%}
+            {%- for variant in configurator_product.variants -%}
+              {%- if variant.featured_media and variant.featured_media.id != configurator_product.selected_or_first_available_variant.featured_media.id -%}
                 <div 
-                  class="configurator-image{% if forloop.first %} active{% endif %}"
-                  data-variant-id="{{ media.alt | split: 'variant-' | last }}"
-                  data-color="{{ media.alt | downcase }}"
+                  class="configurator-image"
+                  data-media-id="{{ variant.featured_media.id }}"
+                  data-variant-id="{{ variant.id }}"
+                >
+                  <img
+                    src="{{ variant.featured_media | image_url: width: 800 }}"
+                    alt="{{ variant.featured_media.alt | escape }}"
+                    width="{{ variant.featured_media.width }}"
+                    height="{{ variant.featured_media.height }}"
+                    loading="lazy"
+                  >
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+            
+            {%- comment -%} Fallback: Render other product images not assigned to variants {%- endcomment -%}
+            {%- assign variant_media_ids = configurator_product.variants | map: 'featured_media' | map: 'id' -%}
+            {%- for media in configurator_product.media -%}
+              {%- if media.media_type == 'image' and variant_media_ids contains media.id == false -%}
+                <div 
+                  class="configurator-image"
+                  data-media-id="{{ media.id }}"
+                  data-fallback="true"
                 >
                   <img
                     src="{{ media | image_url: width: 800 }}"
                     alt="{{ media.alt | escape }}"
                     width="{{ media.width }}"
                     height="{{ media.height }}"
-                    loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                    loading="lazy"
                   >
                 </div>
               {%- endif -%}
