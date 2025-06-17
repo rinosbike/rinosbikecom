@@ -410,6 +410,62 @@ body:has(.bike-configurator-page) .page-width,
   opacity: 1;
 }
 
+/* Unavailable option styles */
+.color-options input[type="radio"]:disabled + .color-swatch-label,
+.color-swatch-label.option-unavailable {
+  opacity: 0.4;
+  cursor: not-allowed;
+  position: relative;
+}
+
+.color-options input[type="radio"]:disabled + .color-swatch-label::after,
+.color-swatch-label.option-unavailable::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 70%;
+  background: #ff0000;
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: 2;
+}
+
+.size-options input[type="radio"]:disabled + .size-option-label,
+.size-option-label.option-unavailable {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: #f5f5f5;
+  border-color: #d1d5db;
+  color: #9ca3af;
+}
+
+.size-options input[type="radio"]:disabled + .size-option-label:hover,
+.size-option-label.option-unavailable:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: #d1d5db;
+}
+
+.default-options input[type="radio"]:disabled + label,
+.default-options label.option-unavailable {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: #f5f5f5;
+  border-color: #d1d5db;
+  color: #9ca3af;
+}
+
+.product-form__cart-submit.unavailable {
+  background: #ef4444;
+  cursor: not-allowed;
+}
+
+.product-form__cart-submit.unavailable:hover {
+  background: #ef4444;
+  transform: none;
+}
+
 /* Size Options */
 .size-options {
   border: none;

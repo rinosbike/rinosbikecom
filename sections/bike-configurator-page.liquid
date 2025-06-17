@@ -226,6 +226,16 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // Clear cart on configurator page load to prevent persistence issues
+  fetch('/cart/clear.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  }).catch(error => {
+    console.log('Cart clear failed:', error);
+  });
+
   // Force remove header elements and cart drawer via JavaScript
   const elementsToRemove = [
     '[id*="shopify-section-sections"][id*="header"]',
@@ -266,6 +276,57 @@ document.addEventListener('DOMContentLoaded', function() {
   const addButton = form.querySelector('[name="add"]');
   const addButtonText = addButton?.querySelector('span');
   
+  // Function to check if a combination of options has available variants
+  function hasAvailableVariant(selectedOptions, optionPosition, optionValue) {
+    const testOptions = [...selectedOptions];
+    testOptions[optionPosition - 1] = optionValue;
+    
+    return variantData.some(variant => {
+      const matches = variant.options.every((option, index) => {
+        return testOptions[index] === undefined || option === testOptions[index];
+      });
+      return matches && variant.available;
+    });
+  }
+  
+  // Function to update option availability
+  function updateOptionAvailability() {
+    const selectedOptions = [];
+    const optionInputs = form.querySelectorAll('[data-variant-option]');
+    
+    // Get currently selected options
+    optionInputs.forEach(input => {
+      if (input.checked) {
+        const optionPosition = parseInt(input.dataset.variantOption);
+        selectedOptions[optionPosition - 1] = input.value;
+      }
+    });
+    
+    // Update each option's availability
+    optionInputs.forEach(input => {
+      const optionPosition = parseInt(input.dataset.variantOption);
+      const optionValue = input.value;
+      const label = input.nextElementSibling;
+      
+      if (hasAvailableVariant(selectedOptions, optionPosition, optionValue)) {
+        input.disabled = false;
+        if (label) {
+          label.classList.remove('option-unavailable');
+          label.removeAttribute('title');
+        }
+      } else {
+        // Don't disable currently selected options to avoid breaking the selection
+        if (!input.checked) {
+          input.disabled = true;
+          if (label) {
+            label.classList.add('option-unavailable');
+            label.setAttribute('title', 'Nicht verfügbar in dieser Kombination');
+          }
+        }
+      }
+    });
+  }
+  
   function updateVariant() {
     // Get selected options
     const selectedOptions = [];
@@ -277,6 +338,9 @@ document.addEventListener('DOMContentLoaded', function() {
         selectedOptions[optionPosition - 1] = input.value;
       }
     });
+    
+    // Update option availability based on current selection
+    updateOptionAvailability();
     
     // Find matching variant
     const selectedVariant = variantData.find(variant => {
@@ -298,13 +362,15 @@ document.addEventListener('DOMContentLoaded', function() {
         priceDisplay.textContent = price;
       }
       
-      // Update availability
+      // Update availability with better messaging
       if (addButton && addButtonText) {
         if (selectedVariant.available) {
           addButton.disabled = false;
+          addButton.classList.remove('unavailable');
           addButtonText.textContent = 'In den Einkaufswagen';
         } else {
           addButton.disabled = true;
+          addButton.classList.add('unavailable');
           addButtonText.textContent = 'Ausverkauft';
         }
       }
@@ -319,8 +385,19 @@ document.addEventListener('DOMContentLoaded', function() {
           variantImage.classList.add('active');
         }
       }
+    } else {
+      // No exact variant match found - disable add button
+      if (addButton && addButtonText) {
+        addButton.disabled = true;
+        addButton.classList.add('unavailable');
+        addButtonText.textContent = 'Kombination nicht verfügbar';
+      }
     }
   }
+  
+  // Initialize availability check on page load
+  updateOptionAvailability();
+  updateVariant();
   
   // Listen for option changes
   form.addEventListener('change', updateVariant);
@@ -328,6 +405,15 @@ document.addEventListener('DOMContentLoaded', function() {
   // Handle form submission
   form.addEventListener('submit', function(e) {
     e.preventDefault();
+    
+    // Check if current variant is available before submitting
+    const currentVariantId = variantIdInput?.value;
+    const currentVariant = variantData.find(v => v.id == currentVariantId);
+    
+    if (!currentVariant || !currentVariant.available) {
+      if (addButtonText) addButtonText.textContent = 'Nicht verfügbar';
+      return;
+    }
     
     const formData = new FormData(form);
     const spinner = form.querySelector('.loading__spinner');
@@ -344,6 +430,8 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(data => {
       if (data.id) {
         window.location.href = '/cart';
+      } else if (data.message) {
+        throw new Error(data.message);
       }
     })
     .catch(error => {
@@ -352,8 +440,10 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .finally(() => {
       setTimeout(() => {
-        if (addButton) addButton.disabled = false;
-        if (addButtonText) addButtonText.textContent = 'In den Warenkorb';
+        if (addButton && currentVariant && currentVariant.available) {
+          addButton.disabled = false;
+          if (addButtonText) addButtonText.textContent = 'In den Einkaufswagen';
+        }
         if (spinner) spinner.classList.add('hidden');
       }, 1000);
     });
@@ -364,6 +454,15 @@ document.addEventListener('DOMContentLoaded', function() {
   if (checkoutBtn) {
     checkoutBtn.addEventListener('click', function(e) {
       e.preventDefault();
+      
+      // Check if current variant is available before checkout
+      const currentVariantId = variantIdInput?.value;
+      const currentVariant = variantData.find(v => v.id == currentVariantId);
+      
+      if (!currentVariant || !currentVariant.available) {
+        alert('Diese Konfiguration ist nicht verfügbar. Bitte wählen Sie eine andere Kombination.');
+        return;
+      }
       
       const formData = new FormData(form);
       
@@ -376,12 +475,13 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(data => {
         if (data.id) {
           window.location.href = '/checkout';
+        } else if (data.message) {
+          alert('Fehler beim Hinzufügen zum Warenkorb: ' + data.message);
         }
       })
       .catch(error => {
         console.error('Error:', error);
-        // Fallback: just go to checkout
-        window.location.href = '/checkout';
+        alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.');
       });
     });
   }
