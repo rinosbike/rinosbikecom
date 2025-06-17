@@ -1,3 +1,49 @@
+/* Hide navbar and footer on configurator pages */
+body:has(.bike-configurator-page) .shopify-section-header,
+body:has(.bike-configurator-page) header,
+body:has(.bike-configurator-page) .header,
+body:has(.bike-configurator-page) nav {
+  display: none !important;
+}
+
+body:has(.bike-configurator-page) .shopify-section-footer,
+body:has(.bike-configurator-page) footer,
+body:has(.bike-configurator-page) .footer {
+  display: none !important;
+}
+
+/* Fallback for browsers that don't support :has() */
+.template-page .bike-configurator-page ~ * .shopify-section-header,
+.template-page .bike-configurator-page ~ * header,
+.template-page .bike-configurator-page ~ * .header,
+.template-page .bike-configurator-page ~ * nav {
+  display: none !important;
+}
+
+.template-page .bike-configurator-page ~ * .shopify-section-footer,
+.template-page .bike-configurator-page ~ * footer,
+.template-page .bike-configurator-page ~ * .footer {
+  display: none !important;
+}
+
+/* Alternative targeting using page template class */
+.template-page[data-template*="bike-configurator"] .shopify-section-header,
+.template-page[data-template*="bike-configurator"] header,
+.template-page[data-template*="bike-configurator"] .header,
+.template-page[data-template*="bike-configurator"] nav,
+.template-page[data-template*="bike-configurator"] .shopify-section-footer,
+.template-page[data-template*="bike-configurator"] footer,
+.template-page[data-template*="bike-configurator"] .footer {
+  display: none !important;
+}
+
+/* Ensure full viewport usage */
+body:has(.bike-configurator-page),
+.template-page[data-template*="bike-configurator"] {
+  margin: 0;
+  padding: 0;
+}
+
 .bike-configurator-page {
   min-height: 100vh;
   background: #f8f8f8;
