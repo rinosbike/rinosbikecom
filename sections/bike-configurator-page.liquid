@@ -1,8 +1,6 @@
 {{ 'section-bike-configurator.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
-<script src="{{ 'bike-configurator.js' | asset_url }}" defer="defer"></script>
-
 {%- liquid
   if section.settings.product_handle != blank
     assign configurator_product = all_products[section.settings.product_handle]
@@ -13,6 +11,8 @@
   if configurator_product == null and request.design_mode
     assign configurator_product = products.first
   endif
+
+  assign product_form_id = 'product-form-' | append: section.id
 -%}
 
 {%- if configurator_product -%}
@@ -26,9 +26,26 @@
 
       <div class="configurator-container">
         
-        <!-- Product Media using Shopify's native system -->
+        <!-- Product Media -->
         <div class="configurator-media">
-          {% render 'product-media-gallery', product: configurator_product %}
+          <div class="media-container">
+            {%- for media in configurator_product.media -%}
+              {%- if media.media_type == 'image' -%}
+                <div 
+                  class="configurator-image{% if forloop.first %} active{% endif %}"
+                  data-media-id="{{ media.id }}"
+                >
+                  <img
+                    src="{{ media | image_url: width: 800 }}"
+                    alt="{{ media.alt | escape }}"
+                    width="{{ media.width }}"
+                    height="{{ media.height }}"
+                    loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                  >
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
           
           <div class="configurator-badges">
             <div class="badge">
@@ -66,8 +83,11 @@
 
           <!-- Price Display -->
           <div class="configurator-pricing">
-            <div class="price-display" id="price-{{ section.id }}">
-              {% render 'price', product: configurator_product, use_variant: true, show_badges: true %}
+            <div class="price-display">
+              <span class="price-label">Total</span>
+              <span class="price-amount">
+                {{ configurator_product.selected_or_first_available_variant.price | money }}
+              </span>
             </div>
             <div class="shipping-info">
               <span>Versand</span>
@@ -75,128 +95,101 @@
             </div>
           </div>
 
-          <!-- Variant Selection using Shopify's native system -->
+          <!-- Variant Selection -->
           <div class="configurator-variants">
-            <variant-radios
-              id="variant-radios-{{ section.id }}"
-              class="no-js-hidden"
-              data-section="{{ section.id }}"
-              data-url="{{ configurator_product.url }}"
-              data-update-url="false"
-            >
+            {%- form 'product', configurator_product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+              <input type="hidden" name="id" value="{{ configurator_product.selected_or_first_available_variant.id }}" class="product-variant-id">
+              
               {%- for option in configurator_product.options_with_values -%}
                 <div class="variant-option-group">
-                  <h3 class="option-title">
-                    {{ option.name }}
-                    {%- if option.name contains 'Color' or option.name contains 'Farbe' -%}
-                      <span class="selected-value" data-selected-color>{{ option.selected_value | default: option.values.first }}</span>
-                    {%- endif -%}
-                  </h3>
+                  <h3 class="option-title">{{ option.name }}</h3>
                   
-                  <fieldset class="js product-form__input">
-                    <legend class="form__label">{{ option.name }}</legend>
+                  {%- if option.name contains 'Color' or option.name contains 'Farbe' -%}
+                    <div class="color-options">
+                      {%- for value in option.values -%}
+                        <input
+                          type="radio"
+                          id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                          name="options[{{ option.name }}]"
+                          value="{{ value | escape }}"
+                          {% if option.selected_value == value %}checked{% endif %}
+                          data-variant-option="{{ option.position }}"
+                        >
+                        <label 
+                          for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                          class="color-swatch-label"
+                          title="{{ value }}"
+                        >
+                          <div class="color-swatch color-swatch--{{ value | handleize }}"
+                               style="background-color: {% if value contains 'Black' or value contains 'Schwarz' %}#000{% elsif value contains 'Sand' %}#D4C5A0{% elsif value contains 'White' or value contains 'Weiß' %}#fff{% elsif value contains 'Red' or value contains 'Rot' %}#dc2626{% elsif value contains 'Blue' or value contains 'Blau' %}#2563eb{% elsif value contains 'Green' or value contains 'Grün' %}#16a34a{% else %}#6b7280{% endif %}">
+                          </div>
+                          <svg class="color-check" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.5 4.5L6 12L2.5 8.5" stroke="currentColor" stroke-width="2"/>
+                          </svg>
+                        </label>
+                      {%- endfor -%}
+                    </div>
                     
-                    {%- if option.name contains 'Color' or option.name contains 'Farbe' -%}
-                      <div class="color-options">
-                        {%- for value in option.values -%}
-                          <input
-                            type="radio"
-                            id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-                            name="{{ option.name }}"
-                            value="{{ value | escape }}"
-                            form="{{ product_form_id }}"
-                            {% if option.selected_value == value %}checked{% endif %}
-                          >
-                          <label 
-                            for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-                            class="color-swatch-label"
-                            title="{{ value }}"
-                          >
-                            <div class="color-swatch color-swatch--{{ value | handleize }}"
-                                 style="background-color: {% if value contains 'Black' or value contains 'Schwarz' %}#000{% elsif value contains 'Sand' %}#D4C5A0{% elsif value contains 'White' or value contains 'Weiß' %}#fff{% elsif value contains 'Red' or value contains 'Rot' %}#dc2626{% elsif value contains 'Blue' or value contains 'Blau' %}#2563eb{% elsif value contains 'Green' or value contains 'Grün' %}#16a34a{% else %}#6b7280{% endif %}">
-                            </div>
-                            <svg class="color-check" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                              <path d="M13.5 4.5L6 12L2.5 8.5" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                          </label>
-                        {%- endfor -%}
-                      </div>
-                      
-                    {%- elsif option.name contains 'Size' or option.name contains 'Größe' -%}
-                      <div class="size-options">
-                        {%- for value in option.values -%}
-                          <input
-                            type="radio"
-                            id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-                            name="{{ option.name }}"
-                            value="{{ value | escape }}"
-                            form="{{ product_form_id }}"
-                            {% if option.selected_value == value %}checked{% endif %}
-                          >
-                          <label 
-                            for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-                            class="size-option-label"
-                          >
-                            {{ value }}
-                          </label>
-                        {%- endfor -%}
-                      </div>
-                      
-                    {%- else -%}
-                      <div class="default-options">
-                        {%- for value in option.values -%}
-                          <input
-                            type="radio"
-                            id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-                            name="{{ option.name }}"
-                            value="{{ value | escape }}"
-                            form="{{ product_form_id }}"
-                            {% if option.selected_value == value %}checked{% endif %}
-                          >
-                          <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                            {{ value }}
-                          </label>
-                        {%- endfor -%}
-                      </div>
-                    {%- endif -%}
-                  </fieldset>
+                  {%- elsif option.name contains 'Size' or option.name contains 'Größe' -%}
+                    <div class="size-options">
+                      {%- for value in option.values -%}
+                        <input
+                          type="radio"
+                          id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                          name="options[{{ option.name }}]"
+                          value="{{ value | escape }}"
+                          {% if option.selected_value == value %}checked{% endif %}
+                          data-variant-option="{{ option.position }}"
+                        >
+                        <label 
+                          for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                          class="size-option-label"
+                        >
+                          {{ value }}
+                        </label>
+                      {%- endfor -%}
+                    </div>
+                    
+                  {%- else -%}
+                    <div class="default-options">
+                      {%- for value in option.values -%}
+                        <input
+                          type="radio"
+                          id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                          name="options[{{ option.name }}]"
+                          value="{{ value | escape }}"
+                          {% if option.selected_value == value %}checked{% endif %}
+                          data-variant-option="{{ option.position }}"
+                        >
+                        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                          {{ value }}
+                        </label>
+                      {%- endfor -%}
+                    </div>
+                  {%- endif -%}
                 </div>
               {%- endfor -%}
               
-              <script type="application/json">
-                {{ configurator_product.variants | json }}
-              </script>
-            </variant-radios>
-          </div>
-
-          <!-- Add to Cart Form -->
-          <div class="configurator-actions">
-            {%- assign product_form_id = 'product-form-' | append: section.id -%}
-            <product-form class="product-form" data-hide-errors="{{ section.settings.hide_variants }}" data-section-id="{{ section.id }}">
-              {%- form 'product', configurator_product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-                <input type="hidden" name="id" value="{{ configurator_product.selected_or_first_available_variant.id }}" class="product-variant-id">
-                
-                <div class="product-form__buttons">
-                  <button
-                    type="submit"
-                    name="add"
-                    class="btn product-form__cart-submit btn--primary btn--full-width"
-                    {% if configurator_product.selected_or_first_available_variant.available == false %}disabled{% endif %}
-                  >
-                    <span>
-                      {%- if configurator_product.selected_or_first_available_variant.available -%}
-                        In den Einkaufswagen
-                      {%- else -%}
-                        {{ 'products.product.sold_out' | t }}
-                      {%- endif -%}
-                    </span>
-                    <div class="loading__spinner hidden">
-                      {% render 'icon-spinner' %}
-                    </div>
-                  </button>
-                </div>
-              {%- endform -%}
-            </product-form>
+              <div class="product-form__buttons">
+                <button
+                  type="submit"
+                  name="add"
+                  class="btn product-form__cart-submit btn--primary btn--full-width"
+                  {% if configurator_product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                >
+                  <span>
+                    {%- if configurator_product.selected_or_first_available_variant.available -%}
+                      In den Einkaufswagen
+                    {%- else -%}
+                      {{ 'products.product.sold_out' | t }}
+                    {%- endif -%}
+                  </span>
+                  <div class="loading__spinner hidden">
+                    {% render 'icon-spinner' %}
+                  </div>
+                </button>
+              </div>
+            {%- endform -%}
           </div>
 
           <!-- Delivery Info -->
@@ -221,6 +214,11 @@
     </div>
   </section>
 
+  <!-- Variant data for JavaScript -->
+  <script type="application/json" id="product-json-{{ section.id }}">
+    {{ configurator_product.variants | json }}
+  </script>
+
 {%- else -%}
   <section class="bike-configurator-page">
     <div class="page-width">
@@ -231,6 +229,112 @@
     </div>
   </section>
 {%- endif -%}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('{{ product_form_id }}');
+  if (!form) return;
+  
+  const variantData = JSON.parse(document.getElementById('product-json-{{ section.id }}').textContent);
+  const variantIdInput = form.querySelector('.product-variant-id');
+  const priceDisplay = form.querySelector('.price-amount');
+  const addButton = form.querySelector('[name="add"]');
+  const addButtonText = addButton?.querySelector('span');
+  
+  function updateVariant() {
+    // Get selected options
+    const selectedOptions = [];
+    const optionInputs = form.querySelectorAll('[data-variant-option]');
+    
+    optionInputs.forEach(input => {
+      if (input.checked) {
+        const optionPosition = parseInt(input.dataset.variantOption);
+        selectedOptions[optionPosition - 1] = input.value;
+      }
+    });
+    
+    // Find matching variant
+    const selectedVariant = variantData.find(variant => {
+      return variant.options.every((option, index) => option === selectedOptions[index]);
+    });
+    
+    if (selectedVariant) {
+      // Update variant ID
+      if (variantIdInput) {
+        variantIdInput.value = selectedVariant.id;
+      }
+      
+      // Update price
+      if (priceDisplay) {
+        const price = new Intl.NumberFormat('de-DE', {
+          style: 'currency',
+          currency: 'EUR'
+        }).format(selectedVariant.price / 100);
+        priceDisplay.textContent = price;
+      }
+      
+      // Update availability
+      if (addButton && addButtonText) {
+        if (selectedVariant.available) {
+          addButton.disabled = false;
+          addButtonText.textContent = 'In den Einkaufswagen';
+        } else {
+          addButton.disabled = true;
+          addButtonText.textContent = 'Ausverkauft';
+        }
+      }
+      
+      // Update image if variant has featured media
+      if (selectedVariant.featured_media) {
+        const allImages = document.querySelectorAll('.configurator-image');
+        allImages.forEach(img => img.classList.remove('active'));
+        
+        const variantImage = document.querySelector(`[data-media-id="${selectedVariant.featured_media.id}"]`);
+        if (variantImage) {
+          variantImage.classList.add('active');
+        }
+      }
+    }
+  }
+  
+  // Listen for option changes
+  form.addEventListener('change', updateVariant);
+  
+  // Handle form submission
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(form);
+    const spinner = form.querySelector('.loading__spinner');
+    
+    if (addButton) addButton.disabled = true;
+    if (addButtonText) addButtonText.textContent = 'Wird hinzugefügt...';
+    if (spinner) spinner.classList.remove('hidden');
+    
+    fetch('/cart/add.js', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.id) {
+        window.location.href = '/cart';
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      if (addButtonText) addButtonText.textContent = 'Fehler - Erneut versuchen';
+    })
+    .finally(() => {
+      setTimeout(() => {
+        if (addButton) addButton.disabled = false;
+        if (addButtonText) addButtonText.textContent = 'In den Einkaufswagen';
+        if (spinner) spinner.classList.add('hidden');
+      }, 1000);
+    });
+  });
+});
+</script>
 
 {% schema %}
 {
