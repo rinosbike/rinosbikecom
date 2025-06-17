@@ -1,214 +1,4 @@
-class BikeConfigurator extends HTMLElement {
-  constructor() {
-    super();
-    this.variants = JSON.parse(this.querySelector('[type="application/json"]').textContent);
-    this.currentVariant = this.variants.find(variant => variant.available) || this.variants[0];
-    
-    this.init();
-  }
-
-  init() {
-    this.setupEventListeners();
-    this.updateDisplay();
-  }
-
-  setupEventListeners() {
-    // Listen for variant changes
-    this.addEventListener('change', this.onVariantChange.bind(this));
-    
-    // Listen for form submission
-    const form = this.querySelector('form');
-    if (form) {
-      form.addEventListener('submit', this.onSubmitHandler.bind(this));
-    }
-  }
-
-  onVariantChange(event) {
-    this.updateOptions();
-    this.updateVariant();
-    this.updateDisplay();
-  }
-
-  updateOptions() {
-    const fieldsets = Array.from(this.querySelectorAll('fieldset'));
-    const values = fieldsets.map((fieldset) => {
-      return Array.from(fieldset.querySelectorAll('input')).find((radio) => radio.checked)?.value;
-    });
-
-    this.currentVariant = this.variants.find((variant) => {
-      return !variant.options.map((option, index) => {
-        return values[index] === option;
-      }).includes(false);
-    });
-
-    if (!this.currentVariant) {
-      this.currentVariant = this.variants[0];
-    }
-  }
-
-  updateVariant() {
-    // Update hidden variant ID input
-    const variantIdInput = this.querySelector('.product-variant-id');
-    if (variantIdInput) {
-      variantIdInput.value = this.currentVariant.id;
-    }
-
-    // Update URL without page reload
-    if (this.currentVariant) {
-      const url = new URL(window.location);
-      url.searchParams.set('variant', this.currentVariant.id);
-      window.history.replaceState({}, '', url);
-    }
-  }
-
-  updateDisplay() {
-    this.updatePrice();
-    this.updateProductAvailability();
-    this.updateMedia();
-    this.updateSelectedColorText();
-  }
-
-  updatePrice() {
-    const priceDisplay = this.querySelector('[data-price-display]');
-    if (priceDisplay && this.currentVariant) {
-      const price = new Intl.NumberFormat('de-DE', {
-        style: 'currency',
-        currency: 'EUR'
-      }).format(this.currentVariant.price / 100);
-      
-      priceDisplay.textContent = price;
-    }
-  }
-
-  updateProductAvailability() {
-    const addButton = this.querySelector('[name="add"]');
-    const addButtonText = addButton?.querySelector('span');
-
-    if (!addButton) return;
-
-    if (this.currentVariant) {
-      if (this.currentVariant.available) {
-        addButton.disabled = false;
-        if (addButtonText) {
-          addButtonText.textContent = 'In den Einkaufswagen';
-        }
-      } else {
-        addButton.disabled = true;
-        if (addButtonText) {
-          addButtonText.textContent = 'Ausverkauft';
-        }
-      }
-    }
-  }
-
-  updateMedia() {
-    if (!this.currentVariant) return;
-
-    const mediaContainer = document.querySelector('.media-container');
-    if (!mediaContainer) return;
-
-    const allImages = mediaContainer.querySelectorAll('.configurator-image');
-    
-    // Hide all images first
-    allImages.forEach(img => {
-      img.classList.remove('active');
-    });
-
-    let activeImage = null;
-
-    // Method 1: Try to find image by variant ID (most reliable)
-    if (this.currentVariant.featured_media) {
-      activeImage = mediaContainer.querySelector(`[data-media-id="${this.currentVariant.featured_media.id}"]`);
-    }
-
-    // Method 2: Try to find image by variant ID match
-    if (!activeImage) {
-      activeImage = mediaContainer.querySelector(`[data-variant-id="${this.currentVariant.id}"]`);
-    }
-
-    // Method 3: Fallback to first non-fallback image
-    if (!activeImage) {
-      activeImage = mediaContainer.querySelector('.configurator-image:not([data-fallback])');
-    }
-
-    // Method 4: Ultimate fallback to first image
-    if (!activeImage) {
-      activeImage = mediaContainer.querySelector('.configurator-image');
-    }
-
-    // Show the selected image
-    if (activeImage) {
-      activeImage.classList.add('active');
-    }
-  }
-
-  updateSelectedColorText() {
-    const colorDisplay = this.querySelector('[data-selected-color]');
-    const colorInput = this.querySelector('input[data-color]:checked');
-    
-    if (colorDisplay && colorInput) {
-      colorDisplay.textContent = colorInput.value;
-    }
-  }
-
-  onSubmitHandler(evt) {
-    evt.preventDefault();
-    
-    const form = evt.target;
-    const formData = new FormData(form);
-    const addButton = form.querySelector('[name="add"]');
-    const addButtonText = addButton?.querySelector('span');
-    const spinner = form.querySelector('.loading__spinner');
-
-    // Show loading state
-    if (addButton) addButton.disabled = true;
-    if (addButtonText) addButtonText.textContent = 'Wird hinzugefügt...';
-    if (spinner) spinner.classList.remove('hidden');
-
-    fetch('/cart/add.js', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-      // Success - redirect to cart or show success message
-      if (data.id) {
-        // Trigger cart drawer or redirect
-        if (typeof window.cartDrawer !== 'undefined') {
-          window.cartDrawer.open();
-        } else {
-          window.location.href = '/cart';
-        }
-      }
-    })
-    .catch(error => {
-      console.error('Error adding to cart:', error);
-      // Show error message
-      if (addButtonText) {
-        addButtonText.textContent = 'Fehler - Erneut versuchen';
-      }
-    })
-    .finally(() => {
-      // Reset button state
-      setTimeout(() => {
-        if (addButton && this.currentVariant?.available) {
-          addButton.disabled = false;
-        }
-        if (addButtonText && this.currentVariant?.available) {
-          addButtonText.textContent = 'In den Einkaufswagen';
-        }
-        if (spinner) {
-          spinner.classList.add('hidden');
-        }
-      }, 1000);
-    });
-  }
-}
-
-// Register the custom element
-customElements.define('bike-configurator', BikeConfigurator);
-
-// Also handle the variant-radios component from Shopify's system
+// Use Shopify's native variant system - no custom element needed
 class VariantRadios extends HTMLElement {
   constructor() {
     super();
@@ -258,6 +48,7 @@ class VariantRadios extends HTMLElement {
     if (!this.currentVariant) return;
     if (!this.currentVariant.featured_media) return;
 
+    // Use Shopify's native media gallery system
     const mediaGalleries = document.querySelectorAll(`[id^="MediaGallery-${this.dataset.section}"]`);
     mediaGalleries.forEach((mediaGallery) =>
       mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true)
@@ -267,15 +58,6 @@ class VariantRadios extends HTMLElement {
     if (!modalContent) return;
     const newMediaModal = modalContent.querySelector(`[data-media-id="${this.currentVariant.featured_media.id}"]`);
     if (newMediaModal) modalContent.prepend(newMediaModal);
-
-    // Update configurator images
-    const configuratorImages = document.querySelectorAll('.configurator-image');
-    configuratorImages.forEach(img => img.classList.remove('active'));
-    
-    const activeImage = document.querySelector(`[data-media-id="${this.currentVariant.featured_media.id}"]`);
-    if (activeImage) {
-      activeImage.classList.add('active');
-    }
   }
 
   updateURL() {
@@ -287,8 +69,10 @@ class VariantRadios extends HTMLElement {
     const productForms = document.querySelectorAll(`#product-form-${this.dataset.section}, #product-form-installment-${this.dataset.section}`);
     productForms.forEach((productForm) => {
       const input = productForm.querySelector('input[name="id"]');
-      input.value = this.currentVariant.id;
-      input.dispatchEvent(new Event('change', { bubbles: true }));
+      if (input) {
+        input.value = this.currentVariant.id;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      }
     });
   }
 
@@ -371,14 +155,17 @@ class VariantRadios extends HTMLElement {
 
         this.toggleAddButton(!this.currentVariant.available, window.variantStrings.soldOut);
 
-        publish(PUB_SUB_EVENTS.variantChange, {
-          data: {
-            sectionId: this.dataset.section,
-            html,
-            variant: this.currentVariant,
-            url: `${this.dataset.url}?variant=${requestedVariantId}`
-          }
-        });
+        // Publish event for other components
+        if (typeof window.publish === 'function') {
+          window.publish('variantChange', {
+            data: {
+              sectionId: this.dataset.section,
+              html,
+              variant: this.currentVariant,
+              url: `${this.dataset.url}?variant=${requestedVariantId}`
+            }
+          });
+        }
       });
   }
 
@@ -395,19 +182,17 @@ class VariantRadios extends HTMLElement {
       if (text) addButtonText.textContent = text;
     } else {
       addButton.removeAttribute('disabled');
-      addButtonText.textContent = window.variantStrings.addToCart;
+      addButtonText.textContent = window.variantStrings?.addToCart || 'In den Einkaufswagen';
     }
-
-    if (!modifyClass) return;
   }
 
   setUnavailable() {
     const button = document.getElementById(`product-form-${this.dataset.section}`);
-    const addButton = button.querySelector('[name="add"]');
-    const addButtonText = button.querySelector('[name="add"] > span');
+    const addButton = button?.querySelector('[name="add"]');
+    const addButtonText = button?.querySelector('[name="add"] > span');
     const price = document.getElementById(`price-${this.dataset.section}`);
     if (!addButton) return;
-    addButtonText.textContent = window.variantStrings.unavailable;
+    addButtonText.textContent = window.variantStrings?.unavailable || 'Nicht verfügbar';
     if (price) price.classList.add('visibility-hidden');
   }
 
@@ -431,4 +216,31 @@ class VariantRadios extends HTMLElement {
   }
 }
 
-customElements.define('variant-radios', VariantRadios); 
+// Only define if not already defined
+if (!customElements.get('variant-radios')) {
+  customElements.define('variant-radios', VariantRadios);
+}
+
+// Handle color display update
+document.addEventListener('DOMContentLoaded', function() {
+  const colorDisplays = document.querySelectorAll('[data-selected-color]');
+  
+  colorDisplays.forEach(display => {
+    const updateColorDisplay = () => {
+      const checkedColorInput = document.querySelector('input[name*="Color"]:checked, input[name*="Farbe"]:checked');
+      if (checkedColorInput && display) {
+        display.textContent = checkedColorInput.value;
+      }
+    };
+    
+    // Update on page load
+    updateColorDisplay();
+    
+    // Update when color changes
+    document.addEventListener('change', (e) => {
+      if (e.target.name && (e.target.name.includes('Color') || e.target.name.includes('Farbe'))) {
+        updateColorDisplay();
+      }
+    });
+  });
+}); 

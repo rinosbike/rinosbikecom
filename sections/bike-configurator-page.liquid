@@ -26,65 +26,9 @@
 
       <div class="configurator-container">
         
-        <!-- Product Media -->
+        <!-- Product Media using Shopify's native system -->
         <div class="configurator-media">
-          <div class="media-container">
-            {%- if configurator_product.selected_or_first_available_variant.featured_media -%}
-              {%- assign featured_media = configurator_product.selected_or_first_available_variant.featured_media -%}
-              <div 
-                class="configurator-image active"
-                data-media-id="{{ featured_media.id }}"
-                data-variant-id="{{ configurator_product.selected_or_first_available_variant.id }}"
-              >
-                <img
-                  src="{{ featured_media | image_url: width: 800 }}"
-                  alt="{{ featured_media.alt | escape }}"
-                  width="{{ featured_media.width }}"
-                  height="{{ featured_media.height }}"
-                  loading="eager"
-                >
-              </div>
-            {%- endif -%}
-            
-            {%- comment -%} Render all variant images for switching {%- endcomment -%}
-            {%- for variant in configurator_product.variants -%}
-              {%- if variant.featured_media and variant.featured_media.id != configurator_product.selected_or_first_available_variant.featured_media.id -%}
-                <div 
-                  class="configurator-image"
-                  data-media-id="{{ variant.featured_media.id }}"
-                  data-variant-id="{{ variant.id }}"
-                >
-                  <img
-                    src="{{ variant.featured_media | image_url: width: 800 }}"
-                    alt="{{ variant.featured_media.alt | escape }}"
-                    width="{{ variant.featured_media.width }}"
-                    height="{{ variant.featured_media.height }}"
-                    loading="lazy"
-                  >
-                </div>
-              {%- endif -%}
-            {%- endfor -%}
-            
-            {%- comment -%} Fallback: Render other product images not assigned to variants {%- endcomment -%}
-            {%- assign variant_media_ids = configurator_product.variants | map: 'featured_media' | map: 'id' -%}
-            {%- for media in configurator_product.media -%}
-              {%- if media.media_type == 'image' and variant_media_ids contains media.id == false -%}
-                <div 
-                  class="configurator-image"
-                  data-media-id="{{ media.id }}"
-                  data-fallback="true"
-                >
-                  <img
-                    src="{{ media | image_url: width: 800 }}"
-                    alt="{{ media.alt | escape }}"
-                    width="{{ media.width }}"
-                    height="{{ media.height }}"
-                    loading="lazy"
-                  >
-                </div>
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
+          {% render 'product-media-gallery', product: configurator_product %}
           
           <div class="configurator-badges">
             <div class="badge">
@@ -114,59 +58,54 @@
 
         <!-- Configuration Panel -->
         <div class="configurator-panel">
-          <bike-configurator 
-            data-product-id="{{ configurator_product.id }}"
-            data-product-handle="{{ configurator_product.handle }}"
-            data-section="{{ section.id }}"
-          >
-            
-            <!-- Product Title -->
-            <div class="configurator-product-title">
-              <h2>{{ configurator_product.title }}</h2>
-            </div>
+          
+          <!-- Product Title -->
+          <div class="configurator-product-title">
+            <h2>{{ configurator_product.title }}</h2>
+          </div>
 
-            <!-- Price Display -->
-            <div class="configurator-pricing">
-              <div class="price-display">
-                <span class="price-label">Total</span>
-                <span class="price-amount" data-price-display>
-                  {{ configurator_product.selected_or_first_available_variant.price | money }}
-                </span>
-              </div>
-              <div class="shipping-info">
-                <span>Versand</span>
-                <span>Beim Checkout berechnet</span>
-              </div>
+          <!-- Price Display -->
+          <div class="configurator-pricing">
+            <div class="price-display" id="price-{{ section.id }}">
+              {% render 'price', product: configurator_product, use_variant: true, show_badges: true %}
             </div>
+            <div class="shipping-info">
+              <span>Versand</span>
+              <span>Beim Checkout berechnet</span>
+            </div>
+          </div>
 
-            <!-- Variant Selection using Shopify's native system -->
-            <div class="configurator-variants">
-              <variant-radios
-                id="variant-radios-{{ section.id }}"
-                class="no-js-hidden"
-                data-section="{{ section.id }}"
-                data-url="{{ configurator_product.url }}"
-                data-update-url="false"
-              >
-                {%- for option in configurator_product.options_with_values -%}
-                  <div class="variant-option-group">
-                    <h3 class="option-title">
-                      {{ option.name }}
-                      {%- if option.name contains 'Color' or option.name contains 'Farbe' -%}
-                        <span class="selected-value" data-selected-color>{{ option.selected_value | default: option.values.first }}</span>
-                      {%- endif -%}
-                    </h3>
+          <!-- Variant Selection using Shopify's native system -->
+          <div class="configurator-variants">
+            <variant-radios
+              id="variant-radios-{{ section.id }}"
+              class="no-js-hidden"
+              data-section="{{ section.id }}"
+              data-url="{{ configurator_product.url }}"
+              data-update-url="false"
+            >
+              {%- for option in configurator_product.options_with_values -%}
+                <div class="variant-option-group">
+                  <h3 class="option-title">
+                    {{ option.name }}
+                    {%- if option.name contains 'Color' or option.name contains 'Farbe' -%}
+                      <span class="selected-value" data-selected-color>{{ option.selected_value | default: option.values.first }}</span>
+                    {%- endif -%}
+                  </h3>
+                  
+                  <fieldset class="js product-form__input">
+                    <legend class="form__label">{{ option.name }}</legend>
                     
                     {%- if option.name contains 'Color' or option.name contains 'Farbe' -%}
-                      <fieldset class="color-options">
+                      <div class="color-options">
                         {%- for value in option.values -%}
                           <input
                             type="radio"
                             id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                             name="{{ option.name }}"
                             value="{{ value | escape }}"
+                            form="{{ product_form_id }}"
                             {% if option.selected_value == value %}checked{% endif %}
-                            data-color="{{ value | downcase }}"
                           >
                           <label 
                             for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
@@ -181,16 +120,17 @@
                             </svg>
                           </label>
                         {%- endfor -%}
-                      </fieldset>
+                      </div>
                       
                     {%- elsif option.name contains 'Size' or option.name contains 'Größe' -%}
-                      <fieldset class="size-options">
+                      <div class="size-options">
                         {%- for value in option.values -%}
                           <input
                             type="radio"
                             id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                             name="{{ option.name }}"
                             value="{{ value | escape }}"
+                            form="{{ product_form_id }}"
                             {% if option.selected_value == value %}checked{% endif %}
                           >
                           <label 
@@ -200,80 +140,82 @@
                             {{ value }}
                           </label>
                         {%- endfor -%}
-                      </fieldset>
+                      </div>
                       
                     {%- else -%}
-                      <fieldset class="default-options">
+                      <div class="default-options">
                         {%- for value in option.values -%}
                           <input
                             type="radio"
                             id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                             name="{{ option.name }}"
                             value="{{ value | escape }}"
+                            form="{{ product_form_id }}"
                             {% if option.selected_value == value %}checked{% endif %}
                           >
                           <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                             {{ value }}
                           </label>
                         {%- endfor -%}
-                      </fieldset>
-                    {%- endif -%}
-                  </div>
-                {%- endfor -%}
-                
-                <script type="application/json">
-                  {{ configurator_product.variants | json }}
-                </script>
-              </variant-radios>
-            </div>
-
-            <!-- Add to Cart Form -->
-            <div class="configurator-actions">
-              <product-form class="product-form">
-                {%- form 'product', configurator_product, id: 'product-form-configurator', class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-                  <input type="hidden" name="id" value="{{ configurator_product.selected_or_first_available_variant.id }}" class="product-variant-id">
-                  
-                  <div class="product-form__buttons">
-                    <button
-                      type="submit"
-                      name="add"
-                      class="btn product-form__cart-submit btn--primary btn--full-width"
-                      {% if configurator_product.selected_or_first_available_variant.available == false %}disabled{% endif %}
-                    >
-                      <span>
-                        {%- if configurator_product.selected_or_first_available_variant.available -%}
-                          In den Einkaufswagen
-                        {%- else -%}
-                          {{ 'products.product.sold_out' | t }}
-                        {%- endif -%}
-                      </span>
-                      <div class="loading__spinner hidden">
-                        {% render 'icon-spinner' %}
                       </div>
-                    </button>
-                  </div>
-                {%- endform -%}
-              </product-form>
-            </div>
-
-            <!-- Delivery Info -->
-            <div class="configurator-delivery">
-              <div class="delivery-info">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <rect x="2" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
-                  <path d="M8 3V1M12 3V1M2 7H18" stroke="currentColor" stroke-width="1.5"/>
-                </svg>
-                <div>
-                  <span class="delivery-label">Voraussichtliche Lieferung</span>
-                  <span class="delivery-date">August 2025</span>
+                    {%- endif -%}
+                  </fieldset>
                 </div>
-              </div>
-              <p class="payment-info">
-                Bezahle in 3 zinsfreien Teilzahlungen. Mit Käuferschutz* von Klarna
-              </p>
-            </div>
+              {%- endfor -%}
+              
+              <script type="application/json">
+                {{ configurator_product.variants | json }}
+              </script>
+            </variant-radios>
+          </div>
 
-          </bike-configurator>
+          <!-- Add to Cart Form -->
+          <div class="configurator-actions">
+            {%- assign product_form_id = 'product-form-' | append: section.id -%}
+            <product-form class="product-form" data-hide-errors="{{ section.settings.hide_variants }}" data-section-id="{{ section.id }}">
+              {%- form 'product', configurator_product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                <input type="hidden" name="id" value="{{ configurator_product.selected_or_first_available_variant.id }}" class="product-variant-id">
+                
+                <div class="product-form__buttons">
+                  <button
+                    type="submit"
+                    name="add"
+                    class="btn product-form__cart-submit btn--primary btn--full-width"
+                    {% if configurator_product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                  >
+                    <span>
+                      {%- if configurator_product.selected_or_first_available_variant.available -%}
+                        In den Einkaufswagen
+                      {%- else -%}
+                        {{ 'products.product.sold_out' | t }}
+                      {%- endif -%}
+                    </span>
+                    <div class="loading__spinner hidden">
+                      {% render 'icon-spinner' %}
+                    </div>
+                  </button>
+                </div>
+              {%- endform -%}
+            </product-form>
+          </div>
+
+          <!-- Delivery Info -->
+          <div class="configurator-delivery">
+            <div class="delivery-info">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect x="2" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 3V1M12 3V1M2 7H18" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+              <div>
+                <span class="delivery-label">Voraussichtliche Lieferung</span>
+                <span class="delivery-date">August 2025</span>
+              </div>
+            </div>
+            <p class="payment-info">
+              Bezahle in 3 zinsfreien Teilzahlungen. Mit Käuferschutz* von Klarna
+            </p>
+          </div>
+
         </div>
       </div>
     </div>
