@@ -14,14 +14,7 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "add_ons": {
-          "type": "add_ons",
-          "settings": {
-            "addon_products": ""
+            "picker_type": "button"
           }
         },
         "buy_buttons": {
@@ -39,8 +32,7 @@
       "block_order": [
         "title",
         "price",
-        "variant_picker", 
-        "add_ons",
+        "variant_picker",
         "buy_buttons",
         "delivery_info"
       ],

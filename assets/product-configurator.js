@@ -4,35 +4,15 @@ class ProductConfigurator extends HTMLElement {
     
     this.productData = JSON.parse(document.querySelector('[data-product-json]').textContent);
     this.currentVariant = this.productData.selected_or_first_available_variant;
-    this.selectedAddons = [];
-    this.basePrice = this.currentVariant.price;
+    this.selectedOptions = [...this.currentVariant.options];
     
     this.init();
   }
 
   init() {
-    this.setupVariantSelection();
     this.setupColorSelection();
-    this.setupAddonSelection();
+    this.setupSizeSelection();
     this.updateTotalPrice();
-  }
-
-  setupVariantSelection() {
-    const versionOptions = this.querySelectorAll('.product-configurator__version-option');
-    
-    versionOptions.forEach(option => {
-      option.addEventListener('click', (e) => {
-        versionOptions.forEach(opt => opt.classList.remove('selected'));
-        option.classList.add('selected');
-        
-        const optionValue = option.dataset.optionValue;
-        const optionPosition = parseInt(option.dataset.optionPosition);
-        
-        this.updateVariant(optionPosition, optionValue);
-        this.updateProductImage();
-        this.updateTotalPrice();
-      });
-    });
   }
 
   setupColorSelection() {
@@ -42,53 +22,52 @@ class ProductConfigurator extends HTMLElement {
       option.addEventListener('click', (e) => {
         colorOptions.forEach(opt => {
           opt.classList.remove('selected');
-          opt.querySelector('.color-option__check').style.opacity = '0';
+          const check = opt.querySelector('.color-option__check');
+          if (check) check.style.opacity = '0';
         });
         
         option.classList.add('selected');
-        option.querySelector('.color-option__check').style.opacity = '1';
+        const check = option.querySelector('.color-option__check');
+        if (check) check.style.opacity = '1';
+        
+        const optionValue = option.dataset.optionValue;
+        const optionPosition = parseInt(option.dataset.optionPosition);
+        const colorName = option.dataset.color;
+        
+        this.updateVariant(optionPosition, optionValue);
+        this.updateProductImageByColor(colorName);
+        this.updateSelectedColorDisplay(optionValue);
+        this.updateTotalPrice();
+      });
+    });
+  }
+
+  setupSizeSelection() {
+    const sizeOptions = this.querySelectorAll('.product-configurator__size-option');
+    
+    sizeOptions.forEach(option => {
+      option.addEventListener('click', (e) => {
+        sizeOptions.forEach(opt => opt.classList.remove('selected'));
+        option.classList.add('selected');
         
         const optionValue = option.dataset.optionValue;
         const optionPosition = parseInt(option.dataset.optionPosition);
         
         this.updateVariant(optionPosition, optionValue);
-        this.updateProductImage();
-        this.updateSelectedColorDisplay(optionValue);
-      });
-    });
-  }
-
-  setupAddonSelection() {
-    const addonOptions = this.querySelectorAll('.addon-option');
-    
-    addonOptions.forEach(option => {
-      option.addEventListener('click', (e) => {
-        const section = option.closest('.addon-section');
-        const sectionOptions = section.querySelectorAll('.addon-option');
-        
-        sectionOptions.forEach(opt => opt.classList.remove('selected'));
-        option.classList.add('selected');
-        
-        const addonPrice = parseInt(option.dataset.addonPrice) || 0;
-        const sectionIndex = Array.from(this.querySelectorAll('.addon-section')).indexOf(section);
-        
-        this.selectedAddons[sectionIndex] = addonPrice;
         this.updateTotalPrice();
       });
     });
   }
 
   updateVariant(optionPosition, optionValue) {
-    const selectedOptions = [...this.currentVariant.options];
-    selectedOptions[optionPosition - 1] = optionValue;
+    this.selectedOptions[optionPosition - 1] = optionValue;
     
     const matchingVariant = this.productData.variants.find(variant => {
-      return variant.options.every((option, index) => option === selectedOptions[index]);
+      return variant.options.every((option, index) => option === this.selectedOptions[index]);
     });
     
     if (matchingVariant && matchingVariant.available) {
       this.currentVariant = matchingVariant;
-      this.basePrice = matchingVariant.price;
       
       const variantInput = this.querySelector('.product-variant-id');
       if (variantInput) {
@@ -97,16 +76,36 @@ class ProductConfigurator extends HTMLElement {
     }
   }
 
-  updateProductImage() {
+  updateProductImageByColor(colorName) {
     const images = this.querySelectorAll('.product-configurator__image');
     
     images.forEach(img => img.classList.remove('active'));
     
-    const matchingImage = this.querySelector(`[data-variant-id="${this.currentVariant.id}"]`);
+    // First try to find image with matching color in data-color attribute
+    let matchingImage = this.querySelector(`[data-color="${colorName}"]`);
+    
+    // If not found, try to find by variant ID
+    if (!matchingImage) {
+      matchingImage = this.querySelector(`[data-variant-id="${this.currentVariant.id}"]`);
+    }
+    
+    // If still not found, try to find by checking if alt text contains the color name
+    if (!matchingImage) {
+      images.forEach(img => {
+        const altText = img.querySelector('img')?.alt?.toLowerCase() || '';
+        if (altText.includes(colorName.toLowerCase())) {
+          matchingImage = img;
+        }
+      });
+    }
+    
+    // Fallback to first image
+    if (!matchingImage) {
+      matchingImage = images[0];
+    }
+    
     if (matchingImage) {
       matchingImage.classList.add('active');
-    } else {
-      images[0]?.classList.add('active');
     }
   }
 
@@ -118,8 +117,7 @@ class ProductConfigurator extends HTMLElement {
   }
 
   updateTotalPrice() {
-    const addonTotal = this.selectedAddons.reduce((sum, price) => sum + (price || 0), 0);
-    const totalPrice = this.basePrice + (addonTotal * 100);
+    const totalPrice = this.currentVariant.price;
     
     const totalPriceElement = this.querySelector('[data-total-price]');
     if (totalPriceElement) {
@@ -154,12 +152,15 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(data => {
         if (data.status === 422) {
           console.error('Error adding to cart:', data.description);
+          alert('Error adding to cart: ' + data.description);
         } else {
+          // Redirect to cart or show success message
           window.location.href = '/cart';
         }
       })
       .catch(error => {
         console.error('Error:', error);
+        alert('An error occurred while adding to cart');
       });
     });
   }

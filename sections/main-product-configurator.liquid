@@ -1,6 +1,5 @@
 {{ 'section-product-configurator.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
-{{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'product-configurator.js' | asset_url }}" defer="defer"></script>
 
@@ -10,12 +9,13 @@
     <div class="product-configurator__media">
       <div class="product-configurator__image-container">
         {%- for media in product.media -%}
-          <div 
-            class="product-configurator__image{% if forloop.first %} active{% endif %}" 
-            data-media-id="{{ media.id }}"
-            data-variant-id="{{ media.alt | split: 'variant-' | last }}"
-          >
-            {%- if media.media_type == 'image' -%}
+          {%- if media.media_type == 'image' -%}
+            <div 
+              class="product-configurator__image{% if forloop.first %} active{% endif %}" 
+              data-media-id="{{ media.id }}"
+              data-variant-id="{{ media.alt | split: 'variant-' | last }}"
+              data-color="{{ media.alt | split: 'color-' | last | split: '-' | first | downcase }}"
+            >
               <img
                 src="{{ media | image_url: width: 800 }}"
                 alt="{{ media.alt | escape }}"
@@ -23,8 +23,8 @@
                 height="{{ media.height }}"
                 loading="lazy"
               >
-            {%- endif -%}
-          </div>
+            </div>
+          {%- endif -%}
         {%- endfor -%}
       </div>
       
@@ -66,7 +66,6 @@
             {%- when 'title' -%}
               <div class="product-configurator__title" {{ block.shopify_attributes }}>
                 <h1>{{ product.title | escape }}</h1>
-                <button class="product-configurator__change-btn">Ändern</button>
               </div>
 
             {%- when 'price' -%}
@@ -89,50 +88,23 @@
                   <div class="product-configurator__option-group">
                     <h3 class="product-configurator__option-title">
                       {{ option.name }}
-                      {%- if option.name == 'Color' -%}
+                      {%- if option.name contains 'Color' or option.name contains 'Farbe' -%}
                         <span class="product-configurator__selected-option" data-selected-{{ option.name | handleize }}>
                           {{ option.selected_value | default: option.values.first }}
                         </span>
                       {%- endif -%}
                     </h3>
                     
-                    {%- if option.name == 'Version' or option.name == 'Model' -%}
-                      <div class="product-configurator__version-options">
-                        {%- for value in option.values -%}
-                          {%- assign variant_for_value = product.variants | where: option.name, value | first -%}
-                          <div class="product-configurator__version-option{% if forloop.first %} selected{% endif %}" 
-                               data-option-value="{{ value | escape }}"
-                               data-option-position="{{ option.position }}"
-                               data-variant-price="{{ variant_for_value.price | money }}">
-                            <div class="version-option__content">
-                              <div class="version-option__header">
-                                <span class="version-option__name">{{ value }}</span>
-                                {%- if value contains 'Performance' or value contains 'Pro' -%}
-                                  <span class="version-option__badge">Beliebt</span>
-                                {%- endif -%}
-                                <span class="version-option__price">{{ variant_for_value.price | money }}</span>
-                              </div>
-                              <p class="version-option__description">
-                                {%- if value contains 'Basic' -%}
-                                  Nur die wichtigste integrierte Technologie enthalten. Nur in Schwarz erhältlich.
-                                {%- elsif value contains 'Performance' -%}
-                                  Erreiche mehr mit unserer AdaptivePower-Technologie im Motor, kabellosem Handy-Laden im Cockpit und einer LED-Akkuanzeige.
-                                {%- endif -%}
-                              </p>
-                            </div>
-                          </div>
-                        {%- endfor -%}
-                      </div>
-                      
-                    {%- elsif option.name == 'Color' or option.name == 'Farbe' -%}
+                    {%- if option.name contains 'Color' or option.name contains 'Farbe' -%}
                       <div class="product-configurator__color-options">
                         {%- for value in option.values -%}
                           <div class="product-configurator__color-option{% if forloop.first %} selected{% endif %}"
                                data-option-value="{{ value | escape }}"
                                data-option-position="{{ option.position }}"
+                               data-color="{{ value | downcase }}"
                                title="{{ value }}">
                             <div class="color-swatch color-swatch--{{ value | handleize }}"
-                                 style="background-color: {% if value == 'Black' or value == 'Schwarz' %}#000{% elsif value == 'Sand' %}#D4C5A0{% elsif value == 'White' or value == 'Weiß' %}#fff{% else %}#ccc{% endif %}">
+                                 style="background-color: {% if value contains 'Black' or value contains 'Schwarz' %}#000{% elsif value contains 'Sand' %}#D4C5A0{% elsif value contains 'White' or value contains 'Weiß' %}#fff{% elsif value contains 'Red' or value contains 'Rot' %}#dc2626{% elsif value contains 'Blue' or value contains 'Blau' %}#2563eb{% elsif value contains 'Green' or value contains 'Grün' %}#16a34a{% else %}#6b7280{% endif %}">
                             </div>
                             {%- if forloop.first -%}
                               <svg class="color-option__check" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -142,37 +114,20 @@
                           </div>
                         {%- endfor -%}
                       </div>
+                      
+                    {%- elsif option.name contains 'Size' or option.name contains 'Größe' -%}
+                      <div class="product-configurator__size-options">
+                        {%- for value in option.values -%}
+                          <div class="product-configurator__size-option{% if forloop.first %} selected{% endif %}"
+                               data-option-value="{{ value | escape }}"
+                               data-option-position="{{ option.position }}">
+                            <span class="size-label">{{ value }}</span>
+                          </div>
+                        {%- endfor -%}
+                      </div>
                     {%- endif -%}
                   </div>
                 {%- endfor -%}
-              </div>
-
-            {%- when 'add_ons' -%}
-              <div class="product-configurator__addons" {{ block.shopify_attributes }}>
-                <div class="addon-section">
-                  <h3>Gepäckträger</h3>
-                  <p>Bis zu 27 kg Traglast mit vormontiertem Gepäckträger. Für Taschen, Einkäufe oder Kindersitz.</p>
-                  <div class="addon-options">
-                    <div class="addon-option selected" data-addon-price="0">
-                      <span>Nein danke</span>
-                    </div>
-                    <div class="addon-option" data-addon-price="99">
-                      <span>Vorinstallierter Gepäckträger</span>
-                      <span class="addon-price">+ 99 €</span>
-                      <span class="addon-badge">Neu</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="addon-section">
-                  <h3>Quad Lock Telefonhülle</h3>
-                  <p>Telefon sicher am Cockpit andocken. Für kabelloses Laden und volle Konnektivität.</p>
-                  <div class="addon-options">
-                    <div class="addon-option selected" data-addon-price="0">
-                      <span>Nein danke</span>
-                    </div>
-                  </div>
-                </div>
               </div>
 
             {%- when 'buy_buttons' -%}
@@ -254,18 +209,6 @@
           ],
           "default": "button",
           "label": "Type"
-        }
-      ]
-    },
-    {
-      "type": "add_ons",
-      "name": "Add-ons",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "text",
-          "id": "addon_products",
-          "label": "Add-on product handles (comma separated)"
         }
       ]
     },
