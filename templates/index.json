@@ -43,6 +43,7 @@
         "text_f38yTA",
         "buttons_HeY7mP"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/12_604d86ed-e135-4034-87c4-14f763974dab.png",
         "image_overlay_opacity": 20,
@@ -52,6 +53,55 @@
         "desktop_content_alignment": "left",
         "color_scheme": "background-2",
         "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_banner_wWVkQp": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_K7tghp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Rinos in Eurobike 2025",
+            "heading_size": "h0"
+          }
+        },
+        "text_YtmYWi": {
+          "type": "text",
+          "settings": {
+            "text": "Discover more about our mission, our bikes, and our incoming projects in our latest blog post.",
+            "text_style": "caption-with-letter-spacing"
+          }
+        },
+        "buttons_aeeEHB": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Read now",
+            "button_link_1": "shopify://blogs/news/rinos-at-eurobike-2025-frankfurt-report",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_K7tghp",
+        "text_YtmYWi",
+        "buttons_aeeEHB"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/DSCF5505.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "desktop_content_position": "top-right",
+        "show_text_box": false,
+        "desktop_content_alignment": "right",
+        "color_scheme": "background-2",
+        "image_behavior": "ambient",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": true
@@ -721,6 +771,7 @@
   },
   "order": [
     "image_banner_HXtDzL",
+    "image_banner_wWVkQp",
     "featured_blog_iNPmwD",
     "174117020079d74a17",
     "rich_text_XJLMej",
