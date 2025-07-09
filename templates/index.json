@@ -58,22 +58,6 @@
         "show_text_below": true
       }
     },
-    "video_KaCJcD": {
-      "type": "video",
-      "name": "t:sections.video.presets.name",
-      "settings": {
-        "heading": "",
-        "heading_size": "h2",
-        "enable_video_looping": true,
-        "video": "shopify://files/videos/1%EF%B8%8F%E2%83%A3%20Passo%20Campolongo2%EF%B8%8F%E2%83%A3%20Passo%20Pordoi3%EF%B8%8F%E2%83%A3%20Passo%20Sella4%EF%B8%8F%E2%83%A3%20Passo%20GardenaTo%20cztery%20prze%C5%82%C4%99cze%20na%20trasie%20Sella%20Ronda%2C%20kt%C3%B3re%20w%20tej%20kolejno….mp4",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "image_banner_XyQx3D": {
       "type": "image-banner",
       "blocks": {
@@ -151,6 +135,7 @@
         "product_iyDYNX",
         "collection_PXpBpF"
       ],
+      "disabled": true,
       "name": "t:sections.collage.presets.name",
       "settings": {
         "heading": "Multimedia collage",
@@ -415,7 +400,7 @@
     "video_h6JYmU": {
       "type": "video",
       "settings": {
-        "heading": "",
+        "heading": "Sandman GRX, in the spotlight.",
         "heading_size": "h2",
         "enable_video_looping": true,
         "video_url": "https://www.youtube.com/watch?v=_o6VpvHrBpQ&t=47s",
@@ -837,7 +822,6 @@
   },
   "order": [
     "image_banner_HXtDzL",
-    "video_KaCJcD",
     "image_banner_XyQx3D",
     "collage_xgMyez",
     "featured_blog_iNPmwD",
