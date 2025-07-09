@@ -236,7 +236,7 @@
         "heading_HEXJgw": {
           "type": "heading",
           "settings": {
-            "heading": "Discover. <em><strong>With Gravel. With the Sandman.</strong></em>",
+            "heading": "Discover <em><strong>Gravel. Discover the Sandman.</strong></em>",
             "heading_size": "h1"
           }
         },
@@ -250,7 +250,7 @@
         "buttons_wJ3xRV": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Discover the Sandman Now",
+            "button_label_1": "Discover the color ways",
             "button_link_1": "shopify://collections/gravel-bikes",
             "button_style_secondary_1": false,
             "button_label_2": "",
@@ -266,6 +266,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/9_66cd1f80-808c-4701-a33f-831cee282cad.jpg",
+        "image_2": "shopify://shop_images/IMG_1105.jpg",
         "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "top-left",
