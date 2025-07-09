@@ -58,6 +58,54 @@
         "show_text_below": true
       }
     },
+    "image_banner_XyQx3D": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_HEXJgw": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover <em><strong>Gravel. Discover the Sandman.</strong></em>",
+            "heading_size": "h1"
+          }
+        },
+        "text_bEKVEj": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "caption-with-letter-spacing"
+          }
+        },
+        "buttons_wJ3xRV": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Discover the new colorway",
+            "button_link_1": "shopify://collections/gravel-bikes",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_HEXJgw",
+        "text_bEKVEj",
+        "buttons_wJ3xRV"
+      ],
+      "settings": {
+        "image_2": "shopify://shop_images/IMG_1105.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-2",
+        "image_behavior": "ambient",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
     "image_banner_wWVkQp": {
       "type": "image-banner",
       "blocks": {
@@ -94,9 +142,9 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/DSCF5505.jpg",
+        "image_2": "shopify://shop_images/DSCF5416.jpg",
         "image_overlay_opacity": 0,
-        "image_height": "large",
+        "image_height": "medium",
         "desktop_content_position": "top-right",
         "show_text_box": false,
         "desktop_content_alignment": "right",
@@ -105,46 +153,6 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": true
-      }
-    },
-    "174117020079d74a17": {
-      "type": "apps",
-      "blocks": {
-        "instafeed_app_block_jWRtqk": {
-          "type": "shopify://apps/instafeed/blocks/app-block/5c329ba9-407e-40ec-a145-431c886f5df9",
-          "settings": {
-            "heading_font": "helvetica_n4",
-            "heading_size": 20,
-            "heading_alignment": "center",
-            "feed_width": 100,
-            "section_top_padding": 0,
-            "section_bottom_padding": 0,
-            "html_area": ""
-          }
-        }
-      },
-      "block_order": [
-        "instafeed_app_block_jWRtqk"
-      ],
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "featured_blog_iNPmwD": {
-      "type": "featured-blog",
-      "settings": {
-        "heading": "Rinos Feed",
-        "heading_size": "h1",
-        "blog": "news",
-        "post_limit": 2,
-        "columns_desktop": 2,
-        "color_scheme": "background-1",
-        "show_image": false,
-        "show_date": true,
-        "show_author": true,
-        "show_view_all": false,
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "rich_text_XJLMej": {
@@ -230,53 +238,21 @@
         "padding_bottom": 36
       }
     },
-    "image_banner_XyQx3D": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_HEXJgw": {
-          "type": "heading",
-          "settings": {
-            "heading": "Discover <em><strong>Gravel. Discover the Sandman.</strong></em>",
-            "heading_size": "h1"
-          }
-        },
-        "text_bEKVEj": {
-          "type": "text",
-          "settings": {
-            "text": "",
-            "text_style": "caption-with-letter-spacing"
-          }
-        },
-        "buttons_wJ3xRV": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Discover the color ways",
-            "button_link_1": "shopify://collections/gravel-bikes",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_HEXJgw",
-        "text_bEKVEj",
-        "buttons_wJ3xRV"
-      ],
+    "featured_blog_iNPmwD": {
+      "type": "featured-blog",
       "settings": {
-        "image": "shopify://shop_images/9_66cd1f80-808c-4701-a33f-831cee282cad.jpg",
-        "image_2": "shopify://shop_images/IMG_1105.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "desktop_content_position": "top-left",
-        "show_text_box": false,
-        "desktop_content_alignment": "left",
-        "color_scheme": "background-2",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "stack_images_on_mobile": true,
-        "show_text_below": false
+        "heading": "Rinos Feed",
+        "heading_size": "h1",
+        "blog": "news",
+        "post_limit": 2,
+        "columns_desktop": 2,
+        "color_scheme": "background-1",
+        "show_image": false,
+        "show_date": true,
+        "show_author": true,
+        "show_view_all": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "rich_text_WYitJR": {
@@ -382,13 +358,13 @@
     "video_h6JYmU": {
       "type": "video",
       "settings": {
-        "heading": "Don't just take our word...",
+        "heading": "",
         "heading_size": "h2",
         "enable_video_looping": true,
         "video_url": "https://www.youtube.com/watch?v=_o6VpvHrBpQ&t=47s",
         "cover_image": "shopify://shop_images/Q14A6113.jpg",
         "description": "",
-        "full_width": false,
+        "full_width": true,
         "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
@@ -743,6 +719,29 @@
       "disabled": true,
       "settings": {}
     },
+    "174117020079d74a17": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_jWRtqk": {
+          "type": "shopify://apps/instafeed/blocks/app-block/5c329ba9-407e-40ec-a145-431c886f5df9",
+          "settings": {
+            "heading_font": "helvetica_n4",
+            "heading_size": 20,
+            "heading_alignment": "center",
+            "feed_width": 100,
+            "section_top_padding": 0,
+            "section_bottom_padding": 0,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_jWRtqk"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "rich_text_MfXaWd": {
       "type": "rich-text",
       "blocks": {
@@ -781,12 +780,11 @@
   },
   "order": [
     "image_banner_HXtDzL",
+    "image_banner_XyQx3D",
     "image_banner_wWVkQp",
-    "174117020079d74a17",
-    "featured_blog_iNPmwD",
     "rich_text_XJLMej",
     "collage_6aUkii",
-    "image_banner_XyQx3D",
+    "featured_blog_iNPmwD",
     "rich_text_WYitJR",
     "multicolumn_irCchU",
     "video_h6JYmU",
@@ -798,6 +796,7 @@
     "image_banner_qQDHCk",
     "image_banner_cpPmMm",
     "banner_video_tx3irV",
+    "174117020079d74a17",
     "rich_text_MfXaWd"
   ]
 }
