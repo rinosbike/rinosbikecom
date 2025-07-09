@@ -311,6 +311,7 @@
         "text_ECWzkV",
         "button_a9fCKq"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
@@ -359,6 +360,7 @@
         "column_yDrkiK",
         "column_7BKnWQ"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "heading_size": "h2",
@@ -425,6 +427,7 @@
         "text_7f6Fwh",
         "buttons_PqHq8P"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/IMG_7340.jpg",
         "image_overlay_opacity": 20,
@@ -530,6 +533,7 @@
         "heading_dKjWV3",
         "buttons_ND9C77"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Group_55.png",
         "image_overlay_opacity": 0,
@@ -578,6 +582,7 @@
         "heading_MhzxKU",
         "buttons_ijJJyE"
       ],
+      "disabled": true,
       "settings": {
         "image_2": "shopify://shop_images/Group_58.png",
         "image_overlay_opacity": 0,
@@ -626,6 +631,7 @@
         "heading_W4xCJQ",
         "buttons_FjJkMU"
       ],
+      "disabled": true,
       "settings": {
         "image_2": "shopify://shop_images/Group_60.png",
         "image_overlay_opacity": 0,
@@ -674,6 +680,7 @@
         "text_r7mjYL",
         "buttons_zCfNke"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "image_2": "shopify://shop_images/image2_8ffd217f-d834-44da-97d3-aea2027666c5.jpg",
