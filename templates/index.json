@@ -412,6 +412,55 @@
         "padding_bottom": 36
       }
     },
+    "image_banner_7riqD7": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_wVzxYX": {
+          "type": "heading",
+          "settings": {
+            "heading": "Odin 6.1. <strong>UCI certified for the road.</strong><em> Ultralight. </em>Shimano 105 Di2",
+            "heading_size": "h2"
+          }
+        },
+        "text_Pmxiyt": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_6VdmtA": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_wVzxYX",
+        "text_Pmxiyt",
+        "buttons_6VdmtA"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/DSCF5464.jpg",
+        "image_overlay_opacity": 20,
+        "image_height": "large",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-2",
+        "image_behavior": "ambient",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "image_banner_yY7Hzf": {
       "type": "image-banner",
       "blocks": {
@@ -831,6 +880,7 @@
     "rich_text_WYitJR",
     "multicolumn_irCchU",
     "video_h6JYmU",
+    "image_banner_7riqD7",
     "image_banner_yY7Hzf",
     "image_with_text_WYccVP",
     "image_banner_cR6hqL",
