@@ -1,40 +1,45 @@
 {% comment %}
-  Simple Bike Gallery - Just to showcase bikes and their colors
+  Fixed Bike Gallery - Enhanced for Shopify compatibility
 {% endcomment %}
 
 <style>
+/* Enhanced specificity and !important declarations for Shopify */
 .bike-gallery {
-  padding: 60px 20px;
-  background: #ffffff;
-  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 60px 20px !important;
+  background: #ffffff !important;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
-.gallery-container {
-  max-width: 1400px;
-  margin: 0 auto;
+.bike-gallery .gallery-container {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
 }
 
-.bike-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px;
+.bike-gallery .bike-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+  gap: 40px !important;
 }
 
-.bike-card {
-  background: #fafafa;
-  overflow: hidden;
-  transition: transform 0.3s ease;
+.bike-gallery .bike-card {
+  background: #fafafa !important;
+  overflow: hidden !important;
+  transition: transform 0.3s ease !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
 }
 
-.bike-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+.bike-gallery .bike-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
 }
 
-.bike-card.featured {
-  background: linear-gradient(135deg, #D3D3D3 0%, #BDBDBD 25%, #9E9E9E 50%, #D3D3D3 75%, #7D7D7D 100%);
-  background-size: 400% 400%;
-  animation: gradientFlow 4s ease-in-out infinite;
+.bike-gallery .bike-card.featured {
+  background: linear-gradient(135deg, #D3D3D3 0%, #BDBDBD 25%, #9E9E9E 50%, #D3D3D3 75%, #7D7D7D 100%) !important;
+  background-size: 400% 400% !important;
+  animation: gradientFlow 4s ease-in-out infinite !important;
 }
 
 @keyframes gradientFlow {
@@ -43,170 +48,184 @@
   100% { background-position: 0% 50%; }
 }
 
-.bike-image-section {
-  height: 300px;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+.bike-gallery .bike-image-section {
+  height: 300px !important;
+  background: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
-.bike-image {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-  transition: opacity 0.3s ease;
+.bike-gallery .bike-image {
+  max-width: 90% !important;
+  max-height: 90% !important;
+  object-fit: contain !important;
+  transition: opacity 0.3s ease !important;
 }
 
-.bike-info {
-  padding: 30px;
+.bike-gallery .bike-info {
+  padding: 30px !important;
 }
 
-.bike-name {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #1d1d1f;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+.bike-gallery .bike-name {
+  font-size: 1.4rem !important;
+  font-weight: 600 !important;
+  color: #1d1d1f !important;
+  margin-bottom: 10px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
 }
 
-.bike-card.featured .bike-name {
-  color: #ffffff;
+.bike-gallery .bike-card.featured .bike-name {
+  color: #ffffff !important;
 }
 
-.bike-description {
-  font-size: 0.9rem;
-  color: #86868b;
-  line-height: 1.4;
-  margin-bottom: 20px;
+.bike-gallery .bike-description {
+  font-size: 0.9rem !important;
+  color: #86868b !important;
+  line-height: 1.4 !important;
+  margin-bottom: 20px !important;
 }
 
-.bike-card.featured .bike-description {
-  color: rgba(255, 255, 255, 0.9);
+.bike-gallery .bike-card.featured .bike-description {
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
-.color-options {
-  margin-bottom: 20px;
+.bike-gallery .color-options {
+  margin-bottom: 20px !important;
 }
 
-.color-label {
-  font-size: 0.8rem;
-  color: #86868b;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 12px;
-  display: block;
+.bike-gallery .color-label {
+  font-size: 0.8rem !important;
+  color: #86868b !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 12px !important;
+  display: block !important;
 }
 
-.bike-card.featured .color-label {
-  color: rgba(255, 255, 255, 0.8);
+.bike-gallery .bike-card.featured .color-label {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
-.color-swatches {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 8px;
+/* Enhanced color swatches with maximum specificity */
+.bike-gallery .color-swatches {
+  display: flex !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  margin-top: 8px !important;
+  align-items: center !important;
 }
 
-.color-swatch {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 3px solid #333;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  position: relative;
-  display: block;
+.bike-gallery .color-swatch {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  border: 3px solid #333 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
 }
 
-.color-swatch:hover {
-  border-color: #000;
-  transform: scale(1.1);
+.bike-gallery .color-swatch:hover {
+  border-color: #000 !important;
+  transform: scale(1.1) !important;
 }
 
-.color-swatch.active {
-  border-color: #000;
-  transform: scale(1.1);
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
+.bike-gallery .color-swatch.active {
+  border-color: #000 !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Simple solid colors that will definitely show */
-.chameleon-gold {
+/* Color definitions with maximum specificity */
+.bike-gallery .color-swatch.chameleon-gold {
   background: #FFD700 !important;
+  background-color: #FFD700 !important;
 }
 
-.metal-blue-violet {
+.bike-gallery .color-swatch.metal-blue-violet {
   background: #4B0082 !important;
+  background-color: #4B0082 !important;
 }
 
-.black-forest {
+.bike-gallery .color-swatch.black-forest {
   background: #2C3E50 !important;
+  background-color: #2C3E50 !important;
 }
 
-.ivory-desert {
+.bike-gallery .color-swatch.ivory-desert {
   background: #F5F5DC !important;
+  background-color: #F5F5DC !important;
   border-color: #999 !important;
 }
 
-.discover-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #1d1d1f;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  border: 1px solid #1d1d1f;
+.bike-gallery .discover-button {
+  display: inline-block !important;
+  padding: 12px 24px !important;
+  background-color: #1d1d1f !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid #1d1d1f !important;
+  border-radius: 4px !important;
 }
 
-.discover-button:hover {
-  background-color: transparent;
-  color: #1d1d1f;
+.bike-gallery .discover-button:hover {
+  background-color: transparent !important;
+  color: #1d1d1f !important;
 }
 
-.bike-card.featured .discover-button {
-  background-color: #ffffff;
-  color: #1d1d1f;
-  border-color: #ffffff;
+.bike-gallery .bike-card.featured .discover-button {
+  background-color: #ffffff !important;
+  color: #1d1d1f !important;
+  border-color: #ffffff !important;
 }
 
-.bike-card.featured .discover-button:hover {
-  background-color: transparent;
-  color: #ffffff;
-  border-color: #ffffff;
+.bike-gallery .bike-card.featured .discover-button:hover {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
 }
 
-/* Mobile responsive */
+/* Mobile responsive with enhanced specificity */
 @media (max-width: 768px) {
-  .bike-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .bike-gallery .bike-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
   }
   
-  .bike-image-section {
-    height: 250px;
+  .bike-gallery .bike-image-section {
+    height: 250px !important;
   }
   
-  .bike-info {
-    padding: 20px;
+  .bike-gallery .bike-info {
+    padding: 20px !important;
   }
   
-  .bike-name {
-    font-size: 1.2rem;
+  .bike-gallery .bike-name {
+    font-size: 1.2rem !important;
   }
   
-  .color-swatch {
-    width: 28px;
-    height: 28px;
+  .bike-gallery .color-swatch {
+    width: 32px !important;
+    height: 32px !important;
   }
+}
+
+/* Debug styles - remove after testing */
+.bike-gallery .color-swatch {
+  outline: 1px solid red !important; /* Remove this line after confirming swatches are visible */
 }
 </style>
 
@@ -229,9 +248,9 @@
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch chameleon-gold active" 
-                   onclick="switchColor('bike-1', 'https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-1', 'https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713', this)"></div>
               <div class="color-swatch metal-blue-violet" 
-                   onclick="switchColor('bike-1', 'https://rinosbike.com/cdn/shop/files/Group302.png?v=1750150243&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-1', 'https://rinosbike.com/cdn/shop/files/Group302.png?v=1750150243&width=713', this)"></div>
             </div>
           </div>
           
@@ -254,9 +273,9 @@
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch chameleon-gold active" 
-                   onclick="switchColor('bike-3', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-3', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"></div>
               <div class="color-swatch metal-blue-violet" 
-                   onclick="switchColor('bike-3', 'https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-3', 'https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713', this)"></div>
             </div>
           </div>
           
@@ -279,13 +298,13 @@
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch black-forest active" 
-                   onclick="switchColor('bike-4', 'https://i.goopics.net/l39mbo.png', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-4', 'https://i.goopics.net/l39mbo.png', this)"></div>
               <div class="color-swatch ivory-desert" 
-                   onclick="switchColor('bike-4', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-4', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
               <div class="color-swatch chameleon-gold" 
-                   onclick="switchColor('bike-4', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-4', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
               <div class="color-swatch metal-blue-violet" 
-                   onclick="switchColor('bike-4', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-4', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
             </div>
           </div>
           
@@ -308,9 +327,9 @@
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch chameleon-gold active" 
-                   onclick="switchColor('bike-5', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-5', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"></div>
               <div class="color-swatch metal-blue-violet" 
-                   onclick="switchColor('bike-5', 'https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-5', 'https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713', this)"></div>
             </div>
           </div>
           
@@ -333,13 +352,13 @@
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch black-forest active" 
-                   onclick="switchColor('bike-6', 'https://i.goopics.net/l39mbo.png', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-6', 'https://i.goopics.net/l39mbo.png', this)"></div>
               <div class="color-swatch ivory-desert" 
-                   onclick="switchColor('bike-6', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-6', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
               <div class="color-swatch chameleon-gold" 
-                   onclick="switchColor('bike-6', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-6', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
               <div class="color-swatch metal-blue-violet" 
-                   onclick="switchColor('bike-6', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-6', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
             </div>
           </div>
           
@@ -362,13 +381,13 @@
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch black-forest active" 
-                   onclick="switchColor('bike-7', 'https://i.goopics.net/l39mbo.png', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-7', 'https://i.goopics.net/l39mbo.png', this)"></div>
               <div class="color-swatch ivory-desert" 
-                   onclick="switchColor('bike-7', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-7', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
               <div class="color-swatch chameleon-gold" 
-                   onclick="switchColor('bike-7', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-7', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
               <div class="color-swatch metal-blue-violet" 
-                   onclick="switchColor('bike-7', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
+                   onclick="BikeGallery.switchColor('bike-7', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
             </div>
           </div>
           
@@ -381,18 +400,43 @@
 </section>
 
 <script>
-function switchColor(bikeId, imageUrl, clickedSwatch) {
-  // Change the bike image
-  const bikeImg = document.getElementById(bikeId);
-  if (bikeImg) {
-    bikeImg.src = imageUrl;
+// Namespace to avoid conflicts with other Shopify scripts
+window.BikeGallery = window.BikeGallery || {};
+
+BikeGallery.switchColor = function(bikeId, imageUrl, clickedSwatch) {
+  try {
+    // Change the bike image
+    const bikeImg = document.getElementById(bikeId);
+    if (bikeImg) {
+      bikeImg.src = imageUrl;
+    }
+    
+    // Update active color swatch
+    const allSwatches = clickedSwatch.parentElement.querySelectorAll('.color-swatch');
+    allSwatches.forEach(function(swatch) {
+      swatch.classList.remove('active');
+    });
+    clickedSwatch.classList.add('active');
+  } catch (error) {
+    console.error('BikeGallery error:', error);
   }
+};
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('BikeGallery initialized');
   
-  // Update active color swatch
-  const allSwatches = clickedSwatch.parentElement.querySelectorAll('.color-swatch');
-  allSwatches.forEach(swatch => swatch.classList.remove('active'));
-  clickedSwatch.classList.add('active');
-}
+  // Debug: Check if swatches are present
+  const swatches = document.querySelectorAll('.bike-gallery .color-swatch');
+  console.log('Found', swatches.length, 'color swatches');
+  
+  // Add click event listeners as fallback
+  swatches.forEach(function(swatch) {
+    swatch.addEventListener('click', function() {
+      console.log('Swatch clicked:', this.className);
+    });
+  });
+});
 </script>
 
 {% schema %}
