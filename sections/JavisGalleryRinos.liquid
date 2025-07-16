@@ -6,7 +6,7 @@
 
 <style>
   .bike-gallery {
-    padding: 80px 20px;
+    padding: 60px 20px;
     background: #ffffff;
     font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
@@ -43,7 +43,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 60px;
-    margin-bottom: 80px;
   }
 
   .bike-card {
@@ -91,7 +90,7 @@
     width: auto;
     height: auto;
     object-fit: contain;
-    transition: all 0.4s ease;
+    transition: all 0.2s ease;
   }
 
   .bike-card:hover .bike-image {
@@ -264,24 +263,25 @@
   }
 
   .color-swatch {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     border: 3px solid #e8e8e8;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     position: relative;
   }
 
   .color-swatch:hover {
     border-color: #1d1d1f;
-    transform: scale(1.1);
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   .color-swatch.active {
     border-color: #1d1d1f;
-    transform: scale(1.1);
-    box-shadow: 0 0 0 3px rgba(29, 29, 31, 0.2);
+    transform: scale(1.15);
+    box-shadow: 0 0 0 4px rgba(29, 29, 31, 0.2);
   }
 
   .bike-card.featured .color-swatch {
@@ -291,7 +291,7 @@
   .bike-card.featured .color-swatch:hover,
   .bike-card.featured .color-swatch.active {
     border-color: #ffffff;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
   }
 
   /* Color swatch styles */
@@ -470,11 +470,6 @@
 
 <section class="bike-gallery">
   <div class="gallery-container">
-    <div class="gallery-header">
-      <h1 class="gallery-title">{{ 'bikes.title.gravel' | t }}</h1>
-      <p class="gallery-subtitle">Ready when you are. Welcome to gravel.</p>
-    </div>
-
     <div class="bike-grid">
       
       <!-- Sandman 1 -->
@@ -489,10 +484,10 @@
           <p class="bike-description">{{ 'bikes.sandman1.description' | t }}</p>
           
           <div class="bike-specs-dropdown">
-            <button class="specs-toggle" onclick="toggleSpecs(this)">
+            <div class="specs-toggle" onclick="toggleSpecs(this)">
               <span class="specs-label">Specifications</span>
               <span class="specs-arrow">↓</span>
-            </button>
+            </div>
             <div class="specs-content">
               <div class="specs-list">
                 <div class="spec-item">
@@ -560,10 +555,10 @@
           <p class="bike-description">{{ 'bikes.sandman3.description' | t }}</p>
           
           <div class="bike-specs-dropdown">
-            <button class="specs-toggle" onclick="toggleSpecs(this)">
+            <div class="specs-toggle" onclick="toggleSpecs(this)">
               <span class="specs-label">Specifications</span>
               <span class="specs-arrow">↓</span>
-            </button>
+            </div>
             <div class="specs-content">
               <div class="specs-list">
                 <div class="spec-item">
@@ -632,10 +627,10 @@
           <p class="bike-description">{{ 'bikes.sandman4.description' | t }}</p>
           
           <div class="bike-specs-dropdown">
-            <button class="specs-toggle" onclick="toggleSpecs(this)">
+            <div class="specs-toggle" onclick="toggleSpecs(this)">
               <span class="specs-label">Specifications</span>
               <span class="specs-arrow">↓</span>
-            </button>
+            </div>
             <div class="specs-content">
               <div class="specs-list">
                 <div class="spec-item">
@@ -711,10 +706,10 @@
           <p class="bike-description">{{ 'bikes.sandman5.description' | t }}</p>
           
           <div class="bike-specs-dropdown">
-            <button class="specs-toggle" onclick="toggleSpecs(this)">
+            <div class="specs-toggle" onclick="toggleSpecs(this)">
               <span class="specs-label">Specifications</span>
               <span class="specs-arrow">↓</span>
-            </button>
+            </div>
             <div class="specs-content">
               <div class="specs-list">
                 <div class="spec-item">
@@ -782,10 +777,10 @@
           <p class="bike-description">{{ 'bikes.sandman6.description' | t }}</p>
           
           <div class="bike-specs-dropdown">
-            <button class="specs-toggle" onclick="toggleSpecs(this)">
+            <div class="specs-toggle" onclick="toggleSpecs(this)">
               <span class="specs-label">Specifications</span>
               <span class="specs-arrow">↓</span>
-            </button>
+            </div>
             <div class="specs-content">
               <div class="specs-list">
                 <div class="spec-item">
@@ -806,6 +801,23 @@
                 </div>
                 <div class="spec-item">
                   <span class="spec-label">{{ 'bikes.frameSize_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman6.frameSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.brakes_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman6.brakes' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman6.wheelSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.rims_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman6.rims' | t }}</span>
+                </div>
+              </div>
+            </div>
+          </div>  <span class="spec-label">{{ 'bikes.frameSize_label' | t }}</span>
                   <span class="spec-value">{{ 'bikes.sandman6.frameSize' | t }}</span>
                 </div>
                 <div class="spec-item">
@@ -861,10 +873,10 @@
           <p class="bike-description">{{ 'bikes.sandman7.description' | t }}</p>
           
           <div class="bike-specs-dropdown">
-            <button class="specs-toggle" onclick="toggleSpecs(this)">
+            <div class="specs-toggle" onclick="toggleSpecs(this)">
               <span class="specs-label">Specifications</span>
               <span class="specs-arrow">↓</span>
-            </button>
+            </div>
             <div class="specs-content">
               <div class="specs-list">
                 <div class="spec-item">
@@ -935,7 +947,7 @@
 <script>
 // Gallery functionality
 document.addEventListener('DOMContentLoaded', function() {
-  // Color switching functionality
+  // Color switching functionality with immediate feedback
   document.querySelectorAll('.color-swatch').forEach(function(swatch) {
     swatch.addEventListener('click', function(e) {
       e.preventDefault();
@@ -945,8 +957,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const targetImg = document.getElementById(targetId);
       
       if (targetImg && imageUrl) {
-        // Immediate image change for better responsiveness
+        // Immediate image change
         targetImg.src = imageUrl;
+        
+        // Visual feedback - flash the swatch
+        this.style.transform = 'scale(1.2)';
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 150);
         
         // Update active state
         const container = this.parentElement;
@@ -968,9 +986,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Specifications dropdown toggle
-function toggleSpecs(button) {
-  const content = button.nextElementSibling;
-  const arrow = button.querySelector('.specs-arrow');
+function toggleSpecs(element) {
+  const content = element.nextElementSibling;
+  const arrow = element.querySelector('.specs-arrow');
   
   // Close all other dropdowns
   document.querySelectorAll('.specs-content').forEach(function(item) {
