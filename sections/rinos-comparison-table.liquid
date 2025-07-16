@@ -1,12 +1,13 @@
 {% comment %}
- Javis version of table
+  Minimalist Gravel Bike Comparison Table
+  Apple x Rick Owens aesthetic - stark, architectural, premium
 {% endcomment %}
 
 <style>
   .gravel-comparison {
     padding: 0;
     background: #ffffff;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   .gravel-comparison-container {
@@ -49,16 +50,30 @@
   }
 
   .featured-bike {
-    background: #000000;
+    background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 25%, #1a1a1a 50%, #2a2a2a 75%, #4a4a4a 100%);
+    background-size: 400% 400%;
     color: #ffffff;
     position: relative;
+    animation: gradientFlow 4s ease-in-out infinite;
+  }
+
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   .bike-name {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #1d1d1f;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     text-transform: uppercase;
     letter-spacing: 0.02em;
   }
@@ -68,11 +83,11 @@
   }
 
   .bike-description {
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: #86868b;
-    line-height: 1.3;
+    line-height: 1.4;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   .featured-bike .bike-description {
@@ -80,7 +95,7 @@
   }
 
   .discover-link {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
     color: #0066cc;
     text-decoration: none;
     font-weight: 500;
@@ -111,23 +126,23 @@
   }
 
   .spec-label {
-    padding: 20px 30px;
+    padding: 24px 30px;
     font-weight: 500;
     color: #1d1d1f;
     background: #fafafa;
     border-right: 1px solid #e8e8e8;
-    font-size: 0.85rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     width: 180px;
   }
 
   .spec-value {
-    padding: 20px 30px;
+    padding: 24px 30px;
     color: #1d1d1f;
     font-weight: 400;
     border-right: 1px solid #f5f5f7;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     text-align: center;
     background: #ffffff;
   }
@@ -137,11 +152,13 @@
   }
 
   .featured-spec {
-    background: #000000;
+    background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 25%, #1a1a1a 50%, #2a2a2a 75%, #4a4a4a 100%);
+    background-size: 400% 400%;
     color: #ffffff;
     font-weight: 500;
-    border-left: 1px solid #000000;
-    border-right: 1px solid #000000;
+    border-left: 1px solid #2a2a2a;
+    border-right: 1px solid #2a2a2a;
+    animation: gradientFlow 4s ease-in-out infinite;
   }
 
   .featured-spec:last-child {
