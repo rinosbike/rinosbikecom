@@ -1,6 +1,197 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{{ 'section-video-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="video-hero-section">
+  <video 
+    autoplay 
+    muted 
+    loop 
+    playsinline
+    preload="metadata"
+    class="video-hero-video">
+    <source src="https://cdn.shopify.com/videos/c/o/v/e2d6fb5f9c494766a8c5f283b8da7315.mp4" type="video/mp4">
+  </video>
+
+  {% if section.settings.show_overlay %}
+    <div class="video-hero-overlay"></div>
+  {% endif %}
+
+  {% if section.settings.show_content %}
+    <div class="video-hero-content">
+      {% if section.settings.heading != blank %}
+        <h1 class="video-hero-heading">{{ section.settings.heading }}</h1>
+      {% endif %}
+      
+      {% if section.settings.subheading != blank %}
+        <p class="video-hero-subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+      
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link | default: '#' }}" class="video-hero-button">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+  {% endif %}
+</section>
+
+<style>
+  .video-hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
   }
+
+  .video-hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .video-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+
+  .video-hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    max-width: 800px;
+  }
+
+  .video-hero-heading {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+  }
+
+  .video-hero-subheading {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    line-height: 1.4;
+  }
+
+  .video-hero-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .video-hero-button:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .video-hero-section {
+      height: 70vh;
+    }
+    
+    .video-hero-heading {
+      font-size: 2rem;
+    }
+    
+    .video-hero-subheading {
+      font-size: 1rem;
+    }
+    
+    .video-hero-button {
+      padding: 10px 25px;
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Small mobile */
+  @media (max-width: 480px) {
+    .video-hero-section {
+      height: 60vh;
+    }
+    
+    .video-hero-heading {
+      font-size: 1.5rem;
+    }
+    
+    .video-hero-content {
+      padding: 15px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Video Hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_content",
+      "label": "Show content overlay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show dark overlay",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Welcome to Our Store"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Discover amazing products"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Hero"
+    }
+  ]
+}
 {% endschema %}
