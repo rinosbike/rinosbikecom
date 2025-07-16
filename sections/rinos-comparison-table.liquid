@@ -1,12 +1,11 @@
 {% comment %}
-  Premium Gravel Bike Comparison Table
-  Minimalistic design with featured product highlighting
+ Javis version of table
 {% endcomment %}
 
 <style>
   .gravel-comparison {
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+    padding: 0;
+    background: #ffffff;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
@@ -15,33 +14,8 @@
     margin: 0 auto;
   }
 
-  .gravel-comparison-header {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-
-  .gravel-comparison-title {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 300;
-    color: #1a1a1a;
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-  }
-
-  .gravel-comparison-subtitle {
-    font-size: 1.1rem;
-    color: #666;
-    font-weight: 400;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.5;
-  }
-
   .comparison-wrapper {
     overflow-x: auto;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     background: white;
   }
 
@@ -52,15 +26,16 @@
   }
 
   .bike-header {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    border-bottom: 1px solid #e9ecef;
+    background: #fafafa;
+    border-bottom: 1px solid #e8e8e8;
   }
 
   .bike-header th {
-    padding: 40px 20px;
+    padding: 60px 30px 40px;
     text-align: center;
-    border-right: 1px solid #f0f0f0;
+    border-right: 1px solid #e8e8e8;
     position: relative;
+    vertical-align: top;
   }
 
   .bike-header th:last-child {
@@ -68,81 +43,67 @@
   }
 
   .bike-header th:first-child {
-    background: transparent;
-    border-right: 1px solid #e9ecef;
+    background: #ffffff;
+    border-right: 1px solid #e8e8e8;
+    padding: 0;
   }
 
   .featured-bike {
-    background: linear-gradient(135deg, #F04A00 0%, #e63900 100%);
-    color: white;
+    background: #000000;
+    color: #ffffff;
     position: relative;
-    overflow: hidden;
-  }
-
-  .featured-bike::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0.8), rgba(255,255,255,0.3));
-  }
-
-  .featured-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .bike-image {
-    width: 160px;
-    height: 120px;
-    object-fit: contain;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
   }
 
   .bike-name {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #1d1d1f;
     margin-bottom: 8px;
     text-transform: uppercase;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.02em;
   }
 
   .featured-bike .bike-name {
-    color: white;
+    color: #ffffff;
   }
 
   .bike-description {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.4;
+    font-size: 0.85rem;
+    color: #86868b;
+    line-height: 1.3;
     font-weight: 400;
+    margin-bottom: 20px;
   }
 
   .featured-bike .bike-description {
-    color: rgba(255, 255, 255, 0.9);
+    color: #a1a1a6;
+  }
+
+  .discover-link {
+    font-size: 0.8rem;
+    color: #0066cc;
+    text-decoration: none;
     font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .discover-link:hover {
+    border-bottom-color: #0066cc;
+  }
+
+  .featured-bike .discover-link {
+    color: #ffffff;
+  }
+
+  .featured-bike .discover-link:hover {
+    border-bottom-color: #ffffff;
   }
 
   .spec-row {
-    border-bottom: 1px solid #f8f9fa;
-    transition: background-color 0.2s ease;
-  }
-
-  .spec-row:hover {
-    background: #fafbfc;
+    border-bottom: 1px solid #f5f5f7;
   }
 
   .spec-row:last-child {
@@ -150,25 +111,25 @@
   }
 
   .spec-label {
-    padding: 24px 30px;
-    font-weight: 600;
-    color: #1a1a1a;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    border-right: 1px solid #e9ecef;
-    font-size: 0.9rem;
+    padding: 20px 30px;
+    font-weight: 500;
+    color: #1d1d1f;
+    background: #fafafa;
+    border-right: 1px solid #e8e8e8;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     width: 180px;
   }
 
   .spec-value {
-    padding: 24px 20px;
-    color: #495057;
-    font-weight: 500;
-    border-right: 1px solid #f0f0f0;
-    font-size: 0.95rem;
+    padding: 20px 30px;
+    color: #1d1d1f;
+    font-weight: 400;
+    border-right: 1px solid #f5f5f7;
+    font-size: 0.9rem;
     text-align: center;
-    position: relative;
+    background: #ffffff;
   }
 
   .spec-value:last-child {
@@ -176,34 +137,21 @@
   }
 
   .featured-spec {
-    background: linear-gradient(135deg, rgba(240, 74, 0, 0.05) 0%, rgba(240, 74, 0, 0.1) 100%);
-    color: #F04A00;
-    font-weight: 600;
-    border-left: 3px solid #F04A00;
-    border-right: 3px solid #F04A00;
+    background: #000000;
+    color: #ffffff;
+    font-weight: 500;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
   }
 
   .featured-spec:last-child {
-    border-right: 3px solid #F04A00;
+    border-right: none;
   }
 
   /* Mobile Responsive */
   @media (max-width: 768px) {
-    .gravel-comparison {
-      padding: 40px 15px;
-    }
-
-    .gravel-comparison-title {
-      font-size: 2rem;
-    }
-
-    .gravel-comparison-subtitle {
-      font-size: 1rem;
-    }
-
     .comparison-wrapper {
-      border-radius: 15px;
-      margin: 0 -15px;
+      margin: 0 -20px;
     }
 
     .comparison-table {
@@ -211,16 +159,11 @@
     }
 
     .bike-header th {
-      padding: 25px 15px;
-    }
-
-    .bike-image {
-      width: 120px;
-      height: 90px;
+      padding: 40px 20px 30px;
     }
 
     .bike-name {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     .bike-description {
@@ -228,13 +171,17 @@
     }
 
     .spec-label {
-      padding: 18px 20px;
+      padding: 16px 20px;
       font-size: 0.8rem;
     }
 
     .spec-value {
-      padding: 18px 15px;
+      padding: 16px 20px;
       font-size: 0.85rem;
+    }
+
+    .discover-link {
+      font-size: 0.75rem;
     }
   }
 
@@ -243,11 +190,15 @@
     .comparison-table {
       min-width: 1000px;
     }
+
+    .bike-header th {
+      padding: 50px 25px 35px;
+    }
   }
 
   /* Accessibility */
   @media (prefers-reduced-motion: reduce) {
-    .spec-row {
+    .discover-link {
       transition: none;
     }
   }
@@ -255,46 +206,40 @@
 
 <section class="gravel-comparison">
   <div class="gravel-comparison-container">
-    <div class="gravel-comparison-header">
-      <h1 class="gravel-comparison-title">{{ 'bikes.title.gravel' | t }}</h1>
-      <p class="gravel-comparison-subtitle">Find your perfect gravel companion. Built for adventure, engineered for performance.</p>
-    </div>
-
     <div class="comparison-wrapper">
       <table class="comparison-table">
         <thead class="bike-header">
           <tr>
             <th></th>
             <th>
-              <img class="bike-image" src="{{ 'bikes.sandman1.image' | t }}" alt="{{ 'bikes.sandman1.title' | t }}">
               <div class="bike-name">{{ 'bikes.sandman1.title' | t }}</div>
               <div class="bike-description">{{ 'bikes.sandman1.description' | t }}</div>
+              <a href="#" class="discover-link">Discover More</a>
             </th>
             <th>
-              <img class="bike-image" src="{{ 'bikes.sandman3.image' | t }}" alt="{{ 'bikes.sandman3.title' | t }}">
               <div class="bike-name">{{ 'bikes.sandman3.title' | t }}</div>
               <div class="bike-description">{{ 'bikes.sandman3.description' | t }}</div>
+              <a href="#" class="discover-link">Discover More</a>
             </th>
             <th class="featured-bike">
-              <div class="featured-badge">Featured</div>
-              <img class="bike-image" src="{{ 'bikes.sandman4.image' | t }}" alt="{{ 'bikes.sandman4.title' | t }}">
               <div class="bike-name">{{ 'bikes.sandman4.title' | t }}</div>
               <div class="bike-description">{{ 'bikes.sandman4.description' | t }}</div>
+              <a href="#" class="discover-link">Discover More</a>
             </th>
             <th>
-              <img class="bike-image" src="{{ 'bikes.sandman5.image' | t }}" alt="{{ 'bikes.sandman5.title' | t }}">
               <div class="bike-name">{{ 'bikes.sandman5.title' | t }}</div>
               <div class="bike-description">{{ 'bikes.sandman5.description' | t }}</div>
+              <a href="#" class="discover-link">Discover More</a>
             </th>
             <th>
-              <img class="bike-image" src="{{ 'bikes.sandman6.image' | t }}" alt="{{ 'bikes.sandman6.title' | t }}">
               <div class="bike-name">{{ 'bikes.sandman6.title' | t }}</div>
               <div class="bike-description">{{ 'bikes.sandman6.description' | t }}</div>
+              <a href="#" class="discover-link">Discover More</a>
             </th>
             <th>
-              <img class="bike-image" src="{{ 'bikes.sandman7.image' | t }}" alt="{{ 'bikes.sandman7.title' | t }}">
               <div class="bike-name">{{ 'bikes.sandman7.title' | t }}</div>
               <div class="bike-description">{{ 'bikes.sandman7.description' | t }}</div>
+              <a href="#" class="discover-link">Discover More</a>
             </th>
           </tr>
         </thead>
