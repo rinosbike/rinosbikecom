@@ -277,6 +277,18 @@
         "padding_bottom": 52
       }
     },
+    "promovideo_RfRdkg": {
+      "type": "promovideo",
+      "name": "Video Hero",
+      "settings": {
+        "show_content": true,
+        "show_overlay": true,
+        "heading": "Welcome to your new adventure, riders.",
+        "subheading": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
     "slideshow_ABJHGn": {
       "type": "slideshow",
       "blocks": {
@@ -500,6 +512,7 @@
     "featured_collection_4VrLDz",
     "image_banner_9dBUXR",
     "rich_text_b3NKQm",
+    "promovideo_RfRdkg",
     "slideshow_ABJHGn",
     "rich_text_EXtbUx",
     "product-grid",
