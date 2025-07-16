@@ -1,124 +1,186 @@
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    <style>
-    .body-class-2 {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
+<style>
+.body-class-2 {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.FBS-ban-sec1 {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+}
+.content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+.content-overlay a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 15px;
+    border: solid 2px transparent;
+    transition: all 0.15s ease-in-out;
+}
+
+.content-overlay a:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: solid 2px #000000;
+    transform: scale(1.02);
+    box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
+}
+
+.content-overlay-text {
+    font-size: 35px;
+    margin-top: 50px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.138);
+    z-index: 5;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 768px) {
     .FBS-ban-sec1 {
-        position: relative;
-        height: 100vh; /* Adjust based on your needs */
-        overflow: hidden;
-    }
-    .background-video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    .content-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
+        height: 50vh;
+        margin-bottom: -250px;
     }
     .content-overlay a {
-        display: inline-block;
         padding: 10px 20px;
-        background-color: #000000;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 15px;
-        border: solid 2px transparent;
-        transition: all 0.15s ease-in-out;
+        font-size: 16px;
     }
-    
-    .content-overlay a:hover {
-        background-color: #ffffff;
-        color: #000000;
-        border: solid 2px #000000;
-        transform: scale(1.02);
-        box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
-                -webkit-box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
-                -moz-box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
-    }
-    
     .content-overlay-text {
-        font-size: 35px;
-        margin-top: 50px;
-        color: rgb(0, 0, 0);
-        font-weight: 600;
-        
+        font-size: 24px;
+        margin-top: 20px;
+        padding: 10px;
     }
+}
+</style>
+
+<section class="FBS-ban-sec1">
+    {% if section.settings.vimeo_video_id != blank %}
+        <iframe 
+            class="background-video"
+            src="https://player.vimeo.com/video/{{ section.settings.vimeo_video_id }}?badge=0&autopause=0&autoplay=1&muted=1&loop=1&controls=0&background=1&quality=auto"
+            frameborder="0"
+            loading="lazy"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            title="{{ section.settings.video_title | default: 'Homepage Banner Video' }}">
+        </iframe>
+    {% else %}
+        <div class="video-placeholder">
+            <p>Add Vimeo video ID: 1101900843</p>
+        </div>
+    {% endif %}
     
-    .video-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.138); /* Adjust the last value (opacity) as needed */
-    }
-    
-    @media (max-width: 768px) {
-        .background-video {
-            height: 50vh; /* Reduce video height on mobile */
-        }
-        .content-overlay a {
-            padding: 10px 20px; /* Make the button a little smaller */
-            font-size: 16px; /* Reduce font size for the button */
-        }
-        .content-overlay-text {
-            font-size: 24px; /* Reduce the text size */
-            margin-top: 20px; /* Adjust top margin if necessary */
-            padding: 10px;
-        }
-    
-        .FBS-ban-sec1{
-            margin-bottom: -250px;
-        
-        }
-    }
-    </style>
-    </head>
-    <body class="body-class-2">
-        <section class="FBS-ban-sec1">
-            <video class="background-video" autoplay loop muted playsinline>
-                <source src="https://cdn.shopify.com/videos/c/o/v/0ee019d247524838a35002cbd8a1823b.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-overlay"></div>
-            <div class="content-overlay">
-                <h1 class="content-overlay-text">{{ 'bannerhomepage.text' | t }}</h1>
-                <a href="{{ 'bannerhomepage.link' | t }}" target="_blank">{{ 'bannerhomepage.buttontext' | t }}</a>
-            </div>
-        </section>
-    </body>
-    </html>
+    <div class="video-overlay"></div>
+    <div class="content-overlay">
+        <h1 class="content-overlay-text">{{ section.settings.banner_text | default: 'Your Banner Text' }}</h1>
+        <a href="{{ section.settings.banner_link | default: '#' }}" {% if section.settings.open_new_tab %}target="_blank"{% endif %}>
+            {{ section.settings.button_text | default: 'Shop Now' }}
+        </a>
+    </div>
+</section>
+
 {% schema %}
-      {
-        "name": "Home page Banner",
-        "settings": [],
-        "presets": [
-            {
-                "name": "Home page Banner",
-                "category": "Custom"
-            }
-        ]
-    }
+{
+    "name": "Home page Banner",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Video Settings"
+        },
+        {
+            "type": "text",
+            "id": "vimeo_video_id",
+            "label": "Vimeo Video ID",
+            "info": "Enter only the video ID from your Vimeo URL (e.g., 1101900843)",
+            "default": "1101900843"
+        },
+        {
+            "type": "text",
+            "id": "video_title",
+            "label": "Video Title",
+            "default": "Homepage Banner Video"
+        },
+        {
+            "type": "header",
+            "content": "Content Settings"
+        },
+        {
+            "type": "text",
+            "id": "banner_text",
+            "label": "Banner Text",
+            "default": "Your Banner Text"
+        },
+        {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Shop Now"
+        },
+        {
+            "type": "url",
+            "id": "banner_link",
+            "label": "Button Link"
+        },
+        {
+            "type": "checkbox",
+            "id": "open_new_tab",
+            "label": "Open link in new tab",
+            "default": false
+        }
+    ],
+    "presets": [
+        {
+            "name": "Home page Banner",
+            "category": "Custom"
+        }
+    ]
+}
 {% endschema %}
