@@ -495,6 +495,34 @@
       "type": "rinos-comparison-table",
       "settings": {}
     },
+    "iso_video_section_UpMQdb": {
+      "type": "ISO_Video_section",
+      "name": "Frame Test Video",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "vimeo_video_id": "1101897970",
+        "info_title": "Built Different",
+        "info_description": "Our approach to frame construction prioritizes long-term durability through careful material selection and precise engineering.",
+        "spec_1_label": "Material",
+        "spec_1_value": "T1000, T800, T700 Carbon Fiber",
+        "spec_2_label": "",
+        "spec_2_value": "",
+        "spec_3_label": "",
+        "spec_3_value": "",
+        "cta_text": "Learn More",
+        "cta_url": "",
+        "show_stats": true,
+        "stat_1_number": "2025",
+        "stat_1_label": "Est.",
+        "stat_2_number": "Tested",
+        "stat_2_label": "For ISO tests in our newest Road and Gravel frames.",
+        "stat_3_number": "Durable Design",
+        "stat_3_label": "Made with lasting in focus.",
+        "stat_4_number": "Reliable Performance",
+        "stat_4_label": "Even during high stress."
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "disabled": true,
@@ -561,6 +589,7 @@
     "rich_text_EXtbUx",
     "product-grid",
     "rinos_comparison_table_nz48Wf",
+    "iso_video_section_UpMQdb",
     "banner",
     "rich_text_Yt9dAG"
   ]
