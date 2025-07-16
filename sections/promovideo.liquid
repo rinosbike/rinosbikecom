@@ -19,6 +19,8 @@
     <div class="video-hero-content">
       {% if section.settings.heading != blank %}
         <h1 class="video-hero-heading">{{ section.settings.heading }}</h1>
+      {% else %}
+        <h1 class="video-hero-heading">Welcome to your new adventure, riders.</h1>
       {% endif %}
       
       {% if section.settings.subheading != blank %}
@@ -40,9 +42,6 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #000;
   }
 
@@ -70,19 +69,42 @@
   }
 
   .video-hero-content {
-    position: relative;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 3;
     text-align: center;
     color: white;
     padding: 20px;
     max-width: 800px;
+    width: 100%;
   }
 
   .video-hero-heading {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 25%, #e0e0e0 50%, #d0d0d0 75%, #c0c0c0 100%);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   .video-hero-subheading {
@@ -117,8 +139,13 @@
       height: 70vh;
     }
     
+    .video-hero-content {
+      top: 30px;
+      padding: 15px;
+    }
+    
     .video-hero-heading {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
     
     .video-hero-subheading {
@@ -137,12 +164,13 @@
       height: 60vh;
     }
     
-    .video-hero-heading {
-      font-size: 1.5rem;
+    .video-hero-content {
+      top: 20px;
+      padding: 10px;
     }
     
-    .video-hero-content {
-      padding: 15px;
+    .video-hero-heading {
+      font-size: 2rem;
     }
   }
 </style>
@@ -168,7 +196,7 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Welcome to Our Store"
+      "default": "Welcome to your new adventure, riders."
     },
     {
       "type": "textarea",
