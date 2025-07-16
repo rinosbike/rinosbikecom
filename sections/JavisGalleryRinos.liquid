@@ -1,101 +1,329 @@
-<div class="bike-info">
-          <h3 class="bike-name">{{ 'bikes.sandman6.title' | t }}</h3>
-          <p class="bike-description">{{ 'bikes.sandman6.description' | t }}</p>
-          
-          <div class="specs-dropdown">
-            <div class="specs-toggle" onclick="toggleSpecs(this)">
-              <span class="specs-label">Specifications</span>
-              <span class="specs-arrow">↓</span>
-            </div>
-            <div class="specs-content">
-              <div class="specs-list">
-                <div class="spec-item">
-                  <span class="spec-name">{{ 'bikes.weight_label' | t }}</span>
-                  <span class="spec-detail">{{ 'bikes.sandman6.weight' | t }}</span>
-                </div>
-                <div class="spec-item">
-                  <span class="spec-name">{{ 'bikes.gear_label' | t }}</span>
-                  <span class="spec-detail">{{ 'bikes.sandman6.gear' | t }}</span>
-                </div>
-                <div class="spec-item">
-                  <span class="spec-name">{{ 'bikes.gears_label' | t }}</span>
-                  <span class="spec-detail">{{ 'bikes.sandman6.gears' | t }}</span>
-                </div>
-                <div class="spec-item">
-                  <span class="spec-name">{{ 'bikes.frame_label' | t }}</span>
-                  <span class="spec-detail">{{ 'bikes.sandman6.frame' | t }}</span>
-                </div>
-                <div class="spec-item">
-                  <span class="spec-name">{{ 'bikes.frameSize_label' | t }}</span>
-                  <span class="spec-detail">{{ 'bikes.sandman6.frameSize' | t }}</span>
-                </div>
-                <div class="spec-item">
-                  <span class="spec-name">{{ 'bikes.brakes_label' | t }}</span>
-                  <span class="spec-detail">{{ 'bikes.sandman6.brakes' | t }}</span>
-                </div>
-                <div class="spec-item">
-                  <span class="spec-name">{{ 'bikes.wheelSize_label' | t }}</span>
-                  <span class="spec-detail">{{ 'bikes.sandman6.wheelSize' | t }}</span>
-                </div>
-                <div class="spec-item">
-                  <span class="spec-name">{{ 'bikes.rims_label' | t }}</span>
-                  <span class="spec-detail">{{ 'bikes.sandman6.rims' | t }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="color-options">
-            <span class="color-label">Available Colors</span>
-            <div class="color-swatches">
-              <div class="color-swatch color-black-forest active" 
-                   onclick="changeColor('sandman6-img', 'https://i.goopics.net/l39mbo.png', this)"
-                   title="Black Forest"></div>
-              <div class="color-swatch color-ivory-desert" 
-                   onclick="changeColor('sandman6-img', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"
-                   title="Ivory Desert"></div>
-              <div class="color-swatch color-chameleon-gold" 
-                   onclick="changeColor('sandman6-img', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"
-                   title="Chameleon Gold"></div>
-              <div class="color-swatch color-metal-blue-violet" 
-                   onclick="changeColor('sandman6-img', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"
-                   title="Metal Blue Violet"></div>
-            </div>
-          </div>
-          
-          <a href="#" class="discover-button">Discover More</a>
-        </div>
+{% comment %}
+  Clean Gravel Bike Gallery - Fresh Start
+{% endcomment %}
 
-      <!-- Sandman 7 -->
+<style>
+.bike-gallery {
+  padding: 40px 20px;
+  background: #ffffff;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.gallery-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.bike-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 40px;
+}
+
+.bike-card {
+  background: #fafafa;
+  transition: transform 0.3s ease;
+}
+
+.bike-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.bike-card.featured {
+  background: linear-gradient(135deg, #D3D3D3 0%, #BDBDBD 25%, #9E9E9E 50%, #D3D3D3 75%, #7D7D7D 100%);
+  background-size: 400% 400%;
+  animation: gradientFlow 4s ease-in-out infinite;
+  color: #ffffff;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bike-image-container {
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.bike-image {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+}
+
+.bike-info {
+  padding: 30px;
+}
+
+.bike-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.bike-card.featured .bike-name {
+  color: #ffffff;
+}
+
+.bike-description {
+  font-size: 0.9rem;
+  color: #86868b;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.bike-card.featured .bike-description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.specs-section {
+  margin-bottom: 20px;
+}
+
+.specs-toggle {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.specs-toggle:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.bike-card.featured .specs-toggle {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.bike-card.featured .specs-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.specs-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1d1d1f;
+}
+
+.bike-card.featured .specs-label {
+  color: #ffffff;
+}
+
+.specs-arrow {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  color: #86868b;
+}
+
+.bike-card.featured .specs-arrow {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.specs-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.specs-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.bike-card.featured .specs-content {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.specs-content.open {
+  max-height: 400px;
+}
+
+.specs-list {
+  padding: 16px;
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.9rem;
+}
+
+.spec-item:last-child {
+  border-bottom: none;
+}
+
+.bike-card.featured .spec-item {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.spec-name {
+  font-weight: 500;
+  color: #1d1d1f;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.3px;
+}
+
+.bike-card.featured .spec-name {
+  color: #ffffff;
+}
+
+.spec-detail {
+  font-weight: 400;
+  color: #86868b;
+}
+
+.bike-card.featured .spec-detail {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.color-section {
+  margin-bottom: 20px;
+}
+
+.color-label {
+  font-size: 0.8rem;
+  color: #86868b;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.bike-card.featured .color-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.color-swatches {
+  display: flex;
+  gap: 12px;
+}
+
+.color-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.color-swatch:hover {
+  border-color: #1d1d1f;
+  transform: scale(1.1);
+}
+
+.color-swatch.active {
+  border-color: #1d1d1f;
+  transform: scale(1.1);
+  box-shadow: 0 0 0 2px rgba(29, 29, 31, 0.3);
+}
+
+.bike-card.featured .color-swatch:hover,
+.bike-card.featured .color-swatch.active {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+.color-chameleon-gold {
+  background-color: #D4AF37;
+}
+
+.color-metal-blue-violet {
+  background-color: #4B0082;
+}
+
+.color-black-forest {
+  background-color: #2C3E50;
+}
+
+.color-ivory-desert {
+  background-color: #F5F5DC;
+}
+
+.discover-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #1d1d1f;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  border: 1px solid #1d1d1f;
+}
+
+.discover-button:hover {
+  background-color: transparent;
+  color: #1d1d1f;
+}
+
+.bike-card.featured .discover-button {
+  background-color: #ffffff;
+  color: #1d1d1f;
+  border-color: #ffffff;
+}
+
+.bike-card.featured .discover-button:hover {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .bike-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .bike-image-container {
+    height: 220px;
+  }
+  
+  .bike-info {
+    padding: 20px;
+  }
+}
+</style>
+
+<section class="bike-gallery">
+  <div class="gallery-container">
+    <div class="bike-grid">
+      
+      <!-- Sandman 1 -->
       <div class="bike-card">
         <div class="bike-image-container">
-          <img class="bike-image" id="sandman7-img"
-               src="https://i.goopics.net/l39mbo.png" 
-               alt="Sandman 7">
+          <img class="bike-image" id="sandman1-img"
+               src="https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713" 
+               alt="Sandman 1">
         </div>
         <div class="bike-info">
-          <h3 class="bike-name">{{ 'bikes.sandman7.title' | t }}</h3>
-          <p class="bike-description">{{ 'bikes.sandman7.description' | t }}</p>
+          <h3 class="bike-name">{{ 'bikes.sandman1.title' | t }}</h3>
+          <p class="bike-description">{{ 'bikes.sandman1.description' | t }}</p>
           
-          <div class="specs-dropdown">
+          <div class="specs-section">
             <div class="specs-toggle" onclick="toggleSpecs(this)">
               <span class="specs-label">Specifications</span>
               <span class="specs-arrow">↓</span>
             </div>
             <div class="specs-content">
               <div class="specs-list">
-                <div class="spec-item">
-                  <span class="spec-name">{{ 'bikes.weight_label' | t }}</span>
-                  <span class="spec-detail">{{ 'bikes.sandman7.weight' | t }}</span>
-                </div>
-                <div class="spec-item">
-                  <span class="spec-name">{{ 'bikes.gear_label' | t }}</span>
-                  <span class="spec-detail">{{ 'bikes.sandman7.gear' | t }}</span>
-                </div>
-                <div class="spec-item">
-                  <span class="spec-name">{{ 'bikes.gears_label' | t }}</span>
-                  <span class="spec-detail">{{ 'bikes.sandman7.gears' | t }}</span>
-                </div>
                 <div class="spec-item">
                   <span class="spec-name">{{ 'bikes.frame_label' | t }}</span>
                   <span class="spec-detail">{{ 'bikes.sandman7.frame' | t }}</span>
@@ -120,21 +348,17 @@
             </div>
           </div>
           
-          <div class="color-options">
+          <div class="color-section">
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch color-black-forest active" 
-                   onclick="changeColor('sandman7-img', 'https://i.goopics.net/l39mbo.png', this)"
-                   title="Black Forest"></div>
+                   onclick="changeColor('sandman7-img', 'https://i.goopics.net/l39mbo.png', this)"></div>
               <div class="color-swatch color-ivory-desert" 
-                   onclick="changeColor('sandman7-img', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"
-                   title="Ivory Desert"></div>
+                   onclick="changeColor('sandman7-img', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
               <div class="color-swatch color-chameleon-gold" 
-                   onclick="changeColor('sandman7-img', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"
-                   title="Chameleon Gold"></div>
+                   onclick="changeColor('sandman7-img', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
               <div class="color-swatch color-metal-blue-violet" 
-                   onclick="changeColor('sandman7-img', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"
-                   title="Metal Blue Violet"></div>
+                   onclick="changeColor('sandman7-img', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
             </div>
           </div>
           
@@ -179,354 +403,20 @@ function toggleSpecs(toggle) {
   content.classList.toggle('open');
   arrow.classList.toggle('rotated');
 }
-</script>{% comment %}
-  Simple Gravel Bike Gallery - Clean and Working
-{% endcomment %}
+</script>
 
-<style>
-  .bike-gallery {
-    padding: 40px 20px;
-    background: #ffffff;
-    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  }
-
-  .gallery-container {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-
-  .bike-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 40px;
-  }
-
-  .bike-card {
-    background: #fafafa;
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .bike-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  }
-
-  .bike-card.featured {
-    background: linear-gradient(135deg, #D3D3D3 0%, #BDBDBD 25%, #9E9E9E 50%, #D3D3D3 75%, #7D7D7D 100%);
-    background-size: 400% 400%;
-    animation: gradientFlow 4s ease-in-out infinite;
-    color: #ffffff;
-  }
-
-  @keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  .bike-image-container {
-    height: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ffffff;
-    overflow: hidden;
-  }
-
-  .bike-image {
-    max-width: 85%;
-    max-height: 85%;
-    object-fit: contain;
-    width: auto;
-    height: auto;
-  }
-
-  .bike-info {
-    padding: 30px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .bike-name {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #1d1d1f;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-  }
-
-  .bike-card.featured .bike-name {
-    color: #ffffff;
-  }
-
-  .bike-description {
-    font-size: 0.9rem;
-    color: #86868b;
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
-
-  .bike-card.featured .bike-description {
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .color-options {
-    margin-bottom: 20px;
-  }
-
-  .color-label {
-    font-size: 0.8rem;
-    color: #86868b;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    display: block;
-  }
-
-  .bike-card.featured .color-label {
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  .color-swatches {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 8px;
-  }
-
-  .color-swatch {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 3px solid #ddd;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    position: relative;
-    display: block;
-  }
-
-  .color-swatch:hover {
-    border-color: #1d1d1f;
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  .color-swatch.active {
-    border-color: #1d1d1f;
-    transform: scale(1.1);
-    box-shadow: 0 0 0 3px rgba(29, 29, 31, 0.3);
-  }
-
-  .bike-card.featured .color-swatch {
-    border-color: rgba(255, 255, 255, 0.5);
-  }
-
-  .bike-card.featured .color-swatch:hover,
-  .bike-card.featured .color-swatch.active {
-    border-color: #ffffff;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
-  }
-
-  .color-chameleon-gold {
-    background: #D4AF37;
-  }
-
-  .color-metal-blue-violet {
-    background: #4B0082;
-  }
-
-  .color-black-forest {
-    background: #2C3E50;
-  }
-
-  .color-ivory-desert {
-    background: #F5F5DC;
-    border-color: #ccc !important;
-  }
-
-  .specs-dropdown {
-    margin-bottom: 20px;
-  }
-
-  .specs-toggle {
-    background: rgba(0, 0, 0, 0.05);
-    padding: 12px 16px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background 0.2s ease;
-  }
-
-  .specs-toggle:hover {
-    background: rgba(0, 0, 0, 0.08);
-  }
-
-  .bike-card.featured .specs-toggle {
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  .bike-card.featured .specs-toggle:hover {
-    background: rgba(255, 255, 255, 0.15);
-  }
-
-  .specs-label {
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #1d1d1f;
-  }
-
-  .bike-card.featured .specs-label {
-    color: #ffffff;
-  }
-
-  .specs-arrow {
-    font-size: 1rem;
-    transition: transform 0.3s ease;
-    color: #86868b;
-  }
-
-  .bike-card.featured .specs-arrow {
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  .specs-arrow.rotated {
-    transform: rotate(180deg);
-  }
-
-  .specs-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    background: rgba(0, 0, 0, 0.02);
-  }
-
-  .bike-card.featured .specs-content {
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .specs-content.open {
-    max-height: 400px;
-  }
-
-  .specs-list {
-    padding: 16px;
-  }
-
-  .spec-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    font-size: 0.9rem;
-  }
-
-  .spec-item:last-child {
-    border-bottom: none;
-  }
-
-  .bike-card.featured .spec-item {
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-  }
-
-  .spec-name {
-    font-weight: 500;
-    color: #1d1d1f;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 0.3px;
-  }
-
-  .bike-card.featured .spec-name {
-    color: #ffffff;
-  }
-
-  .spec-detail {
-    font-weight: 400;
-    color: #86868b;
-  }
-
-  .bike-card.featured .spec-detail {
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .discover-button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #1d1d1f;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    transition: all 0.3s ease;
-    border: 1px solid #1d1d1f;
-    margin-top: auto;
-    text-align: center;
-  }
-
-  .discover-button:hover {
-    background-color: transparent;
-    color: #1d1d1f;
-    border: 1px solid #1d1d1f;
-  }
-
-  .bike-card.featured .discover-button {
-    background-color: #ffffff;
-    color: #1d1d1f;
-  }
-
-  .bike-card.featured .discover-button:hover {
-    background-color: transparent;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-  }
-
-  /* Mobile */
-  @media (max-width: 768px) {
-    .bike-grid {
-      grid-template-columns: 1fr;
-      gap: 30px;
+{% schema %}
+{
+  "name": "Gravel Bike Gallery",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Gravel Bike Gallery",
+      "category": "Custom"
     }
-    
-    .bike-image-container {
-      height: 220px;
-    }
-    
-    .bike-info {
-      padding: 20px;
-    }
-  }
-</style>
-
-<section class="bike-gallery">
-  <div class="gallery-container">
-    <div class="bike-grid">
-      
-      <!-- Sandman 1 -->
-      <div class="bike-card">
-        <div class="bike-image-container">
-          <img class="bike-image" id="sandman1-img"
-               src="https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713" 
-               alt="Sandman 1">
-        </div>
-        <div class="bike-info">
-          <h3 class="bike-name">{{ 'bikes.sandman1.title' | t }}</h3>
-          <p class="bike-description">{{ 'bikes.sandman1.description' | t }}</p>
-          
-          <div class="specs-dropdown">
-            <div class="specs-toggle" onclick="toggleSpecs(this)">
-              <span class="specs-label">Specifications</span>
-              <span class="specs-arrow">↓</span>
-            </div>
-            <div class="specs-content">
-              <div class="specs-list">
-                <div class="spec-item">
+  ]
+}
+{% endschema %}
                   <span class="spec-name">{{ 'bikes.weight_label' | t }}</span>
                   <span class="spec-detail">{{ 'bikes.sandman1.weight' | t }}</span>
                 </div>
@@ -562,15 +452,13 @@ function toggleSpecs(toggle) {
             </div>
           </div>
           
-          <div class="color-options">
+          <div class="color-section">
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch color-chameleon-gold active" 
-                   onclick="changeColor('sandman1-img', 'https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713', this)"
-                   title="Chameleon Gold"></div>
+                   onclick="changeColor('sandman1-img', 'https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713', this)"></div>
               <div class="color-swatch color-metal-blue-violet" 
-                   onclick="changeColor('sandman1-img', 'https://rinosbike.com/cdn/shop/files/Group302.png?v=1750150243&width=713', this)"
-                   title="Metal Blue Violet"></div>
+                   onclick="changeColor('sandman1-img', 'https://rinosbike.com/cdn/shop/files/Group302.png?v=1750150243&width=713', this)"></div>
             </div>
           </div>
           
@@ -589,7 +477,7 @@ function toggleSpecs(toggle) {
           <h3 class="bike-name">{{ 'bikes.sandman3.title' | t }}</h3>
           <p class="bike-description">{{ 'bikes.sandman3.description' | t }}</p>
           
-          <div class="specs-dropdown">
+          <div class="specs-section">
             <div class="specs-toggle" onclick="toggleSpecs(this)">
               <span class="specs-label">Specifications</span>
               <span class="specs-arrow">↓</span>
@@ -632,15 +520,13 @@ function toggleSpecs(toggle) {
             </div>
           </div>
           
-          <div class="color-options">
+          <div class="color-section">
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch color-chameleon-gold active" 
-                   onclick="changeColor('sandman3-img', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"
-                   title="Chameleon Gold"></div>
+                   onclick="changeColor('sandman3-img', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"></div>
               <div class="color-swatch color-metal-blue-violet" 
-                   onclick="changeColor('sandman3-img', 'https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713', this)"
-                   title="Metal Blue Violet"></div>
+                   onclick="changeColor('sandman3-img', 'https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713', this)"></div>
             </div>
           </div>
           
@@ -659,7 +545,7 @@ function toggleSpecs(toggle) {
           <h3 class="bike-name">{{ 'bikes.sandman4.title' | t }}</h3>
           <p class="bike-description">{{ 'bikes.sandman4.description' | t }}</p>
           
-          <div class="specs-dropdown">
+          <div class="specs-section">
             <div class="specs-toggle" onclick="toggleSpecs(this)">
               <span class="specs-label">Specifications</span>
               <span class="specs-arrow">↓</span>
@@ -702,21 +588,17 @@ function toggleSpecs(toggle) {
             </div>
           </div>
           
-          <div class="color-options">
+          <div class="color-section">
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch color-black-forest active" 
-                   onclick="changeColor('sandman4-img', 'https://i.goopics.net/l39mbo.png', this)"
-                   title="Black Forest"></div>
+                   onclick="changeColor('sandman4-img', 'https://i.goopics.net/l39mbo.png', this)"></div>
               <div class="color-swatch color-ivory-desert" 
-                   onclick="changeColor('sandman4-img', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"
-                   title="Ivory Desert"></div>
+                   onclick="changeColor('sandman4-img', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
               <div class="color-swatch color-chameleon-gold" 
-                   onclick="changeColor('sandman4-img', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"
-                   title="Chameleon Gold"></div>
+                   onclick="changeColor('sandman4-img', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
               <div class="color-swatch color-metal-blue-violet" 
-                   onclick="changeColor('sandman4-img', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"
-                   title="Metal Blue Violet"></div>
+                   onclick="changeColor('sandman4-img', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
             </div>
           </div>
           
@@ -735,7 +617,7 @@ function toggleSpecs(toggle) {
           <h3 class="bike-name">{{ 'bikes.sandman5.title' | t }}</h3>
           <p class="bike-description">{{ 'bikes.sandman5.description' | t }}</p>
           
-          <div class="specs-dropdown">
+          <div class="specs-section">
             <div class="specs-toggle" onclick="toggleSpecs(this)">
               <span class="specs-label">Specifications</span>
               <span class="specs-arrow">↓</span>
@@ -778,15 +660,13 @@ function toggleSpecs(toggle) {
             </div>
           </div>
           
-          <div class="color-options">
+          <div class="color-section">
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch color-chameleon-gold active" 
-                   onclick="changeColor('sandman5-img', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"
-                   title="Chameleon Gold"></div>
+                   onclick="changeColor('sandman5-img', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"></div>
               <div class="color-swatch color-metal-blue-violet" 
-                   onclick="changeColor('sandman5-img', 'https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713', this)"
-                   title="Metal Blue Violet"></div>
+                   onclick="changeColor('sandman5-img', 'https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713', this)"></div>
             </div>
           </div>
           
@@ -805,7 +685,50 @@ function toggleSpecs(toggle) {
           <h3 class="bike-name">{{ 'bikes.sandman6.title' | t }}</h3>
           <p class="bike-description">{{ 'bikes.sandman6.description' | t }}</p>
           
-          <div class="color-options">
+          <div class="specs-section">
+            <div class="specs-toggle" onclick="toggleSpecs(this)">
+              <span class="specs-label">Specifications</span>
+              <span class="specs-arrow">↓</span>
+            </div>
+            <div class="specs-content">
+              <div class="specs-list">
+                <div class="spec-item">
+                  <span class="spec-name">{{ 'bikes.weight_label' | t }}</span>
+                  <span class="spec-detail">{{ 'bikes.sandman6.weight' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">{{ 'bikes.gear_label' | t }}</span>
+                  <span class="spec-detail">{{ 'bikes.sandman6.gear' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">{{ 'bikes.gears_label' | t }}</span>
+                  <span class="spec-detail">{{ 'bikes.sandman6.gears' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">{{ 'bikes.frame_label' | t }}</span>
+                  <span class="spec-detail">{{ 'bikes.sandman6.frame' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">{{ 'bikes.frameSize_label' | t }}</span>
+                  <span class="spec-detail">{{ 'bikes.sandman6.frameSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">{{ 'bikes.brakes_label' | t }}</span>
+                  <span class="spec-detail">{{ 'bikes.sandman6.brakes' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">{{ 'bikes.wheelSize_label' | t }}</span>
+                  <span class="spec-detail">{{ 'bikes.sandman6.wheelSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">{{ 'bikes.rims_label' | t }}</span>
+                  <span class="spec-detail">{{ 'bikes.sandman6.rims' | t }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="color-section">
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch color-black-forest active" 
@@ -834,52 +757,23 @@ function toggleSpecs(toggle) {
           <h3 class="bike-name">{{ 'bikes.sandman7.title' | t }}</h3>
           <p class="bike-description">{{ 'bikes.sandman7.description' | t }}</p>
           
-          <div class="color-options">
-            <span class="color-label">Available Colors</span>
-            <div class="color-swatches">
-              <div class="color-swatch color-black-forest active" 
-                   onclick="changeColor('sandman7-img', 'https://i.goopics.net/l39mbo.png', this)"></div>
-              <div class="color-swatch color-ivory-desert" 
-                   onclick="changeColor('sandman7-img', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
-              <div class="color-swatch color-chameleon-gold" 
-                   onclick="changeColor('sandman7-img', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
-              <div class="color-swatch color-metal-blue-violet" 
-                   onclick="changeColor('sandman7-img', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
+          <div class="specs-section">
+            <div class="specs-toggle" onclick="toggleSpecs(this)">
+              <span class="specs-label">Specifications</span>
+              <span class="specs-arrow">↓</span>
             </div>
-          </div>
-          
-          <a href="#" class="discover-button">Discover More</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<script>
-function changeColor(imageId, newSrc, clickedSwatch) {
-  // Change the image
-  const img = document.getElementById(imageId);
-  if (img) {
-    img.src = newSrc;
-  }
-  
-  // Update active swatch
-  const swatches = clickedSwatch.parentNode.querySelectorAll('.color-swatch');
-  swatches.forEach(swatch => swatch.classList.remove('active'));
-  clickedSwatch.classList.add('active');
-}
-</script>
-
-{% schema %}
-{
-  "name": "Gravel Bike Gallery",
-  "settings": [],
-  "presets": [
-    {
-      "name": "Gravel Bike Gallery",
-      "category": "Custom"
-    }
-  ]
-}
-{% endschema %}
+            <div class="specs-content">
+              <div class="specs-list">
+                <div class="spec-item">
+                  <span class="spec-name">{{ 'bikes.weight_label' | t }}</span>
+                  <span class="spec-detail">{{ 'bikes.sandman7.weight' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">{{ 'bikes.gear_label' | t }}</span>
+                  <span class="spec-detail">{{ 'bikes.sandman7.gear' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-name">{{ 'bikes.gears_label' | t }}</span>
+                  <span class="spec-detail">{{ 'bikes.sandman7.gears' | t }}</span>
+                </div>
+                <div class="spec-item">
