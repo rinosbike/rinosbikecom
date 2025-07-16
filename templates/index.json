@@ -63,11 +63,54 @@
       "name": "Video Hero",
       "settings": {
         "show_content": true,
-        "show_overlay": true,
+        "show_overlay": false,
         "heading": "Welcome to the adventure, rider.",
         "subheading": "",
         "button_text": "",
         "button_link": ""
+      }
+    },
+    "rich_text_VjAHAq": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_JLgjKW": {
+          "type": "heading",
+          "settings": {
+            "heading": "Latest news",
+            "heading_size": "h1"
+          }
+        },
+        "text_dTchyF": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "button_xJzdhD": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_JLgjKW",
+        "text_dTchyF",
+        "button_xJzdhD"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "image_banner_XyQx3D": {
@@ -76,7 +119,7 @@
         "heading_HEXJgw": {
           "type": "heading",
           "settings": {
-            "heading": "Discover <em><strong>Gravel. Discover the Sandman.</strong></em>",
+            "heading": "Discover the new colorways of our Sandman.",
             "heading_size": "h1"
           }
         },
@@ -884,6 +927,7 @@
   "order": [
     "image_banner_HXtDzL",
     "promovideo_3MQXnM",
+    "rich_text_VjAHAq",
     "image_banner_XyQx3D",
     "collage_xgMyez",
     "featured_blog_iNPmwD",
