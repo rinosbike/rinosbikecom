@@ -106,6 +106,18 @@
         "show_text_below": false
       }
     },
+    "promovideo_3MQXnM": {
+      "type": "promovideo",
+      "name": "Video Hero",
+      "settings": {
+        "show_content": true,
+        "show_overlay": true,
+        "heading": "",
+        "subheading": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
     "collage_xgMyez": {
       "type": "collage",
       "blocks": {
@@ -871,6 +883,7 @@
   },
   "order": [
     "image_banner_HXtDzL",
+    "promovideo_3MQXnM",
     "image_banner_XyQx3D",
     "collage_xgMyez",
     "featured_blog_iNPmwD",
