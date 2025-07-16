@@ -102,6 +102,119 @@
     padding: 40px 30px;
   }
 
+  .bike-specs-dropdown {
+    margin-bottom: 24px;
+  }
+
+  .specs-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    width: 100%;
+    font-family: inherit;
+  }
+
+  .bike-card.featured .specs-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+
+  .specs-toggle:hover {
+    background: rgba(0, 0, 0, 0.08);
+  }
+
+  .bike-card.featured .specs-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .specs-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1d1d1f;
+  }
+
+  .bike-card.featured .specs-label {
+    color: #ffffff;
+  }
+
+  .specs-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    color: #86868b;
+  }
+
+  .bike-card.featured .specs-arrow {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .specs-arrow.active {
+    transform: rotate(180deg);
+  }
+
+  .specs-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  .bike-card.featured .specs-content {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .specs-content.active {
+    max-height: 300px;
+  }
+
+  .specs-list {
+    padding: 16px;
+  }
+
+  .spec-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 0.85rem;
+  }
+
+  .spec-item:last-child {
+    border-bottom: none;
+  }
+
+  .bike-card.featured .spec-item {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .spec-label {
+    font-weight: 500;
+    color: #1d1d1f;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.3px;
+  }
+
+  .bike-card.featured .spec-label {
+    color: #ffffff;
+  }
+
+  .spec-value {
+    font-weight: 400;
+    color: #86868b;
+  }
+
+  .bike-card.featured .spec-value {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
   .bike-name {
     font-size: 1.6rem;
     font-weight: 600;
@@ -374,6 +487,50 @@
         <div class="bike-info">
           <h3 class="bike-name">{{ 'bikes.sandman1.title' | t }}</h3>
           <p class="bike-description">{{ 'bikes.sandman1.description' | t }}</p>
+          
+          <div class="bike-specs-dropdown">
+            <button class="specs-toggle" onclick="toggleSpecs(this)">
+              <span class="specs-label">Specifications</span>
+              <span class="specs-arrow">↓</span>
+            </button>
+            <div class="specs-content">
+              <div class="specs-list">
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.weight_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman1.weight' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.gear_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman1.gear' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.gears_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman1.gears' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.frame_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman1.frame' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.frameSize_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman1.frameSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.brakes_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman1.brakes' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman1.wheelSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.rims_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman1.rims' | t }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="color-options">
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
@@ -401,6 +558,50 @@
         <div class="bike-info">
           <h3 class="bike-name">{{ 'bikes.sandman3.title' | t }}</h3>
           <p class="bike-description">{{ 'bikes.sandman3.description' | t }}</p>
+          
+          <div class="bike-specs-dropdown">
+            <button class="specs-toggle" onclick="toggleSpecs(this)">
+              <span class="specs-label">Specifications</span>
+              <span class="specs-arrow">↓</span>
+            </button>
+            <div class="specs-content">
+              <div class="specs-list">
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.weight_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman3.weight' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.gear_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman3.gear' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.gears_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman3.gears' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.frame_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman3.frame' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.frameSize_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman3.frameSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.brakes_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman3.brakes' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman3.wheelSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.rims_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman3.rims' | t }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="color-options">
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
@@ -423,17 +624,61 @@
         <div class="featured-badge">Featured</div>
         <div class="bike-image-container">
           <img class="bike-image" id="gallery-sandman4-img"
-               src="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713" 
+               src="https://i.goopics.net/l39mbo.png" 
                alt="{{ 'bikes.sandman4.title' | t }}">
         </div>
         <div class="bike-info">
           <h3 class="bike-name">{{ 'bikes.sandman4.title' | t }}</h3>
           <p class="bike-description">{{ 'bikes.sandman4.description' | t }}</p>
+          
+          <div class="bike-specs-dropdown">
+            <button class="specs-toggle" onclick="toggleSpecs(this)">
+              <span class="specs-label">Specifications</span>
+              <span class="specs-arrow">↓</span>
+            </button>
+            <div class="specs-content">
+              <div class="specs-list">
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.weight_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman4.weight' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.gear_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman4.gear' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.gears_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman4.gears' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.frame_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman4.frame' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.frameSize_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman4.frameSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.brakes_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman4.brakes' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman4.wheelSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.rims_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman4.rims' | t }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="color-options">
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch color-black-forest active" 
-                   data-image="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713"
+                   data-image="https://i.goopics.net/l39mbo.png"
                    data-target="gallery-sandman4-img"
                    title="Black Forest"></div>
               <div class="color-swatch color-ivory-desert" 
@@ -464,6 +709,50 @@
         <div class="bike-info">
           <h3 class="bike-name">{{ 'bikes.sandman5.title' | t }}</h3>
           <p class="bike-description">{{ 'bikes.sandman5.description' | t }}</p>
+          
+          <div class="bike-specs-dropdown">
+            <button class="specs-toggle" onclick="toggleSpecs(this)">
+              <span class="specs-label">Specifications</span>
+              <span class="specs-arrow">↓</span>
+            </button>
+            <div class="specs-content">
+              <div class="specs-list">
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.weight_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman5.weight' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.gear_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman5.gear' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.gears_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman5.gears' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.frame_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman5.frame' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.frameSize_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman5.frameSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.brakes_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman5.brakes' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman5.wheelSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.rims_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman5.rims' | t }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="color-options">
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
@@ -485,22 +774,79 @@
       <div class="bike-card">
         <div class="bike-image-container">
           <img class="bike-image" id="gallery-sandman6-img"
-               src="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713" 
+               src="https://i.goopics.net/l39mbo.png" 
                alt="{{ 'bikes.sandman6.title' | t }}">
         </div>
         <div class="bike-info">
           <h3 class="bike-name">{{ 'bikes.sandman6.title' | t }}</h3>
           <p class="bike-description">{{ 'bikes.sandman6.description' | t }}</p>
+          
+          <div class="bike-specs-dropdown">
+            <button class="specs-toggle" onclick="toggleSpecs(this)">
+              <span class="specs-label">Specifications</span>
+              <span class="specs-arrow">↓</span>
+            </button>
+            <div class="specs-content">
+              <div class="specs-list">
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.weight_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman6.weight' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.gear_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman6.gear' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.gears_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman6.gears' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.frame_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman6.frame' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.frameSize_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman6.frameSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.brakes_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman6.brakes' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman6.wheelSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.rims_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman6.rims' | t }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="color-options">
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch color-black-forest active" 
-                   data-image="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713"
+                   data-image="https://i.goopics.net/l39mbo.png"
                    data-target="gallery-sandman6-img"
                    title="Black Forest"></div>
               <div class="color-swatch color-ivory-desert" 
                    data-image="https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713"
                    data-target="gallery-sandman6-img"
+                   title="Ivory Desert"></div>
+              <div class="color-swatch color-chameleon-gold" 
+                   data-image="https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713"
+                   data-target="gallery-sandman6-img"
+                   title="Chameleon Gold"></div>
+              <div class="color-swatch color-metal-blue-violet" 
+                   data-image="https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713"
+                   data-target="gallery-sandman6-img"
+                   title="Metal Blue Violet"></div>
+            </div>
+          </div>
+          <a href="#" class="discover-button">Discover More</a>
+        </div>img"
                    title="Ivory Desert"></div>
               <div class="color-swatch color-chameleon-gold" 
                    data-image="https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713"
@@ -520,17 +866,61 @@
       <div class="bike-card">
         <div class="bike-image-container">
           <img class="bike-image" id="gallery-sandman7-img"
-               src="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713" 
+               src="https://i.goopics.net/l39mbo.png" 
                alt="{{ 'bikes.sandman7.title' | t }}">
         </div>
         <div class="bike-info">
           <h3 class="bike-name">{{ 'bikes.sandman7.title' | t }}</h3>
           <p class="bike-description">{{ 'bikes.sandman7.description' | t }}</p>
+          
+          <div class="bike-specs-dropdown">
+            <button class="specs-toggle" onclick="toggleSpecs(this)">
+              <span class="specs-label">Specifications</span>
+              <span class="specs-arrow">↓</span>
+            </button>
+            <div class="specs-content">
+              <div class="specs-list">
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.weight_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman7.weight' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.gear_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman7.gear' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.gears_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman7.gears' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.frame_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman7.frame' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.frameSize_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman7.frameSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.brakes_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman7.brakes' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman7.wheelSize' | t }}</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">{{ 'bikes.rims_label' | t }}</span>
+                  <span class="spec-value">{{ 'bikes.sandman7.rims' | t }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="color-options">
             <span class="color-label">Available Colors</span>
             <div class="color-swatches">
               <div class="color-swatch color-black-forest active" 
-                   data-image="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713"
+                   data-image="https://i.goopics.net/l39mbo.png"
                    data-target="gallery-sandman7-img"
                    title="Black Forest"></div>
               <div class="color-swatch color-ivory-desert" 
@@ -556,9 +946,9 @@
 </section>
 
 <script>
-// Gallery color switching functionality
+// Gallery functionality
 document.addEventListener('DOMContentLoaded', function() {
-  // Handle color swatch clicks
+  // Color switching functionality
   document.querySelectorAll('.color-swatch').forEach(function(swatch) {
     swatch.addEventListener('click', function(e) {
       e.preventDefault();
@@ -568,13 +958,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const targetImg = document.getElementById(targetId);
       
       if (targetImg && imageUrl) {
-        // Smooth image transition
-        targetImg.style.opacity = '0';
-        
-        setTimeout(function() {
-          targetImg.src = imageUrl;
-          targetImg.style.opacity = '1';
-        }, 150);
+        // Immediate image change for better responsiveness
+        targetImg.src = imageUrl;
         
         // Update active state
         const container = this.parentElement;
@@ -594,6 +979,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Specifications dropdown toggle
+function toggleSpecs(button) {
+  const content = button.nextElementSibling;
+  const arrow = button.querySelector('.specs-arrow');
+  
+  // Close all other dropdowns
+  document.querySelectorAll('.specs-content').forEach(function(item) {
+    if (item !== content) {
+      item.classList.remove('active');
+      const otherArrow = item.previousElementSibling.querySelector('.specs-arrow');
+      if (otherArrow) {
+        otherArrow.classList.remove('active');
+      }
+    }
+  });
+  
+  // Toggle current dropdown
+  content.classList.toggle('active');
+  arrow.classList.toggle('active');
+}
 </script>
 
 {% schema %}
