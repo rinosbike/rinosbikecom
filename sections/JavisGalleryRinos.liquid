@@ -204,10 +204,13 @@ function toggleSpecs(toggle) {
   .bike-card {
     background: #fafafa;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
   }
 
   .bike-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   }
 
   .bike-card.featured {
@@ -229,16 +232,22 @@ function toggleSpecs(toggle) {
     align-items: center;
     justify-content: center;
     background: #ffffff;
+    overflow: hidden;
   }
 
   .bike-image {
     max-width: 85%;
     max-height: 85%;
     object-fit: contain;
+    width: auto;
+    height: auto;
   }
 
   .bike-info {
     padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   .bike-name {
@@ -285,6 +294,7 @@ function toggleSpecs(toggle) {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
+    margin-top: 8px;
   }
 
   .color-swatch {
@@ -295,6 +305,7 @@ function toggleSpecs(toggle) {
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
+    display: block;
   }
 
   .color-swatch:hover {
@@ -320,19 +331,19 @@ function toggleSpecs(toggle) {
   }
 
   .color-chameleon-gold {
-    background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+    background: #D4AF37;
   }
 
   .color-metal-blue-violet {
-    background: linear-gradient(135deg, #4B0082 0%, #6A5ACD 100%);
+    background: #4B0082;
   }
 
   .color-black-forest {
-    background: linear-gradient(135deg, #2C3E50 0%, #1C2833 100%);
+    background: #2C3E50;
   }
 
   .color-ivory-desert {
-    background: linear-gradient(135deg, #F5F5DC 0%, #FAEBD7 100%);
+    background: #F5F5DC;
     border-color: #ccc !important;
   }
 
@@ -454,6 +465,9 @@ function toggleSpecs(toggle) {
     text-transform: uppercase;
     font-size: 0.8rem;
     transition: all 0.3s ease;
+    border: 1px solid #1d1d1f;
+    margin-top: auto;
+    text-align: center;
   }
 
   .discover-button:hover {
