@@ -42,6 +42,7 @@
         "text_tEAged",
         "button_3XynMG"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
@@ -95,6 +96,7 @@
         "slide_P7htGq",
         "slide_CPwdtX"
       ],
+      "disabled": true,
       "settings": {
         "layout": "full_bleed",
         "slide_height": "medium",
@@ -140,6 +142,7 @@
         "text_j7HzNk",
         "buttons_qdPzAT"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Ultegra.png",
         "image_overlay_opacity": 0,
@@ -156,6 +159,7 @@
     },
     "featured_collection_4VrLDz": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Discover the <em><strong>Classic Sandman</strong></em>.",
         "heading_size": "h1",
@@ -182,20 +186,69 @@
         "padding_bottom": 36
       }
     },
+    "image_banner_9dBUXR": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_GLUfYL": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Ready when you are.</em> Welcome to Gravel.",
+            "heading_size": "h1"
+          }
+        },
+        "text_7GWHTa": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_KJXan9": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_GLUfYL",
+        "text_7GWHTa",
+        "buttons_KJXan9"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/IMG_1446.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "rich_text_b3NKQm": {
       "type": "rich-text",
       "blocks": {
         "heading_AMctPH": {
           "type": "heading",
           "settings": {
-            "heading": "There’s something about gravel that pulls you in—the unpredictability, the rawness of it.",
+            "heading": "We have something for you.",
             "heading_size": "h2"
           }
         },
         "text_yF9Aee": {
           "type": "text",
           "settings": {
-            "text": "<p>After being experienced on a bike, you stop caring about the easy routes and start craving the ride that makes you feel alive. </p><p>Sandman is built for that exact moment—the second you leave the smooth pavement behind, and the world gets a little wilder. </p><p><em><strong>The Sandman thrives on chaos, and keeps you steady when everything around you isn’t. </strong></em></p>"
+            "text": "<p>From the weekend warrior discovering hidden paths to the seasoned adventurer pushing boundaries, from the commuter seeking a more exciting route to the explorer hungry for new horizons. Every rider has a story, and every story deserves the right bike.</p><p>Our collection spans the spectrum of possibility. Lightweight carbon frames that climb mountains like they're molehills. Sturdy steel companions built for decades of loyalty. Versatile all-road machines that blur the line between pavement and trail. Each one carefully chosen, expertly crafted, and ready to become part of your journey.</p>"
           }
         },
         "button_mdnyjd": {
@@ -306,6 +359,7 @@
         "slide_bxHJRF",
         "slide_GzzJDX"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "layout": "full_bleed",
@@ -316,52 +370,6 @@
         "image_behavior": "none",
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
-      }
-    },
-    "video_xq8bfY": {
-      "type": "video",
-      "custom_css": [
-        "@media (min-width: 750px) {.video-section__media {max-width: 1000px !important; padding-bottom: 600px !important; margin: 0 auto; height: auto; }}"
-      ],
-      "settings": {
-        "heading": "Watch the <strong>Sandman GRX</strong> Unboxing",
-        "heading_size": "h2",
-        "enable_video_looping": true,
-        "video": "shopify://files/videos/327B745F-AAF0-4FD9-9209-9124CE1F7E49.MOV",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "featured_collection_bCpCC8": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Discover the<em><strong> Sandman GRX</strong></em>.",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "sandman-grx",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": true,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "rich_text_EXtbUx": {
@@ -490,10 +498,9 @@
     "slideshow_9NMB7c",
     "image_banner_cAFV3z",
     "featured_collection_4VrLDz",
+    "image_banner_9dBUXR",
     "rich_text_b3NKQm",
     "slideshow_ABJHGn",
-    "video_xq8bfY",
-    "featured_collection_bCpCC8",
     "rich_text_EXtbUx",
     "product-grid",
     "rinos_comparison_table_nz48Wf",
