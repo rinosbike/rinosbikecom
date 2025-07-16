@@ -283,6 +283,11 @@
         "padding_bottom": 52
       }
     },
+    "javis_gallery_rinos_QTCbir": {
+      "type": "JavisGalleryRinos",
+      "name": "Gravel Bike Gallery",
+      "settings": {}
+    },
     "promovideo_RfRdkg": {
       "type": "promovideo",
       "disabled": true,
@@ -520,6 +525,7 @@
     "image_banner_9dBUXR",
     "javis_gallery_rinos_J37Dax",
     "rich_text_b3NKQm",
+    "javis_gallery_rinos_QTCbir",
     "promovideo_RfRdkg",
     "slideshow_ABJHGn",
     "rich_text_EXtbUx",
