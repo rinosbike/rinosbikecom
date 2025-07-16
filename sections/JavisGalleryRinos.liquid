@@ -108,58 +108,49 @@
 
 .color-swatches {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
+  margin-top: 8px;
 }
 
 .color-swatch {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 2px solid #ddd;
+  border: 3px solid #333;
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
+  display: block;
 }
 
 .color-swatch:hover {
-  border-color: #1d1d1f;
+  border-color: #000;
   transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .color-swatch.active {
-  border-color: #1d1d1f;
+  border-color: #000;
   transform: scale(1.1);
-  box-shadow: 0 0 0 3px rgba(29, 29, 31, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
-.bike-card.featured .color-swatch {
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-.bike-card.featured .color-swatch:hover,
-.bike-card.featured .color-swatch.active {
-  border-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
-}
-
-/* Color backgrounds */
+/* Simple solid colors that will definitely show */
 .chameleon-gold {
-  background-color: #D4AF37;
+  background: #FFD700 !important;
 }
 
 .metal-blue-violet {
-  background-color: #4B0082;
+  background: #4B0082 !important;
 }
 
 .black-forest {
-  background-color: #2C3E50;
+  background: #2C3E50 !important;
 }
 
 .ivory-desert {
-  background-color: #F5F5DC;
-  border-color: #ccc !important;
+  background: #F5F5DC !important;
+  border-color: #999 !important;
 }
 
 .discover-button {
