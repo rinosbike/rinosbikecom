@@ -1,29 +1,5 @@
-<!-- Sandman 6 -->
-      <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header" onclick="toggleAccordion(this)">
-          <div class="mobile-bike-image-container">
-            <img id="mobile-sandman6-image" class="mobile-bike-image" 
-                 src="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713" 
-                 alt="{{ 'bikes.sandman6.title' | t }}">
-          </div>
-          <div class="mobile-color-swatches">
-            <div class="mobile-color-swatch color-black-forest active" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman6', 'https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713', this)"></div>
-            <div class="mobile-color-swatch color-ivory-desert" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman6', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
-            <div class="mobile-color-swatch color-chameleon-gold" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman6', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
-            <div class="mobile-color-swatch color-metal-blue-violet" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman6', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
-          </div>
-          <div class="mobile-bike-name">{{ 'bikes.sandman6.title' | t }}</div>
-          <div class="mobile-bike-description">{{ 'bikes.sandman6.description' | t }}</div>
-          <a href="#" class="mobile-discover-link" onclick="event.stopPropagation()">Discover More</a>
-          <span class="mobile-accordion-toggle">↓</span>
-        </div>{% comment %}
-  Minimalist Gravel Bike Comparison Table
-  Apple x Rick Owens aesthetic - stark, architectural, premium
-  Responsive: Table on desktop, accordion cards on mobile
+{% comment %}
+javis approach ;) 
 {% endcomment %}
 
 <style>
@@ -56,7 +32,7 @@
   }
 
   .bike-header th {
-    padding: 40px 30px 40px;
+    padding: 30px 20px 40px;
     text-align: center;
     border-right: 1px solid #e8e8e8;
     position: relative;
@@ -82,44 +58,40 @@
   }
 
   @keyframes gradientFlow {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   .bike-image-container {
     position: relative;
-    margin-bottom: 20px;
-    height: 160px;
+    margin-bottom: 16px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
 
   .bike-image {
-    width: 200px;
-    height: 140px;
+    max-width: 140px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
     object-fit: contain;
     transition: opacity 0.3s ease;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
   }
 
   .color-swatches {
     display: flex;
     justify-content: center;
-    gap: 8px;
-    margin-bottom: 16px;
+    gap: 6px;
+    margin-bottom: 12px;
   }
 
   .color-swatch {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     border: 2px solid #e8e8e8;
     cursor: pointer;
@@ -129,111 +101,62 @@
 
   .color-swatch:hover {
     border-color: #1d1d1f;
-    transform: scale(1.1);
+    transform: scale(1.15);
   }
 
   .color-swatch.active {
     border-color: #1d1d1f;
+    transform: scale(1.15);
     box-shadow: 0 0 0 2px rgba(29, 29, 31, 0.2);
   }
 
   .featured-bike .color-swatch {
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
   }
 
   .featured-bike .color-swatch:hover,
   .featured-bike .color-swatch.active {
     border-color: #ffffff;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
   }
 
   /* Color swatch styles */
   .color-chameleon-gold {
-    background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #B8860B 100%);
+    background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
   }
 
   .color-metal-blue-violet {
-    background: linear-gradient(135deg, #4B0082 0%, #6A5ACD 50%, #483D8B 100%);
+    background: linear-gradient(135deg, #4B0082 0%, #6A5ACD 100%);
   }
 
   .color-black-forest {
-    background: linear-gradient(135deg, #2C3E50 0%, #34495E 50%, #1C2833 100%);
+    background: linear-gradient(135deg, #2C3E50 0%, #1C2833 100%);
   }
 
   .color-ivory-desert {
-    background: linear-gradient(135deg, #F5F5DC 0%, #FAEBD7 50%, #E6E6FA 100%);
+    background: linear-gradient(135deg, #F5F5DC 0%, #FAEBD7 100%);
+    border-color: #ccc;
   }
-    font-size: 1.4rem;
+
+  .bike-name {
+    font-size: 1.2rem;
     font-weight: 600;
     color: #1d1d1f;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 0.02em;
   }
 
-  .featured-bike   .mobile-bike-image-container {
-    position: relative;
-    margin-bottom: 16px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .mobile-bike-image {
-    width: 160px;
-    height: 100px;
-    object-fit: contain;
-    transition: opacity 0.3s ease;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
-  }
-
-  .mobile-color-swatches {
-    display: flex;
-    justify-content: center;
-    gap: 6px;
-    margin-bottom: 12px;
-  }
-
-  .mobile-color-swatch {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid #e8e8e8;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .mobile-color-swatch:hover {
-    border-color: #1d1d1f;
-    transform: scale(1.1);
-  }
-
-  .mobile-color-swatch.active {
-    border-color: #1d1d1f;
-    box-shadow: 0 0 0 2px rgba(29, 29, 31, 0.2);
-  }
-
-  .mobile-accordion-header.featured .mobile-color-swatch {
-    border-color: rgba(255, 255, 255, 0.3);
-  }
-
-  .mobile-accordion-header.featured .mobile-color-swatch:hover,
-  .mobile-accordion-header.featured .mobile-color-swatch.active {
-    border-color: #ffffff;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
-  }
-
-  .bike-name {
+  .featured-bike .bike-name {
     color: #ffffff;
   }
 
   .bike-description {
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: #86868b;
-    line-height: 1.4;
+    line-height: 1.3;
     font-weight: 400;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   .featured-bike .bike-description {
@@ -241,7 +164,7 @@
   }
 
   .discover-link {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     color: #0066cc;
     text-decoration: none;
     font-weight: 500;
@@ -314,12 +237,11 @@
   /* Mobile Accordion View */
   .mobile-accordion {
     display: none;
-    padding: 20px;
+    padding: 0;
   }
 
   .mobile-accordion-item {
     border-bottom: 1px solid #e8e8e8;
-    margin-bottom: 0;
   }
 
   .mobile-accordion-item:last-child {
@@ -327,14 +249,14 @@
   }
 
   .mobile-accordion-header {
-    padding: 30px 20px;
+    padding: 20px;
     background: #fafafa;
     cursor: pointer;
     position: relative;
     transition: all 0.3s ease;
   }
 
-  .mobile-accordion-header:hover {
+  .mobile-accordion-header:active {
     background: #f0f0f0;
   }
 
@@ -345,15 +267,66 @@
     animation: gradientFlow 4s ease-in-out infinite;
   }
 
-  .mobile-accordion-header.featured:hover {
-    background: linear-gradient(135deg, #C3C3C3 0%, #ADADAD 25%, #8E8E8E 50%, #C3C3C3 75%, #6D6D6D 100%);
+  .mobile-bike-image-container {
+    position: relative;
+    margin-bottom: 12px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .mobile-bike-image {
+    max-width: 120px;
+    max-height: 70px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+  }
+
+  .mobile-color-swatches {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .mobile-color-swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .mobile-color-swatch:active {
+    transform: scale(0.95);
+  }
+
+  .mobile-color-swatch.active {
+    border-color: #1d1d1f;
+    transform: scale(1.1);
+    box-shadow: 0 0 0 2px rgba(29, 29, 31, 0.2);
+  }
+
+  .mobile-accordion-header.featured .mobile-color-swatch {
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .mobile-accordion-header.featured .mobile-color-swatch.active {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
   }
 
   .mobile-bike-name {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #1d1d1f;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     text-transform: uppercase;
     letter-spacing: 0.02em;
   }
@@ -363,11 +336,11 @@
   }
 
   .mobile-bike-description {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #86868b;
-    line-height: 1.4;
+    line-height: 1.3;
     font-weight: 400;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .mobile-accordion-header.featured .mobile-bike-description {
@@ -375,7 +348,7 @@
   }
 
   .mobile-discover-link {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #0066cc;
     text-decoration: none;
     font-weight: 500;
@@ -395,6 +368,7 @@
     font-size: 1.2rem;
     color: #86868b;
     transition: transform 0.3s ease;
+    pointer-events: none;
   }
 
   .mobile-accordion-header.featured .mobile-accordion-toggle {
@@ -413,7 +387,7 @@
   }
 
   .mobile-accordion-content.active {
-    max-height: 1000px;
+    max-height: 500px;
   }
 
   .mobile-specs {
@@ -423,7 +397,8 @@
   .mobile-spec-item {
     display: flex;
     justify-content: space-between;
-    padding: 15px 0;
+    align-items: center;
+    padding: 12px 0;
     border-bottom: 1px solid #f5f5f7;
   }
 
@@ -434,7 +409,7 @@
   .mobile-spec-label {
     font-weight: 500;
     color: #1d1d1f;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.3px;
   }
@@ -442,7 +417,8 @@
   .mobile-spec-value {
     font-weight: 400;
     color: #1d1d1f;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    text-align: right;
   }
 
   /* Responsive breakpoints */
@@ -456,6 +432,30 @@
     }
   }
 
+  @media (max-width: 480px) {
+    .mobile-accordion-header {
+      padding: 15px;
+    }
+
+    .mobile-bike-image-container {
+      height: 70px;
+    }
+
+    .mobile-bike-image {
+      max-width: 100px;
+      max-height: 60px;
+    }
+
+    .mobile-color-swatches {
+      gap: 6px;
+    }
+
+    .mobile-color-swatch {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
   /* Tablet */
   @media (max-width: 1024px) and (min-width: 769px) {
     .comparison-table {
@@ -463,7 +463,17 @@
     }
     
     .bike-header th {
-      padding: 50px 25px 35px;
+      padding: 25px 15px 35px;
+    }
+
+    .bike-image {
+      max-width: 120px;
+      max-height: 85px;
+    }
+
+    .color-swatch {
+      width: 16px;
+      height: 16px;
     }
   }
 
@@ -472,7 +482,9 @@
     .discover-link,
     .mobile-accordion-header,
     .mobile-accordion-content,
-    .mobile-accordion-toggle {
+    .mobile-accordion-toggle,
+    .color-swatch,
+    .mobile-color-swatch {
       transition: none;
     }
     
@@ -495,15 +507,17 @@
             <th></th>
             <th>
               <div class="bike-image-container">
-                <img id="sandman1-image" class="bike-image" 
+                <img class="bike-image" id="sandman1-img"
                      src="https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713" 
-                     alt="{{ 'bikes.sandman1.title' | t }}">
+                     alt="Sandman 1">
               </div>
               <div class="color-swatches">
                 <div class="color-swatch color-chameleon-gold active" 
-                     onclick="changeImage('sandman1', 'https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713"
+                     data-target="sandman1-img"></div>
                 <div class="color-swatch color-metal-blue-violet" 
-                     onclick="changeImage('sandman1', 'https://rinosbike.com/cdn/shop/files/Group302.png?v=1750150243&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/Group302.png?v=1750150243&width=713"
+                     data-target="sandman1-img"></div>
               </div>
               <div class="bike-name">{{ 'bikes.sandman1.title' | t }}</div>
               <div class="bike-description">{{ 'bikes.sandman1.description' | t }}</div>
@@ -511,15 +525,17 @@
             </th>
             <th>
               <div class="bike-image-container">
-                <img id="sandman3-image" class="bike-image" 
+                <img class="bike-image" id="sandman3-img"
                      src="https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713" 
-                     alt="{{ 'bikes.sandman3.title' | t }}">
+                     alt="Sandman 3">
               </div>
               <div class="color-swatches">
                 <div class="color-swatch color-chameleon-gold active" 
-                     onclick="changeImage('sandman3', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713"
+                     data-target="sandman3-img"></div>
                 <div class="color-swatch color-metal-blue-violet" 
-                     onclick="changeImage('sandman3', 'https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713"
+                     data-target="sandman3-img"></div>
               </div>
               <div class="bike-name">{{ 'bikes.sandman3.title' | t }}</div>
               <div class="bike-description">{{ 'bikes.sandman3.description' | t }}</div>
@@ -527,19 +543,23 @@
             </th>
             <th class="featured-bike">
               <div class="bike-image-container">
-                <img id="sandman4-image" class="bike-image" 
+                <img class="bike-image" id="sandman4-img"
                      src="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713" 
-                     alt="{{ 'bikes.sandman4.title' | t }}">
+                     alt="Sandman 4">
               </div>
               <div class="color-swatches">
                 <div class="color-swatch color-black-forest active" 
-                     onclick="changeImage('sandman4', 'https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713"
+                     data-target="sandman4-img"></div>
                 <div class="color-swatch color-ivory-desert" 
-                     onclick="changeImage('sandman4', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713"
+                     data-target="sandman4-img"></div>
                 <div class="color-swatch color-chameleon-gold" 
-                     onclick="changeImage('sandman4', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713"
+                     data-target="sandman4-img"></div>
                 <div class="color-swatch color-metal-blue-violet" 
-                     onclick="changeImage('sandman4', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713"
+                     data-target="sandman4-img"></div>
               </div>
               <div class="bike-name">{{ 'bikes.sandman4.title' | t }}</div>
               <div class="bike-description">{{ 'bikes.sandman4.description' | t }}</div>
@@ -547,15 +567,17 @@
             </th>
             <th>
               <div class="bike-image-container">
-                <img id="sandman5-image" class="bike-image" 
+                <img class="bike-image" id="sandman5-img"
                      src="https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713" 
-                     alt="{{ 'bikes.sandman5.title' | t }}">
+                     alt="Sandman 5">
               </div>
               <div class="color-swatches">
                 <div class="color-swatch color-chameleon-gold active" 
-                     onclick="changeImage('sandman5', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713"
+                     data-target="sandman5-img"></div>
                 <div class="color-swatch color-metal-blue-violet" 
-                     onclick="changeImage('sandman5', 'https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713"
+                     data-target="sandman5-img"></div>
               </div>
               <div class="bike-name">{{ 'bikes.sandman5.title' | t }}</div>
               <div class="bike-description">{{ 'bikes.sandman5.description' | t }}</div>
@@ -563,19 +585,23 @@
             </th>
             <th>
               <div class="bike-image-container">
-                <img id="sandman6-image" class="bike-image" 
+                <img class="bike-image" id="sandman6-img"
                      src="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713" 
-                     alt="{{ 'bikes.sandman6.title' | t }}">
+                     alt="Sandman 6">
               </div>
               <div class="color-swatches">
                 <div class="color-swatch color-black-forest active" 
-                     onclick="changeImage('sandman6', 'https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713"
+                     data-target="sandman6-img"></div>
                 <div class="color-swatch color-ivory-desert" 
-                     onclick="changeImage('sandman6', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713"
+                     data-target="sandman6-img"></div>
                 <div class="color-swatch color-chameleon-gold" 
-                     onclick="changeImage('sandman6', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713"
+                     data-target="sandman6-img"></div>
                 <div class="color-swatch color-metal-blue-violet" 
-                     onclick="changeImage('sandman6', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713"
+                     data-target="sandman6-img"></div>
               </div>
               <div class="bike-name">{{ 'bikes.sandman6.title' | t }}</div>
               <div class="bike-description">{{ 'bikes.sandman6.description' | t }}</div>
@@ -583,19 +609,23 @@
             </th>
             <th>
               <div class="bike-image-container">
-                <img id="sandman7-image" class="bike-image" 
+                <img class="bike-image" id="sandman7-img"
                      src="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713" 
-                     alt="{{ 'bikes.sandman7.title' | t }}">
+                     alt="Sandman 7">
               </div>
               <div class="color-swatches">
                 <div class="color-swatch color-black-forest active" 
-                     onclick="changeImage('sandman7', 'https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713"
+                     data-target="sandman7-img"></div>
                 <div class="color-swatch color-ivory-desert" 
-                     onclick="changeImage('sandman7', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713"
+                     data-target="sandman7-img"></div>
                 <div class="color-swatch color-chameleon-gold" 
-                     onclick="changeImage('sandman7', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713"
+                     data-target="sandman7-img"></div>
                 <div class="color-swatch color-metal-blue-violet" 
-                     onclick="changeImage('sandman7', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
+                     data-image="https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713"
+                     data-target="sandman7-img"></div>
               </div>
               <div class="bike-name">{{ 'bikes.sandman7.title' | t }}</div>
               <div class="bike-description">{{ 'bikes.sandman7.description' | t }}</div>
@@ -684,21 +714,23 @@
     <div class="mobile-accordion">
       <!-- Sandman 1 -->
       <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header" onclick="toggleAccordion(this)">
+        <div class="mobile-accordion-header">
           <div class="mobile-bike-image-container">
-            <img id="mobile-sandman1-image" class="mobile-bike-image" 
+            <img class="mobile-bike-image" id="mobile-sandman1-img"
                  src="https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713" 
-                 alt="{{ 'bikes.sandman1.title' | t }}">
+                 alt="Sandman 1">
           </div>
           <div class="mobile-color-swatches">
             <div class="mobile-color-swatch color-chameleon-gold active" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman1', 'https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713', this)"></div>
+                 data-image="https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713"
+                 data-target="mobile-sandman1-img"></div>
             <div class="mobile-color-swatch color-metal-blue-violet" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman1', 'https://rinosbike.com/cdn/shop/files/Group302.png?v=1750150243&width=713', this)"></div>
+                 data-image="https://rinosbike.com/cdn/shop/files/Group302.png?v=1750150243&width=713"
+                 data-target="mobile-sandman1-img"></div>
           </div>
           <div class="mobile-bike-name">{{ 'bikes.sandman1.title' | t }}</div>
           <div class="mobile-bike-description">{{ 'bikes.sandman1.description' | t }}</div>
-          <a href="#" class="mobile-discover-link" onclick="event.stopPropagation()">Discover More</a>
+          <a href="#" class="mobile-discover-link">Discover More</a>
           <span class="mobile-accordion-toggle">↓</span>
         </div>
         <div class="mobile-accordion-content">
@@ -741,21 +773,23 @@
 
       <!-- Sandman 3 -->
       <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header" onclick="toggleAccordion(this)">
+        <div class="mobile-accordion-header">
           <div class="mobile-bike-image-container">
-            <img id="mobile-sandman3-image" class="mobile-bike-image" 
+            <img class="mobile-bike-image" id="mobile-sandman3-img"
                  src="https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713" 
-                 alt="{{ 'bikes.sandman3.title' | t }}">
+                 alt="Sandman 3">
           </div>
           <div class="mobile-color-swatches">
             <div class="mobile-color-swatch color-chameleon-gold active" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman3', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"></div>
+                 data-image="https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713"
+                 data-target="mobile-sandman3-img"></div>
             <div class="mobile-color-swatch color-metal-blue-violet" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman3', 'https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713', this)"></div>
+                 data-image="https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713"
+                 data-target="mobile-sandman3-img"></div>
           </div>
           <div class="mobile-bike-name">{{ 'bikes.sandman3.title' | t }}</div>
           <div class="mobile-bike-description">{{ 'bikes.sandman3.description' | t }}</div>
-          <a href="#" class="mobile-discover-link" onclick="event.stopPropagation()">Discover More</a>
+          <a href="#" class="mobile-discover-link">Discover More</a>
           <span class="mobile-accordion-toggle">↓</span>
         </div>
         <div class="mobile-accordion-content">
@@ -798,25 +832,29 @@
 
       <!-- Sandman 4 (Featured) -->
       <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header featured" onclick="toggleAccordion(this)">
+        <div class="mobile-accordion-header featured">
           <div class="mobile-bike-image-container">
-            <img id="mobile-sandman4-image" class="mobile-bike-image" 
+            <img class="mobile-bike-image" id="mobile-sandman4-img"
                  src="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713" 
-                 alt="{{ 'bikes.sandman4.title' | t }}">
+                 alt="Sandman 4">
           </div>
           <div class="mobile-color-swatches">
             <div class="mobile-color-swatch color-black-forest active" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman4', 'https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713', this)"></div>
+                 data-image="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713"
+                 data-target="mobile-sandman4-img"></div>
             <div class="mobile-color-swatch color-ivory-desert" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman4', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
+                 data-image="https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713"
+                 data-target="mobile-sandman4-img"></div>
             <div class="mobile-color-swatch color-chameleon-gold" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman4', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
+                 data-image="https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713"
+                 data-target="mobile-sandman4-img"></div>
             <div class="mobile-color-swatch color-metal-blue-violet" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman4', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
+                 data-image="https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713"
+                 data-target="mobile-sandman4-img"></div>
           </div>
           <div class="mobile-bike-name">{{ 'bikes.sandman4.title' | t }}</div>
           <div class="mobile-bike-description">{{ 'bikes.sandman4.description' | t }}</div>
-          <a href="#" class="mobile-discover-link" onclick="event.stopPropagation()">Discover More</a>
+          <a href="#" class="mobile-discover-link">Discover More</a>
           <span class="mobile-accordion-toggle">↓</span>
         </div>
         <div class="mobile-accordion-content">
@@ -859,21 +897,23 @@
 
       <!-- Sandman 5 -->
       <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header" onclick="toggleAccordion(this)">
+        <div class="mobile-accordion-header">
           <div class="mobile-bike-image-container">
-            <img id="mobile-sandman5-image" class="mobile-bike-image" 
+            <img class="mobile-bike-image" id="mobile-sandman5-img"
                  src="https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713" 
-                 alt="{{ 'bikes.sandman5.title' | t }}">
+                 alt="Sandman 5">
           </div>
           <div class="mobile-color-swatches">
             <div class="mobile-color-swatch color-chameleon-gold active" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman5', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"></div>
+                 data-image="https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713"
+                 data-target="mobile-sandman5-img"></div>
             <div class="mobile-color-swatch color-metal-blue-violet" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman5', 'https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713', this)"></div>
+                 data-image="https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713"
+                 data-target="mobile-sandman5-img"></div>
           </div>
           <div class="mobile-bike-name">{{ 'bikes.sandman5.title' | t }}</div>
           <div class="mobile-bike-description">{{ 'bikes.sandman5.description' | t }}</div>
-          <a href="#" class="mobile-discover-link" onclick="event.stopPropagation()">Discover More</a>
+          <a href="#" class="mobile-discover-link">Discover More</a>
           <span class="mobile-accordion-toggle">↓</span>
         </div>
         <div class="mobile-accordion-content">
@@ -916,10 +956,29 @@
 
       <!-- Sandman 6 -->
       <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header" onclick="toggleAccordion(this)">
+        <div class="mobile-accordion-header">
+          <div class="mobile-bike-image-container">
+            <img class="mobile-bike-image" id="mobile-sandman6-img"
+                 src="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713" 
+                 alt="Sandman 6">
+          </div>
+          <div class="mobile-color-swatches">
+            <div class="mobile-color-swatch color-black-forest active" 
+                 data-image="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713"
+                 data-target="mobile-sandman6-img"></div>
+            <div class="mobile-color-swatch color-ivory-desert" 
+                 data-image="https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713"
+                 data-target="mobile-sandman6-img"></div>
+            <div class="mobile-color-swatch color-chameleon-gold" 
+                 data-image="https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713"
+                 data-target="mobile-sandman6-img"></div>
+            <div class="mobile-color-swatch color-metal-blue-violet" 
+                 data-image="https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713"
+                 data-target="mobile-sandman6-img"></div>
+          </div>
           <div class="mobile-bike-name">{{ 'bikes.sandman6.title' | t }}</div>
           <div class="mobile-bike-description">{{ 'bikes.sandman6.description' | t }}</div>
-          <a href="#" class="mobile-discover-link" onclick="event.stopPropagation()">Discover More</a>
+          <a href="#" class="mobile-discover-link">Discover More</a>
           <span class="mobile-accordion-toggle">↓</span>
         </div>
         <div class="mobile-accordion-content">
@@ -962,25 +1021,29 @@
 
       <!-- Sandman 7 -->
       <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header" onclick="toggleAccordion(this)">
+        <div class="mobile-accordion-header">
           <div class="mobile-bike-image-container">
-            <img id="mobile-sandman7-image" class="mobile-bike-image" 
+            <img class="mobile-bike-image" id="mobile-sandman7-img"
                  src="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713" 
-                 alt="{{ 'bikes.sandman7.title' | t }}">
+                 alt="Sandman 7">
           </div>
           <div class="mobile-color-swatches">
             <div class="mobile-color-swatch color-black-forest active" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman7', 'https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713', this)"></div>
+                 data-image="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713"
+                 data-target="mobile-sandman7-img"></div>
             <div class="mobile-color-swatch color-ivory-desert" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman7', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
+                 data-image="https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713"
+                 data-target="mobile-sandman7-img"></div>
             <div class="mobile-color-swatch color-chameleon-gold" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman7', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
+                 data-image="https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713"
+                 data-target="mobile-sandman7-img"></div>
             <div class="mobile-color-swatch color-metal-blue-violet" 
-                 onclick="event.stopPropagation(); changeImage('mobile-sandman7', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
+                 data-image="https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713"
+                 data-target="mobile-sandman7-img"></div>
           </div>
           <div class="mobile-bike-name">{{ 'bikes.sandman7.title' | t }}</div>
           <div class="mobile-bike-description">{{ 'bikes.sandman7.description' | t }}</div>
-          <a href="#" class="mobile-discover-link" onclick="event.stopPropagation()">Discover More</a>
+          <a href="#" class="mobile-discover-link">Discover More</a>
           <span class="mobile-accordion-toggle">↓</span>
         </div>
         <div class="mobile-accordion-content">
@@ -1025,35 +1088,82 @@
 </section>
 
 <script>
-function toggleAccordion(header) {
-  const content = header.nextElementSibling;
-  const toggle = header.querySelector('.mobile-accordion-toggle');
-  
-  // Close all other accordions
-  document.querySelectorAll('.mobile-accordion-content').forEach(item => {
-    if (item !== content) {
-      item.classList.remove('active');
-      item.previousElementSibling.querySelector('.mobile-accordion-toggle').classList.remove('active');
-    }
+// Color switching functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle color swatch clicks
+  document.querySelectorAll('.color-swatch, .mobile-color-swatch').forEach(function(swatch) {
+    swatch.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const imageUrl = this.getAttribute('data-image');
+      const targetId = this.getAttribute('data-target');
+      const targetImg = document.getElementById(targetId);
+      
+      if (targetImg && imageUrl) {
+        targetImg.src = imageUrl;
+        
+        // Update active state
+        const container = this.parentElement;
+        container.querySelectorAll('.color-swatch, .mobile-color-swatch').forEach(function(s) {
+          s.classList.remove('active');
+        });
+        this.classList.add('active');
+      }
+    });
   });
   
-  // Toggle current accordion
-  content.classList.toggle('active');
-  toggle.classList.toggle('active');
-}
-
-function changeImage(bikeId, imageUrl, clickedSwatch) {
-  // Update the image
-  const img = document.getElementById(bikeId + '-image');
-  if (img) {
-    img.src = imageUrl;
-  }
-  
-  // Update active state for color swatches
-  const container = clickedSwatch.parentElement;
-  container.querySelectorAll('.color-swatch, .mobile-color-swatch').forEach(swatch => {
-    swatch.classList.remove('active');
+  // Handle accordion toggle
+  document.querySelectorAll('.mobile-accordion-header').forEach(function(header) {
+    header.addEventListener('click', function(e) {
+      // Don't toggle if clicking on color swatch or discover link
+      if (e.target.classList.contains('mobile-color-swatch') || 
+          e.target.classList.contains('mobile-discover-link')) {
+        return;
+      }
+      
+      const content = this.nextElementSibling;
+      const toggle = this.querySelector('.mobile-accordion-toggle');
+      
+      // Close all other accordions
+      document.querySelectorAll('.mobile-accordion-content').forEach(function(item) {
+        if (item !== content) {
+          item.classList.remove('active');
+          const otherToggle = item.previousElementSibling.querySelector('.mobile-accordion-toggle');
+          if (otherToggle) {
+            otherToggle.classList.remove('active');
+          }
+        }
+      });
+      
+      // Toggle current accordion
+      content.classList.toggle('active');
+      if (toggle) {
+        toggle.classList.toggle('active');
+      }
+    });
   });
-  clickedSwatch.classList.add('active');
-}
+  
+  // Handle discover more links
+  document.querySelectorAll('.mobile-discover-link').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      // Add your discover more functionality here
+    });
+  });
+});
 </script>
+
+{% schema %}
+{
+  "name": "Gravel Bike Comparison",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Gravel Bike Comparison",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
