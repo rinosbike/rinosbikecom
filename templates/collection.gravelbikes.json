@@ -279,6 +279,7 @@
     },
     "promovideo_RfRdkg": {
       "type": "promovideo",
+      "disabled": true,
       "name": "Video Hero",
       "settings": {
         "show_content": true,
@@ -288,6 +289,11 @@
         "button_text": "",
         "button_link": ""
       }
+    },
+    "javis_gallery_rinos_NUfdAJ": {
+      "type": "JavisGalleryRinos",
+      "name": "Gravel Bike Gallery",
+      "settings": {}
     },
     "slideshow_ABJHGn": {
       "type": "slideshow",
@@ -513,6 +519,7 @@
     "image_banner_9dBUXR",
     "rich_text_b3NKQm",
     "promovideo_RfRdkg",
+    "javis_gallery_rinos_NUfdAJ",
     "slideshow_ABJHGn",
     "rich_text_EXtbUx",
     "product-grid",
