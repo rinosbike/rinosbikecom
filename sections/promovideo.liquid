@@ -1,18 +1,20 @@
 {{ 'section-video-hero.css' | asset_url | stylesheet_tag }}
+
 <section class="video-hero-section">
   <video 
     autoplay 
     muted 
     loop 
     playsinline
-    preload="auto"
-    poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3C/svg%3E"
+    preload="metadata"
     class="video-hero-video">
     <source src="https://cdn.shopify.com/videos/c/o/v/f3f8029483dd48439a9ac81e65ea8f4c.mp4" type="video/mp4">
   </video>
+
   {% if section.settings.show_overlay %}
     <div class="video-hero-overlay"></div>
   {% endif %}
+
   {% if section.settings.show_content %}
     <div class="video-hero-content">
       {% if section.settings.heading != blank %}
@@ -34,22 +36,6 @@
   {% endif %}
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const video = document.querySelector('.video-hero-video');
-  
-  // Force video to start loading immediately
-  video.load();
-  
-  // Try to play as soon as possible
-  video.addEventListener('loadedmetadata', function() {
-    video.play().catch(function(error) {
-      console.log('Autoplay failed:', error);
-    });
-  });
-});
-</script>
-
 <style>
   .video-hero-section {
     position: relative;
@@ -58,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
     overflow: hidden;
     background-color: #000;
   }
+
   .video-hero-video {
     position: absolute;
     top: 50%;
@@ -70,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     object-fit: cover;
     z-index: 1;
   }
+
   .video-hero-overlay {
     position: absolute;
     top: 0;
@@ -79,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     background: rgba(0, 0, 0, 0.3);
     z-index: 2;
   }
+
   .video-hero-content {
     position: absolute;
     top: 50px;
@@ -91,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     max-width: 800px;
     width: 100%;
   }
+
   .video-hero-heading {
     font-size: 4rem;
     margin-bottom: 1rem;
@@ -104,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
     background-clip: text;
     animation: gradientShift 3s ease-in-out infinite;
   }
+
   @keyframes gradientShift {
     0% {
       background-position: 0% 50%;
@@ -115,12 +106,14 @@ document.addEventListener('DOMContentLoaded', function() {
       background-position: 0% 50%;
     }
   }
+
   .video-hero-subheading {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     line-height: 1.4;
   }
+
   .video-hero-button {
     display: inline-block;
     padding: 12px 30px;
@@ -133,11 +126,13 @@ document.addEventListener('DOMContentLoaded', function() {
     text-transform: uppercase;
     letter-spacing: 1px;
   }
+
   .video-hero-button:hover {
     background-color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
+
   /* Mobile */
   @media (max-width: 768px) {
     .video-hero-section {
@@ -162,6 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
       font-size: 0.9rem;
     }
   }
+
   /* Small mobile */
   @media (max-width: 480px) {
     .video-hero-section {
