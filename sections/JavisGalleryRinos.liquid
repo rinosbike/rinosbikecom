@@ -1,0 +1,610 @@
+{% comment %}
+  Gravel Bike Gallery Section
+  Apple x Rick Owens aesthetic - large images, color switching
+  Visual showcase before the comparison table
+{% endcomment %}
+
+<style>
+  .bike-gallery {
+    padding: 80px 20px;
+    background: #ffffff;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .gallery-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    color: #1d1d1f;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  .gallery-subtitle {
+    font-size: 1.2rem;
+    color: #86868b;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.4;
+  }
+
+  .bike-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 60px;
+    margin-bottom: 80px;
+  }
+
+  .bike-card {
+    position: relative;
+    background: #fafafa;
+    transition: all 0.4s ease;
+    overflow: hidden;
+  }
+
+  .bike-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .bike-card.featured {
+    background: linear-gradient(135deg, #D3D3D3 0%, #BDBDBD 25%, #9E9E9E 50%, #D3D3D3 75%, #7D7D7D 100%);
+    background-size: 400% 400%;
+    animation: gradientFlow 4s ease-in-out infinite;
+    color: #ffffff;
+  }
+
+  @keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .bike-image-container {
+    position: relative;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .bike-card.featured .bike-image-container {
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .bike-image {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.4s ease;
+  }
+
+  .bike-card:hover .bike-image {
+    transform: scale(1.05);
+  }
+
+  .bike-info {
+    padding: 40px 30px;
+  }
+
+  .bike-name {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .bike-card.featured .bike-name {
+    color: #ffffff;
+  }
+
+  .bike-description {
+    font-size: 1rem;
+    color: #86868b;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-bottom: 24px;
+  }
+
+  .bike-card.featured .bike-description {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .color-options {
+    margin-bottom: 24px;
+  }
+
+  .color-label {
+    font-size: 0.85rem;
+    color: #86868b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .bike-card.featured .color-label {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .color-swatches {
+    display: flex;
+    gap: 12px;
+  }
+
+  .color-swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 3px solid #e8e8e8;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .color-swatch:hover {
+    border-color: #1d1d1f;
+    transform: scale(1.1);
+  }
+
+  .color-swatch.active {
+    border-color: #1d1d1f;
+    transform: scale(1.1);
+    box-shadow: 0 0 0 3px rgba(29, 29, 31, 0.2);
+  }
+
+  .bike-card.featured .color-swatch {
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .bike-card.featured .color-swatch:hover,
+  .bike-card.featured .color-swatch.active {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Color swatch styles */
+  .color-chameleon-gold {
+    background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+  }
+
+  .color-metal-blue-violet {
+    background: linear-gradient(135deg, #4B0082 0%, #6A5ACD 100%);
+  }
+
+  .color-black-forest {
+    background: linear-gradient(135deg, #2C3E50 0%, #1C2833 100%);
+  }
+
+  .color-ivory-desert {
+    background: linear-gradient(135deg, #F5F5DC 0%, #FAEBD7 100%);
+    border-color: #ccc;
+  }
+
+  .bike-card.featured .color-ivory-desert {
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .discover-button {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #1d1d1f;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid #1d1d1f;
+  }
+
+  .discover-button:hover {
+    background-color: transparent;
+    color: #1d1d1f;
+    transform: translateY(-2px);
+  }
+
+  .bike-card.featured .discover-button {
+    background-color: #ffffff;
+    color: #1d1d1f;
+    border-color: #ffffff;
+  }
+
+  .bike-card.featured .discover-button:hover {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+
+  /* Featured badge */
+  .featured-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1d1d1f;
+    padding: 6px 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+  }
+
+  .bike-card.featured .featured-badge {
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .bike-gallery {
+      padding: 60px 15px;
+    }
+
+    .gallery-header {
+      margin-bottom: 60px;
+    }
+
+    .gallery-title {
+      font-size: 2.5rem;
+    }
+
+    .gallery-subtitle {
+      font-size: 1rem;
+    }
+
+    .bike-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .bike-card {
+      margin: 0 -15px;
+    }
+
+    .bike-image-container {
+      height: 250px;
+    }
+
+    .bike-info {
+      padding: 30px 20px;
+    }
+
+    .bike-name {
+      font-size: 1.3rem;
+    }
+
+    .bike-description {
+      font-size: 0.9rem;
+    }
+
+    .color-swatch {
+      width: 28px;
+      height: 28px;
+    }
+
+    .discover-button {
+      padding: 12px 28px;
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .bike-gallery {
+      padding: 40px 10px;
+    }
+
+    .bike-image-container {
+      height: 200px;
+    }
+
+    .bike-info {
+      padding: 25px 15px;
+    }
+
+    .color-swatches {
+      gap: 8px;
+    }
+
+    .color-swatch {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .bike-card,
+    .bike-image,
+    .color-swatch,
+    .discover-button {
+      transition: none;
+    }
+    
+    .bike-card.featured {
+      animation: none;
+    }
+
+    .bike-card:hover {
+      transform: none;
+    }
+
+    .bike-card:hover .bike-image {
+      transform: none;
+    }
+  }
+</style>
+
+<section class="bike-gallery">
+  <div class="gallery-container">
+    <div class="gallery-header">
+      <h1 class="gallery-title">{{ 'bikes.title.gravel' | t }}</h1>
+      <p class="gallery-subtitle">Ready when you are. Welcome to gravel.</p>
+    </div>
+
+    <div class="bike-grid">
+      
+      <!-- Sandman 1 -->
+      <div class="bike-card">
+        <div class="bike-image-container">
+          <img class="bike-image" id="gallery-sandman1-img"
+               src="https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713" 
+               alt="{{ 'bikes.sandman1.title' | t }}">
+        </div>
+        <div class="bike-info">
+          <h3 class="bike-name">{{ 'bikes.sandman1.title' | t }}</h3>
+          <p class="bike-description">{{ 'bikes.sandman1.description' | t }}</p>
+          <div class="color-options">
+            <span class="color-label">Available Colors</span>
+            <div class="color-swatches">
+              <div class="color-swatch color-chameleon-gold active" 
+                   data-image="https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713"
+                   data-target="gallery-sandman1-img"
+                   title="Chameleon Gold"></div>
+              <div class="color-swatch color-metal-blue-violet" 
+                   data-image="https://rinosbike.com/cdn/shop/files/Group302.png?v=1750150243&width=713"
+                   data-target="gallery-sandman1-img"
+                   title="Metal Blue Violet"></div>
+            </div>
+          </div>
+          <a href="#" class="discover-button">Discover More</a>
+        </div>
+      </div>
+
+      <!-- Sandman 3 -->
+      <div class="bike-card">
+        <div class="bike-image-container">
+          <img class="bike-image" id="gallery-sandman3-img"
+               src="https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713" 
+               alt="{{ 'bikes.sandman3.title' | t }}">
+        </div>
+        <div class="bike-info">
+          <h3 class="bike-name">{{ 'bikes.sandman3.title' | t }}</h3>
+          <p class="bike-description">{{ 'bikes.sandman3.description' | t }}</p>
+          <div class="color-options">
+            <span class="color-label">Available Colors</span>
+            <div class="color-swatches">
+              <div class="color-swatch color-chameleon-gold active" 
+                   data-image="https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713"
+                   data-target="gallery-sandman3-img"
+                   title="Chameleon Gold"></div>
+              <div class="color-swatch color-metal-blue-violet" 
+                   data-image="https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713"
+                   data-target="gallery-sandman3-img"
+                   title="Metal Blue Violet"></div>
+            </div>
+          </div>
+          <a href="#" class="discover-button">Discover More</a>
+        </div>
+      </div>
+
+      <!-- Sandman 4 (Featured) -->
+      <div class="bike-card featured">
+        <div class="featured-badge">Featured</div>
+        <div class="bike-image-container">
+          <img class="bike-image" id="gallery-sandman4-img"
+               src="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713" 
+               alt="{{ 'bikes.sandman4.title' | t }}">
+        </div>
+        <div class="bike-info">
+          <h3 class="bike-name">{{ 'bikes.sandman4.title' | t }}</h3>
+          <p class="bike-description">{{ 'bikes.sandman4.description' | t }}</p>
+          <div class="color-options">
+            <span class="color-label">Available Colors</span>
+            <div class="color-swatches">
+              <div class="color-swatch color-black-forest active" 
+                   data-image="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713"
+                   data-target="gallery-sandman4-img"
+                   title="Black Forest"></div>
+              <div class="color-swatch color-ivory-desert" 
+                   data-image="https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713"
+                   data-target="gallery-sandman4-img"
+                   title="Ivory Desert"></div>
+              <div class="color-swatch color-chameleon-gold" 
+                   data-image="https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713"
+                   data-target="gallery-sandman4-img"
+                   title="Chameleon Gold"></div>
+              <div class="color-swatch color-metal-blue-violet" 
+                   data-image="https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713"
+                   data-target="gallery-sandman4-img"
+                   title="Metal Blue Violet"></div>
+            </div>
+          </div>
+          <a href="#" class="discover-button">Discover More</a>
+        </div>
+      </div>
+
+      <!-- Sandman 5 -->
+      <div class="bike-card">
+        <div class="bike-image-container">
+          <img class="bike-image" id="gallery-sandman5-img"
+               src="https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713" 
+               alt="{{ 'bikes.sandman5.title' | t }}">
+        </div>
+        <div class="bike-info">
+          <h3 class="bike-name">{{ 'bikes.sandman5.title' | t }}</h3>
+          <p class="bike-description">{{ 'bikes.sandman5.description' | t }}</p>
+          <div class="color-options">
+            <span class="color-label">Available Colors</span>
+            <div class="color-swatches">
+              <div class="color-swatch color-chameleon-gold active" 
+                   data-image="https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713"
+                   data-target="gallery-sandman5-img"
+                   title="Chameleon Gold"></div>
+              <div class="color-swatch color-metal-blue-violet" 
+                   data-image="https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713"
+                   data-target="gallery-sandman5-img"
+                   title="Metal Blue Violet"></div>
+            </div>
+          </div>
+          <a href="#" class="discover-button">Discover More</a>
+        </div>
+      </div>
+
+      <!-- Sandman 6 -->
+      <div class="bike-card">
+        <div class="bike-image-container">
+          <img class="bike-image" id="gallery-sandman6-img"
+               src="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713" 
+               alt="{{ 'bikes.sandman6.title' | t }}">
+        </div>
+        <div class="bike-info">
+          <h3 class="bike-name">{{ 'bikes.sandman6.title' | t }}</h3>
+          <p class="bike-description">{{ 'bikes.sandman6.description' | t }}</p>
+          <div class="color-options">
+            <span class="color-label">Available Colors</span>
+            <div class="color-swatches">
+              <div class="color-swatch color-black-forest active" 
+                   data-image="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713"
+                   data-target="gallery-sandman6-img"
+                   title="Black Forest"></div>
+              <div class="color-swatch color-ivory-desert" 
+                   data-image="https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713"
+                   data-target="gallery-sandman6-img"
+                   title="Ivory Desert"></div>
+              <div class="color-swatch color-chameleon-gold" 
+                   data-image="https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713"
+                   data-target="gallery-sandman6-img"
+                   title="Chameleon Gold"></div>
+              <div class="color-swatch color-metal-blue-violet" 
+                   data-image="https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713"
+                   data-target="gallery-sandman6-img"
+                   title="Metal Blue Violet"></div>
+            </div>
+          </div>
+          <a href="#" class="discover-button">Discover More</a>
+        </div>
+      </div>
+
+      <!-- Sandman 7 -->
+      <div class="bike-card">
+        <div class="bike-image-container">
+          <img class="bike-image" id="gallery-sandman7-img"
+               src="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713" 
+               alt="{{ 'bikes.sandman7.title' | t }}">
+        </div>
+        <div class="bike-info">
+          <h3 class="bike-name">{{ 'bikes.sandman7.title' | t }}</h3>
+          <p class="bike-description">{{ 'bikes.sandman7.description' | t }}</p>
+          <div class="color-options">
+            <span class="color-label">Available Colors</span>
+            <div class="color-swatches">
+              <div class="color-swatch color-black-forest active" 
+                   data-image="https://rinosbike.com/cdn/shop/files/GRX600Main.jpg?v=1709653344&width=713"
+                   data-target="gallery-sandman7-img"
+                   title="Black Forest"></div>
+              <div class="color-swatch color-ivory-desert" 
+                   data-image="https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713"
+                   data-target="gallery-sandman7-img"
+                   title="Ivory Desert"></div>
+              <div class="color-swatch color-chameleon-gold" 
+                   data-image="https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713"
+                   data-target="gallery-sandman7-img"
+                   title="Chameleon Gold"></div>
+              <div class="color-swatch color-metal-blue-violet" 
+                   data-image="https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713"
+                   data-target="gallery-sandman7-img"
+                   title="Metal Blue Violet"></div>
+            </div>
+          </div>
+          <a href="#" class="discover-button">Discover More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+// Gallery color switching functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle color swatch clicks
+  document.querySelectorAll('.color-swatch').forEach(function(swatch) {
+    swatch.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const imageUrl = this.getAttribute('data-image');
+      const targetId = this.getAttribute('data-target');
+      const targetImg = document.getElementById(targetId);
+      
+      if (targetImg && imageUrl) {
+        // Smooth image transition
+        targetImg.style.opacity = '0';
+        
+        setTimeout(function() {
+          targetImg.src = imageUrl;
+          targetImg.style.opacity = '1';
+        }, 150);
+        
+        // Update active state
+        const container = this.parentElement;
+        container.querySelectorAll('.color-swatch').forEach(function(s) {
+          s.classList.remove('active');
+        });
+        this.classList.add('active');
+      }
+    });
+  });
+  
+  // Handle discover more buttons
+  document.querySelectorAll('.discover-button').forEach(function(button) {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Add your discover more functionality here
+    });
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Gravel Bike Gallery",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Gravel Bike Gallery",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
