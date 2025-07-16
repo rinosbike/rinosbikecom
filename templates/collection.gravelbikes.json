@@ -237,7 +237,6 @@
     },
     "javis_gallery_rinos_J37Dax": {
       "type": "JavisGalleryRinos",
-      "disabled": true,
       "name": "Gravel Bike Gallery",
       "settings": {}
     },
