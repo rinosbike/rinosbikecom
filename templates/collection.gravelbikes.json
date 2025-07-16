@@ -235,6 +235,11 @@
         "show_text_below": true
       }
     },
+    "javis_gallery_rinos_J37Dax": {
+      "type": "JavisGalleryRinos",
+      "name": "Gravel Bike Gallery",
+      "settings": {}
+    },
     "rich_text_b3NKQm": {
       "type": "rich-text",
       "blocks": {
@@ -512,6 +517,7 @@
     "image_banner_cAFV3z",
     "featured_collection_4VrLDz",
     "image_banner_9dBUXR",
+    "javis_gallery_rinos_J37Dax",
     "rich_text_b3NKQm",
     "promovideo_RfRdkg",
     "slideshow_ABJHGn",
