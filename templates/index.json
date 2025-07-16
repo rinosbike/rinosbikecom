@@ -58,6 +58,18 @@
         "show_text_below": true
       }
     },
+    "promovideo_3MQXnM": {
+      "type": "promovideo",
+      "name": "Video Hero",
+      "settings": {
+        "show_content": true,
+        "show_overlay": true,
+        "heading": "Welcome to the adventure, rider.",
+        "subheading": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
     "image_banner_XyQx3D": {
       "type": "image-banner",
       "blocks": {
@@ -104,18 +116,6 @@
         "mobile_content_alignment": "left",
         "stack_images_on_mobile": true,
         "show_text_below": false
-      }
-    },
-    "promovideo_3MQXnM": {
-      "type": "promovideo",
-      "name": "Video Hero",
-      "settings": {
-        "show_content": true,
-        "show_overlay": true,
-        "heading": "",
-        "subheading": "",
-        "button_text": "",
-        "button_link": ""
       }
     },
     "collage_xgMyez": {
