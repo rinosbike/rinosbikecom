@@ -1,0 +1,418 @@
+{% comment %}
+  Simple Bike Gallery - Just to showcase bikes and their colors
+{% endcomment %}
+
+<style>
+.bike-gallery {
+  padding: 60px 20px;
+  background: #ffffff;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.gallery-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.bike-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.bike-card {
+  background: #fafafa;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.bike-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.bike-card.featured {
+  background: linear-gradient(135deg, #D3D3D3 0%, #BDBDBD 25%, #9E9E9E 50%, #D3D3D3 75%, #7D7D7D 100%);
+  background-size: 400% 400%;
+  animation: gradientFlow 4s ease-in-out infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bike-image-section {
+  height: 300px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bike-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.bike-info {
+  padding: 30px;
+}
+
+.bike-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.bike-card.featured .bike-name {
+  color: #ffffff;
+}
+
+.bike-description {
+  font-size: 0.9rem;
+  color: #86868b;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.bike-card.featured .bike-description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.color-options {
+  margin-bottom: 20px;
+}
+
+.color-label {
+  font-size: 0.8rem;
+  color: #86868b;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.bike-card.featured .color-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.color-swatches {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.color-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.color-swatch:hover {
+  border-color: #1d1d1f;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.color-swatch.active {
+  border-color: #1d1d1f;
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px rgba(29, 29, 31, 0.2);
+}
+
+.bike-card.featured .color-swatch {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.bike-card.featured .color-swatch:hover,
+.bike-card.featured .color-swatch.active {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* Color backgrounds */
+.chameleon-gold {
+  background-color: #D4AF37;
+}
+
+.metal-blue-violet {
+  background-color: #4B0082;
+}
+
+.black-forest {
+  background-color: #2C3E50;
+}
+
+.ivory-desert {
+  background-color: #F5F5DC;
+  border-color: #ccc !important;
+}
+
+.discover-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #1d1d1f;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: 1px solid #1d1d1f;
+}
+
+.discover-button:hover {
+  background-color: transparent;
+  color: #1d1d1f;
+}
+
+.bike-card.featured .discover-button {
+  background-color: #ffffff;
+  color: #1d1d1f;
+  border-color: #ffffff;
+}
+
+.bike-card.featured .discover-button:hover {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .bike-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .bike-image-section {
+    height: 250px;
+  }
+  
+  .bike-info {
+    padding: 20px;
+  }
+  
+  .bike-name {
+    font-size: 1.2rem;
+  }
+  
+  .color-swatch {
+    width: 28px;
+    height: 28px;
+  }
+}
+</style>
+
+<section class="bike-gallery">
+  <div class="gallery-container">
+    <div class="bike-grid">
+      
+      <!-- Sandman 1 -->
+      <div class="bike-card">
+        <div class="bike-image-section">
+          <img class="bike-image" id="bike-1"
+               src="https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713" 
+               alt="Sandman 1">
+        </div>
+        <div class="bike-info">
+          <h3 class="bike-name">{{ 'bikes.sandman1.title' | t }}</h3>
+          <p class="bike-description">{{ 'bikes.sandman1.description' | t }}</p>
+          
+          <div class="color-options">
+            <span class="color-label">Available Colors</span>
+            <div class="color-swatches">
+              <div class="color-swatch chameleon-gold active" 
+                   onclick="switchColor('bike-1', 'https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713', this)"></div>
+              <div class="color-swatch metal-blue-violet" 
+                   onclick="switchColor('bike-1', 'https://rinosbike.com/cdn/shop/files/Group302.png?v=1750150243&width=713', this)"></div>
+            </div>
+          </div>
+          
+          <a href="#" class="discover-button">Discover More</a>
+        </div>
+      </div>
+
+      <!-- Sandman 3 -->
+      <div class="bike-card">
+        <div class="bike-image-section">
+          <img class="bike-image" id="bike-3"
+               src="https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713" 
+               alt="Sandman 3">
+        </div>
+        <div class="bike-info">
+          <h3 class="bike-name">{{ 'bikes.sandman3.title' | t }}</h3>
+          <p class="bike-description">{{ 'bikes.sandman3.description' | t }}</p>
+          
+          <div class="color-options">
+            <span class="color-label">Available Colors</span>
+            <div class="color-swatches">
+              <div class="color-swatch chameleon-gold active" 
+                   onclick="switchColor('bike-3', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"></div>
+              <div class="color-swatch metal-blue-violet" 
+                   onclick="switchColor('bike-3', 'https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713', this)"></div>
+            </div>
+          </div>
+          
+          <a href="#" class="discover-button">Discover More</a>
+        </div>
+      </div>
+
+      <!-- Sandman 4 (Featured) -->
+      <div class="bike-card featured">
+        <div class="bike-image-section">
+          <img class="bike-image" id="bike-4"
+               src="https://i.goopics.net/l39mbo.png" 
+               alt="Sandman 4">
+        </div>
+        <div class="bike-info">
+          <h3 class="bike-name">{{ 'bikes.sandman4.title' | t }}</h3>
+          <p class="bike-description">{{ 'bikes.sandman4.description' | t }}</p>
+          
+          <div class="color-options">
+            <span class="color-label">Available Colors</span>
+            <div class="color-swatches">
+              <div class="color-swatch black-forest active" 
+                   onclick="switchColor('bike-4', 'https://i.goopics.net/l39mbo.png', this)"></div>
+              <div class="color-swatch ivory-desert" 
+                   onclick="switchColor('bike-4', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
+              <div class="color-swatch chameleon-gold" 
+                   onclick="switchColor('bike-4', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
+              <div class="color-swatch metal-blue-violet" 
+                   onclick="switchColor('bike-4', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
+            </div>
+          </div>
+          
+          <a href="#" class="discover-button">Discover More</a>
+        </div>
+      </div>
+
+      <!-- Sandman 5 -->
+      <div class="bike-card">
+        <div class="bike-image-section">
+          <img class="bike-image" id="bike-5"
+               src="https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713" 
+               alt="Sandman 5">
+        </div>
+        <div class="bike-info">
+          <h3 class="bike-name">{{ 'bikes.sandman5.title' | t }}</h3>
+          <p class="bike-description">{{ 'bikes.sandman5.description' | t }}</p>
+          
+          <div class="color-options">
+            <span class="color-label">Available Colors</span>
+            <div class="color-swatches">
+              <div class="color-swatch chameleon-gold active" 
+                   onclick="switchColor('bike-5', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"></div>
+              <div class="color-swatch metal-blue-violet" 
+                   onclick="switchColor('bike-5', 'https://rinosbike.com/cdn/shop/files/Group115.png?v=1742547719&width=713', this)"></div>
+            </div>
+          </div>
+          
+          <a href="#" class="discover-button">Discover More</a>
+        </div>
+      </div>
+
+      <!-- Sandman 6 -->
+      <div class="bike-card">
+        <div class="bike-image-section">
+          <img class="bike-image" id="bike-6"
+               src="https://i.goopics.net/l39mbo.png" 
+               alt="Sandman 6">
+        </div>
+        <div class="bike-info">
+          <h3 class="bike-name">{{ 'bikes.sandman6.title' | t }}</h3>
+          <p class="bike-description">{{ 'bikes.sandman6.description' | t }}</p>
+          
+          <div class="color-options">
+            <span class="color-label">Available Colors</span>
+            <div class="color-swatches">
+              <div class="color-swatch black-forest active" 
+                   onclick="switchColor('bike-6', 'https://i.goopics.net/l39mbo.png', this)"></div>
+              <div class="color-swatch ivory-desert" 
+                   onclick="switchColor('bike-6', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
+              <div class="color-swatch chameleon-gold" 
+                   onclick="switchColor('bike-6', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
+              <div class="color-swatch metal-blue-violet" 
+                   onclick="switchColor('bike-6', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
+            </div>
+          </div>
+          
+          <a href="#" class="discover-button">Discover More</a>
+        </div>
+      </div>
+
+      <!-- Sandman 7 -->
+      <div class="bike-card">
+        <div class="bike-image-section">
+          <img class="bike-image" id="bike-7"
+               src="https://i.goopics.net/l39mbo.png" 
+               alt="Sandman 7">
+        </div>
+        <div class="bike-info">
+          <h3 class="bike-name">{{ 'bikes.sandman7.title' | t }}</h3>
+          <p class="bike-description">{{ 'bikes.sandman7.description' | t }}</p>
+          
+          <div class="color-options">
+            <span class="color-label">Available Colors</span>
+            <div class="color-swatches">
+              <div class="color-swatch black-forest active" 
+                   onclick="switchColor('bike-7', 'https://i.goopics.net/l39mbo.png', this)"></div>
+              <div class="color-swatch ivory-desert" 
+                   onclick="switchColor('bike-7', 'https://rinosbike.com/cdn/shop/files/1.jpg?v=1732702119&width=713', this)"></div>
+              <div class="color-swatch chameleon-gold" 
+                   onclick="switchColor('bike-7', 'https://rinosbike.com/cdn/shop/files/Group_400.png?v=1752218414&width=713', this)"></div>
+              <div class="color-swatch metal-blue-violet" 
+                   onclick="switchColor('bike-7', 'https://rinosbike.com/cdn/shop/files/Group_410.jpg?v=1750077702&width=713', this)"></div>
+            </div>
+          </div>
+          
+          <a href="#" class="discover-button">Discover More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+function switchColor(bikeId, imageUrl, clickedSwatch) {
+  // Change the bike image
+  const bikeImg = document.getElementById(bikeId);
+  if (bikeImg) {
+    bikeImg.src = imageUrl;
+  }
+  
+  // Update active color swatch
+  const allSwatches = clickedSwatch.parentElement.querySelectorAll('.color-swatch');
+  allSwatches.forEach(swatch => swatch.classList.remove('active'));
+  clickedSwatch.classList.add('active');
+}
+</script>
+
+{% schema %}
+{
+  "name": "Gravel Bike Gallery",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Gravel Bike Gallery",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
