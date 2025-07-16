@@ -1,6 +1,588 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{% comment %}
+  ISO Test Video Section - Optimized Vimeo Integration
+{% endcomment %}
+
+<style>
+.iso-test-section {
+  padding: 80px 20px !important;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.iso-test-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e0e0e0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') !important;
+  opacity: 0.3 !important;
+  pointer-events: none !important;
+}
+
+.iso-test-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.iso-test-header {
+  text-align: center !important;
+  margin-bottom: 60px !important;
+}
+
+.iso-test-badge {
+  display: inline-block !important;
+  padding: 8px 20px !important;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
+  color: white !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  border-radius: 25px !important;
+  margin-bottom: 20px !important;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3) !important;
+}
+
+.iso-test-title {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  color: #1d1d1f !important;
+  margin-bottom: 20px !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.02em !important;
+}
+
+.iso-test-subtitle {
+  font-size: 1.1rem !important;
+  color: #6c757d !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  line-height: 1.6 !important;
+}
+
+.iso-test-content {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 60px !important;
+  align-items: center !important;
+  margin-bottom: 60px !important;
+}
+
+.iso-test-video-container {
+  position: relative !important;
+  width: 100% !important;
+  height: 400px !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+  background: #000 !important;
+}
+
+.iso-test-video-container::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(45deg, rgba(0,0,0,0.1) 0%, transparent 100%) !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.iso-test-video {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  border-radius: 20px !important;
+}
+
+.iso-test-info {
+  padding: 20px !important;
+}
+
+.iso-test-info h3 {
+  font-size: 1.8rem !important;
+  font-weight: 600 !important;
+  color: #1d1d1f !important;
+  margin-bottom: 20px !important;
+  line-height: 1.3 !important;
+}
+
+.iso-test-info p {
+  font-size: 1rem !important;
+  color: #6c757d !important;
+  line-height: 1.6 !important;
+  margin-bottom: 25px !important;
+}
+
+.iso-test-specs {
+  margin-bottom: 30px !important;
+}
+
+.iso-test-spec {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 15px 0 !important;
+  border-bottom: 1px solid #e9ecef !important;
+}
+
+.iso-test-spec:last-child {
+  border-bottom: none !important;
+}
+
+.iso-test-spec-label {
+  font-weight: 600 !important;
+  color: #495057 !important;
+  font-size: 0.9rem !important;
+}
+
+.iso-test-spec-value {
+  font-weight: 500 !important;
+  color: #28a745 !important;
+  font-size: 0.9rem !important;
+}
+
+.iso-test-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 15px 30px !important;
+  background: linear-gradient(135deg, #1d1d1f 0%, #495057 100%) !important;
+  color: white !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  border-radius: 50px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 15px rgba(29, 29, 31, 0.2) !important;
+}
+
+.iso-test-cta:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(29, 29, 31, 0.3) !important;
+  color: white !important;
+}
+
+.iso-test-cta::after {
+  content: '→' !important;
+  margin-left: 10px !important;
+  transition: transform 0.3s ease !important;
+}
+
+.iso-test-cta:hover::after {
+  transform: translateX(3px) !important;
+}
+
+.iso-test-stats {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: 30px !important;
+  margin-top: 40px !important;
+}
+
+.iso-test-stat {
+  text-align: center !important;
+  padding: 30px 20px !important;
+  background: white !important;
+  border-radius: 15px !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.iso-test-stat:hover {
+  transform: translateY(-5px) !important;
+}
+
+.iso-test-stat-number {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: #ff6b6b !important;
+  margin-bottom: 10px !important;
+}
+
+.iso-test-stat-label {
+  font-size: 0.9rem !important;
+  color: #6c757d !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .iso-test-section {
+    padding: 60px 15px !important;
   }
+  
+  .iso-test-title {
+    font-size: 2rem !important;
+  }
+  
+  .iso-test-content {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  
+  .iso-test-video-container {
+    height: 300px !important;
+  }
+  
+  .iso-test-stats {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    gap: 20px !important;
+  }
+  
+  .iso-test-stat {
+    padding: 20px 15px !important;
+  }
+  
+  .iso-test-stat-number {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Loading placeholder */
+.iso-test-video-placeholder {
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(45deg, #f8f9fa 25%, transparent 25%, transparent 75%, #f8f9fa 75%, #f8f9fa), linear-gradient(45deg, #f8f9fa 25%, transparent 25%, transparent 75%, #f8f9fa 75%, #f8f9fa) !important;
+  background-size: 20px 20px !important;
+  background-position: 0 0, 10px 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #6c757d !important;
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+}
+</style>
+
+<section class="iso-test-section">
+  <div class="iso-test-container">
+    
+    <!-- Header -->
+    <div class="iso-test-header">
+      <div class="iso-test-badge">{{ section.settings.badge_text | default: 'ISO Certified' }}</div>
+      <h2 class="iso-test-title">{{ section.settings.title | default: 'Unbreakable Frame Technology' }}</h2>
+      <p class="iso-test-subtitle">{{ section.settings.subtitle | default: 'Watch our frame withstand rigorous ISO testing standards, proving the durability and reliability you can trust on every ride.' }}</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="iso-test-content">
+      
+      <!-- Video Container -->
+      <div class="iso-test-video-container">
+        {% if section.settings.vimeo_video_id != blank %}
+          <iframe 
+            class="iso-test-video"
+            src="https://player.vimeo.com/video/{{ section.settings.vimeo_video_id }}?badge=0&autopause=0&autoplay=1&muted=1&loop=1&controls=0&background=1&quality=auto"
+            frameborder="0"
+            loading="lazy"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            allowfullscreen
+            title="{{ section.settings.video_title | default: 'Frame Test Video' }}">
+          </iframe>
+        {% else %}
+          <div class="iso-test-video-placeholder">
+            <div>
+              <p>Add your Vimeo video ID in the section settings</p>
+              <small>Example: 1101897970</small>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Info Section -->
+      <div class="iso-test-info">
+        <h3>{{ section.settings.info_title | default: 'Built to Last, Tested to Perfection' }}</h3>
+        <p>{{ section.settings.info_description | default: 'Our frames undergo extensive ISO testing to ensure they meet the highest standards of durability, safety, and performance. Every bike is engineered to withstand the toughest conditions.' }}</p>
+        
+        <!-- Specifications -->
+        <div class="iso-test-specs">
+          {% if section.settings.spec_1_label != blank %}
+            <div class="iso-test-spec">
+              <span class="iso-test-spec-label">{{ section.settings.spec_1_label }}</span>
+              <span class="iso-test-spec-value">{{ section.settings.spec_1_value }}</span>
+            </div>
+          {% endif %}
+          
+          {% if section.settings.spec_2_label != blank %}
+            <div class="iso-test-spec">
+              <span class="iso-test-spec-label">{{ section.settings.spec_2_label }}</span>
+              <span class="iso-test-spec-value">{{ section.settings.spec_2_value }}</span>
+            </div>
+          {% endif %}
+          
+          {% if section.settings.spec_3_label != blank %}
+            <div class="iso-test-spec">
+              <span class="iso-test-spec-label">{{ section.settings.spec_3_label }}</span>
+              <span class="iso-test-spec-value">{{ section.settings.spec_3_value }}</span>
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- CTA Button -->
+        {% if section.settings.cta_text != blank and section.settings.cta_url != blank %}
+          <a href="{{ section.settings.cta_url }}" class="iso-test-cta">
+            {{ section.settings.cta_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    {% if section.settings.show_stats %}
+      <div class="iso-test-stats">
+        {% if section.settings.stat_1_number != blank %}
+          <div class="iso-test-stat">
+            <div class="iso-test-stat-number">{{ section.settings.stat_1_number }}</div>
+            <div class="iso-test-stat-label">{{ section.settings.stat_1_label }}</div>
+          </div>
+        {% endif %}
+        
+        {% if section.settings.stat_2_number != blank %}
+          <div class="iso-test-stat">
+            <div class="iso-test-stat-number">{{ section.settings.stat_2_number }}</div>
+            <div class="iso-test-stat-label">{{ section.settings.stat_2_label }}</div>
+          </div>
+        {% endif %}
+        
+        {% if section.settings.stat_3_number != blank %}
+          <div class="iso-test-stat">
+            <div class="iso-test-stat-number">{{ section.settings.stat_3_number }}</div>
+            <div class="iso-test-stat-label">{{ section.settings.stat_3_label }}</div>
+          </div>
+        {% endif %}
+        
+        {% if section.settings.stat_4_number != blank %}
+          <div class="iso-test-stat">
+            <div class="iso-test-stat-number">{{ section.settings.stat_4_number }}</div>
+            <div class="iso-test-stat-label">{{ section.settings.stat_4_label }}</div>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+<script>
+// Intersection Observer for video loading optimization
+document.addEventListener('DOMContentLoaded', function() {
+  const videoContainers = document.querySelectorAll('.iso-test-video-container');
+  
+  const observerOptions = {
+    root: null,
+    rootMargin: '50px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        const iframe = entry.target.querySelector('iframe');
+        if (iframe && !iframe.src.includes('autoplay=1')) {
+          // Add autoplay if not already present
+          iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1');
+        }
+      }
+    });
+  }, observerOptions);
+
+  videoContainers.forEach(function(container) {
+    observer.observe(container);
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "ISO Test Video Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "ISO Certified"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Unbreakable Frame Technology"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Section Subtitle",
+      "default": "Watch our frame withstand rigorous ISO testing standards, proving the durability and reliability you can trust on every ride."
+    },
+    {
+      "type": "header",
+      "content": "Video Settings"
+    },
+    {
+      "type": "text",
+      "id": "vimeo_video_id",
+      "label": "Vimeo Video ID",
+      "info": "Enter only the video ID from your Vimeo URL (e.g., 1101897970)",
+      "default": "1101897970"
+    },
+    {
+      "type": "text",
+      "id": "video_title",
+      "label": "Video Title",
+      "default": "Rinos Frame Test"
+    },
+    {
+      "type": "header",
+      "content": "Info Section"
+    },
+    {
+      "type": "text",
+      "id": "info_title",
+      "label": "Info Title",
+      "default": "Built to Last, Tested to Perfection"
+    },
+    {
+      "type": "textarea",
+      "id": "info_description",
+      "label": "Info Description",
+      "default": "Our frames undergo extensive ISO testing to ensure they meet the highest standards of durability, safety, and performance. Every bike is engineered to withstand the toughest conditions."
+    },
+    {
+      "type": "header",
+      "content": "Specifications"
+    },
+    {
+      "type": "text",
+      "id": "spec_1_label",
+      "label": "Spec 1 Label",
+      "default": "ISO 4210 Standard"
+    },
+    {
+      "type": "text",
+      "id": "spec_1_value",
+      "label": "Spec 1 Value",
+      "default": "✓ Passed"
+    },
+    {
+      "type": "text",
+      "id": "spec_2_label",
+      "label": "Spec 2 Label",
+      "default": "Fatigue Test"
+    },
+    {
+      "type": "text",
+      "id": "spec_2_value",
+      "label": "Spec 2 Value",
+      "default": "100,000+ Cycles"
+    },
+    {
+      "type": "text",
+      "id": "spec_3_label",
+      "label": "Spec 3 Label",
+      "default": "Impact Resistance"
+    },
+    {
+      "type": "text",
+      "id": "spec_3_value",
+      "label": "Spec 3 Value",
+      "default": "✓ Certified"
+    },
+    {
+      "type": "header",
+      "content": "Call to Action"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "View Test Results"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Statistics"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stats",
+      "label": "Show Statistics",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "stat_1_number",
+      "label": "Stat 1 Number",
+      "default": "100,000+"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Stat 1 Label",
+      "default": "Test Cycles"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_number",
+      "label": "Stat 2 Number",
+      "default": "ISO 4210"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Stat 2 Label",
+      "default": "Certified"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_number",
+      "label": "Stat 3 Number",
+      "default": "99.9%"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Stat 3 Label",
+      "default": "Durability"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_number",
+      "label": "Stat 4 Number",
+      "default": "5 Years"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_label",
+      "label": "Stat 4 Label",
+      "default": "Warranty"
+    }
+  ],
+  "presets": [
+    {
+      "name": "ISO Test Video Section",
+      "category": "Custom"
+    }
+  ]
+}
 {% endschema %}
