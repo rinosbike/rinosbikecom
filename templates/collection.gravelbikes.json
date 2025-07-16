@@ -504,18 +504,6 @@
         "color_scheme": "background-1"
       }
     },
-    "promovideo_RfRdkg": {
-      "type": "promovideo",
-      "name": "Video Hero",
-      "settings": {
-        "show_content": true,
-        "show_overlay": true,
-        "heading": "Discover more. Discover Rinos.",
-        "subheading": "",
-        "button_text": "",
-        "button_link": ""
-      }
-    },
     "rich_text_Yt9dAG": {
       "type": "rich-text",
       "blocks": {
@@ -574,7 +562,6 @@
     "product-grid",
     "rinos_comparison_table_nz48Wf",
     "banner",
-    "promovideo_RfRdkg",
     "rich_text_Yt9dAG"
   ]
 }
