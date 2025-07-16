@@ -1,20 +1,25 @@
 {{ 'section-video-hero.css' | asset_url | stylesheet_tag }}
-
 <section class="video-hero-section">
+  <!-- Loading placeholder -->
+  <div class="video-loading-placeholder" id="videoLoading">
+    <div class="loading-spinner"></div>
+    <p>Loading video...</p>
+  </div>
+  
   <video 
+    id="heroVideo"
     autoplay 
     muted 
     loop 
     playsinline
-    preload="metadata"
+    preload="auto"
     class="video-hero-video">
     <source src="https://cdn.shopify.com/videos/c/o/v/f3f8029483dd48439a9ac81e65ea8f4c.mp4" type="video/mp4">
   </video>
-
+  
   {% if section.settings.show_overlay %}
     <div class="video-hero-overlay"></div>
   {% endif %}
-
   {% if section.settings.show_content %}
     <div class="video-hero-content">
       {% if section.settings.heading != blank %}
@@ -44,7 +49,43 @@
     overflow: hidden;
     background-color: #000;
   }
-
+  
+  .video-loading-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 10;
+    transition: opacity 0.5s ease;
+  }
+  
+  .video-loading-placeholder.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .loading-spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
   .video-hero-video {
     position: absolute;
     top: 50%;
@@ -56,8 +97,14 @@
     transform: translate(-50%, -50%);
     object-fit: cover;
     z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
   }
-
+  
+  .video-hero-video.loaded {
+    opacity: 1;
+  }
+  
   .video-hero-overlay {
     position: absolute;
     top: 0;
@@ -67,7 +114,7 @@
     background: rgba(0, 0, 0, 0.3);
     z-index: 2;
   }
-
+  
   .video-hero-content {
     position: absolute;
     top: 50px;
@@ -80,7 +127,7 @@
     max-width: 800px;
     width: 100%;
   }
-
+  
   .video-hero-heading {
     font-size: 4rem;
     margin-bottom: 1rem;
@@ -94,7 +141,7 @@
     background-clip: text;
     animation: gradientShift 3s ease-in-out infinite;
   }
-
+  
   @keyframes gradientShift {
     0% {
       background-position: 0% 50%;
@@ -106,14 +153,14 @@
       background-position: 0% 50%;
     }
   }
-
+  
   .video-hero-subheading {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     line-height: 1.4;
   }
-
+  
   .video-hero-button {
     display: inline-block;
     padding: 12px 30px;
@@ -126,13 +173,13 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
-
+  
   .video-hero-button:hover {
     background-color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
-
+  
   /* Mobile */
   @media (max-width: 768px) {
     .video-hero-section {
@@ -157,7 +204,7 @@
       font-size: 0.9rem;
     }
   }
-
+  
   /* Small mobile */
   @media (max-width: 480px) {
     .video-hero-section {
@@ -174,6 +221,38 @@
     }
   }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.getElementById('heroVideo');
+  const loadingPlaceholder = document.getElementById('videoLoading');
+  
+  // Function to hide loading and show video
+  function showVideo() {
+    loadingPlaceholder.classList.add('hidden');
+    video.classList.add('loaded');
+  }
+  
+  // Check if video is already loaded
+  if (video.readyState >= 3) {
+    showVideo();
+  } else {
+    // Wait for video to load enough data to play
+    video.addEventListener('canplaythrough', showVideo);
+    video.addEventListener('loadeddata', showVideo);
+  }
+  
+  // Fallback: hide loading after 10 seconds regardless
+  setTimeout(() => {
+    showVideo();
+  }, 10000);
+  
+  // Error handling
+  video.addEventListener('error', function() {
+    loadingPlaceholder.innerHTML = '<p>Error loading video</p>';
+  });
+});
+</script>
 
 {% schema %}
 {
