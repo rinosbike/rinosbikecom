@@ -58,61 +58,6 @@
         "show_text_below": true
       }
     },
-    "promovideo_3MQXnM": {
-      "type": "promovideo",
-      "name": "Video Hero",
-      "settings": {
-        "show_content": true,
-        "show_overlay": false,
-        "heading": "Welcome to the adventure, rider.",
-        "subheading": "",
-        "button_text": "",
-        "button_link": ""
-      }
-    },
-    "rich_text_VjAHAq": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_JLgjKW": {
-          "type": "heading",
-          "settings": {
-            "heading": "Latest news",
-            "heading_size": "h1"
-          }
-        },
-        "text_dTchyF": {
-          "type": "text",
-          "settings": {
-            "text": ""
-          }
-        },
-        "button_xJzdhD": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_JLgjKW",
-        "text_dTchyF",
-        "button_xJzdhD"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "image_banner_XyQx3D": {
       "type": "image-banner",
       "blocks": {
@@ -863,7 +808,14 @@
     "banner_video_tx3irV": {
       "type": "banner-video",
       "disabled": true,
-      "settings": {}
+      "settings": {
+        "vimeo_video_id": "1101900843",
+        "video_title": "Homepage Banner Video",
+        "banner_text": "Your Banner Text",
+        "button_text": "Shop Now",
+        "banner_link": "",
+        "open_new_tab": false
+      }
     },
     "174117020079d74a17": {
       "type": "apps",
@@ -926,8 +878,6 @@
   },
   "order": [
     "image_banner_HXtDzL",
-    "promovideo_3MQXnM",
-    "rich_text_VjAHAq",
     "image_banner_XyQx3D",
     "collage_xgMyez",
     "featured_blog_iNPmwD",
