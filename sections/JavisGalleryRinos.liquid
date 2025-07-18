@@ -1,9 +1,4 @@
-{% comment %}
-  Fixed Bike Gallery - Enhanced for Shopify compatibility
-{% endcomment %}
-
 <style>
-/* Enhanced specificity and !important declarations for Shopify */
 .bike-gallery {
   padding: 60px 20px !important;
   background: #ffffff !important;
@@ -265,11 +260,6 @@
     bottom: -4px !important;
   }
 }
-
-/* Debug styles - remove after testing */
-.bike-gallery .color-swatch {
-  /* outline: 1px solid red !important; Remove this line after confirming swatches are visible */
-}
 </style>
 
 <section class="bike-gallery">
@@ -284,8 +274,8 @@
                alt="Sandman 1">
         </div>
         <div class="bike-info">
-          <h3 class="bike-name">{{ 'bikes.sandman1.title' | t }}</h3>
-          <p class="bike-description">{{ 'bikes.sandman1.description' | t }}</p>
+          <h3 class="bike-name">Sandman 1</h3>
+          <p class="bike-description">A reliable carbon gravel bike with Shimano Sora 2×9 gearing and mechanical disc brakes. Built on a TORAY T800 frame, it's lightweight, durable, and ideal for beginners seeking value, comfort, and versatility. Perfect for commuting, weekend rides, or venturing off-road without breaking the bank.</p>
           
           <div class="color-options">
             <span class="color-label">Available Colors</span>
@@ -309,8 +299,8 @@
                alt="Sandman 3">
         </div>
         <div class="bike-info">
-          <h3 class="bike-name">{{ 'bikes.sandman3.title' | t }}</h3>
-          <p class="bike-description">{{ 'bikes.sandman3.description' | t }}</p>
+          <h3 class="bike-name">Sandman 3</h3>
+          <p class="bike-description">Equipped with Shimano GRX400 2×10 drivetrain and mechanical disc brakes, the Sandman 3 offers serious gravel performance on a budget. The T800 carbon frame ensures stability and responsiveness, while 700×40C tires provide grip on rough terrain. A great upgrade for riders wanting dependable components and versatility.</p>
           
           <div class="color-options">
             <span class="color-label">Available Colors</span>
@@ -334,8 +324,8 @@
                alt="Sandman 4">
         </div>
         <div class="bike-info">
-          <h3 class="bike-name">{{ 'bikes.sandman4.title' | t }}</h3>
-          <p class="bike-description">{{ 'bikes.sandman4.description' | t }}</p>
+          <h3 class="bike-name">Sandman 4</h3>
+          <p class="bike-description">With Shimano GRX400 2×10 and hydraulic disc brakes, the Sandman 4 steps up in control and stopping power. Ideal for hilly, unpredictable terrain, it combines a lightweight carbon frame, flared handlebars, and wide tires to deliver performance, comfort, and confidence in all conditions.</p>
           
           <div class="color-options">
             <span class="color-label">Available Colors</span>
@@ -363,8 +353,8 @@
                alt="Sandman 5">
         </div>
         <div class="bike-info">
-          <h3 class="bike-name">{{ 'bikes.sandman5.title' | t }}</h3>
-          <p class="bike-description">{{ 'bikes.sandman5.description' | t }}</p>
+          <h3 class="bike-name">Sandman 5</h3>
+          <p class="bike-description">A race-ready carbon gravel bike with Shimano GRX600 2×11 drivetrain and hydraulic disc brakes. The Sandman 5 blends endurance comfort with responsive handling, ideal for demanding gravel rides or long bikepacking trips. A versatile machine for riders who want premium specs at a fair price.</p>
           
           <div class="color-options">
             <span class="color-label">Available Colors</span>
@@ -388,8 +378,8 @@
                alt="Sandman 6">
         </div>
         <div class="bike-info">
-          <h3 class="bike-name">{{ 'bikes.sandman6.title' | t }}</h3>
-          <p class="bike-description">{{ 'bikes.sandman6.description' | t }}</p>
+          <h3 class="bike-name">Sandman 6</h3>
+          <p class="bike-description">For modern gravel racers, the Sandman 6 features a Shimano GRX820 1×12 drivetrain and hydraulic disc brakes. Paired with a sleek carbon frame and internal cable routing, it's built for low maintenance, clean aesthetics, and high performance on both fast gravel roads and tough terrain.</p>
           
           <div class="color-options">
             <span class="color-label">Available Colors</span>
@@ -417,8 +407,8 @@
                alt="Sandman 7">
         </div>
         <div class="bike-info">
-          <h3 class="bike-name">{{ 'bikes.sandman7.title' | t }}</h3>
-          <p class="bike-description">{{ 'bikes.sandman7.description' | t }}</p>
+          <h3 class="bike-name">Sandman 7</h3>
+          <p class="bike-description">The ultimate gravel bike in the Rinos lineup, featuring Shimano GRX820 2×12 drivetrain and hydraulic disc brakes. Designed for riders who demand full range, long-distance comfort, and aggressive performance. Lightweight, race-ready, and bikepacking-capable — the Sandman 7 is your go-anywhere, do-everything carbon gravel machine.</p>
           
           <div class="color-options">
             <span class="color-label">Available Colors</span>
@@ -481,16 +471,3 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-
-{% schema %}
-{
-  "name": "Gravel Bike Gallery",
-  "settings": [],
-  "presets": [
-    {
-      "name": "Gravel Bike Gallery",
-      "category": "Custom"
-    }
-  ]
-}
-{% endschema %}
