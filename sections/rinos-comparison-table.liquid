@@ -1,807 +1,643 @@
-{% comment %}
-  Minimalist Gravel Bike Comparison Table
-  Apple x Rick Owens aesthetic - stark, architectural, premium
-  Clean spec-focused design without images
-{% endcomment %}
-
-<style>
-  .gravel-comparison {
-    padding: 0;
-    background: #ffffff;
-    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  }
-
-  .gravel-comparison-container {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-
-  /* Desktop Table View */
-  .comparison-wrapper {
-    overflow-x: auto;
-    background: white;
-  }
-
-  .comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 1200px;
-  }
-
-  .bike-header {
-    background: #fafafa;
-    border-bottom: 1px solid #e8e8e8;
-  }
-
-  .bike-header th {
-    padding: 50px 30px 40px;
-    text-align: center;
-    border-right: 1px solid #e8e8e8;
-    position: relative;
-    vertical-align: top;
-  }
-
-  .bike-header th:last-child {
-    border-right: none;
-  }
-
-  .bike-header th:first-child {
-    background: #ffffff;
-    border-right: 1px solid #e8e8e8;
-    padding: 0;
-  }
-
-  .featured-bike {
-    background: linear-gradient(135deg, #D3D3D3 0%, #BDBDBD 25%, #9E9E9E 50%, #D3D3D3 75%, #7D7D7D 100%);
-    background-size: 400% 400%;
-    color: #ffffff;
-    position: relative;
-    animation: gradientFlow 4s ease-in-out infinite;
-  }
-
-  @keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  .bike-name {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #1d1d1f;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-  }
-
-  .featured-bike .bike-name {
-    color: #ffffff;
-  }
-
-  .bike-description {
-    font-size: 1rem;
-    color: #86868b;
-    line-height: 1.4;
-    font-weight: 400;
-    margin-bottom: 24px;
-  }
-
-  .featured-bike .bike-description {
-    color: #a1a1a6;
-  }
-
-  .discover-link {
-    font-size: 0.95rem;
-    color: #0066cc;
-    text-decoration: none;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-bottom: 1px solid transparent;
-    transition: all 0.2s ease;
-  }
-
-  .discover-link:hover {
-    border-bottom-color: #0066cc;
-  }
-
-  .featured-bike .discover-link {
-    color: #ffffff;
-  }
-
-  .featured-bike .discover-link:hover {
-    border-bottom-color: #ffffff;
-  }
-
-  .spec-row {
-    border-bottom: 1px solid #f5f5f7;
-  }
-
-  .spec-row:last-child {
-    border-bottom: none;
-  }
-
-  .spec-label {
-    padding: 24px 30px;
-    font-weight: 500;
-    color: #1d1d1f;
-    background: #fafafa;
-    border-right: 1px solid #e8e8e8;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    width: 180px;
-  }
-
-  .spec-value {
-    padding: 24px 30px;
-    color: #1d1d1f;
-    font-weight: 400;
-    border-right: 1px solid #f5f5f7;
-    font-size: 1.05rem;
-    text-align: center;
-    background: #ffffff;
-  }
-
-  .spec-value:last-child {
-    border-right: none;
-  }
-
-  .featured-spec {
-    background: linear-gradient(135deg, #D3D3D3 0%, #BDBDBD 25%, #9E9E9E 50%, #D3D3D3 75%, #7D7D7D 100%);
-    background-size: 400% 400%;
-    color: #ffffff;
-    font-weight: 500;
-    border-left: 1px solid #2a2a2a;
-    border-right: 1px solid #2a2a2a;
-    animation: gradientFlow 4s ease-in-out infinite;
-  }
-
-  .featured-spec:last-child {
-    border-right: none;
-  }
-
-  /* Mobile Accordion View */
-  .mobile-accordion {
-    display: none;
-    padding: 0;
-  }
-
-  .mobile-accordion-item {
-    border-bottom: 1px solid #e8e8e8;
-  }
-
-  .mobile-accordion-item:last-child {
-    border-bottom: none;
-  }
-
-  .mobile-accordion-header {
-    padding: 30px 20px;
-    background: #fafafa;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.3s ease;
-  }
-
-  .mobile-accordion-header:active {
-    background: #f0f0f0;
-  }
-
-  .mobile-accordion-header.featured {
-    background: linear-gradient(135deg, #D3D3D3 0%, #BDBDBD 25%, #9E9E9E 50%, #D3D3D3 75%, #7D7D7D 100%);
-    background-size: 400% 400%;
-    color: #ffffff;
-    animation: gradientFlow 4s ease-in-out infinite;
-  }
-
-  .mobile-bike-name {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #1d1d1f;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-  }
-
-  .mobile-accordion-header.featured .mobile-bike-name {
-    color: #ffffff;
-  }
-
-  .mobile-bike-description {
-    font-size: 0.9rem;
-    color: #86868b;
-    line-height: 1.4;
-    font-weight: 400;
-    margin-bottom: 12px;
-  }
-
-  .mobile-accordion-header.featured .mobile-bike-description {
-    color: #a1a1a6;
-  }
-
-  .mobile-discover-link {
-    font-size: 0.8rem;
-    color: #0066cc;
-    text-decoration: none;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .mobile-accordion-header.featured .mobile-discover-link {
-    color: #ffffff;
-  }
-
-  .mobile-accordion-toggle {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-    color: #86868b;
-    transition: transform 0.3s ease;
-    pointer-events: none;
-  }
-
-  .mobile-accordion-header.featured .mobile-accordion-toggle {
-    color: #ffffff;
-  }
-
-  .mobile-accordion-toggle.active {
-    transform: translateY(-50%) rotate(180deg);
-  }
-
-  .mobile-accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    background: #ffffff;
-  }
-
-  .mobile-accordion-content.active {
-    max-height: 500px;
-  }
-
-  .mobile-specs {
-    padding: 20px;
-  }
-
-  .mobile-spec-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid #f5f5f7;
-  }
-
-  .mobile-spec-item:last-child {
-    border-bottom: none;
-  }
-
-  .mobile-spec-label {
-    font-weight: 500;
-    color: #1d1d1f;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-  }
-
-  .mobile-spec-value {
-    font-weight: 400;
-    color: #1d1d1f;
-    font-size: 0.95rem;
-    text-align: right;
-  }
-
-  /* Responsive breakpoints */
-  @media (max-width: 768px) {
-    .comparison-wrapper {
-      display: none;
-    }
-
-    .mobile-accordion {
-      display: block;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .mobile-accordion-header {
-      padding: 25px 15px;
-    }
-
-    .mobile-bike-name {
-      font-size: 1.1rem;
-    }
-
-    .mobile-bike-description {
-      font-size: 0.8rem;
-    }
-
-    .mobile-discover-link {
-      font-size: 0.75rem;
-    }
-  }
-
-  /* Tablet */
-  @media (max-width: 1024px) and (min-width: 769px) {
-    .comparison-table {
-      min-width: 1000px;
-    }
-    
-    .bike-header th {
-      padding: 40px 25px 35px;
-    }
-  }
-
-  /* Accessibility */
-  @media (prefers-reduced-motion: reduce) {
-    .discover-link,
-    .mobile-accordion-header,
-    .mobile-accordion-content,
-    .mobile-accordion-toggle {
-      transition: none;
-    }
-    
-    .featured-bike,
-    .featured-spec,
-    .mobile-accordion-header.featured {
-      animation: none;
-    }
-  }
-</style>
-
-<section class="gravel-comparison">
-  <div class="gravel-comparison-container">
-    
-    <!-- Desktop Table View -->
-    <div class="comparison-wrapper">
-      <table class="comparison-table">
-        <thead class="bike-header">
-          <tr>
-            <th></th>
-            <th>
-              <div class="bike-name">{{ 'bikes.sandman1.title' | t }}</div>
-              <div class="bike-description">{{ 'bikes.sandman1.description' | t }}</div>
-              <a href="#" class="discover-link">Discover More</a>
-            </th>
-            <th>
-              <div class="bike-name">{{ 'bikes.sandman3.title' | t }}</div>
-              <div class="bike-description">{{ 'bikes.sandman3.description' | t }}</div>
-              <a href="#" class="discover-link">Discover More</a>
-            </th>
-            <th class="featured-bike">
-              <div class="bike-name">{{ 'bikes.sandman4.title' | t }}</div>
-              <div class="bike-description">{{ 'bikes.sandman4.description' | t }}</div>
-              <a href="#" class="discover-link">Discover More</a>
-            </th>
-            <th>
-              <div class="bike-name">{{ 'bikes.sandman5.title' | t }}</div>
-              <div class="bike-description">{{ 'bikes.sandman5.description' | t }}</div>
-              <a href="#" class="discover-link">Discover More</a>
-            </th>
-            <th>
-              <div class="bike-name">{{ 'bikes.sandman6.title' | t }}</div>
-              <div class="bike-description">{{ 'bikes.sandman6.description' | t }}</div>
-              <a href="#" class="discover-link">Discover More</a>
-            </th>
-            <th>
-              <div class="bike-name">{{ 'bikes.sandman7.title' | t }}</div>
-              <div class="bike-description">{{ 'bikes.sandman7.description' | t }}</div>
-              <a href="#" class="discover-link">Discover More</a>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.weight_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.weight' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.weight' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.weight' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.weight' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.weight' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.weight' | t }}</td>
-          </tr>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.gear_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.gear' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.gear' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.gear' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.gear' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.gear' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.gear' | t }}</td>
-          </tr>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.gears_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.gears' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.gears' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.gears' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.gears' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.gears' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.gears' | t }}</td>
-          </tr>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.frame_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.frame' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.frame' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.frame' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.frame' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.frame' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.frame' | t }}</td>
-          </tr>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.frameSize_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.frameSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.frameSize' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.frameSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.frameSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.frameSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.frameSize' | t }}</td>
-          </tr>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.brakes_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.brakes' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.brakes' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.brakes' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.brakes' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.brakes' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.brakes' | t }}</td>
-          </tr>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.wheelSize_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.wheelSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.wheelSize' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.wheelSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.wheelSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.wheelSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.wheelSize' | t }}</td>
-          </tr>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.rims_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.rims' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.rims' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.rims' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.rims' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.rims' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.rims' | t }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Mobile Accordion View -->
-    <div class="mobile-accordion">
-      <!-- Sandman 1 -->
-      <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header">
-          <div class="mobile-bike-name">{{ 'bikes.sandman1.title' | t }}</div>
-          <div class="mobile-bike-description">{{ 'bikes.sandman1.description' | t }}</div>
-          <a href="#" class="mobile-discover-link">Discover More</a>
-          <span class="mobile-accordion-toggle">↓</span>
-        </div>
-        <div class="mobile-accordion-content">
-          <div class="mobile-specs">
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.weight' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.gear' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.gears' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.frame' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.frameSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.brakes' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.wheelSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.rims' | t }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sandman 3 -->
-      <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header">
-          <div class="mobile-bike-name">{{ 'bikes.sandman3.title' | t }}</div>
-          <div class="mobile-bike-description">{{ 'bikes.sandman3.description' | t }}</div>
-          <a href="#" class="mobile-discover-link">Discover More</a>
-          <span class="mobile-accordion-toggle">↓</span>
-        </div>
-        <div class="mobile-accordion-content">
-          <div class="mobile-specs">
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.weight' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.gear' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.gears' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.frame' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.frameSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.brakes' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.wheelSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.rims' | t }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sandman 4 (Featured) -->
-      <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header featured">
-          <div class="mobile-bike-name">{{ 'bikes.sandman4.title' | t }}</div>
-          <div class="mobile-bike-description">{{ 'bikes.sandman4.description' | t }}</div>
-          <a href="#" class="mobile-discover-link">Discover More</a>
-          <span class="mobile-accordion-toggle">↓</span>
-        </div>
-        <div class="mobile-accordion-content">
-          <div class="mobile-specs">
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.weight' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.gear' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.gears' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.frame' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.frameSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.brakes' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.wheelSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.rims' | t }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sandman 5 -->
-      <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header">
-          <div class="mobile-bike-name">{{ 'bikes.sandman5.title' | t }}</div>
-          <div class="mobile-bike-description">{{ 'bikes.sandman5.description' | t }}</div>
-          <a href="#" class="mobile-discover-link">Discover More</a>
-          <span class="mobile-accordion-toggle">↓</span>
-        </div>
-        <div class="mobile-accordion-content">
-          <div class="mobile-specs">
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.weight' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.gear' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.gears' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.frame' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.frameSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.brakes' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.wheelSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.rims' | t }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sandman 6 -->
-      <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header">
-          <div class="mobile-bike-name">{{ 'bikes.sandman6.title' | t }}</div>
-          <div class="mobile-bike-description">{{ 'bikes.sandman6.description' | t }}</div>
-          <a href="#" class="mobile-discover-link">Discover More</a>
-          <span class="mobile-accordion-toggle">↓</span>
-        </div>
-        <div class="mobile-accordion-content">
-          <div class="mobile-specs">
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.weight' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.gear' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.gears' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.frame' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.frameSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.brakes' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.wheelSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.rims' | t }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sandman 7 -->
-      <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header">
-          <div class="mobile-bike-name">{{ 'bikes.sandman7.title' | t }}</div>
-          <div class="mobile-bike-description">{{ 'bikes.sandman7.description' | t }}</div>
-          <a href="#" class="mobile-discover-link">Discover More</a>
-          <span class="mobile-accordion-toggle">↓</span>
-        </div>
-        <div class="mobile-accordion-content">
-          <div class="mobile-specs">
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.weight' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.gear' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.gears' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.frame' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.frameSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.brakes' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.wheelSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.rims' | t }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
-// Mobile accordion functionality
-document.addEventListener('DOMContentLoaded', function() {
-  // Handle accordion toggle
-  document.querySelectorAll('.mobile-accordion-header').forEach(function(header) {
-    header.addEventListener('click', function(e) {
-      // Don't toggle if clicking on discover link
-      if (e.target.classList.contains('mobile-discover-link')) {
-        return;
-      }
-      
-      const content = this.nextElementSibling;
-      const toggle = this.querySelector('.mobile-accordion-toggle');
-      
-      // Close all other accordions
-      document.querySelectorAll('.mobile-accordion-content').forEach(function(item) {
-        if (item !== content) {
-          item.classList.remove('active');
-          const otherToggle = item.previousElementSibling.querySelector('.mobile-accordion-toggle');
-          if (otherToggle) {
-            otherToggle.classList.remove('active');
-          }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravel Bike Comparison</title>
+    <style>
+        .gravel-comparison {
+            padding: 0;
+            background: #ffffff;
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-      });
-      
-      // Toggle current accordion
-      content.classList.toggle('active');
-      if (toggle) {
-        toggle.classList.toggle('active');
-      }
-    });
-  });
-  
-  // Handle discover more links
-  document.querySelectorAll('.mobile-discover-link, .discover-link').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      // Add your discover more functionality here
-    });
-  });
-});
-</script>
 
-{% schema %}
-{
-  "name": "Gravel Bike Comparison",
-  "settings": [],
-  "presets": [
-    {
-      "name": "Gravel Bike Comparison",
-      "category": "Custom"
-    }
-  ]
-}
-{% endschema %}
+        .gravel-comparison-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Desktop Table View */
+        .comparison-wrapper {
+            overflow-x: auto;
+            background: white;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1400px;
+        }
+
+        .bike-header {
+            background: #fafafa;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .bike-header th {
+            padding: 50px 25px 40px;
+            text-align: center;
+            border-right: 1px solid #e8e8e8;
+            position: relative;
+            vertical-align: top;
+        }
+
+        .bike-header th:last-child {
+            border-right: none;
+        }
+
+        .bike-header th:first-child {
+            background: #ffffff;
+            border-right: 1px solid #e8e8e8;
+            padding: 0;
+        }
+
+        .featured-bike {
+            background: linear-gradient(135deg, #D3D3D3 0%, #BDBDBD 25%, #9E9E9E 50%, #D3D3D3 75%, #7D7D7D 100%);
+            background-size: 400% 400%;
+            color: #ffffff;
+            position: relative;
+            animation: gradientFlow 4s ease-in-out infinite;
+        }
+
+        .premium-bike {
+            background: linear-gradient(135deg, #8B4513 0%, #2c1810 25%, #8B4513 50%, #D2B48C 75%, #8B4513 100%);
+            background-size: 400% 400%;
+            color: #ffffff;
+            position: relative;
+            animation: gradientFlow 4s ease-in-out infinite;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .bike-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .featured-bike .bike-name,
+        .premium-bike .bike-name {
+            color: #ffffff;
+        }
+
+        .bike-description {
+            font-size: 1rem;
+            color: #86868b;
+            line-height: 1.4;
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+
+        .featured-bike .bike-description,
+        .premium-bike .bike-description {
+            color: #a1a1a6;
+        }
+
+        .discover-link {
+            font-size: 0.95rem;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .discover-link:hover {
+            border-bottom-color: #0066cc;
+        }
+
+        .featured-bike .discover-link,
+        .premium-bike .discover-link {
+            color: #ffffff;
+        }
+
+        .featured-bike .discover-link:hover,
+        .premium-bike .discover-link:hover {
+            border-bottom-color: #ffffff;
+        }
+
+        .spec-row {
+            border-bottom: 1px solid #f5f5f7;
+        }
+
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            padding: 24px 30px;
+            font-weight: 500;
+            color: #1d1d1f;
+            background: #fafafa;
+            border-right: 1px solid #e8e8e8;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            width: 180px;
+        }
+
+        .spec-value {
+            padding: 24px 20px;
+            color: #1d1d1f;
+            font-weight: 400;
+            border-right: 1px solid #f5f5f7;
+            font-size: 1.05rem;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .spec-value:last-child {
+            border-right: none;
+        }
+
+        .featured-spec {
+            background: linear-gradient(135deg, #D3D3D3 0%, #BDBDBD 25%, #9E9E9E 50%, #D3D3D3 75%, #7D7D7D 100%);
+            background-size: 400% 400%;
+            color: #ffffff;
+            font-weight: 500;
+            animation: gradientFlow 4s ease-in-out infinite;
+        }
+
+        .premium-spec {
+            background: linear-gradient(135deg, #8B4513 0%, #2c1810 25%, #8B4513 50%, #D2B48C 75%, #8B4513 100%);
+            background-size: 400% 400%;
+            color: #ffffff;
+            font-weight: 500;
+            animation: gradientFlow 4s ease-in-out infinite;
+        }
+
+        /* Mobile Accordion View */
+        .mobile-accordion {
+            display: none;
+            padding: 0;
+        }
+
+        .mobile-accordion-item {
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .mobile-accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-accordion-header {
+            padding: 30px 20px;
+            background: #fafafa;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-accordion-header:active {
+            background: #f0f0f0;
+        }
+
+        .mobile-accordion-header.featured {
+            background: linear-gradient(135deg, #D3D3D3 0%, #BDBDBD 25%, #9E9E9E 50%, #D3D3D3 75%, #7D7D7D 100%);
+            background-size: 400% 400%;
+            color: #ffffff;
+            animation: gradientFlow 4s ease-in-out infinite;
+        }
+
+        .mobile-accordion-header.premium {
+            background: linear-gradient(135deg, #8B4513 0%, #2c1810 25%, #8B4513 50%, #D2B48C 75%, #8B4513 100%);
+            background-size: 400% 400%;
+            color: #ffffff;
+            animation: gradientFlow 4s ease-in-out infinite;
+        }
+
+        .mobile-bike-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .mobile-accordion-header.featured .mobile-bike-name,
+        .mobile-accordion-header.premium .mobile-bike-name {
+            color: #ffffff;
+        }
+
+        .mobile-bike-description {
+            font-size: 0.9rem;
+            color: #86868b;
+            line-height: 1.4;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .mobile-accordion-header.featured .mobile-bike-description,
+        .mobile-accordion-header.premium .mobile-bike-description {
+            color: #a1a1a6;
+        }
+
+        .mobile-discover-link {
+            font-size: 0.8rem;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .mobile-accordion-header.featured .mobile-discover-link,
+        .mobile-accordion-header.premium .mobile-discover-link {
+            color: #ffffff;
+        }
+
+        .mobile-accordion-toggle {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: #86868b;
+            transition: transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .mobile-accordion-header.featured .mobile-accordion-toggle,
+        .mobile-accordion-header.premium .mobile-accordion-toggle {
+            color: #ffffff;
+        }
+
+        .mobile-accordion-toggle.active {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .mobile-accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #ffffff;
+        }
+
+        .mobile-accordion-content.active {
+            max-height: 500px;
+        }
+
+        .mobile-specs {
+            padding: 20px;
+        }
+
+        .mobile-spec-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #f5f5f7;
+        }
+
+        .mobile-spec-item:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-spec-label {
+            font-weight: 500;
+            color: #1d1d1f;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .mobile-spec-value {
+            font-weight: 400;
+            color: #1d1d1f;
+            font-size: 0.95rem;
+            text-align: right;
+        }
+
+        /* Responsive breakpoints */
+        @media (max-width: 768px) {
+            .comparison-wrapper {
+                display: none;
+            }
+
+            .mobile-accordion {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-accordion-header {
+                padding: 25px 15px;
+            }
+
+            .mobile-bike-name {
+                font-size: 1.1rem;
+            }
+
+            .mobile-bike-description {
+                font-size: 0.8rem;
+            }
+
+            .mobile-discover-link {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Tablet */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .comparison-table {
+                min-width: 1200px;
+            }
+            
+            .bike-header th {
+                padding: 40px 20px 35px;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .discover-link,
+            .mobile-accordion-header,
+            .mobile-accordion-content,
+            .mobile-accordion-toggle {
+                transition: none;
+            }
+            
+            .featured-bike,
+            .premium-bike,
+            .featured-spec,
+            .premium-spec,
+            .mobile-accordion-header.featured,
+            .mobile-accordion-header.premium {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="gravel-comparison">
+        <div class="gravel-comparison-container">
+            
+            <!-- Desktop Table View -->
+            <div class="comparison-wrapper">
+                <table class="comparison-table">
+                    <thead class="bike-header">
+                        <tr>
+                            <th></th>
+                            <th>
+                                <div class="bike-name">{{ 'bikes.sandman1.title' | t }}</div>
+                                <div class="bike-description">{{ 'bikes.sandman1.description' | t }}</div>
+                                <a href="#" class="discover-link">Discover More</a>
+                            </th>
+                            <th>
+                                <div class="bike-name">{{ 'bikes.sandman3.title' | t }}</div>
+                                <div class="bike-description">{{ 'bikes.sandman3.description' | t }}</div>
+                                <a href="#" class="discover-link">Discover More</a>
+                            </th>
+                            <th class="featured-bike">
+                                <div class="bike-name">{{ 'bikes.sandman4.title' | t }}</div>
+                                <div class="bike-description">{{ 'bikes.sandman4.description' | t }}</div>
+                                <a href="#" class="discover-link">Discover More</a>
+                            </th>
+                            <th>
+                                <div class="bike-name">{{ 'bikes.sandman5.title' | t }}</div>
+                                <div class="bike-description">{{ 'bikes.sandman5.description' | t }}</div>
+                                <a href="#" class="discover-link">Discover More</a>
+                            </th>
+                            <th>
+                                <div class="bike-name">{{ 'bikes.sandman6.title' | t }}</div>
+                                <div class="bike-description">{{ 'bikes.sandman6.description' | t }}</div>
+                                <a href="#" class="discover-link">Discover More</a>
+                            </th>
+                            <th>
+                                <div class="bike-name">{{ 'bikes.sandman7.title' | t }}</div>
+                                <div class="bike-description">{{ 'bikes.sandman7.description' | t }}</div>
+                                <a href="#" class="discover-link">Discover More</a>
+                            </th>
+                            <th class="premium-bike">
+                                <div class="bike-name">{{ 'bikes.sandman8.title' | t }}</div>
+                                <div class="bike-description">{{ 'bikes.sandman8.description' | t }}</div>
+                                <a href="#" class="discover-link">Discover More</a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="spec-row">
+                            <td class="spec-label">{{ 'bikes.weight_label' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman1.weight' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman3.weight' | t }}</td>
+                            <td class="spec-value featured-spec">{{ 'bikes.sandman4.weight' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman5.weight' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman6.weight' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman7.weight' | t }}</td>
+                            <td class="spec-value premium-spec">{{ 'bikes.sandman8.weight' | t }}</td>
+                        </tr>
+                        <tr class="spec-row">
+                            <td class="spec-label">{{ 'bikes.gear_label' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman1.gear' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman3.gear' | t }}</td>
+                            <td class="spec-value featured-spec">{{ 'bikes.sandman4.gear' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman5.gear' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman6.gear' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman7.gear' | t }}</td>
+                            <td class="spec-value premium-spec">{{ 'bikes.sandman8.gear' | t }}</td>
+                        </tr>
+                        <tr class="spec-row">
+                            <td class="spec-label">{{ 'bikes.gears_label' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman1.gears' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman3.gears' | t }}</td>
+                            <td class="spec-value featured-spec">{{ 'bikes.sandman4.gears' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman5.gears' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman6.gears' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman7.gears' | t }}</td>
+                            <td class="spec-value premium-spec">{{ 'bikes.sandman8.gears' | t }}</td>
+                        </tr>
+                        <tr class="spec-row">
+                            <td class="spec-label">{{ 'bikes.frame_label' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman1.frame' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman3.frame' | t }}</td>
+                            <td class="spec-value featured-spec">{{ 'bikes.sandman4.frame' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman5.frame' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman6.frame' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman7.frame' | t }}</td>
+                            <td class="spec-value premium-spec">{{ 'bikes.sandman8.frame' | t }}</td>
+                        </tr>
+                        <tr class="spec-row">
+                            <td class="spec-label">{{ 'bikes.frameSize_label' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman1.frameSize' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman3.frameSize' | t }}</td>
+                            <td class="spec-value featured-spec">{{ 'bikes.sandman4.frameSize' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman5.frameSize' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman6.frameSize' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman7.frameSize' | t }}</td>
+                            <td class="spec-value premium-spec">{{ 'bikes.sandman8.frameSize' | t }}</td>
+                        </tr>
+                        <tr class="spec-row">
+                            <td class="spec-label">{{ 'bikes.brakes_label' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman1.brakes' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman3.brakes' | t }}</td>
+                            <td class="spec-value featured-spec">{{ 'bikes.sandman4.brakes' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman5.brakes' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman6.brakes' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman7.brakes' | t }}</td>
+                            <td class="spec-value premium-spec">{{ 'bikes.sandman8.brakes' | t }}</td>
+                        </tr>
+                        <tr class="spec-row">
+                            <td class="spec-label">{{ 'bikes.wheelSize_label' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman1.wheelSize' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman3.wheelSize' | t }}</td>
+                            <td class="spec-value featured-spec">{{ 'bikes.sandman4.wheelSize' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman5.wheelSize' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman6.wheelSize' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman7.wheelSize' | t }}</td>
+                            <td class="spec-value premium-spec">{{ 'bikes.sandman8.wheelSize' | t }}</td>
+                        </tr>
+                        <tr class="spec-row">
+                            <td class="spec-label">{{ 'bikes.rims_label' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman1.rims' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman3.rims' | t }}</td>
+                            <td class="spec-value featured-spec">{{ 'bikes.sandman4.rims' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman5.rims' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman6.rims' | t }}</td>
+                            <td class="spec-value">{{ 'bikes.sandman7.rims' | t }}</td>
+                            <td class="spec-value premium-spec">{{ 'bikes.sandman8.rims' | t }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mobile Accordion View -->
+            <div class="mobile-accordion">
+                <!-- Sandman 1 -->
+                <div class="mobile-accordion-item">
+                    <div class="mobile-accordion-header">
+                        <div class="mobile-bike-name">{{ 'bikes.sandman1.title' | t }}</div>
+                        <div class="mobile-bike-description">{{ 'bikes.sandman1.description' | t }}</div>
+                        <a href="#" class="mobile-discover-link">Discover More</a>
+                        <span class="mobile-accordion-toggle">↓</span>
+                    </div>
+                    <div class="mobile-accordion-content">
+                        <div class="mobile-specs">
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman1.weight' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman1.gear' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman1.gears' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman1.frame' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman1.frameSize' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman1.brakes' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman1.wheelSize' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman1.rims' | t }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sandman 3 -->
+                <div class="mobile-accordion-item">
+                    <div class="mobile-accordion-header">
+                        <div class="mobile-bike-name">{{ 'bikes.sandman3.title' | t }}</div>
+                        <div class="mobile-bike-description">{{ 'bikes.sandman3.description' | t }}</div>
+                        <a href="#" class="mobile-discover-link">Discover More</a>
+                        <span class="mobile-accordion-toggle">↓</span>
+                    </div>
+                    <div class="mobile-accordion-content">
+                        <div class="mobile-specs">
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman3.weight' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman3.gear' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman3.gears' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman3.frame' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman3.frameSize' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman3.brakes' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman3.wheelSize' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman3.rims' | t }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sandman 4 (Featured) -->
+                <div class="mobile-accordion-item">
+                    <div class="mobile-accordion-header featured">
+                        <div class="mobile-bike-name">{{ 'bikes.sandman4.title' | t }}</div>
+                        <div class="mobile-bike-description">{{ 'bikes.sandman4.description' | t }}</div>
+                        <a href="#" class="mobile-discover-link">Discover More</a>
+                        <span class="mobile-accordion-toggle">↓</span>
+                    </div>
+                    <div class="mobile-accordion-content">
+                        <div class="mobile-specs">
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman4.weight' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman4.gear' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman4.gears' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman4.frame' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman4.frameSize' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman4.brakes' | t }}</span>
+                            </div>
+                            <div class="mobile-spec-item">
+                                <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
+                                <span class="mobile-spec-value">{{ 'bikes.sandman4.wheelSize' | t }}</span>
