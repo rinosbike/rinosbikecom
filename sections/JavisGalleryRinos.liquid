@@ -31,16 +31,52 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
 }
 
+.bike-gallery .bike-card.featured:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25) !important;
+}
+
 .bike-gallery .bike-card.featured {
-  background: linear-gradient(135deg, #D3D3D3 0%, #BDBDBD 25%, #9E9E9E 50%, #D3D3D3 75%, #7D7D7D 100%) !important;
+  background: linear-gradient(135deg, #2c2c2e 0%, #1c1c1e 25%, #2c2c2e 50%, #48484a 75%, #2c2c2e 100%) !important;
   background-size: 400% 400% !important;
-  animation: gradientFlow 4s ease-in-out infinite !important;
+  animation: gradientFlow 6s ease-in-out infinite !important;
+  border: 2px solid rgba(255, 255, 255, 0.1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.bike-gallery .bike-card.featured::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent) !important;
+  animation: shine 3s ease-in-out infinite !important;
+  z-index: 1 !important;
+}
+
+.bike-gallery .bike-card.featured .bike-info {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.bike-gallery .bike-card.featured .bike-image-section {
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 @keyframes gradientFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
 }
 
 .bike-gallery .bike-image-section {
@@ -84,6 +120,7 @@
 
 .bike-gallery .bike-card.featured .bike-name {
   color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
 .bike-gallery .bike-description {
@@ -94,7 +131,8 @@
 }
 
 .bike-gallery .bike-card.featured .bike-description {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
 }
 
 .bike-gallery .color-options {
