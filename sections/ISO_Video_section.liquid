@@ -296,8 +296,17 @@
 <section class="frame-test">
   <div class="frame-test-container">
     <div class="frame-test-header">
-      <h2 class="frame-test-title">{{ section.settings.title | default: title_default }}</h2>
-      <p class="frame-test-subtitle">{{ section.settings.subtitle | default: subtitle_default }}</p>
+      {% assign title_display = title_default %}
+      {% if section.settings.title != blank %}
+        {% assign title_display = section.settings.title %}
+      {% endif %}
+      <h2 class="frame-test-title">{{ title_display }}</h2>
+      
+      {% assign subtitle_display = subtitle_default %}
+      {% if section.settings.subtitle != blank %}
+        {% assign subtitle_display = section.settings.subtitle %}
+      {% endif %}
+      <p class="frame-test-subtitle">{{ subtitle_display }}</p>
     </div>
 
     <div class="frame-test-content">
@@ -319,40 +328,67 @@
       </div>
 
       <div class="frame-test-info">
-        <h3>{{ section.settings.info_title | default: info_title_default }}</h3>
-        <p>{{ section.settings.info_description | default: info_description_default }}</p>
+        {% assign info_title_display = info_title_default %}
+        {% if section.settings.info_title != blank %}
+          {% assign info_title_display = section.settings.info_title %}
+        {% endif %}
+        <h3>{{ info_title_display }}</h3>
+        
+        {% assign info_description_display = info_description_default %}
+        {% if section.settings.info_description != blank %}
+          {% assign info_description_display = section.settings.info_description %}
+        {% endif %}
+        <p>{{ info_description_display }}</p>
         
         <div class="frame-test-specs">
-          {% assign spec_1_label_display = section.settings.spec_1_label | default: spec_1_label_default %}
-          {% assign spec_1_value_display = section.settings.spec_1_value | default: spec_1_value_default %}
-          {% if spec_1_label_display != blank %}
-            <div class="frame-test-spec">
-              <span class="frame-test-spec-label">{{ spec_1_label_display }}</span>
-              <span class="frame-test-spec-value">{{ spec_1_value_display }}</span>
-            </div>
+          {% assign spec_1_label_display = spec_1_label_default %}
+          {% assign spec_1_value_display = spec_1_value_default %}
+          {% if section.settings.spec_1_label != blank %}
+            {% assign spec_1_label_display = section.settings.spec_1_label %}
+          {% endif %}
+          {% if section.settings.spec_1_value != blank %}
+            {% assign spec_1_value_display = section.settings.spec_1_value %}
           {% endif %}
           
-          {% assign spec_2_label_display = section.settings.spec_2_label | default: spec_2_label_default %}
-          {% assign spec_2_value_display = section.settings.spec_2_value | default: spec_2_value_default %}
-          {% if spec_2_label_display != blank %}
-            <div class="frame-test-spec">
-              <span class="frame-test-spec-label">{{ spec_2_label_display }}</span>
-              <span class="frame-test-spec-value">{{ spec_2_value_display }}</span>
-            </div>
+          <div class="frame-test-spec">
+            <span class="frame-test-spec-label">{{ spec_1_label_display }}</span>
+            <span class="frame-test-spec-value">{{ spec_1_value_display }}</span>
+          </div>
+          
+          {% assign spec_2_label_display = spec_2_label_default %}
+          {% assign spec_2_value_display = spec_2_value_default %}
+          {% if section.settings.spec_2_label != blank %}
+            {% assign spec_2_label_display = section.settings.spec_2_label %}
+          {% endif %}
+          {% if section.settings.spec_2_value != blank %}
+            {% assign spec_2_value_display = section.settings.spec_2_value %}
           {% endif %}
           
-          {% assign spec_3_label_display = section.settings.spec_3_label | default: spec_3_label_default %}
-          {% assign spec_3_value_display = section.settings.spec_3_value | default: spec_3_value_default %}
-          {% if spec_3_label_display != blank %}
-            <div class="frame-test-spec">
-              <span class="frame-test-spec-label">{{ spec_3_label_display }}</span>
-              <span class="frame-test-spec-value">{{ spec_3_value_display }}</span>
-            </div>
+          <div class="frame-test-spec">
+            <span class="frame-test-spec-label">{{ spec_2_label_display }}</span>
+            <span class="frame-test-spec-value">{{ spec_2_value_display }}</span>
+          </div>
+          
+          {% assign spec_3_label_display = spec_3_label_default %}
+          {% assign spec_3_value_display = spec_3_value_default %}
+          {% if section.settings.spec_3_label != blank %}
+            {% assign spec_3_label_display = section.settings.spec_3_label %}
           {% endif %}
+          {% if section.settings.spec_3_value != blank %}
+            {% assign spec_3_value_display = section.settings.spec_3_value %}
+          {% endif %}
+          
+          <div class="frame-test-spec">
+            <span class="frame-test-spec-label">{{ spec_3_label_display }}</span>
+            <span class="frame-test-spec-value">{{ spec_3_value_display }}</span>
+          </div>
         </div>
 
-        {% assign cta_text_display = section.settings.cta_text | default: cta_text_default %}
-        {% if cta_text_display != blank and section.settings.cta_url != blank %}
+        {% assign cta_text_display = cta_text_default %}
+        {% if section.settings.cta_text != blank %}
+          {% assign cta_text_display = section.settings.cta_text %}
+        {% endif %}
+        {% if section.settings.cta_url != blank %}
           <a href="{{ section.settings.cta_url }}" class="frame-test-cta">{{ cta_text_display }}</a>
         {% endif %}
       </div>
@@ -360,41 +396,61 @@
 
     {% if section.settings.show_stats %}
       <div class="frame-test-stats">
-        {% assign stat_1_number_display = section.settings.stat_1_number | default: stat_1_number_default %}
-        {% assign stat_1_label_display = section.settings.stat_1_label | default: stat_1_label_default %}
-        {% if stat_1_number_display != blank %}
-          <div class="frame-test-stat">
-            <div class="frame-test-stat-number">{{ stat_1_number_display }}</div>
-            <div class="frame-test-stat-label">{{ stat_1_label_display }}</div>
-          </div>
+        {% assign stat_1_number_display = stat_1_number_default %}
+        {% assign stat_1_label_display = stat_1_label_default %}
+        {% if section.settings.stat_1_number != blank %}
+          {% assign stat_1_number_display = section.settings.stat_1_number %}
+        {% endif %}
+        {% if section.settings.stat_1_label != blank %}
+          {% assign stat_1_label_display = section.settings.stat_1_label %}
         {% endif %}
         
-        {% assign stat_2_number_display = section.settings.stat_2_number | default: stat_2_number_default %}
-        {% assign stat_2_label_display = section.settings.stat_2_label | default: stat_2_label_default %}
-        {% if stat_2_number_display != blank %}
-          <div class="frame-test-stat">
-            <div class="frame-test-stat-number">{{ stat_2_number_display }}</div>
-            <div class="frame-test-stat-label">{{ stat_2_label_display }}</div>
-          </div>
+        <div class="frame-test-stat">
+          <div class="frame-test-stat-number">{{ stat_1_number_display }}</div>
+          <div class="frame-test-stat-label">{{ stat_1_label_display }}</div>
+        </div>
+        
+        {% assign stat_2_number_display = stat_2_number_default %}
+        {% assign stat_2_label_display = stat_2_label_default %}
+        {% if section.settings.stat_2_number != blank %}
+          {% assign stat_2_number_display = section.settings.stat_2_number %}
+        {% endif %}
+        {% if section.settings.stat_2_label != blank %}
+          {% assign stat_2_label_display = section.settings.stat_2_label %}
         {% endif %}
         
-        {% assign stat_3_number_display = section.settings.stat_3_number | default: stat_3_number_default %}
-        {% assign stat_3_label_display = section.settings.stat_3_label | default: stat_3_label_default %}
-        {% if stat_3_number_display != blank %}
-          <div class="frame-test-stat">
-            <div class="frame-test-stat-number">{{ stat_3_number_display }}</div>
-            <div class="frame-test-stat-label">{{ stat_3_label_display }}</div>
-          </div>
+        <div class="frame-test-stat">
+          <div class="frame-test-stat-number">{{ stat_2_number_display }}</div>
+          <div class="frame-test-stat-label">{{ stat_2_label_display }}</div>
+        </div>
+        
+        {% assign stat_3_number_display = stat_3_number_default %}
+        {% assign stat_3_label_display = stat_3_label_default %}
+        {% if section.settings.stat_3_number != blank %}
+          {% assign stat_3_number_display = section.settings.stat_3_number %}
+        {% endif %}
+        {% if section.settings.stat_3_label != blank %}
+          {% assign stat_3_label_display = section.settings.stat_3_label %}
         {% endif %}
         
-        {% assign stat_4_number_display = section.settings.stat_4_number | default: stat_4_number_default %}
-        {% assign stat_4_label_display = section.settings.stat_4_label | default: stat_4_label_default %}
-        {% if stat_4_number_display != blank %}
-          <div class="frame-test-stat">
-            <div class="frame-test-stat-number">{{ stat_4_number_display }}</div>
-            <div class="frame-test-stat-label">{{ stat_4_label_display }}</div>
-          </div>
+        <div class="frame-test-stat">
+          <div class="frame-test-stat-number">{{ stat_3_number_display }}</div>
+          <div class="frame-test-stat-label">{{ stat_3_label_display }}</div>
+        </div>
+        
+        {% assign stat_4_number_display = stat_4_number_default %}
+        {% assign stat_4_label_display = stat_4_label_default %}
+        {% if section.settings.stat_4_number != blank %}
+          {% assign stat_4_number_display = section.settings.stat_4_number %}
         {% endif %}
+        {% if section.settings.stat_4_label != blank %}
+          {% assign stat_4_label_display = section.settings.stat_4_label %}
+        {% endif %}
+        
+        <div class="frame-test-stat">
+          <div class="frame-test-stat-number">{{ stat_4_number_display }}</div>
+          <div class="frame-test-stat-label">{{ stat_4_label_display }}</div>
+        </div>
       </div>
     {% endif %}
   </div>
