@@ -1,3 +1,281 @@
+{%- comment -%}
+  Multilingual Bike Gallery Section
+  Supports: EN, PL, DE, ES, FR, BG
+{%- endcomment -%}
+
+{%- liquid
+  assign current_locale = request.locale.iso_code
+  
+  # Define translations for each language
+  # English (default)
+  assign available_colors_en = "Available Colors"
+  assign discover_more_en = "Discover More"
+  assign flagship_model_en = "Flagship Model"
+  assign shop_sandman_8_en = "Shop Sandman 8"
+  assign compare_models_en = "Compare Models"
+  assign sandman_1_desc_en = "A reliable carbon gravel bike with Shimano Sora 2×9 gearing and mechanical disc brakes. Built on a TORAY T800 frame, it's lightweight, durable, and ideal for beginners seeking value, comfort, and versatility. Perfect for commuting, weekend rides, or venturing off-road without breaking the bank."
+  assign sandman_3_desc_en = "Equipped with Shimano GRX400 2×10 drivetrain and mechanical disc brakes, the Sandman 3 offers serious gravel performance on a budget. The T800 carbon frame ensures stability and responsiveness, while 700×40C tires provide grip on rough terrain. A great upgrade for riders wanting dependable components and versatility."
+  assign sandman_4_desc_en = "With Shimano GRX400 2×10 and hydraulic disc brakes, the Sandman 4 steps up in control and stopping power. Ideal for hilly, unpredictable terrain, it combines a lightweight carbon frame, flared handlebars, and wide tires to deliver performance, comfort, and confidence in all conditions."
+  assign sandman_5_desc_en = "A race-ready carbon gravel bike with Shimano GRX600 2×11 drivetrain and hydraulic disc brakes. The Sandman 5 blends endurance comfort with responsive handling, ideal for demanding gravel rides or long bikepacking trips. A versatile machine for riders who want premium specs at a fair price."
+  assign sandman_6_desc_en = "For modern gravel racers, the Sandman 6 features a Shimano GRX820 1×12 drivetrain and hydraulic disc brakes. Paired with a sleek carbon frame and internal cable routing, it's built for low maintenance, clean aesthetics, and high performance on both fast gravel roads and tough terrain."
+  assign sandman_7_desc_en = "The ultimate gravel bike in the Rinos lineup, featuring Shimano GRX820 2×12 drivetrain and hydraulic disc brakes. Designed for riders who demand full range, long-distance comfort, and aggressive performance. Lightweight, race-ready, and bikepacking-capable — the Sandman 7 is your go-anywhere, do-everything carbon gravel machine."
+  assign sandman_8_desc_en = "The pinnacle of gravel engineering, featuring Shimano 105 Di2 electronic shifting with precision 12-speed performance. Built on a lightweight Toray T800 carbon frame with 40mm carbon wheels and hydraulic disc brakes. At just 9.4kg, this flagship model delivers professional-grade electronic shifting for the ultimate gravel experience."
+  assign sandman_8_cta_en = "Experience the future of gravel cycling with Shimano 105 Di2 electronic shifting. Lightning-fast 12-speed precision, 40mm carbon wheels, and just 9.4kg of pure performance. Electronic shifting meets gravel perfection."
+  
+  # Polish
+  assign available_colors_pl = "Dostępne Kolory"
+  assign discover_more_pl = "Dowiedz Się Więcej"
+  assign flagship_model_pl = "Model Flagowy"
+  assign shop_sandman_8_pl = "Kup Sandman 8"
+  assign compare_models_pl = "Porównaj Modele"
+  assign sandman_1_desc_pl = "Niezawodny rower gravelowy z węgla z przerzutkami Shimano Sora 2×9 i mechanicznymi hamulcami tarczowymi. Zbudowany na ramie TORAY T800, jest lekki, trwały i idealny dla początkujących szukających wartości, komfortu i wszechstronności. Idealny do dojazdów, weekendowych przejażdżek lub wypraw w teren."
+  assign sandman_3_desc_pl = "Wyposażony w napęd Shimano GRX400 2×10 i mechaniczne hamulce tarczowe, Sandman 3 oferuje poważną wydajność gravelową w przystępnej cenie. Rama z węgla T800 zapewnia stabilność i responsywność, a opony 700×40C zapewniają przyczepność na trudnym terenie."
+  assign sandman_4_desc_pl = "Z napędem Shimano GRX400 2×10 i hydraulicznymi hamulcami tarczowymi, Sandman 4 zwiększa kontrolę i siłę hamowania. Idealny na pagórkowatym, nieprzewidywalnym terenie, łączy lekką ramę z węgla, rozszerzane kierownice i szerokie opony."
+  assign sandman_5_desc_pl = "Gotowy do wyścigów rower gravelowy z węgla z napędem Shimano GRX600 2×11 i hydraulicznymi hamulcami tarczowymi. Sandman 5 łączy komfort wytrzymałościowy z responsywnym sterowaniem, idealny na wymagające przejażdżki gravelowe."
+  assign sandman_6_desc_pl = "Dla nowoczesnych zawodników gravel, Sandman 6 posiada napęd Shimano GRX820 1×12 i hydrauliczne hamulce tarczowe. W połączeniu z elegancką ramą z węgla i wewnętrznym prowadzeniem linek, został zbudowany z myślą o niskiej konserwacji i wysokiej wydajności."
+  assign sandman_7_desc_pl = "Najlepszy rower gravelowy w ofercie Rinos, wyposażony w napęd Shimano GRX820 2×12 i hydrauliczne hamulce tarczowe. Zaprojektowany dla jeźdźców wymagających pełnego zakresu, komfortu na długich dystansach i agresywnej wydajności."
+  assign sandman_8_desc_pl = "Szczyt inżynierii gravelowej, wyposażony w elektroniczne przerzutki Shimano 105 Di2 z precyzyjną 12-biegową wydajnością. Zbudowany na lekkiej ramie Toray T800 z 40mm kołami z węgla i hydraulicznymi hamulcami tarczowymi. Przy wadze zaledwie 9,4kg."
+  assign sandman_8_cta_pl = "Doświadcz przyszłości kolarstwa gravelowego z elektronicznymi przerzutkami Shimano 105 Di2. Błyskawiczna precyzja 12-biegów, 40mm koła z węgla i zaledwie 9,4kg czystej wydajności."
+  
+  # German
+  assign available_colors_de = "Verfügbare Farben"
+  assign discover_more_de = "Mehr Erfahren"
+  assign flagship_model_de = "Flaggschiff-Modell"
+  assign shop_sandman_8_de = "Sandman 8 Kaufen"
+  assign compare_models_de = "Modelle Vergleichen"
+  assign sandman_1_desc_de = "Ein zuverlässiges Carbon-Gravel-Bike mit Shimano Sora 2×9 Schaltung und mechanischen Scheibenbremsen. Gebaut auf einem TORAY T800 Rahmen, ist es leicht, langlebig und ideal für Anfänger, die Wert, Komfort und Vielseitigkeit suchen. Perfekt für Pendeln, Wochenendfahrten oder Offroad-Abenteuer."
+  assign sandman_3_desc_de = "Ausgestattet mit Shimano GRX400 2×10 Antrieb und mechanischen Scheibenbremsen, bietet das Sandman 3 ernsthafte Gravel-Performance zum günstigen Preis. Der T800 Carbon-Rahmen gewährleistet Stabilität und Reaktionsfähigkeit, während 700×40C Reifen Grip auf rauem Terrain bieten."
+  assign sandman_4_desc_de = "Mit Shimano GRX400 2×10 und hydraulischen Scheibenbremsen steigert das Sandman 4 Kontrolle und Bremsleistung. Ideal für hügeliges, unvorhersehbares Gelände, kombiniert es einen leichten Carbon-Rahmen, ausgestellte Lenker und breite Reifen."
+  assign sandman_5_desc_de = "Ein rennfertiges Carbon-Gravel-Bike mit Shimano GRX600 2×11 Antrieb und hydraulischen Scheibenbremsen. Das Sandman 5 verbindet Ausdauer-Komfort mit responsiver Handhabung, ideal für anspruchsvolle Gravel-Fahrten oder lange Bikepacking-Trips."
+  assign sandman_6_desc_de = "Für moderne Gravel-Rennfahrer verfügt das Sandman 6 über einen Shimano GRX820 1×12 Antrieb und hydraulische Scheibenbremsen. Gepaart mit einem schlanken Carbon-Rahmen und interner Kabelführung, ist es für geringen Wartungsaufwand und hohe Leistung gebaut."
+  assign sandman_7_desc_de = "Das ultimative Gravel-Bike in der Rinos-Lineup, mit Shimano GRX820 2×12 Antrieb und hydraulischen Scheibenbremsen. Entwickelt für Fahrer, die vollen Bereich, Langstrecken-Komfort und aggressive Performance verlangen."
+  assign sandman_8_desc_de = "Der Gipfel des Gravel-Engineerings, mit Shimano 105 Di2 elektronischer Schaltung und präziser 12-Gang-Performance. Gebaut auf einem leichten Toray T800 Carbon-Rahmen mit 40mm Carbon-Laufrädern und hydraulischen Scheibenbremsen. Mit nur 9,4kg."
+  assign sandman_8_cta_de = "Erleben Sie die Zukunft des Gravel-Cycling mit Shimano 105 Di2 elektronischer Schaltung. Blitzschnelle 12-Gang-Präzision, 40mm Carbon-Laufräder und nur 9,4kg pure Performance."
+  
+  # Spanish
+  assign available_colors_es = "Colores Disponibles"
+  assign discover_more_es = "Descubrir Más"
+  assign flagship_model_es = "Modelo Insignia"
+  assign shop_sandman_8_es = "Comprar Sandman 8"
+  assign compare_models_es = "Comparar Modelos"
+  assign sandman_1_desc_es = "Una bicicleta gravel de carbono confiable con cambios Shimano Sora 2×9 y frenos de disco mecánicos. Construida sobre un cuadro TORAY T800, es ligera, duradera e ideal para principiantes que buscan valor, comodidad y versatilidad. Perfecta para desplazamientos, paseos de fin de semana o aventuras fuera de carretera."
+  assign sandman_3_desc_es = "Equipada con transmisión Shimano GRX400 2×10 y frenos de disco mecánicos, la Sandman 3 ofrece un rendimiento gravel serio con un presupuesto ajustado. El cuadro de carbono T800 asegura estabilidad y capacidad de respuesta, mientras que las llantas 700×40C proporcionan agarre en terreno difícil."
+  assign sandman_4_desc_es = "Con Shimano GRX400 2×10 y frenos de disco hidráulicos, la Sandman 4 mejora el control y la potencia de frenado. Ideal para terreno montañoso e impredecible, combina un cuadro de carbono ligero, manillares ensanchados y llantas anchas."
+  assign sandman_5_desc_es = "Una bicicleta gravel de carbono lista para carreras con transmisión Shimano GRX600 2×11 y frenos de disco hidráulicos. La Sandman 5 combina comodidad de resistencia con manejo receptivo, ideal para paseos gravel exigentes o viajes largos de bikepacking."
+  assign sandman_6_desc_es = "Para corredores gravel modernos, la Sandman 6 cuenta con transmisión Shimano GRX820 1×12 y frenos de disco hidráulicos. Emparejada con un cuadro de carbono elegante y cableado interno, está construida para bajo mantenimiento y alto rendimiento."
+  assign sandman_7_desc_es = "La bicicleta gravel definitiva en la gama Rinos, con transmisión Shimano GRX820 2×12 y frenos de disco hidráulicos. Diseñada para ciclistas que demandan rango completo, comodidad de larga distancia y rendimiento agresivo."
+  assign sandman_8_desc_es = "La cúspide de la ingeniería gravel, con cambio electrónico Shimano 105 Di2 y rendimiento de 12 velocidades de precisión. Construida sobre un cuadro ligero Toray T800 con ruedas de carbono de 40mm y frenos de disco hidráulicos. Con solo 9,4kg."
+  assign sandman_8_cta_es = "Experimenta el futuro del ciclismo gravel con cambio electrónico Shimano 105 Di2. Precisión de 12 velocidades ultrarrápida, ruedas de carbono de 40mm y solo 9,4kg de rendimiento puro."
+  
+  # French
+  assign available_colors_fr = "Couleurs Disponibles"
+  assign discover_more_fr = "Découvrir Plus"
+  assign flagship_model_fr = "Modèle Phare"
+  assign shop_sandman_8_fr = "Acheter Sandman 8"
+  assign compare_models_fr = "Comparer les Modèles"
+  assign sandman_1_desc_fr = "Un vélo gravel en carbone fiable avec transmission Shimano Sora 2×9 et freins à disque mécaniques. Construit sur un cadre TORAY T800, il est léger, durable et idéal pour les débutants recherchant valeur, confort et polyvalence. Parfait pour les trajets quotidiens, les sorties de week-end ou les aventures hors route."
+  assign sandman_3_desc_fr = "Équipé d'une transmission Shimano GRX400 2×10 et de freins à disque mécaniques, le Sandman 3 offre une performance gravel sérieuse avec un budget raisonnable. Le cadre carbone T800 assure stabilité et réactivité, tandis que les pneus 700×40C offrent une adhérence sur terrain difficile."
+  assign sandman_4_desc_fr = "Avec Shimano GRX400 2×10 et freins à disque hydrauliques, le Sandman 4 améliore le contrôle et la puissance de freinage. Idéal pour terrain vallonné et imprévisible, il combine un cadre carbone léger, guidons évasés et pneus larges."
+  assign sandman_5_desc_fr = "Un vélo gravel en carbone prêt pour la course avec transmission Shimano GRX600 2×11 et freins à disque hydrauliques. Le Sandman 5 combine confort d'endurance avec maniabilité réactive, idéal pour des sorties gravel exigeantes ou de longs voyages bikepacking."
+  assign sandman_6_desc_fr = "Pour les coureurs gravel modernes, le Sandman 6 dispose d'une transmission Shimano GRX820 1×12 et de freins à disque hydrauliques. Associé à un cadre carbone élégant et un câblage interne, il est conçu pour un faible entretien et de hautes performances."
+  assign sandman_7_desc_fr = "Le vélo gravel ultime de la gamme Rinos, avec transmission Shimano GRX820 2×12 et freins à disque hydrauliques. Conçu pour les cyclistes exigeant une gamme complète, un confort longue distance et des performances agressives."
+  assign sandman_8_desc_fr = "Le summum de l'ingénierie gravel, avec changement électronique Shimano 105 Di2 et performance 12 vitesses de précision. Construit sur un cadre léger Toray T800 avec roues carbone 40mm et freins à disque hydrauliques. Seulement 9,4kg."
+  assign sandman_8_cta_fr = "Découvrez l'avenir du cyclisme gravel avec le changement électronique Shimano 105 Di2. Précision 12 vitesses ultra-rapide, roues carbone 40mm et seulement 9,4kg de performance pure."
+  
+  # Bulgarian
+  assign available_colors_bg = "Налични Цветове"
+  assign discover_more_bg = "Научи Повече"
+  assign flagship_model_bg = "Флагмански Модел"
+  assign shop_sandman_8_bg = "Купи Sandman 8"
+  assign compare_models_bg = "Сравни Модели"
+  assign sandman_1_desc_bg = "Надежден карбонов грейвъл велосипед с Shimano Sora 2×9 скорости и механични дискови спирачки. Изграден върху TORAY T800 рамка, той е лек, издръжлив и идеален за начинаещи, търсещи стойност, комфорт и универсалност. Перфектен за пътуване до работа, уикендови разходки или приключения извън пътя."
+  assign sandman_3_desc_bg = "Оборудван с Shimano GRX400 2×10 задвижване и механични дискови спирачки, Sandman 3 предлага сериозна грейвъл производителност с бюджет. T800 карбоновата рамка осигурява стабилност и отзивчивост, докато 700×40C гумите осигуряват сцепление на груб терен."
+  assign sandman_4_desc_bg = "С Shimano GRX400 2×10 и хидравлични дискови спирачки, Sandman 4 повишава контрола и силата на спиране. Идеален за хълмист, непредвидим терен, той комбинира лека карбонова рамка, разширени кормила и широки гуми."
+  assign sandman_5_desc_bg = "Готов за състезания карбонов грейвъл велосипед с Shimano GRX600 2×11 задвижване и хидравлични дискови спирачки. Sandman 5 съчетава издръжливостен комфорт с отзивчиво управление, идеален за взискателни грейвъл поездки."
+  assign sandman_6_desc_bg = "За модерни грейвъл състезатели, Sandman 6 разполага с Shimano GRX820 1×12 задвижване и хидравлични дискови спирачки. Съчетан с елегантна карбонова рамка и вътрешно кабелиране, той е изграден за ниска поддръжка и висока производителност."
+  assign sandman_7_desc_bg = "Върховният грейвъл велосипед в Rinos гамата, с Shimano GRX820 2×12 задвижване и хидравлични дискови спирачки. Проектиран за велосипедисти, които изискват пълен диапазон, дългоразстоен комфорт и агресивна производителност."
+  assign sandman_8_desc_bg = "Върхът на грейвъл инженерството, с Shimano 105 Di2 електронно превключване и прецизна 12-скоростна производителност. Изграден върху лека Toray T800 карбонова рамка с 40мм карбонови колелета и хидравлични дискови спирачки. Само 9,4кг."
+  assign sandman_8_cta_bg = "Изживейте бъдещето на грейвъл колоезденето с Shimano 105 Di2 електронно превключване. Мълниеносна 12-скоростна прецизност, 40мм карбонови колелета и само 9,4кг чиста производителност."
+  
+  # Select translations based on current locale
+  case current_locale
+    when 'pl'
+      assign available_colors = available_colors_pl
+      assign discover_more = discover_more_pl
+      assign flagship_model = flagship_model_pl
+      assign shop_sandman_8 = shop_sandman_8_pl
+      assign compare_models = compare_models_pl
+      assign sandman_1_desc = sandman_1_desc_pl
+      assign sandman_3_desc = sandman_3_desc_pl
+      assign sandman_4_desc = sandman_4_desc_pl
+      assign sandman_5_desc = sandman_5_desc_pl
+      assign sandman_6_desc = sandman_6_desc_pl
+      assign sandman_7_desc = sandman_7_desc_pl
+      assign sandman_8_desc = sandman_8_desc_pl
+      assign sandman_8_cta = sandman_8_cta_pl
+    when 'de'
+      assign available_colors = available_colors_de
+      assign discover_more = discover_more_de
+      assign flagship_model = flagship_model_de
+      assign shop_sandman_8 = shop_sandman_8_de
+      assign compare_models = compare_models_de
+      assign sandman_1_desc = sandman_1_desc_de
+      assign sandman_3_desc = sandman_3_desc_de
+      assign sandman_4_desc = sandman_4_desc_de
+      assign sandman_5_desc = sandman_5_desc_de
+      assign sandman_6_desc = sandman_6_desc_de
+      assign sandman_7_desc = sandman_7_desc_de
+      assign sandman_8_desc = sandman_8_desc_de
+      assign sandman_8_cta = sandman_8_cta_de
+    when 'es'
+      assign available_colors = available_colors_es
+      assign discover_more = discover_more_es
+      assign flagship_model = flagship_model_es
+      assign shop_sandman_8 = shop_sandman_8_es
+      assign compare_models = compare_models_es
+      assign sandman_1_desc = sandman_1_desc_es
+      assign sandman_3_desc = sandman_3_desc_es
+      assign sandman_4_desc = sandman_4_desc_es
+      assign sandman_5_desc = sandman_5_desc_es
+      assign sandman_6_desc = sandman_6_desc_es
+      assign sandman_7_desc = sandman_7_desc_es
+      assign sandman_8_desc = sandman_8_desc_es
+      assign sandman_8_cta = sandman_8_cta_es
+    when 'fr'
+      assign available_colors = available_colors_fr
+      assign discover_more = discover_more_fr
+      assign flagship_model = flagship_model_fr
+      assign shop_sandman_8 = shop_sandman_8_fr
+      assign compare_models = compare_models_fr
+      assign sandman_1_desc = sandman_1_desc_fr
+      assign sandman_3_desc = sandman_3_desc_fr
+      assign sandman_4_desc = sandman_4_desc_fr
+      assign sandman_5_desc = sandman_5_desc_fr
+      assign sandman_6_desc = sandman_6_desc_fr
+      assign sandman_7_desc = sandman_7_desc_fr
+      assign sandman_8_desc = sandman_8_desc_fr
+      assign sandman_8_cta = sandman_8_cta_fr
+    when 'bg'
+      assign available_colors = available_colors_bg
+      assign discover_more = discover_more_bg
+      assign flagship_model = flagship_model_bg
+      assign shop_sandman_8 = shop_sandman_8_bg
+      assign compare_models = compare_models_bg
+      assign sandman_1_desc = sandman_1_desc_bg
+      assign sandman_3_desc = sandman_3_desc_bg
+      assign sandman_4_desc = sandman_4_desc_bg
+      assign sandman_5_desc = sandman_5_desc_bg
+      assign sandman_6_desc = sandman_6_desc_bg
+      assign sandman_7_desc = sandman_7_desc_bg
+      assign sandman_8_desc = sandman_8_desc_bg
+      assign sandman_8_cta = sandman_8_cta_bg
+    else
+      assign available_colors = available_colors_en
+      assign discover_more = discover_more_en
+      assign flagship_model = flagship_model_en
+      assign shop_sandman_8 = shop_sandman_8_en
+      assign compare_models = compare_models_en
+      assign sandman_1_desc = sandman_1_desc_en
+      assign sandman_3_desc = sandman_3_desc_en
+      assign sandman_4_desc = sandman_4_desc_en
+      assign sandman_5_desc = sandman_5_desc_en
+      assign sandman_6_desc = sandman_6_desc_en
+      assign sandman_7_desc = sandman_7_desc_en
+      assign sandman_8_desc = sandman_8_desc_en
+      assign sandman_8_cta = sandman_8_cta_en
+  endcase
+-%}i hydraulicznymi hamulcami tarczowymi. Sandman 5 łączy komfort wytrzymałościowy z responsywnym sterowaniem, idealny na wymagające przejażdżki gravelowe.",
+    "sandman_6_desc": "Dla nowoczesnych zawodników gravel, Sandman 6 posiada napęd Shimano GRX820 1×12 i hydrauliczne hamulce tarczowe. W połączeniu z elegancką ramą z węgla i wewnętrznym prowadzeniem linek, został zbudowany z myślą o niskiej konserwacji i wysokiej wydajności.",
+    "sandman_7_desc": "Najlepszy rower gravelowy w ofercie Rinos, wyposażony w napęd Shimano GRX820 2×12 i hydrauliczne hamulce tarczowe. Zaprojektowany dla jeźdźców wymagających pełnego zakresu, komfortu na długich dystansach i agresywnej wydajności.",
+    "sandman_8_desc": "Szczyt inżynierii gravelowej, wyposażony w elektroniczne przerzutki Shimano 105 Di2 z precyzyjną 12-biegową wydajnością. Zbudowany na lekkiej ramie Toray T800 z 40mm kołami z węgla i hydraulicznymi hamulcami tarczowymi. Przy wadze zaledwie 9,4kg.",
+    "sandman_8_cta": "Doświadcz przyszłości kolarstwa gravelowego z elektronicznymi przerzutkami Shimano 105 Di2. Błyskawiczna precyzja 12-biegów, 40mm koła z węgla i zaledwie 9,4kg czystej wydajności."
+  }' | parse_json
+  
+  # German
+  assign de_translations = '{
+    "available_colors": "Verfügbare Farben",
+    "discover_more": "Mehr Erfahren",
+    "flagship_model": "Flaggschiff-Modell",
+    "shop_sandman_8": "Sandman 8 Kaufen",
+    "compare_models": "Modelle Vergleichen",
+    "sandman_1_desc": "Ein zuverlässiges Carbon-Gravel-Bike mit Shimano Sora 2×9 Schaltung und mechanischen Scheibenbremsen. Gebaut auf einem TORAY T800 Rahmen, ist es leicht, langlebig und ideal für Anfänger, die Wert, Komfort und Vielseitigkeit suchen. Perfekt für Pendeln, Wochenendfahrten oder Offroad-Abenteuer.",
+    "sandman_3_desc": "Ausgestattet mit Shimano GRX400 2×10 Antrieb und mechanischen Scheibenbremsen, bietet das Sandman 3 ernsthafte Gravel-Performance zum günstigen Preis. Der T800 Carbon-Rahmen gewährleistet Stabilität und Reaktionsfähigkeit, während 700×40C Reifen Grip auf rauem Terrain bieten.",
+    "sandman_4_desc": "Mit Shimano GRX400 2×10 und hydraulischen Scheibenbremsen steigert das Sandman 4 Kontrolle und Bremsleistung. Ideal für hügeliges, unvorhersehbares Gelände, kombiniert es einen leichten Carbon-Rahmen, ausgestellte Lenker und breite Reifen.",
+    "sandman_5_desc": "Ein rennfertiges Carbon-Gravel-Bike mit Shimano GRX600 2×11 Antrieb und hydraulischen Scheibenbremsen. Das Sandman 5 verbindet Ausdauer-Komfort mit responsiver Handhabung, ideal für anspruchsvolle Gravel-Fahrten oder lange Bikepacking-Trips.",
+    "sandman_6_desc": "Für moderne Gravel-Rennfahrer verfügt das Sandman 6 über einen Shimano GRX820 1×12 Antrieb und hydraulische Scheibenbremsen. Gepaart mit einem schlanken Carbon-Rahmen und interner Kabelführung, ist es für geringen Wartungsaufwand und hohe Leistung gebaut.",
+    "sandman_7_desc": "Das ultimative Gravel-Bike in der Rinos-Lineup, mit Shimano GRX820 2×12 Antrieb und hydraulischen Scheibenbremsen. Entwickelt für Fahrer, die vollen Bereich, Langstrecken-Komfort und aggressive Performance verlangen.",
+    "sandman_8_desc": "Der Gipfel des Gravel-Engineerings, mit Shimano 105 Di2 elektronischer Schaltung und präziser 12-Gang-Performance. Gebaut auf einem leichten Toray T800 Carbon-Rahmen mit 40mm Carbon-Laufrädern und hydraulischen Scheibenbremsen. Mit nur 9,4kg.",
+    "sandman_8_cta": "Erleben Sie die Zukunft des Gravel-Cycling mit Shimano 105 Di2 elektronischer Schaltung. Blitzschnelle 12-Gang-Präzision, 40mm Carbon-Laufräder und nur 9,4kg pure Performance."
+  }' | parse_json
+  
+  # Spanish
+  assign es_translations = '{
+    "available_colors": "Colores Disponibles",
+    "discover_more": "Descubrir Más",
+    "flagship_model": "Modelo Insignia",
+    "shop_sandman_8": "Comprar Sandman 8",
+    "compare_models": "Comparar Modelos",
+    "sandman_1_desc": "Una bicicleta gravel de carbono confiable con cambios Shimano Sora 2×9 y frenos de disco mecánicos. Construida sobre un cuadro TORAY T800, es ligera, duradera e ideal para principiantes que buscan valor, comodidad y versatilidad. Perfecta para desplazamientos, paseos de fin de semana o aventuras fuera de carretera.",
+    "sandman_3_desc": "Equipada con transmisión Shimano GRX400 2×10 y frenos de disco mecánicos, la Sandman 3 ofrece un rendimiento gravel serio con un presupuesto ajustado. El cuadro de carbono T800 asegura estabilidad y capacidad de respuesta, mientras que las llantas 700×40C proporcionan agarre en terreno difícil.",
+    "sandman_4_desc": "Con Shimano GRX400 2×10 y frenos de disco hidráulicos, la Sandman 4 mejora el control y la potencia de frenado. Ideal para terreno montañoso e impredecible, combina un cuadro de carbono ligero, manillares ensanchados y llantas anchas.",
+    "sandman_5_desc": "Una bicicleta gravel de carbono lista para carreras con transmisión Shimano GRX600 2×11 y frenos de disco hidráulicos. La Sandman 5 combina comodidad de resistencia con manejo receptivo, ideal para paseos gravel exigentes o viajes largos de bikepacking.",
+    "sandman_6_desc": "Para corredores gravel modernos, la Sandman 6 cuenta con transmisión Shimano GRX820 1×12 y frenos de disco hidráulicos. Emparejada con un cuadro de carbono elegante y cableado interno, está construida para bajo mantenimiento y alto rendimiento.",
+    "sandman_7_desc": "La bicicleta gravel definitiva en la gama Rinos, con transmisión Shimano GRX820 2×12 y frenos de disco hidráulicos. Diseñada para ciclistas que demandan rango completo, comodidad de larga distancia y rendimiento agresivo.",
+    "sandman_8_desc": "La cúspide de la ingeniería gravel, con cambio electrónico Shimano 105 Di2 y rendimiento de 12 velocidades de precisión. Construida sobre un cuadro ligero Toray T800 con ruedas de carbono de 40mm y frenos de disco hidráulicos. Con solo 9,4kg.",
+    "sandman_8_cta": "Experimenta el futuro del ciclismo gravel con cambio electrónico Shimano 105 Di2. Precisión de 12 velocidades ultrarrápida, ruedas de carbono de 40mm y solo 9,4kg de rendimiento puro."
+  }' | parse_json
+  
+  # French
+  assign fr_translations = '{
+    "available_colors": "Couleurs Disponibles",
+    "discover_more": "Découvrir Plus",
+    "flagship_model": "Modèle Phare",
+    "shop_sandman_8": "Acheter Sandman 8",
+    "compare_models": "Comparer les Modèles",
+    "sandman_1_desc": "Un vélo gravel en carbone fiable avec transmission Shimano Sora 2×9 et freins à disque mécaniques. Construit sur un cadre TORAY T800, il est léger, durable et idéal pour les débutants recherchant valeur, confort et polyvalence. Parfait pour les trajets quotidiens, les sorties de week-end ou les aventures hors route.",
+    "sandman_3_desc": "Équipé d'une transmission Shimano GRX400 2×10 et de freins à disque mécaniques, le Sandman 3 offre une performance gravel sérieuse avec un budget raisonnable. Le cadre carbone T800 assure stabilité et réactivité, tandis que les pneus 700×40C offrent une adhérence sur terrain difficile.",
+    "sandman_4_desc": "Avec Shimano GRX400 2×10 et freins à disque hydrauliques, le Sandman 4 améliore le contrôle et la puissance de freinage. Idéal pour terrain vallonné et imprévisible, il combine un cadre carbone léger, guidons évasés et pneus larges.",
+    "sandman_5_desc": "Un vélo gravel en carbone prêt pour la course avec transmission Shimano GRX600 2×11 et freins à disque hydrauliques. Le Sandman 5 combine confort d'endurance avec maniabilité réactive, idéal pour des sorties gravel exigeantes ou de longs voyages bikepacking.",
+    "sandman_6_desc": "Pour les coureurs gravel modernes, le Sandman 6 dispose d'une transmission Shimano GRX820 1×12 et de freins à disque hydrauliques. Associé à un cadre carbone élégant et un câblage interne, il est conçu pour un faible entretien et de hautes performances.",
+    "sandman_7_desc": "Le vélo gravel ultime de la gamme Rinos, avec transmission Shimano GRX820 2×12 et freins à disque hydrauliques. Conçu pour les cyclistes exigeant une gamme complète, un confort longue distance et des performances agressives.",
+    "sandman_8_desc": "Le summum de l'ingénierie gravel, avec changement électronique Shimano 105 Di2 et performance 12 vitesses de précision. Construit sur un cadre léger Toray T800 avec roues carbone 40mm et freins à disque hydrauliques. Seulement 9,4kg.",
+    "sandman_8_cta": "Découvrez l'avenir du cyclisme gravel avec le changement électronique Shimano 105 Di2. Précision 12 vitesses ultra-rapide, roues carbone 40mm et seulement 9,4kg de performance pure."
+  }' | parse_json
+  
+  # Bulgarian
+  assign bg_translations = '{
+    "available_colors": "Налични Цветове",
+    "discover_more": "Научи Повече",
+    "flagship_model": "Флагмански Модел",
+    "shop_sandman_8": "Купи Sandman 8",
+    "compare_models": "Сравни Модели",
+    "sandman_1_desc": "Надежден карбонов грейвъл велосипед с Shimano Sora 2×9 скорости и механични дискови спирачки. Изграден върху TORAY T800 рамка, той е лек, издръжлив и идеален за начинаещи, търсещи стойност, комфорт и универсалност. Перфектен за пътуване до работа, уикендови разходки или приключения извън пътя.",
+    "sandman_3_desc": "Оборудван с Shimano GRX400 2×10 задвижване и механични дискови спирачки, Sandman 3 предлага сериозна грейвъл производителност с бюджет. T800 карбоновата рамка осигурява стабилност и отзивчивост, докато 700×40C гумите осигуряват сцепление на груб терен.",
+    "sandman_4_desc": "С Shimano GRX400 2×10 и хидравлични дискови спирачки, Sandman 4 повишава контрола и силата на спиране. Идеален за хълмист, непредвидим терен, той комбинира лека карбонова рамка, разширени кормила и широки гуми.",
+    "sandman_5_desc": "Готов за състезания карбонов грейвъл велосипед с Shimano GRX600 2×11 задвижване и хидравлични дискови спирачки. Sandman 5 съчетава издръжливостен комфорт с отзивчиво управление, идеален за взискателни грейвъл поездки.",
+    "sandman_6_desc": "За модерни грейвъл състезатели, Sandman 6 разполага с Shimano GRX820 1×12 задвижване и хидравлични дискови спирачки. Съчетан с елегантна карбонова рамка и вътрешно кабелиране, той е изграден за ниска поддръжка и висока производителност.",
+    "sandman_7_desc": "Върховният грейвъл велосипед в Rinos гамата, с Shimano GRX820 2×12 задвижване и хидравлични дискови спирачки. Проектиран за велосипедисти, които изискват пълен диапазон, дългоразстоен комфорт и агресивна производителност.",
+    "sandman_8_desc": "Върхът на грейвъл инженерството, с Shimano 105 Di2 електронно превключване и прецизна 12-скоростна производителnost. Изграден върху лека Toray T800 карбонова рамка с 40мм карбонови колелета и хидравлични дискови спирачки. Само 9,4кг.",
+    "sandman_8_cta": "Изживейте бъдещето на грейвъл колоезденето с Shimano 105 Di2 електронно превключване. Мълниеносна 12-скоростна прецизност, 40мм карбонови колелета и само 9,4кг чиста производителност."
+  }' | parse_json
+  
+  # Select translations based on current locale
+  case current_locale
+    when 'pl'
+      assign t = pl_translations
+    when 'de'
+      assign t = de_translations
+    when 'es'
+      assign t = es_translations
+    when 'fr'
+      assign t = fr_translations
+    when 'bg'
+      assign t = bg_translations
+    else
+      assign t = en_translations
+  endcase
+-%}
+
 <style>
 .bike-gallery {
   padding: 60px 20px !important;
@@ -218,15 +496,6 @@
   max-height: 90% !important;
   object-fit: contain !important;
   transition: opacity 0.3s ease !important;
-}
-
-/* Specific sizing for Sandman 1, 3, 5, 8 images */
-.bike-gallery #bike-1,
-.bike-gallery #bike-3,
-.bike-gallery #bike-5 {
-  max-width: 100% !important;
-  max-height: 100% !important;
-  transform: scale(1.25) !important;
 }
 
 .bike-gallery #bike-8 {
@@ -478,10 +747,10 @@
         </div>
         <div class="bike-info">
           <h3 class="bike-name">Sandman 1</h3>
-          <p class="bike-description">A reliable carbon gravel bike with Shimano Sora 2×9 gearing and mechanical disc brakes. Built on a TORAY T800 frame, it's lightweight, durable, and ideal for beginners seeking value, comfort, and versatility. Perfect for commuting, weekend rides, or venturing off-road without breaking the bank.</p>
+          <p class="bike-description">{{ sandman_1_desc }}</p>
           
           <div class="color-options">
-            <span class="color-label">Available Colors</span>
+            <span class="color-label">{{ available_colors }}</span>
             <div class="color-swatches">
               <div class="color-swatch chameleon-gold active" 
                    onclick="BikeGallery.switchColor('bike-1', 'https://rinosbike.com/cdn/shop/files/Group101.png?v=1750150243&width=713', this)"></div>
@@ -490,7 +759,7 @@
             </div>
           </div>
           
-          <a href="/products/sandman-1" class="discover-button">Discover More</a>
+          <a href="/products/sandman-1" class="discover-button">{{ discover_more }}</a>
         </div>
       </div>
 
@@ -503,10 +772,10 @@
         </div>
         <div class="bike-info">
           <h3 class="bike-name">Sandman 3</h3>
-          <p class="bike-description">Equipped with Shimano GRX400 2×10 drivetrain and mechanical disc brakes, the Sandman 3 offers serious gravel performance on a budget. The T800 carbon frame ensures stability and responsiveness, while 700×40C tires provide grip on rough terrain. A great upgrade for riders wanting dependable components and versatility.</p>
+          <p class="bike-description">{{ sandman_3_desc }}</p>
           
           <div class="color-options">
-            <span class="color-label">Available Colors</span>
+            <span class="color-label">{{ available_colors }}</span>
             <div class="color-swatches">
               <div class="color-swatch chameleon-gold active" 
                    onclick="BikeGallery.switchColor('bike-3', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"></div>
@@ -515,7 +784,7 @@
             </div>
           </div>
           
-          <a href="/products/sandman-3" class="discover-button">Discover More</a>
+          <a href="/products/sandman-3" class="discover-button">{{ discover_more }}</a>
         </div>
       </div>
 
@@ -528,10 +797,10 @@
         </div>
         <div class="bike-info">
           <h3 class="bike-name">Sandman 4</h3>
-          <p class="bike-description">With Shimano GRX400 2×10 and hydraulic disc brakes, the Sandman 4 steps up in control and stopping power. Ideal for hilly, unpredictable terrain, it combines a lightweight carbon frame, flared handlebars, and wide tires to deliver performance, comfort, and confidence in all conditions.</p>
+          <p class="bike-description">{{ sandman_4_desc }}</p>
           
           <div class="color-options">
-            <span class="color-label">Available Colors</span>
+            <span class="color-label">{{ available_colors }}</span>
             <div class="color-swatches">
               <div class="color-swatch black-forest active" 
                    onclick="BikeGallery.switchColor('bike-4', 'https://i.goopics.net/l39mbo.png', this)"></div>
@@ -544,7 +813,7 @@
             </div>
           </div>
           
-          <a href="/products/sandman-4" class="discover-button">Discover More</a>
+          <a href="/products/sandman-4" class="discover-button">{{ discover_more }}</a>
         </div>
       </div>
 
@@ -557,10 +826,10 @@
         </div>
         <div class="bike-info">
           <h3 class="bike-name">Sandman 5</h3>
-          <p class="bike-description">A race-ready carbon gravel bike with Shimano GRX600 2×11 drivetrain and hydraulic disc brakes. The Sandman 5 blends endurance comfort with responsive handling, ideal for demanding gravel rides or long bikepacking trips. A versatile machine for riders who want premium specs at a fair price.</p>
+          <p class="bike-description">{{ sandman_5_desc }}</p>
           
           <div class="color-options">
-            <span class="color-label">Available Colors</span>
+            <span class="color-label">{{ available_colors }}</span>
             <div class="color-swatches">
               <div class="color-swatch chameleon-gold active" 
                    onclick="BikeGallery.switchColor('bike-5', 'https://rinosbike.com/cdn/shop/files/Group119.png?v=1742547718&width=713', this)"></div>
@@ -569,7 +838,7 @@
             </div>
           </div>
           
-          <a href="/products/sandman-5" class="discover-button">Discover More</a>
+          <a href="/products/sandman-5" class="discover-button">{{ discover_more }}</a>
         </div>
       </div>
 
@@ -582,10 +851,10 @@
         </div>
         <div class="bike-info">
           <h3 class="bike-name">Sandman 6</h3>
-          <p class="bike-description">For modern gravel racers, the Sandman 6 features a Shimano GRX820 1×12 drivetrain and hydraulic disc brakes. Paired with a sleek carbon frame and internal cable routing, it's built for low maintenance, clean aesthetics, and high performance on both fast gravel roads and tough terrain.</p>
+          <p class="bike-description">{{ sandman_6_desc }}</p>
           
           <div class="color-options">
-            <span class="color-label">Available Colors</span>
+            <span class="color-label">{{ available_colors }}</span>
             <div class="color-swatches">
               <div class="color-swatch black-forest active" 
                    onclick="BikeGallery.switchColor('bike-6', 'https://i.goopics.net/l39mbo.png', this)"></div>
@@ -598,7 +867,7 @@
             </div>
           </div>
           
-          <a href="/products/sandman-6" class="discover-button">Discover More</a>
+          <a href="/products/sandman-6" class="discover-button">{{ discover_more }}</a>
         </div>
       </div>
 
@@ -611,10 +880,10 @@
         </div>
         <div class="bike-info">
           <h3 class="bike-name">Sandman 7</h3>
-          <p class="bike-description">The ultimate gravel bike in the Rinos lineup, featuring Shimano GRX820 2×12 drivetrain and hydraulic disc brakes. Designed for riders who demand full range, long-distance comfort, and aggressive performance. Lightweight, race-ready, and bikepacking-capable — the Sandman 7 is your go-anywhere, do-everything carbon gravel machine.</p>
+          <p class="bike-description">{{ sandman_7_desc }}</p>
           
           <div class="color-options">
-            <span class="color-label">Available Colors</span>
+            <span class="color-label">{{ available_colors }}</span>
             <div class="color-swatches">
               <div class="color-swatch black-forest active" 
                    onclick="BikeGallery.switchColor('bike-7', 'https://i.goopics.net/l39mbo.png', this)"></div>
@@ -627,7 +896,7 @@
             </div>
           </div>
           
-          <a href="/products/sandman-7" class="discover-button">Discover More</a>
+          <a href="/products/sandman-7" class="discover-button">{{ discover_more }}</a>
         </div>
       </div>
     </div>
@@ -643,16 +912,16 @@
         </div>
         <div class="bike-info">
           <h3 class="bike-name">Sandman 8</h3>
-          <p class="bike-description">The pinnacle of gravel engineering, featuring Shimano 105 Di2 electronic shifting with precision 12-speed performance. Built on a lightweight Toray T800 carbon frame with 40mm carbon wheels and hydraulic disc brakes. At just 9.4kg, this flagship model delivers professional-grade electronic shifting for the ultimate gravel experience.</p>
+          <p class="bike-description">{{ sandman_8_desc }}</p>
           
           <div class="color-options">
-            <span class="color-label">Available Colors</span>
+            <span class="color-label">{{ available_colors }}</span>
             <div class="color-swatches">
               <div class="color-swatch coffee-brown active"></div>
             </div>
           </div>
           
-          <a href="https://rinosbike.com/products/sandman-8?_pos=3&_sid=48f8be9ec&_ss=r" class="discover-button">Discover More</a>
+          <a href="https://rinosbike.com/products/sandman-8?_pos=3&_sid=48f8be9ec&_ss=r" class="discover-button">{{ discover_more }}</a>
         </div>
       </div>
 
@@ -660,13 +929,13 @@
       <div class="cta-section">
         <img src="https://i.goopics.net/msph5v.png" alt="Sandman 8 Hero" class="cta-hero-image">
         <div class="cta-content">
-          <div class="cta-badge">Flagship Model</div>
+          <div class="cta-badge">{{ flagship_model }}</div>
           <h2 class="cta-title">Sandman 8</h2>
-          <p class="cta-subtitle">Experience the future of gravel cycling with Shimano 105 Di2 electronic shifting. Lightning-fast 12-speed precision, 40mm carbon wheels, and just 9.4kg of pure performance. Electronic shifting meets gravel perfection.</p>
+          <p class="cta-subtitle">{{ sandman_8_cta }}</p>
           
           <div class="cta-buttons">
-            <a href="https://rinosbike.com/products/sandman-8?_pos=3&_sid=48f8be9ec&_ss=r" class="cta-primary">Shop Sandman 8</a>
-            <a href="/collections/gravel-bikes" class="cta-secondary">Compare Models</a>
+            <a href="https://rinosbike.com/products/sandman-8?_pos=3&_sid=48f8be9ec&_ss=r" class="cta-primary">{{ shop_sandman_8 }}</a>
+            <a href="/collections/gravel-bikes" class="cta-secondary">{{ compare_models }}</a>
           </div>
         </div>
       </div>
