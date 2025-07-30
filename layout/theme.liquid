@@ -503,12 +503,11 @@
         color: inherit;
       }
 
-      /* Grid System - PREVENT LAYOUT SHIFT */
+      /* Grid System - MOBILE FRIENDLY */
       .grid {
         display: grid;
         gap: 2rem;
         width: 100%;
-        min-height: 30rem; /* Prevent collapse during load */
       }
 
       .grid--1-col {
@@ -517,45 +516,31 @@
 
       .grid--2-col {
         grid-template-columns: repeat(2, 1fr);
-        min-height: 40rem;
       }
 
       .grid--3-col {
         grid-template-columns: repeat(3, 1fr);
-        min-height: 50rem;
       }
 
       .grid--4-col {
         grid-template-columns: repeat(4, 1fr);
-        min-height: 60rem;
       }
 
-      /* Grid items - reserve space */
+      /* Grid items - no forced heights on mobile */
       .grid__item {
-        min-height: 30rem;
         display: block;
       }
 
+      /* Mobile responsive - natural heights */
       @media screen and (max-width: 749px) {
+        .grid {
+          gap: 1.5rem;
+        }
+
         .grid--2-col,
         .grid--3-col,
         .grid--4-col {
           grid-template-columns: 1fr;
-          min-height: 80rem; /* More height needed for mobile stacking */
-        }
-
-        .grid__item {
-          min-height: 35rem;
-        }
-
-        .product-grid {
-          grid-template-columns: 1fr;
-          min-height: 120rem; /* Much more space for mobile product grid */
-        }
-
-        .image-with-text {
-          grid-template-columns: 1fr;
-          min-height: 60rem;
         }
       }
 
@@ -563,12 +548,29 @@
         .grid--3-col,
         .grid--4-col {
           grid-template-columns: repeat(2, 1fr);
-          min-height: 50rem;
+        }
+      }
+
+      /* Only add min-heights on desktop where needed */
+      @media screen and (min-width: 990px) {
+        .grid {
+          min-height: 20rem;
         }
 
-        .product-grid {
-          grid-template-columns: repeat(2, 1fr);
-          min-height: 80rem;
+        .grid--2-col {
+          min-height: 25rem;
+        }
+
+        .grid--3-col {
+          min-height: 30rem;
+        }
+
+        .grid--4-col {
+          min-height: 35rem;
+        }
+
+        .grid__item {
+          min-height: 20rem;
         }
       }
 
