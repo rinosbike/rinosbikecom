@@ -83,6 +83,13 @@
         body { font-size: 1.6rem; }
       }
 
+      /* Prevent layout shift - Reserve space for main content */
+      #MainContent {
+        min-height: 50vh;
+        display: block;
+        overflow: hidden;
+      }
+
       /* Header critical styles */
       .header-wrapper {
         background: rgb(var(--color-background));
@@ -126,12 +133,14 @@
         font-weight: var(--font-body-weight);
       }
 
-      /* Hero/banner critical styles */
+      /* Hero/banner critical styles - PREVENT LAYOUT SHIFT */
       .banner {
         display: flex;
         position: relative;
         flex-direction: column;
-        min-height: 50vh;
+        min-height: 50vh; /* Reserve space immediately */
+        width: 100%;
+        overflow: hidden;
       }
 
       .banner__content {
@@ -143,9 +152,10 @@
         padding: 4rem 2rem;
         position: relative;
         z-index: 2;
+        min-height: 40vh; /* Prevent shift */
       }
 
-      .banner__heading {
+      .banner__heading, .banner__heading h1, .banner h1 {
         font-family: var(--font-heading-family);
         font-style: var(--font-heading-style);
         font-weight: var(--font-heading-weight);
@@ -155,10 +165,53 @@
         color: rgba(var(--color-foreground), 0.75);
       }
 
-      .banner__text {
+      .banner__text, .banner p {
         font-size: 1.8rem;
         margin: 0 0 2rem;
         max-width: 60rem;
+      }
+
+      /* Card layout critical - PREVENT SHIFTS */
+      .card-wrapper, .card {
+        display: block;
+        position: relative;
+        width: 100%;
+      }
+
+      .card__media, .card__content {
+        display: block;
+        width: 100%;
+      }
+
+      .card__media {
+        aspect-ratio: 1;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card__media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Grid layouts - prevent shift */
+      .grid {
+        display: grid;
+        gap: 2rem;
+        width: 100%;
+      }
+
+      .grid--1-col { grid-template-columns: 1fr; }
+      .grid--2-col { grid-template-columns: repeat(2, 1fr); }
+      .grid--3-col { grid-template-columns: repeat(3, 1fr); }
+      .grid--4-col { grid-template-columns: repeat(4, 1fr); }
+
+      @media screen and (max-width: 749px) {
+        .grid--2-col, .grid--3-col, .grid--4-col {
+          grid-template-columns: 1fr;
+        }
       }
 
       /* Button critical styles */
@@ -222,6 +275,29 @@
         left: 50%;
         transform: translateX(-50%);
         top: 1rem;
+      }
+
+      /* Page width container */
+      .page-width {
+        max-width: var(--page-width);
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Section spacing */
+      .section {
+        padding: 3rem 0;
+      }
+
+      /* Hide content until styled to prevent FOUC */
+      .shopify-section:not(.header-group):not(.footer-group) {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      /* Show content once CSS loads */
+      .css-loaded .shopify-section {
+        opacity: 1;
       }
     </style>
 
@@ -441,15 +517,7 @@
       <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
 
-    <!-- CRITICAL CSS - Load immediately, no deferring -->
-    {{ 'base.css' | asset_url | stylesheet_tag }}
-
-    <!-- LAYOUT-CRITICAL CSS - Also load immediately -->
-    {{ 'component-card.css' | asset_url | stylesheet_tag }}
-    {{ 'component-slider.css' | asset_url | stylesheet_tag }}
-    {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
-
-    <!-- CSS Loading Script - Only for truly non-critical files -->
+    <!-- CSS Loading Script - ALL CSS deferred -->
     <script>
       // Function to load CSS asynchronously
       function loadCSS(href, before, media) {
@@ -492,47 +560,65 @@
         return ss;
       }
 
-      // Load only NON-CRITICAL CSS files after page starts rendering
+      // Track CSS loading
+      var cssLoaded = 0;
+      var totalCSS = 11;
+      
+      function cssLoadComplete() {
+        cssLoaded++;
+        if (cssLoaded >= totalCSS) {
+          document.documentElement.classList.add('css-loaded');
+        }
+      }
+
+      // Load ALL CSS files asynchronously
       setTimeout(function() {
-        loadCSS("{{ 'component-cart.css' | asset_url }}");
-        loadCSS("{{ 'component-totals.css' | asset_url }}");
-        loadCSS("{{ 'quantity-popover.css' | asset_url }}");
-        loadCSS("{{ 'component-price.css' | asset_url }}");
-        loadCSS("{{ 'component-discounts.css' | asset_url }}");
-        loadCSS("{{ 'component-list-social.css' | asset_url }}");
-        loadCSS("{{ 'component-cart-drawer.css' | asset_url }}");
-        loadCSS("{{ 'component-loading-spinner.css' | asset_url }}");
-      }, 50);
+        var cssFiles = [
+          "{{ 'base.css' | asset_url }}",
+          "{{ 'component-cart.css' | asset_url }}",
+          "{{ 'component-totals.css' | asset_url }}",
+          "{{ 'quantity-popover.css' | asset_url }}",
+          "{{ 'component-price.css' | asset_url }}",
+          "{{ 'component-discounts.css' | asset_url }}",
+          "{{ 'component-list-social.css' | asset_url }}",
+          "{{ 'component-card.css' | asset_url }}",
+          "{{ 'component-slideshow.css' | asset_url }}",
+          "{{ 'component-slider.css' | asset_url }}",
+          "{{ 'component-cart-drawer.css' | asset_url }}",
+          "{{ 'component-loading-spinner.css' | asset_url }}"
+        ];
+        
+        cssFiles.forEach(function(href) {
+          var link = loadCSS(href);
+          link.onload = cssLoadComplete;
+        });
+      }, 10);
     </script>
 
     <!-- Fallback for users without JavaScript -->
     <noscript>
+      {{ 'base.css' | asset_url | stylesheet_tag }}
       {{ 'component-cart.css' | asset_url | stylesheet_tag }}
       {{ 'component-totals.css' | asset_url | stylesheet_tag }}
       {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
       {{ 'component-price.css' | asset_url | stylesheet_tag }}
       {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
       {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+      {{ 'component-card.css' | asset_url | stylesheet_tag }}
+      {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+      {{ 'component-slider.css' | asset_url | stylesheet_tag }}
       {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
       {{ 'component-loading-spinner.css' | asset_url | stylesheet_tag }}
     </noscript>
 
     {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
-      <script>
-        setTimeout(function() {
-          loadCSS("{{ 'component-localization-form.css' | asset_url }}");
-        }, 200);
-      </script>
+      <link rel="stylesheet" href="{{ 'component-localization-form.css' | asset_url }}" media="print" onload="this.media='all'">
       <noscript>{{ 'component-localization-form.css' | asset_url | stylesheet_tag }}</noscript>
       <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
     {%- if settings.predictive_search_enabled -%}
-      <script>
-        setTimeout(function() {
-          loadCSS("{{ 'component-predictive-search.css' | asset_url }}");
-        }, 200);
-      </script>
+      <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
       <noscript>{{ 'component-predictive-search.css' | asset_url | stylesheet_tag }}</noscript>
     {%- endif -%}
 
