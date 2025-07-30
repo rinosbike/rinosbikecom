@@ -291,8 +291,7 @@
 
       /* Hide content until styled to prevent FOUC */
       .shopify-section:not(.header-group):not(.footer-group) {
-        opacity: 0;
-        transition: opacity 0.3s ease;
+        opacity: 1; /* Show content immediately */
       }
 
       /* Show content once CSS loads */
@@ -520,78 +519,32 @@
     <!-- CSS Loading Script - ALL CSS deferred -->
     <script>
       // Function to load CSS asynchronously
-      function loadCSS(href, before, media) {
-        var doc = window.document;
-        var ss = doc.createElement("link");
-        var ref;
-        if (before) {
-          ref = before;
-        } else {
-          var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
-          ref = refs[refs.length - 1];
-        }
-        var sheets = doc.styleSheets;
-        ss.rel = "stylesheet";
-        ss.href = href;
-        ss.media = "only x";
-        function ready(cb) {
-          if (doc.body) return cb();
-          setTimeout(function() { ready(cb); });
-        }
-        ready(function() {
-          ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
-        });
-        var onloadcssdefined = function(cb) {
-          var resolvedHref = ss.href;
-          var i = sheets.length;
-          while (i--) {
-            if (sheets[i].href === resolvedHref) {
-              return cb();
-            }
-          }
-          setTimeout(function() { onloadcssdefined(cb); });
+      function loadCSS(href) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        link.media = 'print';
+        link.onload = function() {
+          this.media = 'all';
         };
-        function loadCB() {
-          if (ss.addEventListener) ss.addEventListener("load", loadCB);
-          ss.media = media || "all";
-        }
-        ss.addEventListener ? ss.addEventListener("load", loadCB) : (ss.onload = loadCB);
-        onloadcssdefined(loadCB);
-        return ss;
+        document.head.appendChild(link);
+        return link;
       }
 
-      // Track CSS loading
-      var cssLoaded = 0;
-      var totalCSS = 11;
-      
-      function cssLoadComplete() {
-        cssLoaded++;
-        if (cssLoaded >= totalCSS) {
-          document.documentElement.classList.add('css-loaded');
-        }
-      }
-
-      // Load ALL CSS files asynchronously
+      // Load ALL CSS files asynchronously - simpler approach
       setTimeout(function() {
-        var cssFiles = [
-          "{{ 'base.css' | asset_url }}",
-          "{{ 'component-cart.css' | asset_url }}",
-          "{{ 'component-totals.css' | asset_url }}",
-          "{{ 'quantity-popover.css' | asset_url }}",
-          "{{ 'component-price.css' | asset_url }}",
-          "{{ 'component-discounts.css' | asset_url }}",
-          "{{ 'component-list-social.css' | asset_url }}",
-          "{{ 'component-card.css' | asset_url }}",
-          "{{ 'component-slideshow.css' | asset_url }}",
-          "{{ 'component-slider.css' | asset_url }}",
-          "{{ 'component-cart-drawer.css' | asset_url }}",
-          "{{ 'component-loading-spinner.css' | asset_url }}"
-        ];
-        
-        cssFiles.forEach(function(href) {
-          var link = loadCSS(href);
-          link.onload = cssLoadComplete;
-        });
+        loadCSS("{{ 'base.css' | asset_url }}");
+        loadCSS("{{ 'component-cart.css' | asset_url }}");
+        loadCSS("{{ 'component-totals.css' | asset_url }}");
+        loadCSS("{{ 'quantity-popover.css' | asset_url }}");
+        loadCSS("{{ 'component-price.css' | asset_url }}");
+        loadCSS("{{ 'component-discounts.css' | asset_url }}");
+        loadCSS("{{ 'component-list-social.css' | asset_url }}");
+        loadCSS("{{ 'component-card.css' | asset_url }}");
+        loadCSS("{{ 'component-slideshow.css' | asset_url }}");
+        loadCSS("{{ 'component-slider.css' | asset_url }}");
+        loadCSS("{{ 'component-cart-drawer.css' | asset_url }}");
+        loadCSS("{{ 'component-loading-spinner.css' | asset_url }}");
       }, 10);
     </script>
 
