@@ -34,16 +34,7 @@
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
 
-    <!-- Font preloading -->
-    {%- unless settings.type_body_font.system? -%}
-      <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
-    {%- endunless -%}
-    {%- unless settings.type_header_font.system? -%}
-      <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
-    {%- endunless -%}
-
-    <!-- 🚀 COMPREHENSIVE CRITICAL CSS - Everything needed for first paint -->
-    <style>
+    {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
       {{ body_font_italic | font_face: font_display: 'swap' }}
@@ -108,21 +99,120 @@
         --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
         --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
 
+        --media-padding: {{ settings.media_padding }}px;
+        --media-border-opacity: {{ settings.media_border_opacity | divided_by: 100.0 }};
+        --media-border-width: {{ settings.media_border_thickness }}px;
+        --media-radius: {{ settings.media_radius }}px;
+        --media-shadow-opacity: {{ settings.media_shadow_opacity | divided_by: 100.0 }};
+        --media-shadow-horizontal-offset: {{ settings.media_shadow_horizontal_offset }}px;
+        --media-shadow-vertical-offset: {{ settings.media_shadow_vertical_offset }}px;
+        --media-shadow-blur-radius: {{ settings.media_shadow_blur }}px;
+        --media-shadow-visible: {% if settings.media_shadow_opacity > 0 %}1{% else %}0{% endif %};
+
         --page-width: {{ settings.page_width | divided_by: 10 }}rem;
         --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
+
+        --product-card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
+        --product-card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;
+        --product-card-text-alignment: {{ settings.card_text_alignment }};
+        --product-card-border-width: {{ settings.card_border_thickness | divided_by: 10.0 }}rem;
+        --product-card-border-opacity: {{ settings.card_border_opacity | divided_by: 100.0 }};
+        --product-card-shadow-opacity: {{ settings.card_shadow_opacity | divided_by: 100.0 }};
+        --product-card-shadow-visible: {% if settings.card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --product-card-shadow-horizontal-offset: {{ settings.card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
+        --product-card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
+        --product-card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;
+
+        --collection-card-image-padding: {{ settings.collection_card_image_padding | divided_by: 10.0 }}rem;
+        --collection-card-corner-radius: {{ settings.collection_card_corner_radius | divided_by: 10.0 }}rem;
+        --collection-card-text-alignment: {{ settings.collection_card_text_alignment }};
+        --collection-card-border-width: {{ settings.collection_card_border_thickness | divided_by: 10.0 }}rem;
+        --collection-card-border-opacity: {{ settings.collection_card_border_opacity | divided_by: 100.0 }};
+        --collection-card-shadow-opacity: {{ settings.collection_card_shadow_opacity | divided_by: 100.0 }};
+        --collection-card-shadow-visible: {% if settings.collection_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --collection-card-shadow-horizontal-offset: {{ settings.collection_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
+        --collection-card-shadow-vertical-offset: {{ settings.collection_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
+        --collection-card-shadow-blur-radius: {{ settings.collection_card_shadow_blur | divided_by: 10.0 }}rem;
+
+        --blog-card-image-padding: {{ settings.blog_card_image_padding | divided_by: 10.0 }}rem;
+        --blog-card-corner-radius: {{ settings.blog_card_corner_radius | divided_by: 10.0 }}rem;
+        --blog-card-text-alignment: {{ settings.blog_card_text_alignment }};
+        --blog-card-border-width: {{ settings.blog_card_border_thickness | divided_by: 10.0 }}rem;
+        --blog-card-border-opacity: {{ settings.blog_card_border_opacity | divided_by: 100.0 }};
+        --blog-card-shadow-opacity: {{ settings.blog_card_shadow_opacity | divided_by: 100.0 }};
+        --blog-card-shadow-visible: {% if settings.blog_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --blog-card-shadow-horizontal-offset: {{ settings.blog_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
+        --blog-card-shadow-vertical-offset: {{ settings.blog_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
+        --blog-card-shadow-blur-radius: {{ settings.blog_card_shadow_blur | divided_by: 10.0 }}rem;
+
+        --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 10.0 }}rem;
+
+        --popup-border-width: {{ settings.popup_border_thickness }}px;
+        --popup-border-opacity: {{ settings.popup_border_opacity | divided_by: 100.0 }};
+        --popup-corner-radius: {{ settings.popup_corner_radius }}px;
+        --popup-shadow-opacity: {{ settings.popup_shadow_opacity | divided_by: 100.0 }};
+        --popup-shadow-horizontal-offset: {{ settings.popup_shadow_horizontal_offset }}px;
+        --popup-shadow-vertical-offset: {{ settings.popup_shadow_vertical_offset }}px;
+        --popup-shadow-blur-radius: {{ settings.popup_shadow_blur }}px;
+
+        --drawer-border-width: {{ settings.drawer_border_thickness }}px;
+        --drawer-border-opacity: {{ settings.drawer_border_opacity | divided_by: 100.0 }};
+        --drawer-shadow-opacity: {{ settings.drawer_shadow_opacity | divided_by: 100.0 }};
+        --drawer-shadow-horizontal-offset: {{ settings.drawer_shadow_horizontal_offset }}px;
+        --drawer-shadow-vertical-offset: {{ settings.drawer_shadow_vertical_offset }}px;
+        --drawer-shadow-blur-radius: {{ settings.drawer_shadow_blur }}px;
 
         --spacing-sections-desktop: {{ settings.spacing_sections }}px;
         --spacing-sections-mobile: {% if settings.spacing_sections < 24 %}{{ settings.spacing_sections }}{% else %}{{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}{% endif %}px;
 
+        --grid-desktop-vertical-spacing: {{ settings.spacing_grid_vertical }}px;
+        --grid-desktop-horizontal-spacing: {{ settings.spacing_grid_horizontal }}px;
+        --grid-mobile-vertical-spacing: {{ settings.spacing_grid_vertical | divided_by: 2 }}px;
+        --grid-mobile-horizontal-spacing: {{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
+
+        --text-boxes-border-opacity: {{ settings.text_boxes_border_opacity | divided_by: 100.0 }};
+        --text-boxes-border-width: {{ settings.text_boxes_border_thickness }}px;
+        --text-boxes-radius: {{ settings.text_boxes_radius }}px;
+        --text-boxes-shadow-opacity: {{ settings.text_boxes_shadow_opacity | divided_by: 100.0 }};
+        --text-boxes-shadow-visible: {% if settings.text_boxes_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --text-boxes-shadow-horizontal-offset: {{ settings.text_boxes_shadow_horizontal_offset }}px;
+        --text-boxes-shadow-vertical-offset: {{ settings.text_boxes_shadow_vertical_offset }}px;
+        --text-boxes-shadow-blur-radius: {{ settings.text_boxes_shadow_blur }}px;
+
         --buttons-radius: {{ settings.buttons_radius }}px;
+        --buttons-radius-outset: {% if settings.buttons_radius > 0 %}{{ settings.buttons_radius | plus: settings.buttons_border_thickness }}{% else %}0{% endif %}px;
         --buttons-border-width: {% if settings.buttons_border_opacity > 0 %}{{ settings.buttons_border_thickness }}{% else %}0{% endif %}px;
         --buttons-border-opacity: {{ settings.buttons_border_opacity | divided_by: 100.0 }};
         --buttons-shadow-opacity: {{ settings.buttons_shadow_opacity | divided_by: 100.0 }};
+        --buttons-shadow-visible: {% if settings.buttons_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --buttons-shadow-horizontal-offset: {{ settings.buttons_shadow_horizontal_offset }}px;
+        --buttons-shadow-vertical-offset: {{ settings.buttons_shadow_vertical_offset }}px;
+        --buttons-shadow-blur-radius: {{ settings.buttons_shadow_blur }}px;
+        --buttons-border-offset: {% if settings.buttons_radius > 0 or settings.buttons_shadow_opacity > 0 %}0.3{% else %}0{% endif %}px;
+
+        --inputs-radius: {{ settings.inputs_radius }}px;
+        --inputs-border-width: {{ settings.inputs_border_thickness }}px;
+        --inputs-border-opacity: {{ settings.inputs_border_opacity | divided_by: 100.0 }};
+        --inputs-shadow-opacity: {{ settings.inputs_shadow_opacity | divided_by: 100.0 }};
+        --inputs-shadow-horizontal-offset: {{ settings.inputs_shadow_horizontal_offset }}px;
+        --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_opacity > 0 %}{{ settings.inputs_shadow_vertical_offset | abs }}{% else %}0{% endif %}px;
+        --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}px;
+        --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}px;
+        --inputs-radius-outset: {% if settings.inputs_radius > 0 %}{{ settings.inputs_radius | plus: settings.inputs_border_thickness }}{% else %}0{% endif %}px;
+
+        --variant-pills-radius: {{ settings.variant_pills_radius }}px;
+        --variant-pills-border-width: {{ settings.variant_pills_border_thickness }}px;
+        --variant-pills-border-opacity: {{ settings.variant_pills_border_opacity | divided_by: 100.0 }};
+        --variant-pills-shadow-opacity: {{ settings.variant_pills_shadow_opacity | divided_by: 100.0 }};
+        --variant-pills-shadow-horizontal-offset: {{ settings.variant_pills_shadow_horizontal_offset }}px;
+        --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
+        --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
       }
 
-      /* Critical Base Styles */
-      *, *::before, *::after {
-        box-sizing: border-box;
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
       }
 
       html {
@@ -151,607 +241,63 @@
         }
       }
 
-      /* CRITICAL Layout Prevention of Layout Shift */
-      .content-for-layout {
-        min-height: 80vh;
-      }
-
-      /* Page Width */
-      .page-width {
-        max-width: var(--page-width);
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      /* Header Styles */
-      .header {
-        position: relative;
-        background: rgb(var(--color-background));
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem 0;
-      }
-
-      .header-wrapper {
-        padding: 1rem 0;
-        position: relative;
-      }
-
-      .header__heading {
-        margin: 0;
-        flex: 0 0 auto;
-      }
-
-      .header__heading-link {
-        text-decoration: none;
-        color: rgba(var(--color-foreground), 0.75);
-        font-family: var(--font-heading-family);
-        font-weight: var(--font-heading-weight);
-        font-style: var(--font-heading-style);
-        font-size: 2rem;
-      }
-
-      /* Navigation */
-      .header__inline-menu {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        flex: 1;
-        justify-content: center;
-      }
-
-      .list-menu {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        gap: 2rem;
-        align-items: center;
-      }
-
-      .list-menu a {
-        text-decoration: none;
-        color: rgba(var(--color-foreground), 0.75);
-        font-weight: 500;
-        padding: 0.5rem 1rem;
-        transition: opacity 0.2s ease;
-      }
-
-      .list-menu a:hover {
-        opacity: 0.7;
-      }
-
-      /* Header Icons and Utilities */
-      .header__icons {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        flex: 0 0 auto;
-      }
-
-      .header__icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 4.4rem;
-        height: 4.4rem;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        color: rgba(var(--color-foreground), 0.75);
-      }
-
-      .header__icon svg {
-        width: 2rem;
-        height: 2rem;
-      }
-
-      /* Currency/Language Localization */
-      .localization-form {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .localization-form__select {
-        background: transparent;
-        border: 1px solid rgba(var(--color-foreground), 0.2);
-        border-radius: 4px;
-        padding: 0.5rem 1rem;
-        color: rgba(var(--color-foreground), 0.75);
-        font-size: 1.3rem;
-        cursor: pointer;
-        min-width: 6rem;
-        text-align: center;
-      }
-
-      .localization-form__select:focus {
-        outline: 2px solid rgba(var(--color-foreground), 0.3);
-        outline-offset: 2px;
-      }
-
-      .disclosure {
-        position: relative;
-        display: inline-block;
-      }
-
-      .disclosure__button {
-        background: transparent;
-        border: 1px solid rgba(var(--color-foreground), 0.2);
-        border-radius: 4px;
-        padding: 0.5rem 1rem;
-        color: rgba(var(--color-foreground), 0.75);
-        font-size: 1.3rem;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        min-width: 6rem;
-        justify-content: center;
-      }
-
-      .disclosure__button:hover {
-        background: rgba(var(--color-foreground), 0.05);
-      }
-
-      /* Mobile Menu Toggle */
-      .header__icon--menu {
-        display: none;
-      }
-
-      @media screen and (max-width: 989px) {
-        .header__icon--menu {
-          display: flex;
-        }
-        
-        .header__inline-menu {
-          display: none;
-        }
-        
-        .header {
-          padding: 1rem;
-        }
-      }
-
-      /* Banner/Hero Critical Styles - PREVENT LAYOUT SHIFT */
-      .banner {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-height: 50vh; /* Fixed height to prevent shift */
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        background: rgba(var(--color-background), 0.95);
-        overflow: hidden;
-      }
-
-      .banner__media {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-      }
-
-      .banner__media img,
-      .banner__media video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      .banner__content {
-        padding: 5rem 2rem;
-        width: 100%;
-        max-width: var(--page-width);
-        margin: 0 auto;
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-
-      .banner__heading {
-        font-family: var(--font-heading-family);
-        font-style: var(--font-heading-style);
-        font-weight: var(--font-heading-weight);
-        font-size: clamp(2.5rem, 6vw, 5rem);
-        line-height: 1.1;
-        margin: 0 0 2rem;
-        color: rgba(var(--color-foreground), 0.75);
-      }
-
-      .banner__text {
-        font-size: clamp(1.4rem, 2vw, 1.8rem);
-        margin: 0 0 3rem;
-        max-width: 60ch;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.5;
-      }
-
-      .banner__box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        width: 100%;
-      }
-
-      /* CRITICAL: Banner CTA Buttons - "2025 New Model" etc */
-      .banner__buttons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        margin-top: 2rem;
-      }
-
-      .banner .btn,
-      .banner .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1.5rem 3rem;
-        background-color: rgb(var(--color-button));
-        color: rgb(var(--color-button-text));
-        text-decoration: none;
-        border: var(--buttons-border-width) solid rgba(var(--color-button), var(--buttons-border-opacity));
-        border-radius: var(--buttons-radius);
-        font-family: inherit;
-        font-size: 1.6rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.15s ease-in-out;
-        line-height: 1;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        min-width: 20rem;
-      }
-
-      .banner .btn:hover,
-      .banner .button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      }
-
-      .banner .btn--secondary,
-      .banner .button--secondary {
-        background-color: transparent;
-        color: rgba(var(--color-foreground), 0.75);
-        border: 2px solid rgba(var(--color-foreground), 0.3);
-      }
-
-      .banner .btn--secondary:hover,
-      .banner .button--secondary:hover {
-        background-color: rgba(var(--color-foreground), 0.1);
-      }
-
-      /* Button Styles */
-      .btn, .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1.5rem 3rem;
-        background-color: rgb(var(--color-button));
-        color: rgb(var(--color-button-text));
-        text-decoration: none;
-        border: var(--buttons-border-width) solid rgba(var(--color-button), var(--buttons-border-opacity));
-        border-radius: var(--buttons-radius);
-        font-family: inherit;
-        font-size: 1.4rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.15s ease-in-out;
-        line-height: 1;
-      }
-
-      /* Card Critical Styles - PREVENT LAYOUT SHIFT */
-      .card-wrapper {
-        color: inherit;
-        display: block;
-        text-decoration: none;
-        position: relative;
-      }
-
-      .card {
-        display: block;
-        position: relative;
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .card__content {
-        display: block;
-        padding: 1.5rem 0;
-      }
-
+      /* Minimal layout shift prevention - only for images */
       .card__media {
-        display: block;
-        position: relative;
-        overflow: hidden;
         aspect-ratio: 1;
+        overflow: hidden;
         background: #f5f5f5;
       }
 
-      .card__media img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+      .banner {
+        min-height: 50vh;
       }
+    {% endstyle %}
 
-      .card__heading {
-        margin: 0 0 0.5rem;
-        font-family: var(--font-heading-family);
-        font-weight: var(--font-heading-weight);
-        font-size: 1.6rem;
-        line-height: 1.3;
-      }
+    <!-- Load critical CSS immediately -->
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'component-card.css' | asset_url | stylesheet_tag }}
+    {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+    {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
-      .card__heading a {
-        text-decoration: none;
-        color: inherit;
-      }
+    <!-- Font preloading for faster text rendering -->
+    {%- unless settings.type_body_font.system? -%}
+      <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endunless -%}
+    {%- unless settings.type_header_font.system? -%}
+      <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endunless -%}
 
-      /* Grid System - MOBILE FRIENDLY */
-      .grid {
-        display: grid;
-        gap: 2rem;
-        width: 100%;
-      }
+    <!-- Non-critical CSS - Load asynchronously -->
+    <link rel="stylesheet" href="{{ 'component-cart.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-totals.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'quantity-popover.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-discounts.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-list-social.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-cart-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-loading-spinner.css' | asset_url }}" media="print" onload="this.media='all'">
 
-      .grid--1-col {
-        grid-template-columns: 1fr;
-      }
-
-      .grid--2-col {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .grid--3-col {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .grid--4-col {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      /* Grid items - no forced heights on mobile */
-      .grid__item {
-        display: block;
-      }
-
-      /* Mobile responsive - natural heights */
-      @media screen and (max-width: 749px) {
-        .grid {
-          gap: 1.5rem;
-        }
-
-        .grid--2-col,
-        .grid--3-col,
-        .grid--4-col {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media screen and (min-width: 750px) and (max-width: 989px) {
-        .grid--3-col,
-        .grid--4-col {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      /* Only add min-heights on desktop where needed */
-      @media screen and (min-width: 990px) {
-        .grid {
-          min-height: 20rem;
-        }
-
-        .grid--2-col {
-          min-height: 25rem;
-        }
-
-        .grid--3-col {
-          min-height: 30rem;
-        }
-
-        .grid--4-col {
-          min-height: 35rem;
-        }
-
-        .grid__item {
-          min-height: 20rem;
-        }
-      }
-
-      /* Section Spacing */
-      .section {
-        padding: var(--spacing-sections-mobile) 0;
-      }
-
-      @media screen and (min-width: 750px) {
-        .section {
-          padding: var(--spacing-sections-desktop) 0;
-        }
-      }
-
-      /* Slideshow Critical Styles */
-      .slideshow {
-        position: relative;
-        overflow: hidden;
-        height: 50vh;
-        min-height: 40rem;
-      }
-
-      .slideshow__slide {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      /* Price styles */
-      .price {
-        display: flex;
-        align-items: baseline;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-      }
-
-      .price__regular {
-        font-size: 1.6rem;
-        font-weight: 600;
-      }
-
-      .price__sale {
-        color: #d72c2c;
-        font-weight: 600;
-      }
-
-      /* Skip to content */
-      .skip-to-content-link {
-        position: absolute;
-        left: -9999px;
-        z-index: 999;
-        padding: 1rem;
-        background: rgb(var(--color-button));
-        color: rgb(var(--color-button-text));
-        text-decoration: none;
-      }
-
-      .skip-to-content-link:focus {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 1rem;
-      }
-
-      /* Responsive adjustments */
-      @media screen and (max-width: 749px) {
-        .banner__content {
-          padding: 3rem 1rem;
-        }
-        
-        .banner__heading {
-          font-size: clamp(2rem, 8vw, 3rem);
-        }
-        
-        .page-width {
-          padding: 0 1rem;
-        }
-
-        .banner .btn,
-        .banner .button {
-          font-size: 1.4rem;
-          padding: 1.2rem 2rem;
-          min-width: 18rem;
-        }
-
-        .banner__buttons {
-          flex-direction: column;
-          width: 100%;
-        }
-
-        .banner .btn,
-        .banner .button {
-          width: 100%;
-          max-width: 30rem;
-        }
-
-        .header__icons {
-          gap: 0.5rem;
-        }
-
-        .localization-form {
-          gap: 0.3rem;
-        }
-
-        .localization-form__select,
-        .disclosure__button {
-          padding: 0.4rem 0.8rem;
-          font-size: 1.2rem;
-          min-width: 5rem;
-        }
-      }
-
-      /* Utility classes */
-      .visually-hidden {
-        position: absolute !important;
-        overflow: hidden;
-        width: 1px;
-        height: 1px;
-        margin: -1px;
-        padding: 0;
-        border: 0;
-        clip: rect(0 0 0 0);
-        word-wrap: normal !important;
-      }
-
-      .focus-none {
-        outline: none;
-      }
-
-      .gradient {
-        background: var(--gradient-background);
-      }
-    </style>
-
-    <!-- Load ALL other CSS asynchronously after critical render -->
-    <script>
-      function loadCSS(href) {
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = href;
-        link.media = 'print';
-        link.onload = function() { this.media = 'all'; };
-        document.head.appendChild(link);
-      }
-
-      // Load non-critical CSS after initial render
-      requestAnimationFrame(function() {
-        loadCSS("{{ 'base.css' | asset_url }}");
-        loadCSS("{{ 'component-cart.css' | asset_url }}");
-        loadCSS("{{ 'component-totals.css' | asset_url }}");
-        loadCSS("{{ 'quantity-popover.css' | asset_url }}");
-        loadCSS("{{ 'component-price.css' | asset_url }}");
-        loadCSS("{{ 'component-discounts.css' | asset_url }}");
-        loadCSS("{{ 'component-list-social.css' | asset_url }}");
-        loadCSS("{{ 'component-card.css' | asset_url }}");
-        loadCSS("{{ 'component-slideshow.css' | asset_url }}");
-        loadCSS("{{ 'component-slider.css' | asset_url }}");
-        loadCSS("{{ 'component-cart-drawer.css' | asset_url }}");
-        loadCSS("{{ 'component-loading-spinner.css' | asset_url }}");
-      });
-    </script>
+    <!-- Fallback for users without JavaScript -->
+    <noscript>
+      {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+      {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+      {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+      {{ 'component-price.css' | asset_url | stylesheet_tag }}
+      {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+      {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+      {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+      {{ 'component-loading-spinner.css' | asset_url | stylesheet_tag }}
+    </noscript>
 
     {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
-      <script>
-        requestAnimationFrame(function() {
-          loadCSS("{{ 'component-localization-form.css' | asset_url }}");
-        });
-      </script>
+      <link rel="stylesheet" href="{{ 'component-localization-form.css' | asset_url }}" media="print" onload="this.media='all'">
+      <noscript>{{ 'component-localization-form.css' | asset_url | stylesheet_tag }}</noscript>
       <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
     {%- if settings.predictive_search_enabled -%}
-      <script>
-        requestAnimationFrame(function() {
-          loadCSS("{{ 'component-predictive-search.css' | asset_url }}");
-        });
-      </script>
+      <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
+      <noscript>{{ 'component-predictive-search.css' | asset_url | stylesheet_tag }}</noscript>
     {%- endif -%}
 
     <!-- JavaScript - All deferred for better performance -->
