@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
+
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -248,11 +249,9 @@
           font-size: 1.6rem;
         }
       }
-
-      /* INLINE CRITICAL BASE.CSS CONTENT - ADD MOST IMPORTANT BASE STYLES HERE */
-      {{ 'base.css' | asset_url | asset_content }}
-
     {% endstyle %}
+
+    {{ 'base.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -261,44 +260,19 @@
       <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
 
-    <!-- CRITICAL CSS THAT MUST LOAD IMMEDIATELY -->
     {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
-      {{ 'component-localization-form.css' | asset_url | stylesheet_tag }}
+      {{ 'component-localization-form.css' | asset_url | stylesheet_tag: preload: true }}
       <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    <!-- DEFER NON-CRITICAL CSS USING MEDIA QUERY TRICK -->
     {%- if settings.predictive_search_enabled -%}
-      <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
+      <link
+        rel="stylesheet"
+        href="{{ 'component-predictive-search.css' | asset_url }}"
+        media="print"
+        onload="this.media='all'"
+      >
     {%- endif -%}
-
-    <!-- DEFER COMPONENT CSS - THESE ARE THE RENDER BLOCKERS -->
-    <link rel="stylesheet" href="{{ 'component-cart.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-list-social.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-totals.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-loading-spinner.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-slideshow.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-cart-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'quantity-popover.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-discounts.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
-
-    <!-- FALLBACK FOR NO-JS USERS -->
-    <noscript>
-      {{ 'component-cart.css' | asset_url | stylesheet_tag }}
-      {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
-      {{ 'component-slider.css' | asset_url | stylesheet_tag }}
-      {{ 'component-price.css' | asset_url | stylesheet_tag }}
-      {{ 'component-totals.css' | asset_url | stylesheet_tag }}
-      {{ 'component-loading-spinner.css' | asset_url | stylesheet_tag }}
-      {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
-      {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
-      {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
-      {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
-      {{ 'component-card.css' | asset_url | stylesheet_tag }}
-    </noscript>
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -307,19 +281,13 @@
       }
     </script>
     <script type="text/javascript">
-      (function (c, l, a, r, i, t, y) {
-        c[a] =
-          c[a] ||
-          function () {
-            (c[a].q = c[a].q || []).push(arguments);
-          };
-        t = l.createElement(r);
-        t.async = 1;
-        t.src = 'https://www.clarity.ms/tag/' + i;
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-      })(window, document, 'clarity', 'script', 'm07yysxhhy');
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "m07yysxhhy");
     </script>
+    
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -388,32 +356,5 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    <script>
-  let currentIndex = 0;
-  const slides = document.querySelectorAll('.carousel-images img');
-  const dots = document.querySelectorAll('.dot');
-
-  function showSlide() {
-    const width = slides[0].clientWidth;
-    const carousel = document.getElementById('carouselImages');
-    carousel.style.transform = 'translateX(' + (-width * currentIndex) + 'px)';
-    dots.forEach(dot => dot.style.backgroundColor = '#bbb');
-    dots[currentIndex].style.backgroundColor = '#717171';
-  }
-
-  function currentSlide(index) {
-    currentIndex = index;
-    showSlide();
-  }
-
-  function autoSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide();
-  }
-
-  let slideInterval = setInterval(autoSlide, 3000);
-
-  dots[0].style.backgroundColor = '#717171';
-</script>
   </body>
 </html>
