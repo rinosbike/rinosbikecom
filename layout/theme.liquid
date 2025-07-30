@@ -253,11 +253,8 @@
       }
     {% endstyle %}
 
-    <!-- Load critical CSS immediately -->
+    <!-- Load ONLY the most critical CSS immediately -->
     {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'component-card.css' | asset_url | stylesheet_tag }}
-    {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
-    {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
     <!-- Font preloading for faster text rendering -->
     {%- unless settings.type_body_font.system? -%}
@@ -267,18 +264,61 @@
       <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
 
-    <!-- Non-critical CSS - Load asynchronously -->
-    <link rel="stylesheet" href="{{ 'component-cart.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-totals.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'quantity-popover.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-discounts.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-list-social.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-cart-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ 'component-loading-spinner.css' | asset_url }}" media="print" onload="this.media='all'">
+    <!-- Preload other critical CSS files but don't block render -->
+    <link rel="preload" href="{{ 'component-card.css' | asset_url }}" as="style">
+    <link rel="preload" href="{{ 'component-slideshow.css' | asset_url }}" as="style">
+    <link rel="preload" href="{{ 'component-slider.css' | asset_url }}" as="style">
+
+    <!-- Load CSS asynchronously with better method -->
+    <script>
+      // More reliable CSS loading function
+      function loadCSS(href, media) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        link.media = media || 'all';
+        document.head.appendChild(link);
+        return link;
+      }
+
+      // Load remaining CSS after initial paint
+      if (window.requestIdleCallback) {
+        requestIdleCallback(function() {
+          loadCSS("{{ 'component-card.css' | asset_url }}");
+          loadCSS("{{ 'component-slideshow.css' | asset_url }}");
+          loadCSS("{{ 'component-slider.css' | asset_url }}");
+          loadCSS("{{ 'component-cart.css' | asset_url }}");
+          loadCSS("{{ 'component-totals.css' | asset_url }}");
+          loadCSS("{{ 'quantity-popover.css' | asset_url }}");
+          loadCSS("{{ 'component-price.css' | asset_url }}");
+          loadCSS("{{ 'component-discounts.css' | asset_url }}");
+          loadCSS("{{ 'component-list-social.css' | asset_url }}");
+          loadCSS("{{ 'component-cart-drawer.css' | asset_url }}");
+          loadCSS("{{ 'component-loading-spinner.css' | asset_url }}");
+        });
+      } else {
+        // Fallback for browsers without requestIdleCallback
+        setTimeout(function() {
+          loadCSS("{{ 'component-card.css' | asset_url }}");
+          loadCSS("{{ 'component-slideshow.css' | asset_url }}");
+          loadCSS("{{ 'component-slider.css' | asset_url }}");
+          loadCSS("{{ 'component-cart.css' | asset_url }}");
+          loadCSS("{{ 'component-totals.css' | asset_url }}");
+          loadCSS("{{ 'quantity-popover.css' | asset_url }}");
+          loadCSS("{{ 'component-price.css' | asset_url }}");
+          loadCSS("{{ 'component-discounts.css' | asset_url }}");
+          loadCSS("{{ 'component-list-social.css' | asset_url }}");
+          loadCSS("{{ 'component-cart-drawer.css' | asset_url }}");
+          loadCSS("{{ 'component-loading-spinner.css' | asset_url }}");
+        }, 100);
+      }
+    </script>
 
     <!-- Fallback for users without JavaScript -->
     <noscript>
+      {{ 'component-card.css' | asset_url | stylesheet_tag }}
+      {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+      {{ 'component-slider.css' | asset_url | stylesheet_tag }}
       {{ 'component-cart.css' | asset_url | stylesheet_tag }}
       {{ 'component-totals.css' | asset_url | stylesheet_tag }}
       {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
@@ -290,13 +330,33 @@
     </noscript>
 
     {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
-      <link rel="stylesheet" href="{{ 'component-localization-form.css' | asset_url }}" media="print" onload="this.media='all'">
+      <script>
+        if (window.requestIdleCallback) {
+          requestIdleCallback(function() {
+            loadCSS("{{ 'component-localization-form.css' | asset_url }}");
+          });
+        } else {
+          setTimeout(function() {
+            loadCSS("{{ 'component-localization-form.css' | asset_url }}");
+          }, 200);
+        }
+      </script>
       <noscript>{{ 'component-localization-form.css' | asset_url | stylesheet_tag }}</noscript>
       <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
     {%- if settings.predictive_search_enabled -%}
-      <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
+      <script>
+        if (window.requestIdleCallback) {
+          requestIdleCallback(function() {
+            loadCSS("{{ 'component-predictive-search.css' | asset_url }}");
+          });
+        } else {
+          setTimeout(function() {
+            loadCSS("{{ 'component-predictive-search.css' | asset_url }}");
+          }, 200);
+        }
+      </script>
       <noscript>{{ 'component-predictive-search.css' | asset_url | stylesheet_tag }}</noscript>
     {%- endif -%}
 
