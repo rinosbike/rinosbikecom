@@ -34,6 +34,197 @@
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
 
+    <!-- 🚀 CRITICAL CSS - Loads header/hero immediately -->
+    <style>
+      /* Essential variables and base styles */
+      :root {
+        --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+        --font-body-style: {{ settings.type_body_font.style }};
+        --font-body-weight: {{ settings.type_body_font.weight }};
+        --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+        --font-heading-style: {{ settings.type_header_font.style }};
+        --font-heading-weight: {{ settings.type_header_font.weight }};
+        --page-width: {{ settings.page_width | divided_by: 10 }}rem;
+        --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
+        
+        {% for scheme in settings.color_schemes -%}
+          {% if forloop.index == 1 -%}
+            --color-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
+            --color-foreground: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
+            --color-button: {{ scheme.settings.button.red }},{{ scheme.settings.button.green }},{{ scheme.settings.button.blue }};
+            --color-button-text: {{ scheme.settings.button_label.red }},{{ scheme.settings.button_label.green }},{{ scheme.settings.button_label.blue }};
+          {%- endif %}
+        {% endfor %}
+      }
+
+      /* Critical layout styles */
+      *, *::before, *::after { box-sizing: border-box; }
+      
+      html {
+        font-size: calc({{ settings.body_scale | divided_by: 100.0 }} * 62.5%);
+        height: 100%;
+      }
+
+      body {
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 100%;
+        min-height: 100%;
+        margin: 0;
+        font-size: 1.5rem;
+        font-family: var(--font-body-family);
+        font-style: var(--font-body-style);
+        font-weight: var(--font-body-weight);
+        color: rgba(var(--color-foreground), 0.75);
+        background-color: rgb(var(--color-background));
+      }
+
+      @media screen and (min-width: 750px) {
+        body { font-size: 1.6rem; }
+      }
+
+      /* Header critical styles */
+      .header-wrapper {
+        background: rgb(var(--color-background));
+        position: relative;
+        z-index: 10;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        max-width: var(--page-width);
+        margin: 0 auto;
+      }
+
+      .header__heading, .h0 {
+        font-family: var(--font-heading-family);
+        font-style: var(--font-heading-style);
+        font-weight: var(--font-heading-weight);
+        margin: 0;
+        word-break: break-word;
+      }
+
+      .header__heading-link {
+        text-decoration: none;
+        color: rgba(var(--color-foreground), 0.75);
+      }
+
+      .list-menu {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 2rem;
+      }
+
+      .list-menu a {
+        text-decoration: none;
+        color: rgba(var(--color-foreground), 0.75);
+        font-weight: var(--font-body-weight);
+      }
+
+      /* Hero/banner critical styles */
+      .banner {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        min-height: 50vh;
+      }
+
+      .banner__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 4rem 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .banner__heading {
+        font-family: var(--font-heading-family);
+        font-style: var(--font-heading-style);
+        font-weight: var(--font-heading-weight);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1.1;
+        margin: 0 0 1.5rem;
+        color: rgba(var(--color-foreground), 0.75);
+      }
+
+      .banner__text {
+        font-size: 1.8rem;
+        margin: 0 0 2rem;
+        max-width: 60rem;
+      }
+
+      /* Button critical styles */
+      .btn, .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.2rem 2.4rem;
+        background-color: rgb(var(--color-button));
+        color: rgb(var(--color-button-text));
+        text-decoration: none;
+        border: none;
+        border-radius: 0.4rem;
+        font-family: inherit;
+        font-size: 1.4rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .btn:hover, .button:hover {
+        opacity: 0.8;
+        transform: translateY(-1px);
+      }
+
+      /* Navigation toggle for mobile */
+      .header__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4.4rem;
+        height: 4.4rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+      }
+
+      @media screen and (min-width: 990px) {
+        .header__icon--menu { display: none; }
+      }
+
+      @media screen and (max-width: 989px) {
+        .list-menu { display: none; }
+        .header { padding: 1rem; }
+        .banner__content { padding: 3rem 1rem; }
+        .banner__heading { font-size: clamp(2rem, 8vw, 3rem); }
+      }
+
+      /* Skip to content */
+      .skip-to-content-link {
+        position: absolute;
+        left: -9999px;
+        z-index: 999;
+        padding: 1rem;
+        background: rgb(var(--color-button));
+        color: rgb(var(--color-button-text));
+        text-decoration: none;
+      }
+
+      .skip-to-content-link:focus {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1rem;
+      }
+    </style>
+
     {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
@@ -242,8 +433,9 @@
       }
     {% endstyle %}
 
-    <!-- Base CSS - Critical, load immediately -->
-    {{ 'base.css' | asset_url | stylesheet_tag }}
+    <!-- Base CSS - Load immediately but defer non-critical -->
+    <link rel="stylesheet" href="{{ 'base.css' | asset_url }}" media="print" onload="this.media='all'">
+    <noscript>{{ 'base.css' | asset_url | stylesheet_tag }}</noscript>
 
     <!-- Font preloading for faster text rendering -->
     {%- unless settings.type_body_font.system? -%}
