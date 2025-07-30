@@ -441,10 +441,15 @@
       <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
 
-    <!-- Preload critical CSS files for faster loading -->
-    <link rel="preload" href="{{ 'base.css' | asset_url }}" as="style">
+    <!-- CRITICAL CSS - Load immediately, no deferring -->
+    {{ 'base.css' | asset_url | stylesheet_tag }}
 
-    <!-- CSS Loading Script - Better async loading -->
+    <!-- LAYOUT-CRITICAL CSS - Also load immediately -->
+    {{ 'component-card.css' | asset_url | stylesheet_tag }}
+    {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+    {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+
+    <!-- CSS Loading Script - Only for truly non-critical files -->
     <script>
       // Function to load CSS asynchronously
       function loadCSS(href, before, media) {
@@ -487,35 +492,27 @@
         return ss;
       }
 
-      // Load all CSS files after critical path
+      // Load only NON-CRITICAL CSS files after page starts rendering
       setTimeout(function() {
-        loadCSS("{{ 'base.css' | asset_url }}");
         loadCSS("{{ 'component-cart.css' | asset_url }}");
         loadCSS("{{ 'component-totals.css' | asset_url }}");
         loadCSS("{{ 'quantity-popover.css' | asset_url }}");
         loadCSS("{{ 'component-price.css' | asset_url }}");
         loadCSS("{{ 'component-discounts.css' | asset_url }}");
         loadCSS("{{ 'component-list-social.css' | asset_url }}");
-        loadCSS("{{ 'component-card.css' | asset_url }}");
-        loadCSS("{{ 'component-slideshow.css' | asset_url }}");
-        loadCSS("{{ 'component-slider.css' | asset_url }}");
         loadCSS("{{ 'component-cart-drawer.css' | asset_url }}");
         loadCSS("{{ 'component-loading-spinner.css' | asset_url }}");
-      }, 100);
+      }, 50);
     </script>
 
     <!-- Fallback for users without JavaScript -->
     <noscript>
-      {{ 'base.css' | asset_url | stylesheet_tag }}
       {{ 'component-cart.css' | asset_url | stylesheet_tag }}
       {{ 'component-totals.css' | asset_url | stylesheet_tag }}
       {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
       {{ 'component-price.css' | asset_url | stylesheet_tag }}
       {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
       {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
-      {{ 'component-card.css' | asset_url | stylesheet_tag }}
-      {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
-      {{ 'component-slider.css' | asset_url | stylesheet_tag }}
       {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
       {{ 'component-loading-spinner.css' | asset_url | stylesheet_tag }}
     </noscript>
