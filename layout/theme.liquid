@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
+
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -248,10 +249,8 @@
           font-size: 1.6rem;
         }
       }
-
     {% endstyle %}
 
-    <!-- KEEP BASE CSS AS NORMAL TO PREVENT CRASHES -->
     {{ 'base.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
@@ -267,36 +266,13 @@
     {%- endif -%}
 
     {%- if settings.predictive_search_enabled -%}
-      <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
+      <link
+        rel="stylesheet"
+        href="{{ 'component-predictive-search.css' | asset_url }}"
+        media="print"
+        onload="this.media='all'"
+      >
     {%- endif -%}
-
-    <!-- PERFORMANCE FIX: Load component CSS after page loads (non-blocking) -->
-    <script>
-      window.addEventListener('load', function() {
-        // Define CSS files to load after page load
-        var deferredCSS = [
-          '{{ "component-cart.css" | asset_url }}',
-          '{{ "component-list-social.css" | asset_url }}',
-          '{{ "component-slider.css" | asset_url }}',
-          '{{ "component-price.css" | asset_url }}',
-          '{{ "component-totals.css" | asset_url }}',
-          '{{ "component-loading-spinner.css" | asset_url }}',
-          '{{ "component-slideshow.css" | asset_url }}',
-          '{{ "component-cart-drawer.css" | asset_url }}',
-          '{{ "quantity-popover.css" | asset_url }}',
-          '{{ "component-discounts.css" | asset_url }}',
-          '{{ "component-card.css" | asset_url }}'
-        ];
-        
-        // Load each CSS file
-        deferredCSS.forEach(function(href) {
-          var link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.href = href;
-          document.head.appendChild(link);
-        });
-      });
-    </script>
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -305,19 +281,13 @@
       }
     </script>
     <script type="text/javascript">
-      (function (c, l, a, r, i, t, y) {
-        c[a] =
-          c[a] ||
-          function () {
-            (c[a].q = c[a].q || []).push(arguments);
-          };
-        t = l.createElement(r);
-        t.async = 1;
-        t.src = 'https://www.clarity.ms/tag/' + i;
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-      })(window, document, 'clarity', 'script', 'm07yysxhhy');
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "m07yysxhhy");
     </script>
+    
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -386,32 +356,5 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    <script>
-  let currentIndex = 0;
-  const slides = document.querySelectorAll('.carousel-images img');
-  const dots = document.querySelectorAll('.dot');
-
-  function showSlide() {
-    const width = slides[0].clientWidth;
-    const carousel = document.getElementById('carouselImages');
-    carousel.style.transform = 'translateX(' + (-width * currentIndex) + 'px)';
-    dots.forEach(dot => dot.style.backgroundColor = '#bbb');
-    dots[currentIndex].style.backgroundColor = '#717171';
-  }
-
-  function currentSlide(index) {
-    currentIndex = index;
-    showSlide();
-  }
-
-  function autoSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide();
-  }
-
-  let slideInterval = setInterval(autoSlide, 3000);
-
-  dots[0].style.backgroundColor = '#717171';
-</script>
   </body>
 </html>
