@@ -167,6 +167,10 @@
       .header {
         position: relative;
         background: rgb(var(--color-background));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
       }
 
       .header-wrapper {
@@ -176,6 +180,7 @@
 
       .header__heading {
         margin: 0;
+        flex: 0 0 auto;
       }
 
       .header__heading-link {
@@ -184,6 +189,7 @@
         font-family: var(--font-heading-family);
         font-weight: var(--font-heading-weight);
         font-style: var(--font-heading-style);
+        font-size: 2rem;
       }
 
       /* Navigation */
@@ -191,6 +197,8 @@
         display: flex;
         align-items: center;
         gap: 2rem;
+        flex: 1;
+        justify-content: center;
       }
 
       .list-menu {
@@ -199,11 +207,111 @@
         margin: 0;
         padding: 0;
         gap: 2rem;
+        align-items: center;
       }
 
       .list-menu a {
         text-decoration: none;
         color: rgba(var(--color-foreground), 0.75);
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        transition: opacity 0.2s ease;
+      }
+
+      .list-menu a:hover {
+        opacity: 0.7;
+      }
+
+      /* Header Icons and Utilities */
+      .header__icons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex: 0 0 auto;
+      }
+
+      .header__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4.4rem;
+        height: 4.4rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: rgba(var(--color-foreground), 0.75);
+      }
+
+      .header__icon svg {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      /* Currency/Language Localization */
+      .localization-form {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .localization-form__select {
+        background: transparent;
+        border: 1px solid rgba(var(--color-foreground), 0.2);
+        border-radius: 4px;
+        padding: 0.5rem 1rem;
+        color: rgba(var(--color-foreground), 0.75);
+        font-size: 1.3rem;
+        cursor: pointer;
+        min-width: 6rem;
+        text-align: center;
+      }
+
+      .localization-form__select:focus {
+        outline: 2px solid rgba(var(--color-foreground), 0.3);
+        outline-offset: 2px;
+      }
+
+      .disclosure {
+        position: relative;
+        display: inline-block;
+      }
+
+      .disclosure__button {
+        background: transparent;
+        border: 1px solid rgba(var(--color-foreground), 0.2);
+        border-radius: 4px;
+        padding: 0.5rem 1rem;
+        color: rgba(var(--color-foreground), 0.75);
+        font-size: 1.3rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        min-width: 6rem;
+        justify-content: center;
+      }
+
+      .disclosure__button:hover {
+        background: rgba(var(--color-foreground), 0.05);
+      }
+
+      /* Mobile Menu Toggle */
+      .header__icon--menu {
+        display: none;
+      }
+
+      @media screen and (max-width: 989px) {
+        .header__icon--menu {
+          display: flex;
+        }
+        
+        .header__inline-menu {
+          display: none;
+        }
+        
+        .header {
+          padding: 1rem;
+        }
       }
 
       /* Banner/Hero Critical Styles - PREVENT LAYOUT SHIFT */
@@ -215,6 +323,25 @@
         align-items: center;
         justify-content: center;
         text-align: center;
+        background: rgba(var(--color-background), 0.95);
+        overflow: hidden;
+      }
+
+      .banner__media {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      .banner__media img,
+      .banner__media video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
       }
 
       .banner__content {
@@ -224,6 +351,11 @@
         margin: 0 auto;
         position: relative;
         z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
       }
 
       .banner__heading {
@@ -242,6 +374,7 @@
         max-width: 60ch;
         margin-left: auto;
         margin-right: auto;
+        line-height: 1.5;
       }
 
       .banner__box {
@@ -250,6 +383,57 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: 1.5rem;
+        width: 100%;
+      }
+
+      /* CRITICAL: Banner CTA Buttons - "2025 New Model" etc */
+      .banner__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .banner .btn,
+      .banner .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem 3rem;
+        background-color: rgb(var(--color-button));
+        color: rgb(var(--color-button-text));
+        text-decoration: none;
+        border: var(--buttons-border-width) solid rgba(var(--color-button), var(--buttons-border-opacity));
+        border-radius: var(--buttons-radius);
+        font-family: inherit;
+        font-size: 1.6rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.15s ease-in-out;
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        min-width: 20rem;
+      }
+
+      .banner .btn:hover,
+      .banner .button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .banner .btn--secondary,
+      .banner .button--secondary {
+        background-color: transparent;
+        color: rgba(var(--color-foreground), 0.75);
+        border: 2px solid rgba(var(--color-foreground), 0.3);
+      }
+
+      .banner .btn--secondary:hover,
+      .banner .button--secondary:hover {
+        background-color: rgba(var(--color-foreground), 0.1);
       }
 
       /* Button Styles */
@@ -434,6 +618,39 @@
         
         .page-width {
           padding: 0 1rem;
+        }
+
+        .banner .btn,
+        .banner .button {
+          font-size: 1.4rem;
+          padding: 1.2rem 2rem;
+          min-width: 18rem;
+        }
+
+        .banner__buttons {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .banner .btn,
+        .banner .button {
+          width: 100%;
+          max-width: 30rem;
+        }
+
+        .header__icons {
+          gap: 0.5rem;
+        }
+
+        .localization-form {
+          gap: 0.3rem;
+        }
+
+        .localization-form__select,
+        .disclosure__button {
+          padding: 0.4rem 0.8rem;
+          font-size: 1.2rem;
+          min-width: 5rem;
         }
       }
 
