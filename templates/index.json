@@ -110,7 +110,7 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image_2": "shopify://shop_images/DSCF5416.jpg",
+        "image_2": "shopify://shop_images/DSCF5416.webp",
         "image_overlay_opacity": 40,
         "image_height": "medium",
         "desktop_content_position": "top-right",
@@ -159,7 +159,7 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/DSCF5464.jpg",
+        "image": "shopify://shop_images/DSCF5464.webp",
         "image_overlay_opacity": 20,
         "image_height": "large",
         "desktop_content_position": "top-left",
