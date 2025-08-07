@@ -1,243 +1,249 @@
 <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
-            <style>
-                .section-11{
-                    padding-right: 25px;
-                    padding-left: 25px;
-                }
-                .section-11-table {
-                    width: 100%;
-                    border-collapse: collapse;
-                    font-family: sans-serif;
-                }
-                
-                .section-11-th, .section-11-td {
-                    padding: 15px 30px;
-                    text-align: left;
-                    border-bottom: 1px solid #4b4b4b;
-                }
-
-                .section-11-td-2{
-                    padding: 15px 30px;
-                    text-align: left;
-                    border-bottom: 2px solid #F04A00;
-                }
-                
-                .section-11-th {
-                    border-bottom: 1px solid #4b4b4b;
-                    align-items: center;
-                }
-
-                .specific-column{
-                    border-right: 2px solid #F04A00;
-                    border-left: 2px solid #F04A00;
-                }
-                
-                .section-11-td {
-                    color:  #4b4b4b;
-                }
-                
-                .section-11-td-1 {
-                    padding: 1px;
-                    text-align: left;
-                    border-bottom: 1px solid #4b4b4b;
-                    color:  #4b4b4b;
-                }
-                
-                .section-11-img {
-                    max-width: 175px;
-                }
-        
-                .section-11-img-1 {
-                    max-width: 159px;
-                }
-                
-                .section-11 {
-                    margin-top: 15px;
-                }
-                
-                .section-11-container {
-                    max-width: 1500px;
-                    margin: auto;
-                }
-                
-                .section-11-text {
-                    font-size: 15px;
-                    line-height: 99%;
-                    font-weight: 500;
-                    color: black;
-                }
-        
-                .section-4-h1{
-                    text-transform: uppercase;
-                    font-weight: 600;
-                    font-size: 23px;
-                    line-height: 92%;
-                    color: black;
-                }
-        
-                /* Responsive styles */
-                @media (max-width: 768px) {
-                    .section-11-th, .section-11-td {
-                        padding: 10px 12px;
-                        font-size: 13px;
-                    }
-                    
-                    .section-11-img {
-                        max-width: 120px;
-                    }
-        
-                    .section-11-img-1 {
-                        max-width: 114px;
-                    }
-                    
-                    .section-11-text {
-                        font-size: 11px;
-                        line-height: 100%;
-                    }
-        
-                    .section-4-h1{
-                        font-size: 15px;
-                        line-height: 100%;
-                    }
-        
-                    .section-11-td-1{
-                        font-size: 13px;
-                    }
-        
-                    .section-11-td{
-                        font-size: 13px;
-                    }
-                }
-        
-                /* Scrollable table wrapper */
-                .scrollable-table-wrapper {
-                    overflow-x: auto;
-                    width: 100%;
-                }
-            </style>
-        </head>
-    <body>
-        <section class="section-11">
-            <div class="section-11-container">
-                <div class="scrollable-table-wrapper">
-                    <table class="section-11-table">
-                        <thead class="section-11-thead">
-                            <tr class="section-11-tr">
-                                <th colspan="8">
-                                    <h1 style="color: black; font-size: 35px;">{{ 'bikes.title.road' | t }}</h1>
-                                </th>
-                            </tr>
-                            <tr class="section-11-tr">
-                                <th class="section-11-th"></th>
-                                <th class="section-11-th">
-                                    <img class="section-11-img" src="{{ 'bikes.odin1.image' | t }}">
-                                    <div class="section-4-h1">{{ 'bikes.odin1.title' | t }}</div>
-                                    <div class="section-11-text">
-                                        {{ 'bikes.odin1.description' | t }}
-                                    </div>
-                                </th>
-                                <th class="section-11-th">
-                                    <img class="section-11-img" src="{{ 'bikes.odin3.image' | t }}">
-                                    <div class="section-4-h1">{{ 'bikes.odin3.title' | t }}</div>
-                                    <div class="section-11-text">
-                                        {{ 'bikes.odin3.description' | t }}
-                                    </div>
-                                </th>
-                                <th class="section-11-th specific-column" style="border-top: 2px solid #F04A00;">
-                                    <img class="section-11-img" src="{{ 'bikes.odin4.image' | t }}">
-                                    <div class="section-4-h1">{{ 'bikes.odin4.title' | t }}</div>
-                                    <div class="section-11-text" style="color: #F04A00; font-weight: bold;">
-                                        {{ 'bikes.odin4.description' | t }}
-                                    </div>
-                                </th>
-                                <th class="section-11-th">
-                                    <img class="section-11-img" src="{{ 'bikes.odin5.image' | t }}">
-                                    <div class="section-4-h1">{{ 'bikes.odin5.title' | t }}</div>
-                                    <div class="section-11-text">
-                                        {{ 'bikes.odin5.description' | t }}
-                                    </div>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody class="section-11-tbody">
-                            <tr class="section-11-tr">
-                                <td class="section-11-td-1">{{ 'bikes.weight_label' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin1.weight' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin3.weight' | t }}</td>
-                                <td class="section-11-td specific-column">{{ 'bikes.odin4.weight' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin5.weight' | t }}</td>
-                            </tr>
-                            <tr class="section-11-tr">
-                                <td class="section-11-td-1">{{ 'bikes.gear_label' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin1.gear' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin3.gear' | t }}</td>
-                                <td class="section-11-td specific-column">{{ 'bikes.odin4.gear' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin5.gear' | t }}</td>
-                            </tr>
-                            <tr class="section-11-tr">
-                                <td class="section-11-td-1">{{ 'bikes.gears_label' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin1.gears' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin3.gears' | t }}</td>
-                                <td class="section-11-td specific-column">{{ 'bikes.odin4.gears' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin5.gears' | t }}</td>
-                            </tr>
-                            <tr class="section-11-tr">
-                                <td class="section-11-td-1">{{ 'bikes.frame_label' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin1.frame' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin3.frame' | t }}</td>
-                                <td class="section-11-td specific-column">{{ 'bikes.odin4.frame' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin5.frame' | t }}</td>
-                            </tr>
-                            <tr class="section-11-tr">
-                                <td class="section-11-td-1">{{ 'bikes.frameSize_label' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin1.frameSize' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin3.frameSize' | t }}</td>
-                                <td class="section-11-td specific-column">{{ 'bikes.odin4.frameSize' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin5.frameSize' | t }}</td>
-                            </tr>
-                            <tr class="section-11-tr">
-                                <td class="section-11-td-1">{{ 'bikes.brakes_label' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin1.brakes' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin3.brakes' | t }}</td>
-                                <td class="section-11-td specific-column">{{ 'bikes.odin4.brakes' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin5.brakes' | t }}</td>
-                            </tr>
-                            <tr class="section-11-tr">
-                                <td class="section-11-td-1">{{ 'bikes.wheelSize_label' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin1.wheelSize' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin3.wheelSize' | t }}</td>
-                                <td class="section-11-td specific-column">{{ 'bikes.odin4.wheelSize' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin5.wheelSize' | t }}</td>
-                            </tr>
-                            <tr class="section-11-tr">
-                                <td class="section-11-td-1">{{ 'bikes.rims_label' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin1.rims' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin3.rims' | t }}</td>
-                                <td class="section-11-td-2 specific-column">{{ 'bikes.odin4.rims' | t }}</td>
-                                <td class="section-11-td">{{ 'bikes.odin5.rims' | t }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    .section-11{
+      padding-right: 25px;
+      padding-left: 25px;
+    }
+    .section-11-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: sans-serif;
+    }
+    .section-11-th, .section-11-td {
+      padding: 15px 30px;
+      text-align: left;
+      border-bottom: 1px solid #4b4b4b;
+    }
+    .section-11-td-2{
+      padding: 15px 30px;
+      text-align: left;
+      border-bottom: 2px solid #F04A00;
+    }
+    .section-11-th {
+      border-bottom: 1px solid #4b4b4b;
+      align-items: center;
+    }
+    .specific-column{
+      border-right: 2px solid #F04A00;
+      border-left: 2px solid #F04A00;
+    }
+    .section-11-td {
+      color: #4b4b4b;
+    }
+    .section-11-td-1 {
+      padding: 1px;
+      text-align: left;
+      border-bottom: 1px solid #4b4b4b;
+      color: #4b4b4b;
+    }
+    .section-11-img {
+      max-width: 175px;
+    }
+    .section-11-img-1 {
+      max-width: 159px;
+    }
+    .section-11 {
+      margin-top: 15px;
+    }
+    .section-11-container {
+      max-width: 1500px;
+      margin: auto;
+    }
+    .section-11-text {
+      font-size: 15px;
+      line-height: 99%;
+      font-weight: 500;
+      color: black;
+    }
+    .section-4-h1{
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 23px;
+      line-height: 92%;
+      color: black;
+    }
+    @media (max-width: 768px) {
+      .section-11-th, .section-11-td {
+        padding: 10px 12px;
+        font-size: 13px;
+      }
+      .section-11-img {
+        max-width: 120px;
+      }
+      .section-11-img-1 {
+        max-width: 114px;
+      }
+      .section-11-text {
+        font-size: 11px;
+        line-height: 100%;
+      }
+      .section-4-h1{
+        font-size: 15px;
+        line-height: 100%;
+      }
+      .section-11-td-1, .section-11-td {
+        font-size: 13px;
+      }
+    }
+    .scrollable-table-wrapper {
+      overflow-x: auto;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <section class="section-11">
+    <div class="section-11-container">
+      <div class="scrollable-table-wrapper">
+        <table class="section-11-table">
+          <thead class="section-11-thead">
+            <tr class="section-11-tr">
+              <!-- updated colspan to 10 -->
+              <th colspan="10">
+                <h1 style="color: black; font-size: 35px;">
+                  {{ 'bikes.title.road' | t }}
+                </h1>
+              </th>
+            </tr>
+            <tr class="section-11-tr">
+              <th class="section-11-th"></th>
+              <!-- Odin 1 -->
+              <th class="section-11-th">
+                <img class="section-11-img" src="{{ 'bikes.odin1.image' | t }}">
+                <div class="section-4-h1">{{ 'bikes.odin1.title' | t }}</div>
+                <div class="section-11-text">{{ 'bikes.odin1.description' | t }}</div>
+              </th>
+              <!-- Odin 3 -->
+              <th class="section-11-th">
+                <img class="section-11-img" src="{{ 'bikes.odin3.image' | t }}">
+                <div class="section-4-h1">{{ 'bikes.odin3.title' | t }}</div>
+                <div class="section-11-text">{{ 'bikes.odin3.description' | t }}</div>
+              </th>
+              <!-- Odin 4 (highlighted) -->
+              <th class="section-11-th specific-column" style="border-top: 2px solid #F04A00;">
+                <img class="section-11-img" src="{{ 'bikes.odin4.image' | t }}">
+                <div class="section-4-h1">{{ 'bikes.odin4.title' | t }}</div>
+                <div class="section-11-text" style="color: #F04A00; font-weight: bold;">
+                  {{ 'bikes.odin4.description' | t }}
                 </div>
-            </div>
-        </section>
-    </body>
-    </html>
-    
-    {% schema %}
+              </th>
+              <!-- Odin 5 -->
+              <th class="section-11-th">
+                <img class="section-11-img" src="{{ 'bikes.odin5.image' | t }}">
+                <div class="section-4-h1">{{ 'bikes.odin5.title' | t }}</div>
+                <div class="section-11-text">{{ 'bikes.odin5.description' | t }}</div>
+              </th>
+              <!-- Odin 6.0 -->
+              <th class="section-11-th">
+                <img class="section-11-img"
+                     src="https://rinosbike.com/cdn/shop/files/ODIN6_1.png?v=1750755375&width=713">
+                <div class="section-4-h1">{{ 'bikes.odin6_0.title' | t }}</div>
+                <div class="section-11-text">{{ 'bikes.odin6_0.description' | t }}</div>
+              </th>
+              <!-- Odin 6.1 -->
+              <th class="section-11-th">
+                <img class="section-11-img"
+                     src="https://rinosbike.com/cdn/shop/files/1_edd71595-f78a-4465-9fa4-bc476b3d0b99.png?v=1751964247&width=713">
+                <div class="section-4-h1">{{ 'bikes.odin6_1.title' | t }}</div>
+                <div class="section-11-text">{{ 'bikes.odin6_1.description' | t }}</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="section-11-tbody">
+            <tr class="section-11-tr">
+              <td class="section-11-td-1">{{ 'bikes.weight_label'    | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin1.weight'    | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin3.weight'    | t }}</td>
+              <td class="section-11-td specific-column">{{ 'bikes.odin4.weight'    | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin5.weight'    | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_0.weight'  | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_1.weight'  | t }}</td>
+            </tr>
+            <tr class="section-11-tr">
+              <td class="section-11-td-1">{{ 'bikes.gear_label'      | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin1.gear'      | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin3.gear'      | t }}</td>
+              <td class="section-11-td specific-column">{{ 'bikes.odin4.gear'      | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin5.gear'      | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_0.gear'    | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_1.gear'    | t }}</td>
+            </tr>
+            <tr class="section-11-tr">
+              <td class="section-11-td-1">{{ 'bikes.gears_label'     | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin1.gears'     | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin3.gears'     | t }}</td>
+              <td class="section-11-td specific-column">{{ 'bikes.odin4.gears'     | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin5.gears'     | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_0.gears'   | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_1.gears'   | t }}</td>
+            </tr>
+            <tr class="section-11-tr">
+              <td class="section-11-td-1">{{ 'bikes.frame_label'     | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin1.frame'     | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin3.frame'     | t }}</td>
+              <td class="section-11-td specific-column">{{ 'bikes.odin4.frame'     | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin5.frame'     | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_0.frame'   | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_1.frame'   | t }}</td>
+            </tr>
+            <tr class="section-11-tr">
+              <td class="section-11-td-1">{{ 'bikes.frameSize_label' | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin1.frameSize' | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin3.frameSize' | t }}</td>
+              <td class="section-11-td specific-column">{{ 'bikes.odin4.frameSize' | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin5.frameSize' | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_0.frameSize'| t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_1.frameSize'| t }}</td>
+            </tr>
+            <tr class="section-11-tr">
+              <td class="section-11-td-1">{{ 'bikes.brakes_label'    | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin1.brakes'    | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin3.brakes'    | t }}</td>
+              <td class="section-11-td specific-column">{{ 'bikes.odin4.brakes'    | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin5.brakes'    | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_0.brakes'  | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_1.brakes'  | t }}</td>
+            </tr>
+            <tr class="section-11-tr">
+              <td class="section-11-td-1">{{ 'bikes.wheelSize_label' | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin1.wheelSize' | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin3.wheelSize' | t }}</td>
+              <td class="section-11-td specific-column">{{ 'bikes.odin4.wheelSize' | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin5.wheelSize' | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_0.wheelSize'| t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_1.wheelSize'| t }}</td>
+            </tr>
+            <tr class="section-11-tr">
+              <td class="section-11-td-1">{{ 'bikes.rims_label'     | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin1.rims'     | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin3.rims'     | t }}</td>
+              <td class="section-11-td-2 specific-column">{{ 'bikes.odin4.rims'     | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin5.rims'     | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_0.rims'   | t }}</td>
+              <td class="section-11-td">{{ 'bikes.odin6_1.rims'   | t }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  {% schema %}
+  {
+    "name": "Rinosbike-Comparison-road",
+    "settings": [],
+    "presets": [
       {
         "name": "Rinosbike-Comparison-road",
-        "settings": [],
-        "presets": [
-            {
-                "name": "Rinosbike-Comparison-road",
-                "category": "Custom"
-            }
-        ]
-    }
-    {% endschema %}
+        "category": "Custom"
+      }
+    ]
+  }
+  {% endschema %}
+</body>
+</html>
