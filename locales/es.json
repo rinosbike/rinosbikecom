@@ -976,7 +976,7 @@
     "shimano_grx_600_hydraulic": "Shimano GRX 600 (Frenos hidráulicos)",
     "shimano_grx_820_hydraulic": "Shimano GRX 820 (Frenos hidráulicos)",
 
-    "hg500_11_34t": "11 Velocidades",
+    "hg500_11_34t": "10 Velocidades",
     "r8100_11_34t": "11 Velocidades",
 
     "grx_fc_rx600_46_30t": "Shimano GRX FC-RX600 (46-30D)",
@@ -988,6 +988,6 @@
     "rinos_carbon_420_440": "Rinos Carbon 420/440 mm",
 
     "approx_103kg": "~10,3 kg",
-    "11_speed_11_34t": "11 Velocidades"
+    "11_speed_11_34t": "12 Velocidades"
   }
 }
