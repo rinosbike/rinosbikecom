@@ -1001,8 +1001,8 @@
     "shimano_grx_600_hydraulic": "Shimano GRX 600 (Hamulce hydrauliczne)",
     "shimano_grx_820_hydraulic": "Shimano GRX 820 (Hamulce hydrauliczne)",
 
-    "hg500_11_34t": "Shimano CS-HG500-10 (11-34 z)",
-    "r8100_11_34t": "Shimano CS-R8100 (11-34 z)",
+    "hg500_11_34t": "10-biegowy",
+    "r8100_11_34t": "11-biegowy",
 
     "grx_fc_rx600_46_30t": "Shimano GRX FC-RX600 (46-30 z)",
     "grx_fc_rx820_48_31t": "Shimano GRX FC-RX820 (48-31 z)",
@@ -1013,6 +1013,6 @@
     "rinos_carbon_420_440": "Rinos Carbon 420/440 mm",
 
     "approx_103kg": "~10,3 kg",
-    "11_speed_11_34t": "11-biegowy"
+    "11_speed_11_34t": "12-biegowy"
   }
 }
