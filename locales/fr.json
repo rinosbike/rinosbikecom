@@ -976,8 +976,9 @@
     "shimano_grx_600_hydraulic": "Shimano GRX 600 (Freins hydrauliques)",
     "shimano_grx_820_hydraulic": "Shimano GRX 820 (Freins hydrauliques)",
 
-    "hg500_11_34t": "Shimano CS-HG500-10 (11-34 dents)",
-    "r8100_11_34t": "Shimano CS-R8100 (11-34 dents)",
+    "hg500_11_34t": "10 vitesses",
+    "r8100_11_34t": "11 vitesses",
+    "11_speed_11_34t": "12 vitesses",
 
     "grx_fc_rx600_46_30t": "Shimano GRX FC-RX600 (46-30 dents)",
     "grx_fc_rx820_48_31t": "Shimano GRX FC-RX820 (48-31 dents)",
