@@ -890,6 +890,33 @@
       "wheelSize": "28 pulgadas",
       "rims": "Carbono"
     },
+"odin6_0": {
+      "title":       "Odin 6.0",
+      "description": "Precisión Electrónica",
+      "image":       "https://rinosbike.com/cdn/shop/files/ODIN6_1.png?v=1750755375&width=713",
+      "weight":      "8,5 kg",
+      "gear":        "Shimano 105 Di2",
+      "gears":       "24",
+      "frame":       "TORAY T800 Carbono",
+      "frameSize":   "optimizado para ciclistas entre 156–199 cm",
+      "brakes":      "Frenos de disco hidráulicos",
+      "wheelSize":   "28 pulgadas",
+      "rims":        "Aluminio"
+    },
+    "odin6_1": {
+      "title":       "Odin 6.1",
+      "description": "Bicicleta Premium de Carbono Completo",
+      "image":       "https://rinosbike.com/cdn/shop/files/1_edd71595-f78a-4465-9fa4-bc476b3d0b99.png?v=1751964247&width=713",
+      "weight":      "7,8 kg",
+      "gear":        "Shimano 105 Di2",
+      "gears":       "24",
+      "frame":       "TORAY T800 Carbono",
+      "frameSize":   "optimizado para ciclistas entre 156–199 cm",
+      "brakes":      "Frenos de disco hidráulicos",
+      "wheelSize":   "28 pulgadas",
+      "rims":        "Carbono"
+    },
+
     "gaia2": {
       "title": "Gaia 2",
       "description": "MTB Efectiva y versatil",
