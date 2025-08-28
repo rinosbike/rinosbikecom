@@ -146,7 +146,7 @@
           "type": "heading",
           "settings": {
             "heading": "Your entry into the <em><strong>Carbon</strong></em> Gravel universe.",
-            "heading_size": "h0"
+            "heading_size": "h2"
           }
         },
         "button_DEYW6n": {
@@ -237,8 +237,8 @@
         "text_style": "body",
         "button_style": "secondary",
         "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "image_layout": "alternate-left",
+        "desktop_content_alignment": "right",
+        "image_layout": "align-left",
         "section_color_scheme": "",
         "row_color_scheme": "",
         "mobile_content_alignment": "left",
@@ -326,10 +326,10 @@
     "klarna_banner_1_g363fF",
     "rich_text_MFqJh7",
     "multirow_4TH9pN",
-    "custom_liquid_fFQWdd",
     "product_description_sec1_Nn4UXc",
     "review_section_small_fKwkg6",
     "rich_text_7we9KY",
-    "related-products"
+    "related-products",
+    "custom_liquid_fFQWdd"
   ]
 }
