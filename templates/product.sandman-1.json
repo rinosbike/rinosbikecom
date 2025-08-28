@@ -48,7 +48,7 @@
         "image": "shopify://shop_images/image2_3.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
-        "desktop_content_position": "top-right",
+        "desktop_content_position": "top-left",
         "show_text_box": false,
         "desktop_content_alignment": "left",
         "color_scheme": "background-2",
@@ -285,6 +285,7 @@
       "block_order": [
         "button_fWXxPJ"
       ],
+      "disabled": true,
       "custom_css": [
         ".rich-text {border: none;}"
       ],
@@ -299,6 +300,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
