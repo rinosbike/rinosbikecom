@@ -9,6 +9,55 @@
  */
 {
   "sections": {
+    "image_banner_eMpVX9": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_kgmQyk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Adventure Starts Here",
+            "heading_size": "h1"
+          }
+        },
+        "text_6fTdVN": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "subtitle"
+          }
+        },
+        "buttons_rbpHx8": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_kgmQyk",
+        "text_6fTdVN",
+        "buttons_rbpHx8"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/image2_3.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "top-right",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
     "conversionbanner_2_D9aHDL": {
       "type": "conversionbanner-2",
       "disabled": true,
@@ -74,6 +123,7 @@
     },
     "bike_parts_highlight_1_6XGKyM": {
       "type": "bike-parts-highlight-1",
+      "disabled": true,
       "settings": {
         "tire_size_text": "tire size",
         "gear_shifter_text": "gear shifter",
@@ -88,6 +138,113 @@
     "klarna_banner_1_g363fF": {
       "type": "klarna-banner-1",
       "settings": {}
+    },
+    "rich_text_MFqJh7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_zpYfc4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Your entry into the <em><strong>Carbon</strong></em> Gravel universe.",
+            "heading_size": "h0"
+          }
+        },
+        "button_DEYW6n": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_zpYfc4",
+        "button_DEYW6n"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multirow_4TH9pN": {
+      "type": "multirow",
+      "blocks": {
+        "row_UPnccf": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/DSCF5396.jpg",
+            "caption": "As seen in...",
+            "heading": "Eurobike 2025",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_XtrB4E": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/DSCF5416.jpg",
+            "caption": "Sandman 1",
+            "heading": "<em><strong>Carbon frame, Shimano 105</strong></em> — while others are stuck on overpriced aluminum.",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_qEgUHQ": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/dominika.pairofwheels_460934872_887434606246608_5657061535994168088_n.jpg",
+            "caption": "Sandman 1",
+            "heading": "<em><strong>Lightweight</strong></em>, reliable, and built for riders taking their first step into gravel adventures.",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_QPgLT3": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/Group_544.png",
+            "caption": "Sandman 1",
+            "heading": "<em><strong>Your gateway into bikepacking trips</strong></em>—  with  26 frame mounts that let you add racks, bags, bottles, and more.",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_UPnccf",
+        "row_XtrB4E",
+        "row_qEgUHQ",
+        "row_QPgLT3"
+      ],
+      "name": "t:sections.multirow.presets.name",
+      "settings": {
+        "image_height": "small",
+        "desktop_image_width": "medium",
+        "heading_size": "h2",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
     "custom_liquid_fFQWdd": {
       "type": "custom-liquid",
@@ -104,6 +261,7 @@
     },
     "review_section_small_fKwkg6": {
       "type": "review-section-small",
+      "disabled": true,
       "custom_css": [
         ".review-section {margin-bottom: 25px;}"
       ],
@@ -159,10 +317,13 @@
     }
   },
   "order": [
+    "image_banner_eMpVX9",
     "conversionbanner_2_D9aHDL",
     "main",
     "bike_parts_highlight_1_6XGKyM",
     "klarna_banner_1_g363fF",
+    "rich_text_MFqJh7",
+    "multirow_4TH9pN",
     "custom_liquid_fFQWdd",
     "product_description_sec1_Nn4UXc",
     "review_section_small_fKwkg6",
