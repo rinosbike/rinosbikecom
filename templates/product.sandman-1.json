@@ -45,7 +45,7 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/image2_3.jpg",
+        "image": "shopify://shop_images/dominika.pairofwheels_482940682_18500331256028471_1103948671646022374_n.jpg",
         "image_overlay_opacity": 40,
         "image_height": "small",
         "desktop_content_position": "top-center",
@@ -181,7 +181,7 @@
         "row_XtrB4E": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/DSCF5416.jpg",
+            "image": "shopify://shop_images/image2_3.jpg",
             "caption": "Sandman 1",
             "heading": "<em><strong>Carbon frame, Shimano SORA</strong></em> — while others are stuck on overpriced aluminum.",
             "text": "",
