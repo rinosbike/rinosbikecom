@@ -15,7 +15,7 @@
         "heading_kgmQyk": {
           "type": "heading",
           "settings": {
-            "heading": "Adventure Starts Here.",
+            "heading": "Your next step into gravel freedom",
             "heading_size": "h1"
           }
         },
@@ -45,8 +45,8 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/dominika.pairofwheels_482940682_18500331256028471_1103948671646022374_n.jpg",
-        "image_overlay_opacity": 0,
+        "image": "shopify://shop_images/20250623_200349.jpg",
+        "image_overlay_opacity": 50,
         "image_height": "small",
         "desktop_content_position": "top-center",
         "show_text_box": false,
@@ -145,7 +145,7 @@
         "heading_zpYfc4": {
           "type": "heading",
           "settings": {
-            "heading": "Your entry into the <em><strong>Carbon</strong></em> Gravel universe.",
+            "heading": "<em><strong>Step up from entry-level and explore without limits.</strong></em> The Rinos Sandman 3 is lightweight, precise, and ready for every adventure.",
             "heading_size": "h2"
           }
         },
@@ -181,9 +181,9 @@
         "row_XtrB4E": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/image2_3.jpg",
-            "caption": "Sandman 1",
-            "heading": "<em><strong>Carbon frame, Shimano SORA</strong></em> — while others are stuck on overpriced aluminum.",
+            "image": "shopify://shop_images/20250620_174857.jpg",
+            "caption": "Sandman 3",
+            "heading": "<em><strong>Carbon frame, Shimano 105</strong></em> — while others are stuck on overpriced aluminum.",
             "text": "",
             "button_label": "",
             "button_link": ""
@@ -192,9 +192,9 @@
         "row_qEgUHQ": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/dominika.pairofwheels_460934872_887434606246608_5657061535994168088_n.jpg",
-            "caption": "Sandman 1",
-            "heading": "<em><strong>Lightweight</strong></em>, reliable, and built for riders taking their first step into gravel adventures.",
+            "image": "shopify://shop_images/20250628_172959.jpg",
+            "caption": "Sandman 3",
+            "heading": "Shimano 105 drivetrain keeps every gear change<em><strong> smooth and precise</strong></em>, from city streets to gravel tracks.",
             "text": "",
             "button_label": "",
             "button_link": ""
@@ -203,20 +203,9 @@
         "row_QPgLT3": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/Sanman.jpg",
-            "caption": "Sandman 1",
+            "image": "shopify://shop_images/20250623_191837.jpg",
+            "caption": "Sandman 3",
             "heading": "<em><strong>Your gateway into bikepacking trips</strong></em>—  with  26 frame mounts that let you add racks, bags, bottles, and more.",
-            "text": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "row_UPnccf": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/DSCF5396.jpg",
-            "caption": "Sandman 1",
-            "heading": "As seen in <em><strong>Eurobike 2025</strong></em>",
             "text": "",
             "button_label": "",
             "button_link": ""
@@ -226,8 +215,7 @@
       "block_order": [
         "row_XtrB4E",
         "row_qEgUHQ",
-        "row_QPgLT3",
-        "row_UPnccf"
+        "row_QPgLT3"
       ],
       "name": "t:sections.multirow.presets.name",
       "settings": {
