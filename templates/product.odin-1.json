@@ -15,9 +15,9 @@
       "settings": {
         "show_content": true,
         "show_overlay": true,
-        "heading": "Welcome to your new adventure, riders.",
-        "subheading": "Discover amazing products",
-        "button_text": "Shop Now",
+        "heading": "Welcome to the road, riders.",
+        "subheading": "Discover the Odin. Made for the Road, UCI certified.",
+        "button_text": "",
         "button_link": ""
       }
     },
