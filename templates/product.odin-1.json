@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "promovideo_m4Uqqc": {
+      "type": "promovideo",
+      "name": "Video Hero",
+      "settings": {
+        "show_content": true,
+        "show_overlay": true,
+        "heading": "Welcome to your new adventure, riders.",
+        "subheading": "Discover amazing products",
+        "button_text": "Shop Now",
+        "button_link": ""
+      }
+    },
     "conversionbanner_2_D9aHDL": {
       "type": "conversionbanner-2",
       "settings": {
@@ -88,6 +100,15 @@
       "type": "klarna-banner-1",
       "settings": {}
     },
+    "custom_liquid_fFQWdd": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "product_description_sec1_Nn4UXc": {
       "type": "product-description-sec1",
       "settings": {}
@@ -146,18 +167,10 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "custom_liquid_fFQWdd": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
+    "promovideo_m4Uqqc",
     "conversionbanner_2_D9aHDL",
     "main",
     "bike_parts_highlight_1_6XGKyM",
