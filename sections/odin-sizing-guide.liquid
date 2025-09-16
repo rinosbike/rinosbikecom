@@ -1,0 +1,677 @@
+{% comment %}
+  ODIN Bike Sizing & Geometry Guide
+  Save this as: sections/odin-sizing-guide.liquid
+{% endcomment %}
+
+<div class="odin-sizing-guide" id="sizing-guide-{{ section.id }}">
+  {% if section.settings.show_header %}
+    <div class="sizing-header">
+      <h2>{{ section.settings.section_title }}</h2>
+      <p>{{ section.settings.section_subtitle }}</p>
+    </div>
+  {% endif %}
+
+  {% if section.settings.show_size_finder %}
+    <div class="size-finder">
+      <h3>{{ section.settings.size_finder_title }}</h3>
+      <div class="height-input-container">
+        <label for="height-input-{{ section.id }}">{{ section.settings.height_label }}</label>
+        <input 
+          type="number" 
+          id="height-input-{{ section.id }}" 
+          class="height-input" 
+          placeholder="{{ section.settings.height_placeholder }}"
+          min="140" 
+          max="220"
+        >
+        <span class="height-unit">{{ section.settings.height_unit }}</span>
+        <button type="button" class="find-size-btn" onclick="findMySize('{{ section.id }}')">
+          {{ section.settings.find_size_button_text }}
+        </button>
+      </div>
+      <div id="size-result-{{ section.id }}" class="size-result" style="display: none;">
+        <div class="recommended-size"></div>
+        <div class="recommendation-note">{{ section.settings.recommendation_note }}</div>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="size-chart">
+    <h3>{{ section.settings.size_chart_title }}</h3>
+    <div class="size-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'size' %}
+          <div class="size-card" data-size="{{ block.settings.size_name | downcase }}">
+            <div class="size-label">{{ block.settings.size_name }}</div>
+            <div class="size-range">{{ block.settings.height_range }}</div>
+            {% if block.settings.show_details %}
+              <div class="size-details">
+                <div class="detail-item">
+                  <span class="detail-label">Frame:</span>
+                  <span class="detail-value">{{ block.settings.frame_size }}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Reach:</span>
+                  <span class="detail-value">{{ block.settings.reach }}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Stack:</span>
+                  <span class="detail-value">{{ block.settings.stack }}</span>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if section.settings.show_geometry %}
+    <div class="geometry-section">
+      <div class="geometry-header">
+        <h3>{{ section.settings.geometry_title }}</h3>
+        <button type="button" class="geometry-toggle" onclick="toggleGeometry('{{ section.id }}')">
+          {{ section.settings.geometry_button_text }}
+        </button>
+      </div>
+      
+      {% if section.settings.geometry_image %}
+        <div class="geometry-diagram">
+          <img src="{{ section.settings.geometry_image | img_url: 'master' }}" 
+               alt="{{ section.settings.geometry_image.alt | default: 'Geometry Diagram' }}"
+               class="geometry-image">
+        </div>
+      {% endif %}
+
+      <div id="geometry-table-{{ section.id }}" class="geometry-table-container" style="display: none;">
+        <div class="table-scroll">
+          <table class="geometry-table">
+            <thead>
+              <tr>
+                <th>Measurement</th>
+                {% for block in section.blocks %}
+                  {% if block.type == 'size' %}
+                    <th>{{ block.settings.size_name }}</th>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for block in section.blocks %}
+                {% if block.type == 'measurement' %}
+                  <tr>
+                    <td class="measurement-name">{{ block.settings.measurement_name }}</td>
+                    <td>{{ block.settings.xs_value }}</td>
+                    <td>{{ block.settings.s_value }}</td>
+                    <td>{{ block.settings.m_value }}</td>
+                    <td>{{ block.settings.l_value }}</td>
+                    <td>{{ block.settings.xl_value }}</td>
+                  </tr>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+.odin-sizing-guide {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.sizing-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  border-radius: 12px;
+}
+
+.sizing-header h2 {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.sizing-header p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.size-finder {
+  background: #f8f9fa;
+  padding: 30px 20px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.size-finder h3 {
+  font-size: 22px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.height-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.height-input {
+  width: 100px;
+  padding: 12px;
+  border: 2px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 16px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.height-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.height-unit {
+  font-weight: 500;
+  color: #666;
+}
+
+.find-size-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.find-size-btn:hover {
+  background: #0056b3;
+}
+
+.size-result {
+  padding: 20px;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.recommended-size {
+  font-size: 24px;
+  font-weight: 700;
+  color: #155724;
+  margin-bottom: 10px;
+}
+
+.size-chart h3 {
+  text-align: center;
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.size-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.size-card {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.size-card:hover {
+  border-color: #007bff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+}
+
+.size-card.recommended {
+  border-color: #28a745;
+  background: #f8fff9;
+}
+
+.size-label {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.size-range {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.size-details {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.detail-label {
+  color: #666;
+}
+
+.detail-value {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.geometry-section {
+  margin-top: 50px;
+}
+
+.geometry-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.geometry-header h3 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.geometry-toggle {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.geometry-toggle:hover {
+  background: #545b62;
+}
+
+.geometry-diagram {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.geometry-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.geometry-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-size: 14px;
+}
+
+.geometry-table th,
+.geometry-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.geometry-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #2c3e50;
+  position: sticky;
+  top: 0;
+}
+
+.measurement-name {
+  font-weight: 500;
+  background: #f8f9fa;
+  position: sticky;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .odin-sizing-guide {
+    padding: 15px;
+  }
+  
+  .size-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+  }
+  
+  .size-card {
+    padding: 20px;
+  }
+  
+  .size-label {
+    font-size: 28px;
+  }
+  
+  .height-input-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+</style>
+
+<script>
+function findMySize(sectionId) {
+  const heightInput = document.getElementById('height-input-' + sectionId);
+  const resultDiv = document.getElementById('size-result-' + sectionId);
+  const height = parseInt(heightInput.value);
+  
+  if (!height || height < 140 || height > 220) {
+    alert('Please enter a valid height between 140-220 cm');
+    return;
+  }
+  
+  let recommendedSize = '';
+  let sizeCards = document.querySelectorAll('#sizing-guide-' + sectionId + ' .size-card');
+  
+  // Remove previous recommendations
+  sizeCards.forEach(card => card.classList.remove('recommended'));
+  
+  // Size ranges (customize these based on your actual size ranges)
+  if (height >= 156 && height <= 165) {
+    recommendedSize = 'XS';
+  } else if (height >= 166 && height <= 174) {
+    recommendedSize = 'S';
+  } else if (height >= 175 && height <= 184) {
+    recommendedSize = 'M';
+  } else if (height >= 185 && height <= 193) {
+    recommendedSize = 'L';
+  } else if (height >= 194 && height <= 200) {
+    recommendedSize = 'XL';
+  } else {
+    recommendedSize = 'Please contact us for sizing advice';
+  }
+  
+  // Show result
+  const recommendedSizeDiv = resultDiv.querySelector('.recommended-size');
+  recommendedSizeDiv.textContent = 'Recommended Size: ' + recommendedSize;
+  resultDiv.style.display = 'block';
+  
+  // Highlight recommended size card
+  sizeCards.forEach(card => {
+    if (card.dataset.size === recommendedSize.toLowerCase()) {
+      card.classList.add('recommended');
+    }
+  });
+}
+
+function toggleGeometry(sectionId) {
+  const table = document.getElementById('geometry-table-' + sectionId);
+  const button = document.querySelector('#sizing-guide-' + sectionId + ' .geometry-toggle');
+  
+  if (table.style.display === 'none' || table.style.display === '') {
+    table.style.display = 'block';
+    button.textContent = 'Hide Geometry Details';
+  } else {
+    table.style.display = 'none';
+    button.textContent = 'Show Geometry Details';
+  }
+}
+</script>
+
+{% schema %}
+{
+  "name": "ODIN Sizing Guide",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Show section header",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Find Your Perfect Size"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Section subtitle",
+      "default": "Get the perfect fit for your ODIN bike"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_size_finder",
+      "label": "Show size finder tool",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "size_finder_title",
+      "label": "Size finder title",
+      "default": "Quick Size Finder"
+    },
+    {
+      "type": "text",
+      "id": "height_label",
+      "label": "Height input label",
+      "default": "Your height:"
+    },
+    {
+      "type": "text",
+      "id": "height_placeholder",
+      "label": "Height placeholder",
+      "default": "175"
+    },
+    {
+      "type": "text",
+      "id": "height_unit",
+      "label": "Height unit",
+      "default": "cm"
+    },
+    {
+      "type": "text",
+      "id": "find_size_button_text",
+      "label": "Find size button text",
+      "default": "Find My Size"
+    },
+    {
+      "type": "text",
+      "id": "recommendation_note",
+      "label": "Recommendation note",
+      "default": "This is a general recommendation. Individual body proportions may vary."
+    },
+    {
+      "type": "text",
+      "id": "size_chart_title",
+      "label": "Size chart title",
+      "default": "Size Chart"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_geometry",
+      "label": "Show geometry section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "geometry_title",
+      "label": "Geometry section title",
+      "default": "Detailed Geometry"
+    },
+    {
+      "type": "text",
+      "id": "geometry_button_text",
+      "label": "Geometry button text",
+      "default": "Show Geometry Details"
+    },
+    {
+      "type": "image_picker",
+      "id": "geometry_image",
+      "label": "Geometry diagram image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "size",
+      "name": "Size",
+      "settings": [
+        {
+          "type": "text",
+          "id": "size_name",
+          "label": "Size name (XS, S, M, L, XL)",
+          "default": "M"
+        },
+        {
+          "type": "text",
+          "id": "height_range",
+          "label": "Height range",
+          "default": "175-184cm"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_details",
+          "label": "Show detailed measurements",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "frame_size",
+          "label": "Frame size",
+          "default": "520mm"
+        },
+        {
+          "type": "text",
+          "id": "reach",
+          "label": "Reach",
+          "default": "390.8mm"
+        },
+        {
+          "type": "text",
+          "id": "stack",
+          "label": "Stack",
+          "default": "521.2mm"
+        }
+      ]
+    },
+    {
+      "type": "measurement",
+      "name": "Measurement Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "measurement_name",
+          "label": "Measurement name",
+          "default": "Frame Size"
+        },
+        {
+          "type": "text",
+          "id": "xs_value",
+          "label": "XS value",
+          "default": "460mm"
+        },
+        {
+          "type": "text",
+          "id": "s_value",
+          "label": "S value",
+          "default": "490mm"
+        },
+        {
+          "type": "text",
+          "id": "m_value",
+          "label": "M value",
+          "default": "520mm"
+        },
+        {
+          "type": "text",
+          "id": "l_value",
+          "label": "L value",
+          "default": "540mm"
+        },
+        {
+          "type": "text",
+          "id": "xl_value",
+          "label": "XL value",
+          "default": "560mm"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "ODIN Sizing Guide",
+      "blocks": [
+        {
+          "type": "size",
+          "settings": {
+            "size_name": "XS",
+            "height_range": "156-165cm"
+          }
+        },
+        {
+          "type": "size",
+          "settings": {
+            "size_name": "S",
+            "height_range": "166-174cm"
+          }
+        },
+        {
+          "type": "size",
+          "settings": {
+            "size_name": "M",
+            "height_range": "175-184cm"
+          }
+        },
+        {
+          "type": "size",
+          "settings": {
+            "size_name": "L",
+            "height_range": "185-193cm"
+          }
+        },
+        {
+          "type": "size",
+          "settings": {
+            "size_name": "XL",
+            "height_range": "194-200cm"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
