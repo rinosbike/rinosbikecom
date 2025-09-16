@@ -1,5 +1,5 @@
 {% comment %}
-  ODIN Bike Sizing & Geometry Guide
+  ODIN Bike Sizing & Geometry Guide - Compact Version
   Save this as: sections/odin-sizing-guide.liquid
 {% endcomment %}
 
@@ -8,26 +8,11 @@
   <div class="size-section">
     <h2 class="section-title">{{ section.settings.size_title | default: "Choose Your Size" }}</h2>
     <div class="size-grid">
-      <div class="size-option">
-        <span class="size-label">XS</span>
-        <span class="size-range">156-165cm</span>
-      </div>
-      <div class="size-option">
-        <span class="size-label">S</span>
-        <span class="size-range">166-172cm</span>
-      </div>
-      <div class="size-option">
-        <span class="size-label">M</span>
-        <span class="size-range">175-184cm</span>
-      </div>
-      <div class="size-option">
-        <span class="size-label">L</span>
-        <span class="size-range">185-193cm</span>
-      </div>
-      <div class="size-option">
-        <span class="size-label">XL</span>
-        <span class="size-range">194-200cm</span>
-      </div>
+      <div class="size-option"><span class="size-label">XS</span><span class="size-range">156-165cm</span></div>
+      <div class="size-option"><span class="size-label">S</span><span class="size-range">166-172cm</span></div>
+      <div class="size-option"><span class="size-label">M</span><span class="size-range">175-184cm</span></div>
+      <div class="size-option"><span class="size-label">L</span><span class="size-range">185-193cm</span></div>
+      <div class="size-option"><span class="size-label">XL</span><span class="size-range">194-200cm</span></div>
     </div>
   </div>
 
@@ -35,184 +20,42 @@
   <div class="geometry-section">
     <h2 class="section-title">{{ section.settings.geometry_title | default: "Geometry & Sizing Details" }}</h2>
     
-    {% if section.settings.geometry_image %}
-      <div class="geometry-diagram">
-        <img class="geometry-image" 
-             alt="ODIN Geometry Diagram" 
-             src="{{ section.settings.geometry_image | img_url: 'master' }}">
-      </div>
-    {% endif %}
+    <div class="geometry-content">
+      {% if section.settings.geometry_image %}
+        <div class="geometry-diagram">
+          <img class="geometry-image" alt="ODIN Geometry Diagram" src="{{ section.settings.geometry_image | img_url: 'master' }}">
+        </div>
+      {% endif %}
 
-    <div class="table-container">
-      <table class="geometry-table">
-        <thead>
-          <tr>
-            <th>Measurement</th>
-            <th>XS</th>
-            <th>S</th>
-            <th>M</th>
-            <th>L</th>
-            <th>XL</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="height-row">
-            <td>Body Height (Reference)</td>
-            <td>156–165 cm</td>
-            <td>166–172 cm</td>
-            <td>175–184cm</td>
-            <td>185–193 cm</td>
-            <td>194–200 cm</td>
-          </tr>
-          <tr class="remark-row">
-            <td colspan="6"><em>For reference only, may vary due to different body proportions.</em></td>
-          </tr>
-          <tr>
-            <td>A – Frame Size</td>
-            <td>460 mm</td>
-            <td>490 mm</td>
-            <td>520 mm</td>
-            <td>540 mm</td>
-            <td>560 mm</td>
-          </tr>
-          <tr>
-            <td>B – Seatpost Insert Length</td>
-            <td>130 mm</td>
-            <td>150 mm</td>
-            <td>170 mm</td>
-            <td>190 mm</td>
-            <td>210 mm</td>
-          </tr>
-          <tr>
-            <td>C – Reach</td>
-            <td>371 mm</td>
-            <td>385.1 mm</td>
-            <td>390.8 mm</td>
-            <td>390.8 mm</td>
-            <td>396.4 mm</td>
-          </tr>
-          <tr>
-            <td>D – Top Tube Length, Horizontal</td>
-            <td>510 mm</td>
-            <td>525 mm</td>
-            <td>540 mm</td>
-            <td>550 mm</td>
-            <td>565 mm</td>
-          </tr>
-          <tr>
-            <td>E – Stack</td>
-            <td>502.6 mm</td>
-            <td>505.4 mm</td>
-            <td>521.2 mm</td>
-            <td>541.9 mm</td>
-            <td>562.7 mm</td>
-          </tr>
-          <tr>
-            <td>F – Wheelbase</td>
-            <td>971.4 mm</td>
-            <td>986.6 mm</td>
-            <td>988.7 mm</td>
-            <td>990.8 mm</td>
-            <td>998.2 mm</td>
-          </tr>
-          <tr>
-            <td>G – Chainstay Length</td>
-            <td>410 mm</td>
-            <td>410 mm</td>
-            <td>410 mm</td>
-            <td>410 mm</td>
-            <td>410 mm</td>
-          </tr>
-          <tr>
-            <td>H – Front Center</td>
-            <td>571.7 mm</td>
-            <td>586.8 mm</td>
-            <td>588.9 mm</td>
-            <td>590.9 mm</td>
-            <td>598.3 mm</td>
-          </tr>
-          <tr>
-            <td>I – BB Drop</td>
-            <td>70 mm</td>
-            <td>70 mm</td>
-            <td>70 mm</td>
-            <td>70 mm</td>
-            <td>70 mm</td>
-          </tr>
-          <tr>
-            <td>J – BB Height</td>
-            <td>278 mm</td>
-            <td>278 mm</td>
-            <td>278 mm</td>
-            <td>278 mm</td>
-            <td>278 mm</td>
-          </tr>
-          <tr>
-            <td>K – Seat Tube Angle</td>
-            <td>74.5°</td>
-            <td>74.5°</td>
-            <td>74°</td>
-            <td>73.6°</td>
-            <td>73.3°</td>
-          </tr>
-          <tr>
-            <td>L – Head Tube Angle</td>
-            <td>71°</td>
-            <td>71°</td>
-            <td>72°</td>
-            <td>72.5°</td>
-            <td>73°</td>
-          </tr>
-          <tr>
-            <td>M – Seat Tube Length</td>
-            <td>460 mm</td>
-            <td>480 mm</td>
-            <td>500 mm</td>
-            <td>522 mm</td>
-            <td>542 mm</td>
-          </tr>
-          <tr>
-            <td>N – Head Tube Length</td>
-            <td>105 mm</td>
-            <td>108 mm</td>
-            <td>121 mm</td>
-            <td>141 mm</td>
-            <td>161 mm</td>
-          </tr>
-          <tr>
-            <td>Standover Height (700C×32C)</td>
-            <td>733.9 mm</td>
-            <td>753.6 mm</td>
-            <td>772 mm</td>
-            <td>793.1 mm</td>
-            <td>813 mm</td>
-          </tr>
-          <tr>
-            <td>O – Fork Rake/Offset</td>
-            <td>45 mm</td>
-            <td>45 mm</td>
-            <td>45 mm</td>
-            <td>45 mm</td>
-            <td>45 mm</td>
-          </tr>
-          <tr>
-            <td>P – Fork Length, Full</td>
-            <td>368 mm</td>
-            <td>368 mm</td>
-            <td>368 mm</td>
-            <td>368 mm</td>
-            <td>368 mm</td>
-          </tr>
-          <tr>
-            <td>P – Trail</td>
-            <td>68.1 mm</td>
-            <td>68.1 mm</td>
-            <td>63.7 mm</td>
-            <td>62.6 mm</td>
-            <td>59.3 mm</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-container">
+        <table class="geometry-table">
+          <thead>
+            <tr><th>Measurement</th><th>XS</th><th>S</th><th>M</th><th>L</th><th>XL</th></tr>
+          </thead>
+          <tbody>
+            <tr class="ref-row"><td>Body Height (Reference)</td><td>156–165 cm</td><td>166–172 cm</td><td>175–184cm</td><td>185–193 cm</td><td>194–200 cm</td></tr>
+            <tr class="note-row"><td colspan="6"><em>For reference only, may vary due to different body proportions.</em></td></tr>
+            <tr><td>A – Frame Size</td><td>460 mm</td><td>490 mm</td><td>520 mm</td><td>540 mm</td><td>560 mm</td></tr>
+            <tr><td>B – Seatpost Insert Length</td><td>130 mm</td><td>150 mm</td><td>170 mm</td><td>190 mm</td><td>210 mm</td></tr>
+            <tr><td>C – Reach</td><td>371 mm</td><td>385.1 mm</td><td>390.8 mm</td><td>390.8 mm</td><td>396.4 mm</td></tr>
+            <tr><td>D – Top Tube Length, Horizontal</td><td>510 mm</td><td>525 mm</td><td>540 mm</td><td>550 mm</td><td>565 mm</td></tr>
+            <tr><td>E – Stack</td><td>502.6 mm</td><td>505.4 mm</td><td>521.2 mm</td><td>541.9 mm</td><td>562.7 mm</td></tr>
+            <tr><td>F – Wheelbase</td><td>971.4 mm</td><td>986.6 mm</td><td>988.7 mm</td><td>990.8 mm</td><td>998.2 mm</td></tr>
+            <tr><td>G – Chainstay Length</td><td>410 mm</td><td>410 mm</td><td>410 mm</td><td>410 mm</td><td>410 mm</td></tr>
+            <tr><td>H – Front Center</td><td>571.7 mm</td><td>586.8 mm</td><td>588.9 mm</td><td>590.9 mm</td><td>598.3 mm</td></tr>
+            <tr><td>I – BB Drop</td><td>70 mm</td><td>70 mm</td><td>70 mm</td><td>70 mm</td><td>70 mm</td></tr>
+            <tr><td>J – BB Height</td><td>278 mm</td><td>278 mm</td><td>278 mm</td><td>278 mm</td><td>278 mm</td></tr>
+            <tr><td>K – Seat Tube Angle</td><td>74.5°</td><td>74.5°</td><td>74°</td><td>73.6°</td><td>73.3°</td></tr>
+            <tr><td>L – Head Tube Angle</td><td>71°</td><td>71°</td><td>72°</td><td>72.5°</td><td>73°</td></tr>
+            <tr><td>M – Seat Tube Length</td><td>460 mm</td><td>480 mm</td><td>500 mm</td><td>522 mm</td><td>542 mm</td></tr>
+            <tr><td>N – Head Tube Length</td><td>105 mm</td><td>108 mm</td><td>121 mm</td><td>141 mm</td><td>161 mm</td></tr>
+            <tr><td>Standover Height (700C×32C)</td><td>733.9 mm</td><td>753.6 mm</td><td>772 mm</td><td>793.1 mm</td><td>813 mm</td></tr>
+            <tr><td>O – Fork Rake/Offset</td><td>45 mm</td><td>45 mm</td><td>45 mm</td><td>45 mm</td><td>45 mm</td></tr>
+            <tr><td>P – Fork Length, Full</td><td>368 mm</td><td>368 mm</td><td>368 mm</td><td>368 mm</td><td>368 mm</td></tr>
+            <tr><td>P – Trail</td><td>68.1 mm</td><td>68.1 mm</td><td>63.7 mm</td><td>62.6 mm</td><td>59.3 mm</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
@@ -225,22 +68,22 @@
 }
 
 .section-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-align: center;
   color: #333;
 }
 
-/* Size Guide Styles */
+/* Compact Size Guide */
 .size-section {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .size-grid {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
@@ -248,103 +91,141 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  min-width: 120px;
+  padding: 12px;
+  min-width: 80px;
   text-align: center;
 }
 
 .size-label {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
   color: #333;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .size-range {
-  font-size: 16px;
+  font-size: 12px;
   color: #666;
   font-weight: 500;
 }
 
-/* Geometry Styles */
+/* Compact Geometry */
 .geometry-section {
-  margin-top: 50px;
+  margin-top: 30px;
+}
+
+.geometry-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
 }
 
 .geometry-diagram {
-  text-align: center;
-  margin-bottom: 30px;
+  flex: 0 0 auto;
+  max-width: 300px;
 }
 
 .geometry-image {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
 .table-container {
+  flex: 1;
   overflow-x: auto;
-  margin-top: 30px;
+  min-width: 0;
 }
 
 .geometry-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 11px;
   background: white;
 }
 
 .geometry-table th,
 .geometry-table td {
-  padding: 12px;
+  padding: 6px 8px;
   text-align: left;
   border: 1px solid #ddd;
+  white-space: nowrap;
 }
 
 .geometry-table th {
   background: #f8f9fa;
   font-weight: 600;
   color: #333;
+  font-size: 10px;
 }
 
 .geometry-table th:first-child {
-  width: 37%;
+  width: 35%;
+  white-space: normal;
 }
 
-.height-row td {
+.geometry-table td:first-child {
+  font-weight: 500;
+  font-size: 10px;
+  white-space: normal;
+}
+
+.ref-row td {
   background: #f8f9fa;
 }
 
-.remark-row td {
+.note-row td {
   background: #f8f9fa;
   font-style: italic;
-  font-size: 13px;
+  font-size: 9px;
   color: #666;
-  padding: 8px 12px;
+  padding: 4px 8px;
   text-align: center;
+  white-space: normal;
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+  .geometry-content {
+    flex-direction: column;
+  }
+  
+  .geometry-diagram {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+  
   .size-grid {
-    gap: 15px;
+    gap: 8px;
   }
   
   .size-option {
-    min-width: 100px;
-    padding: 15px;
+    min-width: 70px;
+    padding: 10px;
   }
   
   .size-label {
-    font-size: 28px;
+    font-size: 20px;
+  }
+  
+  .size-range {
+    font-size: 11px;
   }
   
   .geometry-table {
-    font-size: 12px;
+    font-size: 10px;
   }
   
   .geometry-table th,
   .geometry-table td {
-    padding: 8px;
+    padding: 4px 6px;
+  }
+  
+  .geometry-table td:first-child {
+    font-size: 9px;
+  }
+  
+  .note-row td {
+    font-size: 8px;
   }
 }
 </style>
