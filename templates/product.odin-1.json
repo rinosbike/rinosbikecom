@@ -171,6 +171,15 @@
       "type": "product-description-sec1",
       "settings": {}
     },
+    "odin_sizing_guide_gkrKDi": {
+      "type": "odin-sizing-guide",
+      "name": "ODIN Sizing Guide",
+      "settings": {
+        "size_title": "Rinos Road Bicycle Sizing",
+        "geometry_title": "Geometry & Sizing Details",
+        "geometry_image": "shopify://shop_images/80extk.png"
+      }
+    },
     "iso_video_section_bpCKLQ": {
       "type": "ISO_Video_section",
       "name": "Frame Test Multilingual",
@@ -264,6 +273,7 @@
     "custom_liquid_fFQWdd",
     "multicolumn_KfMJ9G",
     "product_description_sec1_Nn4UXc",
+    "odin_sizing_guide_gkrKDi",
     "iso_video_section_bpCKLQ",
     "review_section_small_fKwkg6",
     "rich_text_7we9KY",
