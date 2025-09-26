@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Road Bikes Comparison - Find Your Perfect Bike</title>
+  <meta name="description" content="Compare our road bike models - weight, gears, frame materials, and specifications. Find the perfect bike for your riding style.">
+  
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Main Section */
+    .bike-comparison {
+      padding: 60px 20px;
+      background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .comparison-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Header Styles */
+    .comparison-header {
+      text-align: center;
+      margin-bottom: 50px;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .comparison-title {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .comparison-subtitle {
+      font-size: 18px;
+      color: #6b7280;
+      font-weight: 400;
+    }
+
+    /* Table Wrapper for Scroll */
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      background: white;
+      animation: fadeIn 0.8s ease-out 0.2s backwards;
+    }
+
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      min-width: 900px;
+    }
+
+    /* Table Headers with Bike Cards */
+    .bike-header {
+      padding: 24px 20px;
+      text-align: center;
+      background: white;
+      border-bottom: 2px solid #f3f4f6;
+      vertical-align: top;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .bike-header:first-child {
+      text-align: left;
+      background: #f8f9fa;
+      font-weight: 600;
+      color: #4b5563;
+      min-width: 140px;
+    }
+
+    /* Featured/Highlighted Column */
+    .featured-column {
+      background: linear-gradient(to bottom, #fff5f3, #ffffff);
+      position: relative;
+    }
+
+    .featured-column::before {
+      content: 'RECOMMENDED';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #F04A00;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* Bike Image */
+    .bike-image {
+      width: 100%;
+      max-width: 160px;
+      height: auto;
+      margin-bottom: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .bike-header:hover .bike-image {
+      transform: scale(1.05);
+    }
+
+    /* Bike Model Name */
+    .bike-model {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+    }
+
+    /* Bike Description */
+    .bike-description {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.4;
+      min-height: 40px;
+    }
+
+    .featured-column .bike-description {
+      color: #F04A00;
+      font-weight: 600;
+    }
+
+    /* Spec Rows */
+    .spec-row {
+      transition: background-color 0.2s ease;
+    }
+
+    .spec-row:hover {
+      background-color: #f9fafb;
+    }
+
+    /* Spec Label (First Column) */
+    .spec-label {
+      padding: 20px;
+      font-weight: 600;
+      color: #374151;
+      background: #f9fafb;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    /* Spec Value Cells */
+    .spec-value {
+      padding: 20px;
+      color: #4b5563;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .featured-column.spec-value {
+      background: rgba(240, 74, 0, 0.03);
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    /* Last Row */
+    .spec-row:last-child .spec-label,
+    .spec-row:last-child .spec-value {
+      border-bottom: none;
+    }
+
+    /* Mobile-First Responsive Design */
+    @media (max-width: 768px) {
+      .bike-comparison {
+        padding: 40px 16px;
+      }
+
+      .comparison-header {
+        margin-bottom: 32px;
+      }
+
+      .table-wrapper {
+        border-radius: 12px;
+      }
+
+      .bike-header {
+        padding: 16px 12px;
+      }
+
+      .bike-image {
+        max-width: 120px;
+      }
+
+      .bike-model {
+        font-size: 16px;
+      }
+
+      .bike-description {
+        font-size: 12px;
+        min-height: 32px;
+      }
+
+      .spec-label,
+      .spec-value {
+        padding: 16px 12px;
+        font-size: 13px;
+      }
+
+      .featured-column::before {
+        font-size: 10px;
+        padding: 3px 8px;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Accessibility Focus Styles */
+    .bike-header:focus-within {
+      outline: 2px solid #F04A00;
+      outline-offset: 2px;
+    }
+
+    /* Print Styles */
+    @media print {
+      .bike-comparison {
+        padding: 20px;
+      }
+      
+      .table-wrapper {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="bike-comparison" aria-label="Road Bikes Comparison">
+    <div class="comparison-container">
+      <!-- Header -->
+      <header class="comparison-header">
+        <h1 class="comparison-title">{{ 'bikes.title.road' | t | default: 'Road Bikes' }}</h1>
+        <p class="comparison-subtitle">{{ 'bikes.subtitle' | t | default: 'Find your perfect ride with our detailed comparison' }}</p>
+      </header>
+
+      <!-- Comparison Table -->
+      <div class="table-wrapper" role="region" aria-label="Bike specifications comparison table">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th class="bike-header" scope="col">
+                <span>Specifications</span>
+              </th>
+              
+              <!-- Odin 1 -->
+              <th class="bike-header" scope="col">
+                <img 
+                  class="bike-image" 
+                  src="{{ 'bikes.odin1.image' | t }}"
+                  alt="{{ 'bikes.odin1.title' | t }} bike"
+                  loading="lazy"
+                  width="160"
+                  height="160"
+                >
+                <h2 class="bike-model">{{ 'bikes.odin1.title' | t }}</h2>
+                <p class="bike-description">{{ 'bikes.odin1.description' | t }}</p>
+              </th>
+              
+              <!-- Odin 3 -->
+              <th class="bike-header" scope="col">
+                <img 
+                  class="bike-image" 
+                  src="{{ 'bikes.odin3.image' | t }}"
+                  alt="{{ 'bikes.odin3.title' | t }} bike"
+                  loading="lazy"
+                  width="160"
+                  height="160"
+                >
+                <h2 class="bike-model">{{ 'bikes.odin3.title' | t }}</h2>
+                <p class="bike-description">{{ 'bikes.odin3.description' | t }}</p>
+              </th>
+              
+              <!-- Odin 4 (Featured) -->
+              <th class="bike-header featured-column" scope="col">
+                <img 
+                  class="bike-image" 
+                  src="{{ 'bikes.odin4.image' | t }}"
+                  alt="{{ 'bikes.odin4.title' | t }} bike - Recommended"
+                  loading="lazy"
+                  width="160"
+                  height="160"
+                >
+                <h2 class="bike-model">{{ 'bikes.odin4.title' | t }}</h2>
+                <p class="bike-description">{{ 'bikes.odin4.description' | t }}</p>
+              </th>
+              
+              <!-- Odin 5 -->
+              <th class="bike-header" scope="col">
+                <img 
+                  class="bike-image" 
+                  src="{{ 'bikes.odin5.image' | t }}"
+                  alt="{{ 'bikes.odin5.title' | t }} bike"
+                  loading="lazy"
+                  width="160"
+                  height="160"
+                >
+                <h2 class="bike-model">{{ 'bikes.odin5.title' | t }}</h2>
+                <p class="bike-description">{{ 'bikes.odin5.description' | t }}</p>
+              </th>
+              
+              <!-- Odin 6.0 -->
+              <th class="bike-header" scope="col">
+                <img 
+                  class="bike-image" 
+                  src="https://rinosbike.com/cdn/shop/files/ODIN6_1.png?v=1750755375&width=320"
+                  alt="{{ 'bikes.odin6_0.title' | t }} bike"
+                  loading="lazy"
+                  width="160"
+                  height="160"
+                >
+                <h2 class="bike-model">{{ 'bikes.odin6_0.title' | t }}</h2>
+                <p class="bike-description">{{ 'bikes.odin6_0.description' | t }}</p>
+              </th>
+              
+              <!-- Odin 6.1 -->
+              <th class="bike-header" scope="col">
+                <img 
+                  class="bike-image" 
+                  src="https://rinosbike.com/cdn/shop/files/1_edd71595-f78a-4465-9fa4-bc476b3d0b99.png?v=1751964247&width=320"
+                  alt="{{ 'bikes.odin6_1.title' | t }} bike"
+                  loading="lazy"
+                  width="160"
+                  height="160"
+                >
+                <h2 class="bike-model">{{ 'bikes.odin6_1.title' | t }}</h2>
+                <p class="bike-description">{{ 'bikes.odin6_1.description' | t }}</p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Weight -->
+            <tr class="spec-row">
+              <th class="spec-label" scope="row">{{ 'bikes.weight_label' | t | default: 'Weight' }}</th>
+              <td class="spec-value">{{ 'bikes.odin1.weight' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin3.weight' | t }}</td>
+              <td class="spec-value featured-column">{{ 'bikes.odin4.weight' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin5.weight' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_0.weight' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_1.weight' | t }}</td>
+            </tr>
+            
+            <!-- Gear -->
+            <tr class="spec-row">
+              <th class="spec-label" scope="row">{{ 'bikes.gear_label' | t | default: 'Gear System' }}</th>
+              <td class="spec-value">{{ 'bikes.odin1.gear' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin3.gear' | t }}</td>
+              <td class="spec-value featured-column">{{ 'bikes.odin4.gear' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin5.gear' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_0.gear' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_1.gear' | t }}</td>
+            </tr>
+            
+            <!-- Gears -->
+            <tr class="spec-row">
+              <th class="spec-label" scope="row">{{ 'bikes.gears_label' | t | default: 'Number of Gears' }}</th>
+              <td class="spec-value">{{ 'bikes.odin1.gears' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin3.gears' | t }}</td>
+              <td class="spec-value featured-column">{{ 'bikes.odin4.gears' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin5.gears' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_0.gears' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_1.gears' | t }}</td>
+            </tr>
+            
+            <!-- Frame -->
+            <tr class="spec-row">
+              <th class="spec-label" scope="row">{{ 'bikes.frame_label' | t | default: 'Frame Material' }}</th>
+              <td class="spec-value">{{ 'bikes.odin1.frame' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin3.frame' | t }}</td>
+              <td class="spec-value featured-column">{{ 'bikes.odin4.frame' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin5.frame' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_0.frame' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_1.frame' | t }}</td>
+            </tr>
+            
+            <!-- Frame Size -->
+            <tr class="spec-row">
+              <th class="spec-label" scope="row">{{ 'bikes.frameSize_label' | t | default: 'Frame Sizes' }}</th>
+              <td class="spec-value">{{ 'bikes.odin1.frameSize' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin3.frameSize' | t }}</td>
+              <td class="spec-value featured-column">{{ 'bikes.odin4.frameSize' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin5.frameSize' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_0.frameSize' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_1.frameSize' | t }}</td>
+            </tr>
+            
+            <!-- Brakes -->
+            <tr class="spec-row">
+              <th class="spec-label" scope="row">{{ 'bikes.brakes_label' | t | default: 'Brake Type' }}</th>
+              <td class="spec-value">{{ 'bikes.odin1.brakes' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin3.brakes' | t }}</td>
+              <td class="spec-value featured-column">{{ 'bikes.odin4.brakes' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin5.brakes' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_0.brakes' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_1.brakes' | t }}</td>
+            </tr>
+            
+            <!-- Wheel Size -->
+            <tr class="spec-row">
+              <th class="spec-label" scope="row">{{ 'bikes.wheelSize_label' | t | default: 'Wheel Size' }}</th>
+              <td class="spec-value">{{ 'bikes.odin1.wheelSize' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin3.wheelSize' | t }}</td>
+              <td class="spec-value featured-column">{{ 'bikes.odin4.wheelSize' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin5.wheelSize' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_0.wheelSize' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_1.wheelSize' | t }}</td>
+            </tr>
+            
+            <!-- Rims -->
+            <tr class="spec-row">
+              <th class="spec-label" scope="row">{{ 'bikes.rims_label' | t | default: 'Rims' }}</th>
+              <td class="spec-value">{{ 'bikes.odin1.rims' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin3.rims' | t }}</td>
+              <td class="spec-value featured-column">{{ 'bikes.odin4.rims' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin5.rims' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_0.rims' | t }}</td>
+              <td class="spec-value">{{ 'bikes.odin6_1.rims' | t }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  {% schema %}
+  {
+    "name": "Road Bike Comparison",
+    "class": "section-bike-comparison",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Section Heading",
+        "default": "Road Bikes"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Section Subtitle",
+        "default": "Find your perfect ride with our detailed comparison"
+      },
+      {
+        "type": "select",
+        "id": "featured_bike",
+        "label": "Featured Bike",
+        "options": [
+          {
+            "value": "odin1",
+            "label": "Odin 1"
+          },
+          {
+            "value": "odin3",
+            "label": "Odin 3"
+          },
+          {
+            "value": "odin4",
+            "label": "Odin 4"
+          },
+          {
+            "value": "odin5",
+            "label": "Odin 5"
+          },
+          {
+            "value": "odin6_0",
+            "label": "Odin 6.0"
+          },
+          {
+            "value": "odin6_1",
+            "label": "Odin 6.1"
+          }
+        ],
+        "default": "odin4"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_recommended_badge",
+        "label": "Show Recommended Badge",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent Color",
+        "default": "#F04A00"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Road Bike Comparison",
+        "category": "Product Comparison"
+      }
+    ],
+    "blocks": [],
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    }
+  }
+  {% endschema %}
+</body>
+</html>
