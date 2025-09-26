@@ -227,7 +227,6 @@
     },
     "rinos_comparison_table_road_KQ4AUd": {
       "type": "rinos-comparison-table-road",
-      "disabled": true,
       "settings": {}
     },
     "banner": {
@@ -238,111 +237,6 @@
         "show_collection_image": false,
         "color_scheme": "background-1"
       }
-    },
-    "rich_text_KHpmwC": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_YPyjPF": {
-          "type": "heading",
-          "settings": {
-            "heading": "Why the <strong>Rinos Odin Series</strong> is Your Ultimate Road Bike Choice",
-            "heading_size": "h1"
-          }
-        },
-        "text_h8n6MA": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Designed with a lightweight carbon frame, thin tires, and aerodynamic features, these bikes excel on paved surfaces, whether you're racing, training, or just enjoying a ride.</p><h4>Key Features of the Rinos Odin Series:</h4><ul><li><strong>Aerodynamic Frame Geometry</strong>: Optimized for speed and efficiency, enhancing your performance on every ride.</li><li><strong>High-Pressure Tires</strong>: Narrow and designed to minimize rolling resistance, these tires allow for maximum speed on smooth surfaces.</li><li><strong>Streamlined Components</strong>: Lightweight parts that boost performance, including efficient gearing systems for smooth shifting and advanced brake systems for safety.</li></ul><h3><strong>Which Odin to choose? </strong></h3><p><strong>Rinos Odin 1</strong>: Ideal for newcomers, the Odin 1 combines a lightweight carbon frame with a Shimano SORA groupset, offering a smooth, dependable ride that’s perfect for those just starting their cycling journey.</p><p><strong>Rinos Odin 3</strong>: For intermediate cyclists looking to enhance performance, the Odin 3 features a Shimano 105 drivetrain, delivering precise shifting and improved handling, making it suitable for both training and competitive rides.</p><p><strong>Rinos Odin 4</strong>: A step up in speed and stability, the Odin 4 is designed for serious riders who want to push their limits. Its aerodynamic frame geometry makes it perfect for those who prioritize performance in races.</p><p><strong>Rinos Odin 5</strong>: The ultimate performance bike, the Odin 5 features Shimano Ultegra components, lightweight design, and exceptional agility, making it the go-to choice for competitive cyclists aiming for peak performance on every ride.</p><h3><strong>Experience the Rinos Difference</strong></h3><p>Join the Rinos community and elevate your cycling experience with the Odin Series. If you have any questions or issues choosing your new bike you can always contact us in social media or email at info@rinosbike.eu.</p>"
-          }
-        },
-        "button_mghgCk": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_YPyjPF",
-        "text_h8n6MA",
-        "button_mghgCk"
-      ],
-      "disabled": true,
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "left",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "collapsible_content_HECa7X": {
-      "type": "collapsible-content",
-      "blocks": {
-        "collapsible_row_HNPmxB": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "What are the pros and cons of aluminum rims?",
-            "icon": "check_mark",
-            "row_content": "<p>Aluminum rims are like the reliable all-rounder of bike wheels. They offer some great practical benefits, with a few drawbacks to consider:</p><p>• <strong>Affordable & Durable:</strong> Aluminum wheels cost much less than carbon and can take a beating. A hard hit might dent an aluminum rim instead of shattering it, and a small dent often won’t stop you from riding (plus it’s cheaper to replace if needed) .</p><p>• <strong>Comfortable Ride:</strong> Aluminum rims have a bit of flex, which helps absorb bumps and vibrations. This makes them feel more compliant and comfortable on rough roads or gravel trails .</p><p>• <strong>Heavier & Less Aero:</strong> On the downside, aluminum rims usually weigh more than carbon. That extra weight can make climbs and quick accelerations a tad slower. Also, aluminum wheels are typically shallower in profile (deep-section aluminum rims would be very heavy), so they’re not as aerodynamic as carbon wheels.</p><p>• <strong>Braking Performance:</strong> One bonus – if you use rim brakes, aluminum brake tracks give you better braking power, especially in wet conditions, and there’s no risk of overheating the rim on long descents. (With disc brakes, this isn’t an issue, since braking is on the rotor.)</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_CQkFrM": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "What are the pros and cons of carbon rims?",
-            "icon": "check_mark",
-            "row_content": "<p>• <strong>Ultra-Light & Aerodynamic</strong><br/><br/>Carbon’s strength-to-weight ratio lets manufacturers mold deep-section profiles (50 mm+) that slice through wind and shed 200–400 g per wheel compared to aluminum. That means snappier accelerations and higher top-end speed on flats and climbs.</p><p>• <strong>Stiff & Responsive</strong><br/><br/>The high torsional stiffness of carbon delivers instant power transfer—every watt you pedal goes straight into forward motion. Cornering feels sharper and more controlled, boosting confidence when you push hard.</p><p>• <strong>Vibration Damping</strong><br/><br/>Unlike the springy flex of aluminum, carbon fibers naturally absorb road buzz, smoothing out chatter on rough pavement or chip-seal. You’ll feel less fatigue on long rides, even if the road surface isn’t perfect.</p><p>• <strong>Premium Feel</strong><br/><br/>There’s an unmistakable “plush but precise” quality to carbon wheels that serious racers and enthusiasts crave. They look slick, ride like a dream, and scream performance.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_g4RxMW": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": " Which wheels are better for road cycling – aluminum or carbon?",
-            "icon": "check_mark",
-            "row_content": "<p>For road riding, it really depends on your priorities. Carbon rims shine on paved roads if you crave performance. </p><p>They’re lighter and more aerodynamic, which helps you ride faster with less effort . If you’re racing or love pushing your speed, carbon wheels can give you that extra edge in acceleration and a cool aero look. </p><p>However, you’ll pay a premium for that advantage. Aluminum wheels, on the other hand, are perfectly capable for most road cycling. They’re a bit heavier, so you might notice slightly slower acceleration or climbing, but they are tough and cost-effective. Many cyclists actually use aluminum wheels for training or everyday rides, and save their pricey carbon set for race day. Unless you’re chasing every watt of advantage, a good set of aluminum wheels will serve you well on the road without breaking the bank.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_tUtMHH": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Which rims are better for riding – aluminum or carbon?",
-            "icon": "check_mark",
-            "row_content": "<p>On rough roads, durability and comfort often matter more than outright speed. <strong>Aluminum rims</strong> are a popular choice for cycling because they can handle the bangs and bumps with less worry. </p><p>Hit a rock or pothole hard, and an aluminum wheel is more likely to dent than explode, meaning you might be able to keep riding and it’s cheaper to fix or replace. They also offer a bit of flex, adding comfort and grip on uneven terrain (like adding a tiny bit of suspension) . </p><p><strong>Carbon rims</strong> are used in gravel too, especially by riders looking to lighten their bike. They can make your gravel bike feel sprightlier on climbs and smooth dirt sections. But remember, carbon wheels are costly and not invincible – a bad rock strike can ruin your day (and your wheel). If your gravel adventures involve really rough trails or you’re on a budget, tough aluminum wheels are probably the best value and peace of mind . If you stick to lighter-duty gravel or racing and you want every performance boost you can get (and don’t mind the cost), a good set of carbon gravel wheels can be the cherry on top of your build.</p>",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_row_HNPmxB",
-        "collapsible_row_CQkFrM",
-        "collapsible_row_g4RxMW",
-        "collapsible_row_tUtMHH"
-      ],
-      "disabled": true,
-      "settings": {
-        "caption": "Typical questions about materials of our bikes",
-        "heading": "FAQ",
-        "heading_size": "h2",
-        "heading_alignment": "left",
-        "layout": "none",
-        "color_scheme": "",
-        "container_color_scheme": "",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -352,8 +246,6 @@
     "product-grid",
     "image_with_text_HzzrmH",
     "rinos_comparison_table_road_KQ4AUd",
-    "banner",
-    "rich_text_KHpmwC",
-    "collapsible_content_HECa7X"
+    "banner"
   ]
 }
