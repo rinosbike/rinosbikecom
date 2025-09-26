@@ -64,9 +64,8 @@
       "blocks": {
         "heading_63hhJD": {
           "type": "heading",
-          "disabled": true,
           "settings": {
-            "heading": "<em><strong>\"The fastest in the Road.\"</strong></em>",
+            "heading": "<em><strong>Welcome to the Road.</strong></em>",
             "heading_size": "h1"
           }
         },
@@ -74,6 +73,12 @@
           "type": "text",
           "settings": {
             "text": "<h2><strong>Rinos Odin </strong>Series</h2>"
+          }
+        },
+        "text_LpyW9j": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Discover our latest model update in all Odins from October 2025.</p><p>Improved frame: UCI certified, lighter and more durable. </p>"
           }
         },
         "button_RCzapT": {
@@ -91,6 +96,7 @@
       "block_order": [
         "heading_63hhJD",
         "text_mCe49j",
+        "text_LpyW9j",
         "button_RCzapT"
       ],
       "settings": {
@@ -102,218 +108,53 @@
         "padding_bottom": 52
       }
     },
-    "image_banner_xRFkHT": {
+    "image_banner_gtyUN9": {
       "type": "image-banner",
       "blocks": {
-        "heading_eEGGfY": {
+        "heading_LmX7e4": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Odin 5. </strong>The Ultimate Road God.",
-            "heading_size": "h0"
-          }
-        },
-        "text_BXYVep": {
-          "type": "text",
-          "settings": {
-            "text": "Shimano Ultegra R8000 22-speed drivetrain. An astonishing lightness of 8.6kg.",
-            "text_style": "body"
-          }
-        },
-        "buttons_pxUy9H": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Buy Odin 5 Now",
-            "button_link_1": "shopify://products/odin-5",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_eEGGfY",
-        "text_BXYVep",
-        "buttons_pxUy9H"
-      ],
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/22.png",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "middle-right",
-        "show_text_box": false,
-        "desktop_content_alignment": "right",
-        "color_scheme": "background-2",
-        "image_behavior": "none",
-        "mobile_content_alignment": "right",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
-    "slideshow_fdGqNT": {
-      "type": "slideshow",
-      "blocks": {
-        "slide_itLy9t": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Group_79.png",
-            "heading": "Odin 1",
-            "heading_size": "h1",
-            "subheading": "The entry-level option, featuring a <strong>Shimano SORA R3000</strong> groupset, ideal for beginner cyclists. It weighs <strong>9.8 kg</strong> and has a full carbon frame. It's designed for riders looking for a lightweight, affordable, and reliable road bike​",
-            "button_label": "Buy now",
-            "link": "shopify://products/odin-1",
-            "button_style_secondary": false,
-            "box_align": "middle-right",
-            "show_text_box": false,
-            "text_alignment": "right",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-2",
-            "text_alignment_mobile": "right"
-          }
-        },
-        "slide_chjaaW": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Group_80.png",
-            "heading": "Odin 3",
-            "heading_size": "h1",
-            "subheading": "A step up, the Odin 3 is equipped with a <strong>Shimano 105</strong> groupset, providing more precise shifting and improved performance. It also features a carbon frame and weighs <strong>9.8 kg</strong>, making it a great choice for intermediate riders seeking better performance on the road​",
-            "button_label": "Buy Now",
-            "link": "shopify://products/odin-3",
-            "button_style_secondary": false,
-            "box_align": "middle-right",
-            "show_text_box": false,
-            "text_alignment": "right",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-2",
-            "text_alignment_mobile": "right"
-          }
-        }
-      },
-      "block_order": [
-        "slide_itLy9t",
-        "slide_chjaaW"
-      ],
-      "disabled": true,
-      "settings": {
-        "layout": "full_bleed",
-        "slide_height": "medium",
-        "slider_visual": "counter",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": false,
-        "accessibility_info": "Slideshow about our brand"
-      }
-    },
-    "image_banner_eXY6tL": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_RKhKA3": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>Classic Road Choice</strong>: Odin 3",
-            "heading_size": "h2"
-          }
-        },
-        "text_KJj3h7": {
-          "type": "text",
-          "settings": {
-            "text": "Ultralight, 9.8 kg. With Shimano 105 R7000.",
-            "text_style": "body"
-          }
-        },
-        "buttons_VkczNy": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Discover more",
-            "button_link_1": "shopify://products/odin-3",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_RKhKA3",
-        "text_KJj3h7",
-        "buttons_VkczNy"
-      ],
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/Group_5226.png",
-        "image_overlay_opacity": 0,
-        "image_height": "small",
-        "desktop_content_position": "middle-left",
-        "show_text_box": false,
-        "desktop_content_alignment": "left",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
-    "image_with_text_tTF9w7": {
-      "type": "image-with-text",
-      "blocks": {
-        "caption_MnKeae": {
-          "type": "caption",
-          "disabled": true,
-          "settings": {
-            "caption": "Featured Bike",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "large"
-          }
-        },
-        "heading_YrNYkg": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "Odin 3",
+            "heading": "",
             "heading_size": "h1"
           }
         },
-        "text_6deyMt": {
+        "text_TcqRXy": {
           "type": "text",
-          "disabled": true,
           "settings": {
-            "text": "<p>Feel the Thrill of Riding with odin 3 Road Bike!</p>",
+            "text": "",
             "text_style": "body"
           }
         },
-        "button_bJAVRa": {
-          "type": "button",
+        "buttons_fHAFfm": {
+          "type": "buttons",
           "settings": {
-            "button_label": "configure",
-            "button_link": "shopify://products/odin-3",
-            "button_style_secondary": false
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "caption_MnKeae",
-        "heading_YrNYkg",
-        "text_6deyMt",
-        "button_bJAVRa"
+        "heading_LmX7e4",
+        "text_TcqRXy",
+        "buttons_fHAFfm"
       ],
-      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Gross_IMG_0391.webp",
-        "height": "adapt",
-        "desktop_image_width": "large",
-        "layout": "text_first",
-        "desktop_content_position": "middle",
+        "image": "shopify://shop_images/DSCF5464.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
         "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
         "color_scheme": "",
         "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "product-grid": {
@@ -506,10 +347,7 @@
   "order": [
     "image_banner_LVww3J",
     "rich_text_Dq3EFa",
-    "image_banner_xRFkHT",
-    "slideshow_fdGqNT",
-    "image_banner_eXY6tL",
-    "image_with_text_tTF9w7",
+    "image_banner_gtyUN9",
     "product-grid",
     "image_with_text_HzzrmH",
     "rinos_comparison_table_road_KQ4AUd",
