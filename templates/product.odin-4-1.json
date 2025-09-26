@@ -152,7 +152,7 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "The Odin 4, at a glance.",
+        "title": "The Odin 4.1, at a glance.",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -176,7 +176,7 @@
       "type": "odin-sizing-guide",
       "name": "ODIN Sizing Guide",
       "settings": {
-        "size_title": "Rinos Road Bicycle Sizing",
+        "size_title": "Rinos Odin Sizing Recommendations",
         "geometry_title": "Geometry & Sizing Details",
         "geometry_image": "shopify://shop_images/80extk.png"
       }
