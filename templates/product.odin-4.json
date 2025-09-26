@@ -116,7 +116,7 @@
         "column_8wYHLe": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Odin_3_-_7_Gold_4c8a7518-1985-47e0-9ffe-4aa012d34030.png",
+            "image": "shopify://shop_images/Group_645.png",
             "title": "<em><strong>UCI Certified.</strong></em>",
             "text": "<p>Ride with confidence — the Odin 3 meets UCI standards, making it competition-ready straight out of the box.</p>",
             "link_label": "",
@@ -126,9 +126,9 @@
         "column_8hGHg7": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Odin_3_-_4_Gold_214e796c-4a2f-4023-9752-88e60b6d377a.png",
-            "title": "Shimano 105, <em><strong>with full carbon frame and fork.</strong></em>",
-            "text": "<p>A lightweight yet durable TORAY T800 carbon setup paired with Shimano Sora 2x9 gearing for smooth and reliable performance.</p>",
+            "image": "shopify://shop_images/Group_646.png",
+            "title": "<strong>Full group Shimano 105</strong>,<em> Full carbon frame and fork,  Shimano hydraulic brakes</em>",
+            "text": "<p>A lightweight 8.8 kg build featuring Shimano 105 R7100 12-speed components, hydraulic disc brakes, and Toray T800 carbon for the perfect balance of stiffness, agility, and comfort.</p>",
             "link_label": "",
             "link": ""
           }
@@ -136,9 +136,9 @@
         "column_4ERxGT": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Odin_3_-_3_Gold_5a317ba9-a812-4d89-bd72-ee7103bdf624.png",
-            "title": "<em><strong>High-End</strong></em> Mid-Entry Model",
-            "text": "<p>Designed for riders who want to upgrade to pro-level feel without the pro-level price tag.</p>",
+            "image": "shopify://shop_images/Group_642.png",
+            "title": "<em><strong>Next-Level</strong></em> Carbon Road Bike.",
+            "text": "<p>Designed for ambitious riders looking for cutting-edge drivetrain technology, hydraulic braking, and a fully aerodynamic setup.</p>",
             "link_label": "",
             "link": ""
           }
@@ -151,7 +151,7 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "The Odin 3, at a glance.",
+        "title": "The Odin 4, at a glance.",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
