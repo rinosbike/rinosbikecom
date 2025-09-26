@@ -21,6 +21,7 @@
         },
         "text_7GWHTa": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "",
             "text_style": "body"
@@ -28,6 +29,7 @@
         },
         "buttons_KJXan9": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
             "button_label_1": "",
             "button_link_1": "",
@@ -47,10 +49,10 @@
       "settings": {
         "image": "shopify://shop_images/IMG_1446.jpg",
         "image_overlay_opacity": 0,
-        "image_height": "adapt",
+        "image_height": "small",
         "desktop_content_position": "top-left",
-        "show_text_box": false,
-        "desktop_content_alignment": "left",
+        "show_text_box": true,
+        "desktop_content_alignment": "right",
         "color_scheme": "",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
@@ -77,7 +79,7 @@
         "text_yF9Aee": {
           "type": "text",
           "settings": {
-            "text": "<p>From the weekend warrior discovering hidden paths to the seasoned adventurer pushing boundaries, from the commuter seeking a more exciting route to the explorer hungry for new horizons. Every rider has a story, and every story deserves the right bike.</p><p>Our collection spans the spectrum of possibility. Lightweight carbon frames that climb mountains like they're molehills. Built for decades of loyalty. Versatile all-road machines that blur the line between pavement and trail. </p><p>Each one carefully chosen, expertly crafted, and ready to become part of your journey.</p>"
+            "text": ""
           }
         },
         "button_mdnyjd": {
@@ -106,8 +108,38 @@
         "padding_bottom": 52
       }
     },
+    "featured_collection_TLj34C": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "gravel-bikes",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "javis_gallery_rinos_QTCbir": {
       "type": "JavisGalleryRinos",
+      "disabled": true,
       "name": "Gravel Bike Gallery",
       "settings": {}
     },
@@ -263,6 +295,7 @@
     "image_banner_9dBUXR",
     "javis_gallery_rinos_J37Dax",
     "rich_text_b3NKQm",
+    "featured_collection_TLj34C",
     "javis_gallery_rinos_QTCbir",
     "rich_text_9iwyRH",
     "product-grid",

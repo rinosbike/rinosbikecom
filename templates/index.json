@@ -43,6 +43,7 @@
         "text_bEKVEj",
         "buttons_wJ3xRV"
       ],
+      "disabled": true,
       "settings": {
         "image_2": "shopify://shop_images/IMG_1105.webp",
         "image_overlay_opacity": 0,
@@ -59,6 +60,7 @@
     },
     "featured_blog_iNPmwD": {
       "type": "featured-blog",
+      "disabled": true,
       "settings": {
         "heading": "Rinos Feed",
         "heading_size": "h1",
