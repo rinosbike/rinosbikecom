@@ -11,6 +11,7 @@
   "sections": {
     "promovideo_m4Uqqc": {
       "type": "promovideo",
+      "disabled": true,
       "name": "Video Hero",
       "settings": {
         "show_content": true,
