@@ -60,7 +60,6 @@
     },
     "featured_blog_iNPmwD": {
       "type": "featured-blog",
-      "disabled": true,
       "settings": {
         "heading": "Rinos Feed",
         "heading_size": "h1",
@@ -212,9 +211,9 @@
   },
   "order": [
     "image_banner_XyQx3D",
-    "featured_blog_iNPmwD",
     "image_banner_wWVkQp",
     "image_banner_7riqD7",
+    "featured_blog_iNPmwD",
     "rich_text_MfXaWd"
   ]
 }
