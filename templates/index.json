@@ -46,7 +46,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
@@ -175,6 +175,54 @@
         "show_text_below": true
       }
     },
+    "image_with_text_KWGKmt": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_dGjgXk": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Sandman 1. </strong>Your entry into bikepacking .",
+            "heading_size": "h1"
+          }
+        },
+        "text_xwQfgp": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>Carbon frame, Shimano SORA— while others are stuck on overpriced aluminum. All at 1.499 EUR. </h4>",
+            "text_style": "body"
+          }
+        },
+        "button_MNMQQ9": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_dGjgXk",
+        "text_xwQfgp",
+        "button_MNMQQ9"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/20250624_123543.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_blog_iNPmwD": {
       "type": "featured-blog",
       "settings": {
@@ -190,41 +238,6 @@
         "show_view_all": false,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "rich_text_MfXaWd": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_zgC64e": {
-          "type": "heading",
-          "settings": {
-            "heading": "Follow us on Instagram",
-            "heading_size": "h2"
-          }
-        },
-        "button_8HaUBi": {
-          "type": "button",
-          "settings": {
-            "button_label": "Discover now",
-            "button_link": "https://www.instagram.com/rinosbicycles/",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_zgC64e",
-        "button_8HaUBi"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
       }
     },
     "image_banner_ppnKBF": {
@@ -315,6 +328,42 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "rich_text_MfXaWd": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_zgC64e": {
+          "type": "heading",
+          "settings": {
+            "heading": "Follow us on Instagram",
+            "heading_size": "h2"
+          }
+        },
+        "button_8HaUBi": {
+          "type": "button",
+          "settings": {
+            "button_label": "Discover now",
+            "button_link": "https://www.instagram.com/rinosbicycles/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_zgC64e",
+        "button_8HaUBi"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -322,9 +371,10 @@
     "herobannererika_9rNAtd",
     "image_banner_wWVkQp",
     "image_banner_7riqD7",
+    "image_with_text_KWGKmt",
     "featured_blog_iNPmwD",
-    "rich_text_MfXaWd",
     "image_banner_ppnKBF",
-    "collage_GQf6eP"
+    "collage_GQf6eP",
+    "rich_text_MfXaWd"
   ]
 }
