@@ -9,6 +9,49 @@
  */
 {
   "sections": {
+    "rich_text_JE6QYx": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tckp9K": {
+          "type": "heading",
+          "settings": {
+            "heading": "Bikepacking? Road Racing?",
+            "heading_size": "h1"
+          }
+        },
+        "text_9KWhej": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Welcome to Rinos. Discover our latest gravel and road models. </p>"
+          }
+        },
+        "button_dNDita": {
+          "type": "button",
+          "settings": {
+            "button_label": "Discover Gravel Now",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "Discover Road Now",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_tckp9K",
+        "text_9KWhej",
+        "button_dNDita"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "herobannererika_9rNAtd": {
       "type": "herobannererika",
       "blocks": {
@@ -235,6 +278,7 @@
     }
   },
   "order": [
+    "rich_text_JE6QYx",
     "herobannererika_9rNAtd",
     "image_banner_wWVkQp",
     "image_banner_7riqD7",
