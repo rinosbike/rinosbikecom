@@ -25,7 +25,7 @@
       ],
       "name": "Full-Width Looping Video",
       "settings": {
-        "height_mode": "auto",
+        "height_mode": "fixed",
         "min_height_vh": 60,
         "show_overlay": false,
         "overlay_top_opacity": 0,
