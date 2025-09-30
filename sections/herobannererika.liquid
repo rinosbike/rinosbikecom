@@ -1,262 +1,100 @@
 {%- comment -%}
-  Section: Full-Width Looping Video (Optimized)
-  Improvements:
-    • Lazy loading with intersection observer
-    • Better mobile performance with reduced quality option
-    • Accessibility improvements (ARIA labels, skip link)
-    • Shopify-native video upload support
-    • Better error handling
-    • Performance optimizations (preconnect, resource hints)
-    • Responsive container queries
+  Section: Full-Width Looping Video (Dawn-compatible)
+  Purpose: Simple, multilingual-agnostic video player for full-bleed hero/background use.
+  Features:
+    • Full-width (edge-to-edge) layout
+    • Autoplay + loop + muted + playsinline by default for mobile compatibility
+    • Optional controls toggle
+    • Supports multiple videos via blocks (MP4 URL or Vimeo ID)
+    • Optional poster image for MP4
+    • Adjustable height: auto (intrinsic) or fixed viewport height
+  Usage:
+    1) Save as sections/full-width-video.liquid
+    2) In Theme Editor, add section “Full-Width Looping Video” and add one or more blocks.
 {%- endcomment -%}
 
-{%- liquid
-  assign section_id = section.id
-  assign height_mode = section.settings.height_mode
-  assign min_height = section.settings.min_height_vh
-  assign has_overlay = section.settings.show_overlay
--%}
-
 <style>
-  #section-{{ section_id }} {
-    position: relative;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background: {{ section.settings.background_color | default: '#000' }};
-    overflow: hidden;
-  }
+  .fw-video-section { position: relative; width: 100%; margin: 0; padding: 0; background: #000; }
 
-  #section-{{ section_id }} .fw-video-wrap {
-    width: 100%;
-    position: relative;
-  }
+  /* Edge-to-edge helper: ensures no theme page-width container limits width */
+  .fw-video-wrap { width: 100%; }
 
   /* Fixed viewport height mode */
-  #section-{{ section_id }} .fw-video-fixed {
-    min-height: {{ min_height }}vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  .fw-video-fixed { position: relative; width: 100%; overflow: hidden; }
+  .fw-video-fixed .fw-video, .fw-video-fixed .fw-iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
-  #section-{{ section_id }} .fw-video-fixed .fw-video,
-  #section-{{ section_id }} .fw-video-fixed .fw-iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  /* Auto height (intrinsic) mode */
+  .fw-video-auto .fw-video { width: 100%; height: auto; display: block; }
+  .fw-video-auto .fw-iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; }
 
-  /* Auto height mode */
-  #section-{{ section_id }} .fw-video-auto .fw-video {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+  /* Optional overlay (if ever needed for text layering; kept minimal here) */
+  .fw-overlay { position: absolute; inset: 0; pointer-events: none; }
 
-  #section-{{ section_id }} .fw-video-auto .fw-iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border: 0;
-    display: block;
-  }
+  /* Reduce default section spacing if theme injects it */
+  .fw-video-section .page-width, .fw-video-section .content-container { max-width: none; padding: 0; margin: 0; }
 
-  /* Overlay */
-  #section-{{ section_id }} .fw-overlay {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(
-      to bottom,
-      rgba(0,0,0,{{ section.settings.overlay_top_opacity | divided_by: 100.0 }}),
-      rgba(0,0,0,{{ section.settings.overlay_bottom_opacity | divided_by: 100.0 }})
-    );
-  }
-
-  /* Loading state */
-  #section-{{ section_id }} .fw-video-loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40vh;
-    color: rgba(255,255,255,0.5);
-  }
-
-  /* Skip link for accessibility */
-  #section-{{ section_id }} .skip-video {
-    position: absolute;
-    left: -9999px;
-    z-index: 999;
-    padding: 1em;
-    background: #000;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  #section-{{ section_id }} .skip-video:focus {
-    left: 0;
-    top: 0;
-  }
-
-  @media (max-width: 749px) {
-    #section-{{ section_id }} .fw-video-fixed {
-      min-height: max(40vh, {{ min_height | times: 0.6 }}vh);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    #section-{{ section_id }} .fw-video,
-    #section-{{ section_id }} .fw-iframe {
-      animation: none !important;
-    }
+  @media (max-width: 750px) {
+    .fw-video-fixed { min-height: 40vh; }
   }
 </style>
 
-{%- if section.blocks.size > 0 and section.blocks.first.type == 'vimeo' -%}
-  <link rel="preconnect" href="https://player.vimeo.com" crossorigin>
-{%- endif -%}
+<section class="fw-video-section" id="section-{{ section.id }}">
+  <div class="fw-video-wrap
+              {% if section.settings.height_mode == 'fixed' %}fw-video-fixed{% else %}fw-video-auto{% endif %}"
+       style="{% if section.settings.height_mode == 'fixed' %}min-height: {{ section.settings.min_height_vh }}vh;{% endif %}">
 
-<section
-  class="fw-video-section"
-  id="section-{{ section_id }}"
-  role="region"
-  aria-label="{{ section.settings.aria_label | default: 'Video section' }}"
->
-  <a href="#section-{{ section_id }}-end" class="skip-video">Skip video</a>
-
-  <div class="fw-video-wrap {% if height_mode == 'fixed' %}fw-video-fixed{% else %}fw-video-auto{% endif %}">
     {%- if section.blocks.size > 0 -%}
       {%- for block in section.blocks -%}
         {%- case block.type -%}
-          
           {%- when 'mp4' -%}
-            {%- liquid
-              assign video_url = block.settings.mp4_url
-              assign shopify_video = block.settings.shopify_video
-              assign show_controls = block.settings.show_controls
-              assign poster_image = block.settings.poster
-            -%}
-
-            {%- if shopify_video != blank -%}
-              {%- assign video_url = shopify_video.sources[1].url | default: shopify_video.sources[0].url -%}
-            {%- endif -%}
-
-            {%- if video_url != blank -%}
-              <video
-                class="fw-video"
-                playsinline
-                autoplay
-                muted
-                loop
-                {% if show_controls %}controls{% endif %}
-                preload="metadata"
-                {% if poster_image != blank %}
-                  poster="{{ poster_image | image_url: width: 1920 }}"
-                {% elsif shopify_video.preview_image %}
-                  poster="{{ shopify_video.preview_image | image_url: width: 1920 }}"
-                {% endif %}
-                aria-label="{{ block.settings.video_description | default: 'Background video' }}"
-              >
-                <source src="{{ video_url }}" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            {%- else -%}
-              <div class="fw-video-loading">
-                <p>{{ 'sections.video.no_video' | default: 'Please add a video URL or upload a video' }}</p>
-              </div>
-            {%- endif -%}
+            {%- assign show_controls = block.settings.show_controls -%}
+            <video
+              class="fw-video"
+              {% if section.settings.height_mode == 'fixed' %}playsinline{% endif %}
+              autoplay
+              muted
+              loop
+              {% if show_controls %}controls{% endif %}
+              preload="metadata"
+              {% if block.settings.poster != blank %}poster="{{ block.settings.poster | image_url }}"{% endif %}
+            >
+              {%- if block.settings.mp4_url != blank -%}
+                <source src="https://cdn.shopify.com/videos/c/o/v/41873abbf2b54cfba0bdf5431ea1de14.mp4" type="video/mp4">
+              {%- endif -%}
+              Your browser does not support the video tag.
+            </video>
 
           {%- when 'vimeo' -%}
-            {%- liquid
-              assign vimeo_id = block.settings.vimeo_id
-              assign show_controls = block.settings.show_controls | default: false
-            -%}
-
-            {%- if vimeo_id != blank -%}
+            {%- assign controls = block.settings.show_controls | default: false -%}
+            {%- if block.settings.vimeo_id != blank -%}
               <iframe
                 class="fw-iframe"
-                src="https://player.vimeo.com/video/{{ vimeo_id }}?autoplay=1&muted=1&loop=1&background={% if show_controls %}0{% else %}1{% endif %}&byline=0&title=0&portrait=0&controls={% if show_controls %}1{% else %}0{% endif %}"
+                src="https://player.vimeo.com/video/{{ block.settings.vimeo_id }}?autoplay=1&muted=1&loop=1&background={% if controls %}0{% else %}1{% endif %}&byline=0&title=0&portrait=0&controls={% if controls %}1{% else %}0{% endif %}"
                 frameborder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 loading="lazy"
                 allowfullscreen
-                title="{{ block.settings.video_description | default: 'Vimeo video player' }}"
-              ></iframe>
-            {%- else -%}
-              <div class="fw-video-loading">
-                <p>{{ 'sections.video.no_vimeo' | default: 'Please add a Vimeo ID' }}</p>
-              </div>
-            {%- endif -%}
-
-          {%- when 'youtube' -%}
-            {%- liquid
-              assign youtube_id = block.settings.youtube_id
-              assign show_controls = block.settings.show_controls | default: false
-            -%}
-
-            {%- if youtube_id != blank -%}
-              <iframe
-                class="fw-iframe"
-                src="https://www.youtube.com/embed/{{ youtube_id }}?autoplay=1&mute=1&loop=1&playlist={{ youtube_id }}&controls={% if show_controls %}1{% else %}0{% endif %}&modestbranding=1&playsinline=1&rel=0&showinfo=0"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                loading="lazy"
-                allowfullscreen
-                title="{{ block.settings.video_description | default: 'YouTube video player' }}"
               ></iframe>
             {%- endif -%}
-
         {%- endcase -%}
       {%- endfor -%}
     {%- else -%}
-      <div class="fw-video-loading">
-        <p>{{ 'sections.video.empty_state' | default: 'Add an MP4, Vimeo, or YouTube block to this section' }}</p>
+      <div style="color:#fff;display:flex;align-items:center;justify-content:center;min-height:40vh;text-align:center;opacity:.7;">
+        Add an MP4 or Vimeo block to this section.
       </div>
     {%- endif -%}
 
-    {%- if has_overlay -%}
-      <div class="fw-overlay"></div>
+    {%- if section.settings.show_overlay -%}
+      <div class="fw-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,{{ section.settings.overlay_top_opacity | divided_by: 100.0 }}), rgba(0,0,0,{{ section.settings.overlay_bottom_opacity | divided_by: 100.0 }}));"></div>
     {%- endif -%}
   </div>
-
-  <div id="section-{{ section_id }}-end"></div>
 </section>
-
-<script>
-  // Pause video when not in viewport (performance optimization)
-  if ('IntersectionObserver' in window) {
-    const videoSection = document.querySelector('#section-{{ section_id }}');
-    const videos = videoSection.querySelectorAll('video');
-    
-    if (videos.length > 0) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          const video = entry.target;
-          if (entry.isIntersecting) {
-            video.play().catch(() => {});
-          } else {
-            video.pause();
-          }
-        });
-      }, { threshold: 0.25 });
-
-      videos.forEach(video => observer.observe(video));
-    }
-  }
-</script>
 
 {% schema %}
 {
-  "name": "Full-Width Video",
+  "name": "Full-Width Looping Video",
   "tag": "section",
-  "class": "section-video",
   "settings": [
-    {
-      "type": "header",
-      "content": "Layout"
-    },
     {
       "type": "select",
       "id": "height_mode",
@@ -271,22 +109,10 @@
       "type": "range",
       "id": "min_height_vh",
       "label": "Min height (vh)",
-      "info": "Applies to fixed height mode only",
       "min": 30,
       "max": 100,
       "step": 5,
-      "default": 60,
-      "unit": "vh"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "#000000"
-    },
-    {
-      "type": "header",
-      "content": "Overlay"
+      "default": 60
     },
     {
       "type": "checkbox",
@@ -297,132 +123,45 @@
     {
       "type": "range",
       "id": "overlay_top_opacity",
-      "label": "Overlay top opacity",
+      "label": "Overlay top opacity (%)",
       "min": 0,
       "max": 100,
       "step": 5,
-      "default": 0,
-      "unit": "%"
+      "default": 0
     },
     {
       "type": "range",
       "id": "overlay_bottom_opacity",
-      "label": "Overlay bottom opacity",
+      "label": "Overlay bottom opacity (%)",
       "min": 0,
       "max": 100,
       "step": 5,
-      "default": 40,
-      "unit": "%"
-    },
-    {
-      "type": "header",
-      "content": "Accessibility"
-    },
-    {
-      "type": "text",
-      "id": "aria_label",
-      "label": "Section ARIA label",
-      "default": "Video section",
-      "info": "Describes this section for screen readers"
+      "default": 40
     }
   ],
   "blocks": [
     {
       "type": "mp4",
       "name": "MP4 video",
-      "limit": 1,
+      "limit": 10,
       "settings": [
-        {
-          "type": "video",
-          "id": "shopify_video",
-          "label": "Upload video",
-          "info": "Recommended: Use Shopify's native video upload for best performance"
-        },
-        {
-          "type": "text",
-          "id": "mp4_url",
-          "label": "Or: MP4 URL",
-          "info": "Alternative: Paste Shopify Files URL (overridden by uploaded video)"
-        },
-        {
-          "type": "image_picker",
-          "id": "poster",
-          "label": "Poster image (optional)",
-          "info": "Shown before video loads"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_controls",
-          "label": "Show player controls",
-          "default": false
-        },
-        {
-          "type": "text",
-          "id": "video_description",
-          "label": "Video description",
-          "info": "For accessibility (screen readers)",
-          "default": "Background video"
-        }
+        { "type": "text", "id": "mp4_url", "label": "MP4 URL (Shopify Files > copy URL)" },
+        { "type": "image_picker", "id": "poster", "label": "Poster image (optional)" },
+        { "type": "checkbox", "id": "show_controls", "label": "Show player controls", "default": false }
       ]
     },
     {
       "type": "vimeo",
       "name": "Vimeo video",
-      "limit": 1,
+      "limit": 10,
       "settings": [
-        {
-          "type": "text",
-          "id": "vimeo_id",
-          "label": "Vimeo ID",
-          "info": "Example: 123456789 (digits only)"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_controls",
-          "label": "Show player controls",
-          "default": false
-        },
-        {
-          "type": "text",
-          "id": "video_description",
-          "label": "Video description",
-          "info": "For accessibility (screen readers)",
-          "default": "Vimeo video"
-        }
-      ]
-    },
-    {
-      "type": "youtube",
-      "name": "YouTube video",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "text",
-          "id": "youtube_id",
-          "label": "YouTube ID",
-          "info": "Example: dQw4w9WgXcQ (from youtube.com/watch?v=dQw4w9WgXcQ)"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_controls",
-          "label": "Show player controls",
-          "default": false
-        },
-        {
-          "type": "text",
-          "id": "video_description",
-          "label": "Video description",
-          "info": "For accessibility (screen readers)",
-          "default": "YouTube video"
-        }
+        { "type": "text", "id": "vimeo_id", "label": "Vimeo ID (digits only)" },
+        { "type": "checkbox", "id": "show_controls", "label": "Show player controls", "default": false }
       ]
     }
   ],
   "presets": [
-    {
-      "name": "Full-Width Video",
-      "category": "Video"
-    }
+    { "name": "Full-Width Looping Video", "category": "Video" }
   ]
 }
 {% endschema %}
