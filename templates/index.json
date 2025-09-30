@@ -196,7 +196,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop Now",
-            "button_link": "",
+            "button_link": "https://rinosbike.com/products/sandman-1",
             "button_style_secondary": false
           }
         }
@@ -219,6 +219,46 @@
         "color_scheme": "",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collage_GQf6eP": {
+      "type": "collage",
+      "blocks": {
+        "image_bpxYJj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_627.png"
+          }
+        },
+        "product_qt3aEd": {
+          "type": "product",
+          "settings": {
+            "product": "odin-3",
+            "second_image": true
+          }
+        },
+        "collection_RGpi3w": {
+          "type": "collection",
+          "settings": {
+            "collection": "road-bikes"
+          }
+        }
+      },
+      "block_order": [
+        "image_bpxYJj",
+        "product_qt3aEd",
+        "collection_RGpi3w"
+      ],
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "Discover the new UCI-Certificied frame for all Odin Models.",
+        "heading_size": "h2",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "background-1",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -289,46 +329,6 @@
         "show_text_below": true
       }
     },
-    "collage_GQf6eP": {
-      "type": "collage",
-      "blocks": {
-        "image_bpxYJj": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Group_627.png"
-          }
-        },
-        "product_qt3aEd": {
-          "type": "product",
-          "settings": {
-            "product": "odin-3",
-            "second_image": true
-          }
-        },
-        "collection_RGpi3w": {
-          "type": "collection",
-          "settings": {
-            "collection": "road-bikes"
-          }
-        }
-      },
-      "block_order": [
-        "image_bpxYJj",
-        "product_qt3aEd",
-        "collection_RGpi3w"
-      ],
-      "name": "t:sections.collage.presets.name",
-      "settings": {
-        "heading": "Discover the new UCI-Certificied frame for all Odin Models.",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "column",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "rich_text_MfXaWd": {
       "type": "rich-text",
       "blocks": {
@@ -372,9 +372,9 @@
     "image_banner_wWVkQp",
     "image_banner_7riqD7",
     "image_with_text_KWGKmt",
+    "collage_GQf6eP",
     "featured_blog_iNPmwD",
     "image_banner_ppnKBF",
-    "collage_GQf6eP",
     "rich_text_MfXaWd"
   ]
 }
