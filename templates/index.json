@@ -9,6 +9,29 @@
  */
 {
   "sections": {
+    "herobannererika_9rNAtd": {
+      "type": "herobannererika",
+      "blocks": {
+        "mp4_WCLtRy": {
+          "type": "mp4",
+          "settings": {
+            "mp4_url": "Https://cdn.shopify.com/videos/c/o/v/41873abbf2b54cfba0bdf5431ea1de14.mp4",
+            "show_controls": false
+          }
+        }
+      },
+      "block_order": [
+        "mp4_WCLtRy"
+      ],
+      "name": "Full-Width Looping Video",
+      "settings": {
+        "height_mode": "fixed",
+        "min_height_vh": 60,
+        "show_overlay": false,
+        "overlay_top_opacity": 0,
+        "overlay_bottom_opacity": 5
+      }
+    },
     "rich_text_JE6QYx": {
       "type": "rich-text",
       "blocks": {
@@ -21,12 +44,14 @@
         },
         "text_9KWhej": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>Welcome to Rinos. Discover our latest gravel and road models. </p>"
           }
         },
         "button_dNDita": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "button_label": "Discover Gravel Now",
             "button_link": "https://3ee4f2-3.myshopify.com/collections/gravel-bikes",
@@ -50,29 +75,6 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
-      }
-    },
-    "herobannererika_9rNAtd": {
-      "type": "herobannererika",
-      "blocks": {
-        "mp4_WCLtRy": {
-          "type": "mp4",
-          "settings": {
-            "mp4_url": "Https://cdn.shopify.com/videos/c/o/v/41873abbf2b54cfba0bdf5431ea1de14.mp4",
-            "show_controls": false
-          }
-        }
-      },
-      "block_order": [
-        "mp4_WCLtRy"
-      ],
-      "name": "Full-Width Looping Video",
-      "settings": {
-        "height_mode": "fixed",
-        "min_height_vh": 60,
-        "show_overlay": false,
-        "overlay_top_opacity": 0,
-        "overlay_bottom_opacity": 5
       }
     },
     "image_banner_wWVkQp": {
@@ -229,7 +231,7 @@
         "heading_a4KQ6W": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Sandman 4 </strong>Your adventure, upgraded.",
+            "heading": "<strong>Sandman 4 </strong>Your Gravel adventure, upgraded.",
             "heading_size": "h1"
           }
         },
@@ -423,8 +425,8 @@
     }
   },
   "order": [
-    "rich_text_JE6QYx",
     "herobannererika_9rNAtd",
+    "rich_text_JE6QYx",
     "image_banner_wWVkQp",
     "image_banner_7riqD7",
     "image_with_text_KWGKmt",
