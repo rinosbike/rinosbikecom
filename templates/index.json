@@ -275,6 +275,46 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
+    },
+    "collage_GQf6eP": {
+      "type": "collage",
+      "blocks": {
+        "image_bpxYJj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_627.png"
+          }
+        },
+        "product_qt3aEd": {
+          "type": "product",
+          "settings": {
+            "product": "odin-3",
+            "second_image": true
+          }
+        },
+        "collection_RGpi3w": {
+          "type": "collection",
+          "settings": {
+            "collection": "road-bikes"
+          }
+        }
+      },
+      "block_order": [
+        "image_bpxYJj",
+        "product_qt3aEd",
+        "collection_RGpi3w"
+      ],
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "Discover the new UCI-Certificied frames for all Odin Models.",
+        "heading_size": "h2",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -284,6 +324,7 @@
     "image_banner_7riqD7",
     "featured_blog_iNPmwD",
     "rich_text_MfXaWd",
-    "image_banner_ppnKBF"
+    "image_banner_ppnKBF",
+    "collage_GQf6eP"
   ]
 }
