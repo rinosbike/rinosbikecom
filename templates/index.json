@@ -26,10 +26,10 @@
       "name": "Full-Width Looping Video",
       "settings": {
         "height_mode": "fixed",
-        "min_height_vh": 60,
+        "min_height_vh": 50,
         "show_overlay": false,
         "overlay_top_opacity": 0,
-        "overlay_bottom_opacity": 5
+        "overlay_bottom_opacity": 0
       }
     },
     "rich_text_JE6QYx": {
