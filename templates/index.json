@@ -207,6 +207,29 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
+    },
+    "herobannererika_9rNAtd": {
+      "type": "herobannererika",
+      "blocks": {
+        "mp4_WCLtRy": {
+          "type": "mp4",
+          "settings": {
+            "mp4_url": "Https://cdn.shopify.com/videos/c/o/v/41873abbf2b54cfba0bdf5431ea1de14.mp4",
+            "show_controls": false
+          }
+        }
+      },
+      "block_order": [
+        "mp4_WCLtRy"
+      ],
+      "name": "Full-Width Looping Video",
+      "settings": {
+        "height_mode": "fixed",
+        "min_height_vh": 60,
+        "show_overlay": false,
+        "overlay_top_opacity": 0,
+        "overlay_bottom_opacity": 40
+      }
     }
   },
   "order": [
@@ -214,6 +237,7 @@
     "image_banner_7riqD7",
     "featured_blog_iNPmwD",
     "rich_text_MfXaWd",
-    "image_banner_ppnKBF"
+    "image_banner_ppnKBF",
+    "herobannererika_9rNAtd"
   ]
 }
