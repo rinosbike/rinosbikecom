@@ -99,6 +99,56 @@
         "text_LpyW9j",
         "button_RCzapT"
       ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_g9zYkj": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QbWtLR": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em><strong>Welcome to the Road.</strong></em>",
+            "heading_size": "h1"
+          }
+        },
+        "text_zPHgcz": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>Rinos Odin </strong>Series</h2>"
+          }
+        },
+        "text_rcnbPp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Discover our latest model update in all Odins from October 2025.</p><p>Improved frame: UCI certified, lighter and more durable. </p>"
+          }
+        },
+        "button_dmAEbL": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QbWtLR",
+        "text_zPHgcz",
+        "text_rcnbPp",
+        "button_dmAEbL"
+      ],
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
@@ -190,6 +240,7 @@
         "text_HUeTAQ",
         "button_8Tw3Np"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "right",
@@ -285,6 +336,7 @@
   "order": [
     "image_banner_LVww3J",
     "rich_text_Dq3EFa",
+    "rich_text_g9zYkj",
     "image_banner_gtyUN9",
     "rich_text_BX6ND7",
     "product-grid",
