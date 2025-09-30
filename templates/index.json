@@ -44,14 +44,12 @@
         },
         "text_9KWhej": {
           "type": "text",
-          "disabled": true,
           "settings": {
             "text": "<p>Welcome to Rinos. Discover our latest gravel and road models. </p>"
           }
         },
         "button_dNDita": {
           "type": "button",
-          "disabled": true,
           "settings": {
             "button_label": "Discover Gravel Now",
             "button_link": "https://3ee4f2-3.myshopify.com/collections/gravel-bikes",
@@ -425,8 +423,8 @@
     }
   },
   "order": [
-    "herobannererika_9rNAtd",
     "rich_text_JE6QYx",
+    "herobannererika_9rNAtd",
     "image_banner_wWVkQp",
     "image_banner_7riqD7",
     "image_with_text_KWGKmt",
