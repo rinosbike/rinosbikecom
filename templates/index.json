@@ -29,7 +29,7 @@
           "type": "button",
           "settings": {
             "button_label": "Discover Gravel Now",
-            "button_link": "",
+            "button_link": "https://3ee4f2-3.myshopify.com/collections/gravel-bikes",
             "button_style_secondary": false,
             "button_label_2": "Discover Road Now",
             "button_link_2": "",
