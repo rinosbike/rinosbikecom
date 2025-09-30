@@ -157,6 +157,49 @@
         "show_text_below": true
       }
     },
+    "rich_text_BX6ND7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_bgPPLH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover all <em><strong>Odin</strong></em> models",
+            "heading_size": "h1"
+          }
+        },
+        "text_HUeTAQ": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "button_8Tw3Np": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_bgPPLH",
+        "text_HUeTAQ",
+        "button_8Tw3Np"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "right",
+        "content_alignment": "right",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -243,6 +286,7 @@
     "image_banner_LVww3J",
     "rich_text_Dq3EFa",
     "image_banner_gtyUN9",
+    "rich_text_BX6ND7",
     "product-grid",
     "image_with_text_HzzrmH",
     "rinos_comparison_table_road_KQ4AUd",
