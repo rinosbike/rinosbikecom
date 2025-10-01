@@ -114,15 +114,15 @@
     <!-- Content Column -->
     <div class="rinos-content">
       <h2 class="rinos-header">
-        {{ section.settings.header | default: "Rinos Invests in TRUDI" }}
+        {{ 'sections.rinos_trudi.header' | t }}
       </h2>
       
       <p class="rinos-subtext">
-        {{ section.settings.subtext_1 | default: "Better wheels, same fair price. We just added Berd's $7,000 TRUDI system to our workshop—not to charge you more, but to deliver pro-level wheel builds on every bike." }}
+        {{ 'sections.rinos_trudi.subtext_1' | t }}
       </p>
       
-      <a href="{{ section.settings.button_link | default: 'https://rinosbike.com/de/blogs/news/rinos-invests-in-trudi-better-wheels-same-fair-price' }}" class="rinos-button">
-        {{ section.settings.button_text | default: "Discover the Full Blog" }}
+      <a href="{{ 'sections.rinos_trudi.button_link' | t }}" class="rinos-button">
+        {{ 'sections.rinos_trudi.button_text' | t }}
       </a>
     </div>
     
@@ -137,19 +137,19 @@
       "type": "text",
       "id": "header",
       "label": "Header Text",
-      "default": "Rinos Invests in TRUDI"
+      "default": "Rinos x TRUDI. Perfect wheels in all your Rinos"
     },
     {
       "type": "textarea",
       "id": "subtext_1",
       "label": "First Paragraph",
-      "default": "Better wheels, same fair price. We just added Berd's  TRUDI system to our workshop—not to charge you more, but to deliver pro-level wheel builds on every bike."
+      "default": "Better wheels, same fair price. We just added Berd's TRUDI system to our workshop—not to charge you more, but to deliver pro-level wheel builds on every bike."
     },
     {
       "type": "text",
       "id": "button_text",
       "label": "Button Text",
-      "default": "See more"
+      "default": "Discover the Full Blog"
     },
     {
       "type": "text",
