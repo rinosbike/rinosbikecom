@@ -175,6 +175,15 @@
         "show_text_below": true
       }
     },
+    "trudiwheels_9T6qrQ": {
+      "type": "TRUDIWHEELS",
+      "name": "Rinos TRUDI Announcement",
+      "settings": {
+        "header": "Rinos x TRUDI",
+        "subtext_1": "Better wheels, same fair price. We just added Berd's TRUDI system to our workshop—not to charge you more, but to deliver pro-level wheel builds on every bike.",
+        "subtext_2": ""
+      }
+    },
     "image_with_text_KWGKmt": {
       "type": "image-with-text",
       "blocks": {
@@ -475,6 +484,7 @@
     "herobannererika_9rNAtd",
     "image_banner_wWVkQp",
     "image_banner_7riqD7",
+    "trudiwheels_9T6qrQ",
     "image_with_text_KWGKmt",
     "image_with_text_Ebw7mB",
     "image_with_text_8Rgkc3",
