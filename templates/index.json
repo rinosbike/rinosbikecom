@@ -9,29 +9,6 @@
  */
 {
   "sections": {
-    "herobannererika_9rNAtd": {
-      "type": "herobannererika",
-      "blocks": {
-        "mp4_WCLtRy": {
-          "type": "mp4",
-          "settings": {
-            "mp4_url": "Https://cdn.shopify.com/videos/c/o/v/41873abbf2b54cfba0bdf5431ea1de14.mp4",
-            "show_controls": false
-          }
-        }
-      },
-      "block_order": [
-        "mp4_WCLtRy"
-      ],
-      "name": "Full-Width Looping Video",
-      "settings": {
-        "height_mode": "fixed",
-        "min_height_vh": 50,
-        "show_overlay": false,
-        "overlay_top_opacity": 0,
-        "overlay_bottom_opacity": 0
-      }
-    },
     "rich_text_JE6QYx": {
       "type": "rich-text",
       "blocks": {
@@ -73,6 +50,29 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
+      }
+    },
+    "herobannererika_9rNAtd": {
+      "type": "herobannererika",
+      "blocks": {
+        "mp4_WCLtRy": {
+          "type": "mp4",
+          "settings": {
+            "mp4_url": "Https://cdn.shopify.com/videos/c/o/v/41873abbf2b54cfba0bdf5431ea1de14.mp4",
+            "show_controls": false
+          }
+        }
+      },
+      "block_order": [
+        "mp4_WCLtRy"
+      ],
+      "name": "Full-Width Looping Video",
+      "settings": {
+        "height_mode": "fixed",
+        "min_height_vh": 50,
+        "show_overlay": false,
+        "overlay_top_opacity": 0,
+        "overlay_bottom_opacity": 0
       }
     },
     "image_banner_wWVkQp": {
@@ -236,7 +236,7 @@
         "text_6dV6dB": {
           "type": "text",
           "settings": {
-            "text": "<h4>Carbon frame, Shimano GRX, Hydraulic Braking and 20 speeds — while others are stuck on overpriced aluminum. All at 1.899 EUR. </h4>",
+            "text": "<h4>Carbon frame, Shimano GRX, Hydraulic Braking and 20 speeds — all at 1.899 EUR. </h4>",
             "text_style": "body"
           }
         },
