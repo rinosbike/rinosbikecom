@@ -111,6 +111,54 @@
         "padding_bottom": 52
       }
     },
+    "image_with_text_PDBFzR": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_AbYGwQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Wheels You Can Trust.</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_icmxnL": {
+          "type": "text",
+          "settings": {
+            "text": "<h6>Every Odin is precision-trued with TRUDI by Berd, the world’s most advanced wheel truing system. </h6><h6>That means straighter wheels, tighter tolerances, and absolute stability — so you ride faster, corner harder, and never lose performance to wobble or flex.</h6>",
+            "text_style": "subtitle"
+          }
+        },
+        "button_VBzyyG": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_AbYGwQ",
+        "text_icmxnL",
+        "button_VBzyyG"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/d80c7d0895ddc1617dc72cea1500e69a-2.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "multicolumn_KfMJ9G": {
       "type": "multicolumn",
       "blocks": {
@@ -275,6 +323,7 @@
     "klarna_banner_1_g363fF",
     "custom_liquid_fFQWdd",
     "multicolumn_KfMJ9G",
+    "image_with_text_PDBFzR",
     "product_description_sec1_Nn4UXc",
     "odin_sizing_guide_gkrKDi",
     "iso_video_section_bpCKLQ",
