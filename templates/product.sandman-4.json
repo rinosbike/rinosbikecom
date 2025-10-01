@@ -234,49 +234,6 @@
         "padding_bottom": 36
       }
     },
-    "product_description_sec1_Nn4UXc": {
-      "type": "product-description-sec1",
-      "settings": {}
-    },
-    "review_section_small_fKwkg6": {
-      "type": "review-section-small",
-      "disabled": true,
-      "custom_css": [
-        ".review-section {margin-bottom: 25px;}"
-      ],
-      "settings": {}
-    },
-    "rich_text_7we9KY": {
-      "type": "rich-text",
-      "blocks": {
-        "button_fWXxPJ": {
-          "type": "button",
-          "settings": {
-            "button_label": "see more",
-            "button_link": "shopify://pages/what-our-customers-say",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "button_fWXxPJ"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".rich-text {border: none;}"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 12,
-        "padding_bottom": 12
-      }
-    },
     "related-products": {
       "type": "related-products",
       "disabled": true,
@@ -296,13 +253,52 @@
         "padding_bottom": 28
       }
     },
-    "custom_liquid_fFQWdd": {
-      "type": "custom-liquid",
+    "image_with_text_86eDEc": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_8xf4xW": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Wheels You Can Trust.</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_aUB6Dd": {
+          "type": "text",
+          "settings": {
+            "text": "<h6>Every Odin is precision-trued with TRUDI by Berd, the world’s most advanced wheel truing system. </h6><h6>That means straighter wheels, tighter tolerances, and absolute stability — so you ride faster, corner harder, and never lose performance to wobble or flex.</h6>",
+            "text_style": "subtitle"
+          }
+        },
+        "button_F3pAje": {
+          "type": "button",
+          "settings": {
+            "button_label": "Discover more",
+            "button_link": "shopify://blogs/news/rinos-invests-in-trudi-better-wheels-same-fair-price",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_8xf4xW",
+        "text_aUB6Dd",
+        "button_F3pAje"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
+        "image": "shopify://shop_images/d80c7d0895ddc1617dc72cea1500e69a-2.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "",
         "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
@@ -314,10 +310,7 @@
     "klarna_banner_1_g363fF",
     "rich_text_MFqJh7",
     "multirow_4TH9pN",
-    "product_description_sec1_Nn4UXc",
-    "review_section_small_fKwkg6",
-    "rich_text_7we9KY",
     "related-products",
-    "custom_liquid_fFQWdd"
+    "image_with_text_86eDEc"
   ]
 }
