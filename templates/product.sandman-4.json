@@ -145,7 +145,7 @@
         "heading_zpYfc4": {
           "type": "heading",
           "settings": {
-            "heading": "Made<em><strong> for Gravel.</strong></em>",
+            "heading": "Made<em><strong> for Gravel.</strong></em> Discover Rinos Sandman 4.",
             "heading_size": "h2"
           }
         },
@@ -226,7 +226,7 @@
         "button_style": "secondary",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "right",
-        "image_layout": "align-left",
+        "image_layout": "alternate-left",
         "section_color_scheme": "",
         "row_color_scheme": "",
         "mobile_content_alignment": "left",
