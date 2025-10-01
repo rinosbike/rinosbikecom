@@ -123,7 +123,6 @@
     },
     "bike_parts_highlight_1_6XGKyM": {
       "type": "bike-parts-highlight-1",
-      "disabled": true,
       "settings": {
         "tire_size_text": "tire size",
         "gear_shifter_text": "gear shifter",
@@ -236,7 +235,6 @@
     },
     "related-products": {
       "type": "related-products",
-      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -310,7 +308,7 @@
     "klarna_banner_1_g363fF",
     "rich_text_MFqJh7",
     "multirow_4TH9pN",
-    "related-products",
-    "image_with_text_86eDEc"
+    "image_with_text_86eDEc",
+    "related-products"
   ]
 }
