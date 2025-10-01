@@ -1019,6 +1019,13 @@
 
     "approx_103kg": "~10,3 kg",
     
+  },
+  "sections": {
+    "rinos_trudi": {
+      "header": "Rinos x TRUDI. Perfekte Laufräder in allen deinen Rinos",
+      "subtext_1": "Bessere Laufräder, gleicher fairer Preis. Wir haben gerade Berds TRUDI-System in unsere Werkstatt integriert – nicht um mehr zu verlangen, sondern um bei jedem Fahrrad professionelle Laufradqualität zu liefern.",
+      "button_text": "Entdecke den vollständigen Blog",
+      "button_link": "/de/blogs/news/rinos-invests-in-trudi-better-wheels-same-fair-price"
+    }
   }
-
 }
