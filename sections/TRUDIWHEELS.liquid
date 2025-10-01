@@ -8,22 +8,22 @@
   
   .rinos-trudi-section {
     font-family: 'IBM Plex Sans', sans-serif;
-    padding: 60px 20px;
-    max-width: 1400px;
+    padding: 40px 20px;
+    max-width: 1200px;
     margin: 0 auto;
   }
   
   .rinos-trudi-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
     align-items: center;
   }
   
   .rinos-video-wrapper {
     position: relative;
     width: 100%;
-    max-width: 450px;
+    max-width: 350px;
   }
   
   .rinos-video-wrapper iframe {
@@ -35,46 +35,64 @@
   }
   
   .rinos-content {
-    padding: 20px;
+    padding: 0;
   }
   
   .rinos-header {
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     color: #000;
   }
   
   .rinos-subtext {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.6;
     color: #333;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
   
   .rinos-subtext:last-child {
     margin-bottom: 0;
   }
   
+  .rinos-button {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 14px 28px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .rinos-button:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
   @media (max-width: 968px) {
     .rinos-trudi-container {
       grid-template-columns: 1fr;
-      gap: 40px;
+      gap: 30px;
     }
     
     .rinos-video-wrapper {
-      max-width: 100%;
+      max-width: 300px;
       margin: 0 auto;
     }
     
     .rinos-header {
-      font-size: 36px;
+      font-size: 32px;
     }
     
     .rinos-subtext {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 </style>
@@ -100,12 +118,16 @@
       </h2>
       
       <p class="rinos-subtext">
-        {{ section.settings.subtext_1 | default: "Better wheels, same fair price. We just added Berd's TRUDI system to our workshop—not to charge you more, but to deliver pro-level wheel builds on every bike." }}
+        {{ section.settings.subtext_1 | default: "Better wheels, same fair price. We just added Berd's $7,000 TRUDI system to our workshop—not to charge you more, but to deliver pro-level wheel builds on every bike." }}
       </p>
       
       <p class="rinos-subtext">
         {{ section.settings.subtext_2 | default: "Perfectly true wheels in 15 minutes, accurate to 0.25mm. More precision, zero upcharge. Because cycling shouldn't be a luxury sport." }}
       </p>
+      
+      <a href="{{ section.settings.button_link | default: 'https://rinosbike.com/de/blogs/news/rinos-invests-in-trudi-better-wheels-same-fair-price' }}" class="rinos-button">
+        {{ section.settings.button_text | default: "Discover the Full Blog" }}
+      </a>
     </div>
     
   </div>
@@ -132,6 +154,18 @@
       "id": "subtext_2",
       "label": "Second Paragraph",
       "default": "Perfectly true wheels in 15 minutes, accurate to 0.25mm. More precision, zero upcharge. Because cycling shouldn't be a luxury sport."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Discover the Full Blog"
+    },
+    {
+      "type": "text",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/blogs/news/rinos-invests-in-trudi-better-wheels-same-fair-price"
     }
   ],
   "presets": [
