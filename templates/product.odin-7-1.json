@@ -119,7 +119,7 @@
           "settings": {
             "image": "shopify://shop_images/ODIN6_8.png",
             "title": "<em><strong>UCI Certified.</strong></em>",
-            "text": "<p>Ride with confidence. The Odin meets UCI standards, making it competition-ready straight out of the box.</p>",
+            "text": "<p>Ride with confidence. The carbon frame of the Odin meets UCI standards, making it competition-ready straight out of the box.</p>",
             "link_label": "",
             "link": ""
           }
@@ -128,8 +128,8 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/Group_646.png",
-            "title": "<em><strong>Shimano 105 Di2</strong></em> Electronic Shifting",
-            "text": "<p>Instant, precise, and effortless gear changes with Shimano’s 2×12-speed electronic system — no cables, no compromise.</p>",
+            "title": "<em><strong>Shimano Ultegra Di2</strong></em> Electronic Shifting",
+            "text": "<p>The Ultegra Di2 24-speed electronic shifting is instant and precise. Changes at the touch of a button. Professional-grade performance with programmable hood buttons.</p>",
             "link_label": "",
             "link": ""
           }
@@ -138,8 +138,8 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/ODIN6_7.png",
-            "title": "<em><strong>Hydraulic  Braking</strong></em> & 40mm Wheels",
-            "text": "<p>Confident stopping power in all weather and smooth rolling performance for every road and race condition.</p>",
+            "title": "Full Carbon Wheels, Hydraulic braking, <em><strong>Ultralight 7.6kg</strong></em>",
+            "text": "<p>50mm deep carbon rims with 700C × 24H construction. </p><p>Superior aerodynamics, 685g weight savings over aluminum, and enhanced stiffness for power transfer.</p>",
             "link_label": "",
             "link": ""
           }
@@ -152,7 +152,7 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "The Odin 6.1, at a glance.",
+        "title": "The Odin 7.1, at a glance.",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
