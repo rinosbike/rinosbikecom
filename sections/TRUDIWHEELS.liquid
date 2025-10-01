@@ -1,0 +1,143 @@
+{% comment %}
+  Rinos TRUDI Announcement Section
+  Add this to your Shopify theme section file
+{% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+  
+  .rinos-trudi-section {
+    font-family: 'IBM Plex Sans', sans-serif;
+    padding: 60px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .rinos-trudi-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  
+  .rinos-video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .rinos-video-wrapper iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9/16;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .rinos-content {
+    padding: 20px;
+  }
+  
+  .rinos-header {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: #000;
+  }
+  
+  .rinos-subtext {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  
+  .rinos-subtext:last-child {
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 968px) {
+    .rinos-trudi-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    
+    .rinos-video-wrapper {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    
+    .rinos-header {
+      font-size: 36px;
+    }
+    
+    .rinos-subtext {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<section class="rinos-trudi-section">
+  <div class="rinos-trudi-container">
+    
+    <!-- Video Column -->
+    <div class="rinos-video-wrapper">
+      <iframe 
+        src="https://player.vimeo.com/video/1123514070?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        title="Trudi Rinos">
+      </iframe>
+    </div>
+    
+    <!-- Content Column -->
+    <div class="rinos-content">
+      <h2 class="rinos-header">
+        {{ section.settings.header | default: "Rinos Invests in TRUDI" }}
+      </h2>
+      
+      <p class="rinos-subtext">
+        {{ section.settings.subtext_1 | default: "Better wheels, same fair price. We just added Berd's TRUDI system to our workshop—not to charge you more, but to deliver pro-level wheel builds on every bike." }}
+      </p>
+      
+      <p class="rinos-subtext">
+        {{ section.settings.subtext_2 | default: "Perfectly true wheels in 15 minutes, accurate to 0.25mm. More precision, zero upcharge. Because cycling shouldn't be a luxury sport." }}
+      </p>
+    </div>
+    
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Rinos TRUDI Announcement",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Header Text",
+      "default": "Rinos Invests in TRUDI"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext_1",
+      "label": "First Paragraph",
+      "default": "Better wheels, same fair price. We just added Berd's $7,000 TRUDI system to our workshop—not to charge you more, but to deliver pro-level wheel builds on every bike."
+    },
+    {
+      "type": "textarea",
+      "id": "subtext_2",
+      "label": "Second Paragraph",
+      "default": "Perfectly true wheels in 15 minutes, accurate to 0.25mm. More precision, zero upcharge. Because cycling shouldn't be a luxury sport."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rinos TRUDI Announcement"
+    }
+  ]
+}
+{% endschema %}
