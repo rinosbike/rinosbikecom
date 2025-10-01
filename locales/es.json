@@ -1016,5 +1016,14 @@
 
     "approx_103kg": "~10,3 kg",
     "11_speed_11_34t": "12 Velocidades"
+  },
+  "sections": {
+    "rinos_trudi": {
+      "header": "Rinos x TRUDI. Ruedas perfectas en todos tus Rinos",
+      "subtext_1": "Mejores ruedas, mismo precio justo. Acabamos de añadir el sistema TRUDI de Berd a nuestro taller, no para cobrar más, sino para entregar construcciones de ruedas de nivel profesional en cada bicicleta.",
+      "button_text": "Descubre el blog completo",
+      "button_link": "/es/blogs/news/rinos-invests-in-trudi-better-wheels-same-fair-price"
+    }
   }
 }
+
