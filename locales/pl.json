@@ -1041,5 +1041,13 @@
 
     "approx_103kg": "~10,3 kg",
     "11_speed_11_34t": "12-biegowy"
+  },
+  "sections": {
+    "rinos_trudi": {
+      "header": "Rinos x TRUDI. Idealne koła we wszystkich Twoich Rinos",
+      "subtext_1": "Lepsze koła, ta sama uczciwa cena. Właśnie dodaliśmy system TRUDI firmy Berd do naszego warsztatu – nie po to, aby więcej pobierać, ale aby zapewnić profesjonalną budowę kół w każdym rowerze.",
+      "button_text": "Odkryj pełny blog",
+      "button_link": "/pl/blogs/news/rinos-invests-in-trudi-better-wheels-same-fair-price"
+    }
   }
 }
