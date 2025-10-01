@@ -4399,5 +4399,13 @@
 
     "approx_103kg": "~10.3 кг",
     
-  }  
+  },
+  "sections": {
+    "rinos_trudi": {
+      "header": "Rinos x TRUDI. Перфектни колела във всички ваши Rinos",
+      "subtext_1": "По-добри колела, същата честна цена. Току-що добавихме системата TRUDI на Berd в нашата работилница – не за да таксуваме повече, а за да предоставим професионално изграждане на колела на всяко колело.",
+      "button_text": "Открийте пълния блог",
+      "button_link": "/bg/blogs/news/rinos-invests-in-trudi-better-wheels-same-fair-price"
+    }
+  }
 }
