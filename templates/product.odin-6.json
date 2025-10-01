@@ -117,9 +117,9 @@
         "column_8wYHLe": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Group658.png",
+            "image": "shopify://shop_images/ODIN6_8.png",
             "title": "<em><strong>UCI Certified.</strong></em>",
-            "text": "<p>Ride with confidence. The Odin 4.1 meets UCI standards, making it competition-ready straight out of the box.</p>",
+            "text": "<p>Ride with confidence. The Odin meets UCI standards, making it competition-ready straight out of the box.</p>",
             "link_label": "",
             "link": ""
           }
@@ -127,8 +127,8 @@
         "column_8hGHg7": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Group659.png",
-            "title": "<em><strong>Shimano 105 performance with full carbon frame and wheels</strong></em>",
+            "image": "shopify://shop_images/ODIN6_2_png.webp",
+            "title": "<em><strong>Shimano 105 Di2</strong></em> Electronic Shifting",
             "text": "<p>Weighing just 7.9 kg, the Odin 4.1 features Shimano 105 R7100 12-speed components, hydraulic disc brakes, and full carbon rims<strong> </strong>for lighter weight, better stiffness, and faster, more responsive rides.</p>",
             "link_label": "",
             "link": ""
@@ -137,9 +137,9 @@
         "column_4ERxGT": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Group655.png",
-            "title": "<em><strong>Next-Level</strong></em> Carbon Road Bike.",
-            "text": "<p>Engineered for riders seeking maximum speed, aerodynamic efficiency, and the performance boost of carbon wheels.</p>",
+            "image": "shopify://shop_images/ODIN6_7.png",
+            "title": "<em><strong>Hydraulic  Braking</strong></em> & 40mm Wheels",
+            "text": "<p>Confident stopping power in all weather and smooth rolling performance for every road and race condition.</p>",
             "link_label": "",
             "link": ""
           }
@@ -152,7 +152,7 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "The Odin 4.1, at a glance.",
+        "title": "The Odin 6, at a glance.",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
