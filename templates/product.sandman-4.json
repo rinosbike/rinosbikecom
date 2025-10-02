@@ -316,6 +316,13 @@
         "padding_bottom": 36
       }
     },
+    "anglesports_frame_size_yDYafn": {
+      "type": "anglesports-frame-size",
+      "name": "Geometry Chart",
+      "settings": {
+        "geometry_image": "shopify://shop_images/Sizing_Chart_Sandman4_6_7_Angle_Sport.png"
+      }
+    },
     "featured_collection_fPgTD4": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -376,6 +383,7 @@
     "image_with_text_86eDEc",
     "product_description_sec1_NUkPfV",
     "featured_collection_hJ7gdH",
+    "anglesports_frame_size_yDYafn",
     "featured_collection_fPgTD4",
     "related-products"
   ]
