@@ -9,9 +9,8 @@
 
   .comparison-container {
     position: relative;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 2em auto;
-    overflow: hidden;
     padding: 0 1em;
   }
 
@@ -32,44 +31,33 @@
     opacity: 0;
   }
 
+  .comparison-header {
+    padding: 1em 2em;
+    margin-bottom: 2em;
+    border-left: 5px solid currentColor;
+    animation-delay: 0.2s;
+  }
+
+  .comparison-header h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0 0 0.5em 0;
+  }
+
+  .comparison-header p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.95em;
+  }
+
   .comparison-table-box {
     border: 1px solid currentColor;
     border-radius: 6px;
-    padding: 1em;
+    padding: 1.5em;
     animation-delay: 0.4s;
     margin-bottom: 2em;
-  }
-
-  details {
-    cursor: pointer;
-  }
-
-  details summary {
-    font-size: 1.2em;
-    font-weight: 600;
-    letter-spacing: 1px;
-    padding: 0.5em 0;
-    list-style: none;
-    user-select: none;
-  }
-
-  details summary::-webkit-details-marker {
-    display: none;
-  }
-
-  details summary::before {
-    content: '▼';
-    display: inline-block;
-    margin-right: 0.5em;
-    transition: transform 0.3s ease;
-  }
-
-  details[open] summary::before {
-    transform: rotate(180deg);
-  }
-
-  details summary:hover {
-    opacity: 0.8;
+    overflow-x: auto;
   }
 
   .comparison-table {
@@ -77,146 +65,272 @@
     border-collapse: collapse;
     font-size: 0.95em;
     border: 1px solid currentColor;
-    margin-top: 1em;
   }
 
   .comparison-table td {
     border: 1px solid currentColor;
-    padding: 0.5em;
+    padding: 0.8em;
+    text-align: center;
+    vertical-align: middle;
   }
 
   .comparison-table td:first-child {
     font-weight: 600;
     background: rgba(0, 0, 0, 0.02);
+    text-align: left;
+    width: 150px;
+  }
+
+  /* Product header row */
+  .product-header-row td {
+    padding: 1.5em 0.8em;
+    vertical-align: top;
+  }
+
+  .product-header-row .product-image {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    margin: 0 auto 0.8em;
+    display: block;
+  }
+
+  .product-header-row .product-name {
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 0.3em;
+    letter-spacing: 0.5px;
+  }
+
+  .product-header-row .product-price {
+    font-size: 0.9em;
+    color: #666;
   }
 
   .featured-column {
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.03);
     font-weight: 500;
+  }
+
+  .product-header-row .featured-column {
+    background: rgba(0, 0, 0, 0.06);
   }
 
   /* Mobile view */
   @media (max-width: 768px) {
+    .comparison-container {
+      padding: 0 0.5em;
+    }
+
     .comparison-table {
-      font-size: 0.85em;
+      font-size: 0.8em;
     }
     
     .comparison-table td {
-      padding: 0.4em;
-      font-size: 0.9em;
+      padding: 0.5em 0.3em;
+    }
+
+    .comparison-table td:first-child {
+      width: 100px;
+      font-size: 0.85em;
+    }
+
+    .product-header-row .product-image {
+      max-width: 80px;
+    }
+
+    .product-header-row .product-name {
+      font-size: 0.95em;
+    }
+
+    .comparison-header {
+      padding: 1em 1.5em;
+    }
+
+    .comparison-header h2 {
+      font-size: 1.3em;
+    }
+  }
+
+  /* Tablet view */
+  @media (max-width: 1024px) {
+    .comparison-table-box {
+      padding: 1em;
     }
   }
 </style>
 
 <div class="comparison-section">
   <div class="comparison-container">
+    {% if section.settings.show_header %}
+      <div class="fade-in-section comparison-header">
+        <h2>{{ section.settings.header_title }}</h2>
+        {% if section.settings.header_description != blank %}
+          <p>{{ section.settings.header_description }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
     <div class="fade-in-section comparison-table-box">
-      <details open>
-        <summary>{{ section.settings.table_title }}</summary>
-        <table class="comparison-table">
-          <tbody>
-            <!-- Header Row -->
-            <tr>
-              <td><strong>Model</strong></td>
-              <td>{{ 'bikes.sandman1.title' | t }}</td>
-              <td>{{ 'bikes.sandman3.title' | t }}</td>
-              <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.title' | t }}</td>
-              <td>{{ 'bikes.sandman5.title' | t }}</td>
-              <td>{{ 'bikes.sandman6.title' | t }}</td>
-              <td>{{ 'bikes.sandman7.title' | t }}</td>
-              <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_name }}</td>
-            </tr>
-            <!-- Weight -->
-            <tr>
-              <td><strong>{{ 'bikes.weight_label' | t }}</strong></td>
-              <td>{{ 'bikes.sandman1.weight' | t }}</td>
-              <td>{{ 'bikes.sandman3.weight' | t }}</td>
-              <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.weight' | t }}</td>
-              <td>{{ 'bikes.sandman5.weight' | t }}</td>
-              <td>{{ 'bikes.sandman6.weight' | t }}</td>
-              <td>{{ 'bikes.sandman7.weight' | t }}</td>
-              <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_weight }}</td>
-            </tr>
-            <!-- Gear -->
-            <tr>
-              <td><strong>{{ 'bikes.gear_label' | t }}</strong></td>
-              <td>{{ 'bikes.sandman1.gear' | t }}</td>
-              <td>{{ 'bikes.sandman3.gear' | t }}</td>
-              <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.gear' | t }}</td>
-              <td>{{ 'bikes.sandman5.gear' | t }}</td>
-              <td>{{ 'bikes.sandman6.gear' | t }}</td>
-              <td>{{ 'bikes.sandman7.gear' | t }}</td>
-              <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_gear }}</td>
-            </tr>
-            <!-- Gears -->
-            <tr>
-              <td><strong>{{ 'bikes.gears_label' | t }}</strong></td>
-              <td>{{ 'bikes.sandman1.gears' | t }}</td>
-              <td>{{ 'bikes.sandman3.gears' | t }}</td>
-              <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.gears' | t }}</td>
-              <td>{{ 'bikes.sandman5.gears' | t }}</td>
-              <td>{{ 'bikes.sandman6.gears' | t }}</td>
-              <td>{{ 'bikes.sandman7.gears' | t }}</td>
-              <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_gears }}</td>
-            </tr>
-            <!-- Frame -->
-            <tr>
-              <td><strong>{{ 'bikes.frame_label' | t }}</strong></td>
-              <td>{{ 'bikes.sandman1.frame' | t }}</td>
-              <td>{{ 'bikes.sandman3.frame' | t }}</td>
-              <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.frame' | t }}</td>
-              <td>{{ 'bikes.sandman5.frame' | t }}</td>
-              <td>{{ 'bikes.sandman6.frame' | t }}</td>
-              <td>{{ 'bikes.sandman7.frame' | t }}</td>
-              <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_frame }}</td>
-            </tr>
-            <!-- Frame Size -->
-            <tr>
-              <td><strong>{{ 'bikes.frameSize_label' | t }}</strong></td>
-              <td>{{ 'bikes.sandman1.frameSize' | t }}</td>
-              <td>{{ 'bikes.sandman3.frameSize' | t }}</td>
-              <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.frameSize' | t }}</td>
-              <td>{{ 'bikes.sandman5.frameSize' | t }}</td>
-              <td>{{ 'bikes.sandman6.frameSize' | t }}</td>
-              <td>{{ 'bikes.sandman7.frameSize' | t }}</td>
-              <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_frameSize }}</td>
-            </tr>
-            <!-- Brakes -->
-            <tr>
-              <td><strong>{{ 'bikes.brakes_label' | t }}</strong></td>
-              <td>{{ 'bikes.sandman1.brakes' | t }}</td>
-              <td>{{ 'bikes.sandman3.brakes' | t }}</td>
-              <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.brakes' | t }}</td>
-              <td>{{ 'bikes.sandman5.brakes' | t }}</td>
-              <td>{{ 'bikes.sandman6.brakes' | t }}</td>
-              <td>{{ 'bikes.sandman7.brakes' | t }}</td>
-              <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_brakes }}</td>
-            </tr>
-            <!-- Wheel Size -->
-            <tr>
-              <td><strong>{{ 'bikes.wheelSize_label' | t }}</strong></td>
-              <td>{{ 'bikes.sandman1.wheelSize' | t }}</td>
-              <td>{{ 'bikes.sandman3.wheelSize' | t }}</td>
-              <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.wheelSize' | t }}</td>
-              <td>{{ 'bikes.sandman5.wheelSize' | t }}</td>
-              <td>{{ 'bikes.sandman6.wheelSize' | t }}</td>
-              <td>{{ 'bikes.sandman7.wheelSize' | t }}</td>
-              <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_wheelSize }}</td>
-            </tr>
-            <!-- Rims -->
-            <tr>
-              <td><strong>{{ 'bikes.rims_label' | t }}</strong></td>
-              <td>{{ 'bikes.sandman1.rims' | t }}</td>
-              <td>{{ 'bikes.sandman3.rims' | t }}</td>
-              <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.rims' | t }}</td>
-              <td>{{ 'bikes.sandman5.rims' | t }}</td>
-              <td>{{ 'bikes.sandman6.rims' | t }}</td>
-              <td>{{ 'bikes.sandman7.rims' | t }}</td>
-              <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_rims }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </details>
+      <table class="comparison-table">
+        <tbody>
+          <!-- Product Header Row with Images -->
+          <tr class="product-header-row">
+            <td><strong>Model</strong></td>
+            <!-- Sandman 1 -->
+            {% assign product1 = all_products[section.settings.sandman1_handle] %}
+            <td>
+              {% if product1.featured_image %}
+                <img src="{{ product1.featured_image | img_url: '240x240' }}" alt="{{ product1.title }}" class="product-image" loading="lazy">
+              {% endif %}
+              <div class="product-name">{{ 'bikes.sandman1.title' | t }}</div>
+              <div class="product-price">{{ product1.price | money }}</div>
+            </td>
+            <!-- Sandman 3 -->
+            {% assign product3 = all_products[section.settings.sandman3_handle] %}
+            <td>
+              {% if product3.featured_image %}
+                <img src="{{ product3.featured_image | img_url: '240x240' }}" alt="{{ product3.title }}" class="product-image" loading="lazy">
+              {% endif %}
+              <div class="product-name">{{ 'bikes.sandman3.title' | t }}</div>
+              <div class="product-price">{{ product3.price | money }}</div>
+            </td>
+            <!-- Sandman 4 -->
+            {% assign product4 = all_products[section.settings.sandman4_handle] %}
+            <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">
+              {% if product4.featured_image %}
+                <img src="{{ product4.featured_image | img_url: '240x240' }}" alt="{{ product4.title }}" class="product-image" loading="lazy">
+              {% endif %}
+              <div class="product-name">{{ 'bikes.sandman4.title' | t }}</div>
+              <div class="product-price">{{ product4.price | money }}</div>
+            </td>
+            <!-- Sandman 5 -->
+            {% assign product5 = all_products[section.settings.sandman5_handle] %}
+            <td>
+              {% if product5.featured_image %}
+                <img src="{{ product5.featured_image | img_url: '240x240' }}" alt="{{ product5.title }}" class="product-image" loading="lazy">
+              {% endif %}
+              <div class="product-name">{{ 'bikes.sandman5.title' | t }}</div>
+              <div class="product-price">{{ product5.price | money }}</div>
+            </td>
+            <!-- Sandman 6 -->
+            {% assign product6 = all_products[section.settings.sandman6_handle] %}
+            <td>
+              {% if product6.featured_image %}
+                <img src="{{ product6.featured_image | img_url: '240x240' }}" alt="{{ product6.title }}" class="product-image" loading="lazy">
+              {% endif %}
+              <div class="product-name">{{ 'bikes.sandman6.title' | t }}</div>
+              <div class="product-price">{{ product6.price | money }}</div>
+            </td>
+            <!-- Sandman 7 -->
+            {% assign product7 = all_products[section.settings.sandman7_handle] %}
+            <td>
+              {% if product7.featured_image %}
+                <img src="{{ product7.featured_image | img_url: '240x240' }}" alt="{{ product7.title }}" class="product-image" loading="lazy">
+              {% endif %}
+              <div class="product-name">{{ 'bikes.sandman7.title' | t }}</div>
+              <div class="product-price">{{ product7.price | money }}</div>
+            </td>
+            <!-- Sandman 8 -->
+            {% assign product8 = all_products[section.settings.sandman8_handle] %}
+            <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">
+              {% if product8.featured_image %}
+                <img src="{{ product8.featured_image | img_url: '240x240' }}" alt="{{ product8.title }}" class="product-image" loading="lazy">
+              {% endif %}
+              <div class="product-name">{{ section.settings.sandman8_name }}</div>
+              <div class="product-price">{{ product8.price | money }}</div>
+            </td>
+          </tr>
+          <!-- Weight -->
+          <tr>
+            <td><strong>{{ 'bikes.weight_label' | t }}</strong></td>
+            <td>{{ 'bikes.sandman1.weight' | t }}</td>
+            <td>{{ 'bikes.sandman3.weight' | t }}</td>
+            <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.weight' | t }}</td>
+            <td>{{ 'bikes.sandman5.weight' | t }}</td>
+            <td>{{ 'bikes.sandman6.weight' | t }}</td>
+            <td>{{ 'bikes.sandman7.weight' | t }}</td>
+            <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_weight }}</td>
+          </tr>
+          <!-- Gear -->
+          <tr>
+            <td><strong>{{ 'bikes.gear_label' | t }}</strong></td>
+            <td>{{ 'bikes.sandman1.gear' | t }}</td>
+            <td>{{ 'bikes.sandman3.gear' | t }}</td>
+            <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.gear' | t }}</td>
+            <td>{{ 'bikes.sandman5.gear' | t }}</td>
+            <td>{{ 'bikes.sandman6.gear' | t }}</td>
+            <td>{{ 'bikes.sandman7.gear' | t }}</td>
+            <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_gear }}</td>
+          </tr>
+          <!-- Gears -->
+          <tr>
+            <td><strong>{{ 'bikes.gears_label' | t }}</strong></td>
+            <td>{{ 'bikes.sandman1.gears' | t }}</td>
+            <td>{{ 'bikes.sandman3.gears' | t }}</td>
+            <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.gears' | t }}</td>
+            <td>{{ 'bikes.sandman5.gears' | t }}</td>
+            <td>{{ 'bikes.sandman6.gears' | t }}</td>
+            <td>{{ 'bikes.sandman7.gears' | t }}</td>
+            <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_gears }}</td>
+          </tr>
+          <!-- Frame -->
+          <tr>
+            <td><strong>{{ 'bikes.frame_label' | t }}</strong></td>
+            <td>{{ 'bikes.sandman1.frame' | t }}</td>
+            <td>{{ 'bikes.sandman3.frame' | t }}</td>
+            <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.frame' | t }}</td>
+            <td>{{ 'bikes.sandman5.frame' | t }}</td>
+            <td>{{ 'bikes.sandman6.frame' | t }}</td>
+            <td>{{ 'bikes.sandman7.frame' | t }}</td>
+            <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_frame }}</td>
+          </tr>
+          <!-- Frame Size -->
+          <tr>
+            <td><strong>{{ 'bikes.frameSize_label' | t }}</strong></td>
+            <td>{{ 'bikes.sandman1.frameSize' | t }}</td>
+            <td>{{ 'bikes.sandman3.frameSize' | t }}</td>
+            <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.frameSize' | t }}</td>
+            <td>{{ 'bikes.sandman5.frameSize' | t }}</td>
+            <td>{{ 'bikes.sandman6.frameSize' | t }}</td>
+            <td>{{ 'bikes.sandman7.frameSize' | t }}</td>
+            <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_frameSize }}</td>
+          </tr>
+          <!-- Brakes -->
+          <tr>
+            <td><strong>{{ 'bikes.brakes_label' | t }}</strong></td>
+            <td>{{ 'bikes.sandman1.brakes' | t }}</td>
+            <td>{{ 'bikes.sandman3.brakes' | t }}</td>
+            <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.brakes' | t }}</td>
+            <td>{{ 'bikes.sandman5.brakes' | t }}</td>
+            <td>{{ 'bikes.sandman6.brakes' | t }}</td>
+            <td>{{ 'bikes.sandman7.brakes' | t }}</td>
+            <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_brakes }}</td>
+          </tr>
+          <!-- Wheel Size -->
+          <tr>
+            <td><strong>{{ 'bikes.wheelSize_label' | t }}</strong></td>
+            <td>{{ 'bikes.sandman1.wheelSize' | t }}</td>
+            <td>{{ 'bikes.sandman3.wheelSize' | t }}</td>
+            <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.wheelSize' | t }}</td>
+            <td>{{ 'bikes.sandman5.wheelSize' | t }}</td>
+            <td>{{ 'bikes.sandman6.wheelSize' | t }}</td>
+            <td>{{ 'bikes.sandman7.wheelSize' | t }}</td>
+            <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_wheelSize }}</td>
+          </tr>
+          <!-- Rims -->
+          <tr>
+            <td><strong>{{ 'bikes.rims_label' | t }}</strong></td>
+            <td>{{ 'bikes.sandman1.rims' | t }}</td>
+            <td>{{ 'bikes.sandman3.rims' | t }}</td>
+            <td class="{% if section.settings.sandman4_featured %}featured-column{% endif %}">{{ 'bikes.sandman4.rims' | t }}</td>
+            <td>{{ 'bikes.sandman5.rims' | t }}</td>
+            <td>{{ 'bikes.sandman6.rims' | t }}</td>
+            <td>{{ 'bikes.sandman7.rims' | t }}</td>
+            <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">{{ section.settings.sandman8_rims }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
@@ -226,16 +340,79 @@
   "name": "Product Comparison Table",
   "settings": [
     {
+      "type": "header",
+      "content": "Header Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Show Header",
+      "default": true
+    },
+    {
       "type": "text",
-      "id": "table_title",
-      "label": "Table Title",
-      "default": "Model Comparison"
+      "id": "header_title",
+      "label": "Header Title",
+      "default": "Compare Our Sandman Models"
+    },
+    {
+      "type": "textarea",
+      "id": "header_description",
+      "label": "Header Description",
+      "default": "Find the perfect gravel bike for your adventure"
+    },
+    {
+      "type": "header",
+      "content": "Product Handles"
+    },
+    {
+      "type": "text",
+      "id": "sandman1_handle",
+      "label": "Sandman 1 Product Handle",
+      "default": "sandman-1",
+      "info": "Enter the product handle/URL slug"
+    },
+    {
+      "type": "text",
+      "id": "sandman3_handle",
+      "label": "Sandman 3 Product Handle",
+      "default": "sandman-3"
+    },
+    {
+      "type": "text",
+      "id": "sandman4_handle",
+      "label": "Sandman 4 Product Handle",
+      "default": "sandman-4"
     },
     {
       "type": "checkbox",
       "id": "sandman4_featured",
       "label": "Highlight Sandman 4",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "sandman5_handle",
+      "label": "Sandman 5 Product Handle",
+      "default": "sandman-5"
+    },
+    {
+      "type": "text",
+      "id": "sandman6_handle",
+      "label": "Sandman 6 Product Handle",
+      "default": "sandman-6"
+    },
+    {
+      "type": "text",
+      "id": "sandman7_handle",
+      "label": "Sandman 7 Product Handle",
+      "default": "sandman-7"
+    },
+    {
+      "type": "text",
+      "id": "sandman8_handle",
+      "label": "Sandman 8 Product Handle",
+      "default": "sandman-8"
     },
     {
       "type": "checkbox",
