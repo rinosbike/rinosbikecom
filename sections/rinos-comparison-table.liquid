@@ -226,7 +226,7 @@
             {% assign product8 = all_products[section.settings.sandman8_handle] %}
             <td class="{% if section.settings.sandman8_featured %}featured-column{% endif %}">
               {% if product8.featured_image %}
-                <img src="{{ product8.featured_image | img_url: '580x580' }}" alt="{{ product8.title }}" class="product-image" loading="lazy">
+                <img src="{{ product8.featured_image | img_url: '300x300' }}" alt="{{ product8.title }}" class="product-image" loading="lazy">
               {% endif %}
               <div class="product-name">{{ section.settings.sandman8_name }}</div>
               <div class="product-price">{{ product8.price | money }}</div>
