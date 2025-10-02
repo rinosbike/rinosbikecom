@@ -109,55 +109,6 @@
         "padding_bottom": 52
       }
     },
-    "rich_text_g9zYkj": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_QbWtLR": {
-          "type": "heading",
-          "settings": {
-            "heading": "<em><strong>Welcome to the Road.</strong></em>",
-            "heading_size": "h1"
-          }
-        },
-        "text_zPHgcz": {
-          "type": "text",
-          "settings": {
-            "text": "<h2><strong>Rinos Odin </strong>Series</h2>"
-          }
-        },
-        "text_rcnbPp": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Discover our latest model update in all Odins from October 2025.</p><p>Improved frame: UCI certified, lighter and more durable. </p>"
-          }
-        },
-        "button_dmAEbL": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_QbWtLR",
-        "text_zPHgcz",
-        "text_rcnbPp",
-        "button_dmAEbL"
-      ],
-      "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "image_banner_gtyUN9": {
       "type": "image-banner",
       "blocks": {
@@ -207,6 +158,55 @@
         "show_text_below": true
       }
     },
+    "rich_text_g9zYkj": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QbWtLR": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em><strong>Welcome to the Road.</strong></em>",
+            "heading_size": "h1"
+          }
+        },
+        "text_zPHgcz": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>Rinos Odin </strong>Series</h2>"
+          }
+        },
+        "text_rcnbPp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Odin road bike family is built around one idea: making high-performance carbon road bikes accessible to more riders. </p><p>All Odin models share a <strong>Toray T800 full carbon frame and fork, UCI certification, and aerodynamic design</strong>. </p><p>Each step in the series adds specific upgrades in drivetrain, braking, and wheels — so you can choose the model that fits your riding style.</p>"
+          }
+        },
+        "button_dmAEbL": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QbWtLR",
+        "text_zPHgcz",
+        "text_rcnbPp",
+        "button_dmAEbL"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "rich_text_BX6ND7": {
       "type": "rich-text",
       "blocks": {
@@ -249,6 +249,73 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
+      }
+    },
+    "video_javi_w_LyCXHP": {
+      "type": "video-javi-w",
+      "name": "Video + Text Feature",
+      "settings": {
+        "layout": "left",
+        "vertical_alignment": "center",
+        "gap": 40,
+        "container_width": 1200,
+        "container_padding": 20,
+        "background_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "video_type": "file",
+        "youtube_id": "",
+        "vimeo_id": "",
+        "video_file": "https://cdn.shopify.com/videos/c/o/v/26c3fa2fe8e54076bd857a42d35b15f6.mp4",
+        "video_width_percent": 40,
+        "video_min_width": 300,
+        "video_max_width": 500,
+        "video_aspect_ratio": 110,
+        "video_border_radius": 8,
+        "video_shadow": true,
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "hide_controls": true,
+        "eyebrow_text": "INTRODUCING",
+        "heading": "Your Feature Title",
+        "description": "<p>Add your description text here. This supports rich text formatting.</p>",
+        "button_text": "",
+        "button_link": "",
+        "text_alignment": "left",
+        "eyebrow_size": 14,
+        "eyebrow_color": "#666666",
+        "eyebrow_weight": 600,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_spacing": 1,
+        "eyebrow_margin": 10,
+        "heading_tag": "h2",
+        "heading_size": 42,
+        "heading_color": "#000000",
+        "heading_weight": 700,
+        "heading_line_height": 1.2,
+        "heading_margin": 20,
+        "description_size": 16,
+        "description_color": "#333333",
+        "description_line_height": 1.6,
+        "description_margin": 30,
+        "button_padding_vertical": 12,
+        "button_padding_horizontal": 32,
+        "button_bg_color": "#000000",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#333333",
+        "button_hover_text": "#ffffff",
+        "button_font_size": 16,
+        "button_font_weight": 600,
+        "button_border_radius": 4,
+        "button_border_width": 0,
+        "button_border_color": "#000000",
+        "mobile_breakpoint": 768,
+        "mobile_gap": 30,
+        "mobile_text_alignment": "left",
+        "mobile_heading_size": 32,
+        "mobile_description_size": 14
       }
     },
     "product-grid": {
@@ -336,9 +403,10 @@
   "order": [
     "image_banner_LVww3J",
     "rich_text_Dq3EFa",
-    "rich_text_g9zYkj",
     "image_banner_gtyUN9",
+    "rich_text_g9zYkj",
     "rich_text_BX6ND7",
+    "video_javi_w_LyCXHP",
     "product-grid",
     "image_with_text_HzzrmH",
     "rinos_comparison_table_road_KQ4AUd",
