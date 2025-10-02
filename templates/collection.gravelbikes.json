@@ -134,7 +134,7 @@
         "autoplay": true,
         "loop": true,
         "muted": true,
-        "controls": true,
+        "controls": false,
         "hide_controls": false,
         "eyebrow_text": "",
         "heading": "The Rinos Sandman",
