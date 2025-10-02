@@ -34,7 +34,7 @@
         "autoplay": true,
         "loop": true,
         "muted": true,
-        "controls": true,
+        "controls": false,
         "hide_controls": false,
         "eyebrow_text": "Welcome to Rinos",
         "heading": "Discover our best seller for gravel, Sandman 4.",
