@@ -29,7 +29,7 @@
         "video_min_width": 600,
         "video_max_width": 800,
         "video_aspect_ratio": 200,
-        "video_border_radius": 22,
+        "video_border_radius": 10,
         "video_shadow": true,
         "autoplay": true,
         "loop": true,
