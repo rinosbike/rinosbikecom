@@ -1,269 +1,236 @@
-<div class="geometry-chart">
-  <div class="geometry-chart__image">
-    {% if section.settings.geometry_image %}
-      <img 
-        src="{{ section.settings.geometry_image | image_url: width: 1200 }}" 
-        alt="Gravel bike frame geometry diagram"
-        loading="lazy"
-      >
-    {% else %}
-      <div class="geometry-chart__placeholder">
-        <p>Upload geometry diagram image in section settings</p>
+<div class="container">
+  <div class="fade-in-section specs-table">
+    <details>
+      <summary>Frame Geometry</summary>
+      
+      <div class="geometry-chart__image">
+        {% if section.settings.geometry_image %}
+          <img 
+            src="{{ section.settings.geometry_image | image_url: width: 1200 }}" 
+            alt="Gravel bike frame geometry diagram"
+            loading="lazy"
+          >
+        {% else %}
+          <div class="geometry-chart__placeholder">
+            <p>Upload geometry diagram image in section settings</p>
+          </div>
+        {% endif %}
       </div>
-    {% endif %}
-  </div>
 
-  <div class="geometry-chart__table-wrapper">
-    <table class="geometry-table">
-      <thead>
-        <tr>
-          <th scope="col">Size</th>
-          <th scope="col">A</th>
-          <th scope="col">B</th>
-          <th scope="col">C</th>
-          <th scope="col">D</th>
-          <th scope="col">E</th>
-          <th scope="col">F</th>
-          <th scope="col">G</th>
-          <th scope="col">H</th>
-          <th scope="col">I</th>
-          <th scope="col">J</th>
-          <th scope="col">K</th>
-          <th scope="col">WB</th>
-          <th scope="col">FL</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">XS</th>
-          <td>420</td>
-          <td>511</td>
-          <td>-</td>
-          <td>-</td>
-          <td>74.5°</td>
-          <td>70°</td>
-          <td>588</td>
-          <td>110</td>
-          <td>-</td>
-          <td>362</td>
-          <td>537</td>
-          <td>1002</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <th scope="row">S</th>
-          <td>450</td>
-          <td>522</td>
-          <td>-</td>
-          <td>-</td>
-          <td>75.25°</td>
-          <td>70.75°</td>
-          <td>591</td>
-          <td>130</td>
-          <td>-</td>
-          <td>364</td>
-          <td>560</td>
-          <td>1005</td>
-          <td>-</td>
-        </tr>
-        <tr class="highlight">
-          <th scope="row">M</th>
-          <td>480</td>
-          <td>539</td>
-          <td>-75</td>
-          <td>425</td>
-          <td>74°</td>
-          <td>71°</td>
-          <td>604</td>
-          <td>150</td>
-          <td>50</td>
-          <td>373</td>
-          <td>579</td>
-          <td>1018</td>
-          <td>400</td>
-        </tr>
-        <tr>
-          <th scope="row">L</th>
-          <td>500</td>
-          <td>556</td>
-          <td>-</td>
-          <td>-</td>
-          <td>73.75°</td>
-          <td>71.25°</td>
-          <td>616</td>
-          <td>170</td>
-          <td>-</td>
-          <td>381</td>
-          <td>600</td>
-          <td>1030</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <th scope="row">XL</th>
-          <td>520</td>
-          <td>573</td>
-          <td>-</td>
-          <td>-</td>
-          <td>72.5°</td>
-          <td>71.25°</td>
-          <td>631</td>
-          <td>190</td>
-          <td>-</td>
-          <td>389</td>
-          <td>620</td>
-          <td>1045</td>
-          <td>-</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+      <div class="geometry-chart__table-wrapper">
+        <table class="geometry-table">
+          <thead>
+            <tr>
+              <th scope="col">Size</th>
+              <th scope="col">A</th>
+              <th scope="col">B</th>
+              <th scope="col">C</th>
+              <th scope="col">D</th>
+              <th scope="col">E</th>
+              <th scope="col">F</th>
+              <th scope="col">G</th>
+              <th scope="col">H</th>
+              <th scope="col">I</th>
+              <th scope="col">J</th>
+              <th scope="col">K</th>
+              <th scope="col">WB</th>
+              <th scope="col">FL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">XS</th>
+              <td>420</td>
+              <td>511</td>
+              <td>-</td>
+              <td>-</td>
+              <td>74.5°</td>
+              <td>70°</td>
+              <td>588</td>
+              <td>110</td>
+              <td>-</td>
+              <td>362</td>
+              <td>537</td>
+              <td>1002</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <th scope="row">S</th>
+              <td>450</td>
+              <td>522</td>
+              <td>-</td>
+              <td>-</td>
+              <td>75.25°</td>
+              <td>70.75°</td>
+              <td>591</td>
+              <td>130</td>
+              <td>-</td>
+              <td>364</td>
+              <td>560</td>
+              <td>1005</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <th scope="row">M</th>
+              <td>480</td>
+              <td>539</td>
+              <td>-75</td>
+              <td>425</td>
+              <td>74°</td>
+              <td>71°</td>
+              <td>604</td>
+              <td>150</td>
+              <td>50</td>
+              <td>373</td>
+              <td>579</td>
+              <td>1018</td>
+              <td>400</td>
+            </tr>
+            <tr>
+              <th scope="row">L</th>
+              <td>500</td>
+              <td>556</td>
+              <td>-</td>
+              <td>-</td>
+              <td>73.75°</td>
+              <td>71.25°</td>
+              <td>616</td>
+              <td>170</td>
+              <td>-</td>
+              <td>381</td>
+              <td>600</td>
+              <td>1030</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <th scope="row">XL</th>
+              <td>520</td>
+              <td>573</td>
+              <td>-</td>
+              <td>-</td>
+              <td>72.5°</td>
+              <td>71.25°</td>
+              <td>631</td>
+              <td>190</td>
+              <td>-</td>
+              <td>389</td>
+              <td>620</td>
+              <td>1045</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-  <p class="geometry-chart__note">{{ section.settings.note_text }}</p>
+      <p class="geometry-chart__note">All measurements in millimeters (mm). Angles shown in degrees (°).</p>
+    </details>
+  </div>
 </div>
 
 <style>
-.geometry-chart {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
+/* Inherits existing styles from your page, only adds geometry-specific styles */
 
 .geometry-chart__image {
   text-align: center;
-  margin-bottom: 2rem;
-  background: #f8f8f8;
-  padding: 2rem 1rem;
-  border-radius: 8px;
+  margin: 1.5em 0;
+  background: rgba(0,0,0,0.02);
+  padding: 1.5em 1em;
+  border-radius: 4px;
 }
 
 .geometry-chart__image img {
   max-width: 100%;
   height: auto;
-  max-height: 400px;
+  max-height: 350px;
   object-fit: contain;
 }
 
 .geometry-chart__placeholder {
-  padding: 3rem;
-  background: #e0e0e0;
-  border: 2px dashed #999;
-  border-radius: 8px;
-  color: #666;
+  padding: 2em;
+  background: rgba(0,0,0,0.05);
+  border: 2px dashed currentColor;
+  border-radius: 4px;
+  opacity: 0.6;
+  font-size: 0.9em;
 }
 
 .geometry-chart__table-wrapper {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 1em 0;
 }
 
 .geometry-table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
-  font-size: 0.9rem;
-  min-width: 800px;
+  font-size: 0.85em;
+  min-width: 700px;
 }
 
-.geometry-table thead {
-  background: #2c3e50;
-  color: white;
-}
-
-.geometry-table th,
-.geometry-table td {
-  padding: 0.75rem 0.5rem;
-  text-align: center;
-  border: 1px solid #e0e0e0;
-}
-
-.geometry-table th {
+.geometry-table thead th {
+  background: rgba(0,0,0,0.08);
   font-weight: 600;
-  white-space: nowrap;
+  padding: 0.6em 0.4em;
+  border: 1px solid currentColor;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
 }
 
 .geometry-table tbody th {
-  background: #34495e;
-  color: white;
+  background: rgba(0,0,0,0.05);
   font-weight: 600;
+  padding: 0.6em 0.8em;
+  border: 1px solid currentColor;
 }
 
-.geometry-table tbody tr:nth-child(even) {
-  background: #f9f9f9;
+.geometry-table td {
+  padding: 0.6em 0.4em;
+  text-align: center;
+  border: 1px solid currentColor;
 }
 
 .geometry-table tbody tr:hover {
-  background: #f0f7ff;
-  transition: background 0.2s ease;
-}
-
-.geometry-table tbody tr.highlight {
-  background: #e3f2fd;
-}
-
-.geometry-table tbody tr.highlight:hover {
-  background: #bbdefb;
+  background: rgba(0,0,0,0.03);
 }
 
 .geometry-chart__note {
-  text-align: center;
-  font-size: 0.875rem;
-  color: #666;
+  margin: 1em 0 0 0;
+  font-size: 0.85em;
+  opacity: 0.7;
   font-style: italic;
-  margin-top: 1rem;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
-  .geometry-chart {
-    padding: 0 0.5rem;
-  }
-
   .geometry-chart__image {
-    padding: 1rem 0.5rem;
+    padding: 1em 0.5em;
   }
-
+  
   .geometry-table {
-    font-size: 0.8rem;
+    font-size: 0.75em;
+    min-width: 600px;
   }
-
+  
   .geometry-table th,
   .geometry-table td {
-    padding: 0.5rem 0.25rem;
-  }
-}
-
-@media print {
-  .geometry-chart__table-wrapper {
-    box-shadow: none;
-  }
-
-  .geometry-table {
-    min-width: 100%;
+    padding: 0.5em 0.3em;
   }
 }
 </style>
 
 {% schema %}
 {
-  "name": "Geometry Chart",
+  "name": "Frame Geometry",
   "settings": [
     {
       "type": "image_picker",
       "id": "geometry_image",
       "label": "Geometry Diagram Image"
-    },
-    {
-      "type": "text",
-      "id": "note_text",
-      "label": "Note Text",
-      "default": "All measurements in millimeters (mm). Angles shown in degrees (°)."
     }
   ],
   "presets": [
     {
-      "name": "Geometry Chart"
+      "name": "Frame Geometry"
     }
   ]
 }
