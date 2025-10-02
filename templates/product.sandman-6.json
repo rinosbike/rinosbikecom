@@ -238,9 +238,9 @@
       "name": "Video + Text Feature",
       "settings": {
         "layout": "left",
-        "vertical_alignment": "center",
+        "vertical_alignment": "flex-start",
         "gap": 40,
-        "container_width": 800,
+        "container_width": 1000,
         "container_padding": 0,
         "background_color": "#ffffff",
         "padding_top": 0,
