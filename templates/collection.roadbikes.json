@@ -16,7 +16,7 @@
           "type": "heading",
           "settings": {
             "heading": "Welcome to the Road.",
-            "heading_size": "h0"
+            "heading_size": "h1"
           }
         },
         "text_TcqRXy": {
@@ -48,9 +48,9 @@
         "image": "shopify://shop_images/DSCF5464.webp",
         "image_overlay_opacity": 60,
         "image_height": "small",
-        "desktop_content_position": "middle-center",
+        "desktop_content_position": "middle-right",
         "show_text_box": false,
-        "desktop_content_alignment": "left",
+        "desktop_content_alignment": "right",
         "color_scheme": "background-2",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
