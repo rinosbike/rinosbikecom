@@ -120,7 +120,7 @@
         "description_style": "body",
         "collection": "gravel-bikes",
         "products_to_show": 25,
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
