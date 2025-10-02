@@ -1,3 +1,4 @@
+<!-- sections/gravel-comparison.liquid -->
 <style>
   .gravel-comparison {
     padding: 0;
@@ -46,21 +47,15 @@
   }
 
   .featured-bike {
-    background: #2C2C2C;
-    color: #ffffff;
+    background: {{ section.settings.featured_bg_color }};
+    color: {{ section.settings.featured_text_color }};
     position: relative;
   }
 
   .premium-bike {
-    background: #8B4513;
-    color: #ffffff;
+    background: {{ section.settings.premium_bg_color }};
+    color: {{ section.settings.premium_text_color }};
     position: relative;
-  }
-
-  @keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
   }
 
   .bike-name {
@@ -150,16 +145,16 @@
   }
 
   .featured-spec {
-    background: #2C2C2C;
-    color: #ffffff;
+    background: {{ section.settings.featured_bg_color }};
+    color: {{ section.settings.featured_text_color }};
     font-weight: 500;
     border-left: 1px solid #2a2a2a;
     border-right: 1px solid #2a2a2a;
   }
 
   .premium-spec {
-    background: #8B4513;
-    color: #ffffff;
+    background: {{ section.settings.premium_bg_color }};
+    color: {{ section.settings.premium_text_color }};
     font-weight: 500;
   }
 
@@ -195,13 +190,13 @@
   }
 
   .mobile-accordion-header.featured {
-    background: #2C2C2C;
-    color: #ffffff;
+    background: {{ section.settings.featured_bg_color }};
+    color: {{ section.settings.featured_text_color }};
   }
 
   .mobile-accordion-header.premium {
-    background: #8B4513;
-    color: #ffffff;
+    background: {{ section.settings.premium_bg_color }};
+    color: {{ section.settings.premium_text_color }};
   }
 
   .mobile-bike-name {
@@ -367,451 +362,84 @@
         <thead class="bike-header">
           <tr>
             <th></th>
-            <th>
-              <div class="bike-name">{{ 'bikes.sandman1.title' | t }}</div>
-              <div class="bike-description">{{ 'bikes.sandman1.description' | t }}</div>
-              <a href="/products/sandman-1" class="discover-link">Discover More</a>
-            </th>
-            <th>
-              <div class="bike-name">{{ 'bikes.sandman3.title' | t }}</div>
-              <div class="bike-description">{{ 'bikes.sandman3.description' | t }}</div>
-              <a href="/products/sandman-3" class="discover-link">Discover More</a>
-            </th>
-            <th class="featured-bike">
-              <div class="bike-name">{{ 'bikes.sandman4.title' | t }}</div>
-              <div class="bike-description">{{ 'bikes.sandman4.description' | t }}</div>
-              <a href="/products/sandman-4" class="discover-link">Discover More</a>
-            </th>
-            <th>
-              <div class="bike-name">{{ 'bikes.sandman5.title' | t }}</div>
-              <div class="bike-description">{{ 'bikes.sandman5.description' | t }}</div>
-              <a href="/products/sandman-5" class="discover-link">Discover More</a>
-            </th>
-            <th>
-              <div class="bike-name">{{ 'bikes.sandman6.title' | t }}</div>
-              <div class="bike-description">{{ 'bikes.sandman6.description' | t }}</div>
-              <a href="/products/sandman-6" class="discover-link">Discover More</a>
-            </th>
-            <th>
-              <div class="bike-name">{{ 'bikes.sandman7.title' | t }}</div>
-              <div class="bike-description">{{ 'bikes.sandman7.description' | t }}</div>
-              <a href="/products/sandman-7" class="discover-link">Discover More</a>
-            </th>
-            <th class="premium-bike">
-              <div class="bike-name">Sandman 8</div>
-              <div class="bike-description">Carbon. Precision. Adventure. Electronic.</div>
-              <a href="/products/sandman-8" class="discover-link">Discover More</a>
-            </th>
+            {% for block in section.blocks %}
+              {% if block.type == 'bike_column' %}
+                <th class="{% if block.settings.is_featured %}featured-bike{% elsif block.settings.is_premium %}premium-bike{% endif %}">
+                  <div class="bike-name">{{ block.settings.bike_name }}</div>
+                  <div class="bike-description">{{ block.settings.bike_description }}</div>
+                  {% if block.settings.product_link != blank %}
+                    <a href="{{ block.settings.product_link }}" class="discover-link">{{ block.settings.link_text | default: 'Discover More' }}</a>
+                  {% endif %}
+                </th>
+              {% endif %}
+            {% endfor %}
           </tr>
         </thead>
         <tbody>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.weight_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.weight' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.weight' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.weight' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.weight' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.weight' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.weight' | t }}</td>
-            <td class="spec-value premium-spec">9.4kg</td>
-          </tr>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.gear_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.gear' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.gear' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.gear' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.gear' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.gear' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.gear' | t }}</td>
-            <td class="spec-value premium-spec">Shimano 105 Di2</td>
-          </tr>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.gears_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.gears' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.gears' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.gears' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.gears' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.gears' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.gears' | t }}</td>
-            <td class="spec-value premium-spec">2x12</td>
-          </tr>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.frame_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.frame' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.frame' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.frame' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.frame' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.frame' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.frame' | t }}</td>
-            <td class="spec-value premium-spec">Toray T800 Carbon</td>
-          </tr>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.frameSize_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.frameSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.frameSize' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.frameSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.frameSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.frameSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.frameSize' | t }}</td>
-            <td class="spec-value premium-spec">XS, S, M, L</td>
-          </tr>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.brakes_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.brakes' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.brakes' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.brakes' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.brakes' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.brakes' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.brakes' | t }}</td>
-            <td class="spec-value premium-spec">Hydraulic Disc</td>
-          </tr>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.wheelSize_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.wheelSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.wheelSize' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.wheelSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.wheelSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.wheelSize' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.wheelSize' | t }}</td>
-            <td class="spec-value premium-spec">700c</td>
-          </tr>
-          <tr class="spec-row">
-            <td class="spec-label">{{ 'bikes.rims_label' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman1.rims' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman3.rims' | t }}</td>
-            <td class="spec-value featured-spec">{{ 'bikes.sandman4.rims' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman5.rims' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman6.rims' | t }}</td>
-            <td class="spec-value">{{ 'bikes.sandman7.rims' | t }}</td>
-            <td class="spec-value premium-spec">40mm Carbon</td>
-          </tr>
+          {% for spec_block in section.blocks %}
+            {% if spec_block.type == 'specification_row' %}
+              <tr class="spec-row">
+                <td class="spec-label">{{ spec_block.settings.spec_name }}</td>
+                {% assign spec_values = spec_block.settings.spec_values | split: ',' %}
+                {% for value in spec_values %}
+                  {% assign bike_index = forloop.index0 %}
+                  {% assign is_featured = false %}
+                  {% assign is_premium = false %}
+                  
+                  {% for block in section.blocks %}
+                    {% if block.type == 'bike_column' %}
+                      {% assign current_index = forloop.index0 %}
+                      {% if current_index == bike_index %}
+                        {% if block.settings.is_featured %}
+                          {% assign is_featured = true %}
+                        {% elsif block.settings.is_premium %}
+                          {% assign is_premium = true %}
+                        {% endif %}
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                  
+                  <td class="spec-value {% if is_featured %}featured-spec{% elsif is_premium %}premium-spec{% endif %}">
+                    {{ value | strip }}
+                  </td>
+                {% endfor %}
+              </tr>
+            {% endif %}
+          {% endfor %}
         </tbody>
       </table>
     </div>
 
     <!-- Mobile Accordion View -->
     <div class="mobile-accordion">
-      <!-- Sandman 1 -->
-      <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header">
-          <div class="mobile-bike-name">{{ 'bikes.sandman1.title' | t }}</div>
-          <div class="mobile-bike-description">{{ 'bikes.sandman1.description' | t }}</div>
-          <a href="/products/sandman-1" class="mobile-discover-link">Discover More</a>
-          <span class="mobile-accordion-toggle">↓</span>
-        </div>
-        <div class="mobile-accordion-content">
-          <div class="mobile-specs">
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.weight' | t }}</span>
+      {% for block in section.blocks %}
+        {% if block.type == 'bike_column' %}
+          {% assign bike_index = forloop.index0 %}
+          <div class="mobile-accordion-item">
+            <div class="mobile-accordion-header {% if block.settings.is_featured %}featured{% elsif block.settings.is_premium %}premium{% endif %}">
+              <div class="mobile-bike-name">{{ block.settings.bike_name }}</div>
+              <div class="mobile-bike-description">{{ block.settings.bike_description }}</div>
+              {% if block.settings.product_link != blank %}
+                <a href="{{ block.settings.product_link }}" class="mobile-discover-link">{{ block.settings.link_text | default: 'Discover More' }}</a>
+              {% endif %}
+              <span class="mobile-accordion-toggle">↓</span>
             </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.gear' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.gears' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.frame' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.frameSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.brakes' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.wheelSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman1.rims' | t }}</span>
+            <div class="mobile-accordion-content">
+              <div class="mobile-specs">
+                {% for spec_block in section.blocks %}
+                  {% if spec_block.type == 'specification_row' %}
+                    {% assign spec_values = spec_block.settings.spec_values | split: ',' %}
+                    <div class="mobile-spec-item">
+                      <span class="mobile-spec-label">{{ spec_block.settings.spec_name }}</span>
+                      <span class="mobile-spec-value">{{ spec_values[bike_index] | strip | default: '-' }}</span>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Sandman 3 -->
-      <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header">
-          <div class="mobile-bike-name">{{ 'bikes.sandman3.title' | t }}</div>
-          <div class="mobile-bike-description">{{ 'bikes.sandman3.description' | t }}</div>
-          <a href="/products/sandman-3" class="mobile-discover-link">Discover More</a>
-          <span class="mobile-accordion-toggle">↓</span>
-        </div>
-        <div class="mobile-accordion-content">
-          <div class="mobile-specs">
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.weight' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.gear' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.gears' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.frame' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.frameSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.brakes' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.wheelSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman3.rims' | t }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sandman 4 (Featured) -->
-      <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header featured">
-          <div class="mobile-bike-name">{{ 'bikes.sandman4.title' | t }}</div>
-          <div class="mobile-bike-description">{{ 'bikes.sandman4.description' | t }}</div>
-          <a href="/products/sandman-4" class="mobile-discover-link">Discover More</a>
-          <span class="mobile-accordion-toggle">↓</span>
-        </div>
-        <div class="mobile-accordion-content">
-          <div class="mobile-specs">
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.weight' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.gear' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.gears' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.frame' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.frameSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.brakes' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.wheelSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman4.rims' | t }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sandman 5 -->
-      <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header">
-          <div class="mobile-bike-name">{{ 'bikes.sandman5.title' | t }}</div>
-          <div class="mobile-bike-description">{{ 'bikes.sandman5.description' | t }}</div>
-          <a href="/products/sandman-5" class="mobile-discover-link">Discover More</a>
-          <span class="mobile-accordion-toggle">↓</span>
-        </div>
-        <div class="mobile-accordion-content">
-          <div class="mobile-specs">
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.weight' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.gear' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.gears' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.frame' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.frameSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.brakes' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.wheelSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman5.rims' | t }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sandman 6 -->
-      <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header">
-          <div class="mobile-bike-name">{{ 'bikes.sandman6.title' | t }}</div>
-          <div class="mobile-bike-description">{{ 'bikes.sandman6.description' | t }}</div>
-          <a href="/products/sandman-6" class="mobile-discover-link">Discover More</a>
-          <span class="mobile-accordion-toggle">↓</span>
-        </div>
-        <div class="mobile-accordion-content">
-          <div class="mobile-specs">
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.weight' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.gear' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.gears' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.frame' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.frameSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.brakes' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.wheelSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman6.rims' | t }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sandman 7 -->
-      <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header">
-          <div class="mobile-bike-name">{{ 'bikes.sandman7.title' | t }}</div>
-          <div class="mobile-bike-description">{{ 'bikes.sandman7.description' | t }}</div>
-          <a href="/products/sandman-7" class="mobile-discover-link">Discover More</a>
-          <span class="mobile-accordion-toggle">↓</span>
-        </div>
-        <div class="mobile-accordion-content">
-          <div class="mobile-specs">
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.weight' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.gear' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.gears' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.frame' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.frameSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.brakes' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.wheelSize' | t }}</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
-              <span class="mobile-spec-value">{{ 'bikes.sandman7.rims' | t }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sandman 8 (Premium) -->
-      <div class="mobile-accordion-item">
-        <div class="mobile-accordion-header premium">
-          <div class="mobile-bike-name">Sandman 8</div>
-          <div class="mobile-bike-description">Carbon. Precision. Adventure. Electronic.</div>
-          <a href="/products/sandman-8" class="mobile-discover-link">Discover More</a>
-          <span class="mobile-accordion-toggle">↓</span>
-        </div>
-        <div class="mobile-accordion-content">
-          <div class="mobile-specs">
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.weight_label' | t }}</span>
-              <span class="mobile-spec-value">9.4kg</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gear_label' | t }}</span>
-              <span class="mobile-spec-value">Shimano 105 Di2</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.gears_label' | t }}</span>
-              <span class="mobile-spec-value">2x12</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frame_label' | t }}</span>
-              <span class="mobile-spec-value">Toray T800 Carbon</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.frameSize_label' | t }}</span>
-              <span class="mobile-spec-value">XS, S, M, L</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.brakes_label' | t }}</span>
-              <span class="mobile-spec-value">Hydraulic Disc</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.wheelSize_label' | t }}</span>
-              <span class="mobile-spec-value">700c</span>
-            </div>
-            <div class="mobile-spec-item">
-              <span class="mobile-spec-label">{{ 'bikes.rims_label' | t }}</span>
-              <span class="mobile-spec-value">40mm Carbon</span>
-            </div>
-          </div>
-        </div>
-      </div>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -848,26 +476,226 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-  
-  // Handle discover more links
-  document.querySelectorAll('.mobile-discover-link, .discover-link').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      // Add your discover more functionality here
-    });
-  });
 });
 </script>
 
 {% schema %}
 {
   "name": "Gravel Bike Comparison",
-  "settings": [],
+  "settings": [
+    {
+      "type": "color",
+      "id": "featured_bg_color",
+      "label": "Featured Background Color",
+      "default": "#2C2C2C"
+    },
+    {
+      "type": "color",
+      "id": "featured_text_color",
+      "label": "Featured Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "premium_bg_color",
+      "label": "Premium Background Color",
+      "default": "#8B4513"
+    },
+    {
+      "type": "color",
+      "id": "premium_text_color",
+      "label": "Premium Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bike_column",
+      "name": "Bike Model",
+      "settings": [
+        {
+          "type": "text",
+          "id": "bike_name",
+          "label": "Bike Name",
+          "default": "Sandman 4"
+        },
+        {
+          "type": "text",
+          "id": "bike_description",
+          "label": "Bike Description",
+          "default": "Carbon. Performance. Adventure."
+        },
+        {
+          "type": "url",
+          "id": "product_link",
+          "label": "Product Link"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Discover More"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_featured",
+          "label": "Featured Model",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "is_premium",
+          "label": "Premium Model",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "specification_row",
+      "name": "Specification",
+      "settings": [
+        {
+          "type": "text",
+          "id": "spec_name",
+          "label": "Specification Name",
+          "default": "Weight"
+        },
+        {
+          "type": "text",
+          "id": "spec_values",
+          "label": "Specification Values",
+          "info": "Comma-separated values for each bike model in order",
+          "default": "10.5kg, 10kg, 9.8kg, 9.5kg, 9.8kg, 8.7kg, 9.4kg"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "Gravel Bike Comparison",
-      "category": "Custom"
+      "blocks": [
+        {
+          "type": "bike_column",
+          "settings": {
+            "bike_name": "Sandman 1",
+            "bike_description": "Entry. Reliable. Adventure.",
+            "product_link": "/products/sandman-1",
+            "link_text": "Discover More"
+          }
+        },
+        {
+          "type": "bike_column",
+          "settings": {
+            "bike_name": "Sandman 3",
+            "bike_description": "Value. Performance. Versatile.",
+            "product_link": "/products/sandman-3",
+            "link_text": "Discover More"
+          }
+        },
+        {
+          "type": "bike_column",
+          "settings": {
+            "bike_name": "Sandman 4",
+            "bike_description": "Carbon. Made for Gravel.",
+            "product_link": "/products/sandman-4",
+            "link_text": "Discover More",
+            "is_featured": true
+          }
+        },
+        {
+          "type": "bike_column",
+          "settings": {
+            "bike_name": "Sandman 5",
+            "bike_description": "Advanced. Lightweight. Fast.",
+            "product_link": "/products/sandman-5",
+            "link_text": "Discover More"
+          }
+        },
+        {
+          "type": "bike_column",
+          "settings": {
+            "bike_name": "Sandman 6",
+            "bike_description": "GRX600. Premium. Performance.",
+            "product_link": "/products/sandman-6",
+            "link_text": "Discover More"
+          }
+        },
+        {
+          "type": "bike_column",
+          "settings": {
+            "bike_name": "Sandman 7",
+            "bike_description": "Elite. Carbon. Di2.",
+            "product_link": "/products/sandman-7",
+            "link_text": "Discover More"
+          }
+        },
+        {
+          "type": "bike_column",
+          "settings": {
+            "bike_name": "Sandman 8",
+            "bike_description": "Carbon. Precision. Adventure. Electronic.",
+            "product_link": "/products/sandman-8",
+            "link_text": "Discover More",
+            "is_premium": true
+          }
+        },
+        {
+          "type": "specification_row",
+          "settings": {
+            "spec_name": "Weight",
+            "spec_values": "10.5kg, 10kg, 9.8kg, 9.5kg, 9.8kg, 8.7kg, 9.4kg"
+          }
+        },
+        {
+          "type": "specification_row",
+          "settings": {
+            "spec_name": "Gear Shifter",
+            "spec_values": "Shimano Claris, Shimano Sora, Shimano GRX400, Shimano GRX600, Shimano GRX600, Shimano GRX810 Di2, Shimano 105 Di2"
+          }
+        },
+        {
+          "type": "specification_row",
+          "settings": {
+            "spec_name": "Gears",
+            "spec_values": "2x8, 2x9, 2x10, 2x11, 2x11, 2x11, 2x12"
+          }
+        },
+        {
+          "type": "specification_row",
+          "settings": {
+            "spec_name": "Frame",
+            "spec_values": "Aluminum, Aluminum, Toray T800 Carbon, Toray T800 Carbon, Toray T800 Carbon, Toray T900 Carbon, Toray T800 Carbon"
+          }
+        },
+        {
+          "type": "specification_row",
+          "settings": {
+            "spec_name": "Frame Sizes",
+            "spec_values": "XS-XL, XS-XL, XS-XL, XS-XL, XS-XL, XS-XL, XS-L"
+          }
+        },
+        {
+          "type": "specification_row",
+          "settings": {
+            "spec_name": "Brakes",
+            "spec_values": "Mechanical Disc, Mechanical Disc, Hydraulic Disc, Hydraulic Disc, Hydraulic Disc, Hydraulic Disc, Hydraulic Disc"
+          }
+        },
+        {
+          "type": "specification_row",
+          "settings": {
+            "spec_name": "Wheel Size",
+            "spec_values": "700c, 700c, 700c, 700c, 700c, 700c, 700c"
+          }
+        },
+        {
+          "type": "specification_row",
+          "settings": {
+            "spec_name": "Rims",
+            "spec_values": "30mm Alloy, 30mm Alloy, 38mm Alloy, 38mm Alloy, 38mm Alloy, 40mm Carbon, 40mm Carbon"
+          }
+        }
+      ]
     }
   ]
 }
