@@ -15,7 +15,7 @@
         "heading_kgmQyk": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Sandman 4.</strong> GRX400. Made for Gravel.",
+            "heading": "<strong>Sandman 6.</strong> GRX600. Made for Gravel, built for Performance.",
             "heading_size": "h1"
           }
         },
@@ -45,12 +45,12 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Q14A6158.jpg",
+        "image": "shopify://shop_images/Q14A6222.jpg",
         "image_overlay_opacity": 30,
         "image_height": "small",
-        "desktop_content_position": "top-center",
+        "desktop_content_position": "top-right",
         "show_text_box": false,
-        "desktop_content_alignment": "left",
+        "desktop_content_alignment": "right",
         "color_scheme": "background-2",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
@@ -181,9 +181,9 @@
           "type": "row",
           "settings": {
             "image": "shopify://shop_images/att.uph39nUk7j_KQqCRfb7twp3kPsDHpugDhw9HqI8D3jM.jpg",
-            "caption": "Sandman 4",
-            "heading": "<em><strong>Shimano GRX400</strong></em>. For Rough Roads",
-            "text": "<p>The GRX400 has a special clutch mechanism that keeps your chain from bouncing around when you hit rough terrain. That means no annoying chain slap noise and way less chance of dropping your chain on bumpy descents. It's the kind of tech that used to only show up on mountain bikes, now tuned specifically for gravel riding. </p><p>Tested on everything from smooth gravel, to rocky washboard roads and even the Sahara desert. </p>",
+            "caption": "Sandman 6",
+            "heading": "<em><strong>Shimano GRX600</strong></em>. The Difference You'll Actually Feel.",
+            "text": "<p>The GRX600 gives you 22 speeds through an 11-speed cassette instead of the GRX400's 10-speed setup. </p><p>That extra cog means smaller jumps between gears—you're not stuck between \"too easy\" and \"too hard\" nearly as often. </p><p>The RD-RX810 rear derailleur has a clutch that keeps the chain tensioned over rough ground, which stops that annoying slapping sound and means you won't drop your chain on rocky descents.</p><p>The 11-speed chain runs quieter and lasts longer because it's built to tighter tolerances. Shifts happen cleanly even when you're pedaling hard uphill. </p><p>After a few long rides, you'll notice the difference—less hand fatigue from shifting, fewer adjustments needed, more time just riding.</p>",
             "button_label": "",
             "button_link": ""
           }
@@ -191,9 +191,9 @@
         "row_qEgUHQ": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/IMG_7339_6757dde0-0b88-4dc8-b280-539b8e9ddb8d.jpg",
-            "caption": "Sandman 4",
-            "heading": "Gearing That <em><strong>Makes Sense</strong></em>",
+            "image": "shopify://shop_images/Q14A5971.jpg",
+            "caption": "Sandman 6",
+            "heading": "Find Your Rhythm. <em><strong>Keep It.</strong></em>",
             "text": "<p>The 30-tooth small ring up front makes steep climbs manageable even when you're carrying gear. Pair it with the big 34-tooth cog in back and you've got an easy gear for when things point upward. But you're not sacrificing speed—the 46-tooth big ring gives you plenty of top end for fast gravel sections. Twenty gears total that actually work for real-world gravel riding, proven reliable on everything from mountain passes to flat prairie roads.</p>",
             "button_label": "",
             "button_link": ""
@@ -204,8 +204,8 @@
           "settings": {
             "image": "shopify://shop_images/IMG_4287.jpg",
             "caption": "Sandman 4",
-            "heading": "Your gateway into bikepacking trips <em><strong>with 26 mounting screws.</strong></em>",
-            "text": "<p>Twenty-six mounting points across the frame give you tons of options for attaching bags, racks, extra water bottles, and whatever gear your adventure requires. The wide 40mm tires come with reinforced sidewalls to protect against punctures on rough terrain. Hydraulic brakes give you confident stopping power even when the bike is fully loaded. Whether you're planning a weekend camping trip or a multi-week tour, the Sandman 4 has the mounts, clearance, and strength to handle it. Proven reliable in rain, mud, dust, and everything in between.</p>",
+            "heading": "Most riders buy an entry-level gravel bike, ride it hard for six months, <em><strong>then immediately start shopping for upgrades. </strong></em>",
+            "text": "<p>The Sandman 6 gives you the groupset and components that experienced riders eventually upgrade to anyway—the GRX600 drivetrain with 22 speeds, the 11-speed precision shifting, the hydraulic brakes that work reliably under load.<br/><br/>Same TORAY T800 carbon frame and fork as the Sandman 4. Same 9.8kg weight. </p><p></p><p>The difference is in the parts that matter when you're far from home: smoother shifts, wider gear range, better modulation on the brakes.</p>",
             "button_label": "",
             "button_link": ""
           }
@@ -233,6 +233,73 @@
         "padding_bottom": 36
       }
     },
+    "video_javi_w_EVzKBG": {
+      "type": "video-javi-w",
+      "name": "Video + Text Feature",
+      "settings": {
+        "layout": "left",
+        "vertical_alignment": "center",
+        "gap": 40,
+        "container_width": 800,
+        "container_padding": 0,
+        "background_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "video_type": "vimeo",
+        "youtube_id": "",
+        "vimeo_id": "1123824442",
+        "video_file": "",
+        "video_width_percent": 35,
+        "video_min_width": 450,
+        "video_max_width": 750,
+        "video_aspect_ratio": 130,
+        "video_border_radius": 0,
+        "video_shadow": false,
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "hide_controls": true,
+        "eyebrow_text": "",
+        "heading": "Bikepacking with the Sandman 6",
+        "description": "<h4>Twenty-six mounting points across the frame give you tons of options for attaching bags, racks, extra water bottles, and whatever gear your adventure requires. </h4><h4>The wide 40mm tires come with reinforced sidewalls to protect against punctures on rough terrain. </h4><h4>Hydraulic brakes give you confident stopping power even when the bike is fully loaded. </h4><h4>Proven reliable in rain, mud, dust, and everything in between.</h4>",
+        "button_text": "",
+        "button_link": "",
+        "text_alignment": "left",
+        "eyebrow_size": 14,
+        "eyebrow_color": "#666666",
+        "eyebrow_weight": 600,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_spacing": 1,
+        "eyebrow_margin": 10,
+        "heading_tag": "h1",
+        "heading_size": 42,
+        "heading_color": "#000000",
+        "heading_weight": 700,
+        "heading_line_height": 1.2,
+        "heading_margin": 20,
+        "description_size": 16,
+        "description_color": "#333333",
+        "description_line_height": 1.6,
+        "description_margin": 30,
+        "button_padding_vertical": 12,
+        "button_padding_horizontal": 32,
+        "button_bg_color": "#000000",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#333333",
+        "button_hover_text": "#ffffff",
+        "button_font_size": 16,
+        "button_font_weight": 600,
+        "button_border_radius": 4,
+        "button_border_width": 0,
+        "button_border_color": "#000000",
+        "mobile_breakpoint": 768,
+        "mobile_gap": 30,
+        "mobile_text_alignment": "left",
+        "mobile_heading_size": 32,
+        "mobile_description_size": 14
+      }
+    },
     "image_with_text_86eDEc": {
       "type": "image-with-text",
       "blocks": {
@@ -246,7 +313,7 @@
         "text_aUB6Dd": {
           "type": "text",
           "settings": {
-            "text": "<h6>Every Odin is precision-trued with TRUDI by Berd, the world’s most advanced wheel truing system. </h6><h6>That means straighter wheels, tighter tolerances, and absolute stability — so you ride faster, corner harder, and never lose performance to wobble or flex.</h6>",
+            "text": "<h6>Every Rinos is precision-trued with TRUDI by Berd, the world’s most advanced wheel truing system. </h6><h6>That means straighter wheels, tighter tolerances, and absolute stability — so you ride faster, corner harder, and never lose performance to wobble or flex.</h6>",
             "text_style": "subtitle"
           }
         },
@@ -380,6 +447,7 @@
     "klarna_banner_1_g363fF",
     "rich_text_MFqJh7",
     "multirow_4TH9pN",
+    "video_javi_w_EVzKBG",
     "image_with_text_86eDEc",
     "product_description_sec1_NUkPfV",
     "featured_collection_hJ7gdH",
