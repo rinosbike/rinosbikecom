@@ -244,6 +244,7 @@
         "text_Qq3jjQ",
         "button_qTJbjr"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "left",
@@ -277,7 +278,29 @@
     },
     "rinos_comparison_table_nz48Wf": {
       "type": "rinos-comparison-table",
-      "settings": {}
+      "settings": {
+        "show_header": true,
+        "header_title": "Compare, at a glance.",
+        "header_description": "Check out the main features and decide which Sandman suits you the best.",
+        "sandman1_handle": "sandman-1",
+        "sandman3_handle": "sandman-3",
+        "sandman4_handle": "sandman-4",
+        "sandman4_featured": false,
+        "sandman5_handle": "sandman-5",
+        "sandman6_handle": "sandman-6",
+        "sandman7_handle": "sandman-7",
+        "sandman8_handle": "sandman-8",
+        "sandman8_featured": false,
+        "sandman8_name": "Sandman 8",
+        "sandman8_weight": "9.4kg",
+        "sandman8_gear": "Shimano 105 Di2",
+        "sandman8_gears": "2x12",
+        "sandman8_frame": "Toray T800 Carbon",
+        "sandman8_frameSize": "XS, S, M, L",
+        "sandman8_brakes": "Hydraulic Disc",
+        "sandman8_wheelSize": "700c",
+        "sandman8_rims": "40mm Carbon"
+      }
     },
     "iso_video_section_UpMQdb": {
       "type": "ISO_Video_section",
