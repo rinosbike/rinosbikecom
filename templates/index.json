@@ -72,7 +72,7 @@
         "mobile_breakpoint": 768,
         "mobile_gap": 30,
         "mobile_text_alignment": "left",
-        "mobile_heading_size": 32,
+        "mobile_heading_size": 20,
         "mobile_description_size": 14
       }
     },
