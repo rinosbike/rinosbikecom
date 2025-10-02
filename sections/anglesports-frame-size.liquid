@@ -1,10 +1,16 @@
 <div class="geometry-chart">
   <div class="geometry-chart__image">
-    <img 
-      src="{{ 'geometry-diagram.png' | asset_url }}" 
-      alt="Gravel bike frame geometry diagram"
-      loading="lazy"
-    >
+    {% if section.settings.geometry_image %}
+      <img 
+        src="{{ section.settings.geometry_image | image_url: width: 1200 }}" 
+        alt="Gravel bike frame geometry diagram"
+        loading="lazy"
+      >
+    {% else %}
+      <div class="geometry-chart__placeholder">
+        <p>Upload geometry diagram image in section settings</p>
+      </div>
+    {% endif %}
   </div>
 
   <div class="geometry-chart__table-wrapper">
@@ -112,7 +118,7 @@
     </table>
   </div>
 
-  <p class="geometry-chart__note">All measurements in millimeters (mm). Angles shown in degrees (°).</p>
+  <p class="geometry-chart__note">{{ section.settings.note_text }}</p>
 </div>
 
 <style>
@@ -135,6 +141,14 @@
   height: auto;
   max-height: 400px;
   object-fit: contain;
+}
+
+.geometry-chart__placeholder {
+  padding: 3rem;
+  background: #e0e0e0;
+  border: 2px dashed #999;
+  border-radius: 8px;
+  color: #666;
 }
 
 .geometry-chart__table-wrapper {
@@ -201,7 +215,6 @@
   margin-top: 1rem;
 }
 
-/* Mobile responsive */
 @media (max-width: 768px) {
   .geometry-chart {
     padding: 0 0.5rem;
@@ -221,7 +234,6 @@
   }
 }
 
-/* Print styles */
 @media print {
   .geometry-chart__table-wrapper {
     box-shadow: none;
@@ -232,3 +244,27 @@
   }
 }
 </style>
+
+{% schema %}
+{
+  "name": "Geometry Chart",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "geometry_image",
+      "label": "Geometry Diagram Image"
+    },
+    {
+      "type": "text",
+      "id": "note_text",
+      "label": "Note Text",
+      "default": "All measurements in millimeters (mm). Angles shown in degrees (°)."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Geometry Chart"
+    }
+  ]
+}
+{% endschema %}
