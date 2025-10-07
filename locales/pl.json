@@ -893,7 +893,7 @@
       "title": "Odin 4",
       "description": "Nowość",
       "image": "https:\/\/rinosbike.eu\/cdn\/shop\/files\/IMG-6896.jpg?v=1716727167&width=4096",
-      "weight": "8.8g",
+      "weight": "8.8kg",
       "gear": "Shimano 105",
       "gears": "24",
       "frame": "TORAY T800 Carbon",
@@ -942,6 +942,19 @@
       "wheelSize":   "28 cali",
       "rims":        "Włókno węglowe"
     },
+    "odin7_1": {
+  "title": "Odin 7.1",
+  "description": "Di2 Ultegra // Pełne Karbonowe Koła",
+  "image": "https://rinosbike.com/cdn/shop/files/Odin_7_-_1_0fb3d058-3213-4d7b-8571-0964574deac9.png?v=1758275105&width=1346",
+  "weight": "7,6kg",
+  "gear": "Shimano Ultegra Di2",
+  "gears": "24",
+  "frame": "TORAY T800 Carbon",
+  "frameSize": "zoptymalizowany dla rowerzystów między 156–199 cm",
+  "brakes": "Hamulce Tarczowe Hydrauliczne",
+  "wheelSize": "28 cali",
+  "rims": "Carbon"
+  },
     "gaia2": {
       "title": "Gaia 2",
       "description": "Koszt-efektywny",
