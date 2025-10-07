@@ -916,6 +916,19 @@
       "wheelSize":   "28 pulgadas",
       "rims":        "Carbono"
     },
+    "odin7_1": {
+  "title": "Odin 7.1",
+  "description": "Di2 Ultegra // Ruedas de Carbono ",
+  "image": "https://rinosbike.com/cdn/shop/files/Odin_7_-_1_0fb3d058-3213-4d7b-8571-0964574deac9.png?v=1758275105&width=1346",
+  "weight": "7,6kg",
+  "gear": "Shimano Ultegra Di2",
+  "gears": "24",
+  "frame": "TORAY T800 Carbon",
+  "frameSize": "optimizado para ciclistas entre 156–199 cm",
+  "brakes": "Freno de Disco Hidráulico",
+  "wheelSize": "28 pulgadas",
+  "rims": "Carbon"
+  },
 
     "gaia2": {
       "title": "Gaia 2",
