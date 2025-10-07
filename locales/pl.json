@@ -867,7 +867,7 @@
       "title": "Odin 1",
       "description": "Dobry i niedrogi",
       "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0720\/5794\/6377\/products\/1_00d58ab3-d3ab-4e73-a70c-5969e095121d.jpg?v=1705745069",
-      "weight": "9.8kg",
+      "weight": "8.8kg",
       "gear": "Shimano SORA",
       "gears": "18",
       "frame": "TORAY T800 Carbon",
@@ -880,7 +880,7 @@
       "title": "Odin 3",
       "description": "Wszechstronny",
       "image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0720\/5794\/6377\/products\/IMG_5673-PhotoRoom.jpg?v=1705744957",
-      "weight": "9.8kg",
+      "weight": "8.8kg",
       "gear": "Shimano 105",
       "gears": "22",
       "frame": "TORAY T800 Carbon",
@@ -893,7 +893,7 @@
       "title": "Odin 4",
       "description": "Nowość",
       "image": "https:\/\/rinosbike.eu\/cdn\/shop\/files\/IMG-6896.jpg?v=1716727167&width=4096",
-      "weight": "9.2kg",
+      "weight": "8.8g",
       "gear": "Shimano 105",
       "gears": "24",
       "frame": "TORAY T800 Carbon",
@@ -971,8 +971,7 @@
       "rims": "Aluminium",
       "fork": "FOX 32 Rhythm Remote",
       "travel": "100mm"
-    }
-  },
+    }},
   "klarna": {
     "shop_now_pay_with_klarna": "Kup teraz. Zapłać z Klarną.",
     "learn_more": "Dowiedz się więcej",
