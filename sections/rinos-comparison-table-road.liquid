@@ -34,6 +34,9 @@
       border-right: 2px solid #F04A00;
       border-left: 2px solid #F04A00;
     }
+    .specific-column-top {
+      border-top: 2px solid #F04A00;
+    }
     .section-11-td {
       color: #4b4b4b;
     }
@@ -68,6 +71,9 @@
       font-size: 23px;
       line-height: 92%;
       color: black;
+    }
+    .highlighted-title {
+      color: #F04A00 !important;
     }
     @media (max-width: 768px) {
       .section-11-th, .section-11-td {
@@ -105,123 +111,270 @@
         <table class="section-11-table">
           <thead class="section-11-thead">
             <tr class="section-11-tr">
-              <!-- updated colspan to 10 -->
-              <th colspan="10">
-                <h1 style="color: black; font-size: 35px;">
-                  {{ 'bikes.title.road' | t }}
+              <th colspan="{{ section.blocks.size | plus: 1 }}">
+                <h1 style="color: {{ section.settings.title_color }}; font-size: {{ section.settings.title_size }}px;">
+                  {% if section.settings.use_translation_key and section.settings.title_translation_key != blank %}
+                    {{ section.settings.title_translation_key | t }}
+                  {% else %}
+                    {{ section.settings.table_title }}
+                  {% endif %}
                 </h1>
               </th>
             </tr>
             <tr class="section-11-tr">
               <th class="section-11-th"></th>
-              <!-- Odin 1 -->
-              <th class="section-11-th">
-                <img class="section-11-img" src="https://rinosbike.com/cdn/shop/files/Odin_1_-_1_Gold_3b132dde-d88f-4b29-991c-6d77af4ceef4.png?v=1757929311&width=1346">
-                <div class="section-4-h1">{{ 'bikes.odin1.title' | t }}</div>
-              </th>
-              <!-- Odin 3 -->
-              <th class="section-11-th">
-                <img class="section-11-img" src="https://rinosbike.com/cdn/shop/files/Odin_3_-_1_Blue.png?v=1757928970&width=1346">
-                <div class="section-4-h1">{{ 'bikes.odin3.title' | t }}</div>
-              </th>
-              <!-- Odin 4 (highlighted) -->
-              <th class="section-11-th specific-column" style="border-top: 2px solid #F04A00;">
-                <img class="section-11-img" src="https://rinosbike.com/cdn/shop/files/Group_640.png?v=1758873763&width=1346">
-                <div class="section-4-h1" style="color: #F04A00;">{{ 'bikes.odin4.title' | t }}</div>
-              </th>
-              <!-- Odin 6.0 -->
-              <th class="section-11-th">
-                <img class="section-11-img"
-                     src="https://rinosbike.com/cdn/shop/files/ODIN6_1.png?v=1750755375&width=713">
-                <div class="section-4-h1">{{ 'bikes.odin6_0.title' | t }}</div>
-              </th>
-              <!-- Odin 6.1 -->
-              <th class="section-11-th">
-                <img class="section-11-img"
-                     src="https://rinosbike.com/cdn/shop/files/1_edd71595-f78a-4465-9fa4-bc476b3d0b99.png?v=1751964247&width=713">
-                <div class="section-4-h1">{{ 'bikes.odin6_1.title' | t }}</div>
-              </th>
-              <!-- Odin 7.1 -->
-              <th class="section-11-th">
-                <img class="section-11-img"
-                     src="https://rinosbike.com/cdn/shop/files/Odin_7_-_1_0fb3d058-3213-4d7b-8571-0964574deac9.png?v=1758275105&width=1346">
-                <div class="section-4-h1">{{ 'bikes.odin7_1.title' | t }}</div>
-              </th>
+              {% for block in section.blocks %}
+                {% if block.type == 'bike' %}
+                  <th class="section-11-th {% if block.settings.highlight_bike %}specific-column specific-column-top{% endif %}">
+                    {% if block.settings.bike_image != blank %}
+                      <img class="section-11-img" src="{{ block.settings.bike_image | img_url: 'master' }}" alt="{{ block.settings.bike_name }}">
+                    {% endif %}
+                    <div class="section-4-h1 {% if block.settings.highlight_bike %}highlighted-title{% endif %}">
+                      {% if block.settings.use_translation and block.settings.name_translation_key != blank %}
+                        {{ block.settings.name_translation_key | t }}
+                      {% else %}
+                        {{ block.settings.bike_name }}
+                      {% endif %}
+                    </div>
+                  </th>
+                {% endif %}
+              {% endfor %}
             </tr>
           </thead>
           <tbody class="section-11-tbody">
+            <!-- Weight Row -->
+            {% if section.settings.show_weight %}
             <tr class="section-11-tr">
-              <td class="section-11-td-1">{{ 'bikes.weight_label'    | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin1.weight'    | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin3.weight'    | t }}</td>
-              <td class="section-11-td specific-column">{{ 'bikes.odin4.weight'    | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_0.weight'  | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_1.weight'  | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin7_1.weight'  | t }}</td>
+              <td class="section-11-td-1">
+                {% if section.settings.use_translation_key %}
+                  {{ 'bikes.weight_label' | t | default: section.settings.weight_label }}
+                {% else %}
+                  {{ section.settings.weight_label }}
+                {% endif %}
+              </td>
+              {% for block in section.blocks %}
+                {% if block.type == 'bike' %}
+                  <td class="section-11-td {% if block.settings.highlight_bike %}specific-column{% endif %}">
+                    {% if block.settings.use_translation and block.settings.weight_translation_key != blank %}
+                      {{ block.settings.weight_translation_key | t }}
+                    {% else %}
+                      {{ block.settings.bike_weight }}
+                    {% endif %}
+                  </td>
+                {% endif %}
+              {% endfor %}
             </tr>
+            {% endif %}
+            
+            <!-- Gear Row -->
+            {% if section.settings.show_gear %}
             <tr class="section-11-tr">
-              <td class="section-11-td-1">{{ 'bikes.gear_label'      | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin1.gear'      | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin3.gear'      | t }}</td>
-              <td class="section-11-td specific-column">{{ 'bikes.odin4.gear'      | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_0.gear'    | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_1.gear'    | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin7_1.gear'    | t }}</td>
+              <td class="section-11-td-1">
+                {% if section.settings.use_translation_key %}
+                  {{ 'bikes.gear_label' | t | default: section.settings.gear_label }}
+                {% else %}
+                  {{ section.settings.gear_label }}
+                {% endif %}
+              </td>
+              {% for block in section.blocks %}
+                {% if block.type == 'bike' %}
+                  <td class="section-11-td {% if block.settings.highlight_bike %}specific-column{% endif %}">
+                    {% if block.settings.use_translation and block.settings.gear_translation_key != blank %}
+                      {{ block.settings.gear_translation_key | t }}
+                    {% else %}
+                      {{ block.settings.bike_gear }}
+                    {% endif %}
+                  </td>
+                {% endif %}
+              {% endfor %}
             </tr>
+            {% endif %}
+            
+            <!-- Gears Row -->
+            {% if section.settings.show_gears %}
             <tr class="section-11-tr">
-              <td class="section-11-td-1">{{ 'bikes.gears_label'     | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin1.gears'     | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin3.gears'     | t }}</td>
-              <td class="section-11-td specific-column">{{ 'bikes.odin4.gears'     | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_0.gears'   | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_1.gears'   | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin7_1.gears'   | t }}</td>
+              <td class="section-11-td-1">
+                {% if section.settings.use_translation_key %}
+                  {{ 'bikes.gears_label' | t | default: section.settings.gears_label }}
+                {% else %}
+                  {{ section.settings.gears_label }}
+                {% endif %}
+              </td>
+              {% for block in section.blocks %}
+                {% if block.type == 'bike' %}
+                  <td class="section-11-td {% if block.settings.highlight_bike %}specific-column{% endif %}">
+                    {% if block.settings.use_translation and block.settings.gears_translation_key != blank %}
+                      {{ block.settings.gears_translation_key | t }}
+                    {% else %}
+                      {{ block.settings.bike_gears }}
+                    {% endif %}
+                  </td>
+                {% endif %}
+              {% endfor %}
             </tr>
+            {% endif %}
+            
+            <!-- Frame Row -->
+            {% if section.settings.show_frame %}
             <tr class="section-11-tr">
-              <td class="section-11-td-1">{{ 'bikes.frame_label'     | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin1.frame'     | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin3.frame'     | t }}</td>
-              <td class="section-11-td specific-column">{{ 'bikes.odin4.frame'     | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_0.frame'   | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_1.frame'   | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin7_1.frame'   | t }}</td>
+              <td class="section-11-td-1">
+                {% if section.settings.use_translation_key %}
+                  {{ 'bikes.frame_label' | t | default: section.settings.frame_label }}
+                {% else %}
+                  {{ section.settings.frame_label }}
+                {% endif %}
+              </td>
+              {% for block in section.blocks %}
+                {% if block.type == 'bike' %}
+                  <td class="section-11-td {% if block.settings.highlight_bike %}specific-column{% endif %}">
+                    {% if block.settings.use_translation and block.settings.frame_translation_key != blank %}
+                      {{ block.settings.frame_translation_key | t }}
+                    {% else %}
+                      {{ block.settings.bike_frame }}
+                    {% endif %}
+                  </td>
+                {% endif %}
+              {% endfor %}
             </tr>
+            {% endif %}
+            
+            <!-- Frame Size Row -->
+            {% if section.settings.show_frame_size %}
             <tr class="section-11-tr">
-              <td class="section-11-td-1">{{ 'bikes.frameSize_label' | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin1.frameSize' | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin3.frameSize' | t }}</td>
-              <td class="section-11-td specific-column">{{ 'bikes.odin4.frameSize' | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_0.frameSize'| t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_1.frameSize'| t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin7_1.frameSize'| t }}</td>
+              <td class="section-11-td-1">
+                {% if section.settings.use_translation_key %}
+                  {{ 'bikes.frameSize_label' | t | default: section.settings.frame_size_label }}
+                {% else %}
+                  {{ section.settings.frame_size_label }}
+                {% endif %}
+              </td>
+              {% for block in section.blocks %}
+                {% if block.type == 'bike' %}
+                  <td class="section-11-td {% if block.settings.highlight_bike %}specific-column{% endif %}">
+                    {% if block.settings.use_translation and block.settings.frame_size_translation_key != blank %}
+                      {{ block.settings.frame_size_translation_key | t }}
+                    {% else %}
+                      {{ block.settings.bike_frame_size }}
+                    {% endif %}
+                  </td>
+                {% endif %}
+              {% endfor %}
             </tr>
+            {% endif %}
+            
+            <!-- Brakes Row -->
+            {% if section.settings.show_brakes %}
             <tr class="section-11-tr">
-              <td class="section-11-td-1">{{ 'bikes.brakes_label'    | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin1.brakes'    | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin3.brakes'    | t }}</td>
-              <td class="section-11-td specific-column">{{ 'bikes.odin4.brakes'    | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_0.brakes'  | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_1.brakes'  | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin7_1.brakes'  | t }}</td>
+              <td class="section-11-td-1">
+                {% if section.settings.use_translation_key %}
+                  {{ 'bikes.brakes_label' | t | default: section.settings.brakes_label }}
+                {% else %}
+                  {{ section.settings.brakes_label }}
+                {% endif %}
+              </td>
+              {% for block in section.blocks %}
+                {% if block.type == 'bike' %}
+                  <td class="section-11-td {% if block.settings.highlight_bike %}specific-column{% endif %}">
+                    {% if block.settings.use_translation and block.settings.brakes_translation_key != blank %}
+                      {{ block.settings.brakes_translation_key | t }}
+                    {% else %}
+                      {{ block.settings.bike_brakes }}
+                    {% endif %}
+                  </td>
+                {% endif %}
+              {% endfor %}
             </tr>
+            {% endif %}
+            
+            <!-- Wheel Size Row -->
+            {% if section.settings.show_wheel_size %}
             <tr class="section-11-tr">
-              <td class="section-11-td-1">{{ 'bikes.wheelSize_label' | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin1.wheelSize' | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin3.wheelSize' | t }}</td>
-              <td class="section-11-td specific-column">{{ 'bikes.odin4.wheelSize' | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_0.wheelSize'| t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_1.wheelSize'| t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin7_1.wheelSize'| t }}</td>
+              <td class="section-11-td-1">
+                {% if section.settings.use_translation_key %}
+                  {{ 'bikes.wheelSize_label' | t | default: section.settings.wheel_size_label }}
+                {% else %}
+                  {{ section.settings.wheel_size_label }}
+                {% endif %}
+              </td>
+              {% for block in section.blocks %}
+                {% if block.type == 'bike' %}
+                  <td class="section-11-td {% if block.settings.highlight_bike %}specific-column{% endif %}">
+                    {% if block.settings.use_translation and block.settings.wheel_size_translation_key != blank %}
+                      {{ block.settings.wheel_size_translation_key | t }}
+                    {% else %}
+                      {{ block.settings.bike_wheel_size }}
+                    {% endif %}
+                  </td>
+                {% endif %}
+              {% endfor %}
             </tr>
+            {% endif %}
+            
+            <!-- Rims Row -->
+            {% if section.settings.show_rims %}
             <tr class="section-11-tr">
-              <td class="section-11-td-1">{{ 'bikes.rims_label'     | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin1.rims'     | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin3.rims'     | t }}</td>
-              <td class="section-11-td-2 specific-column">{{ 'bikes.odin4.rims'     | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_0.rims'   | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin6_1.rims'   | t }}</td>
-              <td class="section-11-td">{{ 'bikes.odin7_1.rims'   | t }}</td>
+              <td class="section-11-td-1">
+                {% if section.settings.use_translation_key %}
+                  {{ 'bikes.rims_label' | t | default: section.settings.rims_label }}
+                {% else %}
+                  {{ section.settings.rims_label }}
+                {% endif %}
+              </td>
+              {% for block in section.blocks %}
+                {% if block.type == 'bike' %}
+                  <td class="section-11-td {% if block.settings.highlight_bike %}specific-column{% endif %} {% if forloop.last and section.settings.show_rims %}section-11-td-2{% endif %}">
+                    {% if block.settings.use_translation and block.settings.rims_translation_key != blank %}
+                      {{ block.settings.rims_translation_key | t }}
+                    {% else %}
+                      {{ block.settings.bike_rims }}
+                    {% endif %}
+                  </td>
+                {% endif %}
+              {% endfor %}
             </tr>
+            {% endif %}
+            
+            <!-- Custom Field 1 -->
+            {% if section.settings.show_custom_1 and section.settings.custom_1_label != blank %}
+            <tr class="section-11-tr">
+              <td class="section-11-td-1">{{ section.settings.custom_1_label }}</td>
+              {% for block in section.blocks %}
+                {% if block.type == 'bike' %}
+                  <td class="section-11-td {% if block.settings.highlight_bike %}specific-column{% endif %}">
+                    {{ block.settings.bike_custom_1 }}
+                  </td>
+                {% endif %}
+              {% endfor %}
+            </tr>
+            {% endif %}
+            
+            <!-- Custom Field 2 -->
+            {% if section.settings.show_custom_2 and section.settings.custom_2_label != blank %}
+            <tr class="section-11-tr">
+              <td class="section-11-td-1">{{ section.settings.custom_2_label }}</td>
+              {% for block in section.blocks %}
+                {% if block.type == 'bike' %}
+                  <td class="section-11-td {% if block.settings.highlight_bike %}specific-column{% endif %}">
+                    {{ block.settings.bike_custom_2 }}
+                  </td>
+                {% endif %}
+              {% endfor %}
+            </tr>
+            {% endif %}
+            
+            <!-- Custom Field 3 -->
+            {% if section.settings.show_custom_3 and section.settings.custom_3_label != blank %}
+            <tr class="section-11-tr">
+              <td class="section-11-td-1">{{ section.settings.custom_3_label }}</td>
+              {% for block in section.blocks %}
+                {% if block.type == 'bike' %}
+                  <td class="section-11-td {% if block.settings.highlight_bike %}specific-column{% endif %}">
+                    {{ block.settings.bike_custom_3 }}
+                  </td>
+                {% endif %}
+              {% endfor %}
+            </tr>
+            {% endif %}
           </tbody>
         </table>
       </div>
@@ -230,12 +383,443 @@
 
   {% schema %}
   {
-    "name": "Rinosbike-Comparison-road",
-    "settings": [],
+    "name": "Bike Comparison Table",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Table Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_translation_key",
+        "label": "Use Translation Keys",
+        "info": "Enable to use locale files for multi-language support",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "title_translation_key",
+        "label": "Title Translation Key",
+        "info": "e.g., 'bikes.title.road'",
+        "default": "bikes.title.road"
+      },
+      {
+        "type": "text",
+        "id": "table_title",
+        "label": "Table Title (Fallback)",
+        "info": "Used if translation not found or translations disabled",
+        "default": "ROAD BIKES"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#000000"
+      },
+      {
+        "type": "range",
+        "id": "title_size",
+        "label": "Title Size",
+        "min": 20,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "default": 35
+      },
+      {
+        "type": "header",
+        "content": "Specification Labels"
+      },
+      {
+        "type": "text",
+        "id": "weight_label",
+        "label": "Weight Label (Fallback)",
+        "default": "Weight"
+      },
+      {
+        "type": "text",
+        "id": "gear_label",
+        "label": "Gear Label (Fallback)",
+        "default": "Gear"
+      },
+      {
+        "type": "text",
+        "id": "gears_label",
+        "label": "Gears Label (Fallback)",
+        "default": "Gears"
+      },
+      {
+        "type": "text",
+        "id": "frame_label",
+        "label": "Frame Label (Fallback)",
+        "default": "Frame"
+      },
+      {
+        "type": "text",
+        "id": "frame_size_label",
+        "label": "Frame Size Label (Fallback)",
+        "default": "Frame Size"
+      },
+      {
+        "type": "text",
+        "id": "brakes_label",
+        "label": "Brakes Label (Fallback)",
+        "default": "Brakes"
+      },
+      {
+        "type": "text",
+        "id": "wheel_size_label",
+        "label": "Wheel Size Label (Fallback)",
+        "default": "Wheel Size"
+      },
+      {
+        "type": "text",
+        "id": "rims_label",
+        "label": "Rims Label (Fallback)",
+        "default": "Rims"
+      },
+      {
+        "type": "header",
+        "content": "Show/Hide Specifications"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_weight",
+        "label": "Show Weight",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_gear",
+        "label": "Show Gear",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_gears",
+        "label": "Show Gears",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_frame",
+        "label": "Show Frame",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_frame_size",
+        "label": "Show Frame Size",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_brakes",
+        "label": "Show Brakes",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_wheel_size",
+        "label": "Show Wheel Size",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_rims",
+        "label": "Show Rims",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Custom Fields"
+      },
+      {
+        "type": "text",
+        "id": "custom_1_label",
+        "label": "Custom Field 1 Label"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_custom_1",
+        "label": "Show Custom Field 1",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "custom_2_label",
+        "label": "Custom Field 2 Label"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_custom_2",
+        "label": "Show Custom Field 2",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "custom_3_label",
+        "label": "Custom Field 3 Label"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_custom_3",
+        "label": "Show Custom Field 3",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "type": "bike",
+        "name": "Bike",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Translation Settings"
+          },
+          {
+            "type": "checkbox",
+            "id": "use_translation",
+            "label": "Use Translation Keys for this bike",
+            "info": "Enable to use locale files instead of direct values",
+            "default": true
+          },
+          {
+            "type": "text",
+            "id": "name_translation_key",
+            "label": "Name Translation Key",
+            "info": "e.g., 'bikes.odin1.title'",
+            "default": "bikes.odin1.title"
+          },
+          {
+            "type": "text",
+            "id": "weight_translation_key",
+            "label": "Weight Translation Key",
+            "default": "bikes.odin1.weight"
+          },
+          {
+            "type": "text",
+            "id": "gear_translation_key",
+            "label": "Gear Translation Key",
+            "default": "bikes.odin1.gear"
+          },
+          {
+            "type": "text",
+            "id": "gears_translation_key",
+            "label": "Gears Translation Key",
+            "default": "bikes.odin1.gears"
+          },
+          {
+            "type": "text",
+            "id": "frame_translation_key",
+            "label": "Frame Translation Key",
+            "default": "bikes.odin1.frame"
+          },
+          {
+            "type": "text",
+            "id": "frame_size_translation_key",
+            "label": "Frame Size Translation Key",
+            "default": "bikes.odin1.frameSize"
+          },
+          {
+            "type": "text",
+            "id": "brakes_translation_key",
+            "label": "Brakes Translation Key",
+            "default": "bikes.odin1.brakes"
+          },
+          {
+            "type": "text",
+            "id": "wheel_size_translation_key",
+            "label": "Wheel Size Translation Key",
+            "default": "bikes.odin1.wheelSize"
+          },
+          {
+            "type": "text",
+            "id": "rims_translation_key",
+            "label": "Rims Translation Key",
+            "default": "bikes.odin1.rims"
+          },
+          {
+            "type": "header",
+            "content": "Direct Values (Fallback)"
+          },
+          {
+            "type": "text",
+            "id": "bike_name",
+            "label": "Bike Name",
+            "info": "Used if translation not found or disabled",
+            "default": "ODIN 1"
+          },
+          {
+            "type": "image_picker",
+            "id": "bike_image",
+            "label": "Bike Image"
+          },
+          {
+            "type": "checkbox",
+            "id": "highlight_bike",
+            "label": "Highlight This Bike",
+            "info": "Adds orange border and highlights the name",
+            "default": false
+          },
+          {
+            "type": "header",
+            "content": "Specification Values (Fallback)"
+          },
+          {
+            "type": "text",
+            "id": "bike_weight",
+            "label": "Weight",
+            "default": "7.8 kg"
+          },
+          {
+            "type": "text",
+            "id": "bike_gear",
+            "label": "Gear",
+            "default": "Shimano 105"
+          },
+          {
+            "type": "text",
+            "id": "bike_gears",
+            "label": "Number of Gears",
+            "default": "22"
+          },
+          {
+            "type": "text",
+            "id": "bike_frame",
+            "label": "Frame",
+            "default": "Carbon"
+          },
+          {
+            "type": "text",
+            "id": "bike_frame_size",
+            "label": "Frame Size",
+            "default": "S, M, L, XL"
+          },
+          {
+            "type": "text",
+            "id": "bike_brakes",
+            "label": "Brakes",
+            "default": "Disc"
+          },
+          {
+            "type": "text",
+            "id": "bike_wheel_size",
+            "label": "Wheel Size",
+            "default": "700c"
+          },
+          {
+            "type": "text",
+            "id": "bike_rims",
+            "label": "Rims",
+            "default": "Alloy"
+          },
+          {
+            "type": "header",
+            "content": "Custom Fields"
+          },
+          {
+            "type": "text",
+            "id": "bike_custom_1",
+            "label": "Custom Field 1 Value"
+          },
+          {
+            "type": "text",
+            "id": "bike_custom_2",
+            "label": "Custom Field 2 Value"
+          },
+          {
+            "type": "text",
+            "id": "bike_custom_3",
+            "label": "Custom Field 3 Value"
+          }
+        ]
+      }
+    ],
     "presets": [
       {
-        "name": "Rinosbike-Comparison-road",
-        "category": "Custom"
+        "name": "Bike Comparison Table",
+        "category": "Custom",
+        "settings": {
+          "use_translation_key": true,
+          "title_translation_key": "bikes.title.road",
+          "table_title": "ROAD BIKES"
+        },
+        "blocks": [
+          {
+            "type": "bike",
+            "settings": {
+              "use_translation": true,
+              "name_translation_key": "bikes.odin1.title",
+              "weight_translation_key": "bikes.odin1.weight",
+              "gear_translation_key": "bikes.odin1.gear",
+              "gears_translation_key": "bikes.odin1.gears",
+              "frame_translation_key": "bikes.odin1.frame",
+              "frame_size_translation_key": "bikes.odin1.frameSize",
+              "brakes_translation_key": "bikes.odin1.brakes",
+              "wheel_size_translation_key": "bikes.odin1.wheelSize",
+              "rims_translation_key": "bikes.odin1.rims",
+              "bike_name": "ODIN 1",
+              "bike_weight": "7.8 kg",
+              "bike_gear": "Shimano 105",
+              "bike_gears": "22",
+              "bike_frame": "Carbon",
+              "bike_frame_size": "S, M, L, XL",
+              "bike_brakes": "Disc",
+              "bike_wheel_size": "700c",
+              "bike_rims": "Alloy"
+            }
+          },
+          {
+            "type": "bike",
+            "settings": {
+              "use_translation": true,
+              "name_translation_key": "bikes.odin3.title",
+              "weight_translation_key": "bikes.odin3.weight",
+              "gear_translation_key": "bikes.odin3.gear",
+              "gears_translation_key": "bikes.odin3.gears",
+              "frame_translation_key": "bikes.odin3.frame",
+              "frame_size_translation_key": "bikes.odin3.frameSize",
+              "brakes_translation_key": "bikes.odin3.brakes",
+              "wheel_size_translation_key": "bikes.odin3.wheelSize",
+              "rims_translation_key": "bikes.odin3.rims",
+              "bike_name": "ODIN 3",
+              "bike_weight": "8.2 kg",
+              "bike_gear": "Shimano Ultegra",
+              "bike_gears": "22",
+              "bike_frame": "Carbon",
+              "bike_frame_size": "S, M, L, XL",
+              "bike_brakes": "Disc",
+              "bike_wheel_size": "700c",
+              "bike_rims": "Carbon"
+            }
+          },
+          {
+            "type": "bike",
+            "settings": {
+              "use_translation": true,
+              "name_translation_key": "bikes.odin4.title",
+              "weight_translation_key": "bikes.odin4.weight",
+              "gear_translation_key": "bikes.odin4.gear",
+              "gears_translation_key": "bikes.odin4.gears",
+              "frame_translation_key": "bikes.odin4.frame",
+              "frame_size_translation_key": "bikes.odin4.frameSize",
+              "brakes_translation_key": "bikes.odin4.brakes",
+              "wheel_size_translation_key": "bikes.odin4.wheelSize",
+              "rims_translation_key": "bikes.odin4.rims",
+              "highlight_bike": true,
+              "bike_name": "ODIN 4",
+              "bike_weight": "7.5 kg",
+              "bike_gear": "SRAM Force",
+              "bike_gears": "24",
+              "bike_frame": "Carbon",
+              "bike_frame_size": "S, M, L, XL",
+              "bike_brakes": "Disc",
+              "bike_wheel_size": "700c",
+              "bike_rims": "Carbon"
+            }
+          }
+        ]
       }
     ]
   }
