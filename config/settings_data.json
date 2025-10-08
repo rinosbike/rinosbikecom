@@ -10,8 +10,8 @@
 {
   "current": {
     "logo": "shopify://shop_images/logo_rinos.svg",
-    "logo_width": 300,
-    "favicon": "shopify://shop_images/Rinoslogo_d59faafe-6658-42ab-a74c-62625c956478.png",
+    "logo_width": 140,
+    "favicon": "shopify://shop_images/logo_rinos.svg",
     "type_header_font": "ibm_plex_sans_n5",
     "heading_scale": 130,
     "type_body_font": "ibm_plex_sans_n5",
