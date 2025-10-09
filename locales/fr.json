@@ -986,7 +986,8 @@
     "different_plans_based_on_amount": "Selon le montant de l'achat et la solvabilité, différents plans de paiement peuvent être affichés.",
     "complete_order": "Complétez votre commande",
     "automatic_deduction": "Nous déduisons automatiquement les paiements selon votre plan de paiement.",
-    "close": "Fermer"
+    "close": "Fermer",
+    "installment_message": "ou {{ price }} par mois avec"
   },
   "bannerhomepage": {
     "text": "Découvrez les composants de notre nouveau vélo de gravel !",
