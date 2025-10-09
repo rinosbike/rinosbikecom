@@ -128,8 +128,6 @@
 </div>
 
 <div class="product__price">
-  {{ product.price | money }}
-  
   {%- comment -%} Klarna Installment Message {%- endcomment -%}
   {%- if product.price >= 30000 -%}
     {%- assign monthly_price = product.price | divided_by: 3 -%}
