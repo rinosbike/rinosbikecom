@@ -121,7 +121,7 @@
   {%- if price >= 30000 -%}
     {%- assign monthly_price = price | divided_by: 3 | money -%}
     <div class="klarna-message" style="margin-top: 8px; font-size: 14px; color: #666;">
-      {{ 'klarna.installment_message' | t: price: monthly_price }}
+      {{ ' klarna.installment_message' | t: price: monthly_price }}
       <img src="https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg" alt="Klarna" style="height: 18px; vertical-align: middle; margin-left: 4px;">
     </div>
   {%- endif -%}
