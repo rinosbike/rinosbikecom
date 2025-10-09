@@ -40,6 +40,12 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "custom_liquid_zH9z8H": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'size-unavailable-notice' %}"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -53,6 +59,7 @@
         "price",
         "variant_picker",
         "quantity_selector",
+        "custom_liquid_zH9z8H",
         "buy_buttons"
       ],
       "settings": {
@@ -87,6 +94,15 @@
     "klarna_banner_1_g363fF": {
       "type": "klarna-banner-1",
       "settings": {}
+    },
+    "custom_liquid_fFQWdd": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     },
     "product_description_sec1_Nn4UXc": {
       "type": "product-description-sec1",
@@ -145,15 +161,6 @@
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 28
-      }
-    },
-    "custom_liquid_fFQWdd": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
       }
     }
   },
