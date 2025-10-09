@@ -1,7 +1,41 @@
 {% comment %}
   Size Unavailable Notice Snippet
-  Usage: {% render 'size-unavailable-notice' %}
+  Usage: {% render 'size-unavailable-notice', variant: variant %}
+  Shows only when the selected variant is unavailable
+  Supports: EN, DE, ES, FR, BG, PL
 {% endcomment %}
+
+{% if variant and variant.available == false %}
+
+{% comment %} Translation strings {% endcomment %}
+{% assign locale = request.locale.iso_code %}
+
+{% case locale %}
+  {% when 'de' %}
+    {% assign title_text = 'Größe nicht verfügbar' %}
+    {% assign description_text = 'Diese Größe ist derzeit nicht vorrätig. Kontaktieren Sie uns, um Ihr Fahrrad jetzt zu reservieren, und wir benachrichtigen Sie, sobald es verfügbar ist.' %}
+    {% assign cta_text = 'Kontaktieren & Jetzt Reservieren' %}
+  {% when 'es' %}
+    {% assign title_text = 'Talla no disponible' %}
+    {% assign description_text = 'Esta talla está actualmente agotada. Contáctanos para reservar tu bicicleta ahora y te notificaremos tan pronto como esté disponible.' %}
+    {% assign cta_text = 'Contactar y Reservar Ahora' %}
+  {% when 'fr' %}
+    {% assign title_text = 'Taille indisponible' %}
+    {% assign description_text = 'Cette taille est actuellement en rupture de stock. Contactez-nous pour réserver votre vélo maintenant et nous vous informerons dès qu\'il sera disponible.' %}
+    {% assign cta_text = 'Nous Contacter et Réserver' %}
+  {% when 'bg' %}
+    {% assign title_text = 'Размерът не е наличен' %}
+    {% assign description_text = 'Този размер в момента не е наличен. Свържете се с нас, за да резервирате велосипеда си сега и ще ви уведомим веднага щом стане наличен.' %}
+    {% assign cta_text = 'Свържете се и резервирайте сега' %}
+  {% when 'pl' %}
+    {% assign title_text = 'Rozmiar niedostępny' %}
+    {% assign description_text = 'Ten rozmiar jest obecnie niedostępny. Skontaktuj się z nami, aby zarezerwować swój rower, a powiadomimy Cię, gdy tylko będzie dostępny.' %}
+    {% assign cta_text = 'Skontaktuj się i zarezerwuj teraz' %}
+  {% else %}
+    {% assign title_text = 'Size Unavailable' %}
+    {% assign description_text = 'This size is currently out of stock. Contact us to reserve your bike now and we\'ll notify you as soon as it becomes available.' %}
+    {% assign cta_text = 'Contact Us & Reserve Now' %}
+{% endcase %}
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
@@ -103,17 +137,20 @@
 
 <div class="size-unavailable-container">
   <div class="size-unavailable-title">
-    Size Unavailable
+    {{ title_text }}
   </div>
   
   <p class="size-unavailable-text">
-    This size is currently out of stock. Contact us to reserve your bike now and we'll notify you as soon as it becomes available.
+    {{ description_text }}
   </p>
   
-  <a href="/pages/contact" class="size-unavailable-cta">
+  <a href="mailto:info@rinosbike.eu?subject=Bike Reservation - {{ product.title }}{% if variant %} - {{ variant.title }}{% endif %}" class="size-unavailable-cta">
     <svg class="size-unavailable-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+      <polyline points="22,6 12,13 2,6"></polyline>
     </svg>
-    Contact Us & Reserve Now
+    {{ cta_text }}
   </a>
 </div>
+
+{% endif %}
