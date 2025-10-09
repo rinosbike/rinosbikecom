@@ -37,6 +37,12 @@
             "picker_type": "button"
           }
         },
+        "custom_liquid_6HK6ch": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'size-unavailable-notice' %}"
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -53,6 +59,7 @@
         "title",
         "price",
         "variant_picker",
+        "custom_liquid_6HK6ch",
         "quantity_selector",
         "buy_buttons"
       ],
