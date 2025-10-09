@@ -294,12 +294,12 @@
         "sandman8_name": "Sandman 8",
         "sandman8_weight": "9.4kg",
         "sandman8_gear": "Shimano 105 Di2",
-        "sandman8_gears": "2x12",
+        "sandman8_gears": "24",
         "sandman8_frame": "Toray T800 Carbon",
-        "sandman8_frameSize": "XS, S, M, L",
-        "sandman8_brakes": "Hydraulic Disc",
+        "sandman8_frameSize": "optimized for riders between 165-195 cm",
+        "sandman8_brakes": "Hydraulic",
         "sandman8_wheelSize": "700c",
-        "sandman8_rims": "40mm Carbon"
+        "sandman8_rims": "Aluminum"
       }
     },
     "iso_video_section_UpMQdb": {
