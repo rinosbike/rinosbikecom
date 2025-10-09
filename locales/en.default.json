@@ -968,6 +968,13 @@
       "travel": "100mm"
     }
   },
+  "rinos_trudi": {
+      "header": "Rinos x TRUDI",
+      "subtext_1": "Better wheels, same fair price. We just added Berd's TRUDI system to our workshop—not to charge you more, but to deliver pro-level wheel builds on every bike.",
+      "subtext_2": "Perfectly true wheels, accurate to 0.25mm. More precision, zero upcharge. Because cycling shouldn't be a luxury sport.",
+      "button_text": "Discover the Full Blog",
+      "button_link": "/blogs/news/rinos-invests-in-trudi-better-wheels-same-fair-price"
+      },
   "klarna": {
     "shop_now_pay_with_klarna": "Shop now. Pay with Klarna.",
     "learn_more": "Learn more",
@@ -1037,13 +1044,4 @@
 
     "approx_103kg": "~10.3 kg"
 },
-  "sections": {
-    "rinos_trudi": {
-      "header": "Rinos x TRUDI",
-      "subtext_1": "Better wheels, same fair price. We just added Berd's TRUDI system to our workshop—not to charge you more, but to deliver pro-level wheel builds on every bike.",
-      "subtext_2": "Perfectly true wheels, accurate to 0.25mm. More precision, zero upcharge. Because cycling shouldn't be a luxury sport.",
-      "button_text": "Discover the Full Blog",
-      "button_link": "/blogs/news/rinos-invests-in-trudi-better-wheels-same-fair-price"
-    }
-  }
 }
