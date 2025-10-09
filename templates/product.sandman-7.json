@@ -15,7 +15,7 @@
         "heading_kgmQyk": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Sandman 7.</strong> GRX820. Made for Gravel, built for Performance.",
+            "heading": "<strong>Sandman 7.</strong> GRX820. <em>Top of the line.</em>",
             "heading_size": "h1"
           }
         },
@@ -144,7 +144,7 @@
         "heading_zpYfc4": {
           "type": "heading",
           "settings": {
-            "heading": "Made<em><strong> for Gravel.</strong></em> Discover Rinos Sandman 6",
+            "heading": "Made<em><strong> for Gravel.</strong></em> Discover Rinos Sandman 7",
             "heading_size": "h2"
           }
         },
@@ -182,8 +182,8 @@
           "settings": {
             "image": "shopify://shop_images/dominika.pairofwheels_449098967_393205517073597_634453419878547017_n.jpg",
             "caption": "Sandman 6",
-            "heading": "<em><strong>Shimano GRX600</strong></em>. The Difference You'll Actually Feel.",
-            "text": "<p>The GRX600 gives you 22 speeds through an 11-speed cassette instead of the GRX400's 10-speed setup. </p><p>That extra cog means smaller jumps between gears—you're not stuck between \"too easy\" and \"too hard\" nearly as often. </p><p>The RD-RX810 rear derailleur has a clutch that keeps the chain tensioned over rough ground, which stops that annoying slapping sound and means you won't drop your chain on rocky descents.</p><p>The 11-speed chain runs quieter and lasts longer because it's built to tighter tolerances. Shifts happen cleanly even when you're pedaling hard uphill. </p><p>After a few long rides, you'll notice the difference—less hand fatigue from shifting, fewer adjustments needed, more time just riding.</p>",
+            "heading": "<em><strong>Shimano GRX820</strong></em>. Shimano's Premium Mechanical Gravel Groupset.",
+            "text": "<p>The GRX820 represents Shimano's top-tier mechanical gravel technology, combining innovations from both Ultegra road and Deore XT mountain bike lineups</p><p>Twenty-four gears through a 2×12 drivetrain. The 48-31T crankset paired with an 11-34T cassette gives you tighter gear steps than 11-speed systems—you're shifting less to find the right cadence. </p><p>The Shadow RD+ rear derailleur features an adjustable clutch mechanism. Dial it up for rocky singletrack, back it off for smooth roads.</p><p>The shifter hoods use a matt-textured, anti-slip coating with a flattened lever blade for better grip in wet conditions.</p><p>This is where Shimano's gravel engineering becomes visible in your riding, not just on paper.</p>",
             "button_label": "",
             "button_link": ""
           }
@@ -193,8 +193,8 @@
           "settings": {
             "image": "shopify://shop_images/Q14A5971.jpg",
             "caption": "Sandman 6",
-            "heading": "Find Your Rhythm. <em><strong>Keep It.</strong></em>",
-            "text": "<p>The 30-tooth small ring up front makes steep climbs manageable even when you're carrying gear. Pair it with the big 34-tooth cog in back and you've got an easy gear for when things point upward. But you're not sacrificing speed—the 46-tooth big ring gives you plenty of top end for fast gravel sections. Twenty gears total that actually work for real-world gravel riding, proven reliable on everything from mountain passes to flat prairie roads.</p>",
+            "heading": "<em><strong>Gearing </strong></em>Built for Variable Terrain.",
+            "text": "<p>The 48-31T crankset uses a 2.5mm wider chainline than standard road groupsets, designed specifically for gravel to improve mud clearance and accommodate wider tires. </p><p>The 48-tooth outer ring gives you higher top-end speed than the Sandman 6's 46T when the gravel opens up. The 31-tooth inner ring paired with the 34-tooth largest cog still climbs without issue.</p><p>Twenty-four distinct gear combinations with smaller steps between ratios. Rolling terrain, technical climbs, fast descents, you maintain cadence without constantly hunting for the right gear.</p>",
             "button_label": "",
             "button_link": ""
           }
