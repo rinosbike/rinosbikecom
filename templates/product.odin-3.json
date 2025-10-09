@@ -54,6 +54,12 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "custom_liquid_6DVYR8": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'size-unavailable-notice' %}"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -67,6 +73,7 @@
         "price",
         "variant_picker",
         "quantity_selector",
+        "custom_liquid_6DVYR8",
         "buy_buttons"
       ],
       "settings": {
