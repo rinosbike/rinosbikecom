@@ -989,7 +989,8 @@
     "different_plans_based_on_amount": "Je nach Kaufbetrag und Kreditwürdigkeit werden dir möglicherweise andere Zahlungspläne angezeigt.",
     "complete_order": "Schließe deine Bestellung ab",
     "automatic_deduction": "Wir buchen die Ratenzahlungen je nach deinem Zahlungsplan automatisch ab.",
-    "close": "Schließen"
+    "close": "Schließen",
+    "installment_message": "oder {{ price }} pro Monat mit"
   },
   "bannerhomepage": {
     "text": "Entdecke die Komponenten von unserem neuem Gravelbike!",
