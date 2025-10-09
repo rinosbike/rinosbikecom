@@ -981,7 +981,8 @@
     "different_plans_based_on_amount": "Dependiendo del precio de la compra y la solvencia, pueden mostrarse diferentes planes de pago.",
     "complete_order": "Completa tu pedido",
     "automatic_deduction": "Deducimos automáticamente las cuotas según tu plan de pago.",
-    "close": "Cerrar"
+    "close": "Cerrar",
+    "installment_message": "o {{ price }} al mes con"
   },
       "rinos_trudi": {
       "header": "Rinos x TRUDI. Ruedas perfectas en todos tus Rinos",
