@@ -1011,7 +1011,8 @@
     "different_plans_based_on_amount": "W zależności od kwoty zakupu i zdolności kredytowej mogą być wyświetlane różne plany płatności.",
     "complete_order": "Zakończ zamówienie",
     "automatic_deduction": "Automatycznie potrącamy raty zgodnie z Twoim planem płatności.",
-    "close": "Zamknij"
+    "close": "Zamknij",
+    "installment_message": "lub {{ price }} miesięcznie z"
   },
   "bannerhomepage": {
     "text": "Odkryj komponenty naszego nowego roweru gravelowego!",
