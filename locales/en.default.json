@@ -1044,7 +1044,4 @@
 
     "approx_103kg": "~10.3 kg"
 },
-"klarna": {
-  "installment_message": "or {{ price }} per month with"
-},
 }
