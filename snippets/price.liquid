@@ -126,3 +126,15 @@
     </span>
   {%- endif -%}
 </div>
+<div class="product__price">
+  {{ product.price | money }}
+  
+  {%- comment -%} Klarna Installment Message {%- endcomment -%}
+  {%- if product.price >= 30000 -%}
+    {%- assign monthly_price = product.price | divided_by: 3 -%}
+    <div class="klarna-message" style="margin-top: 8px; font-size: 14px; color: #666;">
+      or {{ monthly_price | money }} per month with 
+      <img src="https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg" alt="Klarna" style="height: 18px; vertical-align: middle; margin-left: 4px;">
+    </div>
+  {%- endif -%}
+</div>
