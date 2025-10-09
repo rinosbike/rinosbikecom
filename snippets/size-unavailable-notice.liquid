@@ -151,69 +151,101 @@
 
 <script>
 (function() {
+  // Get product data from Shopify
+  const productData = {{ product | json }};
   const notice = document.getElementById('size-unavailable-notice');
   const emailLink = document.getElementById('reservation-email-link');
-  const productTitle = "{{ product.title }}";
+  
+  // Create a map of variant IDs to availability
+  const variantAvailability = {};
+  productData.variants.forEach(variant => {
+    variantAvailability[variant.id] = variant.available;
+  });
+  
+  function getCurrentVariantId() {
+    // Try different methods to get current variant ID
+    
+    // Method 1: Check hidden input with variant ID
+    const variantInput = document.querySelector('input[name="id"]');
+    if (variantInput && variantInput.value) {
+      return parseInt(variantInput.value);
+    }
+    
+    // Method 2: Check select dropdown
+    const variantSelect = document.querySelector('select[name="id"]');
+    if (variantSelect && variantSelect.value) {
+      return parseInt(variantSelect.value);
+    }
+    
+    // Method 3: Check radio buttons
+    const variantRadio = document.querySelector('input[name="id"]:checked');
+    if (variantRadio && variantRadio.value) {
+      return parseInt(variantRadio.value);
+    }
+    
+    // Method 4: Check data attribute on form
+    const productForm = document.querySelector('form[action*="/cart/add"]');
+    if (productForm) {
+      const variantId = productForm.dataset.variantId || productForm.querySelector('[data-variant-id]')?.dataset.variantId;
+      if (variantId) {
+        return parseInt(variantId);
+      }
+    }
+    
+    return null;
+  }
+  
+  function getVariantTitle(variantId) {
+    const variant = productData.variants.find(v => v.id === variantId);
+    return variant ? variant.title : '';
+  }
   
   function updateNoticeVisibility() {
-    // Find the Add to Cart button or variant selector
-    const addToCartButton = document.querySelector('[name="add"]') || 
-                           document.querySelector('.product-form__submit') ||
-                           document.querySelector('[type="submit"]');
+    const currentVariantId = getCurrentVariantId();
     
-    // Check if button is disabled (usually means out of stock)
-    const isUnavailable = addToCartButton && addToCartButton.disabled;
-    
-    // Also check for "sold out" text in button
-    const buttonText = addToCartButton ? addToCartButton.textContent.toLowerCase() : '';
-    const hasSoldOutText = buttonText.includes('sold out') || 
-                          buttonText.includes('unavailable') ||
-                          buttonText.includes('ausverkauft') ||
-                          buttonText.includes('agotado') ||
-                          buttonText.includes('épuisé') ||
-                          buttonText.includes('niedostępny') ||
-                          buttonText.includes('изчерпан');
-    
-    // Get selected variant title if available
-    let variantTitle = '';
-    const variantSelect = document.querySelector('select[name="id"]') ||
-                         document.querySelector('.product-form__input input[type="radio"]:checked');
-    if (variantSelect) {
-      variantTitle = variantSelect.selectedOptions ? 
-                    variantSelect.selectedOptions[0].text : 
-                    (variantSelect.value || '');
+    if (!currentVariantId) {
+      notice.classList.remove('show');
+      return;
     }
     
-    // Update email link with variant info
+    const isAvailable = variantAvailability[currentVariantId];
+    const variantTitle = getVariantTitle(currentVariantId);
+    
+    // Update email link
     if (variantTitle) {
-      emailLink.href = `mailto:info@rinosbike.eu?subject=Bike Reservation - ${productTitle} - ${variantTitle}`;
+      emailLink.href = `mailto:info@rinosbike.eu?subject=Bike Reservation - ${productData.title} - ${variantTitle}`;
     }
     
-    // Show or hide notice
-    if (isUnavailable || hasSoldOutText) {
+    // Show notice only if variant is NOT available
+    if (isAvailable === false) {
       notice.classList.add('show');
     } else {
       notice.classList.remove('show');
     }
   }
   
-  // Run on page load
-  updateNoticeVisibility();
+  // Initial check
+  setTimeout(updateNoticeVisibility, 100);
   
-  // Listen for variant changes
-  document.addEventListener('change', updateNoticeVisibility);
+  // Listen for any changes
+  document.addEventListener('change', function(e) {
+    if (e.target.name === 'id' || e.target.closest('.product-form')) {
+      updateNoticeVisibility();
+    }
+  });
   
-  // Also listen for any button state changes
-  const observer = new MutationObserver(updateNoticeVisibility);
-  const addToCartButton = document.querySelector('[name="add"]') || 
-                         document.querySelector('.product-form__submit') ||
-                         document.querySelector('[type="submit"]');
+  // Listen for variant change events (some themes use custom events)
+  document.addEventListener('variant:change', updateNoticeVisibility);
+  document.addEventListener('variantChange', updateNoticeVisibility);
   
-  if (addToCartButton) {
-    observer.observe(addToCartButton, { 
+  // Watch for changes in the form
+  const productForm = document.querySelector('form[action*="/cart/add"]');
+  if (productForm) {
+    const observer = new MutationObserver(updateNoticeVisibility);
+    observer.observe(productForm, { 
       attributes: true, 
-      childList: true, 
-      subtree: true 
+      subtree: true,
+      attributeFilter: ['data-variant-id']
     });
   }
 })();
