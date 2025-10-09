@@ -1,8 +1,3 @@
-{% comment %} Get the current variant {% endcomment %}
-{% assign current_variant = product.selected_or_first_available_variant %}
-
-{% if current_variant and current_variant.available == false %}
-
 {% comment %} Translation strings {% endcomment %}
 {% assign locale = request.locale.iso_code %}
 
@@ -37,12 +32,17 @@
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
   .size-unavailable-container {
+    display: none;
     margin: 20px 0;
     padding: 24px 28px;
     background: #f8f8f8;
     border-radius: 8px;
     border: 1px solid #e5e5e5;
     font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .size-unavailable-container.show {
+    display: block;
   }
 
   .size-unavailable-title {
@@ -131,7 +131,7 @@
   }
 </style>
 
-<div class="size-unavailable-container">
+<div class="size-unavailable-container" id="size-unavailable-notice">
   <div class="size-unavailable-title">
     {{ title_text }}
   </div>
@@ -140,7 +140,7 @@
     {{ description_text }}
   </p>
   
-  <a href="mailto:info@rinosbike.eu?subject=Bike Reservation - {{ product.title }}{% if current_variant %} - {{ current_variant.title }}{% endif %}" class="size-unavailable-cta">
+  <a href="mailto:info@rinosbike.eu?subject=Bike Reservation - {{ product.title }}" class="size-unavailable-cta" id="reservation-email-link">
     <svg class="size-unavailable-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
       <polyline points="22,6 12,13 2,6"></polyline>
@@ -149,4 +149,72 @@
   </a>
 </div>
 
-{% endif %}
+<script>
+(function() {
+  const notice = document.getElementById('size-unavailable-notice');
+  const emailLink = document.getElementById('reservation-email-link');
+  const productTitle = "{{ product.title }}";
+  
+  function updateNoticeVisibility() {
+    // Find the Add to Cart button or variant selector
+    const addToCartButton = document.querySelector('[name="add"]') || 
+                           document.querySelector('.product-form__submit') ||
+                           document.querySelector('[type="submit"]');
+    
+    // Check if button is disabled (usually means out of stock)
+    const isUnavailable = addToCartButton && addToCartButton.disabled;
+    
+    // Also check for "sold out" text in button
+    const buttonText = addToCartButton ? addToCartButton.textContent.toLowerCase() : '';
+    const hasSoldOutText = buttonText.includes('sold out') || 
+                          buttonText.includes('unavailable') ||
+                          buttonText.includes('ausverkauft') ||
+                          buttonText.includes('agotado') ||
+                          buttonText.includes('épuisé') ||
+                          buttonText.includes('niedostępny') ||
+                          buttonText.includes('изчерпан');
+    
+    // Get selected variant title if available
+    let variantTitle = '';
+    const variantSelect = document.querySelector('select[name="id"]') ||
+                         document.querySelector('.product-form__input input[type="radio"]:checked');
+    if (variantSelect) {
+      variantTitle = variantSelect.selectedOptions ? 
+                    variantSelect.selectedOptions[0].text : 
+                    (variantSelect.value || '');
+    }
+    
+    // Update email link with variant info
+    if (variantTitle) {
+      emailLink.href = `mailto:info@rinosbike.eu?subject=Bike Reservation - ${productTitle} - ${variantTitle}`;
+    }
+    
+    // Show or hide notice
+    if (isUnavailable || hasSoldOutText) {
+      notice.classList.add('show');
+    } else {
+      notice.classList.remove('show');
+    }
+  }
+  
+  // Run on page load
+  updateNoticeVisibility();
+  
+  // Listen for variant changes
+  document.addEventListener('change', updateNoticeVisibility);
+  
+  // Also listen for any button state changes
+  const observer = new MutationObserver(updateNoticeVisibility);
+  const addToCartButton = document.querySelector('[name="add"]') || 
+                         document.querySelector('.product-form__submit') ||
+                         document.querySelector('[type="submit"]');
+  
+  if (addToCartButton) {
+    observer.observe(addToCartButton, { 
+      attributes: true, 
+      childList: true, 
+      subtree: true 
+    });
+  }
+})();
+</script>
