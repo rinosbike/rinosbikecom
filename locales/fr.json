@@ -960,6 +960,12 @@
       "travel": "100mm"
     }
   },
+"rinos_trudi": {
+    "header": "Rinos x TRUDI. Des roues parfaites dans tous vos Rinos",
+    "subtext_1": "De meilleures roues, le même prix juste. Nous venons d'ajouter le système TRUDI de Berd à notre atelier – non pas pour vous facturer plus, mais pour offrir des montages de roues de niveau professionnel sur chaque vélo.",
+    "button_text": "Découvrir l'article complet",
+    "button_link": "/fr/blogs/news/rinos-invests-in-trudi-better-wheels-same-fair-price"
+  },
   "klarna": {
     "shop_now_pay_with_klarna": "Achetez maintenant. Payez avec Klarna.",
     "learn_more": "En savoir plus",
@@ -1030,12 +1036,5 @@
     "approx_103kg": "~10,3 kg",
    
   },
-    "sections": {
-    "rinos_trudi": {
-      "header": "Rinos x TRUDI. Des roues parfaites dans tous vos Rinos",
-      "subtext_1": "De meilleures roues, le même prix juste. Nous venons d'ajouter le système TRUDI de Berd à notre atelier – non pas pour vous facturer plus, mais pour offrir des montages de roues de niveau professionnel sur chaque vélo.",
-      "button_text": "Découvrir l'article complet",
-      "button_link": "/fr/blogs/news/rinos-invests-in-trudi-better-wheels-same-fair-price"
-    }
-  }
+
 }
