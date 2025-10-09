@@ -45,7 +45,7 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Q14A6222.jpg",
+        "image": "shopify://shop_images/att.uph39nUk7j_KQqCRfb7twp3kPsDHpugDhw9HqI8D3jM_c53091d1-79e8-4c9c-b54c-3be41af371c6.jpg",
         "image_overlay_opacity": 30,
         "image_height": "small",
         "desktop_content_position": "top-right",
@@ -202,10 +202,10 @@
         "row_QPgLT3": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/IMG_7339_6757dde0-0b88-4dc8-b280-539b8e9ddb8d.jpg",
+            "image": "shopify://shop_images/dominika.pairofwheels_453056389_850498639917776_8492373170969487287_n.jpg",
             "caption": "Sandman 7",
             "heading": "<em><strong>Twenty Four</strong></em><strong> Speeds. </strong>",
-            "text": "<p>The Sandman 6 with GRX600 is proven reliable. Eleven speeds, solid hydraulic brakes, clutched derailleur. It works.</p><p>The GRX820 on the Sandman 7 delivers twelve-speed precision, tighter gear spacing, and better component longevity, this is where Shimano's engineering takes a measurable step up. </p><p>Same TORAY T800 carbon frame. Lighter at 9.6kg versus 9.8kg.</p><p>The difference: Ice Technologies brake rotors with aluminum cores that dissipate heat without warping, Servo Wave brake action for better modulation, ceramic pistons in the calipers for heat resistance, adjustable clutch tension. </p><p>Components that perform after months of hard riding, not just the first few weeks.</p>",
+            "text": "<p>The GRX820 on the Sandman 7 delivers twelve-speed precision, tighter gear spacing, and better component longevity, this is where Shimano's engineering takes a measurable step up. </p><p>Same TORAY T800 carbon frame. Lighter at 9.6kg versus 9.8kg.</p><p>The difference: Ice Technologies brake rotors with aluminum cores that dissipate heat without warping, Servo Wave brake action for better modulation, ceramic pistons in the calipers for heat resistance, adjustable clutch tension. </p><p>Components that perform after months of hard riding, not just the first few weeks.</p>",
             "button_label": "",
             "button_link": ""
           }
