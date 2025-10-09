@@ -1,0 +1,458 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_eMpVX9": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_kgmQyk": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Sandman 6.</strong> GRX600. Made for Gravel, built for Performance.",
+            "heading_size": "h1"
+          }
+        },
+        "text_6fTdVN": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "subtitle"
+          }
+        },
+        "buttons_rbpHx8": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_kgmQyk",
+        "text_6fTdVN",
+        "buttons_rbpHx8"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Q14A6222.jpg",
+        "image_overlay_opacity": 30,
+        "image_height": "small",
+        "desktop_content_position": "top-right",
+        "show_text_box": false,
+        "desktop_content_alignment": "right",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "conversionbanner_2_D9aHDL": {
+      "type": "conversionbanner-2",
+      "disabled": true,
+      "settings": {
+        "quality_text": "great quality",
+        "payment_text": "secure payment",
+        "delivery_text": "fast delivery",
+        "return_text": "14 days return",
+        "support_text": "Lifetime service"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "background-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "hover",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "bike_parts_highlight_1_6XGKyM": {
+      "type": "bike-parts-highlight-1",
+      "settings": {
+        "tire_size_text": "tire size",
+        "gear_shifter_text": "gear shifter",
+        "weight_text": "weight",
+        "material_text": "frame material",
+        "tire_size_variabel_text": "{{ product.metafields.custom.tire_size_highlight.value }}",
+        "gear_shifter_variabel_text": "{{ product.metafields.custom.gear_shifter_highlight.value }}",
+        "weight_variabel_text": "{{ product.metafields.custom.weight_highlight.value }}",
+        "material_variabel_text": "{{ product.metafields.custom.material_highlight.value }}"
+      }
+    },
+    "klarna_banner_1_g363fF": {
+      "type": "klarna-banner-1",
+      "settings": {}
+    },
+    "rich_text_MFqJh7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_zpYfc4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Made<em><strong> for Gravel.</strong></em> Discover Rinos Sandman 6",
+            "heading_size": "h2"
+          }
+        },
+        "button_DEYW6n": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_zpYfc4",
+        "button_DEYW6n"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multirow_4TH9pN": {
+      "type": "multirow",
+      "blocks": {
+        "row_XtrB4E": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/dominika.pairofwheels_449098967_393205517073597_634453419878547017_n.jpg",
+            "caption": "Sandman 6",
+            "heading": "<em><strong>Shimano GRX600</strong></em>. The Difference You'll Actually Feel.",
+            "text": "<p>The GRX600 gives you 22 speeds through an 11-speed cassette instead of the GRX400's 10-speed setup. </p><p>That extra cog means smaller jumps between gears—you're not stuck between \"too easy\" and \"too hard\" nearly as often. </p><p>The RD-RX810 rear derailleur has a clutch that keeps the chain tensioned over rough ground, which stops that annoying slapping sound and means you won't drop your chain on rocky descents.</p><p>The 11-speed chain runs quieter and lasts longer because it's built to tighter tolerances. Shifts happen cleanly even when you're pedaling hard uphill. </p><p>After a few long rides, you'll notice the difference—less hand fatigue from shifting, fewer adjustments needed, more time just riding.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_qEgUHQ": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/Q14A5971.jpg",
+            "caption": "Sandman 6",
+            "heading": "Find Your Rhythm. <em><strong>Keep It.</strong></em>",
+            "text": "<p>The 30-tooth small ring up front makes steep climbs manageable even when you're carrying gear. Pair it with the big 34-tooth cog in back and you've got an easy gear for when things point upward. But you're not sacrificing speed—the 46-tooth big ring gives you plenty of top end for fast gravel sections. Twenty gears total that actually work for real-world gravel riding, proven reliable on everything from mountain passes to flat prairie roads.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_QPgLT3": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/IMG_7339_6757dde0-0b88-4dc8-b280-539b8e9ddb8d.jpg",
+            "caption": "Sandman 4",
+            "heading": "Most riders buy an entry-level gravel bike, ride it hard for six months, <em><strong>then immediately start shopping for upgrades. </strong></em>",
+            "text": "<p>The Sandman 6 gives you the groupset and components that experienced riders eventually upgrade to anyway—the GRX600 drivetrain with 22 speeds, the 11-speed precision shifting, the hydraulic brakes that work reliably under load.<br/><br/>Same TORAY T800 carbon frame and fork as the Sandman 4. Same 9.8kg weight. </p><p></p><p>The difference is in the parts that matter when you're far from home: smoother shifts, wider gear range, better modulation on the brakes.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_XtrB4E",
+        "row_qEgUHQ",
+        "row_QPgLT3"
+      ],
+      "name": "t:sections.multirow.presets.name",
+      "settings": {
+        "image_height": "small",
+        "desktop_image_width": "small",
+        "heading_size": "h2",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "right",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video_javi_w_EVzKBG": {
+      "type": "video-javi-w",
+      "name": "Video + Text Feature",
+      "settings": {
+        "layout": "left",
+        "vertical_alignment": "flex-start",
+        "gap": 40,
+        "container_width": 1000,
+        "container_padding": 0,
+        "background_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "video_type": "vimeo",
+        "youtube_id": "",
+        "vimeo_id": "1123824442",
+        "video_file": "",
+        "video_width_percent": 35,
+        "video_min_width": 450,
+        "video_max_width": 750,
+        "video_aspect_ratio": 130,
+        "video_border_radius": 0,
+        "video_shadow": false,
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "hide_controls": true,
+        "eyebrow_text": "",
+        "heading": "Bikepacking with the Sandman 6",
+        "description": "<p>Twenty-six mounting points across the frame give you tons of options for attaching bags, racks, extra water bottles, and whatever gear your adventure requires. </p><p>The wide 40mm tires come with reinforced sidewalls to protect against punctures on rough terrain. </p><p>Hydraulic brakes give you confident stopping power even when the bike is fully loaded. </p><p>Proven reliable in rain, mud, dust, and everything in between.</p>",
+        "button_text": "",
+        "button_link": "",
+        "text_alignment": "right",
+        "eyebrow_size": 11,
+        "eyebrow_color": "#666666",
+        "eyebrow_weight": 600,
+        "eyebrow_transform": "uppercase",
+        "eyebrow_spacing": 1,
+        "eyebrow_margin": 10,
+        "heading_tag": "h4",
+        "heading_size": 36,
+        "heading_color": "#000000",
+        "heading_weight": 700,
+        "heading_line_height": 1.2,
+        "heading_margin": 20,
+        "description_size": 16,
+        "description_color": "#2a2a2a",
+        "description_line_height": 1.7,
+        "description_margin": 0,
+        "button_padding_vertical": 12,
+        "button_padding_horizontal": 32,
+        "button_bg_color": "#000000",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#333333",
+        "button_hover_text": "#ffffff",
+        "button_font_size": 17,
+        "button_font_weight": 600,
+        "button_border_radius": 4,
+        "button_border_width": 0,
+        "button_border_color": "#000000",
+        "mobile_breakpoint": 768,
+        "mobile_gap": 30,
+        "mobile_text_alignment": "left",
+        "mobile_heading_size": 32,
+        "mobile_description_size": 14
+      }
+    },
+    "image_with_text_86eDEc": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_8xf4xW": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Wheels You Can Trust.</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_aUB6Dd": {
+          "type": "text",
+          "settings": {
+            "text": "<h6>Every Rinos is precision-trued with TRUDI by Berd, the world’s most advanced wheel truing system. </h6><h6>That means straighter wheels, tighter tolerances, and absolute stability — so you ride faster, corner harder, and never lose performance to wobble or flex.</h6>",
+            "text_style": "subtitle"
+          }
+        },
+        "button_F3pAje": {
+          "type": "button",
+          "settings": {
+            "button_label": "Discover more",
+            "button_link": "shopify://blogs/news/rinos-invests-in-trudi-better-wheels-same-fair-price",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_8xf4xW",
+        "text_aUB6Dd",
+        "button_F3pAje"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/d80c7d0895ddc1617dc72cea1500e69a-2.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product_description_sec1_NUkPfV": {
+      "type": "product-description-sec1",
+      "name": "product-description-sec1",
+      "settings": {}
+    },
+    "featured_collection_hJ7gdH": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Discover the <em><strong>classic</strong></em> Sandman",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "sandman-classic",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "anglesports_frame_size_yDYafn": {
+      "type": "anglesports-frame-size",
+      "name": "Gravel Anglesports Geometry Chart",
+      "settings": {
+        "geometry_image": "shopify://shop_images/Sizing_Chart_Sandman4_6_7_Angle_Sport.png"
+      }
+    },
+    "featured_collection_fPgTD4": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Looking for something else?",
+        "heading_size": "h2",
+        "description": "<p>Visit the other Sandman GRX models</p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "sandman-grx",
+        "products_to_show": 7,
+        "columns_desktop": 5,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "image_banner_eMpVX9",
+    "conversionbanner_2_D9aHDL",
+    "main",
+    "bike_parts_highlight_1_6XGKyM",
+    "klarna_banner_1_g363fF",
+    "rich_text_MFqJh7",
+    "multirow_4TH9pN",
+    "video_javi_w_EVzKBG",
+    "image_with_text_86eDEc",
+    "product_description_sec1_NUkPfV",
+    "featured_collection_hJ7gdH",
+    "anglesports_frame_size_yDYafn",
+    "featured_collection_fPgTD4",
+    "related-products"
+  ]
+}
