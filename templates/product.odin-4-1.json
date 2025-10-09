@@ -54,17 +54,23 @@
           "type": "quantity_selector",
           "settings": {}
         },
-        "buy_buttons": {
-          "type": "buy_buttons",
+        "custom_liquid_fExYyC": {
+          "type": "custom_liquid",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "custom_liquid": ""
           }
         },
         "custom_liquid_a4VWAe": {
           "type": "custom_liquid",
           "settings": {
             "custom_liquid": "{% render 'size-unavailable-notice' %}"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
           }
         }
       },
@@ -73,8 +79,9 @@
         "price",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons",
-        "custom_liquid_a4VWAe"
+        "custom_liquid_fExYyC",
+        "custom_liquid_a4VWAe",
+        "buy_buttons"
       ],
       "settings": {
         "enable_sticky_info": true,
