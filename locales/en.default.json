@@ -995,7 +995,8 @@
     "different_plans_based_on_amount": "Depending on the purchase amount and creditworthiness, different payment plans may be displayed.",
     "complete_order": "Complete your order",
     "automatic_deduction": "We automatically deduct the installments according to your payment plan.",
-    "close": "Close"
+    "close": "Close",
+    "installment_message": "or {{ price }} per month with"
   },
   "bannerhomepage": {
     "text": "Discover the components of our new gravel bike!",
