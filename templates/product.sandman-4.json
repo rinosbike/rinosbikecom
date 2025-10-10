@@ -143,9 +143,10 @@
     },
     "custom_liquid_YbjpiR": {
       "type": "custom-liquid",
+      "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
+        "custom_liquid": "<div class=\"payment-banners-container\">\n  {% render 'leasing-jobrad-banner' %}\n  {% render 'klarna-banner' %}\n</div>\n\n<style>\n  .payment-banners-container {\n    max-width: 1200px;\n    margin: 2rem auto;\n    padding: 0 1rem;\n    display: flex;\n    flex-direction: column;\n    gap: 1rem; /* This controls the space between banners */\n  }\n  \n  /* Remove individual margins when inside container */\n  .payment-banners-container .klarna-banner-wrapper,\n  .payment-banners-container .jobrad-section {\n    margin: 0;\n    padding: 0;\n  }\n</style>",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
@@ -153,6 +154,7 @@
     },
     "klarna_banner_1_g363fF": {
       "type": "klarna-banner-1",
+      "disabled": true,
       "settings": {}
     },
     "rich_text_MFqJh7": {
