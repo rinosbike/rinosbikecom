@@ -142,6 +142,15 @@
         "material_variabel_text": "{{ product.metafields.custom.material_highlight.value }}"
       }
     },
+    "custom_liquid_fFQWdd": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "klarna_banner_1_g363fF": {
       "type": "klarna-banner-1",
       "settings": {}
@@ -302,15 +311,6 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "custom_liquid_fFQWdd": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
@@ -318,13 +318,13 @@
     "conversionbanner_2_D9aHDL",
     "main",
     "bike_parts_highlight_1_6XGKyM",
+    "custom_liquid_fFQWdd",
     "klarna_banner_1_g363fF",
     "rich_text_MFqJh7",
     "multirow_4TH9pN",
     "product_description_sec1_Nn4UXc",
     "review_section_small_fKwkg6",
     "rich_text_7we9KY",
-    "related-products",
-    "custom_liquid_fFQWdd"
+    "related-products"
   ]
 }
