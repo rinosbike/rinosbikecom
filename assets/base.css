@@ -3593,3 +3593,25 @@ details-disclosure > details {
   font-family: "Graphik-Regular-Trial";
   src: url("{{ 'Graphik-Regular-Trial.woff' | asset_url }}") format("woff");
 }
+
+/* Apply Cyrillic-friendly fonts for Bulgarian locale */
+html[lang="bg"] {
+  font-family: 'Noto Sans', sans-serif !important;
+}
+
+html[lang="bg"] h1,
+html[lang="bg"] h2,
+html[lang="bg"] h3,
+html[lang="bg"] .heading,
+html[lang="bg"] .title {
+  font-family: 'PT Sans Caption', sans-serif !important;
+  font-weight: 700;
+}
+
+/* Optional: match body text spacing to IBM Plex Sans feel */
+html[lang="bg"] p,
+html[lang="bg"] li,
+html[lang="bg"] span {
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
