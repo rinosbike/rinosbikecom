@@ -1,172 +1,451 @@
 {% comment %}
 Snippet: leasing-jobrad-cards.liquid
-Purpose: Display a horizontally-arranged, aesthetically pleasing JobRad leasing calculator in German only.
+Purpose: Display a modern, Framer-style JobRad leasing calculator in German only.
 {% endcomment %}
 
 {% if localization.language.iso_code == 'de' %}
-<div class="jobrad-calculator" style="margin-top:1.5em; padding:1em; border:1px solid #ddd; border-radius:6px; background:#fff; max-width:1000px; margin-left:auto; margin-right:auto; box-shadow:0 1px 3px rgba(0,0,0,0.12);">
-
-  <!-- JobRad Logo, center-aligned -->
-  <div style="text-align:center; margin-bottom:1em;">
-    <img 
-      src="https://i.goopics.net/gbrwrq.png" 
-      alt="JobRad Logo" 
-      style="max-width:180px;"
-    />
-  </div>
-
-  <h2 style="margin-top:0; text-align:center; font-size:1.4rem;">
-    JobRad-Leasingrechner (Ungefähre Angaben)
-  </h2>
-  <p style="margin:0 auto; max-width:700px; font-size:0.95rem; text-align:center; line-height:1.4;">
-    Hier siehst du <strong>beispielhafte</strong> monatliche Raten für dein Wunschrad über JobRad. 
-    Die genauen Konditionen können abweichen. Bitte kontaktiere uns oder besuche das 
-    <a href="https://www.jobrad.org/" target="_blank" style="color:#0073e6; text-decoration:underline;">JobRad-Portal</a> 
-    für endgültige Preise und Bestellinformationen.
-  </p>
-
-  <!-- Input area -->
-  <div style="display:flex; justify-content:center; margin-top:1em;">
-    <div style="margin-right:1em;">
-      <label for="JobRadBruttoInput" style="display:block; margin-bottom:0.3em; font-weight:bold;">
-        Bruttokaufpreis (EUR):
-      </label>
-      <input
-        type="number"
-        id="JobRadBruttoInput"
-        value="1299"
-        step="0.01"
-        style="width:150px; padding:0.4em; border:1px solid #ccc; border-radius:4px;"
-      />
-    </div>
-    <div style="align-self:flex-end;">
-      <button
-        type="button"
-        onclick="calculateJobRadCards()"
-        style="background:#333; color:#fff; padding:0.6em 1.2em; border:none; border-radius:4px; cursor:pointer;"
-      >
-        Jetzt berechnen
-      </button>
-    </div>
-  </div>
-
-  <p style="text-align:center; font-size:0.85rem; color:#666; margin:1em auto 1.5em; max-width:600px;">
-    Alle Werte sind Nettopreise (ohne MwSt.), da JobRad-Leasing auf Netto-Basis erfolgt. 
-    Wir kalkulieren pauschal mit 19% MwSt. &amp; 4,41&nbsp;€ Versicherungsbeitrag/Monat. Laufzeit: 36 Monate.
-  </p>
-
-  <!-- Cards container -->
-  <div id="jobrad-cards-container" style="display:none; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1em;">
-    <!-- We'll build three "cards" in a row (flex). Each hidden by default, revealed after calculation. -->
+<style>
+  .jobrad-hero {
+    position: relative;
+    margin: 3rem auto;
+    max-width: 1200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+  }
+  
+  .jobrad-hero__pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0%, transparent 50%);
+  }
+  
+  .jobrad-hero__content {
+    position: relative;
+    padding: 3rem 2rem;
+    color: white;
+    text-align: center;
+  }
+  
+  .jobrad-hero__logo {
+    display: inline-block;
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+  
+  .jobrad-hero__logo img {
+    max-width: 180px;
+    display: block;
+  }
+  
+  .jobrad-hero__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  
+  .jobrad-hero__subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0 auto 2.5rem;
+    max-width: 700px;
+    opacity: 0.95;
+    line-height: 1.6;
+  }
+  
+  .jobrad-calculator-box {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .jobrad-input-group {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .jobrad-input-wrapper {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .jobrad-input-wrapper label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  
+  .jobrad-input-wrapper input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.9);
+    color: #1a1a1a;
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .jobrad-input-wrapper input:focus {
+    outline: none;
+    border-color: white;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.2);
+  }
+  
+  .jobrad-calc-btn {
+    padding: 0.875rem 2rem;
+    background: white;
+    color: #667eea;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  }
+  
+  .jobrad-calc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  }
+  
+  .jobrad-calc-btn:active {
+    transform: translateY(0);
+  }
+  
+  .jobrad-disclaimer {
+    font-size: 0.875rem;
+    opacity: 0.85;
+    margin: 1.5rem auto 0;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+  
+  .jobrad-cards {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .jobrad-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    color: #1a1a1a;
+    border: 2px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .jobrad-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  }
+  
+  .jobrad-card__badge {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+  
+  .jobrad-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: #1a1a1a;
+  }
+  
+  .jobrad-card__desc {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0 0 1.5rem;
+    line-height: 1.5;
+  }
+  
+  .jobrad-card__price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #667eea;
+    margin: 1rem 0;
+    line-height: 1;
+  }
+  
+  .jobrad-card__price-sub {
+    font-size: 0.875rem;
+    color: #999;
+    font-weight: 500;
+  }
+  
+  .jobrad-card__detail {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  
+  .jobrad-card__detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  
+  .jobrad-card__detail-row:last-child {
+    margin-bottom: 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .jobrad-cta {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 0 2rem 3rem;
+  }
+  
+  .jobrad-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    background: white;
+    color: #667eea;
+    border: none;
+    border-radius: 14px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  
+  .jobrad-cta__btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+  }
+  
+  .jobrad-cta__text {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.85);
+    margin-top: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .jobrad-hero__content {
+      padding: 2rem 1.5rem;
+    }
     
-    <!-- Card 1 (20% residual) -->
-    <div id="CardA" style="width:300px; min-width:250px; background:#f9fafb; border-radius:6px; border:1px solid #eee; padding:1em;">
-      <h3 style="margin-top:0; font-size:1.1rem;">Option 1: Niedrige Monatsrate</h3>
-      <p style="margin:0.3em 0; font-size:0.9rem;">Restwert 20&nbsp;% (höhere Endsumme, dafür weniger pro Monat)</p>
-      <hr style="margin:0.6em 0;">
-      <p style="font-size:1.3rem; font-weight:bold; margin:0.6em 0;">
-        <span id="CardA_Monthly"></span> € 
-        <span style="font-size:0.8rem; color:#555;">/ Monat</span>
-      </p>
-      <p style="margin:0.4em 0 0; font-size:0.9rem;">
-        Endwert: <strong id="CardA_Residual"></strong> €
-      </p>
-      <hr style="margin:0.6em 0;">
-      <p style="font-size:0.85rem; line-height:1.4;">
-        <strong>Leasingrate:</strong> <span id="CardA_Lease"></span> €<br>
-        <strong>Versicherung:</strong> <span id="CardA_Insurance"></span> €<br>
-        <strong>Restwert:</strong> <span id="CardA_ResidualDetail"></span> € (20&nbsp;%)
+    .jobrad-hero__title {
+      font-size: 1.75rem;
+    }
+    
+    .jobrad-hero__subtitle {
+      font-size: 1rem;
+    }
+    
+    .jobrad-input-group {
+      flex-direction: column;
+    }
+    
+    .jobrad-cards {
+      grid-template-columns: 1fr;
+    }
+    
+    .jobrad-card__price {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<div class="jobrad-hero">
+  <div class="jobrad-hero__pattern"></div>
+  
+  <div class="jobrad-hero__content">
+    <div class="jobrad-hero__logo">
+      <img src="https://i.goopics.net/gbrwrq.png" alt="JobRad Logo" />
+    </div>
+    
+    <h2 class="jobrad-hero__title">
+      Dein Traumrad mit JobRad-Leasing
+    </h2>
+    
+    <p class="jobrad-hero__subtitle">
+      Spare bares Geld durch Gehaltsumwandlung und fahre dein neues Bike schon ab wenigen Euro im Monat. Berechne jetzt deine individuelle Rate.
+    </p>
+    
+    <div class="jobrad-calculator-box">
+      <div class="jobrad-input-group">
+        <div class="jobrad-input-wrapper">
+          <label for="JobRadBruttoInput">Bruttokaufpreis (EUR)</label>
+          <input
+            type="number"
+            id="JobRadBruttoInput"
+            value="1299"
+            step="0.01"
+            placeholder="z.B. 1299"
+          />
+        </div>
+        <button type="button" class="jobrad-calc-btn" onclick="calculateJobRadCards()">
+          Berechnen
+        </button>
+      </div>
+      
+      <p class="jobrad-disclaimer">
+        Alle Werte sind Nettopreise (ohne MwSt.). Wir kalkulieren mit 19% MwSt. & 4,41€ Versicherung/Monat. Laufzeit: 36 Monate.
       </p>
     </div>
-
-    <!-- Card 2 (15% residual) -->
-    <div id="CardB" style="width:300px; min-width:250px; background:#f9fafb; border-radius:6px; border:1px solid #eee; padding:1em;">
-      <h3 style="margin-top:0; font-size:1.1rem;">Option 2: Ausgewogene Variante</h3>
-      <p style="margin:0.3em 0; font-size:0.9rem;">Restwert 15&nbsp;% (mittlere Rate, mittlerer Endwert)</p>
-      <hr style="margin:0.6em 0;">
-      <p style="font-size:1.3rem; font-weight:bold; margin:0.6em 0;">
-        <span id="CardB_Monthly"></span> € 
-        <span style="font-size:0.8rem; color:#555;">/ Monat</span>
-      </p>
-      <p style="margin:0.4em 0 0; font-size:0.9rem;">
-        Endwert: <strong id="CardB_Residual"></strong> €
-      </p>
-      <hr style="margin:0.6em 0;">
-      <p style="font-size:0.85rem; line-height:1.4;">
-        <strong>Leasingrate:</strong> <span id="CardB_Lease"></span> €<br>
-        <strong>Versicherung:</strong> <span id="CardB_Insurance"></span> €<br>
-        <strong>Restwert:</strong> <span id="CardB_ResidualDetail"></span> € (15&nbsp;%)
+    
+    <div class="jobrad-cards" id="jobrad-cards-container">
+      <!-- Card 1: 20% Residual -->
+      <div class="jobrad-card">
+        <span class="jobrad-card__badge">Niedrige Rate</span>
+        <h3 class="jobrad-card__title">Option 1</h3>
+        <p class="jobrad-card__desc">Restwert 20% – Höhere Endsumme, dafür weniger pro Monat</p>
+        
+        <div class="jobrad-card__price">
+          <span id="CardA_Monthly">—</span>€
+          <div class="jobrad-card__price-sub">pro Monat</div>
+        </div>
+        
+        <div class="jobrad-card__detail">
+          <div class="jobrad-card__detail-row">
+            <span>Leasingrate:</span>
+            <strong><span id="CardA_Lease">—</span>€</strong>
+          </div>
+          <div class="jobrad-card__detail-row">
+            <span>Versicherung:</span>
+            <strong><span id="CardA_Insurance">—</span>€</strong>
+          </div>
+          <div class="jobrad-card__detail-row">
+            <span>Endwert (20%):</span>
+            <strong><span id="CardA_Residual">—</span>€</strong>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 2: 15% Residual -->
+      <div class="jobrad-card">
+        <span class="jobrad-card__badge">Beliebt</span>
+        <h3 class="jobrad-card__title">Option 2</h3>
+        <p class="jobrad-card__desc">Restwert 15% – Ausgewogene Variante mit mittlerer Rate</p>
+        
+        <div class="jobrad-card__price">
+          <span id="CardB_Monthly">—</span>€
+          <div class="jobrad-card__price-sub">pro Monat</div>
+        </div>
+        
+        <div class="jobrad-card__detail">
+          <div class="jobrad-card__detail-row">
+            <span>Leasingrate:</span>
+            <strong><span id="CardB_Lease">—</span>€</strong>
+          </div>
+          <div class="jobrad-card__detail-row">
+            <span>Versicherung:</span>
+            <strong><span id="CardB_Insurance">—</span>€</strong>
+          </div>
+          <div class="jobrad-card__detail-row">
+            <span>Endwert (15%):</span>
+            <strong><span id="CardB_Residual">—</span>€</strong>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 3: 10% Residual -->
+      <div class="jobrad-card">
+        <span class="jobrad-card__badge">Minimaler Endwert</span>
+        <h3 class="jobrad-card__title">Option 3</h3>
+        <p class="jobrad-card__desc">Restwert 10% – Höhere Rate, geringere Endsumme</p>
+        
+        <div class="jobrad-card__price">
+          <span id="CardC_Monthly">—</span>€
+          <div class="jobrad-card__price-sub">pro Monat</div>
+        </div>
+        
+        <div class="jobrad-card__detail">
+          <div class="jobrad-card__detail-row">
+            <span>Leasingrate:</span>
+            <strong><span id="CardC_Lease">—</span>€</strong>
+          </div>
+          <div class="jobrad-card__detail-row">
+            <span>Versicherung:</span>
+            <strong><span id="CardC_Insurance">—</span>€</strong>
+          </div>
+          <div class="jobrad-card__detail-row">
+            <span>Endwert (10%):</span>
+            <strong><span id="CardC_Residual">—</span>€</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="jobrad-cta">
+      <a href="mailto:info@rinosbike.eu?subject=JobRad Anfrage" class="jobrad-cta__btn">
+        <span>Jetzt Anfragen</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <p class="jobrad-cta__text">
+        Für genaue Konditionen und die finale Bestellung kontaktiere uns unter <strong>info@rinosbike.eu</strong>
       </p>
     </div>
-
-    <!-- Card 3 (10% residual) -->
-    <div id="CardC" style="width:300px; min-width:250px; background:#f9fafb; border-radius:6px; border:1px solid #eee; padding:1em;">
-      <h3 style="margin-top:0; font-size:1.1rem;">Option 3: Minimaler Endwert</h3>
-      <p style="margin:0.3em 0; font-size:0.9rem;">Restwert 10&nbsp;% (höhere Rate, geringere Endsumme)</p>
-      <hr style="margin:0.6em 0;">
-      <p style="font-size:1.3rem; font-weight:bold; margin:0.6em 0;">
-        <span id="CardC_Monthly"></span> € 
-        <span style="font-size:0.8rem; color:#555;">/ Monat</span>
-      </p>
-      <p style="margin:0.4em 0 0; font-size:0.9rem;">
-        Endwert: <strong id="CardC_Residual"></strong> €
-      </p>
-      <hr style="margin:0.6em 0;">
-      <p style="font-size:0.85rem; line-height:1.4;">
-        <strong>Leasingrate:</strong> <span id="CardC_Lease"></span> €<br>
-        <strong>Versicherung:</strong> <span id="CardC_Insurance"></span> €<br>
-        <strong>Restwert:</strong> <span id="CardC_ResidualDetail"></span> € (10&nbsp;%)
-      </p>
-    </div>
-  </div><!-- /jobrad-cards-container -->
-
-  <!-- CTA / Disclaimer at bottom -->
-  <p style="text-align:center; font-size:0.85rem; color:#777; margin-top:1.5em; line-height:1.4;">
-    <em>Hinweis:</em> Diese Werte dienen nur als ungefähre Richtwerte. 
-    Für endgültige Raten, Leasingvertrag und Kaufabschluss 
-    besuche unser 
-    <a href="https://www.jobrad.org/" target="_blank" style="color:#0073e6; text-decoration:underline;">
-      JobRad-Portal
-    </a> 
-    oder kontaktiere uns direkt.
-  </p>
+  </div>
 </div>
 
 <script>
 function calculateJobRadCards() {
-  // 1) Read brutto input
   const bruttoStr = document.getElementById('JobRadBruttoInput').value;
   const brutto = parseFloat(bruttoStr) || 0;
-
-  // 2) Convert to net (19% VAT)
   const netPrice = brutto / 1.19;
-
-  // 3) Fixed insurance cost net
   const insurance = 4.41;
-
-  // 4) 36-month term
   const term = 36;
 
-  // Show container
-  document.getElementById('jobrad-cards-container').style.display = 'flex';
+  document.getElementById('jobrad-cards-container').style.display = 'grid';
 
-  // Helper function for each card
   function fillCard(cardId, residualPercent) {
     const residual = netPrice * residualPercent;
     const finance = netPrice - residual;
     const monthlyLease = finance / term;
     const totalMonthly = monthlyLease + insurance;
 
-    document.getElementById(cardId+'_Monthly').textContent   = totalMonthly.toFixed(2);
-    document.getElementById(cardId+'_Residual').textContent  = residual.toFixed(2);
-    document.getElementById(cardId+'_Lease').textContent     = monthlyLease.toFixed(2);
+    document.getElementById(cardId+'_Monthly').textContent = totalMonthly.toFixed(2);
+    document.getElementById(cardId+'_Residual').textContent = residual.toFixed(2);
+    document.getElementById(cardId+'_Lease').textContent = monthlyLease.toFixed(2);
     document.getElementById(cardId+'_Insurance').textContent = insurance.toFixed(2);
-    document.getElementById(cardId+'_ResidualDetail').textContent = residual.toFixed(2);
   }
 
-  fillCard('CardA', 0.20); // 20%
-  fillCard('CardB', 0.15); // 15%
-  fillCard('CardC', 0.10); // 10%
+  fillCard('CardA', 0.20);
+  fillCard('CardB', 0.15);
+  fillCard('CardC', 0.10);
 }
 </script>
 {% endif %}
