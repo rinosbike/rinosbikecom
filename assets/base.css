@@ -3615,3 +3615,18 @@ html[lang="bg"] span {
   letter-spacing: 0.01em;
   line-height: 1.6;
 }
+/* Payment Banners Spacing */
+.payment-banners-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.payment-banners-container .klarna-banner-wrapper,
+.payment-banners-container .jobrad-section {
+  margin: 0;
+  padding: 0;
+}
