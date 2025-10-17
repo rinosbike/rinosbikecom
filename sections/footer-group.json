@@ -1,7 +1,21 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "review_section_small_QTMWdT": {
+      "type": "review-section-small",
+      "name": "review-section-small",
+      "settings": {}
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -36,7 +50,7 @@
         "image_TcpRhG": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/images.png",
+            "image": "shopify://shop_images/images.png",
             "image_width": 385,
             "alignment": "center"
           }
@@ -66,6 +80,7 @@
     }
   },
   "order": [
+    "review_section_small_QTMWdT",
     "footer"
   ]
 }
