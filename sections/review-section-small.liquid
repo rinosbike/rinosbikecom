@@ -1,260 +1,556 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Review-section</title>
-    <style>
-        .review-section-container{
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Section</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .review-section {
+        padding: 60px 20px;
+        background: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .review-section-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* Header Section */
+    .review-header {
+        text-align: center;
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .review-section-title {
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 600;
+        color: #000000;
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+    }
+
+    .review-subtitle {
+        font-size: 18px;
+        color: #666666;
+        font-weight: 400;
+    }
+
+    /* Stats Bar */
+    .review-stats {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        margin-bottom: 60px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .stat-item {
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 36px;
+        font-weight: 700;
+        color: #000000;
+        letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+        font-size: 14px;
+        color: #666666;
+        margin-top: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    /* Review Grid */
+    .review-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
+    .review-card {
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        border-radius: 12px;
+        padding: 24px;
+        transition: all 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        min-height: 240px;
+    }
+
+    .review-card:hover {
+        border-color: #000000;
+        transform: translateY(-2px);
+    }
+
+    .review-card.hidden {
+        display: none;
+    }
+
+    /* Review Card Content */
+    .review-header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 12px;
+    }
+
+    .review-product {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #666666;
+        margin-bottom: 4px;
+    }
+
+    .review-rating {
+        display: flex;
+        gap: 2px;
+    }
+
+    .star {
+        width: 16px;
+        height: 16px;
+        background: #000000;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+
+    .star.empty {
+        background: #e5e5e5;
+    }
+
+    .verified-badge {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 8px;
+        background: #f5f5f5;
+        border-radius: 20px;
+        font-size: 11px;
+        color: #666666;
+    }
+
+    .checkmark {
+        width: 12px;
+        height: 12px;
+        background: #000000;
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .checkmark::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 4px;
+        width: 3px;
+        height: 5px;
+        border: solid white;
+        border-width: 0 1px 1px 0;
+        transform: rotate(45deg);
+    }
+
+    .review-content {
+        flex: 1;
+        margin-top: 12px;
+    }
+
+    .review-text {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #333333;
+        margin-bottom: 16px;
+    }
+
+    .review-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+        padding-top: 16px;
+    }
+
+    .review-author {
+        font-size: 14px;
+        font-weight: 500;
+        color: #000000;
+    }
+
+    .review-date {
+        font-size: 12px;
+        color: #999999;
+    }
+
+    /* Show More Button */
+    .show-more-container {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .show-more-btn {
+        background: #000000;
+        color: #ffffff;
+        border: none;
+        padding: 14px 32px;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .show-more-btn:hover {
+        background: #333333;
+        transform: translateY(-1px);
+    }
+
+    .show-more-btn.show-less {
+        background: #ffffff;
+        color: #000000;
+        border: 1px solid #000000;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .review-stats {
+            gap: 30px;
+            flex-wrap: wrap;
         }
-    
-        .review-section-title{
-            font-size: 35px;
-            font-weight: 600;
-            margin-top: 50px;
-            margin-bottom: 50px;
+
+        .stat-number {
+            font-size: 28px;
         }
-    
-        .review-section-content{
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            column-gap: 25px;
-            row-gap: 25px;
+
+        .review-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
         }
-    
-        .review-section-card{
-            padding: 25px;
-            padding-bottom: 5px;
-            min-height: 390px;
-            background-color: rgb(255, 255, 255);
-            border-radius: 15px;
-            border: 0.5px solid rgb(218, 218, 218);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            box-shadow: 0 0 15px -3px rgba(0,0,0,0.1);
-            -webkit-box-shadow: 0 0 15px -3px rgba(0,0,0,0.1);
-            -moz-box-shadow: 0 0 15px -3px rgba(0,0,0,0.1);
-            position: relative;
+
+        .review-card {
+            min-height: auto;
         }
-    
-        :hover.review-section-card{
-            box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
-            -webkit-box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
-            -moz-box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
-            transform: scale(1.05);
+
+        .review-section {
+            padding: 40px 16px;
         }
-    
-        .review-section-card-title{
-            text-align: left;
-            font-size: 25px;
-            color: black;
-            font-weight: 600;
-        }
-    
-        .review-section-card-star{
-            width: 25px;
-            height: 25px;
-        }
-    
-        .review-section-card-name{
-            font-size: 20px;
-        }
-    
-        .review-section-card-text{
-            font-size: 15px;
-            margin-top: -15px;
-        }
-    
-        .gridelement-post-date {
-            position: absolute;
-            bottom: 10px;
-            left: 25px;
-            text-align: left;
-            color: gray;
-        }
-    
-        .review-section-verified-badge{
-            display: flex;
-            align-items: center;
-            margin-top: -15px;
-            margin-bottom: -30px;
-        }
-    
-        .review-section-verified-badge-text{
-            font-size: 15px;
-            margin-right: 5px;
-        }
-    
-        @media screen and (max-width: 1200px){
-        .review-section-content{
-            row-gap: 15px;
-            column-gap: 15px;
-        }
-    
-        .review-section-card-name{
-            font-size: 18px;
-        }
-    
-        .review-section-card-text{
-            font-size: 13px;
+
+        .review-header {
+            margin-bottom: 40px;
         }
     }
-    
-    @media screen and (max-width: 800px) {
-        .review-section-content {
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .review-grid {
             grid-template-columns: repeat(2, 1fr);
-            margin-left: 10px;
-            margin-right: 10px;
-            column-gap: 10px;
-            row-gap: 10px;
         }
-    
-        .gridelement-post-date {
-            /* Adjust styles here for smaller screens */
-            font-size: 0.8em;
-            bottom: 10px;
-        }
-    
-        .review-section-card-text {
-            /* Adjust styles here for smaller screens */
-            font-size: 0.9em;
-        }
-    
-        .review-section-card-title{
-            font-size: 22.5px;
-        }
-    
-        .review-section-title{
-            font-size: 30px;
-            font-weight: 600;
-            margin-top: 50px;
-            margin-bottom: 50px;
-            margin-left: 20px;
-        }
-    
-        :hover.review-section-card{
-            transform: scale(1.01);
-        }
-    
-    }
-    
-    @media screen and (max-width: 500px) {
-        .review-section-content {
-            grid-template-columns: repeat(1, 1fr);
-            margin-left: 10px;
-            margin-right: 10px;
-            column-gap: 10px;
-            row-gap: 10px;
-        }
-    
-        
     }
 
-    @media screen and (max-width: 400px) {
-        .review-section-card{
-            min-height: 350px;
+    /* Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
         }
-
-        .review-section-verified-badge{
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            text-align: left;
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
-    </style>
-    </head>
-    <body>
-        <section class="review-section">
-            <div class="review-section-container">
-                <h1 class="review-section-title">{{ 'reviews.customer_say' | t }}</h1>
-                <div class="review-section-content">
-                    <div class="review-section-card">
-                        <div class="review-section-card-content">
-                            <h2 class="review-section-card-title">{{ 'reviews.review4.title' | t }}</h2>
-                            <div class="review-section-card-rating" data-rating="{{ 'reviews.review4.rating' | t }}">
-                            </div>
-                            <div class="review-section-verified-badge">
-                                <p class="review-section-verified-badge-text">{{ 'reviews.verified_purchase' | t }}</p>
-                                <img class="review-section-verified-badge-img" src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/checkmark.seal.svg?v=1716629164" width="15px" height="15px">
-                            </div>
-                            <p class="review-section-card-name">{{ 'reviews.review4.name' | t }}</p>
-                            <p class="review-section-card-text">{{ 'reviews.review4.text' | t }}</p>
-                            <p class="gridelement-post-date">{{ 'reviews.review4.date' | t }}</p>
+
+    .review-card {
+        animation: fadeIn 0.3s ease;
+    }
+
+    .review-card:nth-child(1) { animation-delay: 0s; }
+    .review-card:nth-child(2) { animation-delay: 0.05s; }
+    .review-card:nth-child(3) { animation-delay: 0.1s; }
+    .review-card:nth-child(4) { animation-delay: 0.15s; }
+    .review-card:nth-child(5) { animation-delay: 0.2s; }
+    .review-card:nth-child(6) { animation-delay: 0.25s; }
+</style>
+</head>
+<body>
+    <section class="review-section">
+        <div class="review-section-container">
+            <!-- Header -->
+            <div class="review-header">
+                <h2 class="review-section-title">{{ 'reviews.customer_say' | t }}</h2>
+                <p class="review-subtitle">Real feedback from our cycling community</p>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div class="review-grid" id="reviewGrid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header-row">
+                        <div>
+                            <div class="review-product">{{ 'reviews.review4.title' | t }}</div>
+                            <div class="review-rating" data-rating="{{ 'reviews.review4.rating' | t }}"></div>
+                        </div>
+                        <div class="verified-badge">
+                            <span class="checkmark"></span>
+                            <span>Verified</span>
                         </div>
                     </div>
-                    <div class="review-section-card">
-                        <div class="review-section-card-content">
-                            <h2 class="review-section-card-title">{{ 'reviews.review5.title' | t }}</h2>
-                            <div class="review-section-card-rating" data-rating="{{ 'reviews.review5.rating' | t }}">
-                            </div>
-                            <div class="review-section-verified-badge">
-                                <p class="review-section-verified-badge-text">{{ 'reviews.verified_purchase' | t }}</p>
-                                <img class="review-section-verified-badge-img" src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/checkmark.seal.svg?v=1716629164" width="15px" height="15px">
-                            </div>
-                            <p class="review-section-card-name">{{ 'reviews.review5.name' | t }}</p>
-                            <p class="review-section-card-text">{{ 'reviews.review5.text' | t }}</p>
-                            <p class="gridelement-post-date">{{ 'reviews.review5.date' | t }}</p>
+                    <div class="review-content">
+                        <p class="review-text">{{ 'reviews.review4.text' | t }}</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">{{ 'reviews.review4.name' | t }}</span>
+                        <span class="review-date">{{ 'reviews.review4.date' | t }}</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header-row">
+                        <div>
+                            <div class="review-product">{{ 'reviews.review5.title' | t }}</div>
+                            <div class="review-rating" data-rating="{{ 'reviews.review5.rating' | t }}"></div>
+                        </div>
+                        <div class="verified-badge">
+                            <span class="checkmark"></span>
+                            <span>Verified</span>
                         </div>
                     </div>
-                    <div class="review-section-card">
-                        <div class="review-section-card-content">
-                            <h2 class="review-section-card-title">{{ 'reviews.review6.title' | t }}</h2>
-                            <div class="review-section-card-rating" data-rating="{{ 'reviews.review6.rating' | t }}">
-                            </div>
-                            <div class="review-section-verified-badge">
-                                <p class="review-section-verified-badge-text">{{ 'reviews.verified_purchase' | t }}</p>
-                                <img class="review-section-verified-badge-img" src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/checkmark.seal.svg?v=1716629164" width="15px" height="15px">
-                            </div>
-                            <p class="review-section-card-name">{{ 'reviews.review6.name' | t }}</p>
-                            <p class="review-section-card-text">{{ 'reviews.review6.text' | t }}</p>
-                            <p class="gridelement-post-date">{{ 'reviews.review6.date' | t }}</p>
+                    <div class="review-content">
+                        <p class="review-text">{{ 'reviews.review5.text' | t }}</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">{{ 'reviews.review5.name' | t }}</span>
+                        <span class="review-date">{{ 'reviews.review5.date' | t }}</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-header-row">
+                        <div>
+                            <div class="review-product">{{ 'reviews.review6.title' | t }}</div>
+                            <div class="review-rating" data-rating="{{ 'reviews.review6.rating' | t }}"></div>
                         </div>
+                        <div class="verified-badge">
+                            <span class="checkmark"></span>
+                            <span>Verified</span>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">{{ 'reviews.review6.text' | t }}</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">{{ 'reviews.review6.name' | t }}</span>
+                        <span class="review-date">{{ 'reviews.review6.date' | t }}</span>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card">
+                    <div class="review-header-row">
+                        <div>
+                            <div class="review-product">{{ 'reviews.review7.title' | t }}</div>
+                            <div class="review-rating" data-rating="{{ 'reviews.review7.rating' | t }}"></div>
+                        </div>
+                        <div class="verified-badge">
+                            <span class="checkmark"></span>
+                            <span>Verified</span>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">{{ 'reviews.review7.text' | t }}</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">{{ 'reviews.review7.name' | t }}</span>
+                        <span class="review-date">{{ 'reviews.review7.date' | t }}</span>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card">
+                    <div class="review-header-row">
+                        <div>
+                            <div class="review-product">{{ 'reviews.review8.title' | t }}</div>
+                            <div class="review-rating" data-rating="{{ 'reviews.review8.rating' | t }}"></div>
+                        </div>
+                        <div class="verified-badge">
+                            <span class="checkmark"></span>
+                            <span>Verified</span>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">{{ 'reviews.review8.text' | t }}</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">{{ 'reviews.review8.name' | t }}</span>
+                        <span class="review-date">{{ 'reviews.review8.date' | t }}</span>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="review-card">
+                    <div class="review-header-row">
+                        <div>
+                            <div class="review-product">{{ 'reviews.review9.title' | t }}</div>
+                            <div class="review-rating" data-rating="{{ 'reviews.review9.rating' | t }}"></div>
+                        </div>
+                        <div class="verified-badge">
+                            <span class="checkmark"></span>
+                            <span>Verified</span>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">{{ 'reviews.review9.text' | t }}</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">{{ 'reviews.review9.name' | t }}</span>
+                        <span class="review-date">{{ 'reviews.review9.date' | t }}</span>
+                    </div>
+                </div>
+
+                <!-- Hidden reviews (initially) -->
+                <div class="review-card hidden">
+                    <div class="review-header-row">
+                        <div>
+                            <div class="review-product">{{ 'reviews.review11.title' | t }}</div>
+                            <div class="review-rating" data-rating="{{ 'reviews.review11.rating' | t }}"></div>
+                        </div>
+                        <div class="verified-badge">
+                            <span class="checkmark"></span>
+                            <span>Verified</span>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">{{ 'reviews.review11.text' | t }}</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">{{ 'reviews.review11.name' | t }}</span>
+                        <span class="review-date">{{ 'reviews.review11.date' | t }}</span>
+                    </div>
+                </div>
+
+                <div class="review-card hidden">
+                    <div class="review-header-row">
+                        <div>
+                            <div class="review-product">{{ 'reviews.review12.title' | t }}</div>
+                            <div class="review-rating" data-rating="{{ 'reviews.review12.rating' | t }}"></div>
+                        </div>
+                        <div class="verified-badge">
+                            <span class="checkmark"></span>
+                            <span>Verified</span>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">{{ 'reviews.review12.text' | t }}</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">{{ 'reviews.review12.name' | t }}</span>
+                        <span class="review-date">{{ 'reviews.review12.date' | t }}</span>
+                    </div>
+                </div>
+
+                <div class="review-card hidden">
+                    <div class="review-header-row">
+                        <div>
+                            <div class="review-product">{{ 'reviews.review29.title' | t }}</div>
+                            <div class="review-rating" data-rating="{{ 'reviews.review29.rating' | t }}"></div>
+                        </div>
+                        <div class="verified-badge">
+                            <span class="checkmark"></span>
+                            <span>Verified</span>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">{{ 'reviews.review29.text' | t }}</p>
+                    </div>
+                    <div class="review-footer">
+                        <span class="review-author">{{ 'reviews.review29.name' | t }}</span>
+                        <span class="review-date">{{ 'reviews.review29.date' | t }}</span>
                     </div>
                 </div>
             </div>
-        </section>
-    </body>
+
+            <!-- Show More Button -->
+            <div class="show-more-container">
+                <button class="show-more-btn" id="showMoreBtn">Show More Reviews</button>
+            </div>
+        </div>
+    </section>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll('.review-section-card-rating').forEach(function(starWrapper) {
-              const rating = parseFloat(starWrapper.getAttribute('data-rating'));
-              const fullStars = Math.floor(rating);
-              const halfStar = (rating % 1) >= 0.5 ? 1 : 0;
-              let starHtml = '';
-          
-              // Add full stars
-              for (let i = 0; i < fullStars; i++) {
-                starHtml += '<img src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/star.fill.svg?v=1714304941" alt="star" class="review-section-card-star">';
-              }
-          
-              // Add half star
-              if (halfStar) {
-                starHtml += '<img src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/star.leadinghalf.filled.svg?v=1714304941" alt="star" class="review-section-card-star">';
-              }
-          
-              // Add empty stars if any
-              for (let i = 0; i < (5 - fullStars - halfStar); i++) {
-                starHtml += '<img src="https://cdn.shopify.com/s/files/1/0657/8415/2277/files/star.svg?v=1714304940" alt="star" class="review-section-card-star">';
-              }
-          
-              starWrapper.innerHTML = starHtml;
+            // Generate star ratings
+            document.querySelectorAll('.review-rating').forEach(function(ratingContainer) {
+                const rating = parseInt(ratingContainer.getAttribute('data-rating'));
+                let starHtml = '';
+                
+                for (let i = 0; i < 5; i++) {
+                    if (i < rating) {
+                        starHtml += '<div class="star"></div>';
+                    } else {
+                        starHtml += '<div class="star empty"></div>';
+                    }
+                }
+                
+                ratingContainer.innerHTML = starHtml;
             });
-          });
-          
+
+            // Show more functionality
+            const showMoreBtn = document.getElementById('showMoreBtn');
+            const hiddenCards = document.querySelectorAll('.review-card.hidden');
+            let isExpanded = false;
+
+            showMoreBtn.addEventListener('click', function() {
+                if (!isExpanded) {
+                    hiddenCards.forEach(card => {
+                        card.classList.remove('hidden');
+                        card.style.animation = 'fadeIn 0.3s ease';
+                    });
+                    showMoreBtn.textContent = 'Show Less';
+                    showMoreBtn.classList.add('show-less');
+                    isExpanded = true;
+                } else {
+                    hiddenCards.forEach(card => {
+                        card.classList.add('hidden');
+                    });
+                    showMoreBtn.textContent = 'Show More Reviews';
+                    showMoreBtn.classList.remove('show-less');
+                    isExpanded = false;
+                    
+                    // Scroll to reviews section
+                    document.querySelector('.review-section').scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
-    </html>
+</body>
+</html>
 
 {% schema %}
-  {
+{
+    "name": "Review Section - Modern",
+    "settings": [],
     "presets": [
         {
-            "name": "review-section-small",
+            "name": "Review Section Modern",
             "category": "Custom"
         }
     ]
