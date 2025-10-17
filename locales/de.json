@@ -538,215 +538,215 @@
 }
   },
 "reviews": {
-    "customer_say": "Was unsere Kunden sagen 🗣️",
-    "verified_purchase": "Verifizierter Kauf ✅",
+    "customer_say": "Was unsere Kunden sagen",
+    "verified_purchase": "Verifizierter Kauf",
     "review4": {
       "title": "RINOS Sandman 4.0",
-      "name": "Jochen Becker 🇩🇪",
-      "text": "🚲 Tolles Bike, schnelle Lieferung, super verpackt! Preis-Leistung stimmt absolut! 💸",
+      "name": "Jochen Becker",
+      "text": "Tolles Bike, kam super schnell an und war perfekt verpackt. Für den Preis gibt's wirklich nichts Besseres.",
       "date": "08.07.2024",
       "rating": "5"
     },
     "review5": {
       "title": "RINOS Sandman 3.0",
-      "name": "Ernest Gałan 🇵🇱",
-      "text": "💨 Sehr steif und schnell! Sieht in echt besser aus als auf Bildern. 🎁 Geschenk für meine Frau – sie liebt es!",
+      "name": "Ernest Gałan",
+      "text": "Richtig steif und schnell, ein echter Renner. Live sieht das Rad noch viel besser aus als auf den Fotos. Hab's meiner Frau geschenkt und sie ist total begeistert.",
       "date": "13.10.2024",
       "rating": "5"
     },
     "review6": {
       "title": "RINOS Sandman 1.0",
-      "name": "Henryk Spierewka 🇵🇱",
-      "text": "📦 Perfekter Kauf. Kundenservice war super, schnelle Lieferung mit Kurier. Preis unschlagbar! 👍",
+      "name": "Henryk Spierewka",
+      "text": "Alles lief perfekt bei diesem Kauf. Der Kundenservice war erstklassig und die Lieferung kam blitzschnell per Kurier. Preislich einfach unschlagbar.",
       "date": "29.07.2024",
       "rating": "5"
     },
     "review7": {
       "title": "RINOS Odin 1",
-      "name": "Wieslaw 🇩🇪",
-      "text": "💰 Gutes Preis-Leistungs-Verhältnis – solide Wahl für Einsteiger!",
+      "name": "Wieslaw",
+      "text": "Super Preis-Leistungs-Verhältnis. Für Einsteiger die perfekte Wahl.",
       "date": "28.11.2024",
       "rating": "5"
     },
     "review8": {
       "title": "RINOS Sandman 4.0",
-      "name": "Thomas 🇳🇱",
-      "text": "🔥 TOP GRAVELBIKE! Qualität und Service top – viel günstiger als hier in den Niederlanden.",
+      "name": "Thomas",
+      "text": "Ein absolutes Spitzen-Gravelbike. Die Qualität ist top und der Service war einwandfrei. Deutlich günstiger als hier in den Niederlanden.",
       "date": "30.04.2023",
       "rating": "5"
     },
     "review9": {
       "title": "RINOS Odin 4",
-      "name": "Cristina Rodriguez 🇪🇸",
-      "text": "🎨 Wunderschöne Verarbeitung & Lackierung. Alles war perfekt vorbereitet. Danke! 🙌",
+      "name": "Cristina Rodriguez",
+      "text": "Die Verarbeitung und Lackierung sind wirklich wunderschön. Alles kam perfekt vorbereitet an. Vielen Dank dafür.",
       "date": "15.03.2025",
       "rating": "5"
     },
     "review10": {
       "title": "RINOS Ersatzteil",
-      "name": "Cristina Rodriguez 🇪🇸",
-      "text": "👍 Gut, dies als Ersatz zur Hand zu haben!",
+      "name": "Cristina Rodriguez",
+      "text": "Immer gut, sowas als Ersatz zur Hand zu haben.",
       "date": "15.03.2025",
       "rating": "5"
     },
     "review11": {
       "title": "RINOS Sandman 5.0",
-      "name": "Tomasz Stańczyk 🇵🇱",
-      "text": "⚡ Hervorragendes Fahrrad – superleicht und schnell. Sehr zufrieden!",
+      "name": "Tomasz Stańczyk",
+      "text": "Ein hervorragendes Fahrrad. Federleicht und wahnsinnig schnell. Bin rundum zufrieden.",
       "date": "21.05.2023",
       "rating": "5"
     },
     "review12": {
       "title": "RINOS Sandman 3.0",
-      "name": "Thomas 🇩🇪",
-      "text": "🏆 Schönes, schnelles Gravelbike. Sauber verarbeitet. Preislich unschlagbar!",
+      "name": "Thomas",
+      "text": "Ein wunderschönes Gravelbike, schnell und sauber verarbeitet. Für diesen Preis findet man nichts Vergleichbares.",
       "date": "30.04.2023",
       "rating": "5"
     },
     "review13": {
       "title": "ROCKBROS Pedale",
-      "name": "Fero Saeed 🇩🇪",
-      "text": "🔧 Passt sehr gut. Empfehlenswert! 👍",
+      "name": "Fero Saeed",
+      "text": "Passen perfekt. Kann ich nur empfehlen.",
       "date": "14.02.2025",
       "rating": "5"
     },
     "review14": {
       "title": "VICO Schuhe",
-      "name": "Liya Weng 🇨🇳",
-      "text": "👟 Die Schuhe sind fantastisch! Ich bin sooo glücklich! 😍",
+      "name": "Liya Weng",
+      "text": "Diese Schuhe sind der Hammer. Bin absolut begeistert von meinem Kauf.",
       "date": "16.04.2022",
       "rating": "5"
     },
     "review15": {
       "title": "KABON Faltbike",
-      "name": "Thierry A. 🇫🇷",
-      "text": "🚴‍♂️ Läuft super, leicht, mit Schutzblechen & Gepäckträger. Bin zufrieden! 😄",
+      "name": "Thierry A.",
+      "text": "Läuft super, ist schön leicht und kommt mit Schutzblechen und Gepäckträger. Bin sehr zufrieden.",
       "date": "01.03.2024",
       "rating": "5"
     },
     "review16": {
       "title": "ROCKBROS Jacke",
-      "name": "Celine J 🇫🇷",
-      "text": "👎 Sehr schlecht geschnitten. Leider enttäuschend.",
+      "name": "Celine J",
+      "text": "Der Schnitt ist leider sehr schlecht. Bin ziemlich enttäuscht.",
       "date": "14.01.2024",
       "rating": "1"
     },
     "review17": {
       "title": "ROCKBROS Licht",
-      "name": "Julien Delorme 🇫🇷",
-      "text": "💡 Leicht und gute Verarbeitung. Hoffe das Display hält lange.",
+      "name": "Julien Delorme",
+      "text": "Schön leicht und gut verarbeitet. Hoffentlich hält das Display lange durch.",
       "date": "13.01.2024",
       "rating": "5"
     },
     "review18": {
       "title": "ROCKBROS Tasche",
-      "name": "Morand Benoit 🇫🇷",
-      "text": "🎒 Gut verarbeitet & praktisch. Sehr schnell geliefert!",
+      "name": "Morand Benoit",
+      "text": "Top verarbeitet und sehr praktisch. Die Lieferung war auch superschnell.",
       "date": "26.12.2023",
       "rating": "5"
     },
     "review19": {
       "title": "ROCKBROS Klingel",
-      "name": "Alexandre Colas 🇫🇷",
-      "text": "🔔 Sehr gut! Macht was sie soll.",
+      "name": "Alexandre Colas",
+      "text": "Funktioniert einwandfrei, macht genau was sie soll.",
       "date": "19.12.2023",
       "rating": "4"
     },
     "review20": {
       "title": "ROCKBROS Zubehör",
-      "name": "Daniel Rossi 🇮🇹",
-      "text": "🎁 Geschenk, sieht gut aus, noch nicht getestet.",
+      "name": "Daniel Rossi",
+      "text": "Hab's als Geschenk gekauft. Sieht gut aus, konnte es aber noch nicht testen.",
       "date": "13.12.2023",
       "rating": "5"
     },
     "review21": {
       "title": "ROCKBROS Flaschenhalter",
-      "name": "Cet 🇩🇪",
-      "text": "🥤 So gut, hab gleich ein zweites Paar gekauft! 😄",
+      "name": "Cet",
+      "text": "Die sind so gut, dass ich direkt noch ein zweites Paar bestellt hab.",
       "date": "27.06.2024",
       "rating": "5"
     },
     "review22": {
       "title": "ROCKBROS Rücklicht",
-      "name": "Calin Balea 🇷🇴",
-      "text": "🔋 Funktioniert wie erwartet.",
+      "name": "Calin Balea",
+      "text": "Funktioniert genau wie erwartet.",
       "date": "07.08.2024",
       "rating": "5"
     },
     "review23": {
       "title": "ROCKBROS Zubehör",
-      "name": "Pep Bosch 🇪🇸",
-      "text": "🏅 Sehr gute Qualität – bin sehr zufrieden.",
+      "name": "Pep Bosch",
+      "text": "Richtig gute Qualität. Bin sehr zufrieden mit dem Kauf.",
       "date": "31.07.2024",
       "rating": "5"
     },
     "review24": {
       "title": "ROCKBROS Dachträger",
-      "name": "Carmen 🇧🇪",
-      "text": "🚘 Perfekt passend zu meinem Rennrad. Sehr stabil!",
+      "name": "Carmen",
+      "text": "Passt perfekt zu meinem Rennrad. Super stabil und sicher.",
       "date": "30.05.2024",
       "rating": "5"
     },
     "review25": {
       "title": "ROCKBROS Pedale",
-      "name": "Cet 🇩🇪",
-      "text": "⚙️ Superleicht, schönes Design, sehr guter Grip!",
+      "name": "Cet",
+      "text": "Ultraleicht, schickes Design und der Grip ist hervorragend.",
       "date": "06.06.2024",
       "rating": "5"
     },
     "review26": {
       "title": "ROCKBROS Regenjacke",
-      "name": "Carmen 🇧🇪",
-      "text": "🌧️ Perfekt – auch bei Regen! Bin begeistert.",
+      "name": "Carmen",
+      "text": "Hält perfekt dicht, auch bei starkem Regen. Bin total begeistert.",
       "date": "30.05.2024",
       "rating": "5"
     },
     "review27": {
       "title": "KABON Faltbike",
-      "name": "Unbekannt 🇩🇪",
-      "text": "⚠️ Gute Verarbeitung, aber für große Leute ungeeignet.",
+      "name": "Unbekannt",
+      "text": "Gut verarbeitet, aber Vorsicht wenn du groß bist, könnte zu klein sein.",
       "date": "09.04.2024",
       "rating": "4"
     },
     "review28": {
       "title": "KABON Faltbike",
-      "name": "Peter Hvala 🇦🇹",
-      "text": "💪 Sehr hochwertig, leicht und stabil – ideal im Alter.",
+      "name": "Peter Hvala",
+      "text": "Sehr hochwertig, leicht und stabil. Perfekt für Leute in meinem Alter.",
       "date": "25.04.2024",
       "rating": "5"
     },
     "review29": {
       "title": "KABON Gravelbike",
-      "name": "Andreas Heil 🇩🇪",
-      "text": "✅ Vorbildlicher Service, perfekt eingestellte Schaltung! Mega!",
+      "name": "Andreas Heil",
+      "text": "Der Service war vorbildlich. Die Schaltung war perfekt eingestellt. Einfach klasse.",
       "date": "16.06.2024",
       "rating": "5"
     },
     "review30": {
       "title": "ROCKBROS Schutzblech",
-      "name": "Thomas Grißmer 🇩🇪",
-      "text": "🔧 Erfüllt seinen Zweck.",
+      "name": "Thomas Grißmer",
+      "text": "Macht was es soll.",
       "date": "29.09.2024",
       "rating": "4"
     },
     "review31": {
       "title": "ROCKBROS Protektoren",
-      "name": "Tomas 🇨🇿",
-      "text": "🛡️ Sehr stabil, einfach zu montieren. Blitzschnelle Lieferung! 🚀",
+      "name": "Tomas",
+      "text": "Sehr stabil und einfach zu montieren. Die Lieferung war blitzschnell.",
       "date": "16.02.2024",
       "rating": "5"
     },
     "review32": {
       "title": "ROCKBROS Zubehör",
-      "name": "ERDEI ROMEO 🇭🇺",
-      "text": "🥳 Sehr erfreut!",
+      "name": "ERDEI ROMEO",
+      "text": "Bin sehr zufrieden mit dem Kauf.",
       "date": "17.03.2024",
       "rating": "5"
     },
     "review33": {
       "title": "Amity Deko",
-      "name": "Kuila 🇩🇪",
-      "text": "🎨 Opulente Detailverliebtheit in exzellenter Ausführung. Ein herrliches Stück.",
+      "name": "Kuila",
+      "text": "Die Detailarbeit ist beeindruckend, exzellente Qualität. Ein wirklich schönes Stück.",
       "date": "16.03.2024",
       "rating": "5"
     }
