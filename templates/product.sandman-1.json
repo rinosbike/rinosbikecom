@@ -266,6 +266,13 @@
       "type": "product-description-sec1",
       "settings": {}
     },
+    "anglesports_frame_size_QHrYVy": {
+      "type": "anglesports-frame-size",
+      "name": "Frame Geometry",
+      "settings": {
+        "geometry_image": "shopify://shop_images/Sizing_Chart_Sandman4_6_7_Angle_Sport.png"
+      }
+    },
     "review_section_small_fKwkg6": {
       "type": "review-section-small",
       "disabled": true,
@@ -364,6 +371,7 @@
     "rich_text_MFqJh7",
     "multirow_4TH9pN",
     "product_description_sec1_Nn4UXc",
+    "anglesports_frame_size_QHrYVy",
     "review_section_small_fKwkg6",
     "rich_text_7we9KY",
     "related-products",
