@@ -69,15 +69,6 @@
         "support_text": "Lifetime service"
       }
     },
-    "custom_liquid_fFQWdd": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -154,6 +145,15 @@
     "klarna_banner_1_g363fF": {
       "type": "klarna-banner-1",
       "settings": {}
+    },
+    "custom_liquid_fFQWdd": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     },
     "rich_text_MFqJh7": {
       "type": "rich-text",
@@ -323,6 +323,35 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "featured_collection_ttbkMR": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Looking for something else?",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "gravel-bikes",
+        "products_to_show": 14,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -337,6 +366,7 @@
     "product_description_sec1_Nn4UXc",
     "review_section_small_fKwkg6",
     "rich_text_7we9KY",
-    "related-products"
+    "related-products",
+    "featured_collection_ttbkMR"
   ]
 }
