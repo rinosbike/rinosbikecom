@@ -144,14 +144,18 @@
       gap: 12px;
     }
 
-    .spec-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 8px 0;
-      border-bottom: 1px solid #f5f5f5;
-      transition: all 0.2s ease;
-    }
+  .spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px solid #f5f5f5;
+  transition: all 0.2s ease;
+  flex-wrap: wrap;           /* ✅ allows wrapping instead of overflowing */
+  word-break: break-word;    /* ✅ breaks long words if needed */
+  overflow-wrap: anywhere;   /* ✅ modern alternative for better wrapping */
+}
+
 
     .spec-row:last-child {
       border-bottom: none;
@@ -173,13 +177,16 @@
       flex-shrink: 0;
     }
 
-    .spec-value {
-      font-size: 13px;
-      font-weight: 500;
-      color: #2b2b2b;
-      text-align: right;
-      margin-left: 10px;
-    }
+.spec-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: #2b2b2b;
+  text-align: right;
+  margin-left: 10px;
+  word-break: break-word;    /* ✅ ensures long words break properly */
+  flex: 1;                   /* ✅ lets the value side shrink or grow properly */
+  min-width: 0;              /* ✅ fixes flexbox overflow bug */
+}
 
     /* Highlight key specs */
     .spec-row.key-spec .spec-value {
