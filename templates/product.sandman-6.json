@@ -141,6 +141,16 @@
         "material_variabel_text": "{{ product.metafields.custom.material_highlight.value }}"
       }
     },
+    "custom_liquid_7bMQLa": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "klarna_banner_1_g363fF": {
       "type": "klarna-banner-1",
       "settings": {}
@@ -390,6 +400,23 @@
         "padding_bottom": 36
       }
     },
+    "gravel_assembly_LHkddg": {
+      "type": "Gravel-assembly",
+      "name": "Assembly Video",
+      "settings": {
+        "video_url": "https://www.youtube.com/embed/olcCPsOTT6w",
+        "title": "Assemble Your Sandman",
+        "subtitle": "Watch how simple it is to set up your Rinos gravel bike. Everything you need, step by step.",
+        "video_title": "Gravel Bike Assembly Video",
+        "video_alt": "Rinos Sandman Gravel bike assembly",
+        "benefit_1_title": "Easy to Follow",
+        "benefit_1_text": "Clear instructions that anyone can follow.",
+        "benefit_2_title": "Basic Tools",
+        "benefit_2_text": "Everything you need is included in the box.",
+        "benefit_3_title": "Quick Setup",
+        "benefit_3_text": "Ready to ride in just a few simple steps."
+      }
+    },
     "anglesports_frame_size_yDYafn": {
       "type": "anglesports-frame-size",
       "name": "Gravel Anglesports Geometry Chart",
@@ -444,16 +471,6 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "custom_liquid_7bMQLa": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
@@ -469,6 +486,7 @@
     "image_with_text_86eDEc",
     "product_description_sec1_NUkPfV",
     "featured_collection_hJ7gdH",
+    "gravel_assembly_LHkddg",
     "anglesports_frame_size_yDYafn",
     "featured_collection_fPgTD4",
     "related-products"
