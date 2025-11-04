@@ -254,6 +254,14 @@
       "type": "product-description-sec1",
       "settings": {}
     },
+    "gravel_assembly_aMhcgq": {
+      "type": "Gravel-assembly",
+      "name": "Assembly Video",
+      "settings": {
+        "video_url": "https://www.youtube.com/embed/olcCPsOTT6w",
+        "video_thumbnail": "shopify://shop_images/Group_757.jpg"
+      }
+    },
     "anglesports_frame_size_FaNWra": {
       "type": "anglesports-frame-size",
       "name": "Frame Geometry",
@@ -359,6 +367,7 @@
     "rich_text_MFqJh7",
     "multirow_4TH9pN",
     "product_description_sec1_Nn4UXc",
+    "gravel_assembly_aMhcgq",
     "anglesports_frame_size_FaNWra",
     "featured_collection_fHE9RU",
     "review_section_small_fKwkg6",
