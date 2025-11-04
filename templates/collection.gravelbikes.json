@@ -302,6 +302,23 @@
         "sandman8_rims": "Aluminum"
       }
     },
+    "gravel_assembly_QEHem4": {
+      "type": "Gravel-assembly",
+      "name": "Assembly Video",
+      "settings": {
+        "video_url": "https://www.youtube.com/embed/olcCPsOTT6w",
+        "title": "Assemble Your Sandman",
+        "subtitle": "Watch how simple it is to set up your Rinos gravel bike. Everything you need, step by step.",
+        "video_title": "Gravel Bike Assembly Video",
+        "video_alt": "Rinos Sandman Gravel bike assembly",
+        "benefit_1_title": "Easy to Follow",
+        "benefit_1_text": "Clear instructions that anyone can follow.",
+        "benefit_2_title": "Basic Tools",
+        "benefit_2_text": "Everything you need is included in the box.",
+        "benefit_3_title": "Quick Setup",
+        "benefit_3_text": "Ready to ride in just a few simple steps."
+      }
+    },
     "iso_video_section_UpMQdb": {
       "type": "ISO_Video_section",
       "name": "Frame Test Video",
@@ -392,6 +409,7 @@
     "rich_text_9iwyRH",
     "product-grid",
     "rinos_comparison_table_nz48Wf",
+    "gravel_assembly_QEHem4",
     "iso_video_section_UpMQdb",
     "banner",
     "rich_text_Yt9dAG"
