@@ -6,6 +6,7 @@
 {%- liquid
   assign video_url = section.settings.video_url | default: 'https://www.youtube.com/embed/iLWtW4_HscI'
   assign video_thumbnail = section.settings.video_thumbnail
+  assign default_thumbnail = 'https://cdn.shopify.com/s/files/1/0720/5794/6377/files/Group_755_2_430x.jpg?v=1762248600'
 -%}
 
 <div class="bike-assembly-widget" id="assembly-video-widget-odin">
@@ -27,7 +28,7 @@
         {%- if video_thumbnail -%}
           <img src="{{ video_thumbnail | img_url: 'master' }}" alt="{{ section.settings.video_alt }}" class="assembly-thumbnail-img">
         {%- else -%}
-          <div class="assembly-thumbnail-placeholder"></div>
+          <img src="{{ default_thumbnail }}" alt="{{ section.settings.video_alt }}" class="assembly-thumbnail-img">
         {%- endif -%}
         
         <div class="assembly-play-overlay">
@@ -283,8 +284,8 @@ function playAssemblyVideoOdin() {
     {
       "type": "image_picker",
       "id": "video_thumbnail",
-      "label": "Video Thumbnail",
-      "info": "Optional custom thumbnail image"
+      "label": "Video Thumbnail (Optional)",
+      "info": "Leave empty to use default thumbnail"
     },
     {
       "type": "header",
