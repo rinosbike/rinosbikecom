@@ -234,20 +234,12 @@
       "type": "product-description-sec1",
       "settings": {}
     },
-    "odin_sizing_guide_gkrKDi": {
-      "type": "odin-sizing-guide",
-      "name": "ODIN Sizing Guide",
-      "settings": {
-        "size_title": "Rinos Odin Sizing Recommendations",
-        "geometry_title": "Geometry & Sizing Details",
-        "geometry_image": "shopify://shop_images/80extk.png"
-      }
-    },
     "road_assembly_UFhiUJ": {
       "type": "Road-assembly",
       "name": "Assembly Video - Odin",
       "settings": {
         "video_url": "https://www.youtube.com/embed/iLWtW4_HscI",
+        "video_thumbnail": "shopify://shop_images/Group_755_2.jpg",
         "title": "Assemble Your Odin Road Bike",
         "subtitle": "Watch how simple it is to set up The Odin. Everything you need, step by step.",
         "watch_text": "Watch the guide",
@@ -259,6 +251,15 @@
         "benefit_2_text": "Everything you need is included in the box.",
         "benefit_3_title": "Quick Setup",
         "benefit_3_text": "Ready to ride in just a few simple steps."
+      }
+    },
+    "odin_sizing_guide_gkrKDi": {
+      "type": "odin-sizing-guide",
+      "name": "ODIN Sizing Guide",
+      "settings": {
+        "size_title": "Rinos Odin Sizing Recommendations",
+        "geometry_title": "Geometry & Sizing Details",
+        "geometry_image": "shopify://shop_images/80extk.png"
       }
     },
     "iso_video_section_bpCKLQ": {
