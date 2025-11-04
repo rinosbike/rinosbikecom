@@ -305,6 +305,23 @@
       "name": "product-description-sec1",
       "settings": {}
     },
+    "gravel_assembly_QT6RQU": {
+      "type": "Gravel-assembly",
+      "name": "Assembly Video",
+      "settings": {
+        "video_url": "https://www.youtube.com/embed/olcCPsOTT6w",
+        "title": "Assemble Your Sandman",
+        "subtitle": "Watch how simple it is to set up your Rinos gravel bike. Everything you need, step by step.",
+        "video_title": "Gravel Bike Assembly Video",
+        "video_alt": "Rinos Sandman Gravel bike assembly",
+        "benefit_1_title": "Easy to Follow",
+        "benefit_1_text": "Clear instructions that anyone can follow.",
+        "benefit_2_title": "Basic Tools",
+        "benefit_2_text": "Everything you need is included in the box.",
+        "benefit_3_title": "Quick Setup",
+        "benefit_3_text": "Ready to ride in just a few simple steps."
+      }
+    },
     "featured_collection_hJ7gdH": {
       "type": "featured-collection",
       "disabled": true,
@@ -402,6 +419,7 @@
     "multirow_4TH9pN",
     "image_with_text_86eDEc",
     "product_description_sec1_NUkPfV",
+    "gravel_assembly_QT6RQU",
     "featured_collection_hJ7gdH",
     "anglesports_frame_size_yDYafn",
     "featured_collection_fPgTD4",
