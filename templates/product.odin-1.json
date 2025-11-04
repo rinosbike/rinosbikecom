@@ -219,6 +219,7 @@
       "name": "Assembly Video - Odin",
       "settings": {
         "video_url": "https://www.youtube.com/embed/iLWtW4_HscI",
+        "video_thumbnail": "shopify://shop_images/Group_755_2.jpg",
         "title": "Assemble Your Odin Road Bike",
         "subtitle": "Watch how simple it is to set up The Odin. Everything you need, step by step.",
         "watch_text": "Watch the guide",
