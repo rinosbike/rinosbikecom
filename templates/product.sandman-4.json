@@ -310,6 +310,7 @@
       "name": "Assembly Video",
       "settings": {
         "video_url": "https://www.youtube.com/embed/olcCPsOTT6w",
+        "video_thumbnail": "shopify://shop_images/Group_757.jpg",
         "title": "Assemble Your Sandman",
         "subtitle": "Watch how simple it is to set up your Rinos gravel bike. Everything you need, step by step.",
         "video_title": "Gravel Bike Assembly Video",
