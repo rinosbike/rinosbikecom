@@ -1,0 +1,293 @@
+
+
+{%- liquid
+  assign video_url = section.settings.video_url | default: 'https://www.youtube.com/embed/olcCPsOTT6w'
+  assign video_thumbnail = section.settings.video_thumbnail
+-%}
+
+<div class="bike-assembly-widget" id="assembly-video-widget">
+  <div class="assembly-widget-container">
+    
+    {%- comment -%} Header {%- endcomment -%}
+    <div class="assembly-widget-header">
+      <h2 class="assembly-widget-title">
+        Assemble Your Gravel Bike
+      </h2>
+      <p class="assembly-widget-subtitle">
+        Watch how simple it is to set up your gravel bike. Everything you need, step by step.
+      </p>
+    </div>
+
+    {%- comment -%} Video Container {%- endcomment -%}
+    <div class="assembly-video-container">
+      <div class="assembly-video-preview" id="video-preview" onclick="playAssemblyVideo()">
+        {%- if video_thumbnail -%}
+          <img src="{{ video_thumbnail | img_url: 'master' }}" alt="Gravel bike assembly video preview" class="assembly-thumbnail-img">
+        {%- else -%}
+          <div class="assembly-thumbnail-placeholder"></div>
+        {%- endif -%}
+        
+        <div class="assembly-play-overlay">
+          <div class="assembly-play-button">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <p class="assembly-play-text">Watch the guide</p>
+        </div>
+      </div>
+
+      <div class="assembly-video-player" id="video-player" style="display: none;">
+        <iframe
+          src="{{ video_url }}?autoplay=1"
+          title="Gravel Bike Assembly Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    {%- comment -%} Benefits Section {%- endcomment -%}
+    <div class="assembly-benefits">
+      <div class="assembly-benefit-item">
+        <span class="assembly-benefit-icon">✓</span>
+        <h3 class="assembly-benefit-title">Easy to Follow</h3>
+        <p class="assembly-benefit-text">Clear instructions that anyone can follow.</p>
+      </div>
+      
+      <div class="assembly-benefit-item">
+        <span class="assembly-benefit-icon">✓</span>
+        <h3 class="assembly-benefit-title">Basic Tools</h3>
+        <p class="assembly-benefit-text">Everything you need is included in th box.</p>
+      </div>
+      
+      <div class="assembly-benefit-item">
+        <span class="assembly-benefit-icon">✓</span>
+        <h3 class="assembly-benefit-title">Quick Setup</h3>
+        <p class="assembly-benefit-text">Ready to ride in just a few simple steps.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+.bike-assembly-widget {
+  margin: 3rem auto;
+  max-width: 1000px;
+  padding: 0 1rem;
+}
+
+.assembly-widget-container {
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 2.5rem;
+  border: 1px solid #e5e5e5;
+}
+
+.assembly-widget-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.assembly-widget-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.assembly-widget-subtitle {
+  font-size: 1.125rem;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+.assembly-video-container {
+  position: relative;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.assembly-video-preview {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #1a1a1a;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.assembly-thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.assembly-thumbnail-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%);
+}
+
+.assembly-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.assembly-video-preview:hover .assembly-play-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.assembly-play-button {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a1a1a;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.assembly-video-preview:hover .assembly-play-button {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 1);
+}
+
+.assembly-play-text {
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.01em;
+}
+
+.assembly-video-player {
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.assembly-video-player iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.assembly-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.assembly-benefit-item {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.assembly-benefit-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.assembly-benefit-icon {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #22c55e;
+  margin-bottom: 0.5rem;
+}
+
+.assembly-benefit-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.assembly-benefit-text {
+  font-size: 0.9375rem;
+  opacity: 0.65;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .assembly-widget-container {
+    padding: 1.5rem;
+  }
+  
+  .assembly-widget-title {
+    font-size: 1.5rem;
+  }
+  
+  .assembly-widget-subtitle {
+    font-size: 1rem;
+  }
+  
+  .assembly-play-button {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .assembly-play-button svg {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .assembly-play-text {
+    font-size: 0.875rem;
+  }
+}
+</style>
+
+<script>
+function playAssemblyVideo() {
+  const preview = document.getElementById('video-preview');
+  const player = document.getElementById('video-player');
+  
+  if (preview && player) {
+    preview.style.display = 'none';
+    player.style.display = 'block';
+  }
+}
+</script>
+
+{%- schema -%}
+{
+  "name": "Assembly Video Widget",
+  "settings": [
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video Embed URL",
+      "info": "YouTube embed URL (e.g., https://www.youtube.com/embed/olcCPsOTT6w)",
+      "default": "https://www.youtube.com/embed/olcCPsOTT6w"
+    },
+    {
+      "type": "image_picker",
+      "id": "video_thumbnail",
+      "label": "Video Thumbnail",
+      "info": "Optional custom thumbnail image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Assembly Video"
+    }
+  ]
+}
+{%- endschema -%}
