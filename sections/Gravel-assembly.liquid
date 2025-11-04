@@ -1,4 +1,7 @@
-
+{%- comment -%}
+  Bike Assembly Video Widget - Localization Ready
+  Add this to your Shopify theme where you want the video widget to appear
+{%- endcomment -%}
 
 {%- liquid
   assign video_url = section.settings.video_url | default: 'https://www.youtube.com/embed/olcCPsOTT6w'
@@ -11,10 +14,10 @@
     {%- comment -%} Header {%- endcomment -%}
     <div class="assembly-widget-header">
       <h2 class="assembly-widget-title">
-        Assemble Your Gravel Bike
+        {{ section.settings.title }}
       </h2>
       <p class="assembly-widget-subtitle">
-        Watch how simple it is to set up your gravel bike. Everything you need, step by step.
+        {{ section.settings.subtitle }}
       </p>
     </div>
 
@@ -22,7 +25,7 @@
     <div class="assembly-video-container">
       <div class="assembly-video-preview" id="video-preview" onclick="playAssemblyVideo()">
         {%- if video_thumbnail -%}
-          <img src="{{ video_thumbnail | img_url: 'master' }}" alt="Gravel bike assembly video preview" class="assembly-thumbnail-img">
+          <img src="{{ video_thumbnail | img_url: 'master' }}" alt="{{ section.settings.video_alt }}" class="assembly-thumbnail-img">
         {%- else -%}
           <div class="assembly-thumbnail-placeholder"></div>
         {%- endif -%}
@@ -33,14 +36,14 @@
               <path d="M8 5v14l11-7z"/>
             </svg>
           </div>
-          <p class="assembly-play-text">Watch the guide</p>
+          <p class="assembly-play-text">{{ section.settings.watch_text }}</p>
         </div>
       </div>
 
       <div class="assembly-video-player" id="video-player" style="display: none;">
         <iframe
           src="{{ video_url }}?autoplay=1"
-          title="Gravel Bike Assembly Video"
+          title="{{ section.settings.video_title }}"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
@@ -52,20 +55,20 @@
     <div class="assembly-benefits">
       <div class="assembly-benefit-item">
         <span class="assembly-benefit-icon">✓</span>
-        <h3 class="assembly-benefit-title">Easy to Follow</h3>
-        <p class="assembly-benefit-text">Clear instructions that anyone can follow.</p>
+        <h3 class="assembly-benefit-title">{{ section.settings.benefit_1_title }}</h3>
+        <p class="assembly-benefit-text">{{ section.settings.benefit_1_text }}</p>
       </div>
       
       <div class="assembly-benefit-item">
         <span class="assembly-benefit-icon">✓</span>
-        <h3 class="assembly-benefit-title">Basic Tools</h3>
-        <p class="assembly-benefit-text">Everything you need is included in th box.</p>
+        <h3 class="assembly-benefit-title">{{ section.settings.benefit_2_title }}</h3>
+        <p class="assembly-benefit-text">{{ section.settings.benefit_2_text }}</p>
       </div>
       
       <div class="assembly-benefit-item">
         <span class="assembly-benefit-icon">✓</span>
-        <h3 class="assembly-benefit-title">Quick Setup</h3>
-        <p class="assembly-benefit-text">Ready to ride in just a few simple steps.</p>
+        <h3 class="assembly-benefit-title">{{ section.settings.benefit_3_title }}</h3>
+        <p class="assembly-benefit-text">{{ section.settings.benefit_3_text }}</p>
       </div>
     </div>
 
@@ -268,7 +271,7 @@ function playAssemblyVideo() {
 
 {%- schema -%}
 {
-  "name": "Assembly Video Widget",
+  "name": "Gravel Assembly Video",
   "settings": [
     {
       "type": "text",
@@ -282,6 +285,82 @@ function playAssemblyVideo() {
       "id": "video_thumbnail",
       "label": "Video Thumbnail",
       "info": "Optional custom thumbnail image"
+    },
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Assemble Your Sandman"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Watch how simple it is to set up your Rinos gravel bike. Everything you need, step by step."
+    },
+    {
+      "type": "text",
+      "id": "video_title",
+      "label": "Video Title (for accessibility)",
+      "default": "Gravel Bike Assembly Video"
+    },
+    {
+      "type": "text",
+      "id": "video_alt",
+      "label": "Video Alt Text",
+      "default": "Rinos Sandman Gravel bike assembly"
+    },
+    {
+      "type": "header",
+      "content": "Benefit 1"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_title",
+      "label": "Benefit 1 Title",
+      "default": "Easy to Follow"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_1_text",
+      "label": "Benefit 1 Text",
+      "default": "Clear instructions that anyone can follow."
+    },
+    {
+      "type": "header",
+      "content": "Benefit 2"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_title",
+      "label": "Benefit 2 Title",
+      "default": "Basic Tools"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_2_text",
+      "label": "Benefit 2 Text",
+      "default": "Everything you need is included in the box."
+    },
+    {
+      "type": "header",
+      "content": "Benefit 3"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_title",
+      "label": "Benefit 3 Title",
+      "default": "Quick Setup"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_3_text",
+      "label": "Benefit 3 Text",
+      "default": "Ready to ride in just a few simple steps."
     }
   ],
   "presets": [
