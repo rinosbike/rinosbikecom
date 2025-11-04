@@ -214,6 +214,24 @@
       "type": "product-description-sec1",
       "settings": {}
     },
+    "road_assembly_UDtXQV": {
+      "type": "Road-assembly",
+      "name": "Assembly Video - Odin",
+      "settings": {
+        "video_url": "https://www.youtube.com/embed/iLWtW4_HscI",
+        "title": "Assemble Your Odin Road Bike",
+        "subtitle": "Watch how simple it is to set up The Odin. Everything you need, step by step.",
+        "watch_text": "Watch the guide",
+        "video_title": "Odin Road Bike Assembly Video",
+        "video_alt": "Odin road bike assembly video preview",
+        "benefit_1_title": "Easy to Follow",
+        "benefit_1_text": "Clear instructions that anyone can follow.",
+        "benefit_2_title": "Basic Tools",
+        "benefit_2_text": "Everything you need is included in the box.",
+        "benefit_3_title": "Quick Setup",
+        "benefit_3_text": "Ready to ride in just a few simple steps."
+      }
+    },
     "odin_sizing_guide_gkrKDi": {
       "type": "odin-sizing-guide",
       "name": "ODIN Sizing Guide",
@@ -318,6 +336,7 @@
     "multicolumn_KfMJ9G",
     "image_with_text_xVg3DE",
     "product_description_sec1_Nn4UXc",
+    "road_assembly_UDtXQV",
     "odin_sizing_guide_gkrKDi",
     "iso_video_section_bpCKLQ",
     "review_section_small_fKwkg6",
