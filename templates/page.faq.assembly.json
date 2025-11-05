@@ -33,7 +33,7 @@
           "settings": {
             "heading": "Are tools included in the box?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, a basic multitool or allen key (4,5,6mm provided) is included for final assembly steps like tightening bolts and adjusting components.<br/><br/></p>",
             "page": ""
           }
         },
@@ -42,7 +42,7 @@
           "settings": {
             "heading": "How is the bike packaged for shipping?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Each bike is securely packed in a reinforced cardboard box with internal foam protection to prevent scratches or damage during transport.<br/><br/></p>",
             "page": ""
           }
         },
@@ -51,7 +51,7 @@
           "settings": {
             "heading": "Can I request the bike to be pre-assembled?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Can contact us at info@rinosbike.eu. However, most customers without mechanical knowledge can complete assembly in under 5 minutes.</p>",
             "page": ""
           }
         },
@@ -60,7 +60,7 @@
           "settings": {
             "heading": "Do brakes/derailleurs arrive pre-adjusted, or should I expect to index gears and re-center calipers?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Brakes and derailleurs arrive pre-adjusted and tested for full seamless functionality. No major adjustment is needed.<br/></p>",
             "page": ""
           }
         },
@@ -69,7 +69,7 @@
           "settings": {
             "heading": "Are the wheels pre-trued out of the box, or should I expect minor spoke adjustments after the first rides?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Our mechanics are using TRUDI technologies truing machine, so the aluminium wheels are destressed and adjusted by hand to almost perfect dishing max 0.2mm lateral and radial deviation, better than most wheels directly out of bike factories.<br/><br/></p>",
             "page": ""
           }
         },
@@ -78,41 +78,41 @@
           "settings": {
             "heading": "Do you offer an optional “fully assembled” delivery service?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>We currently offer this service depending on geographical regions, contact us at info@rinosbike.eu. Although assembling the remaining parts of the bike can take just 10 minutes. Only the seatpost and front wheel have to be inserted. </p>",
             "page": ""
           }
         },
         "collapsible_row_fz6zJ7": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Is the bike set up tubeless from factory (tape/valves/sealant), or delivered with tubes?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>The rims are tubeless compatible, but the tape/sealant/valve have to be integrated by your own. </p>",
             "page": ""
           }
         },
         "collapsible_row_hG9HwD": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Are pedals included?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>The pedals are not included with the bike, but we offer many options from our trusted partner RockBros. You can find such products on rinosbike.eu or contact us Via info@rinosbike.eu</p>",
             "page": ""
           }
         },
         "collapsible_row_inL6RC": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "What are the recommended torque values for cockpit, seatpost, thru-axles, and rotors and where can I find them?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>You can refer to our assembly video or our torque chart.</p>",
             "page": ""
           }
         },
         "collapsible_row_RQFxky": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Are spacers included for stem height changes? What’s the safe maximum stack/steerer spacer height?",
             "icon": "question_mark",
             "row_content": "",
             "page": ""
@@ -121,18 +121,18 @@
         "collapsible_row_G4V6yi": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "What’s the recommended first-service interval for safety checks (e.g., bolts, spokes, headset)?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>We recommend it to be checked once per year and even more often depending on the intensity of use.</p>",
             "page": ""
           }
         },
         "collapsible_row_3UDbaw": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Do you provide an assembly video or step-by-step guide for my exact model?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, each of our major models from gravel to road bikes have their own assembly video. </p>",
             "page": ""
           }
         },
