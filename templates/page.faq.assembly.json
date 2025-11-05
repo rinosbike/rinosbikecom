@@ -135,24 +135,6 @@
             "row_content": "<p>Yes, each of our major models from gravel to road bikes have their own assembly video. </p>",
             "page": ""
           }
-        },
-        "collapsible_row_ULwXhE": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "question_mark",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_jCtjUN": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "question_mark",
-            "row_content": "",
-            "page": ""
-          }
         }
       },
       "block_order": [
@@ -168,9 +150,7 @@
         "collapsible_row_inL6RC",
         "collapsible_row_RQFxky",
         "collapsible_row_G4V6yi",
-        "collapsible_row_3UDbaw",
-        "collapsible_row_ULwXhE",
-        "collapsible_row_jCtjUN"
+        "collapsible_row_3UDbaw"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
