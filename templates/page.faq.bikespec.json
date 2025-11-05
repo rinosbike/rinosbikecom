@@ -22,135 +22,207 @@
         "collapsible_row_yPYb9G": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How much assembly is required when I receive my bike?",
+            "heading": " What is the maximum load capacity of the frame?",
             "icon": "question_mark",
-            "row_content": "<p>Our bikes arrive 90% assembled. You’ll only need to attach the front wheel, seatpost, and pedals (included). Basic tools are included, and we also provide a setup video for reference.</p>",
+            "row_content": "<p>We have tested it to 130kg load.</p>",
             "page": ""
           }
         },
         "collapsible_row_UAjFct": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Are tools included in the box?",
+            "heading": "Is internal routing available for hub dynamo lighting or a dropper post on gravel frames?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>For specific conversions please contact us at info@rinosbike.eu<br/><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_nrB8EN": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How is the bike packaged for shipping?",
+            "heading": "Are the handlebars size corresponding with the frame size?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, each different sized frame has it’s own sized handlebar. </p>",
             "page": ""
           }
         },
         "collapsible_row_yg9jHc": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I request the bike to be pre-assembled?",
+            "heading": "What are the handlebar widths/lenghts/heights for Odin bikes?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>They range from 400*80 to 420*110mm</p>",
             "page": ""
           }
         },
         "collapsible_row_Af8jLJ": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do brakes/derailleurs arrive pre-adjusted, or should I expect to index gears and re-center calipers?",
+            "heading": "What are the handlebar widths/lenghts/heights for Sandman bikes?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>They range from 400*100 to 440*120mm</p>",
             "page": ""
           }
         },
         "collapsible_row_TFYEed": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Are the wheels pre-trued out of the box, or should I expect minor spoke adjustments after the first rides?",
+            "heading": "Can I make the handlebar spacing bigger than 3cm with special spacers?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Please contact us on that as you will need to have a longer fork in order to accommodate more spacers. </p>",
             "page": ""
           }
         },
         "collapsible_row_qceFdA": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do you offer an optional “fully assembled” delivery service?",
+            "heading": "And there are mounting holes for normal mudguards on sandman models?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Our tires are 40C. Hence if your mudguards fit for 40C and for 700C or 28 inch wheels will be fine. </p>",
             "page": ""
           }
         },
         "collapsible_row_fz6zJ7": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Which bottom bracket is used in the carbon frame/gravel bike?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>It is T47, 85,5mm threaded bottom bracket </p>",
             "page": ""
           }
         },
         "collapsible_row_hG9HwD": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "What derailleur hanger type do you use UDH or proprietary, and where can I buy a spare?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>We use UDH for our gravel bikes, you can buy it in any bike shop or contact us. </p>",
             "page": ""
           }
         },
         "collapsible_row_inL6RC": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Are Odin road frames UCI approved for racing, and which models carry the certification?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>All of our Odin frames were made by a factory which is UCI certified.</p>",
             "page": ""
           }
         },
         "collapsible_row_RQFxky": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "What are the geometry charts (stack/reach) per size, and how do I pick between adjacent sizes?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Please contact us if you are unsure of the sizing after looking at our sizing charts</p>",
             "page": ""
           }
         },
         "collapsible_row_G4V6yi": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "What brake mounts and rotor size limits apply (flat mount; min/max rotor diameters front/rear)?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Flat mount applies for our 160mm disc brakes for gravel and road bikes.</p>",
             "page": ""
           }
         },
         "collapsible_row_3UDbaw": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "What axle standards and thread pitches are used (front 12×100, rear 12×142; thru-axle spec)?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>We use 12x100 and 12x142 for our front and rear axles.</p>",
             "page": ""
           }
         },
         "collapsible_row_ULwXhE": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Mounting points: racks, full-length fenders, top-tube bento, fork cargo mounts—what’s supported?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>We have mounting points for racks, fenders and everything you need for bikepacking.</p>",
             "page": ""
           }
         },
         "collapsible_row_jCtjUN": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Are forks rated for low-rider racks or only for bottle/cargo cages?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>It is possible to reduce the length of the fork but we recommend it to be performed by an experienced bike mechanic. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_RM6QKE": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Which bottom bracket standard is used on each platform (Sandman/Odin)—BB86/BB92/BSA/other?",
+            "icon": "question_mark",
+            "row_content": "<p>We use T47 threaded bottom brackets, 85,5mm for Sandman series and 68mm for Odin series.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dc3DBn": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I run clip-on aerobars on the gravel cockpit? Any max torque/spacing guidance?",
+            "icon": "question_mark",
+            "row_content": "<p>You might need some adaptors depending on the manufacturer and shape of the aerobars.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_nJgEeq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I switch to a 1× drivetrain from stock 2× without new chainline issues?",
+            "icon": "question_mark",
+            "row_content": "<p>Yes, it is possible, our frames are compatible. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_6mkci4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are ceramic pulley/bearing upgrades compatible and warrantied?",
+            "icon": "question_mark",
+            "row_content": "<p>We do not offer it but if you have questions on this conversion let us know.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_7PRHCJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are suspension gravel forks compatible (axle-to-crown and offset limits)?",
+            "icon": "question_mark",
+            "row_content": "<p>Please check our technical specs for the headset specifications. We do not offer suspension forks for our gravel but you can convert it to your own specification.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NpiAw9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is a dropper-post option supported on gravel frames (internal routing port)?",
+            "icon": "question_mark",
+            "row_content": "<p>Conversion to dropper post is supported. Please contact us at info@rinosbike.eu<br/><br/></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_9QBQGE": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Which power meters (spider/left-arm/dual) fit each crank & BB standard?",
+            "icon": "question_mark",
+            "row_content": "<p>We have shimano crank, if it is compatible with Shimano, it will fit.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_wx7EQK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you list standover height and minimum seatpost insertion per size?",
+            "icon": "question_mark",
+            "row_content": "<p>We have markings on the seat post for minimum insertion length.</p>",
             "page": ""
           }
         }
@@ -170,7 +242,15 @@
         "collapsible_row_G4V6yi",
         "collapsible_row_3UDbaw",
         "collapsible_row_ULwXhE",
-        "collapsible_row_jCtjUN"
+        "collapsible_row_jCtjUN",
+        "collapsible_row_RM6QKE",
+        "collapsible_row_dc3DBn",
+        "collapsible_row_nJgEeq",
+        "collapsible_row_6mkci4",
+        "collapsible_row_7PRHCJ",
+        "collapsible_row_NpiAw9",
+        "collapsible_row_9QBQGE",
+        "collapsible_row_wx7EQK"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
