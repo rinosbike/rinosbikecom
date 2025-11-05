@@ -37,6 +37,15 @@
             "page": ""
           }
         },
+        "collapsible_row_hG9HwD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are pedals included?",
+            "icon": "question_mark",
+            "row_content": "<p>The pedals are not included with the bike, but we offer many options from our trusted partner RockBros. You can find such products on rinosbike.eu or contact us Via info@rinosbike.eu</p>",
+            "page": ""
+          }
+        },
         "collapsible_row_nrB8EN": {
           "type": "collapsible_row",
           "settings": {
@@ -91,15 +100,6 @@
             "page": ""
           }
         },
-        "collapsible_row_hG9HwD": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Are pedals included?",
-            "icon": "question_mark",
-            "row_content": "<p>The pedals are not included with the bike, but we offer many options from our trusted partner RockBros. You can find such products on rinosbike.eu or contact us Via info@rinosbike.eu</p>",
-            "page": ""
-          }
-        },
         "collapsible_row_inL6RC": {
           "type": "collapsible_row",
           "settings": {
@@ -140,13 +140,13 @@
       "block_order": [
         "collapsible_row_yPYb9G",
         "collapsible_row_UAjFct",
+        "collapsible_row_hG9HwD",
         "collapsible_row_nrB8EN",
         "collapsible_row_yg9jHc",
         "collapsible_row_Af8jLJ",
         "collapsible_row_TFYEed",
         "collapsible_row_qceFdA",
         "collapsible_row_fz6zJ7",
-        "collapsible_row_hG9HwD",
         "collapsible_row_inL6RC",
         "collapsible_row_RQFxky",
         "collapsible_row_G4V6yi",
