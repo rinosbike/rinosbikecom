@@ -68,6 +68,86 @@
         {% endif %}
       </div>
       
+      <!-- WHY CHOOSE US SECTION -->
+      <div class="why-choose-us-side" 
+           style="
+             flex: 0 0 {{ section.settings.features_width }}px;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             gap: {{ section.settings.features_gap }}px;
+           ">
+        
+        {% if section.settings.features_label != blank %}
+          <div style="margin-bottom: 12px;">
+            <h3 style="font-size: {{ section.settings.features_label_size }}px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #000000; margin: 0;">{{ section.settings.features_label }}</h3>
+          </div>
+        {% endif %}
+
+        <!-- Feature 1 -->
+        {% if section.settings.feature_1_title != blank %}
+        <div class="feature-item" style="display: flex; align-items: flex-start; gap: {{ section.settings.feature_icon_gap }}px;">
+          <div style="flex-shrink: 0; width: {{ section.settings.feature_icon_size }}px; height: {{ section.settings.feature_icon_size }}px; background: {{ section.settings.feature_icon_bg }}; border-radius: {{ section.settings.feature_icon_radius }}px; display: flex; align-items: center; justify-content: center;">
+            <svg width="{{ section.settings.feature_icon_size | minus: 16 }}" height="{{ section.settings.feature_icon_size | minus: 16 }}" viewBox="0 0 24 24" fill="none" stroke="{{ section.settings.feature_icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div style="flex: 1;">
+            <h4 style="font-size: {{ section.settings.feature_title_size }}px; font-weight: 600; color: #000000; margin: 0 0 4px 0;">{{ section.settings.feature_1_title }}</h4>
+            <p style="font-size: {{ section.settings.feature_text_size }}px; color: #666666; margin: 0; line-height: 1.5;">{{ section.settings.feature_1_text }}</p>
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Feature 2 -->
+        {% if section.settings.feature_2_title != blank %}
+        <div class="feature-item" style="display: flex; align-items: flex-start; gap: {{ section.settings.feature_icon_gap }}px;">
+          <div style="flex-shrink: 0; width: {{ section.settings.feature_icon_size }}px; height: {{ section.settings.feature_icon_size }}px; background: {{ section.settings.feature_icon_bg }}; border-radius: {{ section.settings.feature_icon_radius }}px; display: flex; align-items: center; justify-content: center;">
+            <svg width="{{ section.settings.feature_icon_size | minus: 16 }}" height="{{ section.settings.feature_icon_size | minus: 16 }}" viewBox="0 0 24 24" fill="none" stroke="{{ section.settings.feature_icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div style="flex: 1;">
+            <h4 style="font-size: {{ section.settings.feature_title_size }}px; font-weight: 600; color: #000000; margin: 0 0 4px 0;">{{ section.settings.feature_2_title }}</h4>
+            <p style="font-size: {{ section.settings.feature_text_size }}px; color: #666666; margin: 0; line-height: 1.5;">{{ section.settings.feature_2_text }}</p>
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Feature 3 -->
+        {% if section.settings.feature_3_title != blank %}
+        <div class="feature-item" style="display: flex; align-items: flex-start; gap: {{ section.settings.feature_icon_gap }}px;">
+          <div style="flex-shrink: 0; width: {{ section.settings.feature_icon_size }}px; height: {{ section.settings.feature_icon_size }}px; background: {{ section.settings.feature_icon_bg }}; border-radius: {{ section.settings.feature_icon_radius }}px; display: flex; align-items: center; justify-content: center;">
+            <svg width="{{ section.settings.feature_icon_size | minus: 16 }}" height="{{ section.settings.feature_icon_size | minus: 16 }}" viewBox="0 0 24 24" fill="none" stroke="{{ section.settings.feature_icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div style="flex: 1;">
+            <h4 style="font-size: {{ section.settings.feature_title_size }}px; font-weight: 600; color: #000000; margin: 0 0 4px 0;">{{ section.settings.feature_3_title }}</h4>
+            <p style="font-size: {{ section.settings.feature_text_size }}px; color: #666666; margin: 0; line-height: 1.5;">{{ section.settings.feature_3_text }}</p>
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Feature 4 -->
+        {% if section.settings.feature_4_title != blank %}
+        <div class="feature-item" style="display: flex; align-items: flex-start; gap: {{ section.settings.feature_icon_gap }}px;">
+          <div style="flex-shrink: 0; width: {{ section.settings.feature_icon_size }}px; height: {{ section.settings.feature_icon_size }}px; background: {{ section.settings.feature_icon_bg }}; border-radius: {{ section.settings.feature_icon_radius }}px; display: flex; align-items: center; justify-content: center;">
+            <svg width="{{ section.settings.feature_icon_size | minus: 16 }}" height="{{ section.settings.feature_icon_size | minus: 16 }}" viewBox="0 0 24 24" fill="none" stroke="{{ section.settings.feature_icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div style="flex: 1;">
+            <h4 style="font-size: {{ section.settings.feature_title_size }}px; font-weight: 600; color: #000000; margin: 0 0 4px 0;">{{ section.settings.feature_4_title }}</h4>
+            <p style="font-size: {{ section.settings.feature_text_size }}px; color: #666666; margin: 0; line-height: 1.5;">{{ section.settings.feature_4_text }}</p>
+          </div>
+        </div>
+        {% endif %}
+
+      </div>
+      
       <!-- CAROUSEL SIDE -->
       <div class="carousel-cards-side" style="flex: 0 0 {{ section.settings.cards_width }}px; max-width: {{ section.settings.cards_width }}px; display: flex; flex-direction: column;">
         
@@ -369,7 +449,8 @@
   @media (max-width: {{ section.settings.mobile_breakpoint }}px) {
     .comparison-carousel-wrapper { flex-direction: column; }
     .carousel-video-side { width: 100% !important; max-width: 100% !important; flex: 0 0 auto !important; }
-    .carousel-cards-side { width: 100% !important; }
+    .why-choose-us-side { width: 100% !important; order: 3; margin-top: 40px; }
+    .carousel-cards-side { width: 100% !important; order: 2; }
     .carousel-viewport { min-height: 450px !important; }
   }
   .carousel-card { cursor: grab; }
@@ -383,6 +464,8 @@
   .carousel-dot.active { background: #000000; width: 24px; border-radius: 4px; }
   .carousel-dot:hover { background: #000000; }
   .buy-button:hover { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); }
+  .feature-item { transition: transform 0.2s ease; }
+  .feature-item:hover { transform: translateX(4px); }
 </style>
 
 <script>
@@ -946,6 +1029,156 @@
       "step": 16,
       "unit": "px",
       "default": 768
+    },
+    {
+      "type": "header",
+      "content": "Features Section"
+    },
+    {
+      "type": "text",
+      "id": "features_label",
+      "label": "Features Section Label",
+      "default": "Why Choose Rinos"
+    },
+    {
+      "type": "range",
+      "id": "features_label_size",
+      "label": "Label Size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "features_width",
+      "label": "Features Section Width",
+      "min": 200,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "default": 280
+    },
+    {
+      "type": "range",
+      "id": "features_gap",
+      "label": "Gap Between Features",
+      "min": 16,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "feature_icon_size",
+      "label": "Icon Container Size",
+      "min": 32,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "feature_icon_gap",
+      "label": "Gap Between Icon & Text",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "feature_icon_radius",
+      "label": "Icon Border Radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "feature_icon_bg",
+      "label": "Icon Background Color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "feature_icon_color",
+      "label": "Icon Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "feature_title_size",
+      "label": "Feature Title Size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "feature_text_size",
+      "label": "Feature Text Size",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "text",
+      "id": "feature_1_title",
+      "label": "Feature 1 Title",
+      "default": "UCI Certified"
+    },
+    {
+      "type": "textarea",
+      "id": "feature_1_text",
+      "label": "Feature 1 Text",
+      "default": "Official UCI certification for competitive racing"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_title",
+      "label": "Feature 2 Title",
+      "default": "2-Year Warranty"
+    },
+    {
+      "type": "textarea",
+      "id": "feature_2_text",
+      "label": "Feature 2 Text",
+      "default": "Comprehensive coverage on all components"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_title",
+      "label": "Feature 3 Title",
+      "default": "Free EU Shipping"
+    },
+    {
+      "type": "textarea",
+      "id": "feature_3_text",
+      "label": "Feature 3 Text",
+      "default": "Fast and free delivery across Europe"
+    },
+    {
+      "type": "text",
+      "id": "feature_4_title",
+      "label": "Feature 4 Title",
+      "default": "German Engineering"
+    },
+    {
+      "type": "textarea",
+      "id": "feature_4_text",
+      "label": "Feature 4 Text",
+      "default": "Precision-crafted frames designed in Germany"
     }
   ],
   "presets": [
