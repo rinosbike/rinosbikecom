@@ -69,7 +69,7 @@
       </div>
       
       <!-- CAROUSEL SIDE -->
-      <div class="carousel-cards-side" style="flex: 0 1 500px; display: flex; flex-direction: column;">
+      <div class="carousel-cards-side" style="flex: 0 1 {{ section.settings.cards_width }}px; display: flex; flex-direction: column;">
         
         {% if section.settings.carousel_label != blank %}
           <div style="margin-bottom: 20px;">
@@ -714,6 +714,16 @@
     {
       "type": "header",
       "content": "Card Settings"
+    },
+    {
+      "type": "range",
+      "id": "cards_width",
+      "label": "Cards Width",
+      "min": 350,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "default": 420
     },
     {
       "type": "range",
