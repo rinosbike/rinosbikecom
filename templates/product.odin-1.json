@@ -110,6 +110,7 @@
       "blocks": {
         "column_8wYHLe": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Odin1-7Blue.png",
             "title": "<em><strong>UCI Certified.</strong></em>",
