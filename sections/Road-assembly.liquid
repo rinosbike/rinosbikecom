@@ -1,8 +1,3 @@
-{%- comment -%}
-  Bike Assembly Video Widget - The Odin (Road Bike)
-  Add this to your Shopify theme where you want the video widget to appear
-{%- endcomment -%}
-
 {%- liquid
   assign video_url = section.settings.video_url | default: 'https://www.youtube.com/embed/iLWtW4_HscI'
   assign video_thumbnail = section.settings.video_thumbnail
@@ -41,14 +36,8 @@
         </div>
       </div>
 
-      <div class="assembly-video-player" id="video-player-odin" style="display: none;">
-        <iframe
-          src="{{ video_url }}?autoplay=1"
-          title="{{ section.settings.video_title }}"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="assembly-video-player" id="video-player-odin" style="display: none;" data-video-url="{{ video_url }}" data-video-title="{{ section.settings.video_title }}">
+        {%- comment -%} Iframe will be dynamically created on click to prevent autoplay {%- endcomment -%}
       </div>
     </div>
 
@@ -264,6 +253,20 @@ function playAssemblyVideoOdin() {
   const player = document.getElementById('video-player-odin');
   
   if (preview && player) {
+    // Get video URL and title from data attributes
+    const videoUrl = player.getAttribute('data-video-url');
+    const videoTitle = player.getAttribute('data-video-title');
+    
+    // Create iframe only when user clicks (prevents autoplay on page load)
+    const iframe = document.createElement('iframe');
+    iframe.src = videoUrl + '?autoplay=1&mute=0';
+    iframe.title = videoTitle;
+    iframe.frameBorder = '0';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    
+    // Insert iframe and show player
+    player.appendChild(iframe);
     preview.style.display = 'none';
     player.style.display = 'block';
   }
