@@ -123,6 +123,7 @@
       "blocks": {
         "column_8wYHLe": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Group_645.png",
             "title": "<em><strong>UCI Certified.</strong></em>",
