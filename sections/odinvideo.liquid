@@ -14,6 +14,35 @@
   <div class="comparison-carousel-container" 
        style="max-width: {{ section.settings.container_width }}px; margin: 0 auto; padding: 0 {{ section.settings.container_padding }}px;">
     
+    <!-- Section Header -->
+    <div class="section-header" style="margin-bottom: 60px; text-align: center;">
+      <p style="
+        font-size: 12px;
+        color: #F04A00;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+      ">EXPLORE OUR RANGE</p>
+      <h2 style="
+        font-size: 48px;
+        font-weight: 300;
+        color: #ffffff;
+        letter-spacing: -1px;
+        margin: 0;
+        line-height: 1.1;
+      ">Road Bikes Redefined</h2>
+      <p style="
+        font-size: 16px;
+        color: #999999;
+        margin-top: 16px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+      ">Discover our collection of premium road and gravel bikes. Swipe through to compare models and find your perfect ride.</p>
+    </div>
+
     <!-- Main Flex Wrapper -->
     <div class="comparison-carousel-wrapper" 
          style="
@@ -29,6 +58,17 @@
              min-width: {{ section.settings.video_min_width }}px;
              max-width: {{ section.settings.video_max_width }}px;
            ">
+        
+        <!-- Video Label -->
+        <div style="margin-bottom: 16px;">
+          <p style="
+            font-size: 11px;
+            color: #666666;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          ">Featured Video</p>
+        </div>
         
         {% if section.settings.video_type == 'youtube' or section.settings.video_type == 'vimeo' %}
           <div class="video-embed-wrapper" 
@@ -93,6 +133,17 @@
       <!-- CAROUSEL SIDE -->
       <div class="carousel-cards-side" style="flex: 1; display: flex; flex-direction: column;">
         
+        <!-- Carousel Label -->
+        <div style="margin-bottom: 20px;">
+          <p style="
+            font-size: 11px;
+            color: #666666;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          ">Compare Models</p>
+        </div>
+
         <!-- Carousel Container -->
         <div class="carousel-viewport" 
              style="
@@ -101,7 +152,7 @@
                flex: 1;
                display: flex;
                align-items: center;
-               min-height: 450px;
+               min-height: 420px;
              ">
           
           <!-- Carousel Track -->
@@ -109,7 +160,7 @@
                style="
                  display: flex;
                  gap: {{ section.settings.cards_gap }}px;
-                 transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                 transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
                  width: 100%;
                ">
             
@@ -119,11 +170,11 @@
                      style="
                        flex: 0 0 calc(100% - {{ section.settings.cards_gap }}px);
                        background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
-                       border: 1px solid #e8e8e8;
+                       border: 1px solid #ececec;
                        border-radius: {{ section.settings.card_border_radius }}px;
                        padding: {{ section.settings.card_padding }}px;
-                       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+                       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
                      ">
               <div class="card-image-container" 
                    style="
@@ -133,7 +184,7 @@
                      justify-content: center;
                      margin-bottom: {{ section.settings.card_image_margin }}px;
                      overflow: hidden;
-                     border-radius: {{ section.settings.card_border_radius }}px;
+                     border-radius: calc({{ section.settings.card_border_radius }}px - 4px);
                      background: #ffffff;
                    ">
                 <img class="card-image" 
@@ -145,7 +196,7 @@
                        max-height: 100%;
                        object-fit: contain;
                        filter: contrast(1.05);
-                       transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                       transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
                      ">
               </div>
               <h3 class="card-title" 
@@ -161,28 +212,28 @@
                 {{ 'bikes.odin1.title' | t }}
               </h3>
               <div class="card-specs" style="display: flex; flex-direction: column; gap: {{ section.settings.specs_gap }}px;">
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.weight_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.weight_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a; font-weight: 600;">{{ 'bikes.odin1.weight' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gear_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gear_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin1.gear' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gears_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gears_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a; font-weight: 600;">{{ 'bikes.odin1.gears' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.frame_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.frame_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin1.frame' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.wheelSize_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.wheelSize_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin1.wheelSize' | t }}</span>
                 </div>
                 <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.brakes_label' | t }}</span>
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.brakes_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin1.brakes' | t }}</span>
                 </div>
               </div>
@@ -194,11 +245,11 @@
                      style="
                        flex: 0 0 calc(100% - {{ section.settings.cards_gap }}px);
                        background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
-                       border: 1px solid #e8e8e8;
+                       border: 1px solid #ececec;
                        border-radius: {{ section.settings.card_border_radius }}px;
                        padding: {{ section.settings.card_padding }}px;
-                       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+                       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
                      ">
               <div class="card-image-container" 
                    style="
@@ -208,7 +259,7 @@
                      justify-content: center;
                      margin-bottom: {{ section.settings.card_image_margin }}px;
                      overflow: hidden;
-                     border-radius: {{ section.settings.card_border_radius }}px;
+                     border-radius: calc({{ section.settings.card_border_radius }}px - 4px);
                      background: #ffffff;
                    ">
                 <img class="card-image" 
@@ -220,7 +271,7 @@
                        max-height: 100%;
                        object-fit: contain;
                        filter: contrast(1.05);
-                       transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                       transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
                      ">
               </div>
               <h3 class="card-title" 
@@ -236,28 +287,28 @@
                 {{ 'bikes.odin3.title' | t }}
               </h3>
               <div class="card-specs" style="display: flex; flex-direction: column; gap: {{ section.settings.specs_gap }}px;">
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.weight_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.weight_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a; font-weight: 600;">{{ 'bikes.odin3.weight' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gear_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gear_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin3.gear' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gears_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gears_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a; font-weight: 600;">{{ 'bikes.odin3.gears' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.frame_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.frame_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin3.frame' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.wheelSize_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.wheelSize_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin3.wheelSize' | t }}</span>
                 </div>
                 <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.brakes_label' | t }}</span>
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.brakes_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin3.brakes' | t }}</span>
                 </div>
               </div>
@@ -272,9 +323,9 @@
                        border: 2px solid #F04A00;
                        border-radius: {{ section.settings.card_border_radius }}px;
                        padding: {{ section.settings.card_padding }}px;
-                       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
                        position: relative;
-                       box-shadow: 0 12px 48px rgba(240, 74, 0, 0.2);
+                       box-shadow: 0 12px 40px rgba(240, 74, 0, 0.15);
                      ">
               <span class="featured-badge" 
                     style="
@@ -289,7 +340,8 @@
                       font-weight: 600;
                       letter-spacing: 1.5px;
                       border-radius: 0;
-                    ">POLECANE</span>
+                      z-index: 10;
+                    ">RECOMMENDED</span>
               <div class="card-image-container" 
                    style="
                      height: {{ section.settings.card_image_height }}px;
@@ -298,7 +350,7 @@
                      justify-content: center;
                      margin-bottom: {{ section.settings.card_image_margin }}px;
                      overflow: hidden;
-                     border-radius: {{ section.settings.card_border_radius }}px;
+                     border-radius: calc({{ section.settings.card_border_radius }}px - 4px);
                      background: #ffffff;
                    ">
                 <img class="card-image" 
@@ -310,7 +362,7 @@
                        max-height: 100%;
                        object-fit: contain;
                        filter: contrast(1.05);
-                       transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                       transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
                      ">
               </div>
               <h3 class="card-title" 
@@ -326,28 +378,28 @@
                 {{ 'bikes.odin4.title' | t }}
               </h3>
               <div class="card-specs" style="display: flex; flex-direction: column; gap: {{ section.settings.specs_gap }}px;">
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.weight_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.weight_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a; font-weight: 600;">{{ 'bikes.odin4.weight' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gear_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gear_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin4.gear' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gears_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gears_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a; font-weight: 600;">{{ 'bikes.odin4.gears' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.frame_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.frame_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin4.frame' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.wheelSize_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.wheelSize_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin4.wheelSize' | t }}</span>
                 </div>
                 <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.brakes_label' | t }}</span>
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.brakes_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin4.brakes' | t }}</span>
                 </div>
               </div>
@@ -359,11 +411,11 @@
                      style="
                        flex: 0 0 calc(100% - {{ section.settings.cards_gap }}px);
                        background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
-                       border: 1px solid #e8e8e8;
+                       border: 1px solid #ececec;
                        border-radius: {{ section.settings.card_border_radius }}px;
                        padding: {{ section.settings.card_padding }}px;
-                       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+                       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
                      ">
               <div class="card-image-container" 
                    style="
@@ -373,7 +425,7 @@
                      justify-content: center;
                      margin-bottom: {{ section.settings.card_image_margin }}px;
                      overflow: hidden;
-                     border-radius: {{ section.settings.card_border_radius }}px;
+                     border-radius: calc({{ section.settings.card_border_radius }}px - 4px);
                      background: #ffffff;
                    ">
                 <img class="card-image" 
@@ -385,7 +437,7 @@
                        max-height: 100%;
                        object-fit: contain;
                        filter: contrast(1.05);
-                       transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                       transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
                      ">
               </div>
               <h3 class="card-title" 
@@ -401,28 +453,28 @@
                 {{ 'bikes.odin6_0.title' | t }}
               </h3>
               <div class="card-specs" style="display: flex; flex-direction: column; gap: {{ section.settings.specs_gap }}px;">
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.weight_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.weight_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a; font-weight: 600;">{{ 'bikes.odin6_0.weight' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gear_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gear_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin6_0.gear' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gears_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gears_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a; font-weight: 600;">{{ 'bikes.odin6_0.gears' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.frame_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.frame_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin6_0.frame' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.wheelSize_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.wheelSize_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin6_0.wheelSize' | t }}</span>
                 </div>
                 <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.brakes_label' | t }}</span>
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.brakes_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin6_0.brakes' | t }}</span>
                 </div>
               </div>
@@ -434,11 +486,11 @@
                      style="
                        flex: 0 0 calc(100% - {{ section.settings.cards_gap }}px);
                        background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
-                       border: 1px solid #e8e8e8;
+                       border: 1px solid #ececec;
                        border-radius: {{ section.settings.card_border_radius }}px;
                        padding: {{ section.settings.card_padding }}px;
-                       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+                       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
                      ">
               <div class="card-image-container" 
                    style="
@@ -448,7 +500,7 @@
                      justify-content: center;
                      margin-bottom: {{ section.settings.card_image_margin }}px;
                      overflow: hidden;
-                     border-radius: {{ section.settings.card_border_radius }}px;
+                     border-radius: calc({{ section.settings.card_border_radius }}px - 4px);
                      background: #ffffff;
                    ">
                 <img class="card-image" 
@@ -460,7 +512,7 @@
                        max-height: 100%;
                        object-fit: contain;
                        filter: contrast(1.05);
-                       transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                       transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
                      ">
               </div>
               <h3 class="card-title" 
@@ -476,28 +528,28 @@
                 {{ 'bikes.odin6_1.title' | t }}
               </h3>
               <div class="card-specs" style="display: flex; flex-direction: column; gap: {{ section.settings.specs_gap }}px;">
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.weight_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.weight_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a; font-weight: 600;">{{ 'bikes.odin6_1.weight' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gear_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gear_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin6_1.gear' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gears_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gears_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a; font-weight: 600;">{{ 'bikes.odin6_1.gears' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.frame_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.frame_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin6_1.frame' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.wheelSize_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.wheelSize_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin6_1.wheelSize' | t }}</span>
                 </div>
                 <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.brakes_label' | t }}</span>
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.brakes_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin6_1.brakes' | t }}</span>
                 </div>
               </div>
@@ -509,11 +561,11 @@
                      style="
                        flex: 0 0 calc(100% - {{ section.settings.cards_gap }}px);
                        background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
-                       border: 1px solid #e8e8e8;
+                       border: 1px solid #ececec;
                        border-radius: {{ section.settings.card_border_radius }}px;
                        padding: {{ section.settings.card_padding }}px;
-                       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+                       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
                      ">
               <div class="card-image-container" 
                    style="
@@ -523,7 +575,7 @@
                      justify-content: center;
                      margin-bottom: {{ section.settings.card_image_margin }}px;
                      overflow: hidden;
-                     border-radius: {{ section.settings.card_border_radius }}px;
+                     border-radius: calc({{ section.settings.card_border_radius }}px - 4px);
                      background: #ffffff;
                    ">
                 <img class="card-image" 
@@ -535,7 +587,7 @@
                        max-height: 100%;
                        object-fit: contain;
                        filter: contrast(1.05);
-                       transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                       transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
                      ">
               </div>
               <h3 class="card-title" 
@@ -551,28 +603,28 @@
                 {{ 'bikes.odin7_1.title' | t }}
               </h3>
               <div class="card-specs" style="display: flex; flex-direction: column; gap: {{ section.settings.specs_gap }}px;">
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.weight_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.weight_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a; font-weight: 600;">{{ 'bikes.odin7_1.weight' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gear_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gear_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin7_1.gear' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gears_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.gears_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a; font-weight: 600;">{{ 'bikes.odin7_1.gears' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.frame_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.frame_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin7_1.frame' | t }}</span>
                 </div>
-                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #e5e5e5;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.wheelSize_label' | t }}</span>
+                <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0; border-bottom: 1px solid #f0f0f0;">
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.wheelSize_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin7_1.wheelSize' | t }}</span>
                 </div>
                 <div class="spec-row" style="display: flex; justify-content: space-between; padding: {{ section.settings.spec_padding }}px 0;">
-                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #888888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.brakes_label' | t }}</span>
+                  <span class="spec-label" style="font-size: {{ section.settings.spec_label_size }}px; color: #999999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">{{ 'bikes.brakes_label' | t }}</span>
                   <span class="spec-value" style="font-size: {{ section.settings.spec_value_size }}px; color: #1a1a1a;">{{ 'bikes.odin7_1.brakes' | t }}</span>
                 </div>
               </div>
@@ -581,68 +633,77 @@
           </div>
         </div>
 
-        <!-- Navigation Controls -->
-        <div class="carousel-controls" 
-             style="
-               display: flex;
-               justify-content: space-between;
-               align-items: center;
-               margin-top: {{ section.settings.controls_margin_top }}px;
-               gap: {{ section.settings.controls_gap }}px;
-             ">
-          
-          <!-- Prev Button -->
-          <button class="carousel-btn carousel-btn-prev" 
-                  aria-label="Previous bike"
-                  style="
-                    width: {{ section.settings.button_size }}px;
-                    height: {{ section.settings.button_size }}px;
-                    border: 1px solid #444444;
-                    background: #1a1a1a;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                    flex-shrink: 0;
-                    color: #ffffff;
-                  ">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
+        <!-- Navigation Hint & Controls -->
+        <div style="margin-top: 28px;">
+          <p style="
+            font-size: 11px;
+            color: #555555;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+          ">Swipe or use arrows to compare</p>
 
-          <!-- Dots -->
-          <div class="carousel-dots" 
+          <div class="carousel-controls" 
                style="
                  display: flex;
-                 gap: {{ section.settings.dots_gap }}px;
+                 justify-content: center;
                  align-items: center;
+                 gap: {{ section.settings.controls_gap }}px;
                ">
-          </div>
+            
+            <!-- Prev Button -->
+            <button class="carousel-btn carousel-btn-prev" 
+                    aria-label="Previous bike"
+                    style="
+                      width: {{ section.settings.button_size }}px;
+                      height: {{ section.settings.button_size }}px;
+                      border: 1px solid #333333;
+                      background: transparent;
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      cursor: pointer;
+                      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+                      flex-shrink: 0;
+                      color: #ffffff;
+                    ">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
 
-          <!-- Next Button -->
-          <button class="carousel-btn carousel-btn-next" 
-                  aria-label="Next bike"
-                  style="
-                    width: {{ section.settings.button_size }}px;
-                    height: {{ section.settings.button_size }}px;
-                    border: 1px solid #444444;
-                    background: #1a1a1a;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                    flex-shrink: 0;
-                    color: #ffffff;
-                  ">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </button>
+            <!-- Dots -->
+            <div class="carousel-dots" 
+                 style="
+                   display: flex;
+                   gap: {{ section.settings.dots_gap }}px;
+                   align-items: center;
+                 ">
+            </div>
+
+            <!-- Next Button -->
+            <button class="carousel-btn carousel-btn-next" 
+                    aria-label="Next bike"
+                    style="
+                      width: {{ section.settings.button_size }}px;
+                      height: {{ section.settings.button_size }}px;
+                      border: 1px solid #333333;
+                      background: transparent;
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      cursor: pointer;
+                      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+                      flex-shrink: 0;
+                      color: #ffffff;
+                    ">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
         </div>
 
       </div>
@@ -666,6 +727,18 @@
 
   /* Responsive Layout */
   @media (max-width: {{ section.settings.mobile_breakpoint }}px) {
+    .section-header {
+      margin-bottom: 40px !important;
+    }
+
+    .section-header h2 {
+      font-size: 32px !important;
+    }
+
+    .section-header p:last-child {
+      font-size: 14px !important;
+    }
+
     .comparison-carousel-wrapper {
       flex-direction: column;
     }
@@ -690,7 +763,7 @@
 
     .carousel-card {
       flex: 0 0 100% !important;
-      min-height: 400px;
+      min-height: 380px;
     }
 
     .carousel-controls {
@@ -714,26 +787,34 @@
   }
 
   /* Carousel Hover States */
+  .carousel-card {
+    cursor: grab;
+  }
+
+  .carousel-card:active {
+    cursor: grabbing;
+  }
+
   .carousel-card:hover {
     border-color: #000000;
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4) !important;
+    transform: translateY(-8px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15) !important;
   }
 
   .carousel-card:hover .card-image {
-    transform: scale(1.06);
+    transform: scale(1.08);
   }
 
   .carousel-card.is-featured:hover {
     border-color: #F04A00;
-    box-shadow: 0 16px 56px rgba(240, 74, 0, 0.3) !important;
+    box-shadow: 0 24px 70px rgba(240, 74, 0, 0.2) !important;
   }
 
   /* Button Hover States */
   .carousel-btn:hover {
     border-color: #F04A00;
-    background: #252525;
-    transform: scale(1.08);
+    background: rgba(240, 74, 0, 0.1);
+    transform: scale(1.1);
   }
 
   .carousel-btn:active {
@@ -745,9 +826,9 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #444444;
+    background: #333333;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     border: none;
     padding: 0;
   }
@@ -756,21 +837,11 @@
     background: #F04A00;
     width: 24px;
     border-radius: 4px;
+    box-shadow: 0 0 12px rgba(240, 74, 0, 0.4);
   }
 
   .carousel-dot:hover {
     background: #F04A00;
-  }
-
-  /* Touch Support */
-  @media (hover: none) and (pointer: coarse) {
-    .carousel-card {
-      cursor: grab;
-    }
-
-    .carousel-card:active {
-      cursor: grabbing;
-    }
   }
 </style>
 
@@ -889,7 +960,7 @@
         this.updateDots();
         setTimeout(() => {
           this.isTransitioning = false;
-        }, 400);
+        }, 500);
       },
 
       updateDots() {
@@ -1216,16 +1287,6 @@
       "step": 4,
       "unit": "px",
       "default": 44
-    },
-    {
-      "type": "range",
-      "id": "controls_margin_top",
-      "label": "Controls Margin Top",
-      "min": 20,
-      "max": 60,
-      "step": 5,
-      "unit": "px",
-      "default": 30
     },
     {
       "type": "range",
