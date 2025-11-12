@@ -128,6 +128,7 @@
                display: flex;
                align-items: center;
                min-height: 420px;
+               width: 100%;
              ">
           
           <!-- Carousel Track -->
@@ -137,13 +138,14 @@
                  gap: {{ section.settings.cards_gap }}px;
                  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
                  width: 100%;
-               ">
+               "
+               data-gap="{{ section.settings.cards_gap }}">
             
             <!-- ODIN 1 -->
             <article class="carousel-card" 
                      data-bike="odin1"
                      style="
-                       flex: 0 0 calc(100% - {{ section.settings.cards_gap }}px);
+                       flex: 0 0 100%;
                        background: #ffffff;
                        border: 1px solid #e5e5e5;
                        border-radius: {{ section.settings.card_border_radius }}px;
@@ -218,7 +220,7 @@
             <article class="carousel-card" 
                      data-bike="odin3"
                      style="
-                       flex: 0 0 calc(100% - {{ section.settings.cards_gap }}px);
+                       flex: 0 0 100%;
                        background: #ffffff;
                        border: 1px solid #e5e5e5;
                        border-radius: {{ section.settings.card_border_radius }}px;
@@ -293,7 +295,7 @@
             <article class="carousel-card is-featured" 
                      data-bike="odin4"
                      style="
-                       flex: 0 0 calc(100% - {{ section.settings.cards_gap }}px);
+                       flex: 0 0 100%;
                        background: #ffffff;
                        border: 2px solid #F04A00;
                        border-radius: {{ section.settings.card_border_radius }}px;
@@ -387,7 +389,7 @@
             <article class="carousel-card" 
                      data-bike="odin6_0"
                      style="
-                       flex: 0 0 calc(100% - {{ section.settings.cards_gap }}px);
+                       flex: 0 0 100%;
                        background: #ffffff;
                        border: 1px solid #e5e5e5;
                        border-radius: {{ section.settings.card_border_radius }}px;
@@ -462,7 +464,7 @@
             <article class="carousel-card" 
                      data-bike="odin6_1"
                      style="
-                       flex: 0 0 calc(100% - {{ section.settings.cards_gap }}px);
+                       flex: 0 0 100%;
                        background: #ffffff;
                        border: 1px solid #e5e5e5;
                        border-radius: {{ section.settings.card_border_radius }}px;
@@ -537,7 +539,7 @@
             <article class="carousel-card" 
                      data-bike="odin7_1"
                      style="
-                       flex: 0 0 calc(100% - {{ section.settings.cards_gap }}px);
+                       flex: 0 0 100%;
                        background: #ffffff;
                        border: 1px solid #e5e5e5;
                        border-radius: {{ section.settings.card_border_radius }}px;
@@ -723,11 +725,6 @@
     .carousel-viewport {
       min-height: 350px !important;
     }
-
-    .carousel-card {
-      flex: 0 0 100% !important;
-      min-height: 380px;
-    }
   }
 
   .carousel-card {
@@ -792,18 +789,17 @@
       dotsContainer: document.querySelector('.carousel-dots'),
       prevBtn: document.querySelector('.carousel-btn-prev'),
       nextBtn: document.querySelector('.carousel-btn-next'),
+      viewport: document.querySelector('.carousel-viewport'),
       currentIndex: 0,
-      cardWidth: 0,
-      gap: parseInt(getComputedStyle(document.querySelector('.carousel-track')).gap) || 20,
       isTransitioning: false,
+      startX: 0,
+      isDragging: false,
 
       init() {
         this.createDots();
-        this.updateCardWidth();
         this.attachEventListeners();
         this.setupTouchGestures();
-        this.updateDots();
-        window.addEventListener('resize', () => this.updateCardWidth());
+        this.updateCarousel();
       },
 
       createDots() {
@@ -817,35 +813,28 @@
         });
       },
 
-      updateCardWidth() {
-        const viewport = document.querySelector('.carousel-viewport');
-        this.cardWidth = viewport.offsetWidth - this.gap;
-      },
-
       attachEventListeners() {
         this.prevBtn.addEventListener('click', () => this.prev());
         this.nextBtn.addEventListener('click', () => this.next());
       },
 
       setupTouchGestures() {
-        let startX = 0;
         let currentX = 0;
-        let isDragging = false;
 
         this.track.addEventListener('mousedown', (e) => {
-          startX = e.clientX;
-          isDragging = true;
+          this.startX = e.clientX;
+          this.isDragging = true;
           this.track.style.cursor = 'grabbing';
         });
 
         document.addEventListener('mousemove', (e) => {
-          if (!isDragging) return;
-          currentX = e.clientX - startX;
+          if (!this.isDragging) return;
+          currentX = e.clientX - this.startX;
         });
 
         document.addEventListener('mouseup', () => {
-          if (!isDragging) return;
-          isDragging = false;
+          if (!this.isDragging) return;
+          this.isDragging = false;
           this.track.style.cursor = 'grab';
 
           if (Math.abs(currentX) > 50) {
@@ -854,18 +843,18 @@
         });
 
         this.track.addEventListener('touchstart', (e) => {
-          startX = e.touches[0].clientX;
-          isDragging = true;
+          this.startX = e.touches[0].clientX;
+          this.isDragging = true;
         });
 
         this.track.addEventListener('touchmove', (e) => {
-          if (!isDragging) return;
-          currentX = e.touches[0].clientX - startX;
+          if (!this.isDragging) return;
+          currentX = e.touches[0].clientX - this.startX;
         });
 
         this.track.addEventListener('touchend', () => {
-          if (!isDragging) return;
-          isDragging = false;
+          if (!this.isDragging) return;
+          this.isDragging = false;
 
           if (Math.abs(currentX) > 50) {
             currentX < 0 ? this.next() : this.prev();
@@ -893,7 +882,9 @@
 
       updateCarousel() {
         this.isTransitioning = true;
-        const offset = -(this.currentIndex * (this.cardWidth + this.gap));
+        const viewportWidth = this.viewport.offsetWidth;
+        const gap = parseInt(this.track.dataset.gap) || 20;
+        const offset = -(this.currentIndex * (viewportWidth + gap));
         this.track.style.transform = `translateX(${offset}px)`;
         this.updateDots();
         setTimeout(() => {
@@ -1072,7 +1063,7 @@
     {
       "type": "range",
       "id": "video_aspect_ratio",
-      "label": "Video Aspect Ratio",
+      "label": "Video Aspect Ratio (%)",
       "min": 50,
       "max": 200,
       "step": 5,
