@@ -43,6 +43,7 @@
         "text_TcqRXy",
         "buttons_fHAFfm"
       ],
+      "disabled": true,
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/DSCF5464.webp",
@@ -154,6 +155,7 @@
     },
     "video_javi_w_LyCXHP": {
       "type": "video-javi-w",
+      "disabled": true,
       "name": "Video + Text Feature",
       "settings": {
         "layout": "left",
@@ -227,7 +229,6 @@
         "gap": 40,
         "container_width": 1400,
         "container_padding": 20,
-        "background_color": "#ffffff",
         "padding_top": 60,
         "padding_bottom": 60,
         "video_type": "file",
@@ -257,7 +258,6 @@
         "spec_padding": 8,
         "specs_gap": 12,
         "button_size": 44,
-        "controls_margin_top": 30,
         "controls_gap": 20,
         "dots_gap": 8,
         "mobile_breakpoint": 768
