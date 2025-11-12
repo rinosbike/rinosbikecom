@@ -55,7 +55,7 @@
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
-        "show_text_below": true
+        "show_text_below": false
       }
     },
     "image_banner_gtyUN9": {
@@ -155,12 +155,6 @@
         "odin6_0_commentary": "Great for adventurers.",
         "odin6_1_commentary": "Perfect for long-distance riders.",
         "odin7_1_commentary": "The ultimate choice for professionals.",
-        "odin1_buy_link": "",
-        "odin3_buy_link": "",
-        "odin4_buy_link": "",
-        "odin6_0_buy_link": "",
-        "odin6_1_buy_link": "",
-        "odin7_1_buy_link": "",
         "button_size": 44,
         "controls_gap": 20,
         "dots_gap": 8,
