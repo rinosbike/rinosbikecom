@@ -9,6 +9,55 @@
  */
 {
   "sections": {
+    "image_banner_YaWNp7": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_9QamrT": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Rinos</strong> Odin Road Series",
+            "heading_size": "h1"
+          }
+        },
+        "text_zwciXm": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_FQKkXY": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_9QamrT",
+        "text_zwciXm",
+        "buttons_FQKkXY"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/SnapInsta.to_545505071_18075032927516140_6687439362698984429_n.jpg",
+        "image_overlay_opacity": 20,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "image_banner_gtyUN9": {
       "type": "image-banner",
       "blocks": {
@@ -43,10 +92,11 @@
         "text_TcqRXy",
         "buttons_fHAFfm"
       ],
+      "disabled": true,
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/SnapInsta.to_545505071_18075032927516140_6687439362698984429_n.jpg",
-        "image_overlay_opacity": 10,
+        "image": "shopify://shop_images/long-highway-in-arizona-desert.jpg",
+        "image_overlay_opacity": 50,
         "image_height": "small",
         "desktop_content_position": "middle-left",
         "show_text_box": false,
@@ -368,6 +418,7 @@
     },
     "rinos_comparison_table_road_KQ4AUd": {
       "type": "rinos-comparison-table-road",
+      "disabled": true,
       "settings": {}
     },
     "banner": {
@@ -381,6 +432,7 @@
     }
   },
   "order": [
+    "image_banner_YaWNp7",
     "image_banner_gtyUN9",
     "odinvideow_tFNNry",
     "rich_text_g9zYkj",
