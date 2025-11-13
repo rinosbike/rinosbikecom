@@ -22,135 +22,126 @@
         "collapsible_row_yPYb9G": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How much assembly is required when I receive my bike?",
+            "heading": "Do you currently sell e-bikes? If not, are there plans or a waitlist for future e-models?",
             "icon": "question_mark",
-            "row_content": "<p>Our bikes arrive 90% assembled. You’ll only need to attach the front wheel, seatpost, and pedals (included). Basic tools are included, and we also provide a setup video for reference.</p>",
+            "row_content": "<p>At the moment we do not have e-bikes but might consider bringing our commuter models in the future.</p>",
             "page": ""
           }
         },
         "collapsible_row_UAjFct": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Are tools included in the box?",
+            "heading": "Do you sell aluminum or steel frames/bikes, or only carbon? Any titanium projects coming?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>We sell carbon and titanium frames.</p>",
             "page": ""
           }
         },
         "collapsible_row_nrB8EN": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How is the bike packaged for shipping?",
+            "heading": "Can I buy a frameset only (frame + fork + headset) for Sandman/Odin/Gaia?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, you can buy a frameset for Sandman, Odin or Gaia and build your dream bike. It comes with all the small parts you need. Contact us at <a href=\"mailto:info@rinosbike.eu\"><span style=\"text-decoration:underline\">info@rinosbike.eu</span></a> if you have specific mechanical questions.<br/><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_yg9jHc": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I request the bike to be pre-assembled?",
+            "heading": "Do you sell custom builds (choose groupset, wheels, cockpit) or only fixed specs?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>We offer a high degree of customization where you can choose the colour, size and groupset and we will build your dream bike.</p>",
             "page": ""
           }
         },
         "collapsible_row_Af8jLJ": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do brakes/derailleurs arrive pre-adjusted, or should I expect to index gears and re-center calipers?",
+            "heading": "Are there women-specific builds or contact-point options (short cranks, narrower bars, different saddles)?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>We have narrower bars for women if a smaller size is chosen.</p>",
             "page": ""
           }
         },
         "collapsible_row_TFYEed": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Are the wheels pre-trued out of the box, or should I expect minor spoke adjustments after the first rides?",
+            "heading": "Can I swap stock tires/cassette/handlebar width at checkout?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Please contact us at <a href=\"mailto:info@rinosbike.eu\"><span style=\"text-decoration:underline\">info@rinosbike.eu</span></a> if you have specific needs for conversion and our mechanic will analyse and let you know if it is achievable.</p>",
             "page": ""
           }
         },
         "collapsible_row_qceFdA": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do you offer an optional “fully assembled” delivery service?",
+            "heading": "Do you offer test rides, demo days, or a satisfaction “ride & decide” window?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>We participate in numerous trade fairs where you can test ride our bikes.<br/><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_fz6zJ7": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Do you offer financing, Klarna/PayPal installments, or student discounts?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, via Klarna and PayPal rate payments.<br/><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_hG9HwD": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Do you support multi-currency checkout and lock the FX rate at payment time?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes. it is possible on our website.</p>",
             "page": ""
           }
         },
         "collapsible_row_inL6RC": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Where can I see the bikes in person (dealers, pop-ups, trade fairs)?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>You can contact us also at <a href=\"mailto:info@rinosbike.eu\"><span style=\"text-decoration:underline\">info@rinosbike.eu</span></a> to schedule a visit to see the bikes in person and try it out.</p>",
             "page": ""
           }
         },
         "collapsible_row_RQFxky": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Do you support salary-sacrifice leasing (JobRad/Cycle to Work) or corporate fleet purchases?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes for customers in Germany we work with many leasing companies. </p>",
             "page": ""
           }
         },
         "collapsible_row_G4V6yi": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Is there a loyalty, referral, or ambassador program for returning customers?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, please contact us at <a href=\"mailto:info@rinosbike.eu\"><span style=\"text-decoration:underline\">info@rinosbike.eu</span></a> for more info.</p>",
             "page": ""
           }
         },
         "collapsible_row_3UDbaw": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Are there pre-built “commuter,” “bikepacking,” or “race day” accessory bundles?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, contact us at info@rinosbike.eu</p>",
             "page": ""
           }
         },
         "collapsible_row_ULwXhE": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Can I register my bike’s serial for theft alerts and proof of ownership?",
             "icon": "question_mark",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_jCtjUN": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, at the bottom of the frame there is a serial number for insurance.</p>",
             "page": ""
           }
         }
@@ -169,8 +160,7 @@
         "collapsible_row_RQFxky",
         "collapsible_row_G4V6yi",
         "collapsible_row_3UDbaw",
-        "collapsible_row_ULwXhE",
-        "collapsible_row_jCtjUN"
+        "collapsible_row_ULwXhE"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
