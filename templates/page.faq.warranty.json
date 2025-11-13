@@ -22,135 +22,162 @@
         "collapsible_row_yPYb9G": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How much assembly is required when I receive my bike?",
+            "heading": "The bike size does not fit me, can I send it back and get a new size bike?",
             "icon": "question_mark",
-            "row_content": "<p>Our bikes arrive 90% assembled. You’ll only need to attach the front wheel, seatpost, and pedals (included). Basic tools are included, and we also provide a setup video for reference.</p>",
+            "row_content": "<p>Yes, but the costs for returning and sending back the bike will be incurred by the costumer</p>",
             "page": ""
           }
         },
         "collapsible_row_UAjFct": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Are tools included in the box?",
+            "heading": "What is the return period (calendar vs working days) and from which date does it start (delivery vs order)?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>14 days after the bike is delivered to the costumer’s outlined address <br/><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_nrB8EN": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How is the bike packaged for shipping?",
+            "heading": "What is the warranty for shimano parts?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>For major shimano parts like crankset, cassette, shifters, derailleurs it is 2 years under normal use. </p>",
             "page": ""
           }
         },
         "collapsible_row_yg9jHc": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I request the bike to be pre-assembled?",
+            "heading": "What is the warranty for the frame, fork, seatpost?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>2 years warranty under normal use.</p>",
             "page": ""
           }
         },
         "collapsible_row_Af8jLJ": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do brakes/derailleurs arrive pre-adjusted, or should I expect to index gears and re-center calipers?",
+            "heading": "What is not covered in the warranty?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Wearable parts like inner tubes, tires, brake pads, shifter and brake cables etc.</p>",
             "page": ""
           }
         },
         "collapsible_row_TFYEed": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Are the wheels pre-trued out of the box, or should I expect minor spoke adjustments after the first rides?",
+            "heading": "How can I make a claim and what can I expect?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Please contact us at info@rinosbike.eu</p>",
             "page": ""
           }
         },
         "collapsible_row_qceFdA": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do you offer an optional “fully assembled” delivery service?",
+            "heading": "What should I do if the box arrives damaged, what photos/evidence and within what time window?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Please send us the images or video to <a href=\"mailto:info@rinosbike.eu\"><span style=\"text-decoration:underline\">info@rinosbike.eu</span></a> within a week.<br/><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_fz6zJ7": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Does the warranty follow the bike with second owners within the 2-year window? What proof is needed?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes as long as original proof of purchase was shown and proof of transfer of ownership.</p>",
             "page": ""
           }
         },
         "collapsible_row_hG9HwD": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Do unauthorized third-party repairs affect my warranty, and how do I get pre-authorization for shop repairs?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Please contact us at <a href=\"mailto:info@rinosbike.eu\"><span style=\"text-decoration:underline\">info@rinosbike.eu</span></a> for more info.</p>",
             "page": ""
           }
         },
         "collapsible_row_inL6RC": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Can I return a bike after assembly/test rides? Are cosmetic marks/restocking fees a factor?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>You can return a bike within 14 days after delivery to us if it is unused.</p>",
             "page": ""
           }
         },
         "collapsible_row_RQFxky": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "If a warranty claim is approved, who covers shipping and customs both ways?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>If it is proven that the damage was due to our manufacturing defect, we cover the shipping costs.</p>",
             "page": ""
           }
         },
         "collapsible_row_G4V6yi": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "If no defect is found after inspection, will I be charged an evaluation/return fee?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, we will charge an additional fee </p>",
             "page": ""
           }
         },
         "collapsible_row_3UDbaw": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Do you offer a crash-replacement discount outside warranty?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes we have a crash replacement program, please contact us at <a href=\"mailto:info@rinosbike.eu\"><span style=\"text-decoration:underline\">info@rinosbike.eu</span></a> if you have a crash and need parts.</p>",
             "page": ""
           }
         },
         "collapsible_row_ULwXhE": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Who pays return shipping: I changed my mind vs. there’s a quality/defect issue?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>You can send the bike back to us and we will reimburse you the original cost of the bike if the bike is unused. </p>",
             "page": ""
           }
         },
         "collapsible_row_jCtjUN": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "How do refunds work (method, timing), and are accessory bundles handled differently?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>We process our returns within 1 week upon receiving the bike.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_A7xJtr": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What packaging is required for returns (original box/foam)? What if I no longer have the box?",
+            "icon": "question_mark",
+            "row_content": "<p>Original box is required. We suggest that you keep the box. Please contact us at <a href=\"mailto:info@rinosbike.eu\"><span style=\"text-decoration:underline\">info@rinosbike.eu</span></a> for more questions.<br/><br/></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_X9gg7P": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How are shipping costs handled for approved warranty cases (both directions, EU vs non-EU)?",
+            "icon": "question_mark",
+            "row_content": "<p>We cover the shipping costs for the warranty cases in the country where the product was bought from. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_DYXA3y": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is there an extended warranty I can buy beyond the standard period?",
+            "icon": "question_mark",
+            "row_content": "<p>Currently we do not offer this service. </p>",
             "page": ""
           }
         }
@@ -170,7 +197,10 @@
         "collapsible_row_G4V6yi",
         "collapsible_row_3UDbaw",
         "collapsible_row_ULwXhE",
-        "collapsible_row_jCtjUN"
+        "collapsible_row_jCtjUN",
+        "collapsible_row_A7xJtr",
+        "collapsible_row_X9gg7P",
+        "collapsible_row_DYXA3y"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
