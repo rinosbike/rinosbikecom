@@ -159,7 +159,7 @@
           "settings": {
             "heading": "What packaging is required for returns (original box/foam)? What if I no longer have the box?",
             "icon": "question_mark",
-            "row_content": "<p>Original box is required. We suggest that you keep the box. Please contact us at <a href=\"mailto:info@rinosbike.eu\"><span style=\"text-decoration:underline\">info@rinosbike.eu</span></a> for more questions.<br/><br/></p>",
+            "row_content": "<p>Original box is required. We suggest that you keep the box. The costumer has to ensure that the bike is completely safe to transport back to the seller. Damage made from unsafe packaging can incur costs to the costumer. Please contact us at <a href=\"mailto:info@rinosbike.eu\"><span style=\"text-decoration:underline\">info@rinosbike.eu</span></a> for more questions.</p>",
             "page": ""
           }
         },
@@ -168,7 +168,7 @@
           "settings": {
             "heading": "How are shipping costs handled for approved warranty cases (both directions, EU vs non-EU)?",
             "icon": "question_mark",
-            "row_content": "<p>We cover the shipping costs for the warranty cases in the country where the product was bought from. </p>",
+            "row_content": "<p>We cover the shipping costs for the applicable warranty cases in the country where the product was bought from. </p>",
             "page": ""
           }
         },
