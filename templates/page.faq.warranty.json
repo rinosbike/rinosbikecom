@@ -105,7 +105,7 @@
           "settings": {
             "heading": "Can I return a bike after assembly/test rides? Are cosmetic marks/restocking fees a factor?",
             "icon": "question_mark",
-            "row_content": "<p>You can return a bike within 14 days after delivery to us if it is unused.</p>",
+            "row_content": "<p>You can return a bike within 14 days after delivery to us if it is unused. </p>",
             "page": ""
           }
         },
@@ -123,7 +123,7 @@
           "settings": {
             "heading": "If no defect is found after inspection, will I be charged an evaluation/return fee?",
             "icon": "question_mark",
-            "row_content": "<p>Yes, we will charge an additional fee </p>",
+            "row_content": "<p>Yes, If no major parts are broken we will do a full and thorough inspection of the bike and it's functionality. Our flat rate for checking the bike is 100 eur. </p>",
             "page": ""
           }
         },
@@ -141,7 +141,7 @@
           "settings": {
             "heading": "Who pays return shipping: I changed my mind vs. there’s a quality/defect issue?",
             "icon": "question_mark",
-            "row_content": "<p>You can send the bike back to us and we will reimburse you the original cost of the bike if the bike is unused. </p>",
+            "row_content": "<p>You can send the bike back to us and we will reimburse you the original cost of the bike - if the bike is unused or didn't incur any damage due to unsafe packaging. </p>",
             "page": ""
           }
         },
