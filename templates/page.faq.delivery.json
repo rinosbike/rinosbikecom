@@ -22,135 +22,135 @@
         "collapsible_row_yPYb9G": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How much assembly is required when I receive my bike?",
+            "heading": "How much does the shipping cost for Rinos bikes?",
             "icon": "question_mark",
-            "row_content": "<p>Our bikes arrive 90% assembled. You’ll only need to attach the front wheel, seatpost, and pedals (included). Basic tools are included, and we also provide a setup video for reference.</p>",
+            "row_content": "<p>All of our bikes have a surplus of 29.99 eur for shipping</p>",
             "page": ""
           }
         },
         "collapsible_row_UAjFct": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Are tools included in the box?",
+            "heading": "When I order a bike, do I get a postage tracking link?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, when purchasing our product, a tracking number is sent once it’s in the delivery registry</p>",
             "page": ""
           }
         },
         "collapsible_row_nrB8EN": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How is the bike packaged for shipping?",
+            "heading": "I have not received a tracking link, who should I contact?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Write us on <a href=\"mailto:info@rinosbike.eu\"><span style=\"text-decoration:underline\">info@rinosbike.eu</span></a> and we will get back to you as soon as possible.<br/><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_yg9jHc": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I request the bike to be pre-assembled?",
+            "heading": "What is the delivery time?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>It takes from 3-8 days working days to deliver. Although it depends which country the product is being delivered and how accessible the location is by delivery services</p>",
             "page": ""
           }
         },
         "collapsible_row_Af8jLJ": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do brakes/derailleurs arrive pre-adjusted, or should I expect to index gears and re-center calipers?",
+            "heading": "Which shipping services do you use?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>DPD, DHL and UPS services</p>",
             "page": ""
           }
         },
         "collapsible_row_TFYEed": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Are the wheels pre-trued out of the box, or should I expect minor spoke adjustments after the first rides?",
+            "heading": "Is a signature required on delivery, and how many delivery attempts are made before return to sender?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Signature will be required on delivery.</p>",
             "page": ""
           }
         },
         "collapsible_row_qceFdA": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do you offer an optional “fully assembled” delivery service?",
+            "heading": "What are the shipping box dimensions/weight so I can plan elevator/transport disposal?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>It is 145*30*72cm for our bikes.<br/><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_fz6zJ7": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Can you ship to Packstations/lockers or PO Boxes?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>We do not ship to packstation due to the size of the package but packages can be picked up at packet shops or post offices near your address.</p>",
             "page": ""
           }
         },
         "collapsible_row_hG9HwD": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Do you ship outside the EU/UK/US? Who pays customs, VAT, and brokerage on import?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, we will assist in customs declarations for some countries, please contact us at info@rinosbike.eu</p>",
             "page": ""
           }
         },
         "collapsible_row_inL6RC": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Can I request in-person pickup in the EU to avoid shipping damage/costs?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>It is possible to pick up the bike in Frankfurt (Oder), in this case please contact us via info@rinosbike.eu</p>",
             "page": ""
           }
         },
         "collapsible_row_RQFxky": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Will I receive a tracking link automatically, and can the courier send SMS/email updates?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>You will receive a tracking link automatically. </p>",
             "page": ""
           }
         },
         "collapsible_row_G4V6yi": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "If my order contains items with different lead times, do you split shipments or wait and send together?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>We will optimise delivery so you receive the products as soon as possible. </p>",
             "page": ""
           }
         },
         "collapsible_row_3UDbaw": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "What are the typical delivery times by country/region, and do remote islands (e.g., Madeira) differ?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>It is between 3-5 days, sometimes small delays due to public holidays. Remote islands can take longer with delivery</p>",
             "page": ""
           }
         },
         "collapsible_row_ULwXhE": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Which hard cases fit the frame best (bar width/rotor clearance) for airline travel?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>It will depend on the specific bike case but our bikes are transport friendly.</p>",
             "page": ""
           }
         },
         "collapsible_row_jCtjUN": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "How quickly can you ship crash-replacement parts to a race venue or hotel?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>We ship within 24 hours.</p>",
             "page": ""
           }
         }
