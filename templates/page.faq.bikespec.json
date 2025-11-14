@@ -100,15 +100,6 @@
             "page": ""
           }
         },
-        "collapsible_row_inL6RC": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Are Odin road frames UCI approved for racing, and which models carry the certification?",
-            "icon": "question_mark",
-            "row_content": "<p>All of our Odin frames were made by a factory which is UCI certified.</p>",
-            "page": ""
-          }
-        },
         "collapsible_row_RQFxky": {
           "type": "collapsible_row",
           "settings": {
@@ -237,7 +228,6 @@
         "collapsible_row_qceFdA",
         "collapsible_row_fz6zJ7",
         "collapsible_row_hG9HwD",
-        "collapsible_row_inL6RC",
         "collapsible_row_RQFxky",
         "collapsible_row_G4V6yi",
         "collapsible_row_3UDbaw",
