@@ -180,6 +180,54 @@
         "feature_4_text": "Quick shipping with careful packaging"
       }
     },
+    "image_with_text_yXCbYy": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_RGQMCM": {
+          "type": "heading",
+          "settings": {
+            "heading": "Consultations",
+            "heading_size": "h1"
+          }
+        },
+        "text_9KcJVM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our team is here to help — write us at info@rinosbike.eu or book a call at your convenience.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_HrLNdT": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book a consultation",
+            "button_link": "https://calendly.com/rinosbike-info/30min",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_RGQMCM",
+        "text_9KcJVM",
+        "button_HrLNdT"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/DSCF5314.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "bottom",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "rich_text_rDAJQC": {
       "type": "rich-text",
       "blocks": {
@@ -466,54 +514,6 @@
         "show_collection_description": true,
         "show_collection_image": false,
         "color_scheme": "background-1"
-      }
-    },
-    "image_with_text_yXCbYy": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_RGQMCM": {
-          "type": "heading",
-          "settings": {
-            "heading": "Consultations",
-            "heading_size": "h1"
-          }
-        },
-        "text_9KcJVM": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Our team is here to help — write us at info@rinosbike.eu or book a call at your convenience.</p>",
-            "text_style": "body"
-          }
-        },
-        "button_HrLNdT": {
-          "type": "button",
-          "settings": {
-            "button_label": "Book a consultation",
-            "button_link": "https://calendly.com/rinoshandelsgmbh/30min",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_RGQMCM",
-        "text_9KcJVM",
-        "button_HrLNdT"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/DSCF5314.jpg",
-        "height": "adapt",
-        "desktop_image_width": "small",
-        "layout": "image_first",
-        "desktop_content_position": "bottom",
-        "desktop_content_alignment": "left",
-        "content_layout": "overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     }
   },
