@@ -93,6 +93,54 @@
         "material_variabel_text": "{{ product.metafields.custom.material_highlight.value }}"
       }
     },
+    "image_with_text_nqdbBJ": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_aCyjn8": {
+          "type": "heading",
+          "settings": {
+            "heading": "Odin 1.",
+            "heading_size": "h1"
+          }
+        },
+        "text_Mcp9GA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your First Serious Carbon Bike.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_QyrqrJ": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_aCyjn8",
+        "text_Mcp9GA",
+        "button_QyrqrJ"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/No_20to_20zaczynamy_20_F0_9F_9A_B2_20Dzi_C4_99ki_20_40rinosbike.pl_20mam_20okazj_C4_99_20sprawdzi_C4_87_20ten_20rower_20w_20akcji._20To_20dopiero_20pocz_C4_85tek_20naszej_20wsp_C3_B3.jpg",
+        "height": "small",
+        "desktop_image_width": "large",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "trust_marquee_GzHGBH": {
       "type": "trust-marquee",
       "name": "Trust Marquee Banner",
@@ -153,6 +201,7 @@
         "text_zYMPmN",
         "button_Jg74em"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
@@ -232,6 +281,7 @@
       "blocks": {
         "column_d44Ld3": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/SnapInsta.to_545505071_18075032927516140_6687439362698984429_n.jpg",
             "title": "",
@@ -244,6 +294,7 @@
       "block_order": [
         "column_d44Ld3"
       ],
+      "disabled": true,
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "",
@@ -372,9 +423,10 @@
     "conversionbanner_2_D9aHDL",
     "main",
     "bike_parts_highlight_1_6XGKyM",
+    "custom_liquid_fFQWdd",
+    "image_with_text_nqdbBJ",
     "trust_marquee_GzHGBH",
     "klarna_banner_1_g363fF",
-    "custom_liquid_fFQWdd",
     "rich_text_NbwtPq",
     "multicolumn_KfMJ9G",
     "multicolumn_wrrqN8",
