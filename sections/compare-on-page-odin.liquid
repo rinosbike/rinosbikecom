@@ -628,30 +628,54 @@ function detectCurrentBike() {
       'odin-7-1': 'odin7_1'
     };
     
-    return handleMap[productHandle] || null;
-  {% else %}
-    // Fallback: detect from URL
-    const path = window.location.pathname;
-    for (const [key, data] of Object.entries(bikeData)) {
-      if (path.includes(data.handle)) {
-        return key;
-      }
+    if (handleMap[productHandle]) {
+      return handleMap[productHandle];
     }
-    return null;
   {% endif %}
+  
+  // Fallback: detect from URL path (works for all locales)
+  const path = window.location.pathname.toLowerCase();
+  
+  // Check for each bike handle in the URL
+  if (path.includes('odin-1') || path.includes('odin1')) return 'odin1';
+  if (path.includes('odin-7-1') || path.includes('odin71')) return 'odin7_1';
+  if (path.includes('odin-6-1') || path.includes('odin61')) return 'odin6_1';
+  if (path.includes('odin-6') || path.includes('odin6')) return 'odin6_0';
+  if (path.includes('odin-4') || path.includes('odin4')) return 'odin4';
+  if (path.includes('odin-3') || path.includes('odin3')) return 'odin3';
+  
+  // Additional check: look at page title or meta for bike name
+  const pageTitle = document.title.toUpperCase();
+  if (pageTitle.includes('ODIN 1')) return 'odin1';
+  if (pageTitle.includes('ODIN 7.1')) return 'odin7_1';
+  if (pageTitle.includes('ODIN 6.1')) return 'odin6_1';
+  if (pageTitle.includes('ODIN 6.0') || pageTitle.includes('ODIN 6')) return 'odin6_0';
+  if (pageTitle.includes('ODIN 4')) return 'odin4';
+  if (pageTitle.includes('ODIN 3')) return 'odin3';
+  
+  console.log('Bike comparison widget: Could not detect bike from URL:', path);
+  return null;
 }
 
 function initializeComparison() {
   const currentBikeKey = detectCurrentBike();
   
+  // Debug logging
+  console.log('Bike comparison widget initialized');
+  console.log('Detected bike key:', currentBikeKey);
+  console.log('Current URL:', window.location.pathname);
+  console.log('Current locale:', document.documentElement.lang || 'unknown');
+  
   if (!currentBikeKey) {
-    // Not on a bike product page - hide widget or show message
+    console.warn('Bike comparison widget: Could not detect current bike - hiding widget');
     document.querySelector('.bike-comparison-widget').style.display = 'none';
     return;
   }
   
   const currentBike = bikeData[currentBikeKey];
   const tView = document.querySelector('.bike-comparison-widget').dataset.tView || 'View';
+  
+  console.log('Current bike:', currentBike.name);
   
   // Set current bike display
   document.getElementById('current-bike-name').textContent = currentBike.name;
@@ -675,6 +699,8 @@ function initializeComparison() {
   
   // Add change listener for bike 2
   bike2Select.addEventListener('change', updateComparison);
+  
+  console.log('Bike comparison widget: Initialization complete');
 }
 
 function updateComparison() {
