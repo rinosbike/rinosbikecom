@@ -1,0 +1,204 @@
+{% comment %}
+  Trust Marquee Banner - Canyon Style
+  Multi-language support: EN, ES, DE, FR, PL, BG
+{% endcomment %}
+
+{% assign current_locale = request.locale.iso_code %}
+
+{% comment %} Define translations {% endcomment %}
+{% if current_locale == 'es' %}
+  {% assign text_1 = "Envío Gratis en UE a partir de €100" %}
+  {% assign text_2 = "Garantía de 2 años en cuadro" %}
+  {% assign text_3 = "Devolución 30 días garantizada" %}
+  {% assign text_4 = "Ingeniería Alemana" %}
+{% elsif current_locale == 'de' %}
+  {% assign text_1 = "Kostenloser EU-Versand ab €100" %}
+  {% assign text_2 = "2 Jahre Rahmengarantie" %}
+  {% assign text_3 = "30 Tage Geld-zurück-Garantie" %}
+  {% assign text_4 = "Deutsche Ingenieurskunst" %}
+{% elsif current_locale == 'fr' %}
+  {% assign text_1 = "Livraison Gratuite UE dès €100" %}
+  {% assign text_2 = "Garantie cadre 2 ans" %}
+  {% assign text_3 = "Satisfait ou remboursé 30 jours" %}
+  {% assign text_4 = "Ingénierie Allemande" %}
+{% elsif current_locale == 'pl' %}
+  {% assign text_1 = "Darmowa wysyłka UE od €100" %}
+  {% assign text_2 = "2-letnia gwarancja na ramę" %}
+  {% assign text_3 = "30-dniowa gwarancja zwrotu pieniędzy" %}
+  {% assign text_4 = "Niemiecka inżynieria" %}
+{% elsif current_locale == 'bg' %}
+  {% assign text_1 = "Безплатна доставка в ЕС над €100" %}
+  {% assign text_2 = "2-годишна гаранция на рамката" %}
+  {% assign text_3 = "30-дневна гаранция за връщане" %}
+  {% assign text_4 = "Немско инженерство" %}
+{% else %}
+  {% comment %} Default to English {% endcomment %}
+  {% assign text_1 = "Free EU Shipping Over €100" %}
+  {% assign text_2 = "2-Year Frame Warranty" %}
+  {% assign text_3 = "30-Day Money-Back Guarantee" %}
+  {% assign text_4 = "German Engineering" %}
+{% endif %}
+
+<div class="trust-marquee-wrapper">
+  <div class="trust-marquee">
+    <div class="trust-marquee-content">
+      {% for i in (1..2) %}
+        <span class="trust-item">{{ text_1 }}</span>
+        <span class="trust-divider">•</span>
+        <span class="trust-item">{{ text_2 }}</span>
+        <span class="trust-divider">•</span>
+        <span class="trust-item">{{ text_3 }}</span>
+        <span class="trust-divider">•</span>
+        <span class="trust-item">{{ text_4 }}</span>
+        <span class="trust-divider">•</span>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+.trust-marquee-wrapper {
+  background-color: {{ section.settings.bg_color }};
+  overflow: hidden;
+  padding: {{ section.settings.padding_vertical }}px 0;
+  width: 100%;
+}
+
+.trust-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.trust-marquee-content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee {{ section.settings.speed }}s linear infinite;
+  will-change: transform;
+}
+
+.trust-marquee-wrapper:hover .trust-marquee-content {
+  animation-play-state: paused;
+}
+
+.trust-item {
+  color: {{ section.settings.text_color }};
+  font-size: {{ section.settings.font_size }}px;
+  font-weight: {{ section.settings.font_weight }};
+  letter-spacing: 0.5px;
+  text-transform: {{ section.settings.text_transform }};
+  padding: 0 20px;
+  display: inline-block;
+}
+
+.trust-divider {
+  color: {{ section.settings.text_color }};
+  opacity: 0.5;
+  font-size: {{ section.settings.font_size }}px;
+  padding: 0 10px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .trust-item {
+    font-size: {{ section.settings.font_size | minus: 2 }}px;
+    padding: 0 15px;
+  }
+  
+  .trust-marquee-content {
+    animation: marquee {{ section.settings.speed | times: 0.7 }}s linear infinite;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Trust Marquee Banner",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Translations auto-detect based on store language: EN, ES, DE, FR, PL, BG. To edit translations, modify the code."
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Font Size",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font Weight",
+      "options": [
+        {"value": "400", "label": "Normal"},
+        {"value": "500", "label": "Medium"},
+        {"value": "600", "label": "Semi Bold"},
+        {"value": "700", "label": "Bold"}
+      ],
+      "default": "500"
+    },
+    {
+      "type": "select",
+      "id": "text_transform",
+      "label": "Text Style",
+      "options": [
+        {"value": "none", "label": "Normal"},
+        {"value": "uppercase", "label": "Uppercase"},
+        {"value": "capitalize", "label": "Capitalize"}
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "s",
+      "label": "Scroll Speed",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Vertical Padding",
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Marquee Banner"
+    }
+  ]
+}
+{% endschema %}
