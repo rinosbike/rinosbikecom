@@ -96,19 +96,6 @@
         "padding_bottom": 52
       }
     },
-    "trust_marquee_8WK8DV": {
-      "type": "trust-marquee",
-      "name": "Trust Marquee Banner",
-      "settings": {
-        "bg_color": "#000000",
-        "text_color": "#FFFFFF",
-        "font_size": 14,
-        "font_weight": "500",
-        "text_transform": "uppercase",
-        "speed": 30,
-        "padding_vertical": 12
-      }
-    },
     "image_with_text_FwXX6A": {
       "type": "image-with-text",
       "blocks": {
@@ -155,6 +142,19 @@
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "trust_marquee_8WK8DV": {
+      "type": "trust-marquee",
+      "name": "Trust Marquee Banner",
+      "settings": {
+        "bg_color": "#000000",
+        "text_color": "#FFFFFF",
+        "font_size": 14,
+        "font_weight": "500",
+        "text_transform": "uppercase",
+        "speed": 30,
+        "padding_vertical": 12
       }
     },
     "multicolumn_KfMJ9G": {
@@ -286,20 +286,20 @@
       "type": "product-description-sec1",
       "settings": {}
     },
-    "road_assembly_PREEed": {
-      "type": "Road-assembly",
-      "name": "Assembly Video - Odin",
-      "settings": {
-        "video_url": "https://www.youtube.com/embed/iLWtW4_HscI",
-        "video_thumbnail": "shopify://shop_images/Group_755_2.jpg"
-      }
-    },
     "odin_sizing_guide_gkrKDi": {
       "type": "odin-sizing-guide",
       "name": "ODIN Sizing Guide",
       "settings": {
         "geometry_image": "shopify://shop_images/80extk.png",
         "contact_url": "/pages/contact"
+      }
+    },
+    "road_assembly_PREEed": {
+      "type": "Road-assembly",
+      "name": "Assembly Video - Odin",
+      "settings": {
+        "video_url": "https://www.youtube.com/embed/iLWtW4_HscI",
+        "video_thumbnail": "shopify://shop_images/Group_755_2.jpg"
       }
     },
     "rich_text_7we9KY": {
@@ -369,8 +369,8 @@
     "multicolumn_KfMJ9G",
     "image_with_text_jtxRde",
     "product_description_sec1_Nn4UXc",
-    "road_assembly_PREEed",
     "odin_sizing_guide_gkrKDi",
+    "road_assembly_PREEed",
     "rich_text_7we9KY",
     "related-products",
     "review_section_small_fKwkg6"
