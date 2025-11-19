@@ -157,50 +157,6 @@
         "padding_vertical": 12
       }
     },
-    "rich_text_bQHqBy": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_RRfHUa": {
-          "type": "heading",
-          "settings": {
-            "heading": "The Rinos Philosophy",
-            "heading_size": "h0"
-          }
-        },
-        "text_GWbcnp": {
-          "type": "text",
-          "settings": {
-            "text": ""
-          }
-        },
-        "button_7fz79L": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_RRfHUa",
-        "text_GWbcnp",
-        "button_7fz79L"
-      ],
-      "custom_css": [],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "multicolumn_KfMJ9G": {
       "type": "multicolumn",
       "blocks": {
@@ -410,7 +366,6 @@
     "custom_liquid_fFQWdd",
     "image_with_text_FwXX6A",
     "trust_marquee_8WK8DV",
-    "rich_text_bQHqBy",
     "multicolumn_KfMJ9G",
     "image_with_text_jtxRde",
     "product_description_sec1_Nn4UXc",
