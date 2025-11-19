@@ -11,6 +11,7 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
@@ -152,6 +153,7 @@
         "collapsible_row_G4V6yi",
         "collapsible_row_3UDbaw"
       ],
+      "disabled": true,
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
@@ -166,6 +168,16 @@
         "desktop_layout": "image_second",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "section_faq_assembly_iXKgzR": {
+      "type": "section-faq-assembly",
+      "name": "FAQ Assembly",
+      "settings": {
+        "heading": "Assembly FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "open_first_collapsible_row": false
       }
     },
     "rich_text_VgGpR4": {
@@ -214,6 +226,7 @@
   "order": [
     "main",
     "collapsible_content_XmhYQB",
+    "section_faq_assembly_iXKgzR",
     "rich_text_VgGpR4",
     "contact_form_RyXPCd"
   ]
