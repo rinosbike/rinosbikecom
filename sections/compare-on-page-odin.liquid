@@ -85,152 +85,118 @@
 
 <style>
 .bike-comparison-widget {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 0 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* Container */
 .comparison-container {
   background: #fff;
-  border: 1px solid #e0e0e0;
   border-radius: 12px;
-  padding: 40px;
+  padding: 32px;
 }
 
 /* Header */
 .comparison-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
 }
 
 .comparison-title {
-  font-size: 1.8em;
+  font-size: 1.6em;
   font-weight: 700;
-  margin-bottom: 8px;
   color: #000;
-}
-
-.comparison-subtitle {
-  font-size: 1em;
-  color: #666;
   margin: 0;
 }
 
-/* Bike Selectors */
+/* Selectors Row */
 .bike-selectors {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  gap: 30px;
+  gap: 24px;
   align-items: end;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
 }
 
 .bike-selector label {
-  display: block;
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: 600;
-  color: #666;
-  margin-bottom: 8px;
-  text-transform: uppercase;
+  color: #444;
   letter-spacing: 0.5px;
+  margin-bottom: 6px;
 }
 
 .current-bike-display {
-  width: 100%;
-  padding: 12px 16px;
+  padding: 10px 14px;
   font-size: 1em;
   font-weight: 600;
   color: #000;
-  background: #f5f5f5;
-  border: 2px solid #e0e0e0;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.current-bike-display::before {
-  content: "📍";
-  font-size: 1.2em;
+  background: #f6f6f6;
+  border-radius: 8px;
 }
 
 .bike-select {
-  width: 100%;
-  padding: 12px 16px;
-  font-size: 1em;
-  font-weight: 600;
-  color: #000;
+  padding: 10px 14px;
   background: #fafafa;
-  border: 2px solid #e0e0e0;
-  border-radius: 6px;
-  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-weight: 600;
   transition: all 0.2s;
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-position: right 14px center;
   background-repeat: no-repeat;
-  background-position: right 16px center;
-  padding-right: 45px;
+  padding-right: 40px;
 }
 
-.bike-select:hover {
-  border-color: #000;
-  background-color: #fff;
-}
-
+.bike-select:hover,
 .bike-select:focus {
-  outline: none;
   border-color: #000;
-  background-color: #fff;
+  background: #fff;
 }
 
+/* VS Circle */
 .vs-divider {
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   background: #000;
   border-radius: 50%;
+  font-size: 0.8em;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.9em;
-  letter-spacing: 1px;
-  flex-shrink: 0;
 }
 
-/* Comparison Images */
+/* Images */
 .comparison-images {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 30px;
-}
-
-.bike-image-container {
-  text-align: center;
+  gap: 28px;
+  margin-bottom: 20px;
 }
 
 .bike-image {
   width: 100%;
-  max-height: 200px;
+  max-height: 180px;
   object-fit: contain;
-  margin-bottom: 15px;
   background: #fafafa;
+  padding: 16px;
   border-radius: 8px;
-  padding: 20px;
 }
 
 .bike-name {
-  font-size: 1.2em;
   font-weight: 700;
-  margin: 0;
+  font-size: 1em;
+  margin: 8px 0 0;
+  color: #000;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #000;
 }
 
-/* Comparison Table */
+/* Table */
 .comparison-table-wrapper {
   display: none;
 }
@@ -242,173 +208,90 @@
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .comparison-table thead th {
+  padding: 12px 10px;
+  font-size: 0.8em;
   background: #fafafa;
-  padding: 15px;
-  font-weight: 600;
-  font-size: 0.9em;
-  text-align: left;
-  border-bottom: 2px solid #e0e0e0;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
   color: #000;
-}
-
-.comparison-table thead th.spec-label-col {
-  width: 35%;
+  font-weight: 600;
 }
 
 .comparison-table tbody tr {
-  border-bottom: 1px solid #f0f0f0;
-  transition: background 0.2s;
-}
-
-.comparison-table tbody tr:hover {
-  background: #fafafa;
+  border-bottom: 1px solid #eee;
 }
 
 .comparison-table tbody td {
-  padding: 15px;
-  font-size: 0.95em;
+  padding: 12px 10px;
+  font-size: 0.9em;
 }
 
 .comparison-table tbody td:first-child {
-  font-weight: 600;
   color: #666;
+  font-size: 0.75em;
   text-transform: uppercase;
-  font-size: 0.85em;
   letter-spacing: 0.5px;
 }
 
-.comparison-table tbody td:not(:first-child) {
-  color: #000;
-  font-weight: 500;
-}
-
 .comparison-table tbody tr.different {
-  background: #fffbea;
+  background: #fffef3;
 }
 
-.comparison-table tbody tr.different:hover {
-  background: #fff9d6;
-}
-
-.comparison-table tbody tr.different td:not(:first-child) {
-  font-weight: 700;
-}
-
-/* Action Buttons */
 .comparison-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #f0f0f0;
+  gap: 16px;
+  padding-top: 16px;
+  margin-top: 10px;
 }
 
 .bike-link {
-  display: block;
-  padding: 14px 24px;
+  padding: 12px 16px;
   background: #000;
   color: #fff;
   text-align: center;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95em;
-  border-radius: 6px;
-  transition: all 0.3s;
-  letter-spacing: 0.3px;
+  font-size: 0.9em;
+  transition: all 0.2s;
 }
 
 .bike-link:hover {
-  background: #333;
+  opacity: 0.85;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Empty State */
 .empty-state {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-  text-align: center;
+  padding: 40px 10px;
+  opacity: 0.8;
 }
 
-.empty-state.hidden {
-  display: none;
-}
-
-.empty-state svg {
-  width: 60px;
-  height: 60px;
-  color: #ccc;
-  margin-bottom: 20px;
-}
-
-.empty-state p {
-  font-size: 1.1em;
-  color: #999;
-  margin: 0;
-}
-
-/* Mobile Responsive */
+/* MOBILE */
 @media (max-width: 768px) {
   .comparison-container {
-    padding: 25px 20px;
-  }
-
-  .comparison-title {
-    font-size: 1.4em;
-  }
-
-  .comparison-subtitle {
-    font-size: 0.9em;
+    padding: 20px 16px;
   }
 
   .bike-selectors {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
+    text-align: center;
   }
 
   .vs-divider {
-    order: 2;
-    margin: 0 auto;
-  }
-
-  .bike-selector:first-child {
-    order: 1;
-  }
-
-  .bike-selector:last-child {
-    order: 3;
+    margin: auto;
   }
 
   .comparison-images {
     grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .comparison-table {
-    font-size: 0.85em;
-  }
-
-  .comparison-table thead th,
-  .comparison-table tbody td {
-    padding: 10px 8px;
   }
 
   .comparison-actions {
     grid-template-columns: 1fr;
-  }
-
-  .bike-link {
-    font-size: 0.9em;
-    padding: 12px 20px;
   }
 }
 </style>
