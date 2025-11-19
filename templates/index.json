@@ -122,8 +122,8 @@
         "color_scheme": "background-2",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "stack_images_on_mobile": false,
+        "show_text_below": false
       }
     },
     "trust_marquee_3zFtQb": {
@@ -131,7 +131,7 @@
       "name": "Trust Marquee Banner",
       "settings": {
         "bg_color": "#000000",
-        "text_color": "#FFFFFF",
+        "text_color": "#ffffff",
         "font_size": 14,
         "font_weight": "500",
         "text_transform": "uppercase",
