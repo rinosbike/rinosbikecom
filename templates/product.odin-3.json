@@ -9,30 +9,6 @@
  */
 {
   "sections": {
-    "promovideo_m4Uqqc": {
-      "type": "promovideo",
-      "disabled": true,
-      "name": "Video Hero",
-      "settings": {
-        "show_content": true,
-        "show_overlay": true,
-        "heading": "Welcome to the road, riders.",
-        "subheading": "Discover the Odin. Made for the Road, UCI certified.",
-        "button_text": "",
-        "button_link": ""
-      }
-    },
-    "conversionbanner_2_D9aHDL": {
-      "type": "conversionbanner-2",
-      "disabled": true,
-      "settings": {
-        "quality_text": "great quality",
-        "payment_text": "secure payment",
-        "delivery_text": "fast delivery",
-        "return_text": "14 days return",
-        "support_text": "Lifetime service"
-      }
-    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -107,15 +83,78 @@
     },
     "klarna_banner_1_g363fF": {
       "type": "klarna-banner-1",
+      "disabled": true,
       "settings": {}
     },
     "custom_liquid_fFQWdd": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
+      }
+    },
+    "trust_marquee_8WK8DV": {
+      "type": "trust-marquee",
+      "name": "Trust Marquee Banner",
+      "settings": {
+        "bg_color": "#000000",
+        "text_color": "#FFFFFF",
+        "font_size": 14,
+        "font_weight": "500",
+        "text_transform": "uppercase",
+        "speed": 30,
+        "padding_vertical": 12
+      }
+    },
+    "image_with_text_FwXX6A": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_rcaPtk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Odin 3.",
+            "heading_size": "h1"
+          }
+        },
+        "text_zEmPrU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your Performance Carbon Road Bike.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_7YfRc9": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_rcaPtk",
+        "text_zEmPrU",
+        "button_7YfRc9"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Odin_3_-_6_Gold.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "multicolumn_KfMJ9G": {
@@ -135,9 +174,8 @@
         "column_8hGHg7": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Odin_3_-_4_Gold_214e796c-4a2f-4023-9752-88e60b6d377a.png",
-            "title": "Shimano 105, <em><strong>with full carbon frame and fork.</strong></em>",
-            "text": "<p>A lightweight yet durable TORAY T800 carbon setup paired with Shimano 105 2x11 gearing for smooth and reliable performance.</p>",
+            "title": "<strong>Toray T800 carbon frame, fork & seatpost - </strong>only 8.8kg complete bike weight.",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -145,9 +183,26 @@
         "column_4ERxGT": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Odin_3_-_3_Gold_5a317ba9-a812-4d89-bd72-ee7103bdf624.png",
-            "title": "<em><strong>High-End</strong></em> Mid-Entry Model",
-            "text": "<p>Designed for riders who want to upgrade to pro-level feel without the pro-level price tag.</p>",
+            "title": "<strong>Shimano 105 R7000, 22 speeds.</strong> Internal cable routing for clean lines and better aerodynamics.",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_YT4BDk": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Hydraulic disc brakes </strong>for powerful and reliable stopping power.",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_y6zPkf": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Deep-section wheels </strong>with aerodynamic profile.",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -156,15 +211,17 @@
       "block_order": [
         "column_8wYHLe",
         "column_8hGHg7",
-        "column_4ERxGT"
+        "column_4ERxGT",
+        "column_YT4BDk",
+        "column_y6zPkf"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "The Odin 3, at a glance.",
+        "title": "",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
+        "columns_desktop": 2,
         "column_alignment": "left",
         "background_style": "primary",
         "button_label": "",
@@ -207,6 +264,7 @@
         "text_mD3nyc",
         "button_YwMQV7"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/d80c7d0895ddc1617dc72cea1500e69a-2.png",
@@ -233,64 +291,16 @@
       "name": "Assembly Video - Odin",
       "settings": {
         "video_url": "https://www.youtube.com/embed/iLWtW4_HscI",
-        "video_thumbnail": "shopify://shop_images/Group_755_2.jpg",
-        "title": "Assemble Your Odin Road Bike",
-        "subtitle": "Watch how simple it is to set up The Odin. Everything you need, step by step.",
-        "watch_text": "Watch the guide",
-        "video_title": "Odin Road Bike Assembly Video",
-        "video_alt": "Odin road bike assembly video preview",
-        "benefit_1_title": "Easy to Follow",
-        "benefit_1_text": "Clear instructions that anyone can follow.",
-        "benefit_2_title": "Basic Tools",
-        "benefit_2_text": "Everything you need is included in the box.",
-        "benefit_3_title": "Quick Setup",
-        "benefit_3_text": "Ready to ride in just a few simple steps."
+        "video_thumbnail": "shopify://shop_images/Group_755_2.jpg"
       }
     },
     "odin_sizing_guide_gkrKDi": {
       "type": "odin-sizing-guide",
       "name": "ODIN Sizing Guide",
       "settings": {
-        "size_title": "Rinos Road Bicycle Sizing",
-        "geometry_title": "Geometry & Sizing Details",
-        "geometry_image": "shopify://shop_images/80extk.png"
+        "geometry_image": "shopify://shop_images/80extk.png",
+        "contact_url": "/pages/contact"
       }
-    },
-    "iso_video_section_bpCKLQ": {
-      "type": "ISO_Video_section",
-      "name": "Frame Test Multilingual",
-      "settings": {
-        "title": "",
-        "subtitle": "",
-        "vimeo_video_id": "1101897970",
-        "info_title": "",
-        "info_description": "",
-        "spec_1_label": "",
-        "spec_1_value": "",
-        "spec_2_label": "",
-        "spec_2_value": "",
-        "spec_3_label": "",
-        "spec_3_value": "",
-        "cta_text": "",
-        "cta_url": "",
-        "show_stats": true,
-        "stat_1_number": "",
-        "stat_1_label": "",
-        "stat_2_number": "",
-        "stat_2_label": "",
-        "stat_3_number": "",
-        "stat_3_label": "",
-        "stat_4_number": "",
-        "stat_4_label": ""
-      }
-    },
-    "review_section_small_fKwkg6": {
-      "type": "review-section-small",
-      "disabled": true,
-      "custom_css": [
-        ".review-section {margin-bottom: 25px;}"
-      ],
-      "settings": {}
     },
     "rich_text_7we9KY": {
       "type": "rich-text",
@@ -340,23 +350,29 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "review_section_small_fKwkg6": {
+      "type": "review-section-small",
+      "custom_css": [
+        ".review-section {margin-bottom: 25px;}"
+      ],
+      "settings": {}
     }
   },
   "order": [
-    "promovideo_m4Uqqc",
-    "conversionbanner_2_D9aHDL",
     "main",
     "bike_parts_highlight_1_6XGKyM",
     "klarna_banner_1_g363fF",
     "custom_liquid_fFQWdd",
+    "image_with_text_FwXX6A",
+    "trust_marquee_8WK8DV",
     "multicolumn_KfMJ9G",
     "image_with_text_jtxRde",
     "product_description_sec1_Nn4UXc",
     "road_assembly_PREEed",
     "odin_sizing_guide_gkrKDi",
-    "iso_video_section_bpCKLQ",
-    "review_section_small_fKwkg6",
     "rich_text_7we9KY",
-    "related-products"
+    "related-products",
+    "review_section_small_fKwkg6"
   ]
 }
