@@ -1,0 +1,517 @@
+{% comment %}
+  FAQ Delivery Section - Multi-language support
+  Languages: EN (default), ES, DE, FR, PL, BG
+{% endcomment %}
+
+{% assign current_locale = request.locale.iso_code %}
+
+{% comment %} Define all translations {% endcomment %}
+{% if current_locale == 'es' %}
+  {% assign q1 = "¿Cuánto cuesta el envío de las bicicletas Rinos?" %}
+  {% assign a1 = "Todas nuestras bicicletas tienen un recargo de 29,99 € por el envío." %}
+
+  {% assign q2 = "Cuando pido una bicicleta, ¿recibo un enlace de seguimiento del paquete?" %}
+  {% assign a2 = "Sí, al comprar nuestro producto, se envía un número de seguimiento en cuanto el pedido entra en el registro de entrega." %}
+
+  {% assign q3 = "No he recibido un enlace de seguimiento, ¿con quién debo contactar?" %}
+  {% assign a3 = "Escríbenos a info@rinosbike.eu y te responderemos lo antes posible." %}
+
+  {% assign q4 = "¿Cuál es el plazo de entrega?" %}
+  {% assign a4 = "El envío tarda entre 3 y 8 días laborables, dependiendo del país de destino y de lo accesible que sea la ubicación para los servicios de mensajería." %}
+
+  {% assign q5 = "¿Qué servicios de mensajería utilizáis?" %}
+  {% assign a5 = "Trabajamos con DPD, DHL y UPS." %}
+
+  {% assign q6 = "¿Se requiere firma en la entrega y cuántos intentos se hacen antes de devolver el paquete al remitente?" %}
+  {% assign a6 = "Se requiere firma en la entrega." %}
+
+  {% assign q7 = "¿Cuáles son las dimensiones/peso de la caja de envío para poder planificar ascensor/transporte y eliminación?" %}
+  {% assign a7 = "Para nuestras bicicletas la caja mide 145×30×72 cm." %}
+
+  {% assign q8 = "¿Podéis enviar a Packstations/taquillas o apartados de correos?" %}
+  {% assign a8 = "No enviamos a Packstations debido al tamaño del paquete, pero puedes recoger tu pedido en puntos de recogida o oficinas de correos cercanas a tu dirección." %}
+
+  {% assign q9 = "¿Hacéis envíos fuera de la UE/Reino Unido/EE. UU.? ¿Quién paga aduanas, IVA y gastos de gestión?" %}
+  {% assign a9 = "Sí, podemos ayudar con las declaraciones de aduana para algunos países. Por favor, contáctanos en info@rinosbike.eu" %}
+
+  {% assign q10 = "¿Puedo recoger la bicicleta en persona dentro de la UE para evitar daños de envío/costes?" %}
+  {% assign a10 = "Es posible recoger la bicicleta en Frankfurt (Oder). En este caso, contáctanos en info@rinosbike.eu" %}
+
+  {% assign q11 = "¿Recibiré automáticamente un enlace de seguimiento y puede el transportista enviar actualizaciones por SMS/correo electrónico?" %}
+  {% assign a11 = "Recibirás automáticamente un enlace de seguimiento." %}
+
+  {% assign q12 = "Si mi pedido contiene productos con diferentes plazos, ¿se envían por separado o en un solo envío?" %}
+  {% assign a12 = "Optimizamos el envío para que recibas tus productos lo antes posible." %}
+
+  {% assign q13 = "¿Cuáles son los plazos de entrega típicos por país/región y cambian para islas remotas (por ejemplo, Madeira)?" %}
+  {% assign a13 = "Normalmente son entre 3 y 5 días, con pequeños retrasos posibles en festivos. Para islas remotas el envío puede tardar más." %}
+
+  {% assign q14 = "¿Qué maletas rígidas se adaptan mejor al cuadro (ancho de manillar/espacio para discos) para viajar en avión?" %}
+  {% assign a14 = "Depende de la maleta específica, pero nuestras bicicletas son fáciles de transportar y se adaptan bien a la mayoría de maletas para bici." %}
+
+  {% assign q15 = "¿Con qué rapidez podéis enviar piezas de recambio por caída a un lugar de carrera u hotel?" %}
+  {% assign a15 = "Enviamos las piezas de recambio en un plazo de 24 horas." %}
+
+  {% assign contact_text = "Nuestra misión es siempre responder a cualquier pregunta que puedas tener. Nos importa la honestidad y la transparencia en todos los aspectos de nuestro trabajo. Si tienes más dudas que estas preguntas frecuentes no resuelven, contáctanos a través de info@rinosbike.eu o del formulario de contacto de abajo." %}
+  {% assign contact_heading = "Formulario de contacto" %}
+
+{% elsif current_locale == 'de' %}
+  {% assign q1 = "Wie hoch sind die Versandkosten für Rinos Bikes?" %}
+  {% assign a1 = "Für alle unsere Fahrräder berechnen wir zusätzlich 29,99 € Versandkosten." %}
+
+  {% assign q2 = "Bekomme ich beim Kauf eines Fahrrads einen Sendungsverfolgungslink?" %}
+  {% assign a2 = "Ja, beim Kauf unseres Produkts erhältst du eine Sendungsnummer, sobald das Paket im Zustellregister erfasst wurde." %}
+
+  {% assign q3 = "Ich habe keinen Tracking-Link erhalten – an wen kann ich mich wenden?" %}
+  {% assign a3 = "Schreibe uns an info@rinosbike.eu und wir melden uns so schnell wie möglich bei dir." %}
+
+  {% assign q4 = "Wie lange ist die Lieferzeit?" %}
+  {% assign a4 = "Die Lieferung dauert in der Regel 3–8 Werktage, abhängig vom Zielland und wie gut der Ort durch Paketdienste erreichbar ist." %}
+
+  {% assign q5 = "Welche Versanddienstleister nutzt ihr?" %}
+  {% assign a5 = "Wir versenden mit DPD, DHL und UPS." %}
+
+  {% assign q6 = "Ist bei der Lieferung eine Unterschrift erforderlich und wie viele Zustellversuche gibt es, bevor das Paket zurückgeschickt wird?" %}
+  {% assign a6 = "Bei der Zustellung ist eine Unterschrift erforderlich." %}
+
+  {% assign q7 = "Wie groß und schwer ist der Versandkarton, damit ich Aufzug/Transport/Entsorgung planen kann?" %}
+  {% assign a7 = "Für unsere Fahrräder beträgt die Kartongröße 145×30×72 cm." %}
+
+  {% assign q8 = "Versendet ihr an Packstationen/Locker oder Postfächer?" %}
+  {% assign a8 = "Wir versenden nicht an Packstationen, da das Paket zu groß ist, aber Pakete können in Paketshops oder Postfilialen in der Nähe deiner Adresse abgeholt werden." %}
+
+  {% assign q9 = "Versendet ihr außerhalb der EU/UK/USA? Wer übernimmt Zoll, MwSt. und Abfertigungsgebühren?" %}
+  {% assign a9 = "Ja, wir können bei der Zollabwicklung für einige Länder unterstützen. Bitte kontaktiere uns unter info@rinosbike.eu" %}
+
+  {% assign q10 = "Kann ich eine persönliche Abholung in der EU wählen, um Versandkosten und -schäden zu vermeiden?" %}
+  {% assign a10 = "Du kannst das Fahrrad in Frankfurt (Oder) persönlich abholen. Kontaktiere uns dafür bitte unter info@rinosbike.eu" %}
+
+  {% assign q11 = "Erhalte ich den Tracking-Link automatisch und kann der Zusteller SMS/E-Mail-Benachrichtigungen senden?" %}
+  {% assign a11 = "Du erhältst den Tracking-Link automatisch." %}
+
+  {% assign q12 = "Wenn meine Bestellung Artikel mit unterschiedlichen Lieferzeiten enthält, verschickt ihr separat oder alles zusammen?" %}
+  {% assign a12 = "Wir optimieren den Versand so, dass du deine Produkte so schnell wie möglich erhältst." %}
+
+  {% assign q13 = "Wie sind die typischen Lieferzeiten je Land/Region und gilt etwas anderes für entlegene Inseln (z. B. Madeira)?" %}
+  {% assign a13 = "In der Regel beträgt die Lieferzeit 3–5 Tage, mit möglichen kleinen Verzögerungen an Feiertagen. Für abgelegene Inseln kann die Zustellung länger dauern." %}
+
+  {% assign q14 = "Welche Hartschalenkoffer passen am besten zum Rahmen (Lenkerbreite/Bremsrotor-Freiraum) für Flugreisen?" %}
+  {% assign a14 = "Das hängt vom jeweiligen Fahrradkoffer ab, aber unsere Bikes sind transportfreundlich und passen in die meisten gängigen Fahrradkoffer." %}
+
+  {% assign q15 = "Wie schnell könnt ihr Crash-Replacement-Teile an einen Wettkampfort oder ein Hotel schicken?" %}
+  {% assign a15 = "Wir versenden solche Teile innerhalb von 24 Stunden." %}
+
+  {% assign contact_text = "Unsere Mission ist es immer, alle Ihre Fragen zu beantworten. Uns liegt Ehrlichkeit und Offenheit in allen Aspekten unserer Arbeit am Herzen. Wenn Sie weitere Fragen haben, die diese FAQ nicht beantworten, kontaktieren Sie uns bitte über info@rinosbike.eu oder das Kontaktformular unten." %}
+  {% assign contact_heading = "Kontaktformular" %}
+
+{% elsif current_locale == 'fr' %}
+  {% assign q1 = "Combien coûte la livraison des vélos Rinos ?" %}
+  {% assign a1 = "Tous nos vélos ont un supplément de 29,99 € pour les frais de livraison." %}
+
+  {% assign q2 = "Lorsque je commande un vélo, est-ce que je reçois un lien de suivi du colis ?" %}
+  {% assign a2 = "Oui, lors de l’achat de notre produit, un numéro de suivi est envoyé dès que la commande est enregistrée par le transporteur." %}
+
+  {% assign q3 = "Je n’ai pas reçu de lien de suivi, qui dois-je contacter ?" %}
+  {% assign a3 = "Veuillez nous écrire à info@rinosbike.eu et nous vous répondrons dès que possible." %}
+
+  {% assign q4 = "Quel est le délai de livraison ?" %}
+  {% assign a4 = "La livraison prend généralement entre 3 et 8 jours ouvrables, selon le pays de destination et l’accessibilité de l’adresse pour les services de livraison." %}
+
+  {% assign q5 = "Quels services de livraison utilisez-vous ?" %}
+  {% assign a5 = "Nous travaillons avec DPD, DHL et UPS." %}
+
+  {% assign q6 = "Une signature est-elle requise à la livraison et combien de tentatives sont effectuées avant un retour à l’expéditeur ?" %}
+  {% assign a6 = "Une signature est requise à la livraison." %}
+
+  {% assign q7 = "Quelles sont les dimensions/poids du carton d’expédition afin que je puisse organiser l’ascenseur/le transport et l’évacuation ?" %}
+  {% assign a7 = "Pour nos vélos, le carton mesure 145×30×72 cm." %}
+
+  {% assign q8 = "Pouvez-vous expédier vers des consignes automatiques/lockers ou des boîtes postales ?" %}
+  {% assign a8 = "Nous n’expédions pas vers les Packstations ni les consignes automatiques en raison de la taille du colis, mais les colis peuvent être récupérés dans des points relais ou bureaux de poste proches de votre adresse." %}
+
+  {% assign q9 = "Expédiez-vous en dehors de l’UE/UK/USA ? Qui paie les droits de douane, la TVA et les frais de dédouanement ?" %}
+  {% assign a9 = "Oui, nous pouvons aider pour les déclarations en douane dans certains pays. Veuillez nous contacter à info@rinosbike.eu" %}
+
+  {% assign q10 = "Puis-je demander un retrait en personne dans l’UE pour éviter les coûts/risques d’expédition ?" %}
+  {% assign a10 = "Il est possible de récupérer le vélo à Francfort (Oder). Dans ce cas, contactez-nous via info@rinosbike.eu" %}
+
+  {% assign q11 = "Vais-je recevoir automatiquement un lien de suivi, et le transporteur peut-il envoyer des mises à jour par SMS/e-mail ?" %}
+  {% assign a11 = "Vous recevrez automatiquement un lien de suivi." %}
+
+  {% assign q12 = "Si ma commande contient des articles avec des délais différents, envoyez-vous en plusieurs colis ou ensemble ?" %}
+  {% assign a12 = "Nous optimisons l’expédition pour que vous receviez vos produits le plus rapidement possible." %}
+
+  {% assign q13 = "Quels sont les délais de livraison typiques par pays/région, et qu’en est-il des îles éloignées (par ex. Madère) ?" %}
+  {% assign a13 = "Le délai est généralement de 3 à 5 jours, avec de possibles retards mineurs lors des jours fériés. Pour les îles éloignées, la livraison peut être plus longue." %}
+
+  {% assign q14 = "Quels coffres rigides conviennent le mieux au cadre (largeur de cintre/dégagement des disques) pour voyager en avion ?" %}
+  {% assign a14 = "Cela dépend de la valise de transport utilisée, mais nos vélos sont faciles à transporter et s’adaptent bien à la plupart des valises pour vélo." %}
+
+  {% assign q15 = "À quelle vitesse pouvez-vous expédier des pièces de remplacement après une chute vers un lieu de course ou un hôtel ?" %}
+  {% assign a15 = "Nous expédions ces pièces sous 24 heures." %}
+
+  {% assign contact_text = "Notre mission est toujours de répondre à toutes vos questions. Nous tenons à l'honnêteté et à l'ouverture dans tous les aspects de notre travail. Si vous avez d’autres questions auxquelles cette FAQ ne répond pas, veuillez nous contacter via info@rinosbike.eu ou le formulaire de contact ci-dessous." %}
+  {% assign contact_heading = "Formulaire de contact" %}
+
+{% elsif current_locale == 'pl' %}
+  {% assign q1 = "Ile kosztuje wysyłka rowerów Rinos?" %}
+  {% assign a1 = "Do wszystkich naszych rowerów doliczamy 29,99 € kosztów wysyłki." %}
+
+  {% assign q2 = "Czy po zamówieniu roweru otrzymam link do śledzenia przesyłki?" %}
+  {% assign a2 = "Tak, po zakupie naszego produktu numer śledzenia jest wysyłany, gdy tylko przesyłka zostanie zarejestrowana u przewoźnika." %}
+
+  {% assign q3 = "Nie otrzymałem(-am) linku do śledzenia – z kim się skontaktować?" %}
+  {% assign a3 = "Napisz do nas na info@rinosbike.eu, a odpowiemy tak szybko, jak to możliwe." %}
+
+  {% assign q4 = "Jaki jest czas dostawy?" %}
+  {% assign a4 = "Dostawa trwa zwykle od 3 do 8 dni roboczych, w zależności od kraju dostawy i dostępności miejsca dla firm kurierskich." %}
+
+  {% assign q5 = "Z jakich firm kurierskich korzystacie?" %}
+  {% assign a5 = "Współpracujemy z DPD, DHL i UPS." %}
+
+  {% assign q6 = "Czy przy dostawie wymagana jest podpisana odbioru i ile jest prób doręczenia przed zwrotem do nadawcy?" %}
+  {% assign a6 = "Przy doręczeniu wymagany jest podpis." %}
+
+  {% assign q7 = "Jakie są wymiary/waga kartonu wysyłkowego, aby zaplanować windę/transport i utylizację?" %}
+  {% assign a7 = "Dla naszych rowerów karton ma wymiary 145×30×72 cm." %}
+
+  {% assign q8 = "Czy wysyłacie do paczkomatów/skrytek lub na skrytki pocztowe?" %}
+  {% assign a8 = "Nie wysyłamy do Packstation ani podobnych skrytek ze względu na rozmiar paczki, ale przesyłkę można odebrać w punktach odbioru lub urzędach pocztowych w pobliżu twojego adresu." %}
+
+  {% assign q9 = "Czy wysyłacie poza UE/Wielką Brytanię/USA? Kto płaci cło, VAT i opłaty celne?" %}
+  {% assign a9 = "Tak, możemy pomóc w odprawie celnej do niektórych krajów. Skontaktuj się z nami na info@rinosbike.eu" %}
+
+  {% assign q10 = "Czy mogę odebrać rower osobiście w UE, aby uniknąć kosztów/uszkodzeń związanych z wysyłką?" %}
+  {% assign a10 = "Możliwy jest osobisty odbiór roweru we Frankfurcie nad Odrą. W takim przypadku skontaktuj się z nami przez info@rinosbike.eu" %}
+
+  {% assign q11 = "Czy otrzymam link do śledzenia automatycznie, a kurier może wysyłać powiadomienia SMS/e-mail?" %}
+  {% assign a11 = "Link do śledzenia otrzymasz automatycznie." %}
+
+  {% assign q12 = "Jeśli moje zamówienie zawiera produkty o różnych terminach realizacji, wysyłacie je osobno czy razem?" %}
+  {% assign a12 = "Optymalizujemy wysyłkę tak, abyś otrzymał(-a) produkty jak najszybciej." %}
+
+  {% assign q13 = "Jakie są typowe czasy dostawy w zależności od kraju/regionu i czy coś się zmienia dla odległych wysp (np. Madera)?" %}
+  {% assign a13 = "Zwykle jest to 3–5 dni, czasem z niewielkimi opóźnieniami z powodu świąt. Na odległe wyspy dostawa może trwać dłużej." %}
+
+  {% assign q14 = "Jakie walizki transportowe (twarde pokrowce) najlepiej pasują do ramy (szerokość kierownicy/miejsce na tarcze) na podróże samolotem?" %}
+  {% assign a14 = "To zależy od konkretnego pokrowca, ale nasze rowery są przyjazne w transporcie i pasują do większości walizek rowerowych." %}
+
+  {% assign q15 = "Jak szybko możecie wysłać części zamienne po kraksie na miejsce wyścigu lub do hotelu?" %}
+  {% assign a15 = "Wysyłamy takie części w ciągu 24 godzin." %}
+
+  {% assign contact_text = "Naszą misją jest zawsze odpowiadanie na wszystkie pytania, które możesz mieć. Zależy nam na uczciwości i otwartości w każdym aspekcie naszej pracy. Jeśli masz dodatkowe pytania, na które ten FAQ nie odpowiada, skontaktuj się z nami przez info@rinosbike.eu lub formularz kontaktowy poniżej." %}
+  {% assign contact_heading = "Formularz kontaktowy" %}
+
+{% elsif current_locale == 'bg' %}
+  {% assign q1 = "Колко струва доставката на велосипедите Rinos?" %}
+  {% assign a1 = "За всички наши велосипеди начисляваме допълнителна такса от 29,99 € за доставка." %}
+
+  {% assign q2 = "Когато поръчам велосипед, получавам ли линк за проследяване на пратката?" %}
+  {% assign a2 = "Да, при покупка на наш продукт получавате номер за проследяване, веднага щом пратката бъде регистрирана от куриерската услуга." %}
+
+  {% assign q3 = "Не съм получил/а линк за проследяване – към кого да се обърна?" %}
+  {% assign a3 = "Пишете ни на info@rinosbike.eu и ние ще се свържем с вас възможно най-скоро." %}
+
+  {% assign q4 = "Какъв е срокът за доставка?" %}
+  {% assign a4 = "Доставката обикновено отнема между 3 и 8 работни дни, в зависимост от държавата и колко достъпен е адресът за куриерските компании." %}
+
+  {% assign q5 = "С кои куриерски услуги работите?" %}
+  {% assign a5 = "Използваме услугите на DPD, DHL и UPS." %}
+
+  {% assign q6 = "Изисква ли се подпис при доставка и колко опита за доставка се правят преди връщане към подателя?" %}
+  {% assign a6 = "При доставката се изисква подпис." %}
+
+  {% assign q7 = "Какви са размерите/теглото на кашона за доставка, за да мога да планирам асансьор/транспорт и изхвърляне?" %}
+  {% assign a7 = "За нашите велосипеди размерът на кашона е 145×30×72 см." %}
+
+  {% assign q8 = "Можете ли да изпращате до автоматични станции/пощенски шкафчета или пощенски кутии?" %}
+  {% assign a8 = "Не изпращаме до Packstation поради размера на пратката, но пакетите могат да се получават от пощенски офиси или пунктове за получаване близо до вашия адрес." %}
+
+  {% assign q9 = "Извършвате ли доставки извън ЕС/Обединеното кралство/САЩ? Кой плаща митата, ДДС и таксите за обработка?" %}
+  {% assign a9 = "Да, можем да съдействаме с митническите декларации за някои държави. Моля, свържете се с нас на info@rinosbike.eu" %}
+
+  {% assign q10 = "Мога ли да поискам лично получаване в ЕС, за да избегна разходи и щети от транспорта?" %}
+  {% assign a10 = "Възможно е лично получаване на велосипеда във Франкфурт (Одер). В този случай се свържете с нас на info@rinosbike.eu" %}
+
+  {% assign q11 = "Ще получа ли автоматично линк за проследяване и може ли куриерът да изпраща SMS/имейл известия?" %}
+  {% assign a11 = "Ще получите линк за проследяване автоматично." %}
+
+  {% assign q12 = "Ако поръчката ми съдържа артикули с различни срокове за изпращане, изпращате ли ги отделно или заедно?" %}
+  {% assign a12 = "Оптимизираме доставките така, че да получите продуктите възможно най-бързо." %}
+
+  {% assign q13 = "Какви са типичните срокове за доставка по държави/региони и различават ли се за отдалечени острови (например Мадейра)?" %}
+  {% assign a13 = "Обикновено доставката е между 3 и 5 дни, като са възможни малки забавяния поради официални празници. За отдалечени острови доставката може да отнеме повече време." %}
+
+  {% assign q14 = "Кои твърди куфари пасват най-добре на рамката (ширина на кормилото/разстояние до дисковете) при пътуване със самолет?" %}
+  {% assign a14 = "Това зависи от конкретния транспортен куфар, но нашите велосипеди са удобни за транспортиране и са съвместими с повечето куфари за велосипеди." %}
+
+  {% assign q15 = "Колко бързо можете да изпратите резервни части след падане до мястото на състезанието или хотел?" %}
+  {% assign a15 = "Изпращаме такива резервни части в рамките на 24 часа." %}
+
+  {% assign contact_text = "Нашата мисия винаги е да отговаряме на всички въпроси, които може да имате. Ние държим на честността и откритостта във всеки аспект на нашата работа. Ако имате допълнителни въпроси, на които този раздел с ЧЗВ не отговаря, свържете се с нас на info@rinosbike.eu или чрез формуляра за контакт по-долу." %}
+  {% assign contact_heading = "Формуляр за контакт" %}
+
+{% else %}
+  {% comment %} Default to English {% endcomment %}
+  {% assign q1 = "How much does the shipping cost for Rinos bikes?" %}
+  {% assign a1 = "All of our bikes have a surplus of 29.99 EUR for shipping." %}
+
+  {% assign q2 = "When I order a bike, do I get a postage tracking link?" %}
+  {% assign a2 = "Yes, when purchasing our product, a tracking number is sent once it’s in the delivery registry." %}
+
+  {% assign q3 = "I have not received a tracking link, who should I contact?" %}
+  {% assign a3 = "Write us at info@rinosbike.eu and we will get back to you as soon as possible." %}
+
+  {% assign q4 = "What is the delivery time?" %}
+  {% assign a4 = "It takes from 3–8 working days to deliver, depending on the destination country and how accessible the location is for delivery services." %}
+
+  {% assign q5 = "Which shipping services do you use?" %}
+  {% assign a5 = "We use DPD, DHL and UPS services." %}
+
+  {% assign q6 = "Is a signature required on delivery, and how many delivery attempts are made before return to sender?" %}
+  {% assign a6 = "A signature will be required on delivery." %}
+
+  {% assign q7 = "What are the shipping box dimensions/weight so I can plan elevator/transport disposal?" %}
+  {% assign a7 = "For our bikes, the box dimensions are 145×30×72 cm." %}
+
+  {% assign q8 = "Can you ship to Packstations/lockers or PO Boxes?" %}
+  {% assign a8 = "We do not ship to Packstations due to the size of the package, but parcels can be picked up at parcel shops or post offices near your address." %}
+
+  {% assign q9 = "Do you ship outside the EU/UK/US? Who pays customs, VAT, and brokerage on import?" %}
+  {% assign a9 = "Yes, we will assist in customs declarations for some countries. Please contact us at info@rinosbike.eu" %}
+
+  {% assign q10 = "Can I request in-person pickup in the EU to avoid shipping damage/costs?" %}
+  {% assign a10 = "It is possible to pick up the bike in Frankfurt (Oder). In this case please contact us via info@rinosbike.eu" %}
+
+  {% assign q11 = "Will I receive a tracking link automatically, and can the courier send SMS/email updates?" %}
+  {% assign a11 = "You will receive a tracking link automatically." %}
+
+  {% assign q12 = "If my order contains items with different lead times, do you split shipments or wait and send together?" %}
+  {% assign a12 = "We will optimise delivery so you receive the products as soon as possible." %}
+
+  {% assign q13 = "What are the typical delivery times by country/region, and do remote islands (e.g., Madeira) differ?" %}
+  {% assign a13 = "Typical delivery time is between 3–5 days, with small possible delays due to public holidays. Remote islands can take longer." %}
+
+  {% assign q14 = "Which hard cases fit the frame best (bar width/rotor clearance) for airline travel?" %}
+  {% assign a14 = "It will depend on the specific bike case, but our bikes are transport friendly." %}
+
+  {% assign q15 = "How quickly can you ship crash-replacement parts to a race venue or hotel?" %}
+  {% assign a15 = "We ship within 24 hours." %}
+
+  {% assign contact_text = "Our mission is always to answer any questions that you may have. We care about honesty and openness in any aspect of our work. If you have any further questions that this FAQ does not answer please contact us via info@rinosbike.eu or the contact form below." %}
+  {% assign contact_heading = "Contact form" %}
+{% endif %}
+
+<div class="faq-delivery-section page-width section-{{ section.id }}-padding">
+  {% if section.settings.heading != blank %}
+    <h2 class="faq-heading {{ section.settings.heading_size }} {{ section.settings.heading_alignment }}">
+      {{ section.settings.heading }}
+    </h2>
+  {% endif %}
+
+  <div class="faq-collapsible-content">
+    {% for i in (1..15) %}
+      {% assign q = 'q' | append: i %}
+      {% assign a = 'a' | append: i %}
+      <div class="faq-row">
+        <details {% if forloop.first and section.settings.open_first_collapsible_row %}open{% endif %}>
+          <summary>
+            <span class="icon-question">?</span>
+            <span class="faq-question">{{ [q] | first }}</span>
+            <span class="icon-caret"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>{{ [a] | first }}</p>
+          </div>
+        </details>
+      </div>
+    {% endfor %}
+  </div>
+
+
+</div>
+
+<style>
+.faq-delivery-section {
+  padding: 40px 20px;
+}
+
+.faq-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-collapsible-content {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.faq-row {
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.faq-row details {
+  padding: 20px 0;
+}
+
+.faq-row summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+}
+
+.faq-row summary::-webkit-details-marker {
+  display: none;
+}
+
+.icon-question {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.faq-question {
+  flex: 1;
+}
+
+.icon-caret {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.icon-caret::after {
+  content: '▼';
+  font-size: 12px;
+}
+
+.faq-row details[open] .icon-caret::after {
+  content: '▲';
+}
+
+.faq-answer {
+  padding: 15px 0 15px 39px;
+  line-height: 1.6;
+}
+
+.faq-contact-section {
+  max-width: 800px;
+  margin: 60px auto 0;
+  text-align: center;
+}
+
+.rich-text-content {
+  margin-bottom: 40px;
+}
+
+.contact-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form-heading {
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.button {
+  padding: 12px 30px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.button:hover {
+  background-color: #333;
+}
+
+.form-success {
+  color: green;
+  margin-bottom: 20px;
+}
+
+.form-errors {
+  color: red;
+  margin-bottom: 20px;
+}
+</style>
+
+{% schema %}
+{
+  "name": "FAQ Delivery",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Delivery & Shipping FAQ"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "options": [
+        { "value": "h1", "label": "Large" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h3", "label": "Small" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first_collapsible_row",
+      "label": "Open first item by default",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Delivery"
+    }
+  ]
+}
+{% endschema %}
