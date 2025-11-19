@@ -51,7 +51,7 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": false
           }
         }
       },
@@ -133,7 +133,7 @@
         "text_zYMPmN": {
           "type": "text",
           "settings": {
-            "text": "<p>Your start in the world of Carbon Road Bikes.</p><p></p>"
+            "text": "<p>Your First Serious Carbon Bike.</p>"
           }
         },
         "button_Jg74em": {
@@ -156,7 +156,7 @@
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
-        "content_alignment": "center",
+        "content_alignment": "right",
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
@@ -211,7 +211,7 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "The Odin 1, at a glance.",
+        "title": "",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -239,32 +239,10 @@
             "link_label": "",
             "link": ""
           }
-        },
-        "column_TX49jD": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/No_20to_20zaczynamy_20_F0_9F_9A_B2_20Dzi_C4_99ki_20_40rinosbike.pl_20mam_20okazj_C4_99_20sprawdzi_C4_87_20ten_20rower_20w_20akcji._20To_20dopiero_20pocz_C4_85tek_20naszej_20wsp_C3_B3.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_cnPU9B": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/IMG_5918_8a9a09b4-f7a1-46d5-9da9-2f2a1d91b7e3.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
         }
       },
       "block_order": [
-        "column_d44Ld3",
-        "column_TX49jD",
-        "column_cnPU9B"
+        "column_d44Ld3"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
@@ -280,55 +258,6 @@
         "color_scheme": "",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "image_with_text_xVg3DE": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_zVWcYK": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>Wheels You Can Trust.</strong>",
-            "heading_size": "h2"
-          }
-        },
-        "text_wYQYz4": {
-          "type": "text",
-          "settings": {
-            "text": "<h6>Every Odin is precision-trued with TRUDI by Berd, the world’s most advanced wheel truing system. </h6><h6>That means straighter wheels, tighter tolerances, and absolute stability — so you ride faster, corner harder, and never lose performance to wobble or flex.</h6>",
-            "text_style": "subtitle"
-          }
-        },
-        "button_HXWjhf": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_zVWcYK",
-        "text_wYQYz4",
-        "button_HXWjhf"
-      ],
-      "disabled": true,
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/d80c7d0895ddc1617dc72cea1500e69a-2.png",
-        "height": "adapt",
-        "desktop_image_width": "small",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -384,7 +313,6 @@
     },
     "review_section_small_fKwkg6": {
       "type": "review-section-small",
-      "disabled": true,
       "custom_css": [
         ".review-section {margin-bottom: 25px;}"
       ],
@@ -450,7 +378,6 @@
     "rich_text_NbwtPq",
     "multicolumn_KfMJ9G",
     "multicolumn_wrrqN8",
-    "image_with_text_xVg3DE",
     "product_description_sec1_Nn4UXc",
     "odin_sizing_guide_gkrKDi",
     "road_assembly_UDtXQV",
