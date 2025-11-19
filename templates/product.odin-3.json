@@ -70,6 +70,7 @@
     },
     "bike_parts_highlight_1_6XGKyM": {
       "type": "bike-parts-highlight-1",
+      "disabled": true,
       "settings": {
         "tire_size_text": "tire size",
         "gear_shifter_text": "gear shifter",

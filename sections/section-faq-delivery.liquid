@@ -507,3 +507,187 @@
     </div>
   </div>
 </div>
+<style>
+.faq-bikespec-section {
+  padding: 40px 20px;
+}
+
+.faq-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-collapsible-content {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.faq-row {
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.faq-row details {
+  padding: 20px 0;
+}
+
+.faq-row summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+}
+
+.faq-row summary::-webkit-details-marker {
+  display: none;
+}
+
+.icon-question {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.faq-question {
+  flex: 1;
+}
+
+.icon-caret {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.icon-caret::after {
+  content: '▼';
+  font-size: 12px;
+}
+
+.faq-row details[open] .icon-caret::after {
+  content: '▲';
+}
+
+.faq-answer {
+  padding: 15px 0 15px 39px;
+  line-height: 1.6;
+}
+
+.faq-contact-section {
+  max-width: 800px;
+  margin: 60px auto 0;
+  text-align: center;
+}
+
+.rich-text-content {
+  margin-bottom: 40px;
+}
+
+.contact-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form-heading {
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.button {
+  padding: 12px 30px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.button:hover {
+  background-color: #333;
+}
+
+.form-success {
+  color: green;
+  margin-bottom: 20px;
+}
+
+.form-errors {
+  color: red;
+  margin-bottom: 20px;
+}
+</style>
+
+{% schema %}
+{
+  "name": "FAQ Bikespec",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Bikespec FAQ"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "options": [
+        { "value": "h1", "label": "Large" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h3", "label": "Small" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first_collapsible_row",
+      "label": "Open first item by default",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Bikespec"
+    }
+  ]
+}
+{% endschema %}
