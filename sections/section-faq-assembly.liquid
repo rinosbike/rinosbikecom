@@ -1,0 +1,666 @@
+{% comment %}
+  FAQ Assembly Section - Multi-language support
+  Languages: EN, ES, DE, FR, PL, BG
+{% endcomment %}
+
+{% assign current_locale = request.locale.iso_code %}
+
+{% comment %} Define all translations {% endcomment %}
+{% if current_locale == 'es' %}
+  {% assign q1 = "¿Cuánto ensamblaje se requiere cuando recibo mi bicicleta?" %}
+  {% assign a1 = "Nuestras bicicletas llegan ensambladas al 90%. Solo necesitarás colocar la rueda delantera, la tija del sillín y los pedales (incluidos). Se incluyen herramientas básicas y también proporcionamos un video de configuración como referencia." %}
+  
+  {% assign q2 = "¿Se incluyen herramientas en la caja?" %}
+  {% assign a2 = "Sí, se incluye una multiherramienta básica o llave allen (4, 5, 6 mm proporcionados) para los pasos finales de ensamblaje como apretar pernos y ajustar componentes." %}
+  
+  {% assign q3 = "¿Se incluyen pedales?" %}
+  {% assign a3 = "Los pedales no están incluidos con la bicicleta, pero ofrecemos muchas opciones de nuestro socio de confianza RockBros. Puedes encontrar estos productos en rinosbike.eu o contactarnos a través de info@rinosbike.eu" %}
+  
+  {% assign q4 = "¿Cómo se empaqueta la bicicleta para el envío?" %}
+  {% assign a4 = "Cada bicicleta está empaquetada de forma segura en una caja de cartón reforzada con protección de espuma interna para evitar rayones o daños durante el transporte." %}
+  
+  {% assign q5 = "¿Puedo solicitar que la bicicleta venga preensamblada?" %}
+  {% assign a5 = "Puedes contactarnos en info@rinosbike.eu. Sin embargo, la mayoría de los clientes sin conocimientos mecánicos pueden completar el ensamblaje en menos de 5 minutos." %}
+  
+  {% assign q6 = "¿Los frenos/desviadores llegan preajustados o debo esperar indexar los cambios y recentrar las pinzas?" %}
+  {% assign a6 = "Los frenos y desviadores llegan preajustados y probados para una funcionalidad completa y perfecta. No se necesita ningún ajuste importante." %}
+  
+  {% assign q7 = "¿Las ruedas vienen centradas de fábrica o debo esperar ajustes menores de los radios después de los primeros viajes?" %}
+  {% assign a7 = "Nuestros mecánicos utilizan máquinas de centrado de tecnología TRUDI, por lo que las ruedas de aluminio están destensadas y ajustadas a mano a una perfección casi perfecta, con una desviación lateral y radial máxima de 0,2 mm, mejor que la mayoría de las ruedas directamente de las fábricas de bicicletas." %}
+  
+  {% assign q8 = "¿Ofrecen un servicio de entrega opcional totalmente ensamblado?" %}
+  {% assign a8 = "Actualmente ofrecemos este servicio dependiendo de las regiones geográficas, contáctanos en info@rinosbike.eu. Aunque ensamblar las partes restantes de la bicicleta puede tomar solo 10 minutos. Solo hay que insertar la tija del sillín y la rueda delantera." %}
+  
+  {% assign q9 = "¿La bicicleta viene configurada sin cámara de fábrica (cinta/válvulas/sellante) o se entrega con cámaras?" %}
+  {% assign a9 = "Las llantas son compatibles con tubeless, pero la cinta/sellante/válvula deben ser integrados por tu cuenta." %}
+  
+  {% assign q10 = "¿Cuáles son los valores de torque recomendados para el cockpit, tija del sillín, ejes pasantes y rotores y dónde puedo encontrarlos?" %}
+  {% assign a10 = "Puedes consultar nuestro video de ensamblaje o nuestra tabla de torque." %}
+  
+  {% assign q11 = "¿Se incluyen espaciadores para cambios de altura del potenciador? ¿Cuál es la altura máxima segura de espaciadores de pila/dirección?" %}
+  {% assign a11 = "Tenemos espaciadores instalados para cada tamaño de cuadro. Si deseas hacer ajustes a la longitud de la horquilla, etc., contáctanos o a mecánicos de bicicletas profesionales." %}
+  
+  {% assign q12 = "¿Cuál es el intervalo de primer servicio recomendado para controles de seguridad (por ejemplo, pernos, radios, dirección)?" %}
+  {% assign a12 = "Recomendamos que se revise una vez al año e incluso con mayor frecuencia según la intensidad de uso." %}
+  
+  {% assign q13 = "¿Proporcionan un video de ensamblaje o una guía paso a paso para mi modelo exacto?" %}
+  {% assign a13 = "Sí, cada uno de nuestros modelos principales, desde bicicletas de grava hasta bicicletas de carretera, tiene su propio video de ensamblaje." %}
+  
+  {% assign contact_text = "Nuestra misión es siempre responder cualquier pregunta que puedas tener. Nos preocupamos por la honestidad y la transparencia en cualquier aspecto de nuestro trabajo. Si tienes más preguntas que estas preguntas frecuentes no responden, contáctanos a través de info@rinosbike.eu o el formulario de contacto a continuación." %}
+  {% assign contact_heading = "Formulario de contacto" %}
+
+{% elsif current_locale == 'de' %}
+  {% assign q1 = "Wie viel Montage ist erforderlich, wenn ich mein Fahrrad erhalte?" %}
+  {% assign a1 = "Unsere Fahrräder kommen zu 90% montiert an. Sie müssen nur das Vorderrad, die Sattelstütze und die Pedale (im Lieferumfang enthalten) anbringen. Grundlegende Werkzeuge sind enthalten und wir stellen auch ein Setup-Video zur Verfügung." %}
+  
+  {% assign q2 = "Sind Werkzeuge in der Box enthalten?" %}
+  {% assign a2 = "Ja, ein grundlegendes Multitool oder Inbusschlüssel (4, 5, 6 mm enthalten) ist für die abschließenden Montageschritte wie das Anziehen von Schrauben und das Einstellen von Komponenten enthalten." %}
+  
+  {% assign q3 = "Sind Pedale enthalten?" %}
+  {% assign a3 = "Die Pedale sind nicht im Lieferumfang des Fahrrads enthalten, aber wir bieten viele Optionen von unserem vertrauenswürdigen Partner RockBros an. Sie können solche Produkte auf rinosbike.eu finden oder uns über info@rinosbike.eu kontaktieren." %}
+  
+  {% assign q4 = "Wie wird das Fahrrad für den Versand verpackt?" %}
+  {% assign a4 = "Jedes Fahrrad ist sicher in einem verstärkten Karton mit internem Schaumschutz verpackt, um Kratzer oder Schäden während des Transports zu vermeiden." %}
+  
+  {% assign q5 = "Kann ich das Fahrrad vormontiert anfordern?" %}
+  {% assign a5 = "Sie können uns unter info@rinosbike.eu kontaktieren. Die meisten Kunden ohne mechanische Kenntnisse können die Montage jedoch in unter 5 Minuten abschließen." %}
+  
+  {% assign q6 = "Kommen Bremsen/Schaltwerke vorab eingestellt an oder sollte ich erwarten, Gänge zu indexieren und Bremssättel neu zu zentrieren?" %}
+  {% assign a6 = "Bremsen und Schaltwerke kommen vorab eingestellt und auf volle nahtlose Funktionalität getestet an. Es ist keine größere Anpassung erforderlich." %}
+  
+  {% assign q7 = "Sind die Räder ab Werk zentriert oder sollte ich nach den ersten Fahrten kleinere Speichenanpassungen erwarten?" %}
+  {% assign a7 = "Unsere Mechaniker verwenden TRUDI-Technologie-Zentriermaschinen, sodass die Aluminiumräder entspannt und von Hand auf fast perfekte Zentrierung eingestellt werden, mit maximal 0,2 mm seitlicher und radialer Abweichung, besser als die meisten Räder direkt aus Fahrradfabriken." %}
+  
+  {% assign q8 = "Bieten Sie einen optionalen vollständig montierten Lieferservice an?" %}
+  {% assign a8 = "Wir bieten diesen Service derzeit je nach geografischer Region an, kontaktieren Sie uns unter info@rinosbike.eu. Obwohl die Montage der verbleibenden Teile des Fahrrads nur 10 Minuten dauern kann. Nur die Sattelstütze und das Vorderrad müssen eingesetzt werden." %}
+  
+  {% assign q9 = "Ist das Fahrrad ab Werk tubeless aufgebaut (Band/Ventile/Dichtmittel) oder wird es mit Schläuchen geliefert?" %}
+  {% assign a9 = "Die Felgen sind tubeless-kompatibel, aber das Band/Dichtmittel/Ventil muss von Ihnen selbst integriert werden." %}
+  
+  {% assign q10 = "Was sind die empfohlenen Drehmomentwerte für Cockpit, Sattelstütze, Steckachsen und Bremsscheiben und wo finde ich sie?" %}
+  {% assign a10 = "Sie können sich auf unser Montagevideo oder unsere Drehmomenttabelle beziehen." %}
+  
+  {% assign q11 = "Sind Spacer für Vorbauänderungen enthalten? Was ist die sichere maximale Stack/Steerer-Spacer-Höhe?" %}
+  {% assign a11 = "Wir haben für jede Rahmengröße Spacer installiert. Wenn Sie Anpassungen an der Gabellänge usw. vornehmen möchten, kontaktieren Sie uns bitte oder professionelle Fahrradmechaniker." %}
+  
+  {% assign q12 = "Was ist das empfohlene Erstservice-Intervall für Sicherheitsprüfungen (z. B. Schrauben, Speichen, Steuersatz)?" %}
+  {% assign a12 = "Wir empfehlen, es einmal pro Jahr und je nach Nutzungsintensität noch häufiger zu überprüfen." %}
+  
+  {% assign q13 = "Stellen Sie ein Montagevideo oder eine Schritt-für-Schritt-Anleitung für mein genaues Modell bereit?" %}
+  {% assign a13 = "Ja, jedes unserer Hauptmodelle von Gravel- bis Rennrädern hat sein eigenes Montagevideo." %}
+  
+  {% assign contact_text = "Unsere Mission ist es immer, alle Ihre Fragen zu beantworten. Uns liegt Ehrlichkeit und Offenheit in allen Aspekten unserer Arbeit am Herzen. Wenn Sie weitere Fragen haben, die diese FAQ nicht beantwortet, kontaktieren Sie uns bitte über info@rinosbike.eu oder das untenstehende Kontaktformular." %}
+  {% assign contact_heading = "Kontaktformular" %}
+
+{% elsif current_locale == 'fr' %}
+  {% assign q1 = "Quel assemblage est requis lorsque je reçois mon vélo?" %}
+  {% assign a1 = "Nos vélos arrivent assemblés à 90%. Vous n'aurez qu'à fixer la roue avant, la tige de selle et les pédales (incluses). Des outils de base sont inclus et nous fournissons également une vidéo de configuration pour référence." %}
+  
+  {% assign q2 = "Des outils sont-ils inclus dans la boîte?" %}
+  {% assign a2 = "Oui, un multi-outil de base ou une clé allen (4, 5, 6 mm fournis) est inclus pour les étapes finales d'assemblage comme le serrage des boulons et l'ajustement des composants." %}
+  
+  {% assign q3 = "Les pédales sont-elles incluses?" %}
+  {% assign a3 = "Les pédales ne sont pas incluses avec le vélo, mais nous offrons de nombreuses options de notre partenaire de confiance RockBros. Vous pouvez trouver ces produits sur rinosbike.eu ou nous contacter via info@rinosbike.eu" %}
+  
+  {% assign q4 = "Comment le vélo est-il emballé pour l'expédition?" %}
+  {% assign a4 = "Chaque vélo est solidement emballé dans une boîte en carton renforcée avec une protection en mousse interne pour éviter les rayures ou les dommages pendant le transport." %}
+  
+  {% assign q5 = "Puis-je demander que le vélo soit préassemblé?" %}
+  {% assign a5 = "Vous pouvez nous contacter à info@rinosbike.eu. Cependant, la plupart des clients sans connaissances mécaniques peuvent terminer l'assemblage en moins de 5 minutes." %}
+  
+  {% assign q6 = "Les freins/dérailleurs arrivent-ils préréglés ou dois-je m'attendre à indexer les vitesses et recentrer les étriers?" %}
+  {% assign a6 = "Les freins et dérailleurs arrivent préréglés et testés pour une fonctionnalité complète et transparente. Aucun ajustement majeur n'est nécessaire." %}
+  
+  {% assign q7 = "Les roues sont-elles dévoilées d'usine ou dois-je m'attendre à des ajustements mineurs des rayons après les premières sorties?" %}
+  {% assign a7 = "Nos mécaniciens utilisent des machines de dévoilage de technologie TRUDI, de sorte que les roues en aluminium sont détendues et ajustées à la main à une perfection presque parfaite, avec une déviation latérale et radiale maximale de 0,2 mm, meilleure que la plupart des roues directement sorties des usines de vélos." %}
+  
+  {% assign q8 = "Offrez-vous un service de livraison optionnel entièrement assemblé?" %}
+  {% assign a8 = "Nous offrons actuellement ce service en fonction des régions géographiques, contactez-nous à info@rinosbike.eu. Bien que l'assemblage des pièces restantes du vélo ne prenne que 10 minutes. Seuls la tige de selle et la roue avant doivent être insérés." %}
+  
+  {% assign q9 = "Le vélo est-il configuré en tubeless d'usine (ruban/valves/produit d'étanchéité) ou livré avec des chambres à air?" %}
+  {% assign a9 = "Les jantes sont compatibles tubeless, mais le ruban/produit d'étanchéité/valve doivent être intégrés par vous-même." %}
+  
+  {% assign q10 = "Quelles sont les valeurs de couple recommandées pour le cockpit, la tige de selle, les axes traversants et les rotors et où puis-je les trouver?" %}
+  {% assign a10 = "Vous pouvez vous référer à notre vidéo d'assemblage ou à notre tableau de couple." %}
+  
+  {% assign q11 = "Des entretoises sont-elles incluses pour les changements de hauteur de potence? Quelle est la hauteur maximale sûre de l'entretoise de pile/direction?" %}
+  {% assign a11 = "Nous avons des entretoises installées pour chaque taille de cadre. Si vous souhaitez apporter des ajustements à la longueur de la fourche, etc., veuillez nous contacter ou des mécaniciens de vélo professionnels." %}
+  
+  {% assign q12 = "Quel est l'intervalle de première révision recommandé pour les contrôles de sécurité (par exemple, boulons, rayons, jeu de direction)?" %}
+  {% assign a12 = "Nous recommandons de le vérifier une fois par an et encore plus souvent en fonction de l'intensité d'utilisation." %}
+  
+  {% assign q13 = "Fournissez-vous une vidéo d'assemblage ou un guide étape par étape pour mon modèle exact?" %}
+  {% assign a13 = "Oui, chacun de nos modèles majeurs, des vélos de gravel aux vélos de route, a sa propre vidéo d'assemblage." %}
+  
+  {% assign contact_text = "Notre mission est toujours de répondre à toutes vos questions. Nous tenons à l'honnêteté et à l'ouverture dans tous les aspects de notre travail. Si vous avez d'autres questions auxquelles cette FAQ ne répond pas, veuillez nous contacter via info@rinosbike.eu ou le formulaire de contact ci-dessous." %}
+  {% assign contact_heading = "Formulaire de contact" %}
+
+{% elsif current_locale == 'pl' %}
+  {% assign q1 = "Ile montażu jest wymagane po otrzymaniu roweru?" %}
+  {% assign a1 = "Nasze rowery przychodzą zmontowane w 90%. Będziesz musiał tylko zamocować przednie koło, sztycy siodła i pedały (w zestawie). Podstawowe narzędzia są dołączone, a także udostępniamy wideo instruktażowe." %}
+  
+  {% assign q2 = "Czy narzędzia są dołączone do pudełka?" %}
+  {% assign a2 = "Tak, podstawowe multitool lub klucz imbusowy (4, 5, 6 mm w zestawie) jest dołączony do końcowych etapów montażu, takich jak dokręcanie śrub i regulacja komponentów." %}
+  
+  {% assign q3 = "Czy pedały są dołączone?" %}
+  {% assign a3 = "Pedały nie są dołączone do roweru, ale oferujemy wiele opcji od naszego zaufanego partnera RockBros. Możesz znaleźć takie produkty na rinosbike.eu lub skontaktować się z nami przez info@rinosbike.eu" %}
+  
+  {% assign q4 = "Jak rower jest pakowany do wysyłki?" %}
+  {% assign a4 = "Każdy rower jest bezpiecznie zapakowany w wzmocnione pudełko kartonowe z wewnętrzną ochroną piankową, aby zapobiec zarysowaniom lub uszkodzeniom podczas transportu." %}
+  
+  {% assign q5 = "Czy mogę poprosić o wstępnie zmontowany rower?" %}
+  {% assign a5 = "Możesz skontaktować się z nami pod adresem info@rinosbike.eu. Jednak większość klientów bez wiedzy mechanicznej może ukończyć montaż w mniej niż 5 minut." %}
+  
+  {% assign q6 = "Czy hamulce/przerzutki przychodzą wstępnie wyregulowane, czy powinienem spodziewać się indeksowania biegów i ponownego centrowania zacisków?" %}
+  {% assign a6 = "Hamulce i przerzutki przychodzą wstępnie wyregulowane i przetestowane pod kątem pełnej, bezproblemowej funkcjonalności. Nie jest potrzebna żadna większa regulacja." %}
+  
+  {% assign q7 = "Czy koła są wstępnie wycentrowane po wyjęciu z pudełka, czy powinienem spodziewać się drobnych regulacji szprych po pierwszych przejazdach?" %}
+  {% assign a7 = "Nasi mechanicy używają maszyn do centrowania technologii TRUDI, dzięki czemu aluminiowe koła są odprężone i regulowane ręcznie do niemal idealnego wyważenia z maksymalnym odchyleniem bocznym i promieniowym 0,2 mm, lepiej niż większość kół bezpośrednio z fabryk rowerów." %}
+  
+  {% assign q8 = "Czy oferujecie opcjonalną usługę dostawy w pełni zmontowanego roweru?" %}
+  {% assign a8 = "Obecnie oferujemy tę usługę w zależności od regionu geograficznego, skontaktuj się z nami pod adresem info@rinosbike.eu. Chociaż montaż pozostałych części roweru może zająć tylko 10 minut. Tylko sztyca siodła i przednie koło muszą być włożone." %}
+  
+  {% assign q9 = "Czy rower jest skonfigurowany jako tubeless z fabryki (taśma/zawory/uszczelniacz) czy dostarczany z dętkami?" %}
+  {% assign a9 = "Obręcze są kompatybilne z tubeless, ale taśma/uszczelniacz/zawór muszą być zintegrowane przez ciebie." %}
+  
+  {% assign q10 = "Jakie są zalecane wartości momentu obrotowego dla kokpitu, sztycy siodła, osi przelotowych i tarcz i gdzie mogę je znaleźć?" %}
+  {% assign a10 = "Możesz odnieść się do naszego wideo montażowego lub naszej tabeli momentów obrotowych." %}
+  
+  {% assign q11 = "Czy dystanse są dołączone do zmian wysokości mostka? Jaka jest bezpieczna maksymalna wysokość dystansu stosu/sterówki?" %}
+  {% assign a11 = "Mamy zainstalowane dystanse dla każdego rozmiaru ramy. Jeśli chcesz wprowadzić zmiany w długości widelca itp., skontaktuj się z nami lub profesjonalnymi mechanikami rowerowymi." %}
+  
+  {% assign q12 = "Jaki jest zalecany interwał pierwszego serwisu dla kontroli bezpieczeństwa (np. śruby, szprychy, stery)?" %}
+  {% assign a12 = "Zalecamy sprawdzanie raz w roku, a nawet częściej w zależności od intensywności użytkowania." %}
+  
+  {% assign q13 = "Czy udostępniacie wideo montażowe lub przewodnik krok po kroku dla mojego dokładnego modelu?" %}
+  {% assign a13 = "Tak, każdy z naszych głównych modeli, od rowerów gravelowych po szosowe, ma własne wideo montażowe." %}
+  
+  {% assign contact_text = "Naszą misją jest zawsze odpowiadanie na wszelkie pytania, które możesz mieć. Zależy nam na uczciwości i otwartości w każdym aspekcie naszej pracy. Jeśli masz dalsze pytania, na które te FAQ nie odpowiadają, skontaktuj się z nami przez info@rinosbike.eu lub formularz kontaktowy poniżej." %}
+  {% assign contact_heading = "Formularz kontaktowy" %}
+
+{% elsif current_locale == 'bg' %}
+  {% assign q1 = "Колко сглобяване се изисква, когато получа велосипеда си?" %}
+  {% assign a1 = "Нашите велосипеди пристигат 90% сглобени. Ще трябва само да закрепите предната гума, седловата тръба и педалите (включени). Включени са основни инструменти и също така предоставяме видео за настройка за справка." %}
+  
+  {% assign q2 = "Включени ли са инструменти в кутията?" %}
+  {% assign a2 = "Да, включен е основен мултитул или шестограмен ключ (предоставени 4, 5, 6 мм) за финални стъпки на монтаж като затягане на болтове и регулиране на компоненти." %}
+  
+  {% assign q3 = "Включени ли са педали?" %}
+  {% assign a3 = "Педалите не са включени с велосипеда, но предлагаме много опции от нашия доверен партньор RockBros. Можете да намерите такива продукти на rinosbike.eu или да се свържете с нас чрез info@rinosbike.eu" %}
+  
+  {% assign q4 = "Как се опакова велосипедът за изпращане?" %}
+  {% assign a4 = "Всеки велосипед е сигурно опакован в подсилена картонена кутия с вътрешна защита от пяна, за да се предотвратят драскотини или повреди по време на транспорт." %}
+  
+  {% assign q5 = "Мога ли да поискам велосипедът да бъде предварително сглобен?" %}
+  {% assign a5 = "Можете да се свържете с нас на info@rinosbike.eu. Въпреки това, повечето клиенти без механични познания могат да завършат сглобяването за по-малко от 5 минути." %}
+  
+  {% assign q6 = "Спирачките/преключвателите пристигат ли предварително регулирани или трябва да очаквам да индексирам скоростите и да центрирам отново спирачните апарати?" %}
+  {% assign a6 = "Спирачките и преключвателите пристигат предварително регулирани и тествани за пълна безпроблемна функционалност. Не е необходима голяма настройка." %}
+  
+  {% assign q7 = "Колелата предварително ли са центрирани след разопаковане или трябва да очаквам малки регулировки на спиците след първите пътувания?" %}
+  {% assign a7 = "Нашите механици използват машини за центриране на технология TRUDI, така че алуминиевите колела са разтоварени и регулирани на ръка до почти перфектно центриране с максимално странично и радиално отклонение от 0,2 мм, по-добро от повечето колела директно от фабриките за велосипеди." %}
+  
+  {% assign q8 = "Предлагате ли опционална услуга за доставка напълно сглобен?" %}
+  {% assign a8 = "В момента предлагаме тази услуга в зависимост от географските региони, свържете се с нас на info@rinosbike.eu. Въпреки че сглобяването на останалите части на велосипеда може да отнеме само 10 минути. Само седловата тръба и предната гума трябва да бъдат поставени." %}
+  
+  {% assign q9 = "Велосипедът настроен ли е безкамерен от завода (лента/вентили/уплътнител) или се доставя с камери?" %}
+  {% assign a9 = "Джантите са съвместими с tubeless, но лентата/уплътнителят/вентилът трябва да бъдат интегрирани от вас." %}
+  
+  {% assign q10 = "Какви са препоръчаните стойности на въртящ момент за кокпит, седлова тръба, проходни оси и ротори и къде мога да ги намеря?" %}
+  {% assign a10 = "Можете да се обърнете към нашето видео за сглобяване или нашата таблица с въртящи моменти." %}
+  
+  {% assign q11 = "Включени ли са разпределители за промени на височината на кормилото? Каква е безопасната максимална височина на разпределителя на стека/управлението?" %}
+  {% assign a11 = "Имаме инсталирани разпределители за всеки размер на рамката. Ако искате да направите корекции на дължината на вилката и т.н., моля свържете се с нас или професионални велосипедни механици." %}
+  
+  {% assign q12 = "Какъв е препоръчителният интервал за първи сервиз за проверки на безопасността (напр. болтове, спици, кормилен механизъм)?" %}
+  {% assign a12 = "Препоръчваме да се проверява веднъж годишно и дори по-често в зависимост от интензивността на употреба." %}
+  
+  {% assign q13 = "Предоставяте ли видео за сглобяване или стъпка по стъпка ръководство за моя точен модел?" %}
+  {% assign a13 = "Да, всеки от нашите основни модели от грейвъл до шосейни велосипеди има собствено видео за сглобяване." %}
+  
+  {% assign contact_text = "Нашата мисия винаги е да отговаряме на всички въпроси, които може да имате. Грижим се за честност и откритост във всеки аспект на нашата работа. Ако имате допълнителни въпроси, на които тези ЧЗВ не отговарят, моля свържете се с нас чрез info@rinosbike.eu или формуляра за контакт по-долу." %}
+  {% assign contact_heading = "Формуляр за контакт" %}
+
+{% else %}
+  {% comment %} Default to English {% endcomment %}
+  {% assign q1 = "How much assembly is required when I receive my bike?" %}
+  {% assign a1 = "Our bikes arrive 90% assembled. You'll only need to attach the front wheel, seatpost, and pedals (included). Basic tools are included, and we also provide a setup video for reference." %}
+  
+  {% assign q2 = "Are tools included in the box?" %}
+  {% assign a2 = "Yes, a basic multitool or allen key (4,5,6mm provided) is included for final assembly steps like tightening bolts and adjusting components." %}
+  
+  {% assign q3 = "Are pedals included?" %}
+  {% assign a3 = "The pedals are not included with the bike, but we offer many options from our trusted partner RockBros. You can find such products on rinosbike.eu or contact us Via info@rinosbike.eu" %}
+  
+  {% assign q4 = "How is the bike packaged for shipping?" %}
+  {% assign a4 = "Each bike is securely packed in a reinforced cardboard box with internal foam protection to prevent scratches or damage during transport." %}
+  
+  {% assign q5 = "Can I request the bike to be pre-assembled?" %}
+  {% assign a5 = "Can contact us at info@rinosbike.eu. However, most customers without mechanical knowledge can complete assembly in under 5 minutes." %}
+  
+  {% assign q6 = "Do brakes/derailleurs arrive pre-adjusted, or should I expect to index gears and re-center calipers?" %}
+  {% assign a6 = "Brakes and derailleurs arrive pre-adjusted and tested for full seamless functionality. No major adjustment is needed." %}
+  
+  {% assign q7 = "Are the wheels pre-trued out of the box, or should I expect minor spoke adjustments after the first rides?" %}
+  {% assign a7 = "Our mechanics are using TRUDI technologies truing machine, so the aluminium wheels are destressed and adjusted by hand to almost perfect dishing max 0.2mm lateral and radial deviation, better than most wheels directly out of bike factories." %}
+  
+  {% assign q8 = "Do you offer an optional fully assembled delivery service?" %}
+  {% assign a8 = "We currently offer this service depending on geographical regions, contact us at info@rinosbike.eu. Although assembling the remaining parts of the bike can take just 10 minutes. Only the seatpost and front wheel have to be inserted." %}
+  
+  {% assign q9 = "Is the bike set up tubeless from factory (tape/valves/sealant), or delivered with tubes?" %}
+  {% assign a9 = "The rims are tubeless compatible, but the tape/sealant/valve have to be integrated by your own." %}
+  
+  {% assign q10 = "What are the recommended torque values for cockpit, seatpost, thru-axles, and rotors and where can I find them?" %}
+  {% assign a10 = "You can refer to our assembly video or our torque chart." %}
+  
+  {% assign q11 = "Are spacers included for stem height changes? What's the safe maximum stack/steerer spacer height?" %}
+  {% assign a11 = "We have spacers installed for every frame size. If you want to make adjustments to the fork length etc, please contact us or professional bike mechanics." %}
+  
+  {% assign q12 = "What's the recommended first-service interval for safety checks (e.g., bolts, spokes, headset)?" %}
+  {% assign a12 = "We recommend it to be checked once per year and even more often depending on the intensity of use." %}
+  
+  {% assign q13 = "Do you provide an assembly video or step-by-step guide for my exact model?" %}
+  {% assign a13 = "Yes, each of our major models from gravel to road bikes have their own assembly video." %}
+  
+  {% assign contact_text = "Our mission is always to answer any questions that you may have. We care about honesty and openness in any aspect of our work. If you have any further questions that this FAQ does not answer please contact us Via info@rinosbike.eu or the contact form bellow." %}
+  {% assign contact_heading = "Contact form" %}
+{% endif %}
+
+<div class="faq-assembly-section page-width section-{{ section.id }}-padding">
+  {% if section.settings.heading != blank %}
+    <h2 class="faq-heading {{ section.settings.heading_size }} {{ section.settings.heading_alignment }}">
+      {{ section.settings.heading }}
+    </h2>
+  {% endif %}
+
+  <div class="faq-collapsible-content">
+    <div class="faq-row">
+      <details {% if section.settings.open_first_collapsible_row %}open{% endif %}>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q1 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a1 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q2 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a2 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q3 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a3 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q4 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a4 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q5 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a5 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q6 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a6 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q7 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a7 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q8 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a8 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q9 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a9 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q10 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a10 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q11 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a11 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q12 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a12 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q13 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a13 }}</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="faq-contact-section">
+    <div class="rich-text-content">
+      <p>{{ contact_text }}</p>
+    </div>
+    
+    <div class="contact-form-wrapper">
+      <h2 class="contact-form-heading">{{ contact_heading }}</h2>
+      {% form 'contact' %}
+        {% if form.posted_successfully? %}
+          <p class="form-success">{{ 'contact.form.post_success' | t }}</p>
+        {% endif %}
+        
+        {% if form.errors %}
+          <div class="form-errors">
+            {{ form.errors | default_errors }}
+          </div>
+        {% endif %}
+        
+        <div class="field">
+          <input type="text" name="contact[name]" id="ContactForm-name" placeholder="{{ 'contact.form.name' | t }}" required>
+        </div>
+        
+        <div class="field">
+          <input type="email" name="contact[email]" id="ContactForm-email" placeholder="{{ 'contact.form.email' | t }}" required>
+        </div>
+        
+        <div class="field">
+          <textarea name="contact[body]" id="ContactForm-body" placeholder="{{ 'contact.form.message' | t }}" required></textarea>
+        </div>
+        
+        <button type="submit" class="button">{{ 'contact.form.send' | t }}</button>
+      {% endform %}
+    </div>
+  </div>
+</div>
+
+<style>
+.faq-assembly-section {
+  padding: 40px 20px;
+}
+
+.faq-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-collapsible-content {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.faq-row {
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.faq-row details {
+  padding: 20px 0;
+}
+
+.faq-row summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+}
+
+.faq-row summary::-webkit-details-marker {
+  display: none;
+}
+
+.icon-question {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.faq-question {
+  flex: 1;
+}
+
+.icon-caret {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.icon-caret::after {
+  content: '▼';
+  font-size: 12px;
+}
+
+.faq-row details[open] .icon-caret::after {
+  content: '▲';
+}
+
+.faq-answer {
+  padding: 15px 0 15px 39px;
+  line-height: 1.6;
+}
+
+.faq-contact-section {
+  max-width: 800px;
+  margin: 60px auto 0;
+  text-align: center;
+}
+
+.rich-text-content {
+  margin-bottom: 40px;
+}
+
+.contact-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form-heading {
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.button {
+  padding: 12px 30px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.button:hover {
+  background-color: #333;
+}
+
+.form-success {
+  color: green;
+  margin-bottom: 20px;
+}
+
+.form-errors {
+  color: red;
+  margin-bottom: 20px;
+}
+</style>
+
+{% schema %}
+{
+  "name": "FAQ Assembly",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Assembly FAQ"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "options": [
+        { "value": "h1", "label": "Large" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h3", "label": "Small" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first_collapsible_row",
+      "label": "Open first item by default",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Assembly"
+    }
+  ]
+}
+{% endschema %}
