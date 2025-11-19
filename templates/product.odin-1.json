@@ -98,7 +98,7 @@
       "name": "Trust Marquee Banner",
       "settings": {
         "bg_color": "#020202",
-        "text_color": "#FFFFFF",
+        "text_color": "#ffffff",
         "font_size": 13,
         "font_weight": "600",
         "text_transform": "uppercase",
@@ -189,7 +189,7 @@
         "column_8hGHg7": {
           "type": "column",
           "settings": {
-            "title": "Shimano Sora, 18 speeds.",
+            "title": "<strong>Shimano Sora,</strong> 18 speeds. Internal cable routing for clean lines and better aerodynamics.",
             "text": "",
             "link_label": "",
             "link": ""
@@ -207,7 +207,7 @@
         "column_b8kfWh": {
           "type": "column",
           "settings": {
-            "title": "Disc Brakes.",
+            "title": "<strong>Disc Brakes</strong> for a safe stopping power.",
             "text": "",
             "link_label": "",
             "link": ""
@@ -216,7 +216,7 @@
         "column_4ERxGT": {
           "type": "column",
           "settings": {
-            "title": "Internal cable routing for clean lines and better aerodynamics.",
+            "title": "",
             "text": "",
             "link_label": "",
             "link": ""
@@ -237,14 +237,14 @@
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 5,
-        "column_alignment": "left",
+        "columns_desktop": 2,
+        "column_alignment": "center",
         "background_style": "primary",
         "button_label": "",
         "button_link": "",
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -359,32 +359,20 @@
       "type": "product-description-sec1",
       "settings": {}
     },
+    "odin_sizing_guide_gkrKDi": {
+      "type": "odin-sizing-guide",
+      "name": "ODIN Sizing Guide",
+      "settings": {
+        "geometry_image": "shopify://shop_images/80extk.png",
+        "contact_url": "/pages/contact"
+      }
+    },
     "road_assembly_UDtXQV": {
       "type": "Road-assembly",
       "name": "Assembly Video - Odin",
       "settings": {
         "video_url": "https://www.youtube.com/embed/iLWtW4_HscI",
-        "video_thumbnail": "shopify://shop_images/Group_755_2.jpg",
-        "title": "Assemble Your Odin Road Bike",
-        "subtitle": "Watch how simple it is to set up The Odin. Everything you need, step by step.",
-        "watch_text": "Watch the guide",
-        "video_title": "Odin Road Bike Assembly Video",
-        "video_alt": "Odin road bike assembly video preview",
-        "benefit_1_title": "Easy to Follow",
-        "benefit_1_text": "Clear instructions that anyone can follow.",
-        "benefit_2_title": "Basic Tools",
-        "benefit_2_text": "Everything you need is included in the box.",
-        "benefit_3_title": "Quick Setup",
-        "benefit_3_text": "Ready to ride in just a few simple steps."
-      }
-    },
-    "odin_sizing_guide_gkrKDi": {
-      "type": "odin-sizing-guide",
-      "name": "ODIN Sizing Guide",
-      "settings": {
-        "size_title": "Rinos Road Bicycle Sizing",
-        "geometry_title": "Geometry & Sizing Details",
-        "geometry_image": "shopify://shop_images/80extk.png"
+        "video_thumbnail": "shopify://shop_images/Group_755_2.jpg"
       }
     },
     "iso_video_section_bpCKLQ": {
@@ -486,8 +474,8 @@
     "multicolumn_wrrqN8",
     "image_with_text_xVg3DE",
     "product_description_sec1_Nn4UXc",
-    "road_assembly_UDtXQV",
     "odin_sizing_guide_gkrKDi",
+    "road_assembly_UDtXQV",
     "iso_video_section_bpCKLQ",
     "review_section_small_fKwkg6",
     "rich_text_7we9KY",
