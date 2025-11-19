@@ -126,6 +126,19 @@
         "show_text_below": true
       }
     },
+    "trust_marquee_3zFtQb": {
+      "type": "trust-marquee",
+      "name": "Trust Marquee Banner",
+      "settings": {
+        "bg_color": "#000000",
+        "text_color": "#FFFFFF",
+        "font_size": 14,
+        "font_weight": "500",
+        "text_transform": "uppercase",
+        "speed": 30,
+        "padding_vertical": 12
+      }
+    },
     "rich_text_JE6QYx": {
       "type": "rich-text",
       "blocks": {
@@ -309,6 +322,7 @@
   "order": [
     "video_javi_w_W3bRfM",
     "image_banner_ftR6V3",
+    "trust_marquee_3zFtQb",
     "rich_text_JE6QYx",
     "image_with_text_KWGKmt",
     "image_with_text_Ebw7mB",
