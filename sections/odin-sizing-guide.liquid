@@ -1,231 +1,697 @@
 {% comment %}
-  ODIN Bike Sizing & Geometry Guide - Fixed Version
-  Save this as: sections/odin-sizing-guide.liquid
+  ODIN Bike Sizing Guide - Premium UX Redesign
+  Save as: sections/odin-sizing-guide.liquid
 {% endcomment %}
 
-<div class="odin-sizing-guide">
-  <!-- Size Guide Section -->
-  <div class="size-section">
-    <h2 class="section-title">{{ section.settings.size_title | default: "Choose Your Size" }}</h2>
-    <div class="size-grid">
-      <div class="size-option"><span class="size-label">XS</span><span class="size-range">152-165cm</span></div>
-      <div class="size-option"><span class="size-label">S</span><span class="size-range">166-172cm</span></div>
-      <div class="size-option"><span class="size-label">M</span><span class="size-range">175-184cm</span></div>
-      <div class="size-option"><span class="size-label">L</span><span class="size-range">185-193cm</span></div>
-      <div class="size-option"><span class="size-label">XL</span><span class="size-range">194-200cm</span></div>
+<div class="odin-sizing-redesign">
+  
+  <!-- Main Size Selector -->
+  <div class="size-selector-section">
+    <h2 class="main-title">{{ section.settings.size_title | default: "Find Your Perfect Fit" }}</h2>
+    <p class="size-subtitle">Choose based on your height. Between sizes? Go larger for comfort, smaller for agility.</p>
+    
+    <div class="size-cards">
+      <div class="size-card">
+        <div class="size-badge">XS</div>
+        <div class="size-height">152-165 cm</div>
+        <div class="size-height-imperial">5'0" - 5'5"</div>
+      </div>
+      
+      <div class="size-card">
+        <div class="size-badge">S</div>
+        <div class="size-height">166-172 cm</div>
+        <div class="size-height-imperial">5'5" - 5'8"</div>
+      </div>
+      
+      <div class="size-card size-card-popular">
+        <div class="popular-badge">Most Popular</div>
+        <div class="size-badge">M</div>
+        <div class="size-height">175-184 cm</div>
+        <div class="size-height-imperial">5'9" - 6'0"</div>
+      </div>
+      
+      <div class="size-card">
+        <div class="size-badge">L</div>
+        <div class="size-height">185-193 cm</div>
+        <div class="size-height-imperial">6'1" - 6'4"</div>
+      </div>
+      
+      <div class="size-card">
+        <div class="size-badge">XL</div>
+        <div class="size-height">194-200 cm</div>
+        <div class="size-height-imperial">6'5" - 6'7"</div>
+      </div>
+    </div>
+
+    <div class="size-help-banner">
+      <svg class="help-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+        <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+      <div class="help-text">
+        <strong>Not sure about your size?</strong>
+        <p>Contact our team for personalized sizing advice. We offer free size exchanges if needed.</p>
+      </div>
+      <a href="{{ section.settings.contact_url | default: '/pages/contact' }}" class="help-cta">Get Sizing Help</a>
     </div>
   </div>
 
-  <!-- Geometry Section -->
-  <div class="geometry-section">
-    <h2 class="section-title">{{ section.settings.geometry_title | default: "Geometry & Sizing Details" }}</h2>
-    
-    <div class="geometry-content">
-      {% if section.settings.geometry_image %}
-        <div class="geometry-diagram">
-          <img class="geometry-image" alt="ODIN Geometry Diagram" src="{{ section.settings.geometry_image | img_url: 'master' }}">
+  <!-- How to Measure Section -->
+  <details class="measure-guide">
+    <summary class="measure-summary">
+      <span class="measure-title">📏 How to Measure Yourself</span>
+      <span class="expand-icon">+</span>
+    </summary>
+    <div class="measure-content">
+      <div class="measure-steps">
+        <div class="measure-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Stand Against a Wall</h4>
+            <p>Remove your shoes and stand with your back flat against a wall, heels touching the wall.</p>
+          </div>
         </div>
-      {% endif %}
+        
+        <div class="measure-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Mark Your Height</h4>
+            <p>Use a book or flat object on top of your head, parallel to the floor. Mark the wall where it touches.</p>
+          </div>
+        </div>
+        
+        <div class="measure-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Measure</h4>
+            <p>Measure from the floor to your mark. This is your height for sizing.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="measure-note">
+        <strong>Pro Tip:</strong> If you're between sizes and have longer legs, size up. If you have a shorter torso, size down.
+      </div>
+    </div>
+  </details>
 
-      <div class="table-container">
+  <!-- Geometry Diagram Section -->
+  {% if section.settings.geometry_image %}
+  <div class="geometry-visual-section">
+    <h3 class="geometry-visual-title">Frame Geometry</h3>
+    <div class="geometry-diagram-wrapper">
+      <img 
+        src="{{ section.settings.geometry_image | img_url: '1200x' }}" 
+        alt="ODIN Geometry Diagram"
+        class="geometry-diagram-image"
+        loading="lazy">
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Technical Geometry Table - Collapsed by Default -->
+  <details class="geometry-technical">
+    <summary class="geometry-summary">
+      <span class="geometry-title">⚙️ Full Technical Geometry</span>
+      <span class="expand-icon">+</span>
+    </summary>
+    <div class="geometry-table-wrapper">
+      <div class="table-scroll">
         <table class="geometry-table">
           <thead>
-            <tr><th>Measurement</th><th>XS</th><th>S</th><th>M</th><th>L</th><th>XL</th></tr>
+            <tr>
+              <th class="measurement-col">Measurement</th>
+              <th>XS</th>
+              <th>S</th>
+              <th>M</th>
+              <th>L</th>
+              <th>XL</th>
+            </tr>
           </thead>
           <tbody>
-            <tr class="ref-row"><td>Body Height (Reference)</td><td>152–165 cm</td><td>166–172 cm</td><td>175–184cm</td><td>185–193 cm</td><td>194–200 cm</td></tr>
-            <tr class="note-row"><td colspan="6"><em>For reference only, may vary due to different body proportions.</em></td></tr>
-            <tr><td>A – Frame Size</td><td>460 mm</td><td>490 mm</td><td>520 mm</td><td>540 mm</td><td>560 mm</td></tr>
-            <tr><td>B – Seatpost Insert Length</td><td>130 mm</td><td>150 mm</td><td>170 mm</td><td>190 mm</td><td>210 mm</td></tr>
-            <tr><td>C – Reach</td><td>371 mm</td><td>385.1 mm</td><td>390.8 mm</td><td>390.8 mm</td><td>396.4 mm</td></tr>
-            <tr><td>D – Top Tube Length, Horizontal</td><td>510 mm</td><td>525 mm</td><td>540 mm</td><td>550 mm</td><td>565 mm</td></tr>
-            <tr><td>E – Stack</td><td>502.6 mm</td><td>505.4 mm</td><td>521.2 mm</td><td>541.9 mm</td><td>562.7 mm</td></tr>
-            <tr><td>F – Wheelbase</td><td>971.4 mm</td><td>986.6 mm</td><td>988.7 mm</td><td>990.8 mm</td><td>998.2 mm</td></tr>
-            <tr><td>G – Chainstay Length</td><td>410 mm</td><td>410 mm</td><td>410 mm</td><td>410 mm</td><td>410 mm</td></tr>
-            <tr><td>H – Front Center</td><td>571.7 mm</td><td>586.8 mm</td><td>588.9 mm</td><td>590.9 mm</td><td>598.3 mm</td></tr>
-            <tr><td>I – BB Drop</td><td>70 mm</td><td>70 mm</td><td>70 mm</td><td>70 mm</td><td>70 mm</td></tr>
-            <tr><td>J – BB Height</td><td>278 mm</td><td>278 mm</td><td>278 mm</td><td>278 mm</td><td>278 mm</td></tr>
-            <tr><td>K – Seat Tube Angle</td><td>74.5°</td><td>74.5°</td><td>74°</td><td>73.6°</td><td>73.3°</td></tr>
-            <tr><td>L – Head Tube Angle</td><td>71°</td><td>71°</td><td>72°</td><td>72.5°</td><td>73°</td></tr>
-            <tr><td>M – Seat Tube Length</td><td>460 mm</td><td>480 mm</td><td>500 mm</td><td>522 mm</td><td>542 mm</td></tr>
-            <tr><td>N – Head Tube Length</td><td>105 mm</td><td>108 mm</td><td>121 mm</td><td>141 mm</td><td>161 mm</td></tr>
-            <tr><td>Standover Height (700C×32C)</td><td>733.9 mm</td><td>753.6 mm</td><td>772 mm</td><td>793.1 mm</td><td>813 mm</td></tr>
-            <tr><td>O – Fork Rake/Offset</td><td>45 mm</td><td>45 mm</td><td>45 mm</td><td>45 mm</td><td>45 mm</td></tr>
-            <tr><td>P – Fork Length, Full</td><td>368 mm</td><td>368 mm</td><td>368 mm</td><td>368 mm</td><td>368 mm</td></tr>
-            <tr><td>P – Trail</td><td>68.1 mm</td><td>68.1 mm</td><td>63.7 mm</td><td>62.6 mm</td><td>59.3 mm</td></tr>
+            <tr class="highlight-row">
+              <td class="measurement-col">Rider Height Range</td>
+              <td>152–165 cm</td>
+              <td>166–172 cm</td>
+              <td>175–184 cm</td>
+              <td>185–193 cm</td>
+              <td>194–200 cm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Frame Size (A)</td>
+              <td>460 mm</td>
+              <td>490 mm</td>
+              <td>520 mm</td>
+              <td>540 mm</td>
+              <td>560 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Reach (C)</td>
+              <td>371 mm</td>
+              <td>385.1 mm</td>
+              <td>390.8 mm</td>
+              <td>390.8 mm</td>
+              <td>396.4 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Stack (E)</td>
+              <td>502.6 mm</td>
+              <td>505.4 mm</td>
+              <td>521.2 mm</td>
+              <td>541.9 mm</td>
+              <td>562.7 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Top Tube Length (D)</td>
+              <td>510 mm</td>
+              <td>525 mm</td>
+              <td>540 mm</td>
+              <td>550 mm</td>
+              <td>565 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Head Tube Length (N)</td>
+              <td>105 mm</td>
+              <td>108 mm</td>
+              <td>121 mm</td>
+              <td>141 mm</td>
+              <td>161 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Seat Tube Length (M)</td>
+              <td>460 mm</td>
+              <td>480 mm</td>
+              <td>500 mm</td>
+              <td>522 mm</td>
+              <td>542 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Standover Height</td>
+              <td>733.9 mm</td>
+              <td>753.6 mm</td>
+              <td>772 mm</td>
+              <td>793.1 mm</td>
+              <td>813 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Wheelbase (F)</td>
+              <td>971.4 mm</td>
+              <td>986.6 mm</td>
+              <td>988.7 mm</td>
+              <td>990.8 mm</td>
+              <td>998.2 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Chainstay Length (G)</td>
+              <td>410 mm</td>
+              <td>410 mm</td>
+              <td>410 mm</td>
+              <td>410 mm</td>
+              <td>410 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Front Center (H)</td>
+              <td>571.7 mm</td>
+              <td>586.8 mm</td>
+              <td>588.9 mm</td>
+              <td>590.9 mm</td>
+              <td>598.3 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">BB Drop (I)</td>
+              <td>70 mm</td>
+              <td>70 mm</td>
+              <td>70 mm</td>
+              <td>70 mm</td>
+              <td>70 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">BB Height (J)</td>
+              <td>278 mm</td>
+              <td>278 mm</td>
+              <td>278 mm</td>
+              <td>278 mm</td>
+              <td>278 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Seat Tube Angle (K)</td>
+              <td>74.5°</td>
+              <td>74.5°</td>
+              <td>74°</td>
+              <td>73.6°</td>
+              <td>73.3°</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Head Tube Angle (L)</td>
+              <td>71°</td>
+              <td>71°</td>
+              <td>72°</td>
+              <td>72.5°</td>
+              <td>73°</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Fork Rake (O)</td>
+              <td>45 mm</td>
+              <td>45 mm</td>
+              <td>45 mm</td>
+              <td>45 mm</td>
+              <td>45 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Fork Length (P)</td>
+              <td>368 mm</td>
+              <td>368 mm</td>
+              <td>368 mm</td>
+              <td>368 mm</td>
+              <td>368 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Trail (P)</td>
+              <td>68.1 mm</td>
+              <td>68.1 mm</td>
+              <td>63.7 mm</td>
+              <td>62.6 mm</td>
+              <td>59.3 mm</td>
+            </tr>
+            <tr>
+              <td class="measurement-col">Seatpost Insert (B)</td>
+              <td>130 mm</td>
+              <td>150 mm</td>
+              <td>170 mm</td>
+              <td>190 mm</td>
+              <td>210 mm</td>
+            </tr>
           </tbody>
         </table>
       </div>
+      <p class="geometry-note">All measurements are approximate and may vary slightly between production runs.</p>
     </div>
-  </div>
+  </details>
+
 </div>
 
 <style>
-.odin-sizing-guide {
+/* Modern Redesign Styles */
+.odin-sizing-redesign {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  max-width: 100%;
-  color: #333;
 }
 
-.section-title {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 20px;
+/* Main Size Selector */
+.size-selector-section {
   text-align: center;
-  color: #333;
+  margin-bottom: 50px;
 }
 
-/* Compact Size Guide */
-.size-section {
-  margin-bottom: 30px;
-}
-
-.size-grid {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.size-option {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 12px;
-  min-width: 80px;
-  text-align: center;
-}
-
-.size-label {
-  font-size: 24px;
+.main-title {
+  font-size: 2em;
   font-weight: 700;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.size-subtitle {
+  font-size: 1.05em;
+  color: #666;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.size-cards {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.size-card {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 30px 20px;
+  min-width: 140px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.size-card:hover {
+  border-color: #000;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.size-card-popular {
+  border-color: #000;
+  background: #fafafa;
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.size-badge {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.size-height {
+  font-size: 1.1em;
+  font-weight: 600;
   color: #333;
   margin-bottom: 4px;
 }
 
-.size-range {
-  font-size: 12px;
-  color: #666;
-  font-weight: 500;
+.size-height-imperial {
+  font-size: 0.9em;
+  color: #999;
 }
 
-/* Compact Geometry */
-.geometry-section {
-  margin-top: 30px;
-}
-
-.geometry-content {
+/* Help Banner */
+.size-help-banner {
+  background: #f8f8f8;
+  border-radius: 12px;
+  padding: 30px;
   display: flex;
+  align-items: center;
   gap: 20px;
-  align-items: flex-start;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.geometry-diagram {
-  flex: 0 0 auto;
-  max-width: 300px;
+.help-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  color: #000;
 }
 
-.geometry-image {
+.help-text {
+  flex: 1;
+}
+
+.help-text strong {
+  font-size: 1.1em;
+  display: block;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.help-text p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95em;
+}
+
+.help-cta {
+  background: #000;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.help-cta:hover {
+  opacity: 0.85;
+}
+
+/* Measurement Guide */
+.measure-guide,
+.geometry-technical {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  margin: 30px 0;
+  overflow: hidden;
+}
+
+.measure-summary,
+.geometry-summary {
+  padding: 20px 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1em;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.measure-summary:hover,
+.geometry-summary:hover {
+  background: #fafafa;
+}
+
+.measure-title,
+.geometry-title {
+  color: #000;
+}
+
+.expand-icon {
+  font-size: 1.8em;
+  font-weight: 300;
+  color: #666;
+  transition: transform 0.3s;
+}
+
+.measure-guide[open] .expand-icon,
+.geometry-technical[open] .expand-icon {
+  transform: rotate(45deg);
+}
+
+.measure-content {
+  padding: 0 30px 30px;
+}
+
+.measure-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.measure-step {
+  display: flex;
+  gap: 15px;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2em;
+  flex-shrink: 0;
+}
+
+.step-content h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.05em;
+  color: #000;
+}
+
+.step-content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.measure-note {
+  background: #fffbea;
+  border-left: 4px solid #f59e0b;
+  padding: 15px 20px;
+  border-radius: 6px;
+  font-size: 0.95em;
+  color: #666;
+}
+
+.measure-note strong {
+  color: #000;
+}
+
+/* Geometry Visual */
+.geometry-visual-section {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.geometry-visual-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.geometry-diagram-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fafafa;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.geometry-diagram-image {
   width: 100%;
   height: auto;
 }
 
-.table-container {
-  flex: 1;
+/* Technical Geometry Table */
+.geometry-table-wrapper {
+  padding: 0 30px 30px;
+}
+
+.table-scroll {
   overflow-x: auto;
-  min-width: 0;
+  margin-bottom: 20px;
 }
 
 .geometry-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 11px;
-  background: white;
+  font-size: 0.9em;
 }
 
 .geometry-table th,
 .geometry-table td {
-  padding: 6px 8px;
+  padding: 12px 16px;
   text-align: left;
-  border: 1px solid #ddd;
-  white-space: nowrap;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .geometry-table th {
-  background: #f8f9fa;
+  background: #fafafa;
   font-weight: 600;
-  color: #333;
-  font-size: 10px;
+  color: #000;
+  position: sticky;
+  top: 0;
 }
 
-.geometry-table th:first-child {
-  width: 35%;
-  white-space: normal;
-}
-
-.geometry-table td:first-child {
+.measurement-col {
   font-weight: 500;
-  font-size: 10px;
-  white-space: normal;
+  color: #000;
+  min-width: 180px;
 }
 
-.ref-row td {
-  background: #f8f9fa;
+.highlight-row {
+  background: #f8f8f8;
 }
 
-.note-row td {
-  background: #f8f9fa;
-  font-style: italic;
-  font-size: 9px;
-  color: #666;
-  padding: 4px 8px;
+.highlight-row td {
+  font-weight: 600;
+  color: #000;
+}
+
+.geometry-note {
+  font-size: 0.85em;
+  color: #999;
   text-align: center;
-  white-space: normal;
+  font-style: italic;
+  margin: 0;
 }
 
-/* Mobile Styles */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .geometry-content {
+  .odin-sizing-redesign {
+    padding: 0 15px;
+    margin: 30px auto;
+  }
+
+  .main-title {
+    font-size: 1.6em;
+  }
+
+  .size-cards {
+    gap: 10px;
+  }
+
+  .size-card {
+    min-width: 110px;
+    padding: 20px 15px;
+  }
+
+  .size-badge {
+    font-size: 2em;
+  }
+
+  .size-height {
+    font-size: 1em;
+  }
+
+  .size-help-banner {
     flex-direction: column;
+    text-align: center;
+    padding: 25px 20px;
   }
-  
-  .geometry-diagram {
-    max-width: 100%;
-    margin-bottom: 15px;
+
+  .help-text {
+    text-align: center;
   }
-  
-  .size-grid {
-    gap: 8px;
+
+  .help-cta {
+    width: 100%;
+    text-align: center;
   }
-  
-  .size-option {
-    min-width: 70px;
-    padding: 10px;
+
+  .measure-steps {
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
-  
-  .size-label {
-    font-size: 20px;
+
+  .measure-summary,
+  .geometry-summary {
+    padding: 15px 20px;
+    font-size: 1em;
   }
-  
-  .size-range {
-    font-size: 11px;
+
+  .measure-content,
+  .geometry-table-wrapper {
+    padding: 0 20px 20px;
   }
-  
+
+  .geometry-diagram-wrapper {
+    padding: 20px;
+  }
+
   .geometry-table {
-    font-size: 10px;
+    font-size: 0.8em;
   }
-  
+
   .geometry-table th,
   .geometry-table td {
-    padding: 4px 6px;
+    padding: 8px 10px;
   }
-  
-  .geometry-table td:first-child {
-    font-size: 9px;
-  }
-  
-  .note-row td {
-    font-size: 8px;
+
+  .measurement-col {
+    min-width: 140px;
   }
 }
 </style>
@@ -237,19 +703,20 @@
     {
       "type": "text",
       "id": "size_title",
-      "label": "Size section title",
-      "default": "Choose Your Size"
-    },
-    {
-      "type": "text",
-      "id": "geometry_title",
-      "label": "Geometry section title",
-      "default": "Geometry & Sizing Details"
+      "label": "Main title",
+      "default": "Find Your Perfect Fit"
     },
     {
       "type": "image_picker",
       "id": "geometry_image",
       "label": "Geometry diagram image"
+    },
+    {
+      "type": "text",
+      "id": "contact_url",
+      "label": "Contact page URL",
+      "default": "/pages/contact",
+      "info": "Enter the URL to your contact page (e.g., /pages/contact)"
     }
   ],
   "presets": [
