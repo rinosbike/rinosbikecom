@@ -1,0 +1,663 @@
+{% comment %}
+  FAQ General Section - Multi-language support
+  Languages: EN (default), ES, DE, FR, PL, BG
+{% endcomment %}
+
+{% assign current_locale = request.locale.iso_code %}
+
+{% comment %} Define all translations {% endcomment %}
+{% if current_locale == 'es' %}
+  {% assign q1 = "¿Actualmente vendéis e-bikes? Si no, ¿hay planes o una lista de espera para futuros modelos eléctricos?" %}
+  {% assign a1 = "De momento no tenemos e-bikes, pero podríamos considerar ofrecer modelos urbanos/commuter en el futuro." %}
+
+  {% assign q2 = "¿Vendéis cuadros/bicicletas de aluminio o acero, o solo de carbono? ¿Hay proyectos de titanio en camino?" %}
+  {% assign a2 = "Vendemos cuadros de carbono y de titanio." %}
+
+  {% assign q3 = "¿Puedo comprar solo un cuadro (cuadro + horquilla + dirección) para Sandman/Odin/Gaia?" %}
+  {% assign a3 = "Sí, puedes comprar un frameset de Sandman, Odin o Gaia y montar la bicicleta de tus sueños. Incluye todas las pequeñas piezas necesarias. Contáctanos en info@rinosbike.eu si tienes dudas mecánicas específicas." %}
+
+  {% assign q4 = "¿Ofrecéis montajes a medida (elección de grupo, ruedas, cockpit) o solo especificaciones fijas?" %}
+  {% assign a4 = "Ofrecemos un alto grado de personalización: puedes elegir color, talla y grupo, y nosotros montamos tu bicicleta ideal." %}
+
+  {% assign q5 = "¿Tenéis montajes específicos para mujeres o opciones de contacto (bielas más cortas, manillares más estrechos, sillines diferentes)?" %}
+  {% assign a5 = "Tenemos manillares más estrechos cuando se eligen tallas pequeñas, que suelen adaptarse mejor a muchas mujeres." %}
+
+  {% assign q6 = "¿Puedo cambiar las cubiertas/casete/ancho de manillar estándar al hacer el pedido?" %}
+  {% assign a6 = "Por favor, contáctanos en info@rinosbike.eu si necesitas una conversión específica y nuestro mecánico analizará la viabilidad." %}
+
+  {% assign q7 = "¿Ofrecéis pruebas, días de demo o un periodo de prueba “ride & decide”?" %}
+  {% assign a7 = "Participamos en numerosas ferias y eventos donde puedes probar nuestras bicicletas." %}
+
+  {% assign q8 = "¿Ofrecéis financiación, pagos a plazos con Klarna/PayPal o descuentos para estudiantes?" %}
+  {% assign a8 = "Sí, a través de Klarna y pagos fraccionados de PayPal." %}
+
+  {% assign q9 = "¿Vuestra tienda online admite pago en varias divisas y fija el tipo de cambio en el momento del pago?" %}
+  {% assign a9 = "Sí, esto es posible en nuestra página web." %}
+
+  {% assign q10 = "¿Dónde puedo ver las bicicletas en persona (tiendas, pop-ups, ferias)?" %}
+  {% assign a10 = "También puedes escribirnos a info@rinosbike.eu para concertar una visita, ver las bicis en persona y probarlas." %}
+
+  {% assign q11 = "¿Admitís leasing mediante salario (JobRad/Cycle to Work) o compras corporativas de flota?" %}
+  {% assign a11 = "Sí, para clientes en Alemania trabajamos con varias empresas de leasing." %}
+
+  {% assign q12 = "¿Existe un programa de fidelidad, referidos o embajadores para clientes recurrentes?" %}
+  {% assign a12 = "Sí, por favor contáctanos en info@rinosbike.eu para más información." %}
+
+  {% assign q13 = "¿Ofrecéis packs de accesorios preconfigurados “commuter”, “bikepacking” o “race day”?" %}
+  {% assign a13 = "Sí, escríbenos a info@rinosbike.eu" %}
+
+  {% assign q14 = "¿Puedo registrar el número de serie de mi bicicleta para alertas de robo y prueba de propiedad?" %}
+  {% assign a14 = "Sí, en la parte inferior del cuadro hay un número de serie que puedes usar para tu seguro y registro." %}
+
+  {% assign contact_text = "Nuestra misión es siempre responder a cualquier pregunta que puedas tener. Nos importa la honestidad y la transparencia en todos los aspectos de nuestro trabajo. Si tienes más dudas que estas preguntas frecuentes no resuelven, contáctanos a través de info@rinosbike.eu o del formulario de contacto de abajo." %}
+  {% assign contact_heading = "Formulario de contacto" %}
+
+{% elsif current_locale == 'de' %}
+  {% assign q1 = "Verkauft ihr aktuell E-Bikes? Falls nicht, sind welche geplant oder gibt es eine Warteliste für zukünftige E-Modelle?" %}
+  {% assign a1 = "Momentan haben wir keine E-Bikes im Programm, wir denken aber darüber nach, in Zukunft eventuell Commuter-Modelle anzubieten." %}
+
+  {% assign q2 = "Verkauft ihr Aluminium- oder Stahlrahmen/-bikes oder nur Carbon? Sind Titan-Projekte in Planung?" %}
+  {% assign a2 = "Wir verkaufen Carbon- und Titanrahmen." %}
+
+  {% assign q3 = "Kann ich ein reines Frameset (Rahmen + Gabel + Steuersatz) für Sandman/Odin/Gaia kaufen?" %}
+  {% assign a3 = "Ja, du kannst ein Frameset von Sandman, Odin oder Gaia kaufen und dir dein Traumrad aufbauen. Es enthält alle benötigten Kleinteile. Kontaktiere uns unter info@rinosbike.eu, wenn du spezielle technische Fragen hast." %}
+
+  {% assign q4 = "Bietet ihr individuelle Aufbauten (Wahl von Gruppe, Laufrädern, Cockpit) an oder nur fixe Spezifikationen?" %}
+  {% assign a4 = "Wir bieten einen hohen Grad an Individualisierung: Du kannst Farbe, Größe und Gruppe wählen und wir bauen dein Wunschrad." %}
+
+  {% assign q5 = "Gibt es frauenspezifische Aufbauten oder Kontaktpunkte (kürzere Kurbeln, schmalere Lenker, andere Sättel)?" %}
+  {% assign a5 = "Wir bieten schmalere Lenker an, insbesondere bei kleineren Rahmengrößen, was vielen Fahrerinnen besser passt." %}
+
+  {% assign q6 = "Kann ich Standardreifen/Kassette/Lenkerbreite bei der Bestellung tauschen?" %}
+  {% assign a6 = "Bitte kontaktiere uns unter info@rinosbike.eu, wenn du spezielle Umbauwünsche hast – unser Mechaniker prüft, ob sie umsetzbar sind." %}
+
+  {% assign q7 = "Bietet ihr Probefahrten, Demo-Tage oder ein „Ride & Decide“-Rückgabefenster an?" %}
+  {% assign a7 = "Wir nehmen an zahlreichen Messen und Veranstaltungen teil, auf denen du unsere Bikes probe fahren kannst." %}
+
+  {% assign q8 = "Bietet ihr Finanzierung, Klarna/PayPal-Ratenzahlungen oder Studentenrabatte an?" %}
+  {% assign a8 = "Ja, über Klarna und PayPal Ratenzahlungen." %}
+
+  {% assign q9 = "Unterstützt euer Shop Mehrwährungs-Checkout und wird der Wechselkurs beim Bezahlvorgang fixiert?" %}
+  {% assign a9 = "Ja, das ist auf unserer Website möglich." %}
+
+  {% assign q10 = "Wo kann ich die Fahrräder persönlich sehen (Händler, Pop-ups, Messen)?" %}
+  {% assign a10 = "Du kannst uns auch unter info@rinosbike.eu kontaktieren, um einen Termin zu vereinbaren, die Räder anzuschauen und zu testen." %}
+
+  {% assign q11 = "Unterstützt ihr Dienstrad-Leasing (z. B. JobRad) oder Firmenflotten?" %}
+  {% assign a11 = "Ja, für Kund:innen in Deutschland arbeiten wir mit mehreren Leasing-Anbietern zusammen." %}
+
+  {% assign q12 = "Gibt es ein Treue-, Empfehlungs- oder Ambassador-Programm für Bestandskund:innen?" %}
+  {% assign a12 = "Ja, bitte kontaktiere uns hierfür unter info@rinosbike.eu" %}
+
+  {% assign q13 = "Gibt es vorkonfigurierte Zubehörpakete wie „Commuter“, „Bikepacking“ oder „Race Day“?" %}
+  {% assign a13 = "Ja, schreibe uns dazu an info@rinosbike.eu" %}
+
+  {% assign q14 = "Kann ich die Seriennummer meines Bikes registrieren, um Diebstahlwarnungen und einen Eigentumsnachweis zu haben?" %}
+  {% assign a14 = "Ja, auf der Unterseite des Rahmens befindet sich eine Seriennummer, die du z. B. für deine Versicherung verwenden kannst." %}
+
+  {% assign contact_text = "Unsere Mission ist es immer, alle Ihre Fragen zu beantworten. Uns liegt Ehrlichkeit und Offenheit in allen Aspekten unserer Arbeit am Herzen. Wenn Sie weitere Fragen haben, die diese FAQ nicht beantworten, kontaktieren Sie uns bitte über info@rinosbike.eu oder das Kontaktformular unten." %}
+  {% assign contact_heading = "Kontaktformular" %}
+
+{% elsif current_locale == 'fr' %}
+  {% assign q1 = "Vendez-vous actuellement des vélos à assistance électrique ? Si non, prévoyez-vous des modèles électriques à l’avenir ou une liste d’attente ?" %}
+  {% assign a1 = "Pour le moment, nous ne proposons pas de vélos électriques, mais nous pourrions envisager des modèles urbains/commuter à l’avenir." %}
+
+  {% assign q2 = "Vendez-vous des cadres/vélos en aluminium ou en acier, ou seulement en carbone ? Des projets en titane sont-ils prévus ?" %}
+  {% assign a2 = "Nous vendons des cadres en carbone et en titane." %}
+
+  {% assign q3 = "Puis-je acheter uniquement un kit cadre (cadre + fourche + jeu de direction) pour Sandman/Odin/Gaia ?" %}
+  {% assign a3 = "Oui, vous pouvez acheter un frameset Sandman, Odin ou Gaia et monter le vélo de vos rêves. Il est livré avec toutes les petites pièces nécessaires. Contactez-nous à info@rinosbike.eu pour toute question mécanique spécifique." %}
+
+  {% assign q4 = "Proposez-vous des montages personnalisés (choix du groupe, des roues, du cockpit) ou seulement des configurations fixées ?" %}
+  {% assign a4 = "Nous offrons un haut niveau de personnalisation : vous choisissez la couleur, la taille et le groupe, et nous assemblons votre vélo idéal." %}
+
+  {% assign q5 = "Existe-t-il des montages spécifiques pour femmes ou des options de contact (manivelles plus courtes, cintres plus étroits, selles différentes) ?" %}
+  {% assign a5 = "Nous proposons des cintres plus étroits sur les petites tailles, ce qui convient souvent mieux à de nombreuses cyclistes." %}
+
+  {% assign q6 = "Puis-je échanger les pneus/cassette/largeur de cintre d’origine au moment de la commande ?" %}
+  {% assign a6 = "Veuillez nous contacter à info@rinosbike.eu si vous avez des besoins spécifiques de conversion. Notre mécanicien vérifiera ce qui est possible." %}
+
+  {% assign q7 = "Proposez-vous des essais, des journées de démonstration ou une période de test « ride & decide » ?" %}
+  {% assign a7 = "Nous participons à de nombreux salons et événements où vous pouvez tester nos vélos." %}
+
+  {% assign q8 = "Proposez-vous un financement, des paiements échelonnés Klarna/PayPal ou des réductions pour étudiants ?" %}
+  {% assign a8 = "Oui, via Klarna et les paiements en plusieurs fois PayPal." %}
+
+  {% assign q9 = "Votre boutique en ligne supporte-t-elle le paiement dans plusieurs devises et fige-t-elle le taux de change au moment du paiement ?" %}
+  {% assign a9 = "Oui, cela est possible sur notre site." %}
+
+  {% assign q10 = "Où puis-je voir les vélos en personne (revendeurs, pop-ups, salons) ?" %}
+  {% assign a10 = "Vous pouvez également nous contacter à info@rinosbike.eu pour planifier une visite, voir les vélos en vrai et les essayer." %}
+
+  {% assign q11 = "Proposez-vous des offres de leasing type vélo de fonction (JobRad/Cycle to Work) ou des flottes d’entreprise ?" %}
+  {% assign a11 = "Oui, pour les clients en Allemagne, nous travaillons avec plusieurs sociétés de leasing." %}
+
+  {% assign q12 = "Existe-t-il un programme de fidélité, de parrainage ou d’ambassadeurs pour les clients réguliers ?" %}
+  {% assign a12 = "Oui, veuillez nous contacter à info@rinosbike.eu pour plus d’informations." %}
+
+  {% assign q13 = "Proposez-vous des packs d’accessoires préconfigurés « commuter », « bikepacking » ou « race day » ?" %}
+  {% assign a13 = "Oui, contactez-nous à info@rinosbike.eu" %}
+
+  {% assign q14 = "Puis-je enregistrer le numéro de série de mon vélo pour les alertes de vol et la preuve de propriété ?" %}
+  {% assign a14 = "Oui, un numéro de série figure sous le cadre et peut servir de preuve pour votre assurance et votre enregistrement." %}
+
+  {% assign contact_text = "Notre mission est toujours de répondre à toutes vos questions. Nous tenons à l'honnêteté et à l'ouverture dans tous les aspects de notre travail. Si vous avez d’autres questions auxquelles cette FAQ ne répond pas, veuillez nous contacter via info@rinosbike.eu ou le formulaire de contact ci-dessous." %}
+  {% assign contact_heading = "Formulaire de contact" %}
+
+{% elsif current_locale == 'pl' %}
+  {% assign q1 = "Czy obecnie sprzedajecie e-rowery? Jeśli nie, czy są plany lub lista oczekujących na przyszłe modele elektryczne?" %}
+  {% assign a1 = "Obecnie nie mamy w ofercie e-rowerów, ale w przyszłości rozważamy wprowadzenie modeli miejskich/commuter." %}
+
+  {% assign q2 = "Czy sprzedajecie ramy/rowery aluminiowe lub stalowe, czy tylko karbonowe? Czy planowane są projekty tytanowe?" %}
+  {% assign a2 = "Sprzedajemy ramy karbonowe oraz tytanowe." %}
+
+  {% assign q3 = "Czy mogę kupić sam frameset (rama + widelec + stery) do Sandman/Odin/Gaia?" %}
+  {% assign a3 = "Tak, możesz kupić frameset Sandman, Odin lub Gaia i zbudować swój wymarzony rower. Zestaw zawiera wszystkie potrzebne drobne części. Skontaktuj się z nami na info@rinosbike.eu, jeśli masz szczegółowe pytania techniczne." %}
+
+  {% assign q4 = "Czy oferujecie indywidualne konfiguracje (wybór grupy, kół, kokpitu), czy tylko gotowe specyfikacje?" %}
+  {% assign a4 = "Oferujemy wysoki poziom personalizacji – możesz wybrać kolor, rozmiar i grupę, a my zbudujemy Twój wymarzony rower." %}
+
+  {% assign q5 = "Czy macie konfiguracje dedykowane kobietom lub inne elementy kontaktu (krótsze korby, węższe kierownice, różne siodła)?" %}
+  {% assign a5 = "Przy mniejszych rozmiarach ram stosujemy węższe kierownice, co często lepiej pasuje wielu kobietom." %}
+
+  {% assign q6 = "Czy mogę przy zamówieniu wymienić standardowe opony/kasetę/szerokość kierownicy?" %}
+  {% assign a6 = "Skontaktuj się z nami pod adresem info@rinosbike.eu, jeśli masz konkretne potrzeby dotyczące zmian – nasz mechanik sprawdzi, czy są możliwe." %}
+
+  {% assign q7 = "Czy oferujecie jazdy testowe, dni demo lub okres próbny typu „ride & decide”?" %}
+  {% assign a7 = "Bierzemy udział w wielu targach i wydarzeniach, gdzie można przetestować nasze rowery." %}
+
+  {% assign q8 = "Czy oferujecie finansowanie, raty Klarna/PayPal lub zniżki dla studentów?" %}
+  {% assign a8 = "Tak, poprzez Klarna oraz płatności ratalne PayPal." %}
+
+  {% assign q9 = "Czy wasz sklep obsługuje płatność w różnych walutach i blokuje kurs wymiany w momencie płatności?" %}
+  {% assign a9 = "Tak, jest to możliwe na naszej stronie." %}
+
+  {% assign q10 = "Gdzie mogę zobaczyć rowery na żywo (dealerzy, pop-upy, targi)?" %}
+  {% assign a10 = "Możesz też napisać do nas na info@rinosbike.eu, aby umówić wizytę, zobaczyć rowery i je przetestować." %}
+
+  {% assign q11 = "Czy współpracujecie z programami leasingu pracowniczego (np. JobRad/Cycle to Work) lub flotami firmowymi?" %}
+  {% assign a11 = "Tak, dla klientów w Niemczech współpracujemy z kilkoma firmami leasingowymi." %}
+
+  {% assign q12 = "Czy macie program lojalnościowy, poleceń lub ambasadorski dla stałych klientów?" %}
+  {% assign a12 = "Tak, w celu uzyskania szczegółów skontaktuj się z nami na info@rinosbike.eu" %}
+
+  {% assign q13 = "Czy oferujecie gotowe zestawy akcesoriów „commuter”, „bikepacking” lub „race day”?" %}
+  {% assign a13 = "Tak, napisz do nas na info@rinosbike.eu" %}
+
+  {% assign q14 = "Czy mogę zarejestrować numer seryjny roweru, aby mieć powiadomienia o kradzieży i dowód własności?" %}
+  {% assign a14 = "Tak, na spodzie ramy znajduje się numer seryjny, który można wykorzystać np. w ubezpieczeniu." %}
+
+  {% assign contact_text = "Naszą misją jest zawsze odpowiadanie na wszystkie pytania, które możesz mieć. Zależy nam na uczciwości i otwartości w każdym aspekcie naszej pracy. Jeśli masz dodatkowe pytania, na które ten FAQ nie odpowiada, skontaktuj się z nami przez info@rinosbike.eu lub formularz kontaktowy poniżej." %}
+  {% assign contact_heading = "Formularz kontaktowy" %}
+
+{% elsif current_locale == 'bg' %}
+  {% assign q1 = "В момента продавате ли електрически велосипеди (e-bikes)? Ако не, планирате ли такива модели или списък с чакащи?" %}
+  {% assign a1 = "В момента нямаме електрически велосипеди в асортимента, но обмисляме в бъдеще да предложим градски/commuter модели." %}
+
+  {% assign q2 = "Продавате ли алуминиеви или стоманени рамки/велосипеди, или само карбонови? Планират ли се титанoви проекти?" %}
+  {% assign a2 = "Продаваме рамки от карбон и титан." %}
+
+  {% assign q3 = "Мога ли да купя само frameset (рама + вилка + чело) за Sandman/Odin/Gaia?" %}
+  {% assign a3 = "Да, можете да закупите frameset Sandman, Odin или Gaia и да си сглобите велосипедa-мечта. Комплектът включва всички необходими дребни части. Свържете се с нас на info@rinosbike.eu, ако имате конкретни технически въпроси." %}
+
+  {% assign q4 = "Предлагате ли индивидуални конфигурации (избор на групсет, колела, кокпит) или само фиксирани спецификации?" %}
+  {% assign a4 = "Предлагаме висок степен на персонализация – можете да изберете цвят, размер и групсет, а ние ще сглобим вашия мечтан велосипед." %}
+
+  {% assign q5 = "Имате ли конфигурации, насочени към жени, или специфични контактни точки (по-къси курбели, по-тесни кормила, различни седалки)?" %}
+  {% assign a5 = "За по-малките размери рамки предлагаме по-тесни кормила, което често е по-удобно за много колоездачки." %}
+
+  {% assign q6 = "Мога ли при поръчка да сменя стандартните гуми/касета/ширина на кормилото?" %}
+  {% assign a6 = "Моля, свържете се с нас на info@rinosbike.eu, ако имате конкретни нужди за промяна – нашият механик ще прецени дали са възможни." %}
+
+  {% assign q7 = "Предлагате ли тестови карания, демо дни или период за проба тип „ride & decide“?" %}
+  {% assign a7 = "Участваме в множество велоизложения и събития, където можете да тествате нашите велосипеди." %}
+
+  {% assign q8 = "Предлагате ли финансиране, разсрочени плащания чрез Klarna/PayPal или студентски отстъпки?" %}
+  {% assign a8 = "Да, чрез Klarna и разсрочени плащания с PayPal." %}
+
+  {% assign q9 = "Поддържа ли онлайн магазинът ви плащане в различни валути и фиксира ли курса при плащане?" %}
+  {% assign a9 = "Да, това е възможно на нашия уебсайт." %}
+
+  {% assign q10 = "Къде мога да видя велосипедите на живо (дилъри, pop-up обекти, изложения)?" %}
+  {% assign a10 = "Можете също да ни пишете на info@rinosbike.eu, за да уговорим посещение, да видите велосипедите и да ги изпробвате." %}
+
+  {% assign q11 = "Работите ли с лизингови програми чрез работодателя (напр. JobRad/Cycle to Work) или корпоративни велофлoти?" %}
+  {% assign a11 = "Да, за клиенти в Германия работим с няколко лизингови компании." %}
+
+  {% assign q12 = "Имате ли програма за лоялност, препоръки или посланици за редовни клиенти?" %}
+  {% assign a12 = "Да, свържете се с нас на info@rinosbike.eu за повече информация." %}
+
+  {% assign q13 = "Предлагате ли готови комплекти аксесоари „commuter“, „bikepacking“ или „race day“?" %}
+  {% assign a13 = "Да, пишете ни на info@rinosbike.eu" %}
+
+  {% assign q14 = "Мога ли да регистрирам серийния номер на велосипеда си за известия при кражба и доказателство за собственост?" %}
+  {% assign a14 = "Да, в долната част на рамката има сериен номер, който може да се използва за застраховка и регистрация." %}
+
+  {% assign contact_text = "Нашата мисия винаги е да отговаряме на всички въпроси, които може да имате. Ние държим на честността и откритостта във всеки аспект на нашата работа. Ако имате допълнителни въпроси, на които този раздел с ЧЗВ не отговаря, свържете се с нас на info@rinosbike.eu или чрез формуляра за контакт по-долу." %}
+  {% assign contact_heading = "Формуляр за контакт" %}
+
+{% else %}
+  {% comment %} Default to English {% endcomment %}
+  {% assign q1 = "Do you currently sell e-bikes? If not, are there plans or a waitlist for future e-models?" %}
+  {% assign a1 = "At the moment we do not have e-bikes but might consider bringing our commuter models in the future." %}
+
+  {% assign q2 = "Do you sell aluminum or steel frames/bikes, or only carbon? Any titanium projects coming?" %}
+  {% assign a2 = "We sell carbon and titanium frames." %}
+
+  {% assign q3 = "Can I buy a frameset only (frame + fork + headset) for Sandman/Odin/Gaia?" %}
+  {% assign a3 = "Yes, you can buy a frameset for Sandman, Odin or Gaia and build your dream bike. It comes with all the small parts you need. Contact us at info@rinosbike.eu if you have specific mechanical questions." %}
+
+  {% assign q4 = "Do you sell custom builds (choose groupset, wheels, cockpit) or only fixed specs?" %}
+  {% assign a4 = "We offer a high degree of customization where you can choose the colour, size and groupset and we will build your dream bike." %}
+
+  {% assign q5 = "Are there women-specific builds or contact-point options (short cranks, narrower bars, different saddles)?" %}
+  {% assign a5 = "We have narrower bars for women if a smaller size is chosen." %}
+
+  {% assign q6 = "Can I swap stock tires/cassette/handlebar width at checkout?" %}
+  {% assign a6 = "Please contact us at info@rinosbike.eu if you have specific needs for conversion and our mechanic will analyse and let you know if it is achievable." %}
+
+  {% assign q7 = "Do you offer test rides, demo days, or a satisfaction “ride & decide” window?" %}
+  {% assign a7 = "We participate in numerous trade fairs where you can test ride our bikes." %}
+
+  {% assign q8 = "Do you offer financing, Klarna/PayPal installments, or student discounts?" %}
+  {% assign a8 = "Yes, via Klarna and PayPal rate payments." %}
+
+  {% assign q9 = "Do you support multi-currency checkout and lock the FX rate at payment time?" %}
+  {% assign a9 = "Yes, it is possible on our website." %}
+
+  {% assign q10 = "Where can I see the bikes in person (dealers, pop-ups, trade fairs)?" %}
+  {% assign a10 = "You can contact us also at info@rinosbike.eu to schedule a visit to see the bikes in person and try it out." %}
+
+  {% assign q11 = "Do you support salary-sacrifice leasing (JobRad/Cycle to Work) or corporate fleet purchases?" %}
+  {% assign a11 = "Yes for customers in Germany we work with many leasing companies." %}
+
+  {% assign q12 = "Is there a loyalty, referral, or ambassador program for returning customers?" %}
+  {% assign a12 = "Yes, please contact us at info@rinosbike.eu for more info." %}
+
+  {% assign q13 = "Are there pre-built “commuter,” “bikepacking,” or “race day” accessory bundles?" %}
+  {% assign a13 = "Yes, contact us at info@rinosbike.eu" %}
+
+  {% assign q14 = "Can I register my bike’s serial for theft alerts and proof of ownership?" %}
+  {% assign a14 = "Yes, at the bottom of the frame there is a serial number for insurance." %}
+
+  {% assign contact_text = "Our mission is always to answer any questions that you may have. We care about honesty and openness in any aspect of our work. If you have any further questions that this FAQ does not answer please contact us Via info@rinosbike.eu or the contact form below." %}
+  {% assign contact_heading = "Contact form" %}
+{% endif %}
+
+<div class="faq-general-section page-width section-{{ section.id }}-padding">
+  {% if section.settings.heading != blank %}
+    <h2 class="faq-heading {{ section.settings.heading_size }} {{ section.settings.heading_alignment }}">
+      {{ section.settings.heading }}
+    </h2>
+  {% endif %}
+
+  <div class="faq-collapsible-content">
+    <div class="faq-row">
+      <details {% if section.settings.open_first_collapsible_row %}open{% endif %}>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q1 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a1 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q2 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a2 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q3 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a3 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q4 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a4 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q5 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a5 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q6 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a6 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q7 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a7 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q8 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a8 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q9 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a9 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q10 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a10 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q11 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a11 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q12 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a12 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q13 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a13 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q14 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a14 }}</p>
+        </div>
+      </details>
+    </div>
+  </div>
+  
+</div>
+
+<style>
+.faq-general-section {
+  padding: 40px 20px;
+}
+
+.faq-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-collapsible-content {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.faq-row {
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.faq-row details {
+  padding: 20px 0;
+}
+
+.faq-row summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+}
+
+.faq-row summary::-webkit-details-marker {
+  display: none;
+}
+
+.icon-question {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.faq-question {
+  flex: 1;
+}
+
+.icon-caret {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.icon-caret::after {
+  content: '▼';
+  font-size: 12px;
+}
+
+.faq-row details[open] .icon-caret::after {
+  content: '▲';
+}
+
+.faq-answer {
+  padding: 15px 0 15px 39px;
+  line-height: 1.6;
+}
+
+.faq-contact-section {
+  max-width: 800px;
+  margin: 60px auto 0;
+  text-align: center;
+}
+
+.rich-text-content {
+  margin-bottom: 40px;
+}
+
+.contact-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form-heading {
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.button {
+  padding: 12px 30px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.button:hover {
+  background-color: #333;
+}
+
+.form-success {
+  color: green;
+  margin-bottom: 20px;
+}
+
+.form-errors {
+  color: red;
+  margin-bottom: 20px;
+}
+</style>
+
+{% schema %}
+{
+  "name": "FAQ General",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "General FAQ"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "options": [
+        { "value": "h1", "label": "Large" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h3", "label": "Small" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first_collapsible_row",
+      "label": "Open first item by default",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ General"
+    }
+  ]
+}
+{% endschema %}
