@@ -11,11 +11,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "review_section_small_QTMWdT": {
-      "type": "review-section-small",
-      "name": "review-section-small",
-      "settings": {}
-    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -88,7 +83,6 @@
     }
   },
   "order": [
-    "review_section_small_QTMWdT",
     "footer"
   ]
 }
