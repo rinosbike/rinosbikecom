@@ -11,9 +11,20 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
+      }
+    },
+    "section_faq_bikespec_QJjApC": {
+      "type": "section-faq-bikespec",
+      "name": "FAQ Bikespec",
+      "settings": {
+        "heading": "Bikespec FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "open_first_collapsible_row": false
       }
     },
     "collapsible_content_XmhYQB": {
@@ -242,6 +253,7 @@
         "collapsible_row_9QBQGE",
         "collapsible_row_wx7EQK"
       ],
+      "disabled": true,
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
@@ -303,6 +315,7 @@
   },
   "order": [
     "main",
+    "section_faq_bikespec_QJjApC",
     "collapsible_content_XmhYQB",
     "rich_text_VgGpR4",
     "contact_form_RyXPCd"
