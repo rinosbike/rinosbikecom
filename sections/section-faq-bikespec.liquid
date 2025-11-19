@@ -1,0 +1,942 @@
+{% comment %}
+  FAQ Bikespec Section - Multi-language support
+  Languages: EN (default), ES, DE, FR, PL, BG
+{% endcomment %}
+
+{% assign current_locale = request.locale.iso_code %}
+
+{% comment %} Define all translations {% endcomment %}
+{% if current_locale == 'es' %}
+  {% assign q1 = "¿Cuál es la capacidad máxima de carga del cuadro?" %}
+  {% assign a1 = "Lo hemos probado con una carga de hasta 130 kg." %}
+
+  {% assign q2 = "¿Hay guiado interno para luz de buje dinamo o tija telescópica en los cuadros de gravel?" %}
+  {% assign a2 = "Para conversiones específicas, por favor contáctanos en info@rinosbike.eu" %}
+
+  {% assign q3 = "¿El tamaño del manillar corresponde al tamaño del cuadro?" %}
+  {% assign a3 = "Sí, cada talla de cuadro tiene su propio tamaño de manillar correspondiente." %}
+
+  {% assign q4 = "¿Cuáles son los anchos/longitudes/alturas de manillar para las bicicletas Odin?" %}
+  {% assign a4 = "Van desde 400*80 mm hasta 420*110 mm." %}
+
+  {% assign q5 = "¿Cuáles son los anchos/longitudes/alturas de manillar para las bicicletas Sandman?" %}
+  {% assign a5 = "Van desde 400*100 mm hasta 440*120 mm." %}
+
+  {% assign q6 = "¿Puedo aumentar la altura de los espaciadores de la potencia a más de 3 cm con espaciadores especiales?" %}
+  {% assign a6 = "Por favor contáctanos, ya que necesitarás una horquilla más larga para poder montar más espaciadores de forma segura." %}
+
+  {% assign q7 = "¿Hay orificios de montaje para guardabarros normales en los modelos Sandman?" %}
+  {% assign a7 = "Nuestros neumáticos son 40C. Si tus guardabarros son compatibles con 40C y ruedas 700C / 28 pulgadas, funcionarán sin problema." %}
+
+  {% assign q8 = "¿Qué tipo de caja de pedalier se utiliza en el cuadro de carbono/bicicleta de gravel?" %}
+  {% assign a8 = "Utilizamos pedalier roscado T47 de 85,5 mm." %}
+
+  {% assign q9 = "¿Qué tipo de patilla de cambio utilizáis, UDH o propia? ¿Dónde puedo comprar una de repuesto?" %}
+  {% assign a9 = "Usamos UDH en nuestras bicicletas de gravel; puedes comprarla en cualquier tienda de bicicletas o contactarnos directamente." %}
+
+  {% assign q10 = "¿Dónde puedo ver las tablas de geometría (stack/reach) por talla y cómo elijo entre dos tallas cercanas?" %}
+  {% assign a10 = "Por favor contáctanos si sigues teniendo dudas sobre la talla después de consultar nuestras tablas de tallas." %}
+
+  {% assign q11 = "¿Qué estándar de montaje de frenos y qué límites de tamaño de disco se aplican (flat mount; diámetros mínimo/máximo delante/detrás)?" %}
+  {% assign a11 = "Usamos frenos de disco de 160 mm con montaje flat mount en nuestras bicicletas de gravel y carretera." %}
+
+  {% assign q12 = "¿Qué estándares de eje y pasos de rosca se utilizan (delantero 12×100, trasero 12×142; especificación del eje pasante)?" %}
+  {% assign a12 = "Usamos 12×100 en la rueda delantera y 12×142 en la rueda trasera." %}
+
+  {% assign q13 = "Puntos de montaje: portaequipajes, guardabarros completos, bolsa tipo bento en el tubo superior, anclajes de carga en la horquilla… ¿qué es compatible?" %}
+  {% assign a13 = "Disponemos de puntos de montaje para portaequipajes, guardabarros y todo lo necesario para bikepacking." %}
+
+  {% assign q14 = "¿Las horquillas están homologadas para portaequipajes low-rider o solo para portabidones/soportes de carga ligeros?" %}
+  {% assign a14 = "Es posible reducir la longitud de la horquilla, pero recomendamos que lo haga un mecánico de bicicletas con experiencia." %}
+
+  {% assign q15 = "¿Qué estándar de pedalier se usa en cada plataforma (Sandman/Odin)—BB86/BB92/BSA/u otro?" %}
+  {% assign a15 = "Usamos pedalieres roscados T47: 85,5 mm para la serie Sandman y 68 mm para la serie Odin." %}
+
+  {% assign q16 = "¿Puedo montar acoples aerodinámicos (clip-on aerobars) en el cockpit de gravel? ¿Alguna recomendación de par máximo/espaciado?" %}
+  {% assign a16 = "Puede que necesites adaptadores, dependiendo del fabricante y de la forma de los acoples aerodinámicos." %}
+
+  {% assign q17 = "¿Puedo cambiar a una transmisión 1× desde la 2× de serie sin problemas de línea de cadena?" %}
+  {% assign a17 = "Sí, es posible; nuestros cuadros son compatibles con transmisiones 1× y 2×." %}
+
+  {% assign q18 = "¿Las mejoras con rodamientos/poleas cerámicas son compatibles y están cubiertas por la garantía?" %}
+  {% assign a18 = "No ofrecemos estos componentes, pero si tienes preguntas sobre dicha conversión, ponte en contacto con nosotros." %}
+
+  {% assign q19 = "¿Las horquillas de suspensión para gravel son compatibles (longitud axle-to-crown y límites de offset)?" %}
+  {% assign a19 = "Por favor consulta nuestras especificaciones técnicas de dirección. No ofrecemos horquillas de suspensión para gravel, pero puedes hacer la conversión según tus propias especificaciones." %}
+
+  {% assign q20 = "¿Se admite tija telescópica en los cuadros de gravel (puerto de guiado interno)?" %}
+  {% assign a20 = "La conversión a tija telescópica está soportada. Por favor contáctanos en info@rinosbike.eu" %}
+
+  {% assign q21 = "¿Qué potenciómetros (araña, brazo izquierdo, doble) son compatibles con cada biela y estándar de pedalier?" %}
+  {% assign a21 = "Usamos bielas Shimano; si el potenciómetro es compatible con Shimano, encajará." %}
+
+  {% assign q22 = "¿Publicáis la altura de standover y la inserción mínima de la tija por talla?" %}
+  {% assign a22 = "La tija tiene marcas que indican la longitud mínima de inserción." %}
+
+  {% assign contact_text = "Nuestra misión es siempre responder cualquier pregunta que puedas tener. Nos preocupamos por la honestidad y la transparencia en cualquier aspecto de nuestro trabajo. Si tienes más preguntas que estas preguntas frecuentes no responden, contáctanos a través de info@rinosbike.eu o el formulario de contacto a continuación." %}
+  {% assign contact_heading = "Formulario de contacto" %}
+
+{% elsif current_locale == 'de' %}
+  {% assign q1 = "Was ist die maximale Belastbarkeit des Rahmens?" %}
+  {% assign a1 = "Wir haben den Rahmen bis zu einer Last von 130 kg getestet." %}
+
+  {% assign q2 = "Gibt es eine interne Leitungsführung für Nabendynamo-Beleuchtung oder eine Variosattelstütze bei den Gravel-Rahmen?" %}
+  {% assign a2 = "Für spezielle Umbauten kontaktiere uns bitte unter info@rinosbike.eu" %}
+
+  {% assign q3 = "Entspricht die Lenkerbreite der jeweiligen Rahmengröße?" %}
+  {% assign a3 = "Ja, jede Rahmengröße hat eine passende Lenkergröße." %}
+
+  {% assign q4 = "Wie sind Lenkerbreiten/-längen/-höhen bei den Odin-Bikes?" %}
+  {% assign a4 = "Sie reichen von 400*80 mm bis 420*110 mm." %}
+
+  {% assign q5 = "Wie sind Lenkerbreiten/-längen/-höhen bei den Sandman-Bikes?" %}
+  {% assign a5 = "Sie reichen von 400*100 mm bis 440*120 mm." %}
+
+  {% assign q6 = "Kann ich den Spacer-Stapel unter dem Vorbau höher als 3 cm machen, z. B. mit Spezialspacern?" %}
+  {% assign a6 = "Bitte kontaktiere uns dazu, da du für mehr Spacer eine längere Gabel benötigst, um dies sicher umzusetzen." %}
+
+  {% assign q7 = "Gibt es an den Sandman-Modellen Montageösen für normale Schutzbleche?" %}
+  {% assign a7 = "Wir verwenden 40C-Reifen. Wenn deine Schutzbleche für 40C und 700C / 28-Zoll-Laufräder geeignet sind, passen sie problemlos." %}
+
+  {% assign q8 = "Welches Tretlager wird beim Carbonrahmen/Gravelbike verwendet?" %}
+  {% assign a8 = "Wir verwenden ein T47-Gewindetretlager mit 85,5 mm Breite." %}
+
+  {% assign q9 = "Welche Schaltaugen verwendet ihr – UDH oder ein eigenes System – und wo kann ich ein Ersatzteil kaufen?" %}
+  {% assign a9 = "Wir verwenden UDH an unseren Gravel-Bikes; du kannst es in jedem Fahrradladen erwerben oder uns direkt kontaktieren." %}
+
+  {% assign q10 = "Wo finde ich die Geometrietabellen (Stack/Reach) pro Größe und wie wähle ich zwischen zwei benachbarten Größen?" %}
+  {% assign a10 = "Bitte kontaktiere uns, wenn du dir nach dem Blick auf unsere Größentabellen immer noch unsicher bist." %}
+
+  {% assign q11 = "Welche Bremsaufnahmen und Grenzen für die Scheibengröße gelten (Flatmount; min./max. Durchmesser vorne/hinten)?" %}
+  {% assign a11 = "Wir verwenden Flatmount-Aufnahmen für unsere 160-mm-Scheibenbremsen an Gravel- und Rennrädern." %}
+
+  {% assign q12 = "Welche Achsstandards und Gewindesteigungen werden verwendet (vorne 12×100, hinten 12×142; Steckachs-Spezifikation)?" %}
+  {% assign a12 = "Wir verwenden 12×100 vorne und 12×142 hinten." %}
+
+  {% assign q13 = "Montagepunkte: Gepäckträger, lange Schutzbleche, Oberrohr-Tasche (Bento), Gabel-Aufnahmen für Gepäck – was ist möglich?" %}
+  {% assign a13 = "Wir haben Montagepunkte für Gepäckträger, Schutzbleche und alles, was du für Bikepacking brauchst." %}
+
+  {% assign q14 = "Sind die Gabeln für Lowrider-Gepäckträger freigegeben oder nur für Flaschenhalter/leichte Cargo-Halterungen?" %}
+  {% assign a14 = "Es ist möglich, die Gabel zu kürzen, aber wir empfehlen dringend, dies von einem erfahrenen Fahrradmechaniker durchführen zu lassen." %}
+
+  {% assign q15 = "Welcher Tretlagerstandard wird bei den Plattformen Sandman/Odin verwendet – BB86/BB92/BSA/sonstige?" %}
+  {% assign a15 = "Wir verwenden T47-Gewindetretlager: 85,5 mm für die Sandman-Serie und 68 mm für die Odin-Serie." %}
+
+  {% assign q16 = "Kann ich Aero-Aufsätze (Clip-on-Aerobars) am Gravel-Cockpit montieren? Gibt es Vorgaben zu maximalem Drehmoment/Abstand?" %}
+  {% assign a16 = "Je nach Hersteller und Form der Aerobars können Adapter erforderlich sein." %}
+
+  {% assign q17 = "Kann ich von der serienmäßigen 2×-Schaltung auf 1× umrüsten, ohne Probleme mit der Kettenlinie zu bekommen?" %}
+  {% assign a17 = "Ja, das ist möglich; unsere Rahmen sind sowohl mit 1×- als auch 2×-Antrieben kompatibel." %}
+
+  {% assign q18 = "Sind Keramik-Umlenkrollen/-Lager-Updates kompatibel und von der Garantie abgedeckt?" %}
+  {% assign a18 = "Wir bieten diese Komponenten nicht an, aber wenn du Fragen zu einem solchen Umbau hast, melde dich gerne bei uns." %}
+
+  {% assign q19 = "Sind Gravel-Federgabeln kompatibel (Axle-to-Crown-Länge und Offset-Grenzen)?" %}
+  {% assign a19 = "Bitte prüfe unsere technischen Spezifikationen für den Steuersatz. Wir bieten keine Federgabeln für Gravel an, aber du kannst dein Rad nach eigenen Spezifikationen umbauen." %}
+
+  {% assign q20 = "Ist eine Teleskopsattelstütze an den Gravel-Rahmen möglich (interne Leitungsführung)?" %}
+  {% assign a20 = "Die Umrüstung auf eine Variosattelstütze ist möglich. Bitte kontaktiere uns unter info@rinosbike.eu" %}
+
+  {% assign q21 = "Welche Powermeter (Spider/Links-Kurbel/Dual) passen zu den jeweiligen Kurbeln und Tretlagerstandards?" %}
+  {% assign a21 = "Wir verwenden Shimano-Kurbeln; wenn der Powermeter mit Shimano kompatibel ist, passt er." %}
+
+  {% assign q22 = "Listet ihr die Überstandshöhe (Standover) und die minimale Sattelstützen-Einstecktiefe pro Größe auf?" %}
+  {% assign a22 = "Auf der Sattelstütze sind Markierungen für die minimale Einstecktiefe vorhanden." %}
+
+  {% assign contact_text = "Unsere Mission ist es immer, alle Ihre Fragen zu beantworten. Uns liegt Ehrlichkeit und Offenheit in allen Aspekten unserer Arbeit am Herzen. Wenn Sie weitere Fragen haben, die diese FAQ nicht beantworten, kontaktieren Sie uns bitte über info@rinosbike.eu oder das untenstehende Kontaktformular." %}
+  {% assign contact_heading = "Kontaktformular" %}
+
+{% elsif current_locale == 'fr' %}
+  {% assign q1 = "Quelle est la capacité de charge maximale du cadre ?" %}
+  {% assign a1 = "Nous l’avons testé avec une charge allant jusqu’à 130 kg." %}
+
+  {% assign q2 = "Un routage interne est-il prévu pour un éclairage à dynamo de moyeu ou une tige de selle télescopique sur les cadres gravel ?" %}
+  {% assign a2 = "Pour des conversions spécifiques, veuillez nous contacter à info@rinosbike.eu" %}
+
+  {% assign q3 = "La taille du cintre correspond-elle à la taille du cadre ?" %}
+  {% assign a3 = "Oui, chaque taille de cadre est associée à une largeur de cintre adaptée." %}
+
+  {% assign q4 = "Quelles sont les largeurs/longueurs/hauteurs de cintre pour les vélos Odin ?" %}
+  {% assign a4 = "Elles vont de 400*80 mm à 420*110 mm." %}
+
+  {% assign q5 = "Quelles sont les largeurs/longueurs/hauteurs de cintre pour les vélos Sandman ?" %}
+  {% assign a5 = "Elles vont de 400*100 mm à 440*120 mm." %}
+
+  {% assign q6 = "Puis-je augmenter la pile d’entretoises sous la potence à plus de 3 cm avec des entretoises spéciales ?" %}
+  {% assign a6 = "Veuillez nous contacter, car vous aurez besoin d’une fourche plus longue pour pouvoir utiliser plus d’entretoises en toute sécurité." %}
+
+  {% assign q7 = "Les modèles Sandman disposent-ils de trous de fixation pour des garde-boue classiques ?" %}
+  {% assign a7 = "Nous montons des pneus 40C. Si vos garde-boue sont compatibles avec des pneus 40C et des roues 700C / 28 pouces, ils conviendront." %}
+
+  {% assign q8 = "Quel standard de boîtier de pédalier est utilisé sur le cadre carbone/le gravel ?" %}
+  {% assign a8 = "Nous utilisons un boîtier de pédalier fileté T47 de 85,5 mm." %}
+
+  {% assign q9 = "Quel type de patte de dérailleur utilisez-vous, UDH ou propriétaire, et où puis-je en acheter une de rechange ?" %}
+  {% assign a9 = "Nous utilisons des pattes UDH sur nos gravel ; vous pouvez en acheter dans n’importe quel magasin de vélos ou nous contacter directement." %}
+
+  {% assign q10 = "Où puis-je consulter les tableaux de géométrie (stack/reach) par taille et comment choisir entre deux tailles proches ?" %}
+  {% assign a10 = "Veuillez nous contacter si vous avez encore des doutes sur la taille après avoir consulté nos tableaux de tailles." %}
+
+  {% assign q11 = "Quels types de fixations de frein et quelles limites de diamètre de disque (flat mount ; diamètres mini/maxi avant/arrière) s’appliquent ?" %}
+  {% assign a11 = "Nous utilisons des freins à disque de 160 mm avec fixation flat mount sur nos vélos de gravel et de route." %}
+
+  {% assign q12 = "Quels standards d’axes et quels pas de filetage sont utilisés (avant 12×100, arrière 12×142 ; spécification des axes traversants) ?" %}
+  {% assign a12 = "Nous utilisons du 12×100 à l’avant et du 12×142 à l’arrière." %}
+
+  {% assign q13 = "Points de montage : porte-bagages, garde-boue intégraux, sacoche de top-tube, supports de charge sur la fourche – qu’est-ce qui est prévu ?" %}
+  {% assign a13 = "Nous proposons des points de montage pour porte-bagages, garde-boue et tout l’équipement nécessaire au bikepacking." %}
+
+  {% assign q14 = "Les fourches sont-elles homologuées pour des porte-bagages low-rider ou uniquement pour des porte-bidons/supports légers ?" %}
+  {% assign a14 = "Il est possible de raccourcir la fourche, mais nous recommandons de confier cette opération à un mécanicien vélo expérimenté." %}
+
+  {% assign q15 = "Quel standard de boîtier de pédalier est utilisé sur chaque plateforme (Sandman/Odin) – BB86/BB92/BSA/autre ?" %}
+  {% assign a15 = "Nous utilisons des boîtiers de pédalier filetés T47 : 85,5 mm pour la série Sandman et 68 mm pour la série Odin." %}
+
+  {% assign q16 = "Puis-je monter des prolongateurs de cintre (clip-on aerobars) sur le cockpit gravel ? Y a-t-il des recommandations de couple/espacement ?" %}
+  {% assign a16 = "Vous aurez peut-être besoin d’adaptateurs, selon le fabricant et la forme des prolongateurs." %}
+
+  {% assign q17 = "Puis-je passer d’une transmission 2× d’origine à une 1× sans problème de ligne de chaîne ?" %}
+  {% assign a17 = "Oui, c’est possible ; nos cadres sont compatibles avec les transmissions 1× et 2×." %}
+
+  {% assign q18 = "Les améliorations avec galets/roulements céramique sont-elles compatibles et couvertes par la garantie ?" %}
+  {% assign a18 = "Nous ne proposons pas ces composants, mais si vous avez des questions sur ce type de conversion, n’hésitez pas à nous contacter." %}
+
+  {% assign q19 = "Les fourches suspendues de gravel sont-elles compatibles (longueur axe-couronne et limites d’offset) ?" %}
+  {% assign a19 = "Veuillez consulter nos spécifications techniques pour le jeu de direction. Nous ne proposons pas de fourches suspendues pour gravel, mais vous pouvez adapter votre vélo selon vos propres spécifications." %}
+
+  {% assign q20 = "Une tige de selle télescopique est-elle compatible avec les cadres gravel (routage interne) ?" %}
+  {% assign a20 = "La conversion vers une tige de selle télescopique est possible. Veuillez nous contacter à info@rinosbike.eu" %}
+
+  {% assign q21 = "Quels capteurs de puissance (araignée, manivelle gauche, double) sont compatibles avec chaque pédalier et standard de boîtier ?" %}
+  {% assign a21 = "Nous utilisons des pédaliers Shimano ; si le capteur de puissance est compatible Shimano, il sera compatible avec nos vélos." %}
+
+  {% assign q22 = "Indiquez-vous la hauteur de cadre à l’entrejambe (standover) et la profondeur minimale d’insertion de la tige de selle par taille ?" %}
+  {% assign a22 = "La tige de selle comporte des repères indiquant la profondeur minimale d’insertion." %}
+
+  {% assign contact_text = "Notre mission est toujours de répondre à toutes vos questions. Nous tenons à l'honnêteté et à l'ouverture dans tous les aspects de notre travail. Si vous avez d'autres questions auxquelles cette FAQ ne répond pas, veuillez nous contacter via info@rinosbike.eu ou le formulaire de contact ci-dessous." %}
+  {% assign contact_heading = "Formulaire de contact" %}
+
+{% elsif current_locale == 'pl' %}
+  {% assign q1 = "Jaka jest maksymalna nośność ramy?" %}
+  {% assign a1 = "Przetestowaliśmy ją przy obciążeniu do 130 kg." %}
+
+  {% assign q2 = "Czy w ramach gravelowych jest wewnętrzne prowadzenie przewodów pod oświetlenie z dynama w piaście lub regulowaną sztycę (dropper post)?" %}
+  {% assign a2 = "W przypadku konkretnych przeróbek prosimy o kontakt na info@rinosbike.eu" %}
+
+  {% assign q3 = "Czy rozmiar kierownicy odpowiada rozmiarowi ramy?" %}
+  {% assign a3 = "Tak, każda wielkość ramy ma dopasowaną szerokość kierownicy." %}
+
+  {% assign q4 = "Jakie są szerokości/długości/wysokości kierownicy w rowerach Odin?" %}
+  {% assign a4 = "Zakres to od 400*80 mm do 420*110 mm." %}
+
+  {% assign q5 = "Jakie są szerokości/długości/wysokości kierownicy w rowerach Sandman?" %}
+  {% assign a5 = "Zakres to od 400*100 mm do 440*120 mm." %}
+
+  {% assign q6 = "Czy mogę zwiększyć wysokość podkładek pod mostek powyżej 3 cm, np. za pomocą specjalnych spacerów?" %}
+  {% assign a6 = "Skontaktuj się z nami, ponieważ do większej ilości podkładek będzie potrzebna dłuższa rama widelca, aby zachować bezpieczeństwo." %}
+
+  {% assign q7 = "Czy modele Sandman mają otwory montażowe pod zwykłe błotniki?" %}
+  {% assign a7 = "Używamy opon 40C. Jeśli Twoje błotniki pasują do opon 40C oraz kół 700C / 28 cali, będą odpowiednie." %}
+
+  {% assign q8 = "Jaki typ suportu jest zastosowany w ramie karbonowej/rowerze gravelowym?" %}
+  {% assign a8 = "Stosujemy suport gwintowany T47 o szerokości 85,5 mm." %}
+
+  {% assign q9 = "Jakiego rodzaju hak przerzutki stosujecie – UDH czy własny? Gdzie mogę kupić zapasowy?" %}
+  {% assign a9 = "W naszych rowerach gravelowych stosujemy hak UDH; można go kupić w każdym serwisie rowerowym lub skontaktować się bezpośrednio z nami." %}
+
+  {% assign q10 = "Gdzie znajdę tabele geometrii (stack/reach) dla każdego rozmiaru i jak wybrać pomiędzy sąsiadującymi rozmiarami?" %}
+  {% assign a10 = "Skontaktuj się z nami, jeśli po przejrzeniu naszych tabel rozmiarów nadal masz wątpliwości co do wyboru." %}
+
+  {% assign q11 = "Jakie mocowania hamulców i ograniczenia średnicy tarcz (flat mount; minimalne/maksymalne rozmiary przód/tył) obowiązują?" %}
+  {% assign a11 = "W rowerach gravel i szosowych stosujemy hamulce tarczowe 160 mm z mocowaniem flat mount." %}
+
+  {% assign q12 = "Jakie standardy osi i skok gwintu są stosowane (przód 12×100, tył 12×142; specyfikacja osi przelotowych)?" %}
+  {% assign a12 = "Stosujemy osie 12×100 z przodu i 12×142 z tyłu." %}
+
+  {% assign q13 = "Punkty montażowe: bagażniki, pełne błotniki, torba na górną rurę (bento), mocowania na widelcu – co jest wspierane?" %}
+  {% assign a13 = "Mamy punkty montażowe pod bagażniki, błotniki i cały niezbędny osprzęt do bikepackingu." %}
+
+  {% assign q14 = "Czy widelce są przystosowane do bagażników low-rider, czy tylko do koszyków/bagażu lekkiego?" %}
+  {% assign a14 = "Możliwe jest skrócenie widelca, ale zalecamy wykonanie tego wyłącznie przez doświadczonego mechanika rowerowego." %}
+
+  {% assign q15 = "Jaki standard suportu jest używany w każdej platformie (Sandman/Odin) – BB86/BB92/BSA/inny?" %}
+  {% assign a15 = "Stosujemy suporty gwintowane T47: 85,5 mm w serii Sandman oraz 68 mm w serii Odin." %}
+
+  {% assign q16 = "Czy mogę zamontować lemondki (clip-on aerobars) na kierownicy gravelowej? Jakie są zalecenia co do maksymalnego momentu/rozstawu?" %}
+  {% assign a16 = "Może być konieczne zastosowanie adapterów, w zależności od producenta i kształtu lemondki." %}
+
+  {% assign q17 = "Czy mogę zmienić napęd z seryjnego 2× na 1× bez problemów z linią łańcucha?" %}
+  {% assign a17 = "Tak, jest to możliwe – nasze ramy są kompatybilne z napędami 1× i 2×." %}
+
+  {% assign q18 = "Czy ulepszenia z ceramicznymi kółkami/łożyskami są kompatybilne i objęte gwarancją?" %}
+  {% assign a18 = "Nie oferujemy takich komponentów, ale jeśli masz pytania dotyczące takiej przeróbki, napisz do nas." %}
+
+  {% assign q19 = "Czy widelce amortyzowane do gravelu są kompatybilne (długość axle-to-crown i zakres offsetu)?" %}
+  {% assign a19 = "Sprawdź proszę nasze specyfikacje techniczne sterów. Nie oferujemy amortyzowanych widelców do gravelu, ale możesz wykonać konwersję według własnych założeń." %}
+
+  {% assign q20 = "Czy można zastosować regulowaną sztycę (dropper post) w ramach gravelowych (wewnętrzne prowadzenie przewodu)?" %}
+  {% assign a20 = "Konwersja na dropper post jest wspierana. Skontaktuj się z nami na info@rinosbike.eu" %}
+
+  {% assign q21 = "Jakie mierniki mocy (pająk, lewa korba, podwójne) pasują do poszczególnych korb i standardów suportu?" %}
+  {% assign a21 = "Stosujemy korby Shimano; jeśli dany miernik mocy jest kompatybilny z Shimano, będzie pasował." %}
+
+  {% assign q22 = "Czy podajecie wysokość ramy w przekroku (standover) oraz minimalną głębokość wsunięcia sztycy dla każdego rozmiaru?" %}
+  {% assign a22 = "Na sztycy znajdują się oznaczenia minimalnej głębokości wsunięcia." %}
+
+  {% assign contact_text = "Naszą misją jest zawsze odpowiadanie na wszelkie pytania, które możesz mieć. Zależy nam na uczciwości i otwartości w każdym aspekcie naszej pracy. Jeśli masz dalsze pytania, na które te FAQ nie odpowiadają, skontaktuj się z nami przez info@rinosbike.eu lub formularz kontaktowy poniżej." %}
+  {% assign contact_heading = "Formularz kontaktowy" %}
+
+{% elsif current_locale == 'bg' %}
+  {% assign q1 = "Какъв е максималният товарен капацитет на рамката?" %}
+  {% assign a1 = "Тествахме рамката с натоварване до 130 кг." %}
+
+  {% assign q2 = "Има ли вътрешно окабеляване за светлина с главина динамо или за телескопична колче на гравел рамките?" %}
+  {% assign a2 = "За специфични преустройства, моля, свържете се с нас на info@rinosbike.eu" %}
+
+  {% assign q3 = "Размерът на кормилото съответства ли на размера на рамката?" %}
+  {% assign a3 = "Да, всеки размер рамка има съответстваща ширина на кормилото." %}
+
+  {% assign q4 = "Какви са ширините/дължините/височините на кормилото при велосипедите Odin?" %}
+  {% assign a4 = "Диапазонът е от 400*80 mm до 420*110 mm." %}
+
+  {% assign q5 = "Какви са ширините/дължините/височините на кормилото при велосипедите Sandman?" %}
+  {% assign a5 = "Диапазонът е от 400*100 mm до 440*120 mm." %}
+
+  {% assign q6 = "Мога ли да увелича височината на спейсърите под лапата над 3 см със специални спейсъри?" %}
+  {% assign a6 = "Моля, свържете се с нас, тъй като за повече спейсъри ще е необходима по-дълга вилка, за да бъде конфигурацията безопасна." %}
+
+  {% assign q7 = "Има ли монтажни отвори за стандартни калници при моделите Sandman?" %}
+  {% assign a7 = "Използваме гуми 40C. Ако вашите калници са съвместими с гуми 40C и капли 700C / 28 инча, те ще паснат." %}
+
+  {% assign q8 = "Какъв стандарт средно движение се използва при карбоновата рамка/гравел велосипеда?" %}
+  {% assign a8 = "Използваме резбово средно движение T47 с ширина 85,5 mm." %}
+
+  {% assign q9 = "Какъв тип ухо за дерайльор използвате – UDH или собствено, и откъде мога да купя резервно?" %}
+  {% assign a9 = "Използваме UDH при нашите гравел велосипеди; можете да го закупите от всеки велосипедeн магазин или директно от нас." %}
+
+  {% assign q10 = "Къде мога да видя геометричните таблици (stack/reach) за всеки размер и как да избера между два близки размера?" %}
+  {% assign a10 = "Моля, свържете се с нас, ако след разглеждане на нашите таблици с размери все още се колебаете за размера." %}
+
+  {% assign q11 = "Какви са стандартите за монтаж на спирачките и ограниченията за размер на дисковете (flat mount; минимален/максимален диаметър отпред/отзад)?" %}
+  {% assign a11 = "Използваме дискови спирачки 160 mm с flat mount захват при нашите гравел и шосейни велосипеди." %}
+
+  {% assign q12 = "Какви стандарти на оси и резби се използват (предна 12×100, задна 12×142; спецификация на проходните оси)?" %}
+  {% assign a12 = "Използваме 12×100 отпред и 12×142 отзад." %}
+
+  {% assign q13 = "Точки за монтаж: багажници, пълни калници, чантичка върху горната тръба, товарни държачи на вилката – какво е възможно?" %}
+  {% assign a13 = "Разполагаме с точки за монтаж на багажници, калници и всичко необходимо за байкпакинг." %}
+
+  {% assign q14 = "Одобрени ли са вилките за low-rider багажници или само за поставки за бутилки/лек товар?" %}
+  {% assign a14 = "Възможно е скъсяване на вилката, но препоръчваме това да се извършва само от опитен велосипедeн механик." %}
+
+  {% assign q15 = "Какъв стандарт средно движение се използва при платформите Sandman/Odin – BB86/BB92/BSA/друг?" %}
+  {% assign a15 = "Използваме резбови средни движения T47: 85,5 mm за серия Sandman и 68 mm за серия Odin." %}
+
+  {% assign q16 = "Мога ли да монтирам аеро накрайници (clip-on aerobars) на гравел кормилото? Има ли препоръки за максимален момент/разстояние?" %}
+  {% assign a16 = "Може да са необходими адаптери, в зависимост от производителя и формата на аеро накрайниците." %}
+
+  {% assign q17 = "Мога ли да премина от стандартен 2× предавателен комплект към 1× без проблеми с линията на веригата?" %}
+  {% assign a17 = "Да, това е възможно; нашите рамки са съвместими както с 1×, така и с 2× предавателни системи." %}
+
+  {% assign q18 = "Съвместими ли са ъпгрейдите с керамични ролки/лагери и покрива ли ги гаранцията?" %}
+  {% assign a18 = "Не предлагаме такива компоненти, но ако имате въпроси за подобен ъпгрейд, свържете се с нас." %}
+
+  {% assign q19 = "Съвместими ли са амортисьорните гравел вилки (дължина axle-to-crown и граници на офсета)?" %}
+  {% assign a19 = "Моля, проверете нашите технически спецификации за челното устройство. Не предлагаме амортисьорни вилки за гравел, но можете да извършите конверсия според собствените си изисквания." %}
+
+  {% assign q20 = "Поддържа ли се монтаж на телескопично колче при гравел рамките (вътрешно окабеляване)?" %}
+  {% assign a20 = "Конверсията към телескопично колче е възможна. Свържете се с нас на info@rinosbike.eu" %}
+
+  {% assign q21 = "Кои измерватели на мощност (паяк, ляв курбел, двоен) са съвместими с всяка курбела и стандарт на средното движение?" %}
+  {% assign a21 = "Използваме курбели Shimano; ако измервателят на мощност е съвместим с Shimano, той ще пасне." %}
+
+  {% assign q22 = "Публикувате ли височината на рамката в областта на стоеж (standover) и минималната дълбочина на вкарване на колчето за всеки размер?" %}
+  {% assign a22 = "На колчето има маркировки, които показват минималната дълбочина на вкарване." %}
+
+  {% assign contact_text = "Нашата мисия винаги е да отговаряме на всички въпроси, които може да имате. Грижим се за честност и откритост във всеки аспект на нашата работа. Ако имате допълнителни въпроси, на които тези ЧЗВ не отговарят, моля свържете се с нас чрез info@rinosbike.eu или формуляра за контакт по-долу." %}
+  {% assign contact_heading = "Формуляр за контакт" %}
+
+{% else %}
+  {% comment %} Default to English {% endcomment %}
+  {% assign q1 = "What is the maximum load capacity of the frame?" %}
+  {% assign a1 = "We have tested it to 130kg load." %}
+
+  {% assign q2 = "Is internal routing available for hub dynamo lighting or a dropper post on gravel frames?" %}
+  {% assign a2 = "For specific conversions please contact us at info@rinosbike.eu" %}
+
+  {% assign q3 = "Are the handlebars size corresponding with the frame size?" %}
+  {% assign a3 = "Yes, each different sized frame has it’s own sized handlebar." %}
+
+  {% assign q4 = "What are the handlebar widths/lenghts/heights for Odin bikes?" %}
+  {% assign a4 = "They range from 400*80 to 420*110mm" %}
+
+  {% assign q5 = "What are the handlebar widths/lenghts/heights for Sandman bikes?" %}
+  {% assign a5 = "They range from 400*100 to 440*120mm" %}
+
+  {% assign q6 = "Can I make the handlebar spacing bigger than 3cm with special spacers?" %}
+  {% assign a6 = "Please contact us on that as you will need to have a longer fork in order to accommodate more spacers." %}
+
+  {% assign q7 = "And there are mounting holes for normal mudguards on sandman models?" %}
+  {% assign a7 = "Our tires are 40C. Hence if your mudguards fit for 40C and for 700C or 28 inch wheels will be fine." %}
+
+  {% assign q8 = "Which bottom bracket is used in the carbon frame/gravel bike?" %}
+  {% assign a8 = "It is T47, 85,5mm threaded bottom bracket" %}
+
+  {% assign q9 = "What derailleur hanger type do you use UDH or proprietary, and where can I buy a spare?" %}
+  {% assign a9 = "We use UDH for our gravel bikes, you can buy it in any bike shop or contact us." %}
+
+  {% assign q10 = "What are the geometry charts (stack/reach) per size, and how do I pick between adjacent sizes?" %}
+  {% assign a10 = "Please contact us if you are unsure of the sizing after looking at our sizing charts" %}
+
+  {% assign q11 = "What brake mounts and rotor size limits apply (flat mount; min/max rotor diameters front/rear)?" %}
+  {% assign a11 = "Flat mount applies for our 160mm disc brakes for gravel and road bikes." %}
+
+  {% assign q12 = "What axle standards and thread pitches are used (front 12×100, rear 12×142; thru-axle spec)?" %}
+  {% assign a12 = "We use 12x100 and 12x142 for our front and rear axles." %}
+
+  {% assign q13 = "Mounting points: racks, full-length fenders, top-tube bento, fork cargo mounts—what’s supported?" %}
+  {% assign a13 = "We have mounting points for racks, fenders and everything you need for bikepacking." %}
+
+  {% assign q14 = "Are forks rated for low-rider racks or only for bottle/cargo cages?" %}
+  {% assign a14 = "It is possible to reduce the length of the fork but we recommend it to be performed by an experienced bike mechanic." %}
+
+  {% assign q15 = "Which bottom bracket standard is used on each platform (Sandman/Odin)—BB86/BB92/BSA/other?" %}
+  {% assign a15 = "We use T47 threaded bottom brackets, 85,5mm for Sandman series and 68mm for Odin series." %}
+
+  {% assign q16 = "Can I run clip-on aerobars on the gravel cockpit? Any max torque/spacing guidance?" %}
+  {% assign a16 = "You might need some adaptors depending on the manufacturer and shape of the aerobars." %}
+
+  {% assign q17 = "Can I switch to a 1× drivetrain from stock 2× without new chainline issues?" %}
+  {% assign a17 = "Yes, it is possible, our frames are compatible." %}
+
+  {% assign q18 = "Are ceramic pulley/bearing upgrades compatible and warrantied?" %}
+  {% assign a18 = "We do not offer it but if you have questions on this conversion let us know." %}
+
+  {% assign q19 = "Are suspension gravel forks compatible (axle-to-crown and offset limits)?" %}
+  {% assign a19 = "Please check our technical specs for the headset specifications. We do not offer suspension forks for our gravel but you can convert it to your own specification." %}
+
+  {% assign q20 = "Is a dropper-post option supported on gravel frames (internal routing port)?" %}
+  {% assign a20 = "Conversion to dropper post is supported. Please contact us at info@rinosbike.eu" %}
+
+  {% assign q21 = "Which power meters (spider/left-arm/dual) fit each crank & BB standard?" %}
+  {% assign a21 = "We have shimano crank, if it is compatible with Shimano, it will fit." %}
+
+  {% assign q22 = "Do you list standover height and minimum seatpost insertion per size?" %}
+  {% assign a22 = "We have markings on the seat post for minimum insertion length." %}
+
+  {% assign contact_text = "Our mission is always to answer any questions that you may have. We care about honesty and openness in any aspect of our work. If you have any further questions that this FAQ does not answer please contact us Via info@rinosbike.eu or the contact form bellow." %}
+  {% assign contact_heading = "Contact form" %}
+{% endif %}
+
+<div class="faq-bikespec-section page-width section-{{ section.id }}-padding">
+  {% if section.settings.heading != blank %}
+    <h2 class="faq-heading {{ section.settings.heading_size }} {{ section.settings.heading_alignment }}">
+      {{ section.settings.heading }}
+    </h2>
+  {% endif %}
+
+  <div class="faq-collapsible-content">
+    <div class="faq-row">
+      <details {% if section.settings.open_first_collapsible_row %}open{% endif %}>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q1 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a1 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q2 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a2 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q3 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a3 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q4 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a4 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q5 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a5 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q6 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a6 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q7 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a7 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q8 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a8 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q9 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a9 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q10 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a10 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q11 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a11 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q12 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a12 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q13 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a13 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q14 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a14 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q15 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a15 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q16 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a16 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q17 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a17 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q18 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a18 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q19 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a19 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q20 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a20 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q21 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a21 }}</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-row">
+      <details>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q22 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ a22 }}</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="faq-contact-section">
+    <div class="rich-text-content">
+      <p>{{ contact_text }}</p>
+    </div>
+    <div class="contact-form-wrapper">
+      <h3 class="contact-form-heading">{{ contact_heading }}</h3>
+      {% form 'contact' %}
+        {% if form.posted_successfully? %}
+          <p class="form-success">Thank you for your message!</p>
+        {% endif %}
+        {% if form.errors %}
+          <div class="form-errors">
+            {{ form.errors | default_errors }}
+          </div>
+        {% endif %}
+
+        <div class="field">
+          <input type="text" name="contact[name]" placeholder="Name" required>
+        </div>
+        <div class="field">
+          <input type="email" name="contact[email]" placeholder="Email" required>
+        </div>
+        <div class="field">
+          <textarea name="contact[body]" placeholder="Message" required></textarea>
+        </div>
+        <button type="submit" class="button">
+          Send
+        </button>
+      {% endform %}
+    </div>
+  </div>
+</div>
+
+<style>
+.faq-bikespec-section {
+  padding: 40px 20px;
+}
+
+.faq-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-collapsible-content {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.faq-row {
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.faq-row details {
+  padding: 20px 0;
+}
+
+.faq-row summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+}
+
+.faq-row summary::-webkit-details-marker {
+  display: none;
+}
+
+.icon-question {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.faq-question {
+  flex: 1;
+}
+
+.icon-caret {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.icon-caret::after {
+  content: '▼';
+  font-size: 12px;
+}
+
+.faq-row details[open] .icon-caret::after {
+  content: '▲';
+}
+
+.faq-answer {
+  padding: 15px 0 15px 39px;
+  line-height: 1.6;
+}
+
+.faq-contact-section {
+  max-width: 800px;
+  margin: 60px auto 0;
+  text-align: center;
+}
+
+.rich-text-content {
+  margin-bottom: 40px;
+}
+
+.contact-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form-heading {
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.button {
+  padding: 12px 30px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.button:hover {
+  background-color: #333;
+}
+
+.form-success {
+  color: green;
+  margin-bottom: 20px;
+}
+
+.form-errors {
+  color: red;
+  margin-bottom: 20px;
+}
+</style>
+
+{% schema %}
+{
+  "name": "FAQ Bikespec",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Bikespec FAQ"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "options": [
+        { "value": "h1", "label": "Large" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h3", "label": "Small" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first_collapsible_row",
+      "label": "Open first item by default",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Bikespec"
+    }
+  ]
+}
+{% endschema %}
