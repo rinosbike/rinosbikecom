@@ -444,40 +444,6 @@
     </div>
   </div>
 
-  <div class="faq-contact-section">
-    <div class="rich-text-content">
-      <p>{{ contact_text }}</p>
-    </div>
-    
-    <div class="contact-form-wrapper">
-      <h2 class="contact-form-heading">{{ contact_heading }}</h2>
-      {% form 'contact' %}
-        {% if form.posted_successfully? %}
-          <p class="form-success">{{ 'contact.form.post_success' | t }}</p>
-        {% endif %}
-        
-        {% if form.errors %}
-          <div class="form-errors">
-            {{ form.errors | default_errors }}
-          </div>
-        {% endif %}
-        
-        <div class="field">
-          <input type="text" name="contact[name]" id="ContactForm-name" placeholder="{{ 'contact.form.name' | t }}" required>
-        </div>
-        
-        <div class="field">
-          <input type="email" name="contact[email]" id="ContactForm-email" placeholder="{{ 'contact.form.email' | t }}" required>
-        </div>
-        
-        <div class="field">
-          <textarea name="contact[body]" id="ContactForm-body" placeholder="{{ 'contact.form.message' | t }}" required></textarea>
-        </div>
-        
-        <button type="submit" class="button">{{ 'contact.form.send' | t }}</button>
-      {% endform %}
-    </div>
-  </div>
 </div>
 
 <style>
