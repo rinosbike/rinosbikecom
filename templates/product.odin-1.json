@@ -94,6 +94,7 @@
     },
     "klarna_banner_1_g363fF": {
       "type": "klarna-banner-1",
+      "disabled": true,
       "settings": {}
     },
     "custom_liquid_fFQWdd": {
@@ -101,6 +102,49 @@
       "settings": {
         "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
         "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_NbwtPq": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yrBT7x": {
+          "type": "heading",
+          "settings": {
+            "heading": "Odin 1.",
+            "heading_size": "h1"
+          }
+        },
+        "text_zYMPmN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your start in the world of Carbon Road Bikes.</p><p></p>"
+          }
+        },
+        "button_Jg74em": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yrBT7x",
+        "text_zYMPmN",
+        "button_Jg74em"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
       }
@@ -119,12 +163,38 @@
             "link": ""
           }
         },
+        "column_6KE7An": {
+          "type": "column",
+          "settings": {
+            "title": "Toray T800 <strong>carbon frame, fork & seatpost</strong> - only 8.8kg complete bike weight.",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
         "column_8hGHg7": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Odin1-4Blue.png",
-            "title": "Shimano Sora, <em><strong>with full carbon frame and fork.</strong></em>",
-            "text": "<p>A lightweight yet durable TORAY T800 carbon setup paired with Shimano Sora 2x9 gearing for smooth and reliable performance.</p>",
+            "title": "Shimano Sora, 18 speeds.",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_hgPcWE": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>38mm deep-section wheels</strong> with aerodynamic tubing.",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_b8kfWh": {
+          "type": "column",
+          "settings": {
+            "title": "Disc Brakes",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -132,9 +202,8 @@
         "column_4ERxGT": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Odin1-3Blue.png",
-            "title": "<em><strong>High-End</strong></em> Entry Model",
-            "text": "<p>Designed for riders who want to step into the world of carbon road bikes — pro-level feel without the pro-level price tag.</p>",
+            "title": "Internal cable routing for clean lines and better aerodynamics.",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -142,7 +211,10 @@
       },
       "block_order": [
         "column_8wYHLe",
+        "column_6KE7An",
         "column_8hGHg7",
+        "column_hgPcWE",
+        "column_b8kfWh",
         "column_4ERxGT"
       ],
       "name": "t:sections.multicolumn.presets.name",
@@ -194,11 +266,12 @@
         "text_wYQYz4",
         "button_HXWjhf"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/d80c7d0895ddc1617dc72cea1500e69a-2.png",
         "height": "adapt",
-        "desktop_image_width": "medium",
+        "desktop_image_width": "small",
         "layout": "image_first",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
@@ -245,6 +318,7 @@
     },
     "iso_video_section_bpCKLQ": {
       "type": "ISO_Video_section",
+      "disabled": true,
       "name": "Frame Test Multilingual",
       "settings": {
         "title": "",
@@ -335,6 +409,7 @@
     "bike_parts_highlight_1_6XGKyM",
     "klarna_banner_1_g363fF",
     "custom_liquid_fFQWdd",
+    "rich_text_NbwtPq",
     "multicolumn_KfMJ9G",
     "image_with_text_xVg3DE",
     "product_description_sec1_Nn4UXc",
