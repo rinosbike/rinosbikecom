@@ -23,6 +23,7 @@
         },
         "announcement_TgxU3m": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "See our reviews on Trustpilot(100+) 4.5*",
             "link": "https://uk.trustpilot.com/review/rinosbike.eu"
