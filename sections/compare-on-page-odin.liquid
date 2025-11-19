@@ -1,0 +1,652 @@
+{% comment %}
+  Bike Comparison Widget
+  Clean side-by-side comparison of 2 bikes
+  Save as: sections/bike-comparison-widget.liquid
+{% endcomment %}
+
+<div class="bike-comparison-widget">
+  <div class="comparison-container">
+    
+    <!-- Header -->
+    <div class="comparison-header">
+      <h3 class="comparison-title">Compare Road Bikes</h3>
+      <p class="comparison-subtitle">See how this bike stacks up against others</p>
+    </div>
+
+    <!-- Bike Selectors -->
+    <div class="bike-selectors">
+      <div class="bike-selector current-bike">
+        <label for="bike-1">This Bike</label>
+        <div class="current-bike-display" id="current-bike-name">
+          <!-- Auto-populated by JavaScript -->
+        </div>
+        <input type="hidden" id="bike-1" value="">
+      </div>
+
+      <div class="vs-divider">
+        <span>VS</span>
+      </div>
+
+      <div class="bike-selector">
+        <label for="bike-2">Compare With</label>
+        <select id="bike-2" class="bike-select">
+          <option value="">Select a bike...</option>
+          <option value="odin1" data-image="https://rinosbike.com/cdn/shop/files/Odin_1_-_1_Gold_3b132dde-d88f-4b29-991c-6d77af4ceef4.png?v=1757929311&width=400">ODIN 1</option>
+          <option value="odin3" data-image="https://rinosbike.com/cdn/shop/files/Odin_3_-_1_Blue.png?v=1757928970&width=400">ODIN 3</option>
+          <option value="odin4" data-image="https://rinosbike.com/cdn/shop/files/Group_640.png?v=1758873763&width=400">ODIN 4</option>
+          <option value="odin6_0" data-image="https://rinosbike.com/cdn/shop/files/ODIN6_1.png?v=1750755375&width=400">ODIN 6.0</option>
+          <option value="odin6_1" data-image="https://rinosbike.com/cdn/shop/files/1_edd71595-f78a-4465-9fa4-bc476b3d0b99.png?v=1751964247&width=400">ODIN 6.1</option>
+          <option value="odin7_1" data-image="https://rinosbike.com/cdn/shop/files/Odin_7_-_1_0fb3d058-3213-4d7b-8571-0964574deac9.png?v=1758275105&width=400">ODIN 7.1</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="comparison-table-wrapper" id="comparison-content">
+      <div class="comparison-images">
+        <div class="bike-image-container">
+          <img id="bike-1-image" src="" alt="Bike 1" class="bike-image">
+          <h4 id="bike-1-name" class="bike-name"></h4>
+        </div>
+        <div class="bike-image-container">
+          <img id="bike-2-image" src="" alt="Bike 2" class="bike-image">
+          <h4 id="bike-2-name" class="bike-name"></h4>
+        </div>
+      </div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th class="spec-label-col">Specification</th>
+            <th id="bike-1-header">Bike 1</th>
+            <th id="bike-2-header">Bike 2</th>
+          </tr>
+        </thead>
+        <tbody id="comparison-tbody">
+          <!-- Populated by JavaScript -->
+        </tbody>
+      </table>
+
+      <div class="comparison-actions">
+        <a href="#" id="bike-1-link" class="bike-link">View ODIN 1 →</a>
+        <a href="#" id="bike-2-link" class="bike-link">View ODIN 3 →</a>
+      </div>
+    </div>
+
+    <div class="empty-state" id="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 11l3 3L22 4"></path>
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+      </svg>
+      <p>Select a bike above to compare</p>
+    </div>
+
+  </div>
+</div>
+
+<style>
+.bike-comparison-widget {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.comparison-container {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 40px;
+}
+
+/* Header */
+.comparison-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.comparison-title {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.comparison-subtitle {
+  font-size: 1em;
+  color: #666;
+  margin: 0;
+}
+
+/* Bike Selectors */
+.bike-selectors {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 30px;
+  align-items: end;
+  margin-bottom: 40px;
+}
+
+.bike-selector label {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.current-bike-display {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1em;
+  font-weight: 600;
+  color: #000;
+  background: #f5f5f5;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.current-bike-display::before {
+  content: "📍";
+  font-size: 1.2em;
+}
+
+.bike-select {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1em;
+  font-weight: 600;
+  color: #000;
+  background: #fafafa;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 45px;
+}
+
+.bike-select:hover {
+  border-color: #000;
+  background-color: #fff;
+}
+
+.bike-select:focus {
+  outline: none;
+  border-color: #000;
+  background-color: #fff;
+}
+
+.vs-divider {
+  width: 50px;
+  height: 50px;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+/* Comparison Images */
+.comparison-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.bike-image-container {
+  text-align: center;
+}
+
+.bike-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.bike-name {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #000;
+}
+
+/* Comparison Table */
+.comparison-table-wrapper {
+  display: none;
+}
+
+.comparison-table-wrapper.active {
+  display: block;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.comparison-table thead th {
+  background: #fafafa;
+  padding: 15px;
+  font-weight: 600;
+  font-size: 0.9em;
+  text-align: left;
+  border-bottom: 2px solid #e0e0e0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #000;
+}
+
+.comparison-table thead th.spec-label-col {
+  width: 35%;
+}
+
+.comparison-table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+
+.comparison-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.comparison-table tbody td {
+  padding: 15px;
+  font-size: 0.95em;
+}
+
+.comparison-table tbody td:first-child {
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.5px;
+}
+
+.comparison-table tbody td:not(:first-child) {
+  color: #000;
+  font-weight: 500;
+}
+
+.comparison-table tbody tr.different {
+  background: #fffbea;
+}
+
+.comparison-table tbody tr.different:hover {
+  background: #fff9d6;
+}
+
+.comparison-table tbody tr.different td:not(:first-child) {
+  font-weight: 700;
+}
+
+/* Action Buttons */
+.comparison-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.bike-link {
+  display: block;
+  padding: 14px 24px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95em;
+  border-radius: 6px;
+  transition: all 0.3s;
+  letter-spacing: 0.3px;
+}
+
+.bike-link:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.empty-state.hidden {
+  display: none;
+}
+
+.empty-state svg {
+  width: 60px;
+  height: 60px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.empty-state p {
+  font-size: 1.1em;
+  color: #999;
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .comparison-container {
+    padding: 25px 20px;
+  }
+
+  .comparison-title {
+    font-size: 1.4em;
+  }
+
+  .comparison-subtitle {
+    font-size: 0.9em;
+  }
+
+  .bike-selectors {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .vs-divider {
+    order: 2;
+    margin: 0 auto;
+  }
+
+  .bike-selector:first-child {
+    order: 1;
+  }
+
+  .bike-selector:last-child {
+    order: 3;
+  }
+
+  .comparison-images {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .comparison-table {
+    font-size: 0.85em;
+  }
+
+  .comparison-table thead th,
+  .comparison-table tbody td {
+    padding: 10px 8px;
+  }
+
+  .comparison-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .bike-link {
+    font-size: 0.9em;
+    padding: 12px 20px;
+  }
+}
+</style>
+
+<script>
+// Bike data using translation keys structure
+const bikeData = {
+  odin1: {
+    name: 'ODIN 1',
+    url: '/products/odin-1',
+    handle: 'odin-1',
+    image: 'https://rinosbike.com/cdn/shop/files/Odin_1_-_1_Gold_3b132dde-d88f-4b29-991c-6d77af4ceef4.png?v=1757929311&width=400',
+    weight: '{{ "bikes.odin1.weight" | t }}',
+    gear: '{{ "bikes.odin1.gear" | t }}',
+    gears: '{{ "bikes.odin1.gears" | t }}',
+    frame: '{{ "bikes.odin1.frame" | t }}',
+    frameSize: '{{ "bikes.odin1.frameSize" | t }}',
+    brakes: '{{ "bikes.odin1.brakes" | t }}',
+    wheelSize: '{{ "bikes.odin1.wheelSize" | t }}',
+    rims: '{{ "bikes.odin1.rims" | t }}'
+  },
+  odin3: {
+    name: 'ODIN 3',
+    url: '/products/odin-3',
+    handle: 'odin-3',
+    image: 'https://rinosbike.com/cdn/shop/files/Odin_3_-_1_Blue.png?v=1757928970&width=400',
+    weight: '{{ "bikes.odin3.weight" | t }}',
+    gear: '{{ "bikes.odin3.gear" | t }}',
+    gears: '{{ "bikes.odin3.gears" | t }}',
+    frame: '{{ "bikes.odin3.frame" | t }}',
+    frameSize: '{{ "bikes.odin3.frameSize" | t }}',
+    brakes: '{{ "bikes.odin3.brakes" | t }}',
+    wheelSize: '{{ "bikes.odin3.wheelSize" | t }}',
+    rims: '{{ "bikes.odin3.rims" | t }}'
+  },
+  odin4: {
+    name: 'ODIN 4',
+    url: '/products/odin-4',
+    handle: 'odin-4',
+    image: 'https://rinosbike.com/cdn/shop/files/Group_640.png?v=1758873763&width=400',
+    weight: '{{ "bikes.odin4.weight" | t }}',
+    gear: '{{ "bikes.odin4.gear" | t }}',
+    gears: '{{ "bikes.odin4.gears" | t }}',
+    frame: '{{ "bikes.odin4.frame" | t }}',
+    frameSize: '{{ "bikes.odin4.frameSize" | t }}',
+    brakes: '{{ "bikes.odin4.brakes" | t }}',
+    wheelSize: '{{ "bikes.odin4.wheelSize" | t }}',
+    rims: '{{ "bikes.odin4.rims" | t }}'
+  },
+  odin6_0: {
+    name: 'ODIN 6.0',
+    url: '/products/odin-6',
+    handle: 'odin-6',
+    image: 'https://rinosbike.com/cdn/shop/files/ODIN6_1.png?v=1750755375&width=400',
+    weight: '{{ "bikes.odin6_0.weight" | t }}',
+    gear: '{{ "bikes.odin6_0.gear" | t }}',
+    gears: '{{ "bikes.odin6_0.gears" | t }}',
+    frame: '{{ "bikes.odin6_0.frame" | t }}',
+    frameSize: '{{ "bikes.odin6_0.frameSize" | t }}',
+    brakes: '{{ "bikes.odin6_0.brakes" | t }}',
+    wheelSize: '{{ "bikes.odin6_0.wheelSize" | t }}',
+    rims: '{{ "bikes.odin6_0.rims" | t }}'
+  },
+  odin6_1: {
+    name: 'ODIN 6.1',
+    url: '/products/odin-6-1',
+    handle: 'odin-6-1',
+    image: 'https://rinosbike.com/cdn/shop/files/1_edd71595-f78a-4465-9fa4-bc476b3d0b99.png?v=1751964247&width=400',
+    weight: '{{ "bikes.odin6_1.weight" | t }}',
+    gear: '{{ "bikes.odin6_1.gear" | t }}',
+    gears: '{{ "bikes.odin6_1.gears" | t }}',
+    frame: '{{ "bikes.odin6_1.frame" | t }}',
+    frameSize: '{{ "bikes.odin6_1.frameSize" | t }}',
+    brakes: '{{ "bikes.odin6_1.brakes" | t }}',
+    wheelSize: '{{ "bikes.odin6_1.wheelSize" | t }}',
+    rims: '{{ "bikes.odin6_1.rims" | t }}'
+  },
+  odin7_1: {
+    name: 'ODIN 7.1',
+    url: '/products/odin-7-1',
+    handle: 'odin-7-1',
+    image: 'https://rinosbike.com/cdn/shop/files/Odin_7_-_1_0fb3d058-3213-4d7b-8571-0964574deac9.png?v=1758275105&width=400',
+    weight: '{{ "bikes.odin7_1.weight" | t }}',
+    gear: '{{ "bikes.odin7_1.gear" | t }}',
+    gears: '{{ "bikes.odin7_1.gears" | t }}',
+    frame: '{{ "bikes.odin7_1.frame" | t }}',
+    frameSize: '{{ "bikes.odin7_1.frameSize" | t }}',
+    brakes: '{{ "bikes.odin7_1.brakes" | t }}',
+    wheelSize: '{{ "bikes.odin7_1.wheelSize" | t }}',
+    rims: '{{ "bikes.odin7_1.rims" | t }}'
+  }
+};
+
+const specLabels = {
+  weight: '{{ "bikes.weight_label" | t }}',
+  gear: '{{ "bikes.gear_label" | t }}',
+  gears: '{{ "bikes.gears_label" | t }}',
+  frame: '{{ "bikes.frame_label" | t }}',
+  frameSize: '{{ "bikes.frameSize_label" | t }}',
+  brakes: '{{ "bikes.brakes_label" | t }}',
+  wheelSize: '{{ "bikes.wheelSize_label" | t }}',
+  rims: '{{ "bikes.rims_label" | t }}'
+};
+
+function detectCurrentBike() {
+  // Try to get from Shopify product object first
+  {% if product %}
+    const productHandle = '{{ product.handle }}';
+    
+    // Map product handles to bike keys
+    const handleMap = {
+      'odin-1': 'odin1',
+      'odin-3': 'odin3',
+      'odin-4': 'odin4',
+      'odin-6': 'odin6_0',
+      'odin-6-1': 'odin6_1',
+      'odin-7-1': 'odin7_1'
+    };
+    
+    return handleMap[productHandle] || null;
+  {% else %}
+    // Fallback: detect from URL
+    const path = window.location.pathname;
+    for (const [key, data] of Object.entries(bikeData)) {
+      if (path.includes(data.handle)) {
+        return key;
+      }
+    }
+    return null;
+  {% endif %}
+}
+
+function initializeComparison() {
+  const currentBikeKey = detectCurrentBike();
+  
+  if (!currentBikeKey) {
+    // Not on a bike product page - hide widget or show message
+    document.querySelector('.bike-comparison-widget').style.display = 'none';
+    return;
+  }
+  
+  const currentBike = bikeData[currentBikeKey];
+  
+  // Set current bike display
+  document.getElementById('current-bike-name').textContent = currentBike.name;
+  document.getElementById('bike-1').value = currentBikeKey;
+  
+  // Update bike 1 image and header
+  document.getElementById('bike-1-image').src = currentBike.image;
+  document.getElementById('bike-1-name').textContent = currentBike.name;
+  document.getElementById('bike-1-header').textContent = currentBike.name;
+  document.getElementById('bike-1-link').href = currentBike.url;
+  document.getElementById('bike-1-link').textContent = `View ${currentBike.name} →`;
+  
+  // Remove current bike from bike 2 dropdown
+  const bike2Select = document.getElementById('bike-2');
+  const bike2Options = bike2Select.querySelectorAll('option');
+  bike2Options.forEach(option => {
+    if (option.value === currentBikeKey) {
+      option.remove();
+    }
+  });
+  
+  // Add change listener for bike 2
+  bike2Select.addEventListener('change', updateComparison);
+}
+
+function updateComparison() {
+  const bike1Key = document.getElementById('bike-1').value;
+  const bike2Key = document.getElementById('bike-2').value;
+
+  const comparisonContent = document.getElementById('comparison-content');
+  const emptyState = document.getElementById('empty-state');
+
+  if (!bike2Key) {
+    comparisonContent.classList.remove('active');
+    emptyState.classList.remove('hidden');
+    return;
+  }
+
+  const bike1 = bikeData[bike1Key];
+  const bike2 = bikeData[bike2Key];
+
+  // Update bike 2 image
+  const bike2Option = document.getElementById('bike-2').options[document.getElementById('bike-2').selectedIndex];
+  
+  document.getElementById('bike-2-image').src = bike2Option.dataset.image;
+  document.getElementById('bike-2-name').textContent = bike2.name;
+
+  // Update headers
+  document.getElementById('bike-2-header').textContent = bike2.name;
+
+  // Update links
+  document.getElementById('bike-2-link').href = bike2.url;
+  document.getElementById('bike-2-link').textContent = `View ${bike2.name} →`;
+
+  // Build comparison table
+  const tbody = document.getElementById('comparison-tbody');
+  tbody.innerHTML = '';
+
+  Object.keys(specLabels).forEach(key => {
+    const row = document.createElement('tr');
+    const isDifferent = bike1[key] !== bike2[key];
+    
+    if (isDifferent) {
+      row.classList.add('different');
+    }
+
+    row.innerHTML = `
+      <td>${specLabels[key]}</td>
+      <td>${bike1[key]}</td>
+      <td>${bike2[key]}</td>
+    `;
+    tbody.appendChild(row);
+  });
+
+  comparisonContent.classList.add('active');
+  emptyState.classList.add('hidden');
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', initializeComparison);
+</script>
+
+{% schema %}
+{
+  "name": "Bike Comparison",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Side-by-side bike comparison widget. Specs pulled from translation keys."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bike Comparison"
+    }
+  ]
+}
+{% endschema %}
