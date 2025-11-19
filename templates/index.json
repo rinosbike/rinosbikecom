@@ -11,6 +11,7 @@
   "sections": {
     "video_javi_w_W3bRfM": {
       "type": "video-javi-w",
+      "disabled": true,
       "name": "Video + Text Feature",
       "settings": {
         "layout": "left",
@@ -76,6 +77,55 @@
         "mobile_description_size": 14
       }
     },
+    "image_banner_ftR6V3": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_aDrLAg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover your new Road Adventure.",
+            "heading_size": "h2"
+          }
+        },
+        "text_mBVYWa": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_TcRiNp": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_aDrLAg",
+        "text_mBVYWa",
+        "buttons_TcRiNp"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/SnapInsta.to_545505071_18075032927516140_6687439362698984429_n.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "top-right",
+        "show_text_box": false,
+        "desktop_content_alignment": "right",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "rich_text_JE6QYx": {
       "type": "rich-text",
       "blocks": {
@@ -99,8 +149,8 @@
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
         "color_scheme": "background-1",
         "full_width": true,
         "padding_top": 40,
@@ -203,16 +253,6 @@
         "padding_bottom": 36
       }
     },
-    "trudiwheels_9T6qrQ": {
-      "type": "TRUDIWHEELS",
-      "name": "Rinos TRUDI Announcement",
-      "settings": {
-        "header": "Rinos x TRUDI.  Perfect wheels in all your Rinos",
-        "subtext_1": "Better wheels, same fair price. We just added Berd's TRUDI system to our workshop—not to charge you more, but to deliver pro-level wheel builds on every bike.",
-        "button_text": "Discover the Full Blog",
-        "button_link": "/blogs/news/rinos-invests-in-trudi-better-wheels-same-fair-price"
-      }
-    },
     "featured_blog_iNPmwD": {
       "type": "featured-blog",
       "settings": {
@@ -268,10 +308,10 @@
   },
   "order": [
     "video_javi_w_W3bRfM",
+    "image_banner_ftR6V3",
     "rich_text_JE6QYx",
     "image_with_text_KWGKmt",
     "image_with_text_Ebw7mB",
-    "trudiwheels_9T6qrQ",
     "featured_blog_iNPmwD",
     "rich_text_MfXaWd"
   ]
