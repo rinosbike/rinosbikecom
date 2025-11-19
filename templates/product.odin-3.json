@@ -295,6 +295,11 @@
         "contact_url": "/pages/contact"
       }
     },
+    "compare_on_page_odin_iRV3gX": {
+      "type": "compare-on-page-odin",
+      "name": "Bike Comparison",
+      "settings": {}
+    },
     "road_assembly_PREEed": {
       "type": "Road-assembly",
       "name": "Assembly Video - Odin",
@@ -371,6 +376,7 @@
     "image_with_text_jtxRde",
     "product_description_sec1_Nn4UXc",
     "odin_sizing_guide_gkrKDi",
+    "compare_on_page_odin_iRV3gX",
     "road_assembly_PREEed",
     "rich_text_7we9KY",
     "related-products",
