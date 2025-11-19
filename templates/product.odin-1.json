@@ -293,6 +293,19 @@
         "padding_bottom": 36
       }
     },
+    "trust_marquee_GzHGBH": {
+      "type": "trust-marquee",
+      "name": "Trust Marquee Banner",
+      "settings": {
+        "bg_color": "#020202",
+        "text_color": "#FFFFFF",
+        "font_size": 13,
+        "font_weight": "600",
+        "text_transform": "uppercase",
+        "speed": 30,
+        "padding_vertical": 12
+      }
+    },
     "image_with_text_xVg3DE": {
       "type": "image-with-text",
       "blocks": {
@@ -470,6 +483,7 @@
     "rich_text_NbwtPq",
     "multicolumn_KfMJ9G",
     "multicolumn_wrrqN8",
+    "trust_marquee_GzHGBH",
     "image_with_text_xVg3DE",
     "product_description_sec1_Nn4UXc",
     "road_assembly_UDtXQV",
