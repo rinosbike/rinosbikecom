@@ -15,7 +15,7 @@
     <!-- Bike Selectors -->
     <div class="bike-selectors">
       <div class="bike-selector current-bike">
-        <label for="bike-1">This Bike</label>
+        <label for="bike-1">Current Model</label>
         <div class="current-bike-display" id="current-bike-name">
           <!-- Auto-populated by JavaScript -->
         </div>
@@ -29,13 +29,13 @@
       <div class="bike-selector">
         <label for="bike-2">Compare With</label>
         <select id="bike-2" class="bike-select">
-          <option value="">Select a bike...</option>
-          <option value="odin1" data-image="https://rinosbike.com/cdn/shop/files/Odin_1_-_1_Gold_3b132dde-d88f-4b29-991c-6d77af4ceef4.png?v=1757929311&width=400">ODIN 1</option>
-          <option value="odin3" data-image="https://rinosbike.com/cdn/shop/files/Odin_3_-_1_Blue.png?v=1757928970&width=400">ODIN 3</option>
-          <option value="odin4" data-image="https://rinosbike.com/cdn/shop/files/Group_640.png?v=1758873763&width=400">ODIN 4</option>
-          <option value="odin6_0" data-image="https://rinosbike.com/cdn/shop/files/ODIN6_1.png?v=1750755375&width=400">ODIN 6.0</option>
-          <option value="odin6_1" data-image="https://rinosbike.com/cdn/shop/files/1_edd71595-f78a-4465-9fa4-bc476b3d0b99.png?v=1751964247&width=400">ODIN 6.1</option>
-          <option value="odin7_1" data-image="https://rinosbike.com/cdn/shop/files/Odin_7_-_1_0fb3d058-3213-4d7b-8571-0964574deac9.png?v=1758275105&width=400">ODIN 7.1</option>
+          <option value="">Select a model...</option>
+          <option value="odin1" data-image="https://rinosbike.com/cdn/shop/files/Odin_1_-_1_Gold_3b132dde-d88f-4b29-991c-6d77af4ceef4.png?v=1757929311&width=400">Odin 1</option>
+          <option value="odin3" data-image="https://rinosbike.com/cdn/shop/files/Odin_3_-_1_Blue.png?v=1757928970&width=400">Odin 3</option>
+          <option value="odin4" data-image="https://rinosbike.com/cdn/shop/files/Group_640.png?v=1758873763&width=400">Odin 4</option>
+          <option value="odin6_0" data-image="https://rinosbike.com/cdn/shop/files/ODIN6_1.png?v=1750755375&width=400">Odin 6.0</option>
+          <option value="odin6_1" data-image="https://rinosbike.com/cdn/shop/files/1_edd71595-f78a-4465-9fa4-bc476b3d0b99.png?v=1751964247&width=400">Odin 6.1</option>
+          <option value="odin7_1" data-image="https://rinosbike.com/cdn/shop/files/Odin_7_-_1_0fb3d058-3213-4d7b-8571-0964574deac9.png?v=1758275105&width=400">Odin 7.1</option>
         </select>
       </div>
     </div>
@@ -84,43 +84,40 @@
 </div>
 
 <style>
-/* ============================
-   SOFT MINIMAL (APPLE-LIKE)
-   ============================ */
-
 .bike-comparison-widget {
   max-width: 1000px;
-  margin: 50px auto;
+  margin: 60px auto;
   padding: 0 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Base container – removed border, added softness */
 .comparison-container {
   background: #fff;
-  border-radius: 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
   padding: 40px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
 }
 
 /* Header */
 .comparison-header {
   text-align: center;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
 .comparison-title {
-  font-size: 1.9em;
+  font-size: 1.8em;
   font-weight: 700;
-  color: #111;
-  margin-bottom: 10px;
-  letter-spacing: -0.3px;
+  margin-bottom: 8px;
+  color: #000;
 }
 
-/* ------------------------------
-      SELECTORS
-   ------------------------------ */
+.comparison-subtitle {
+  font-size: 1em;
+  color: #666;
+  margin: 0;
+}
 
+/* Bike Selectors */
 .bike-selectors {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -130,24 +127,24 @@
 }
 
 .bike-selector label {
-  font-size: 0.8em;
+  display: block;
+  font-size: 0.9em;
   font-weight: 600;
   color: #666;
   margin-bottom: 8px;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.5px;
 }
 
-/* "This bike" box — softer + elegant */
 .current-bike-display {
   width: 100%;
-  padding: 14px 18px;
+  padding: 12px 16px;
   font-size: 1em;
   font-weight: 600;
-  color: #111;
-  background: linear-gradient(180deg, #fafafa, #f0f0f0);
-  border-radius: 14px;
-  border: 1px solid #e6e6e6;
+  color: #000;
+  background: #f5f5f5;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -156,109 +153,125 @@
 .current-bike-display::before {
   content: "📍";
   font-size: 1.2em;
-  opacity: 0.8;
 }
 
-/* Dropdown — ultra minimal */
 .bike-select {
   width: 100%;
-  padding: 14px 18px;
-  background: #fafafa;
-  border: 1px solid #e4e4e4;
-  border-radius: 14px;
-  font-weight: 600;
+  padding: 12px 16px;
   font-size: 1em;
-  color: #111;
+  font-weight: 600;
+  color: #000;
+  background: #fafafa;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23000' stroke-width='2'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 18px center;
+  background-position: right 16px center;
   padding-right: 45px;
-  transition: all 0.2s ease;
 }
 
-.bike-select:hover,
+.bike-select:hover {
+  border-color: #000;
+  background-color: #fff;
+}
+
 .bike-select:focus {
-  border-color: #aaa;
-  background: #fff;
+  outline: none;
+  border-color: #000;
+  background-color: #fff;
 }
 
-/* VS circle — softened */
 .vs-divider {
-  width: 48px;
-  height: 48px;
-  background: #111;
+  width: 50px;
+  height: 50px;
+  background: #000;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   font-weight: 700;
-  font-size: 0.8em;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  flex-shrink: 0;
 }
 
-/* ------------------------------
-      IMAGES
-   ------------------------------ */
-
+/* Comparison Images */
 .comparison-images {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  margin-bottom: 32px;
+  margin-bottom: 30px;
+}
+
+.bike-image-container {
+  text-align: center;
 }
 
 .bike-image {
   width: 100%;
-  max-height: 220px;
+  max-height: 200px;
   object-fit: contain;
+  margin-bottom: 15px;
   background: #fafafa;
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: inset 0 0 0 1px #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
 }
 
 .bike-name {
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: 700;
-  margin-top: 10px;
-  color: #111;
+  margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  color: #000;
 }
 
-/* ------------------------------
-      TABLE
-   ------------------------------ */
-
+/* Comparison Table */
 .comparison-table-wrapper {
   display: none;
-  animation: fadeIn 0.25s ease;
 }
 
 .comparison-table-wrapper.active {
   display: block;
 }
 
-/* Header row — soft gradient */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
 .comparison-table thead th {
-  padding: 16px 14px;
+  background: #fafafa;
+  padding: 15px;
   font-weight: 600;
   font-size: 0.9em;
   text-align: left;
-  background: linear-gradient(180deg, #fafafa, #f2f2f2);
-  color: #111;
-  letter-spacing: 0.4px;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 2px solid #e0e0e0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #000;
 }
 
-/* Body rows */
+.comparison-table thead th.spec-label-col {
+  width: 35%;
+}
+
 .comparison-table tbody tr {
   border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+
+.comparison-table tbody tr:hover {
+  background: #fafafa;
 }
 
 .comparison-table tbody td {
-  padding: 14px;
+  padding: 15px;
   font-size: 0.95em;
 }
 
@@ -266,24 +279,28 @@
   font-weight: 600;
   color: #666;
   text-transform: uppercase;
-  font-size: 0.8em;
-  letter-spacing: 0.4px;
+  font-size: 0.85em;
+  letter-spacing: 0.5px;
 }
 
-/* Difference highlight — extremely soft */
+.comparison-table tbody td:not(:first-child) {
+  color: #000;
+  font-weight: 500;
+}
+
 .comparison-table tbody tr.different {
-  background: #fffdfa;
+  background: #fffbea;
+}
+
+.comparison-table tbody tr.different:hover {
+  background: #fff9d6;
 }
 
 .comparison-table tbody tr.different td:not(:first-child) {
   font-weight: 700;
-  color: #111;
 }
 
-/* ------------------------------
-      ACTION BUTTONS
-   ------------------------------ */
-
+/* Action Buttons */
 .comparison-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -293,50 +310,64 @@
 }
 
 .bike-link {
-  padding: 14px 22px;
-  background: #111;
+  display: block;
+  padding: 14px 24px;
+  background: #000;
   color: #fff;
   text-align: center;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 0.96em;
   text-decoration: none;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.95em;
+  border-radius: 6px;
+  transition: all 0.3s;
+  letter-spacing: 0.3px;
 }
 
 .bike-link:hover {
-  background: #000;
+  background: #333;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* ------------------------------
-      EMPTY STATE
-   ------------------------------ */
-
+/* Empty State */
 .empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 60px 20px;
   text-align: center;
-  opacity: 0.7;
-}
-
-.empty-state svg {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 20px;
 }
 
 .empty-state.hidden {
   display: none;
 }
 
-/* ------------------------------
-      MOBILE
-   ------------------------------ */
+.empty-state svg {
+  width: 60px;
+  height: 60px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
 
+.empty-state p {
+  font-size: 1.1em;
+  color: #999;
+  margin: 0;
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .comparison-container {
-    padding: 26px 20px;
-    border-radius: 16px;
+    padding: 25px 20px;
+  }
+
+  .comparison-title {
+    font-size: 1.4em;
+  }
+
+  .comparison-subtitle {
+    font-size: 0.9em;
   }
 
   .bike-selectors {
@@ -345,28 +376,40 @@
   }
 
   .vs-divider {
-    margin: auto;
+    order: 2;
+    margin: 0 auto;
+  }
+
+  .bike-selector:first-child {
+    order: 1;
+  }
+
+  .bike-selector:last-child {
+    order: 3;
   }
 
   .comparison-images {
     grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .comparison-table {
+    font-size: 0.85em;
+  }
+
+  .comparison-table thead th,
+  .comparison-table tbody td {
+    padding: 10px 8px;
   }
 
   .comparison-actions {
     grid-template-columns: 1fr;
   }
 
-  .comparison-table thead th,
-  .comparison-table tbody td {
-    padding: 10px;
-    font-size: 0.85em;
+  .bike-link {
+    font-size: 0.9em;
+    padding: 12px 20px;
   }
-}
-
-/* Fade animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 
@@ -374,7 +417,7 @@
 // Bike data using translation keys structure
 const bikeData = {
   odin1: {
-    name: 'ODIN 1',
+    name: 'Odin 1',
     url: '/products/odin-1',
     handle: 'odin-1',
     image: 'https://rinosbike.com/cdn/shop/files/Odin_1_-_1_Gold_3b132dde-d88f-4b29-991c-6d77af4ceef4.png?v=1757929311&width=400',
@@ -388,7 +431,7 @@ const bikeData = {
     rims: '{{ "bikes.odin1.rims" | t }}'
   },
   odin3: {
-    name: 'ODIN 3',
+    name: 'Odin 3',
     url: '/products/odin-3',
     handle: 'odin-3',
     image: 'https://rinosbike.com/cdn/shop/files/Odin_3_-_1_Blue.png?v=1757928970&width=400',
@@ -402,7 +445,7 @@ const bikeData = {
     rims: '{{ "bikes.odin3.rims" | t }}'
   },
   odin4: {
-    name: 'ODIN 4',
+    name: 'Odin 4',
     url: '/products/odin-4',
     handle: 'odin-4',
     image: 'https://rinosbike.com/cdn/shop/files/Group_640.png?v=1758873763&width=400',
@@ -416,7 +459,7 @@ const bikeData = {
     rims: '{{ "bikes.odin4.rims" | t }}'
   },
   odin6_0: {
-    name: 'ODIN 6.0',
+    name: 'Odin 6',
     url: '/products/odin-6',
     handle: 'odin-6',
     image: 'https://rinosbike.com/cdn/shop/files/ODIN6_1.png?v=1750755375&width=400',
@@ -430,7 +473,7 @@ const bikeData = {
     rims: '{{ "bikes.odin6_0.rims" | t }}'
   },
   odin6_1: {
-    name: 'ODIN 6.1',
+    name: 'Odin 6.1',
     url: '/products/odin-6-1',
     handle: 'odin-6-1',
     image: 'https://rinosbike.com/cdn/shop/files/1_edd71595-f78a-4465-9fa4-bc476b3d0b99.png?v=1751964247&width=400',
@@ -444,7 +487,7 @@ const bikeData = {
     rims: '{{ "bikes.odin6_1.rims" | t }}'
   },
   odin7_1: {
-    name: 'ODIN 7.1',
+    name: 'Odin 7.1',
     url: '/products/odin-7-1',
     handle: 'odin-7-1',
     image: 'https://rinosbike.com/cdn/shop/files/Odin_7_-_1_0fb3d058-3213-4d7b-8571-0964574deac9.png?v=1758275105&width=400',
