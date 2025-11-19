@@ -190,6 +190,7 @@
         "text_GWbcnp",
         "button_7fz79L"
       ],
+      "custom_css": [],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
