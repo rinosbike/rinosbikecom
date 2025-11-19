@@ -166,17 +166,6 @@
     "multicolumn_KfMJ9G": {
       "type": "multicolumn",
       "blocks": {
-        "column_8wYHLe": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Odin1-7Blue.png",
-            "title": "<em><strong>UCI Certified.</strong></em>",
-            "text": "<p>Ride with confidence — the Odin 1 meets UCI standards, making it competition-ready straight out of the box.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
         "column_6KE7An": {
           "type": "column",
           "settings": {
@@ -212,24 +201,13 @@
             "link_label": "",
             "link": ""
           }
-        },
-        "column_4ERxGT": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
         }
       },
       "block_order": [
-        "column_8wYHLe",
         "column_6KE7An",
         "column_8hGHg7",
         "column_hgPcWE",
-        "column_b8kfWh",
-        "column_4ERxGT"
+        "column_b8kfWh"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
