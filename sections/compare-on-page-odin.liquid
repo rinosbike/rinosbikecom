@@ -4,18 +4,79 @@
   Save as: sections/bike-comparison-widget.liquid
 {% endcomment %}
 
-<div class="bike-comparison-widget">
+{%- liquid
+  assign current_locale = request.locale.iso_code
+  
+  if current_locale == 'es'
+    assign t_title = "Comparar Bicicletas de Carretera"
+    assign t_subtitle = "Mira cómo se compara esta bicicleta con otras"
+    assign t_this_bike = "Esta Bici"
+    assign t_compare_with = "Comparar Con"
+    assign t_select_bike = "Selecciona una bici..."
+    assign t_specification = "Especificación"
+    assign t_view = "Ver"
+    assign t_empty = "Selecciona una bici arriba para comparar"
+  elsif current_locale == 'de'
+    assign t_title = "Rennräder Vergleichen"
+    assign t_subtitle = "Sieh dir an, wie sich dieses Rad im Vergleich schlägt"
+    assign t_this_bike = "Dieses Rad"
+    assign t_compare_with = "Vergleichen Mit"
+    assign t_select_bike = "Wähle ein Rad..."
+    assign t_specification = "Spezifikation"
+    assign t_view = "Ansehen"
+    assign t_empty = "Wähle oben ein Rad zum Vergleichen aus"
+  elsif current_locale == 'pl'
+    assign t_title = "Porównaj Rowery Szosowe"
+    assign t_subtitle = "Zobacz jak ten rower wypada w porównaniu"
+    assign t_this_bike = "Ten Rower"
+    assign t_compare_with = "Porównaj Z"
+    assign t_select_bike = "Wybierz rower..."
+    assign t_specification = "Specyfikacja"
+    assign t_view = "Zobacz"
+    assign t_empty = "Wybierz rower powyżej, aby porównać"
+  elsif current_locale == 'fr'
+    assign t_title = "Comparer les Vélos de Route"
+    assign t_subtitle = "Voyez comment ce vélo se compare aux autres"
+    assign t_this_bike = "Ce Vélo"
+    assign t_compare_with = "Comparer Avec"
+    assign t_select_bike = "Sélectionnez un vélo..."
+    assign t_specification = "Spécification"
+    assign t_view = "Voir"
+    assign t_empty = "Sélectionnez un vélo ci-dessus pour comparer"
+  elsif current_locale == 'bg'
+    assign t_title = "Сравни Шосейни Велосипеди"
+    assign t_subtitle = "Виж как този велосипед се сравнява с другите"
+    assign t_this_bike = "Този Велосипед"
+    assign t_compare_with = "Сравни С"
+    assign t_select_bike = "Избери велосипед..."
+    assign t_specification = "Спецификация"
+    assign t_view = "Виж"
+    assign t_empty = "Избери велосипед горе за сравнение"
+  else
+    assign t_title = "Compare Road Bikes"
+    assign t_subtitle = "See how this bike stacks up against others"
+    assign t_this_bike = "This Bike"
+    assign t_compare_with = "Compare With"
+    assign t_select_bike = "Select a bike..."
+    assign t_specification = "Specification"
+    assign t_view = "View"
+    assign t_empty = "Select a bike above to compare"
+  endif
+-%}
+
+<div class="bike-comparison-widget" data-t-view="{{ t_view }}">
   <div class="comparison-container">
     
     <!-- Header -->
     <div class="comparison-header">
-      <h3 class="comparison-title">Compare Odin Models</h3>
+      <h3 class="comparison-title">{{ t_title }}</h3>
+      <p class="comparison-subtitle">{{ t_subtitle }}</p>
     </div>
 
     <!-- Bike Selectors -->
     <div class="bike-selectors">
       <div class="bike-selector current-bike">
-        <label for="bike-1">Current Model</label>
+        <label for="bike-1">{{ t_this_bike }}</label>
         <div class="current-bike-display" id="current-bike-name">
           <!-- Auto-populated by JavaScript -->
         </div>
@@ -27,15 +88,15 @@
       </div>
 
       <div class="bike-selector">
-        <label for="bike-2">Compare With</label>
-        <select id="bike-2" class="bike-select">
-          <option value="">Select a model...</option>
-          <option value="odin1" data-image="https://rinosbike.com/cdn/shop/files/Odin_1_-_1_Gold_3b132dde-d88f-4b29-991c-6d77af4ceef4.png?v=1757929311&width=400">Odin 1</option>
-          <option value="odin3" data-image="https://rinosbike.com/cdn/shop/files/Odin_3_-_1_Blue.png?v=1757928970&width=400">Odin 3</option>
-          <option value="odin4" data-image="https://rinosbike.com/cdn/shop/files/Group_640.png?v=1758873763&width=400">Odin 4</option>
-          <option value="odin6_0" data-image="https://rinosbike.com/cdn/shop/files/ODIN6_1.png?v=1750755375&width=400">Odin 6.0</option>
-          <option value="odin6_1" data-image="https://rinosbike.com/cdn/shop/files/1_edd71595-f78a-4465-9fa4-bc476b3d0b99.png?v=1751964247&width=400">Odin 6.1</option>
-          <option value="odin7_1" data-image="https://rinosbike.com/cdn/shop/files/Odin_7_-_1_0fb3d058-3213-4d7b-8571-0964574deac9.png?v=1758275105&width=400">Odin 7.1</option>
+        <label for="bike-2">{{ t_compare_with }}</label>
+        <select id="bike-2" class="bike-select" data-placeholder="{{ t_select_bike }}">
+          <option value="">{{ t_select_bike }}</option>
+          <option value="odin1" data-image="https://rinosbike.com/cdn/shop/files/Odin_1_-_1_Gold_3b132dde-d88f-4b29-991c-6d77af4ceef4.png?v=1757929311&width=400">ODIN 1</option>
+          <option value="odin3" data-image="https://rinosbike.com/cdn/shop/files/Odin_3_-_1_Blue.png?v=1757928970&width=400">ODIN 3</option>
+          <option value="odin4" data-image="https://rinosbike.com/cdn/shop/files/Group_640.png?v=1758873763&width=400">ODIN 4</option>
+          <option value="odin6_0" data-image="https://rinosbike.com/cdn/shop/files/ODIN6_1.png?v=1750755375&width=400">ODIN 6.0</option>
+          <option value="odin6_1" data-image="https://rinosbike.com/cdn/shop/files/1_edd71595-f78a-4465-9fa4-bc476b3d0b99.png?v=1751964247&width=400">ODIN 6.1</option>
+          <option value="odin7_1" data-image="https://rinosbike.com/cdn/shop/files/Odin_7_-_1_0fb3d058-3213-4d7b-8571-0964574deac9.png?v=1758275105&width=400">ODIN 7.1</option>
         </select>
       </div>
     </div>
@@ -56,7 +117,7 @@
       <table class="comparison-table">
         <thead>
           <tr>
-            <th class="spec-label-col">Specification</th>
+            <th class="spec-label-col">{{ t_specification }}</th>
             <th id="bike-1-header">Bike 1</th>
             <th id="bike-2-header">Bike 2</th>
           </tr>
@@ -67,8 +128,8 @@
       </table>
 
       <div class="comparison-actions">
-        <a href="#" id="bike-1-link" class="bike-link">View ODIN 1 →</a>
-        <a href="#" id="bike-2-link" class="bike-link">View ODIN 3 →</a>
+        <a href="#" id="bike-1-link" class="bike-link">{{ t_view }} ODIN 1 →</a>
+        <a href="#" id="bike-2-link" class="bike-link">{{ t_view }} ODIN 3 →</a>
       </div>
     </div>
 
@@ -77,7 +138,7 @@
         <path d="M9 11l3 3L22 4"></path>
         <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
       </svg>
-      <p>Select a bike above to compare</p>
+      <p>{{ t_empty }}</p>
     </div>
 
   </div>
@@ -209,11 +270,13 @@
 
 .bike-image-container {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .bike-image {
   width: 100%;
-  max-height: 200px;
+  height: 200px;
   object-fit: contain;
   margin-bottom: 15px;
   background: #fafafa;
@@ -393,8 +456,26 @@
     gap: 30px;
   }
 
+  .bike-image {
+    height: 180px;
+  }
+
+  .bike-name {
+    font-size: 1.1em;
+  }
+
   .comparison-table {
     font-size: 0.85em;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .comparison-table thead,
+  .comparison-table tbody,
+  .comparison-table tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
   }
 
   .comparison-table thead th,
@@ -402,8 +483,27 @@
     padding: 10px 8px;
   }
 
+  .comparison-table thead th.spec-label-col {
+    width: 40%;
+  }
+
+  .comparison-table thead th:not(.spec-label-col) {
+    width: 30%;
+  }
+
+  .comparison-table tbody td:first-child {
+    width: 40%;
+    font-size: 0.75em;
+  }
+
+  .comparison-table tbody td:not(:first-child) {
+    width: 30%;
+    font-size: 0.8em;
+  }
+
   .comparison-actions {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .bike-link {
@@ -417,7 +517,7 @@
 // Bike data using translation keys structure
 const bikeData = {
   odin1: {
-    name: 'Odin 1',
+    name: 'ODIN 1',
     url: '/products/odin-1',
     handle: 'odin-1',
     image: 'https://rinosbike.com/cdn/shop/files/Odin_1_-_1_Gold_3b132dde-d88f-4b29-991c-6d77af4ceef4.png?v=1757929311&width=400',
@@ -431,7 +531,7 @@ const bikeData = {
     rims: '{{ "bikes.odin1.rims" | t }}'
   },
   odin3: {
-    name: 'Odin 3',
+    name: 'ODIN 3',
     url: '/products/odin-3',
     handle: 'odin-3',
     image: 'https://rinosbike.com/cdn/shop/files/Odin_3_-_1_Blue.png?v=1757928970&width=400',
@@ -445,7 +545,7 @@ const bikeData = {
     rims: '{{ "bikes.odin3.rims" | t }}'
   },
   odin4: {
-    name: 'Odin 4',
+    name: 'ODIN 4',
     url: '/products/odin-4',
     handle: 'odin-4',
     image: 'https://rinosbike.com/cdn/shop/files/Group_640.png?v=1758873763&width=400',
@@ -459,7 +559,7 @@ const bikeData = {
     rims: '{{ "bikes.odin4.rims" | t }}'
   },
   odin6_0: {
-    name: 'Odin 6',
+    name: 'ODIN 6.0',
     url: '/products/odin-6',
     handle: 'odin-6',
     image: 'https://rinosbike.com/cdn/shop/files/ODIN6_1.png?v=1750755375&width=400',
@@ -473,7 +573,7 @@ const bikeData = {
     rims: '{{ "bikes.odin6_0.rims" | t }}'
   },
   odin6_1: {
-    name: 'Odin 6.1',
+    name: 'ODIN 6.1',
     url: '/products/odin-6-1',
     handle: 'odin-6-1',
     image: 'https://rinosbike.com/cdn/shop/files/1_edd71595-f78a-4465-9fa4-bc476b3d0b99.png?v=1751964247&width=400',
@@ -487,7 +587,7 @@ const bikeData = {
     rims: '{{ "bikes.odin6_1.rims" | t }}'
   },
   odin7_1: {
-    name: 'Odin 7.1',
+    name: 'ODIN 7.1',
     url: '/products/odin-7-1',
     handle: 'odin-7-1',
     image: 'https://rinosbike.com/cdn/shop/files/Odin_7_-_1_0fb3d058-3213-4d7b-8571-0964574deac9.png?v=1758275105&width=400',
@@ -551,6 +651,7 @@ function initializeComparison() {
   }
   
   const currentBike = bikeData[currentBikeKey];
+  const tView = document.querySelector('.bike-comparison-widget').dataset.tView || 'View';
   
   // Set current bike display
   document.getElementById('current-bike-name').textContent = currentBike.name;
@@ -561,7 +662,7 @@ function initializeComparison() {
   document.getElementById('bike-1-name').textContent = currentBike.name;
   document.getElementById('bike-1-header').textContent = currentBike.name;
   document.getElementById('bike-1-link').href = currentBike.url;
-  document.getElementById('bike-1-link').textContent = `View ${currentBike.name} →`;
+  document.getElementById('bike-1-link').textContent = `${tView} ${currentBike.name} →`;
   
   // Remove current bike from bike 2 dropdown
   const bike2Select = document.getElementById('bike-2');
@@ -591,6 +692,7 @@ function updateComparison() {
 
   const bike1 = bikeData[bike1Key];
   const bike2 = bikeData[bike2Key];
+  const tView = document.querySelector('.bike-comparison-widget').dataset.tView || 'View';
 
   // Update bike 2 image
   const bike2Option = document.getElementById('bike-2').options[document.getElementById('bike-2').selectedIndex];
@@ -603,7 +705,7 @@ function updateComparison() {
 
   // Update links
   document.getElementById('bike-2-link').href = bike2.url;
-  document.getElementById('bike-2-link').textContent = `View ${bike2.name} →`;
+  document.getElementById('bike-2-link').textContent = `${tView} ${bike2.name} →`;
 
   // Build comparison table
   const tbody = document.getElementById('comparison-tbody');
