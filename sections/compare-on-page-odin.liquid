@@ -84,202 +84,264 @@
 </div>
 
 <style>
+/* ============================
+   SOFT MINIMAL (APPLE-LIKE)
+   ============================ */
+
 .bike-comparison-widget {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 16px;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Container */
+/* Base container – removed border, added softness */
 .comparison-container {
   background: #fff;
-  border-radius: 12px;
-  padding: 32px;
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
 }
 
 /* Header */
 .comparison-header {
   text-align: center;
-  margin-bottom: 28px;
+  margin-bottom: 36px;
 }
 
 .comparison-title {
-  font-size: 1.6em;
+  font-size: 1.9em;
   font-weight: 700;
-  color: #000;
-  margin: 0;
+  color: #111;
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
 }
 
-/* Selectors Row */
+/* ------------------------------
+      SELECTORS
+   ------------------------------ */
+
 .bike-selectors {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  gap: 24px;
+  gap: 30px;
   align-items: end;
-  margin-bottom: 28px;
+  margin-bottom: 40px;
 }
 
 .bike-selector label {
   font-size: 0.8em;
   font-weight: 600;
-  color: #444;
-  letter-spacing: 0.5px;
-  margin-bottom: 6px;
+  color: #666;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
 }
 
+/* "This bike" box — softer + elegant */
 .current-bike-display {
-  padding: 10px 14px;
+  width: 100%;
+  padding: 14px 18px;
   font-size: 1em;
   font-weight: 600;
-  color: #000;
-  background: #f6f6f6;
-  border-radius: 8px;
+  color: #111;
+  background: linear-gradient(180deg, #fafafa, #f0f0f0);
+  border-radius: 14px;
+  border: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
+.current-bike-display::before {
+  content: "📍";
+  font-size: 1.2em;
+  opacity: 0.8;
+}
+
+/* Dropdown — ultra minimal */
 .bike-select {
-  padding: 10px 14px;
+  width: 100%;
+  padding: 14px 18px;
   background: #fafafa;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid #e4e4e4;
+  border-radius: 14px;
   font-weight: 600;
-  transition: all 0.2s;
+  font-size: 1em;
+  color: #111;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-position: right 14px center;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23000' stroke-width='2'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  padding-right: 40px;
+  background-position: right 18px center;
+  padding-right: 45px;
+  transition: all 0.2s ease;
 }
 
 .bike-select:hover,
 .bike-select:focus {
-  border-color: #000;
+  border-color: #aaa;
   background: #fff;
 }
 
-/* VS Circle */
+/* VS circle — softened */
 .vs-divider {
-  width: 42px;
-  height: 42px;
-  background: #000;
+  width: 48px;
+  height: 48px;
+  background: #111;
   border-radius: 50%;
-  font-size: 0.8em;
-  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8em;
 }
 
-/* Images */
+/* ------------------------------
+      IMAGES
+   ------------------------------ */
+
 .comparison-images {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  margin-bottom: 20px;
+  gap: 40px;
+  margin-bottom: 32px;
 }
 
 .bike-image {
   width: 100%;
-  max-height: 180px;
+  max-height: 220px;
   object-fit: contain;
   background: #fafafa;
-  padding: 16px;
-  border-radius: 8px;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: inset 0 0 0 1px #f0f0f0;
 }
 
 .bike-name {
+  font-size: 1.1em;
   font-weight: 700;
-  font-size: 1em;
-  margin: 8px 0 0;
-  color: #000;
+  margin-top: 10px;
+  color: #111;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-/* Table */
+/* ------------------------------
+      TABLE
+   ------------------------------ */
+
 .comparison-table-wrapper {
   display: none;
+  animation: fadeIn 0.25s ease;
 }
 
 .comparison-table-wrapper.active {
   display: block;
 }
 
-.comparison-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
+/* Header row — soft gradient */
 .comparison-table thead th {
-  padding: 12px 10px;
-  font-size: 0.8em;
-  background: #fafafa;
-  color: #000;
+  padding: 16px 14px;
   font-weight: 600;
+  font-size: 0.9em;
+  text-align: left;
+  background: linear-gradient(180deg, #fafafa, #f2f2f2);
+  color: #111;
+  letter-spacing: 0.4px;
+  border-bottom: 1px solid #eaeaea;
 }
 
+/* Body rows */
 .comparison-table tbody tr {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .comparison-table tbody td {
-  padding: 12px 10px;
-  font-size: 0.9em;
+  padding: 14px;
+  font-size: 0.95em;
 }
 
 .comparison-table tbody td:first-child {
+  font-weight: 600;
   color: #666;
-  font-size: 0.75em;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: 0.8em;
+  letter-spacing: 0.4px;
 }
 
+/* Difference highlight — extremely soft */
 .comparison-table tbody tr.different {
-  background: #fffef3;
+  background: #fffdfa;
 }
+
+.comparison-table tbody tr.different td:not(:first-child) {
+  font-weight: 700;
+  color: #111;
+}
+
+/* ------------------------------
+      ACTION BUTTONS
+   ------------------------------ */
 
 .comparison-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  padding-top: 16px;
-  margin-top: 10px;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
 }
 
 .bike-link {
-  padding: 12px 16px;
-  background: #000;
+  padding: 14px 22px;
+  background: #111;
   color: #fff;
   text-align: center;
-  border-radius: 8px;
-  text-decoration: none;
+  border-radius: 12px;
   font-weight: 600;
-  font-size: 0.9em;
-  transition: all 0.2s;
+  font-size: 0.96em;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .bike-link:hover {
-  opacity: 0.85;
+  background: #000;
   transform: translateY(-2px);
 }
 
-/* Empty State */
+/* ------------------------------
+      EMPTY STATE
+   ------------------------------ */
+
 .empty-state {
-  padding: 40px 10px;
-  opacity: 0.8;
+  padding: 60px 20px;
+  text-align: center;
+  opacity: 0.7;
 }
 
-/* MOBILE */
+.empty-state svg {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.empty-state.hidden {
+  display: none;
+}
+
+/* ------------------------------
+      MOBILE
+   ------------------------------ */
+
 @media (max-width: 768px) {
   .comparison-container {
-    padding: 20px 16px;
+    padding: 26px 20px;
+    border-radius: 16px;
   }
 
   .bike-selectors {
     grid-template-columns: 1fr;
-    gap: 16px;
-    text-align: center;
+    gap: 20px;
   }
 
   .vs-divider {
@@ -293,6 +355,18 @@
   .comparison-actions {
     grid-template-columns: 1fr;
   }
+
+  .comparison-table thead th,
+  .comparison-table tbody td {
+    padding: 10px;
+    font-size: 0.85em;
+  }
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 
