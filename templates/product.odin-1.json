@@ -81,6 +81,7 @@
     },
     "bike_parts_highlight_1_6XGKyM": {
       "type": "bike-parts-highlight-1",
+      "disabled": true,
       "settings": {
         "tire_size_text": "tire size",
         "gear_shifter_text": "gear shifter",
@@ -149,6 +150,63 @@
         "padding_bottom": 52
       }
     },
+    "multicolumn_wrrqN8": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_d44Ld3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/SnapInsta.to_545505071_18075032927516140_6687439362698984429_n.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_TX49jD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/No_20to_20zaczynamy_20_F0_9F_9A_B2_20Dzi_C4_99ki_20_40rinosbike.pl_20mam_20okazj_C4_99_20sprawdzi_C4_87_20ten_20rower_20w_20akcji._20To_20dopiero_20pocz_C4_85tek_20naszej_20wsp_C3_B3.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_cnPU9B": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IMG_5918_8a9a09b4-f7a1-46d5-9da9-2f2a1d91b7e3.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_d44Ld3",
+        "column_TX49jD",
+        "column_cnPU9B"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Get inspired with Rinos.",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Follow Us on Instagram",
+        "button_link": "https://www.instagram.com/rinosbicycles/",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "multicolumn_KfMJ9G": {
       "type": "multicolumn",
       "blocks": {
@@ -193,7 +251,7 @@
         "column_b8kfWh": {
           "type": "column",
           "settings": {
-            "title": "Disc Brakes",
+            "title": "Disc Brakes.",
             "text": "",
             "link_label": "",
             "link": ""
@@ -411,6 +469,7 @@
     "custom_liquid_fFQWdd",
     "rich_text_NbwtPq",
     "multicolumn_KfMJ9G",
+    "multicolumn_wrrqN8",
     "image_with_text_xVg3DE",
     "product_description_sec1_Nn4UXc",
     "road_assembly_UDtXQV",
