@@ -2,63 +2,137 @@
   assign video_url = section.settings.video_url | default: 'https://www.youtube.com/embed/iLWtW4_HscI'
   assign video_thumbnail = section.settings.video_thumbnail
   assign default_thumbnail = 'https://cdn.shopify.com/s/files/1/0720/5794/6377/files/Group_755_2_430x.jpg?v=1762248600'
+  assign current_locale = request.locale.iso_code
 -%}
 
-<div class="bike-assembly-widget" id="assembly-video-widget-odin">
-  <div class="assembly-widget-container">
+{%- comment -%} Multi-language translations {%- endcomment -%}
+{%- if current_locale == 'es' -%}
+  {%- assign t_title = "Ensambla Tu Bicicleta Odin" -%}
+  {%- assign t_subtitle = "Mira lo simple que es montar tu Odin. Todo lo que necesitas, paso a paso." -%}
+  {%- assign t_watch_text = "Ver Guía de Montaje" -%}
+  {%- assign t_benefit_1_title = "Fácil de Seguir" -%}
+  {%- assign t_benefit_1_text = "Instrucciones claras que cualquiera puede seguir." -%}
+  {%- assign t_benefit_2_title = "Herramientas Básicas" -%}
+  {%- assign t_benefit_2_text = "Todo lo necesario está incluido en la caja." -%}
+  {%- assign t_benefit_3_title = "Montaje Rápido" -%}
+  {%- assign t_benefit_3_text = "Lista para rodar en 10-15 minutos." -%}
+{%- elsif current_locale == 'de' -%}
+  {%- assign t_title = "Montiere Dein Odin Fahrrad" -%}
+  {%- assign t_subtitle = "Schau, wie einfach der Aufbau deines Odin ist. Alles was du brauchst, Schritt für Schritt." -%}
+  {%- assign t_watch_text = "Montageanleitung Ansehen" -%}
+  {%- assign t_benefit_1_title = "Leicht Verständlich" -%}
+  {%- assign t_benefit_1_text = "Klare Anleitungen, die jeder befolgen kann." -%}
+  {%- assign t_benefit_2_title = "Einfaches Werkzeug" -%}
+  {%- assign t_benefit_2_text = "Alles Notwendige ist im Karton enthalten." -%}
+  {%- assign t_benefit_3_title = "Schnelle Montage" -%}
+  {%- assign t_benefit_3_text = "In 10-15 Minuten fahrbereit." -%}
+{%- elsif current_locale == 'fr' -%}
+  {%- assign t_title = "Assemblez Votre Vélo Odin" -%}
+  {%- assign t_subtitle = "Découvrez la simplicité du montage de votre Odin. Tout ce dont vous avez besoin, étape par étape." -%}
+  {%- assign t_watch_text = "Voir le Guide d'Assemblage" -%}
+  {%- assign t_benefit_1_title = "Facile à Suivre" -%}
+  {%- assign t_benefit_1_text = "Instructions claires que tout le monde peut suivre." -%}
+  {%- assign t_benefit_2_title = "Outils de Base" -%}
+  {%- assign t_benefit_2_text = "Tout le nécessaire est inclus dans la boîte." -%}
+  {%- assign t_benefit_3_title = "Montage Rapide" -%}
+  {%- assign t_benefit_3_text = "Prêt à rouler en 10-15 minutes." -%}
+{%- elsif current_locale == 'pl' -%}
+  {%- assign t_title = "Złóż Swój Rower Odin" -%}
+  {%- assign t_subtitle = "Zobacz jak prosto zmontować swojego Odina. Wszystko czego potrzebujesz, krok po kroku." -%}
+  {%- assign t_watch_text = "Zobacz Instrukcję Montażu" -%}
+  {%- assign t_benefit_1_title = "Łatwe do Zrozumienia" -%}
+  {%- assign t_benefit_1_text = "Jasne instrukcje, które każdy może wykonać." -%}
+  {%- assign t_benefit_2_title = "Podstawowe Narzędzia" -%}
+  {%- assign t_benefit_2_text = "Wszystko co potrzebne jest w pudełku." -%}
+  {%- assign t_benefit_3_title = "Szybki Montaż" -%}
+  {%- assign t_benefit_3_text = "Gotowy do jazdy w 10-15 minut." -%}
+{%- elsif current_locale == 'bg' -%}
+  {%- assign t_title = "Сглобете Вашия Велосипед Odin" -%}
+  {%- assign t_subtitle = "Вижте колко е лесно да сглобите вашия Odin. Всичко необходимо, стъпка по стъпка." -%}
+  {%- assign t_watch_text = "Гледай Ръководство за Монтаж" -%}
+  {%- assign t_benefit_1_title = "Лесно за Следване" -%}
+  {%- assign t_benefit_1_text = "Ясни инструкции, които всеки може да следва." -%}
+  {%- assign t_benefit_2_title = "Основни Инструменти" -%}
+  {%- assign t_benefit_2_text = "Всичко необходимо е включено в кутията." -%}
+  {%- assign t_benefit_3_title = "Бърз Монтаж" -%}
+  {%- assign t_benefit_3_text = "Готов за каране за 10-15 минути." -%}
+{%- else -%}
+  {%- comment -%} Default to English {%- endcomment -%}
+  {%- assign t_title = "Assemble Your Odin Road Bike" -%}
+  {%- assign t_subtitle = "Watch how simple it is to set up your Odin. Everything you need, step by step." -%}
+  {%- assign t_watch_text = "Watch Assembly Guide" -%}
+  {%- assign t_benefit_1_title = "Easy to Follow" -%}
+  {%- assign t_benefit_1_text = "Clear instructions that anyone can follow." -%}
+  {%- assign t_benefit_2_title = "Basic Tools Included" -%}
+  {%- assign t_benefit_2_text = "Everything you need is included in the box." -%}
+  {%- assign t_benefit_3_title = "10-15 Minute Setup" -%}
+  {%- assign t_benefit_3_text = "Ready to ride in just a few simple steps." -%}
+{%- endif -%}
+
+<div class="assembly-video-section">
+  <div class="assembly-container">
     
     {%- comment -%} Header {%- endcomment -%}
-    <div class="assembly-widget-header">
-      <h2 class="assembly-widget-title">
-        {{ section.settings.title }}
-      </h2>
-      <p class="assembly-widget-subtitle">
-        {{ section.settings.subtitle }}
-      </p>
+    <div class="assembly-header">
+      <h2 class="assembly-title">{{ t_title }}</h2>
+      <p class="assembly-subtitle">{{ t_subtitle }}</p>
     </div>
 
     {%- comment -%} Video Container {%- endcomment -%}
-    <div class="assembly-video-container">
+    <div class="assembly-video-wrapper">
       <div class="assembly-video-preview" id="video-preview-odin" onclick="playAssemblyVideoOdin()">
         {%- if video_thumbnail -%}
-          <img src="{{ video_thumbnail | img_url: 'master' }}" alt="{{ section.settings.video_alt }}" class="assembly-thumbnail-img">
+          <img src="{{ video_thumbnail | img_url: '1200x' }}" alt="Assembly video preview" class="assembly-thumbnail">
         {%- else -%}
-          <img src="{{ default_thumbnail }}" alt="{{ section.settings.video_alt }}" class="assembly-thumbnail-img">
+          <img src="{{ default_thumbnail }}" alt="Assembly video preview" class="assembly-thumbnail">
         {%- endif -%}
         
         <div class="assembly-play-overlay">
           <div class="assembly-play-button">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="currentColor">
               <path d="M8 5v14l11-7z"/>
             </svg>
           </div>
-          <p class="assembly-play-text">{{ section.settings.watch_text }}</p>
+          <p class="assembly-play-text">{{ t_watch_text }}</p>
         </div>
       </div>
 
-      <div class="assembly-video-player" id="video-player-odin" style="display: none;" data-video-url="{{ video_url }}" data-video-title="{{ section.settings.video_title }}">
-        {%- comment -%} Iframe will be dynamically created on click to prevent autoplay {%- endcomment -%}
+      <div class="assembly-video-player" id="video-player-odin" style="display: none;" data-video-url="{{ video_url }}">
+        {%- comment -%} Iframe created dynamically on click {%- endcomment -%}
       </div>
     </div>
 
-    {%- comment -%} Benefits Section {%- endcomment -%}
+    {%- comment -%} Benefits Grid {%- endcomment -%}
     <div class="assembly-benefits">
-      <div class="assembly-benefit-item">
-        <span class="assembly-benefit-icon">✓</span>
-        <h3 class="assembly-benefit-title">{{ section.settings.benefit_1_title }}</h3>
-        <p class="assembly-benefit-text">{{ section.settings.benefit_1_text }}</p>
+      <div class="assembly-benefit">
+        <div class="benefit-icon-wrapper">
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h3 class="benefit-title">{{ t_benefit_1_title }}</h3>
+        <p class="benefit-text">{{ t_benefit_1_text }}</p>
       </div>
       
-      <div class="assembly-benefit-item">
-        <span class="assembly-benefit-icon">✓</span>
-        <h3 class="assembly-benefit-title">{{ section.settings.benefit_2_title }}</h3>
-        <p class="assembly-benefit-text">{{ section.settings.benefit_2_text }}</p>
+      <div class="assembly-benefit">
+        <div class="benefit-icon-wrapper">
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <h3 class="benefit-title">{{ t_benefit_2_title }}</h3>
+        <p class="benefit-text">{{ t_benefit_2_text }}</p>
       </div>
       
-      <div class="assembly-benefit-item">
-        <span class="assembly-benefit-icon">✓</span>
-        <h3 class="assembly-benefit-title">{{ section.settings.benefit_3_title }}</h3>
-        <p class="assembly-benefit-text">{{ section.settings.benefit_3_text }}</p>
+      <div class="assembly-benefit">
+        <div class="benefit-icon-wrapper">
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <h3 class="benefit-title">{{ t_benefit_3_title }}</h3>
+        <p class="benefit-text">{{ t_benefit_3_text }}</p>
       </div>
     </div>
 
@@ -66,64 +140,64 @@
 </div>
 
 <style>
-.bike-assembly-widget {
-  margin: 3rem auto;
-  max-width: 1000px;
-  padding: 0 1rem;
+/* Assembly Video Section - Matching Page Style */
+.assembly-video-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.assembly-widget-container {
-  background: #fafafa;
-  border-radius: 8px;
-  padding: 2.5rem;
-  border: 1px solid #e5e5e5;
+.assembly-container {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 40px;
 }
 
-.assembly-widget-header {
+/* Header */
+.assembly-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 35px;
 }
 
-.assembly-widget-title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  line-height: 1.2;
+.assembly-title {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #000;
   letter-spacing: -0.02em;
 }
 
-.assembly-widget-subtitle {
-  font-size: 1.125rem;
-  opacity: 0.7;
+.assembly-subtitle {
+  font-size: 1.05em;
+  color: #666;
+  margin: 0;
   line-height: 1.5;
 }
 
-.assembly-video-container {
+/* Video Wrapper */
+.assembly-video-wrapper {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 35px;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: #000;
 }
 
 .assembly-video-preview {
   position: relative;
   aspect-ratio: 16 / 9;
-  background: #1a1a1a;
   cursor: pointer;
   overflow: hidden;
 }
 
-.assembly-thumbnail-img {
+.assembly-thumbnail {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.assembly-thumbnail-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%);
+  display: block;
 }
 
 .assembly-play-overlay {
@@ -133,38 +207,40 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
   transition: background 0.3s ease;
 }
 
 .assembly-video-preview:hover .assembly-play-overlay {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .assembly-play-button {
-  background: rgba(255, 255, 255, 0.95);
-  color: #1a1a1a;
+  background: #fff;
+  color: #000;
   width: 80px;
   height: 80px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 4px;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease, background 0.3s ease;
+  padding-left: 6px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .assembly-video-preview:hover .assembly-play-button {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
 }
 
 .assembly-play-text {
-  color: white;
-  font-size: 1rem;
-  font-weight: 500;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 1.05em;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: 0.01em;
 }
 
@@ -177,72 +253,120 @@
   width: 100%;
   height: 100%;
   border: none;
+  display: block;
 }
 
+/* Benefits Grid */
 .assembly-benefits {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
 }
 
-.assembly-benefit-item {
-  background: white;
-  border-radius: 8px;
-  padding: 1.5rem;
+.assembly-benefit {
   text-align: center;
-  border: 1px solid #e5e5e5;
+  padding: 25px 20px;
+  background: #fafafa;
+  border-radius: 8px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #f0f0f0;
 }
 
-.assembly-benefit-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+.assembly-benefit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  border-color: #e0e0e0;
 }
 
-.assembly-benefit-icon {
-  display: inline-block;
-  font-size: 1.5rem;
-  color: #22c55e;
-  margin-bottom: 0.5rem;
+.benefit-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
 }
 
-.assembly-benefit-title {
-  font-size: 1.125rem;
+.benefit-icon {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
+
+.benefit-title {
+  font-size: 1.1em;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
+  color: #000;
 }
 
-.assembly-benefit-text {
-  font-size: 0.9375rem;
-  opacity: 0.65;
+.benefit-text {
+  font-size: 0.95em;
+  color: #666;
   margin: 0;
+  line-height: 1.5;
 }
 
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .assembly-widget-container {
-    padding: 1.5rem;
+  .assembly-video-section {
+    margin: 30px auto;
+    padding: 0 15px;
   }
-  
-  .assembly-widget-title {
-    font-size: 1.5rem;
+
+  .assembly-container {
+    padding: 25px 20px;
   }
-  
-  .assembly-widget-subtitle {
-    font-size: 1rem;
+
+  .assembly-title {
+    font-size: 1.5em;
   }
-  
+
+  .assembly-subtitle {
+    font-size: 0.95em;
+  }
+
   .assembly-play-button {
     width: 64px;
     height: 64px;
   }
-  
+
   .assembly-play-button svg {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
   }
-  
+
   .assembly-play-text {
-    font-size: 0.875rem;
+    font-size: 0.95em;
+  }
+
+  .assembly-benefits {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .assembly-benefit {
+    padding: 20px 15px;
+  }
+
+  .benefit-icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  .benefit-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .benefit-title {
+    font-size: 1em;
+  }
+
+  .benefit-text {
+    font-size: 0.9em;
   }
 }
 </style>
@@ -253,19 +377,16 @@ function playAssemblyVideoOdin() {
   const player = document.getElementById('video-player-odin');
   
   if (preview && player) {
-    // Get video URL and title from data attributes
     const videoUrl = player.getAttribute('data-video-url');
-    const videoTitle = player.getAttribute('data-video-title');
     
-    // Create iframe only when user clicks (prevents autoplay on page load)
+    // Create iframe with autoplay
     const iframe = document.createElement('iframe');
     iframe.src = videoUrl + '?autoplay=1&mute=0';
-    iframe.title = videoTitle;
+    iframe.title = 'Assembly video';
     iframe.frameBorder = '0';
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
     iframe.allowFullscreen = true;
     
-    // Insert iframe and show player
     player.appendChild(iframe);
     preview.style.display = 'none';
     player.style.display = 'block';
@@ -275,107 +396,29 @@ function playAssemblyVideoOdin() {
 
 {%- schema -%}
 {
-  "name": "Assembly Video - Odin",
+  "name": "Assembly Video Widget",
   "settings": [
+    {
+      "type": "paragraph",
+      "content": "Text auto-translates based on store language: EN, ES, DE, FR, PL, BG"
+    },
     {
       "type": "text",
       "id": "video_url",
-      "label": "Video Embed URL",
-      "info": "YouTube embed URL (e.g., https://www.youtube.com/embed/iLWtW4_HscI)",
+      "label": "YouTube Embed URL",
+      "info": "Example: https://www.youtube.com/embed/iLWtW4_HscI",
       "default": "https://www.youtube.com/embed/iLWtW4_HscI"
     },
     {
       "type": "image_picker",
       "id": "video_thumbnail",
-      "label": "Video Thumbnail (Optional)",
-      "info": "Leave empty to use default thumbnail"
-    },
-    {
-      "type": "header",
-      "content": "Text Content"
-    },
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title",
-      "default": "Assemble Your Odin Road Bike"
-    },
-    {
-      "type": "textarea",
-      "id": "subtitle",
-      "label": "Subtitle",
-      "default": "Watch how simple it is to set up The Odin. Everything you need, step by step."
-    },
-    {
-      "type": "text",
-      "id": "watch_text",
-      "label": "Watch Button Text",
-      "default": "Watch the guide"
-    },
-    {
-      "type": "text",
-      "id": "video_title",
-      "label": "Video Title (for accessibility)",
-      "default": "Odin Road Bike Assembly Video"
-    },
-    {
-      "type": "text",
-      "id": "video_alt",
-      "label": "Video Alt Text",
-      "default": "Odin road bike assembly video preview"
-    },
-    {
-      "type": "header",
-      "content": "Benefit 1"
-    },
-    {
-      "type": "text",
-      "id": "benefit_1_title",
-      "label": "Benefit 1 Title",
-      "default": "Easy to Follow"
-    },
-    {
-      "type": "textarea",
-      "id": "benefit_1_text",
-      "label": "Benefit 1 Text",
-      "default": "Clear instructions that anyone can follow."
-    },
-    {
-      "type": "header",
-      "content": "Benefit 2"
-    },
-    {
-      "type": "text",
-      "id": "benefit_2_title",
-      "label": "Benefit 2 Title",
-      "default": "Basic Tools"
-    },
-    {
-      "type": "textarea",
-      "id": "benefit_2_text",
-      "label": "Benefit 2 Text",
-      "default": "Everything you need is included in the box."
-    },
-    {
-      "type": "header",
-      "content": "Benefit 3"
-    },
-    {
-      "type": "text",
-      "id": "benefit_3_title",
-      "label": "Benefit 3 Title",
-      "default": "Quick Setup"
-    },
-    {
-      "type": "textarea",
-      "id": "benefit_3_text",
-      "label": "Benefit 3 Text",
-      "default": "Ready to ride in just a few simple steps."
+      "label": "Custom Thumbnail (Optional)",
+      "info": "Leave empty to use default"
     }
   ],
   "presets": [
     {
-      "name": "Assembly Video - Odin"
+      "name": "Assembly Video Widget"
     }
   ]
 }
