@@ -396,40 +396,7 @@
     <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q18 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a18 }}</p></div></details></div>
   </div>
 
-  <div class="faq-contact-section">
-    <div class="rich-text-content">
-      <p>{{ contact_text }}</p>
-    </div>
-
-    <div class="contact-form-wrapper">
-      <h3 class="contact-form-heading">{{ contact_heading }}</h3>
-      {% form 'contact' %}
-        {% if form.posted_successfully? %}
-          <p class="form-success">Thank you for your message!</p>
-        {% endif %}
-        {% if form.errors %}
-          <div class="form-errors">
-            {{ form.errors | default_errors }}
-          </div>
-        {% endif %}
-
-        <div class="field">
-          <input type="text" name="contact[name]" placeholder="Name" required>
-        </div>
-        <div class="field">
-          <input type="email" name="contact[email]" placeholder="Email" required>
-        </div>
-        <div class="field">
-          <textarea name="contact[body]" placeholder="Message" required></textarea>
-        </div>
-
-        <button type="submit" class="button">
-          Send
-        </button>
-      {% endform %}
-    </div>
   </div>
-</div>
 
 <style>
 .faq-warranty-section {
