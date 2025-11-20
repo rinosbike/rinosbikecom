@@ -118,6 +118,67 @@
         "padding_bottom": 52
       }
     },
+    "image_with_text_NkLQV3": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_6cTNtk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Odin 6",
+            "heading_size": "h1"
+          }
+        },
+        "text_AwPhHK": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "button_zfCnby": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_6cTNtk",
+        "text_AwPhHK",
+        "button_zfCnby"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Group657.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "trust_marquee_NYMRK3": {
+      "type": "trust-marquee",
+      "name": "Trust Marquee Banner",
+      "settings": {
+        "bg_color": "#000000",
+        "text_color": "#FFFFFF",
+        "font_size": 14,
+        "font_weight": "500",
+        "text_transform": "uppercase",
+        "speed": 30,
+        "padding_vertical": 12
+      }
+    },
     "multicolumn_KfMJ9G": {
       "type": "multicolumn",
       "blocks": {
@@ -135,9 +196,26 @@
         "column_8hGHg7": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/ODIN6_2_png.webp",
-            "title": "<em><strong>Shimano 105 Di2</strong></em> Electronic Shifting",
-            "text": "<p>Instant, precise, and effortless gear changes with Shimano’s 2×12-speed electronic system — no cables, no compromise.</p>",
+            "title": "<strong>Shimano 105 Di2 – Elektronische Präzision. </strong>Ultraschnelle, kabellose 2×12-Gang-Schaltvorgänge für maximale Kontrolle und ein nahtloses Fahrerlebnis.",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_MABewi": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Toray T800 Carbonrahmen – Nur 8,5 kg Gesamtgewicht. </strong>Leicht, steif und effizient – entwickelt für Geschwindigkeit, Sprints und lange Touren.",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_z8w4jV": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Hydraulische Scheibenbremsen – Maximale Sicherheit </strong>Konstante Bremsleistung bei jedem Wetter und in jeder Situation – von steilen Abfahrten bis zu nassen Straßen.",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -145,9 +223,8 @@
         "column_4ERxGT": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/ODIN6_7.png",
-            "title": "<em><strong>Hydraulic  Braking</strong></em> & 40mm Wheels",
-            "text": "<p>Confident stopping power in all weather and smooth rolling performance for every road and race condition.</p>",
+            "title": "<strong>40 mm Aero-Laufräder – Mehr Geschwindigkeit & Stabilität </strong>Aerodynamisches Design, präzise zentriert mit TRUDI-System für höchste Laufruhe und Performance.",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -156,6 +233,8 @@
       "block_order": [
         "column_8wYHLe",
         "column_8hGHg7",
+        "column_MABewi",
+        "column_z8w4jV",
         "column_4ERxGT"
       ],
       "name": "t:sections.multicolumn.presets.name",
@@ -164,7 +243,7 @@
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
+        "columns_desktop": 2,
         "column_alignment": "left",
         "background_style": "primary",
         "button_label": "",
@@ -189,7 +268,7 @@
         "text_ckT36G": {
           "type": "text",
           "settings": {
-            "text": "<h6><em>\"Thanks to its lightning-fast, accurate, and reliable shifting performance, Di2 puts riders in complete control and ensures a seamless interface between the cyclist and bike like never before. Creating and continually improving the world's best shifting is a complicated undertaking requiring constant technological advancements. From hardware to software, Shimano Di2 technology is on the cutting edge, striving to deliver the best rider experience possible now and in the future.\"</em></h6>",
+            "text": "",
             "text_style": "subtitle"
           }
         },
@@ -255,6 +334,7 @@
         "text_wNxNyB",
         "button_8xWAAh"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/d80c7d0895ddc1617dc72cea1500e69a-2.png",
@@ -281,27 +361,15 @@
       "name": "Assembly Video - Odin",
       "settings": {
         "video_url": "https://www.youtube.com/embed/iLWtW4_HscI",
-        "video_thumbnail": "shopify://shop_images/Group_755_2.jpg",
-        "title": "Assemble Your Odin Road Bike",
-        "subtitle": "Watch how simple it is to set up The Odin. Everything you need, step by step.",
-        "watch_text": "Watch the guide",
-        "video_title": "Odin Road Bike Assembly Video",
-        "video_alt": "Odin road bike assembly video preview",
-        "benefit_1_title": "Easy to Follow",
-        "benefit_1_text": "Clear instructions that anyone can follow.",
-        "benefit_2_title": "Basic Tools",
-        "benefit_2_text": "Everything you need is included in the box.",
-        "benefit_3_title": "Quick Setup",
-        "benefit_3_text": "Ready to ride in just a few simple steps."
+        "video_thumbnail": "shopify://shop_images/Group_755_2.jpg"
       }
     },
     "odin_sizing_guide_gkrKDi": {
       "type": "odin-sizing-guide",
       "name": "ODIN Sizing Guide",
       "settings": {
-        "size_title": "Rinos Odin Sizing Recommendations",
-        "geometry_title": "Geometry & Sizing Details",
-        "geometry_image": "shopify://shop_images/80extk.png"
+        "geometry_image": "shopify://shop_images/80extk.png",
+        "contact_url": "/pages/contact"
       }
     },
     "iso_video_section_bpCKLQ": {
@@ -397,6 +465,8 @@
     "bike_parts_highlight_1_6XGKyM",
     "klarna_banner_1_g363fF",
     "custom_liquid_fFQWdd",
+    "image_with_text_NkLQV3",
+    "trust_marquee_NYMRK3",
     "multicolumn_KfMJ9G",
     "image_with_text_wNxbGV",
     "image_with_text_i8qEdF",
