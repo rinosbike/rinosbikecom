@@ -94,6 +94,7 @@
     },
     "bike_parts_highlight_1_6XGKyM": {
       "type": "bike-parts-highlight-1",
+      "disabled": true,
       "settings": {
         "tire_size_text": "tire size",
         "gear_shifter_text": "gear shifter",
@@ -107,6 +108,7 @@
     },
     "klarna_banner_1_g363fF": {
       "type": "klarna-banner-1",
+      "disabled": true,
       "settings": {}
     },
     "custom_liquid_fFQWdd": {
@@ -196,7 +198,7 @@
         "column_8hGHg7": {
           "type": "column",
           "settings": {
-            "title": "<strong>Shimano 105 Di2 – Elektronische Präzision. </strong>Ultraschnelle, kabellose 2×12-Gang-Schaltvorgänge für maximale Kontrolle und ein nahtloses Fahrerlebnis.",
+            "title": "<strong>Shimano 105 Di2 – Electronic Precision Shifting. </strong>Instant, ultra-accurate 2×12 shifting with a fully electronic system — no cables, no compromises.",
             "text": "",
             "link_label": "",
             "link": ""
@@ -205,7 +207,7 @@
         "column_MABewi": {
           "type": "column",
           "settings": {
-            "title": "<strong>Toray T800 Carbonrahmen – Nur 8,5 kg Gesamtgewicht. </strong>Leicht, steif und effizient – entwickelt für Geschwindigkeit, Sprints und lange Touren.",
+            "title": "<strong>Toray T800 Carbon Frame – Only 8.5 kg. </strong>Lightweight, stiff, and built for speed. Engineered for performance on climbs, sprints, and long-distance rides.",
             "text": "",
             "link_label": "",
             "link": ""
@@ -214,7 +216,16 @@
         "column_z8w4jV": {
           "type": "column",
           "settings": {
-            "title": "<strong>Hydraulische Scheibenbremsen – Maximale Sicherheit </strong>Konstante Bremsleistung bei jedem Wetter und in jeder Situation – von steilen Abfahrten bis zu nassen Straßen.",
+            "title": "<strong>Hydraulic Disc Brakes – Maximum Control in Any Weather. </strong>Reliable stopping power in rain, heat, or high-speed descents for total riding confidence.",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_BzKbnD": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>40 mm Aero Wheelset – More Speed & Stability. </strong>Aerodynamic 40 mm rims, precisely trued using the TRUDI system for unmatched smoothness and performance.",
             "text": "",
             "link_label": "",
             "link": ""
@@ -223,10 +234,10 @@
         "column_4ERxGT": {
           "type": "column",
           "settings": {
-            "title": "<strong>40 mm Aero-Laufräder – Mehr Geschwindigkeit & Stabilität </strong>Aerodynamisches Design, präzise zentriert mit TRUDI-System für höchste Laufruhe und Performance.",
+            "title": "<strong>Want an upgrade to Carbon Wheels?</strong> Check out the Odin 6.1.",
             "text": "",
-            "link_label": "",
-            "link": ""
+            "link_label": "Shop now",
+            "link": "shopify://products/odin-6-1"
           }
         }
       },
@@ -235,6 +246,7 @@
         "column_8hGHg7",
         "column_MABewi",
         "column_z8w4jV",
+        "column_BzKbnD",
         "column_4ERxGT"
       ],
       "name": "t:sections.multicolumn.presets.name",
@@ -372,8 +384,14 @@
         "contact_url": "/pages/contact"
       }
     },
+    "compare_on_page_odin_UgKD93": {
+      "type": "compare-on-page-odin",
+      "name": "Bike Comparison",
+      "settings": {}
+    },
     "iso_video_section_bpCKLQ": {
       "type": "ISO_Video_section",
+      "disabled": true,
       "name": "Frame Test Multilingual",
       "settings": {
         "title": "",
@@ -402,7 +420,6 @@
     },
     "review_section_small_fKwkg6": {
       "type": "review-section-small",
-      "disabled": true,
       "custom_css": [
         ".review-section {margin-bottom: 25px;}"
       ],
@@ -473,9 +490,10 @@
     "product_description_sec1_Nn4UXc",
     "road_assembly_QWrbzA",
     "odin_sizing_guide_gkrKDi",
+    "compare_on_page_odin_UgKD93",
     "iso_video_section_bpCKLQ",
-    "review_section_small_fKwkg6",
     "rich_text_7we9KY",
-    "related-products"
+    "related-products",
+    "review_section_small_fKwkg6"
   ]
 }
