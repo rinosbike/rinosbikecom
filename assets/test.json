@@ -1,0 +1,20 @@
+{
+  "en": {
+    "welcome": "Welcome to Rinos"
+  },
+  "de": {
+    "welcome": "Willkommen bei Rinos"
+  },
+  "es": {
+    "welcome": "Bienvenido a Rinos"
+  },
+  "pl": {
+    "welcome": "Witamy w Rinos"
+  },
+  "bg": {
+    "welcome": "Добре дошли в Rinos"
+  },
+  "fr": {
+    "welcome": "Bienvenue chez Rinos"
+  }
+}
