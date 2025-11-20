@@ -1,0 +1,72 @@
+<div class="rinos-test-wrapper">
+  <h1 class="rinos-animated-heading" data-i18n-key="welcome"></h1>
+</div>
+
+<style>
+  .rinos-test-wrapper {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .rinos-animated-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    animation: rinosColorCycle 8s linear infinite;
+    transition: color 0.5s ease;
+  }
+
+  @keyframes rinosColorCycle {
+    0%   { color: #888888; }  /* grey */
+    20%  { color: #000000; }  /* black */
+    40%  { color: #ffffff; }  /* white */
+    60%  { color: #ffd800; }  /* yellow */
+    80%  { color: #ff0000; }  /* red */
+    100% { color: #888888; }  /* back to grey */
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Current Shopify language, e.g. "en", "de", "fr"
+    var currentLocale = {{ localization.language.iso_code | json }};
+
+    // URL to assets/test.json
+    var translationsUrl = {{ "test.json" | asset_url | json }};
+
+    fetch(translationsUrl)
+      .then(function(response) {
+        if (!response.ok) throw new Error('Failed to load translations');
+        return response.json();
+      })
+      .then(function(data) {
+        // Fallback chain: full locale -> base (e.g. "en" from "en-GB") -> "en"
+        var baseLocale = currentLocale.split('-')[0];
+        var dict = data[currentLocale] || data[baseLocale] || data["en"];
+
+        if (!dict) return;
+
+        document.querySelectorAll('[data-i18n-key]').forEach(function(el) {
+          var key = el.getAttribute('data-i18n-key');
+          if (dict[key]) {
+            el.textContent = dict[key];
+          }
+        });
+      })
+      .catch(function(error) {
+        console.error('Translation error:', error);
+      });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Test – JS i18n Rinos",
+  "settings": [],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Test Rinos heading (JS translations)"
+    }
+  ]
+}
+{% endschema %}
