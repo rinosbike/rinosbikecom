@@ -105,17 +105,81 @@
         "material_variabel_text": "{{ product.metafields.custom.material_highlight.value }}"
       }
     },
+    "image_banner_wM4BUq": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_HVjTXp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Odin 4",
+            "heading_size": "h1"
+          }
+        },
+        "text_fPrdYc": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_JXaW7A": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_HVjTXp",
+        "text_fPrdYc",
+        "buttons_JXaW7A"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/IMG_5918_8a9a09b4-f7a1-46d5-9da9-2f2a1d91b7e3.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
     "klarna_banner_1_g363fF": {
       "type": "klarna-banner-1",
+      "disabled": true,
       "settings": {}
     },
     "custom_liquid_fFQWdd": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{% render 'leasing-calculator-jobrad' %}",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
+      }
+    },
+    "trust_marquee_Fcazr3": {
+      "type": "trust-marquee",
+      "name": "Trust Marquee Banner",
+      "settings": {
+        "bg_color": "#000000",
+        "text_color": "#FFFFFF",
+        "font_size": 14,
+        "font_weight": "500",
+        "text_transform": "uppercase",
+        "speed": 30,
+        "padding_vertical": 12
       }
     },
     "multicolumn_KfMJ9G": {
@@ -135,8 +199,8 @@
         "column_8hGHg7": {
           "type": "column",
           "settings": {
-            "title": "<strong>Full group Shimano 105</strong>,<em> Full carbon frame and fork,  Shimano hydraulic brakes</em>",
-            "text": "<p>A lightweight 8.8 kg build featuring Shimano 105 R7100 12-speed components, hydraulic disc brakes, and Toray T800 carbon for the perfect balance of stiffness, agility, and comfort.</p>",
+            "title": "<strong>Shimano 105 R7100</strong> - Latest 12-Speed Technology",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -144,17 +208,47 @@
         "column_4ERxGT": {
           "type": "column",
           "settings": {
-            "title": "<em><strong>Next-Level</strong></em> Carbon Road Bike.",
-            "text": "<p>Designed for ambitious riders looking for cutting-edge drivetrain technology, hydraulic braking, and a fully aerodynamic setup.</p>",
+            "title": "<strong>Shimano 105 hydraulic brakes</strong> deliver effortless stopping power with just one finger.",
+            "text": "",
             "link_label": "",
             "link": ""
+          }
+        },
+        "column_b9AXpP": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Toray T800 carbon frame, fork, seatpost, and handlebars.</strong> Same 8.8kg weight as Odin 3 but with superior components. Stiff for sprints, compliant for comfort, built to last.",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Gma9LU": {
+          "type": "column",
+          "settings": {
+            "title": "12-speed is the new standard. Get the latest technology that will<strong> stay current for years</strong>, with parts availability and compatibility guaranteed.",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_6Dz8xt": {
+          "type": "column",
+          "settings": {
+            "title": "<em>Want to upgrade to Carbon Wheels? </em>Check out the Odin 4.1.",
+            "text": "",
+            "link_label": "Shop now",
+            "link": "shopify://products/odin-4-1"
           }
         }
       },
       "block_order": [
         "column_8wYHLe",
         "column_8hGHg7",
-        "column_4ERxGT"
+        "column_4ERxGT",
+        "column_b9AXpP",
+        "column_Gma9LU",
+        "column_6Dz8xt"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
@@ -162,7 +256,7 @@
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
+        "columns_desktop": 2,
         "column_alignment": "left",
         "background_style": "primary",
         "button_label": "",
@@ -334,8 +428,10 @@
     "conversionbanner_2_D9aHDL",
     "main",
     "bike_parts_highlight_1_6XGKyM",
+    "image_banner_wM4BUq",
     "klarna_banner_1_g363fF",
     "custom_liquid_fFQWdd",
+    "trust_marquee_Fcazr3",
     "multicolumn_KfMJ9G",
     "image_with_text_8aCHQM",
     "product_description_sec1_Nn4UXc",
