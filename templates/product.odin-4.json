@@ -112,7 +112,7 @@
           "type": "heading",
           "settings": {
             "heading": "Odin 4",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "text_fPrdYc": {
@@ -339,6 +339,7 @@
     },
     "iso_video_section_bpCKLQ": {
       "type": "ISO_Video_section",
+      "disabled": true,
       "name": "Frame Test Multilingual",
       "settings": {
         "title": "",
@@ -404,6 +405,11 @@
         "padding_bottom": 12
       }
     },
+    "compare_on_page_odin_tQKWRB": {
+      "type": "compare-on-page-odin",
+      "name": "Bike Comparison",
+      "settings": {}
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -440,6 +446,7 @@
     "iso_video_section_bpCKLQ",
     "review_section_small_fKwkg6",
     "rich_text_7we9KY",
+    "compare_on_page_odin_tQKWRB",
     "related-products"
   ]
 }
