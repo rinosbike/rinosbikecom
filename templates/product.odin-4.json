@@ -135,7 +135,6 @@
         "column_8hGHg7": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Group_646.png",
             "title": "<strong>Full group Shimano 105</strong>,<em> Full carbon frame and fork,  Shimano hydraulic brakes</em>",
             "text": "<p>A lightweight 8.8 kg build featuring Shimano 105 R7100 12-speed components, hydraulic disc brakes, and Toray T800 carbon for the perfect balance of stiffness, agility, and comfort.</p>",
             "link_label": "",
@@ -145,7 +144,6 @@
         "column_4ERxGT": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Group_642.png",
             "title": "<em><strong>Next-Level</strong></em> Carbon Road Bike.",
             "text": "<p>Designed for ambitious riders looking for cutting-edge drivetrain technology, hydraulic braking, and a fully aerodynamic setup.</p>",
             "link_label": "",
@@ -207,6 +205,7 @@
         "text_Lwm6rw",
         "button_gyqpC3"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/d80c7d0895ddc1617dc72cea1500e69a-2.png",
@@ -233,27 +232,15 @@
       "name": "Assembly Video - Odin",
       "settings": {
         "video_url": "https://www.youtube.com/embed/iLWtW4_HscI",
-        "video_thumbnail": "shopify://shop_images/Group_755_2.jpg",
-        "title": "Assemble Your Odin Road Bike",
-        "subtitle": "Watch how simple it is to set up The Odin. Everything you need, step by step.",
-        "watch_text": "Watch the guide",
-        "video_title": "Odin Road Bike Assembly Video",
-        "video_alt": "Odin road bike assembly video preview",
-        "benefit_1_title": "Easy to Follow",
-        "benefit_1_text": "Clear instructions that anyone can follow.",
-        "benefit_2_title": "Basic Tools",
-        "benefit_2_text": "Everything you need is included in the box.",
-        "benefit_3_title": "Quick Setup",
-        "benefit_3_text": "Ready to ride in just a few simple steps."
+        "video_thumbnail": "shopify://shop_images/Group_755_2.jpg"
       }
     },
     "odin_sizing_guide_gkrKDi": {
       "type": "odin-sizing-guide",
       "name": "ODIN Sizing Guide",
       "settings": {
-        "size_title": "Rinos Road Bicycle Sizing",
-        "geometry_title": "Geometry & Sizing Details",
-        "geometry_image": "shopify://shop_images/80extk.png"
+        "geometry_image": "shopify://shop_images/80extk.png",
+        "contact_url": "/pages/contact"
       }
     },
     "iso_video_section_bpCKLQ": {
