@@ -11,9 +11,20 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
+      }
+    },
+    "section_faq_warranty_7LacXy": {
+      "type": "section-faq-warranty",
+      "name": "FAQ Warranty & Returns",
+      "settings": {
+        "heading": "Warranty & Returns FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "open_first_collapsible_row": false
       }
     },
     "collapsible_content_XmhYQB": {
@@ -202,6 +213,7 @@
         "collapsible_row_X9gg7P",
         "collapsible_row_DYXA3y"
       ],
+      "disabled": true,
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
@@ -263,6 +275,7 @@
   },
   "order": [
     "main",
+    "section_faq_warranty_7LacXy",
     "collapsible_content_XmhYQB",
     "rich_text_VgGpR4",
     "contact_form_RyXPCd"
