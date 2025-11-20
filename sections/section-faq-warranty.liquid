@@ -1,0 +1,617 @@
+{% comment %}
+  FAQ Warranty & Returns Section - Multi-language support
+  Languages: EN (default), ES, DE, FR, PL, BG
+{% endcomment %}
+
+{% assign current_locale = request.locale.iso_code %}
+
+{% comment %} Define all translations {% endcomment %}
+{% if current_locale == 'es' %}
+  {% assign q1 = "La talla de la bicicleta no me queda bien, ¿puedo devolverla y recibir otra talla?" %}
+  {% assign a1 = "Sí, pero los costes de devolución y del nuevo envío de la bicicleta corren a cargo del cliente." %}
+
+  {% assign q2 = "¿Cuál es el periodo de devolución y desde qué fecha empieza a contar?" %}
+  {% assign a2 = "El periodo de devolución es de 14 días desde la fecha en que la bicicleta se entrega en la dirección indicada por el cliente." %}
+
+  {% assign q3 = "¿Cuál es la garantía para las piezas Shimano?" %}
+  {% assign a3 = "Para las principales piezas Shimano, como bielas, cassette, mandos de cambio y desviadores, la garantía es de 2 años bajo un uso normal." %}
+
+  {% assign q4 = "¿Cuál es la garantía para el cuadro, la horquilla y la tija de sillín?" %}
+  {% assign a4 = "La garantía para el cuadro, la horquilla y la tija de sillín es de 2 años bajo un uso normal." %}
+
+  {% assign q5 = "¿Qué elementos no están cubiertos por la garantía?" %}
+  {% assign a5 = "Piezas de desgaste como cámaras, neumáticos, pastillas de freno, cables de cambio y freno, etc." %}
+
+  {% assign q6 = "¿Cómo puedo hacer una reclamación de garantía y qué puedo esperar?" %}
+  {% assign a6 = "Por favor contáctanos en info@rinosbike.eu y te guiaremos a través del proceso." %}
+
+  {% assign q7 = "¿Qué debo hacer si la caja llega dañada? ¿Qué fotos/pruebas necesito y en qué plazo?" %}
+  {% assign a7 = "Envíanos fotos o un vídeo a info@rinosbike.eu en el plazo de una semana desde la entrega." %}
+
+  {% assign q8 = "¿La garantía sigue vinculada a la bicicleta si hay un segundo propietario dentro de los 2 años? ¿Qué prueba se necesita?" %}
+  {% assign a8 = "Sí, siempre que se pueda mostrar la prueba de compra original y la prueba de transferencia de la propiedad." %}
+
+  {% assign q9 = "¿Las reparaciones no autorizadas por terceros afectan a mi garantía? ¿Cómo obtengo autorización previa para reparaciones en tienda?" %}
+  {% assign a9 = "Por favor contáctanos en info@rinosbike.eu antes de realizar reparaciones de terceros para que podamos asesorarte." %}
+
+  {% assign q10 = "¿Puedo devolver una bicicleta después del montaje/pruebas cortas? ¿Se tienen en cuenta marcas cosméticas o tasas de reposición?" %}
+  {% assign a10 = "Puedes devolver una bicicleta en un plazo de 14 días tras la entrega siempre que esté sin usar y en perfecto estado." %}
+
+  {% assign q11 = "Si se aprueba una reclamación de garantía, ¿quién paga los gastos de envío y aduanas?" %}
+  {% assign a11 = "Si se demuestra que el daño se debe a un defecto de fabricación por nuestra parte, cubrimos nosotros los gastos de envío." %}
+
+  {% assign q12 = "Si no se encuentra ningún defecto tras la inspección, ¿se cobra una tarifa de evaluación o devolución?" %}
+  {% assign a12 = "Sí, si no se encuentran daños importantes, realizaremos una inspección completa de la bicicleta. La tarifa fija por esta revisión es de 100 €." %}
+
+  {% assign q13 = "¿Ofrecéis un descuento de crash-replacement fuera del periodo de garantía?" %}
+  {% assign a13 = "Sí, tenemos un programa de crash replacement. Contáctanos en info@rinosbike.eu si has tenido una caída y necesitas piezas." %}
+
+  {% assign q14 = "¿Quién paga los gastos de devolución si he cambiado de opinión frente a un defecto de calidad?" %}
+  {% assign a14 = "Puedes enviarnos la bicicleta y te reembolsaremos el precio original de la bicicleta si está sin usar y no ha sufrido daños por un embalaje inseguro." %}
+
+  {% assign q15 = "¿Cómo funcionan los reembolsos (método, plazo) y se gestionan de forma distinta los packs de accesorios?" %}
+  {% assign a15 = "Procesamos las devoluciones en el plazo de una semana desde la recepción de la bicicleta." %}
+
+  {% assign q16 = "¿Qué embalaje se requiere para las devoluciones? ¿Qué pasa si ya no tengo la caja original?" %}
+  {% assign a16 = "Se requiere la caja original. Recomendamos conservarla. El cliente debe asegurarse de que la bicicleta esté completamente protegida para el transporte; los daños por embalaje inseguro pueden generar costes adicionales para el cliente. Si tienes dudas, contáctanos en info@rinosbike.eu." %}
+
+  {% assign q17 = "¿Cómo se gestionan los costes de envío en casos de garantía aprobados (ida y vuelta, dentro y fuera de la UE)?" %}
+  {% assign a17 = "Cubrimos los gastos de envío para los casos de garantía aplicables dentro del país donde se compró el producto." %}
+
+  {% assign q18 = "¿Puedo comprar una garantía ampliada más allá del periodo estándar?" %}
+  {% assign a18 = "Por el momento no ofrecemos un servicio de garantía ampliada." %}
+
+  {% assign contact_text = "Nuestra misión es siempre responder a cualquier pregunta que puedas tener. Nos importa la honestidad y la transparencia en todos los aspectos de nuestro trabajo. Si tienes más dudas que estas preguntas frecuentes no resuelven, contáctanos a través de info@rinosbike.eu o del formulario de contacto de abajo." %}
+  {% assign contact_heading = "Formulario de contacto" %}
+
+{% elsif current_locale == 'de' %}
+  {% assign q1 = "Die Rahmengröße passt mir nicht – kann ich das Fahrrad zurückschicken und eine andere Größe erhalten?" %}
+  {% assign a1 = "Ja, aber die Kosten für den Rückversand und den erneuten Versand des Fahrrads trägt der Kunde." %}
+
+  {% assign q2 = "Wie lange ist die Rückgabefrist und ab welchem Datum beginnt sie?" %}
+  {% assign a2 = "Die Rückgabefrist beträgt 14 Tage ab dem Tag, an dem das Fahrrad an die angegebene Adresse des Kunden geliefert wurde." %}
+
+  {% assign q3 = "Wie lange ist die Garantie auf Shimano-Teile?" %}
+  {% assign a3 = "Für die wichtigsten Shimano-Komponenten wie Kurbelgarnitur, Kassette, Schalthebel und Schaltwerke gilt bei normalem Gebrauch eine Garantie von 2 Jahren." %}
+
+  {% assign q4 = "Wie lange ist die Garantie auf Rahmen, Gabel und Sattelstütze?" %}
+  {% assign a4 = "Für Rahmen, Gabel und Sattelstütze gilt bei normalem Gebrauch eine Garantie von 2 Jahren." %}
+
+  {% assign q5 = "Was ist von der Garantie ausgeschlossen?" %}
+  {% assign a5 = "Verschleißteile wie Schläuche, Reifen, Bremsbeläge, Schalt- und Bremszüge usw." %}
+
+  {% assign q6 = "Wie kann ich einen Garantiefall melden und was kann ich erwarten?" %}
+  {% assign a6 = "Bitte kontaktiere uns unter info@rinosbike.eu – wir erklären dir den Ablauf und die nächsten Schritte." %}
+
+  {% assign q7 = "Was soll ich tun, wenn der Karton beschädigt ankommt? Welche Fotos/Nachweise werden benötigt und in welchem Zeitfenster?" %}
+  {% assign a7 = "Sende uns bitte innerhalb einer Woche nach der Lieferung Fotos oder ein Video an info@rinosbike.eu." %}
+
+  {% assign q8 = "Gilt die Garantie auch für einen Zweitbesitzer innerhalb des 2-Jahres-Zeitraums? Welche Nachweise werden benötigt?" %}
+  {% assign a8 = "Ja, sofern der ursprüngliche Kaufbeleg und ein Nachweis der Eigentumsübertragung vorgelegt werden können." %}
+
+  {% assign q9 = "Beeinflussen nicht autorisierte Reparaturen durch Dritte meine Garantie, und wie erhalte ich eine Vorabgenehmigung für Werkstattreparaturen?" %}
+  {% assign a9 = "Bitte nimm vor Reparaturen durch Dritte Kontakt mit uns auf (info@rinosbike.eu), damit wir dir eine Freigabe und Hinweise geben können." %}
+
+  {% assign q10 = "Kann ich ein Fahrrad nach dem Aufbau bzw. kurzen Testfahrten zurückgeben? Spielen kosmetische Spuren oder Wiedereinlagerungsgebühren eine Rolle?" %}
+  {% assign a10 = "Du kannst das Fahrrad innerhalb von 14 Tagen nach Lieferung zurückgeben, sofern es unbenutzt und in einwandfreiem Zustand ist." %}
+
+  {% assign q11 = "Wenn ein Garantiefall anerkannt wird, wer trägt die Versand- und Zollkosten?" %}
+  {% assign a11 = "Wenn der Schaden eindeutig auf einen Herstellungsfehler unsererseits zurückzuführen ist, übernehmen wir die Versandkosten." %}
+
+  {% assign q12 = "Wenn nach der Prüfung kein Defekt festgestellt wird, fällt eine Prüf- oder Rücksendegebühr an?" %}
+  {% assign a12 = "Ja, wenn keine größeren Schäden festgestellt werden, führen wir eine vollständige Funktionsprüfung des Fahrrads durch. Die Pauschale hierfür beträgt 100 €." %}
+
+  {% assign q13 = "Bietet ihr außerhalb der Garantie einen Crash-Replacement-Rabatt an?" %}
+  {% assign a13 = "Ja, wir haben ein Crash-Replacement-Programm. Bitte kontaktiere uns unter info@rinosbike.eu, wenn du einen Sturz hattest und Ersatzteile benötigst." %}
+
+  {% assign q14 = "Wer zahlt den Rückversand, wenn ich meine Meinung geändert habe vs. wenn ein Qualitäts-/Defektproblem vorliegt?" %}
+  {% assign a14 = "Du kannst das Fahrrad an uns zurücksenden, und wir erstatten dir den ursprünglichen Kaufpreis, sofern das Fahrrad unbenutzt ist und keine Schäden durch unsichere Verpackung entstanden sind." %}
+
+  {% assign q15 = "Wie funktionieren Rückerstattungen (Methode, Dauer), und werden Zubehör-Bundles anders behandelt?" %}
+  {% assign a15 = "Wir bearbeiten Rücksendungen innerhalb einer Woche nach Erhalt des Fahrrads." %}
+
+  {% assign q16 = "Welche Verpackung ist für Rücksendungen erforderlich (Originalkarton/Polsterung)? Was ist, wenn ich den Karton nicht mehr habe?" %}
+  {% assign a16 = "Der Originalkarton ist erforderlich, daher empfehlen wir, ihn aufzubewahren. Der Kunde muss sicherstellen, dass das Fahrrad für den Rücktransport vollständig geschützt ist. Schäden durch unsichere Verpackung können Kosten für den Kunden verursachen. Bei Fragen kontaktiere uns unter info@rinosbike.eu." %}
+
+  {% assign q17 = "Wie werden Versandkosten bei anerkannten Garantiefällen gehandhabt (beide Richtungen, innerhalb und außerhalb der EU)?" %}
+  {% assign a17 = "Wir übernehmen die Versandkosten für anerkannte Garantiefälle in dem Land, in dem das Produkt gekauft wurde." %}
+
+  {% assign q18 = "Kann ich eine verlängerte Garantie über den Standardzeitraum hinaus kaufen?" %}
+  {% assign a18 = "Derzeit bieten wir keine verlängerte Garantie als Zusatzservice an." %}
+
+  {% assign contact_text = "Unsere Mission ist es immer, alle Ihre Fragen zu beantworten. Uns liegt Ehrlichkeit und Offenheit in allen Aspekten unserer Arbeit am Herzen. Wenn Sie weitere Fragen haben, die diese FAQ nicht beantworten, kontaktieren Sie uns bitte über info@rinosbike.eu oder das Kontaktformular unten." %}
+  {% assign contact_heading = "Kontaktformular" %}
+
+{% elsif current_locale == 'fr' %}
+  {% assign q1 = "La taille du vélo ne me convient pas, puis-je le renvoyer et obtenir une autre taille ?" %}
+  {% assign a1 = "Oui, mais les frais de retour et de nouvel envoi du vélo sont à la charge du client." %}
+
+  {% assign q2 = "Quelle est la période de retour et à partir de quelle date commence-t-elle ?" %}
+  {% assign a2 = "La période de retour est de 14 jours à compter de la date de livraison du vélo à l’adresse indiquée par le client." %}
+
+  {% assign q3 = "Quelle est la garantie sur les pièces Shimano ?" %}
+  {% assign a3 = "Pour les principales pièces Shimano – pédalier, cassette, leviers de vitesses, dérailleurs – la garantie est de 2 ans en cas d’utilisation normale." %}
+
+  {% assign q4 = "Quelle est la garantie sur le cadre, la fourche et la tige de selle ?" %}
+  {% assign a4 = "Le cadre, la fourche et la tige de selle bénéficient d’une garantie de 2 ans en cas d’utilisation normale." %}
+
+  {% assign q5 = "Qu’est-ce qui n’est pas couvert par la garantie ?" %}
+  {% assign a5 = "Les pièces d’usure telles que chambres à air, pneus, plaquettes de frein, câbles de frein et de dérailleur, etc." %}
+
+  {% assign q6 = "Comment déposer une réclamation de garantie et à quoi dois-je m’attendre ?" %}
+  {% assign a6 = "Contactez-nous à info@rinosbike.eu et nous vous expliquerons la procédure et les étapes suivantes." %}
+
+  {% assign q7 = "Que faire si le carton arrive endommagé ? Quelles photos/preuves fournir et dans quel délai ?" %}
+  {% assign a7 = "Veuillez nous envoyer des photos ou une vidéo à info@rinosbike.eu dans un délai d’une semaine après la livraison." %}
+
+  {% assign q8 = "La garantie suit-elle le vélo en cas de deuxième propriétaire dans la période de 2 ans ? Quelles preuves sont nécessaires ?" %}
+  {% assign a8 = "Oui, tant que la preuve d’achat originale et la preuve de transfert de propriété peuvent être fournies." %}
+
+  {% assign q9 = "Les réparations non autorisées par des tiers affectent-elles ma garantie et comment obtenir une pré-autorisation pour les réparations en atelier ?" %}
+  {% assign a9 = "Veuillez nous contacter à info@rinosbike.eu avant toute réparation par un tiers afin que nous puissions vous conseiller et vous donner une autorisation." %}
+
+  {% assign q10 = "Puis-je retourner un vélo après montage/essais courts ? Les marques cosmétiques ou frais de restockage sont-ils pris en compte ?" %}
+  {% assign a10 = "Vous pouvez retourner un vélo dans les 14 jours suivant la livraison s’il est non utilisé et en parfait état." %}
+
+  {% assign q11 = "Si une réclamation de garantie est acceptée, qui paie les frais de transport et de douane ?" %}
+  {% assign a11 = "Si le dommage provient d’un défaut de fabrication de notre part, nous prenons en charge les frais de transport." %}
+
+  {% assign q12 = "Si aucun défaut n’est constaté après inspection, y a-t-il des frais d’évaluation ou de retour ?" %}
+  {% assign a12 = "Oui, si aucun dommage important n’est trouvé, nous effectuons un contrôle complet du vélo. Les frais forfaitaires pour cette inspection sont de 100 €." %}
+
+  {% assign q13 = "Proposez-vous une remise crash-replacement en dehors de la période de garantie ?" %}
+  {% assign a13 = "Oui, nous avons un programme de crash replacement. Contactez-nous à info@rinosbike.eu si vous avez eu une chute et avez besoin de pièces." %}
+
+  {% assign q14 = "Qui paie les frais de retour si j’ai changé d’avis par rapport à un problème de qualité/défaut ?" %}
+  {% assign a14 = "Vous pouvez renvoyer le vélo et nous vous rembourserons le prix d’achat initial si le vélo est non utilisé et si aucun dommage dû à un emballage non sécurisé n’est constaté." %}
+
+  {% assign q15 = "Comment fonctionnent les remboursements (méthode, délais) et les packs d’accessoires sont-ils traités différemment ?" %}
+  {% assign a15 = "Nous traitons les retours dans un délai d’une semaine après réception du vélo." %}
+
+  {% assign q16 = "Quel emballage est requis pour les retours (carton/ protections d’origine) ? Que se passe-t-il si je n’ai plus la boîte ?" %}
+  {% assign a16 = "La boîte d’origine est requise, nous vous recommandons donc de la conserver. Le client doit s’assurer que le vélo est parfaitement protégé pour le transport retour. Les dommages dus à un emballage insuffisant peuvent entraîner des frais supplémentaires pour le client. Pour toute question, contactez-nous à info@rinosbike.eu." %}
+
+  {% assign q17 = "Comment sont gérés les frais de transport pour les cas de garantie acceptés (aller-retour, UE vs hors UE) ?" %}
+  {% assign a17 = "Nous prenons en charge les frais de transport pour les cas de garantie applicables dans le pays où le produit a été acheté." %}
+
+  {% assign q18 = "Existe-t-il une garantie prolongée payante au-delà de la période standard ?" %}
+  {% assign a18 = "Nous ne proposons pas actuellement de garantie prolongée payante." %}
+
+  {% assign contact_text = "Notre mission est toujours de répondre à toutes vos questions. Nous tenons à l'honnêteté et à l'ouverture dans tous les aspects de notre travail. Si vous avez d’autres questions auxquelles cette FAQ ne répond pas, veuillez nous contacter via info@rinosbike.eu ou le formulaire de contact ci-dessous." %}
+  {% assign contact_heading = "Formulaire de contact" %}
+
+{% elsif current_locale == 'pl' %}
+  {% assign q1 = "Rozmiar roweru mi nie pasuje – czy mogę odesłać rower i otrzymać inny rozmiar?" %}
+  {% assign a1 = "Tak, ale koszty odesłania i ponownej wysyłki roweru ponosi klient." %}
+
+  {% assign q2 = "Jaki jest okres na zwrot i od kiedy się liczy?" %}
+  {% assign a2 = "Okres zwrotu wynosi 14 dni od dnia dostarczenia roweru na wskazany adres klienta." %}
+
+  {% assign q3 = "Jaka jest gwarancja na części Shimano?" %}
+  {% assign a3 = "Na główne części Shimano, takie jak korba, kaseta, manetki i przerzutki, obowiązuje 2-letnia gwarancja przy normalnym użytkowaniu." %}
+
+  {% assign q4 = "Jaka jest gwarancja na ramę, widelec i sztycę podsiodłową?" %}
+  {% assign a4 = "Na ramę, widelec i sztycę podsiodłową obowiązuje 2-letnia gwarancja przy normalnym użytkowaniu." %}
+
+  {% assign q5 = "Co nie jest objęte gwarancją?" %}
+  {% assign a5 = "Elementy zużywające się, takie jak dętki, opony, klocki hamulcowe, linki hamulcowe i zmiany biegów itp." %}
+
+  {% assign q6 = "Jak mogę zgłosić reklamację gwarancyjną i czego mogę się spodziewać?" %}
+  {% assign a6 = "Skontaktuj się z nami pod adresem info@rinosbike.eu – wyjaśnimy cały proces i kolejne kroki." %}
+
+  {% assign q7 = "Co zrobić, jeśli karton dotrze uszkodzony? Jakie zdjęcia/dowody są potrzebne i w jakim terminie?" %}
+  {% assign a7 = "Wyślij nam zdjęcia lub film na adres info@rinosbike.eu w ciągu tygodnia od doręczenia." %}
+
+  {% assign q8 = "Czy gwarancja przechodzi na drugiego właściciela w okresie 2 lat? Jakie dowody są potrzebne?" %}
+  {% assign a8 = "Tak, o ile można okazać oryginalny dowód zakupu oraz potwierdzenie przeniesienia własności." %}
+
+  {% assign q9 = "Czy nieautoryzowane naprawy w serwisie zewnętrznym wpływają na gwarancję i jak uzyskać wcześniejszą akceptację naprawy?" %}
+  {% assign a9 = "Przed wykonaniem naprawy przez zewnętrzny serwis skontaktuj się z nami (info@rinosbike.eu), abyśmy mogli udzielić zgody i wskazówek." %}
+
+  {% assign q10 = "Czy mogę zwrócić rower po złożeniu/testowych przejazdach? Czy ślady użytkowania lub opłaty magazynowe mają znaczenie?" %}
+  {% assign a10 = "Możesz zwrócić rower w ciągu 14 dni od dostawy, jeśli jest on nieużywany i w idealnym stanie." %}
+
+  {% assign q11 = "Jeśli reklamacja gwarancyjna zostanie uznana, kto pokrywa koszty wysyłki i odprawy celnej?" %}
+  {% assign a11 = "Jeżeli szkoda wynika z naszej wady produkcyjnej, koszty wysyłki pokrywamy my." %}
+
+  {% assign q12 = "Jeśli po oględzinach nie zostanie stwierdzona usterka, czy naliczana jest opłata za sprawdzenie/zwrot?" %}
+  {% assign a12 = "Tak, jeśli nie znajdziemy poważnych uszkodzeń, wykonamy pełną kontrolę roweru. Stała opłata za taką usługę wynosi 100 €." %}
+
+  {% assign q13 = "Czy oferujecie zniżkę typu crash-replacement poza okresem gwarancji?" %}
+  {% assign a13 = "Tak, mamy program crash replacement. Skontaktuj się z nami na info@rinosbike.eu, jeśli miałeś(-aś) wypadek i potrzebujesz części." %}
+
+  {% assign q14 = "Kto płaci za przesyłkę zwrotną: gdy zmieniłem zdanie vs. gdy chodzi o wadę jakościową?" %}
+  {% assign a14 = "Możesz odesłać rower, a my zwrócimy Ci pierwotną cenę roweru, jeśli jest on nieużywany i nie został uszkodzony przez niewłaściwe opakowanie." %}
+
+  {% assign q15 = "Jak działają zwroty pieniędzy (forma, czas) i czy zestawy akcesoriów są traktowane inaczej?" %}
+  {% assign a15 = "Zwroty przetwarzamy w ciągu jednego tygodnia od otrzymania roweru." %}
+
+  {% assign q16 = "Jakie opakowanie jest wymagane przy zwrotach (oryginalny karton/pianki)? Co, jeśli nie mam już pudełka?" %}
+  {% assign a16 = "Wymagany jest oryginalny karton – zalecamy, aby go zachować. Klient musi zapewnić, że rower jest całkowicie zabezpieczony na czas transportu zwrotnego. Uszkodzenia wynikające z niewłaściwego opakowania mogą skutkować dodatkowymi kosztami dla klienta. W razie pytań skontaktuj się z nami: info@rinosbike.eu." %}
+
+  {% assign q17 = "Jak rozliczane są koszty wysyłki w zatwierdzonych przypadkach gwarancyjnych (w obie strony, w UE i poza UE)?" %}
+  {% assign a17 = "Pokrywamy koszty wysyłki w uznanych przypadkach gwarancyjnych w kraju, w którym produkt został zakupiony." %}
+
+  {% assign q18 = "Czy mogę wykupić przedłużoną gwarancję poza standardowy okres?" %}
+  {% assign a18 = "Obecnie nie oferujemy przedłużonej gwarancji jako dodatkowej usługi." %}
+
+  {% assign contact_text = "Naszą misją jest zawsze odpowiadanie na wszystkie pytania, które możesz mieć. Zależy nam na uczciwości i otwartości w każdym aspekcie naszej pracy. Jeśli masz dodatkowe pytania, na które ten FAQ nie odpowiada, skontaktuj się z nami przez info@rinosbike.eu lub formularz kontaktowy poniżej." %}
+  {% assign contact_heading = "Formularz kontaktowy" %}
+
+{% elsif current_locale == 'bg' %}
+  {% assign q1 = "Размерът на велосипеда не ми пасва – мога ли да го върна и да получа друг размер?" %}
+  {% assign a1 = "Да, но разходите за връщане и повторно изпращане на велосипеда са за сметка на клиента." %}
+
+  {% assign q2 = "Какъв е срокът за връщане и от коя дата започва да тече?" %}
+  {% assign a2 = "Срокът за връщане е 14 дни от датата на доставяне на велосипеда на посочения адрес на клиента." %}
+
+  {% assign q3 = "Каква е гаранцията за частите на Shimano?" %}
+  {% assign a3 = "За основните части на Shimano – курбел, касета, командни лостове, дерайльори – важи 2-годишна гаранция при нормална употреба." %}
+
+  {% assign q4 = "Каква е гаранцията за рамката, вилката и колчето на седалката?" %}
+  {% assign a4 = "За рамката, вилката и колчето на седалката важи 2-годишна гаранция при нормална употреба." %}
+
+  {% assign q5 = "Какво не се покрива от гаранцията?" %}
+  {% assign a5 = "Консумативи и части подложени на износване, като вътрешни гуми, външни гуми, накладки за спирачки, жила за спирачки и скорости и др." %}
+
+  {% assign q6 = "Как мога да подам гаранционна претенция и какво да очаквам?" %}
+  {% assign a6 = "Моля, свържете се с нас на info@rinosbike.eu, за да ви обясним процедурата и следващите стъпки." %}
+
+  {% assign q7 = "Какво да направя, ако кашонът пристигне повреден? Какви снимки/доказателства са нужни и в какъв срок?" %}
+  {% assign a7 = "Изпратете ни снимки или видео на адрес info@rinosbike.eu в рамките на една седмица след доставката." %}
+
+  {% assign q8 = "Следва ли гаранцията велосипеда при втори собственик в рамките на 2-годишния период и какви доказателства са нужни?" %}
+  {% assign a8 = "Да, при условие че са предоставени оригиналната фактура/касова бележка и доказателство за прехвърляне на собствеността." %}
+
+  {% assign q9 = "Влияят ли неоторизирани ремонти от трети страни на гаранцията и как да получа предварително одобрение за сервизен ремонт?" %}
+  {% assign a9 = "Преди да извършите ремонт в сервиз на трета страна, свържете се с нас на info@rinosbike.eu, за да получите указания и одобрение." %}
+
+  {% assign q10 = "Мога ли да върна велосипед след сглобяване/кратки тестови карания? Отчитат ли се козметични следи или такси за повторно складиране?" %}
+  {% assign a10 = "Можете да върнете велосипеда в рамките на 14 дни след доставката, ако е неизползван и в отлично състояние." %}
+
+  {% assign q11 = "Ако гаранционната претенция бъде одобрена, кой заплаща разходите за транспорт и митнически такси?" %}
+  {% assign a11 = "Ако се докаже, че щетата е вследствие на производствен дефект от наша страна, ние покриваме разходите за транспорт." %}
+
+  {% assign q12 = "Ако след проверка не бъде открит дефект, начислява ли се такса за оценка/връщане?" %}
+  {% assign a12 = "Да, ако не бъдат открити сериозни повреди, правим пълна проверка на велосипеда. Фиксираната такса за тази услуга е 100 €." %}
+
+  {% assign q13 = "Предлагате ли отстъпка тип crash-replacement извън стандартната гаранция?" %}
+  {% assign a13 = "Да, имаме crash replacement програма. Моля, свържете се с нас на info@rinosbike.eu, ако сте имали падане и имате нужда от части." %}
+
+  {% assign q14 = "Кой заплаща транспорта при връщане – ако просто съм променил мнението си или ако има дефект/проблем с качеството?" %}
+  {% assign a14 = "Можете да върнете велосипеда, а ние ще възстановим първоначалната цена, ако велосипедът е неизползван и няма щети от незащитена опаковка." %}
+
+  {% assign q15 = "Как се извършват възстановяванията на суми (метод, срок) и третират ли се комплектите аксесоари по различен начин?" %}
+  {% assign a15 = "Обработваме връщанията в рамките на една седмица след получаване на велосипеда." %}
+
+  {% assign q16 = "Каква опаковка е необходима за връщане (оригинална кутия/пяна)? Какво става, ако вече нямам кутията?" %}
+  {% assign a16 = "Необходима е оригиналната кутия – препоръчваме да я запазите. Клиентът трябва да гарантира, че велосипедът е напълно защитен за транспорта. Повредите вследствие на недостатъчна опаковка могат да доведат до допълнителни разходи за клиента. При въпроси се свържете с нас на info@rinosbike.eu." %}
+
+  {% assign q17 = "Как се покриват транспортните разходи при одобрени гаранционни случаи (двупосочно, в ЕС и извън ЕС)?" %}
+  {% assign a17 = "Ние поемаме транспортните разходи за одобрените гаранционни случаи в страната, в която е закупен продуктът." %}
+
+  {% assign q18 = "Предлага ли се удължена гаранция, която мога да закупя след изтичане на стандартната?" %}
+  {% assign a18 = "Понастоящем не предлагаме възможност за закупуване на удължена гаранция." %}
+
+  {% assign contact_text = "Нашата мисия винаги е да отговаряме на всички въпроси, които може да имате. Ние държим на честността и откритостта във всеки аспект на нашата работа. Ако имате допълнителни въпроси, на които този раздел с ЧЗВ не отговаря, свържете се с нас на info@rinosbike.eu или чрез формуляра за контакт по-долу." %}
+  {% assign contact_heading = "Формуляр за контакт" %}
+
+{% else %}
+  {% comment %} Default English {% endcomment %}
+  {% assign q1 = "The bike size does not fit me, can I send it back and get a new size bike?" %}
+  {% assign a1 = "Yes, but the costs for returning and sending back the bike will be incurred by the customer." %}
+
+  {% assign q2 = "What is the return period and from which date does it start?" %}
+  {% assign a2 = "The return period is 14 days after the bike is delivered to the customer’s outlined address." %}
+
+  {% assign q3 = "What is the warranty for Shimano parts?" %}
+  {% assign a3 = "For major Shimano parts like crankset, cassette, shifters and derailleurs it is 2 years under normal use." %}
+
+  {% assign q4 = "What is the warranty for the frame, fork and seatpost?" %}
+  {% assign a4 = "There is a 2-year warranty for the frame, fork and seatpost under normal use." %}
+
+  {% assign q5 = "What is not covered in the warranty?" %}
+  {% assign a5 = "Wear parts such as inner tubes, tires, brake pads, shifter and brake cables, etc." %}
+
+  {% assign q6 = "How can I make a claim and what can I expect?" %}
+  {% assign a6 = "Please contact us at info@rinosbike.eu and we will guide you through the claim process." %}
+
+  {% assign q7 = "What should I do if the box arrives damaged, what photos/evidence are needed and within what time window?" %}
+  {% assign a7 = "Please send us images or a video to info@rinosbike.eu within one week of delivery." %}
+
+  {% assign q8 = "Does the warranty follow the bike with second owners within the 2-year window? What proof is needed?" %}
+  {% assign a8 = "Yes, as long as the original proof of purchase and proof of transfer of ownership are provided." %}
+
+  {% assign q9 = "Do unauthorized third-party repairs affect my warranty, and how do I get pre-authorization for shop repairs?" %}
+  {% assign a9 = "Please contact us at info@rinosbike.eu for more information and to get approval before third-party repairs." %}
+
+  {% assign q10 = "Can I return a bike after assembly/test rides? Are cosmetic marks/restocking fees a factor?" %}
+  {% assign a10 = "You can return a bike within 14 days after delivery if it is unused and in perfect condition." %}
+
+  {% assign q11 = "If a warranty claim is approved, who covers shipping and customs both ways?" %}
+  {% assign a11 = "If it is proven that the damage was due to our manufacturing defect, we cover the shipping costs." %}
+
+  {% assign q12 = "If no defect is found after inspection, will I be charged an evaluation/return fee?" %}
+  {% assign a12 = "Yes. If no major parts are broken we will do a full and thorough inspection of the bike and its functionality. Our flat rate for checking the bike is 100 EUR." %}
+
+  {% assign q13 = "Do you offer a crash-replacement discount outside warranty?" %}
+  {% assign a13 = "Yes, we have a crash-replacement program. Please contact us at info@rinosbike.eu if you have a crash and need parts." %}
+
+  {% assign q14 = "Who pays return shipping: I changed my mind vs. there’s a quality/defect issue?" %}
+  {% assign a14 = "You can send the bike back to us and we will reimburse you the original cost of the bike if the bike is unused and did not incur any damage due to unsafe packaging." %}
+
+  {% assign q15 = "How do refunds work (method, timing), and are accessory bundles handled differently?" %}
+  {% assign a15 = "We process our returns within one week upon receiving the bike." %}
+
+  {% assign q16 = "What packaging is required for returns (original box/foam)? What if I no longer have the box?" %}
+  {% assign a16 = "The original box is required. We suggest that you keep the box. The customer has to ensure that the bike is completely safe to transport back to the seller. Damage made from unsafe packaging can incur costs to the customer. Please contact us at info@rinosbike.eu for more questions." %}
+
+  {% assign q17 = "How are shipping costs handled for approved warranty cases (both directions, EU vs non-EU)?" %}
+  {% assign a17 = "We cover the shipping costs for applicable warranty cases in the country where the product was bought." %}
+
+  {% assign q18 = "Is there an extended warranty I can buy beyond the standard period?" %}
+  {% assign a18 = "Currently we do not offer this service." %}
+
+  {% assign contact_text = "Our mission is always to answer any questions that you may have. We care about honesty and openness in any aspect of our work. If you have any further questions that this FAQ does not answer please contact us via info@rinosbike.eu or the contact form below." %}
+  {% assign contact_heading = "Contact form" %}
+{% endif %}
+
+<div class="faq-warranty-section page-width section-{{ section.id }}-padding">
+  {% if section.settings.heading != blank %}
+    <h2 class="faq-heading {{ section.settings.heading_size }} {{ section.settings.heading_alignment }}">
+      {{ section.settings.heading }}
+    </h2>
+  {% endif %}
+
+  <div class="faq-collapsible-content">
+    {% comment %} 18 questions, explicit rows (no loop) {% endcomment %}
+
+    <div class="faq-row">
+      <details {% if section.settings.open_first_collapsible_row %}open{% endif %}>
+        <summary>
+          <span class="icon-question">?</span>
+          <span class="faq-question">{{ q1 }}</span>
+          <span class="icon-caret"></span>
+        </summary>
+        <div class="faq-answer"><p>{{ a1 }}</p></div>
+      </details>
+    </div>
+
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q2 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a2 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q3 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a3 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q4 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a4 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q5 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a5 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q6 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a6 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q7 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a7 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q8 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a8 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q9 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a9 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q10 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a10 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q11 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a11 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q12 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a12 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q13 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a13 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q14 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a14 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q15 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a15 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q16 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a16 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q17 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a17 }}</p></div></details></div>
+    <div class="faq-row"><details><summary><span class="icon-question">?</span><span class="faq-question">{{ q18 }}</span><span class="icon-caret"></span></summary><div class="faq-answer"><p>{{ a18 }}</p></div></details></div>
+  </div>
+
+  <div class="faq-contact-section">
+    <div class="rich-text-content">
+      <p>{{ contact_text }}</p>
+    </div>
+
+    <div class="contact-form-wrapper">
+      <h3 class="contact-form-heading">{{ contact_heading }}</h3>
+      {% form 'contact' %}
+        {% if form.posted_successfully? %}
+          <p class="form-success">Thank you for your message!</p>
+        {% endif %}
+        {% if form.errors %}
+          <div class="form-errors">
+            {{ form.errors | default_errors }}
+          </div>
+        {% endif %}
+
+        <div class="field">
+          <input type="text" name="contact[name]" placeholder="Name" required>
+        </div>
+        <div class="field">
+          <input type="email" name="contact[email]" placeholder="Email" required>
+        </div>
+        <div class="field">
+          <textarea name="contact[body]" placeholder="Message" required></textarea>
+        </div>
+
+        <button type="submit" class="button">
+          Send
+        </button>
+      {% endform %}
+    </div>
+  </div>
+</div>
+
+<style>
+.faq-warranty-section {
+  padding: 40px 20px;
+}
+
+.faq-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-collapsible-content {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.faq-row {
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.faq-row details {
+  padding: 20px 0;
+}
+
+.faq-row summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+}
+
+.faq-row summary::-webkit-details-marker {
+  display: none;
+}
+
+.icon-question {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.faq-question {
+  flex: 1;
+}
+
+.icon-caret {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.icon-caret::after {
+  content: '▼';
+  font-size: 12px;
+}
+
+.faq-row details[open] .icon-caret::after {
+  content: '▲';
+}
+
+.faq-answer {
+  padding: 15px 0 15px 39px;
+  line-height: 1.6;
+}
+
+.faq-contact-section {
+  max-width: 800px;
+  margin: 60px auto 0;
+  text-align: center;
+}
+
+.rich-text-content {
+  margin-bottom: 40px;
+}
+
+.contact-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form-heading {
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.button {
+  padding: 12px 30px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.button:hover {
+  background-color: #333;
+}
+
+.form-success {
+  color: green;
+  margin-bottom: 20px;
+}
+
+.form-errors {
+  color: red;
+  margin-bottom: 20px;
+}
+</style>
+
+{% schema %}
+{
+  "name": "FAQ Warranty & Returns",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Warranty & Returns FAQ"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "options": [
+        { "value": "h1", "label": "Large" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h3", "label": "Small" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first_collapsible_row",
+      "label": "Open first item by default",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Warranty & Returns"
+    }
+  ]
+}
+{% endschema %}
