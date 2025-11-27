@@ -268,6 +268,8 @@
     },
     "anglesports_frame_size_QHrYVy": {
       "type": "anglesports-frame-size",
+      "disabled": true,
+      "custom_css": [],
       "name": "Frame Geometry",
       "settings": {
         "geometry_image": "shopify://shop_images/Sizing_Chart_Sandman4_6_7_Angle_Sport.png"
@@ -339,6 +341,7 @@
         "video_thumbnail": "shopify://shop_images/Group_757.jpg",
         "title": "Assemble Your Sandman",
         "subtitle": "Watch how simple it is to set up your Rinos gravel bike. Everything you need, step by step.",
+        "watch_text": "Watch the guide",
         "video_title": "Gravel Bike Assembly Video",
         "video_alt": "Rinos Sandman Gravel bike assembly",
         "benefit_1_title": "Easy to Follow",
