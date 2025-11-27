@@ -268,7 +268,6 @@
     },
     "anglesports_frame_size_QHrYVy": {
       "type": "anglesports-frame-size",
-      "disabled": true,
       "custom_css": [],
       "name": "Frame Geometry",
       "settings": {
