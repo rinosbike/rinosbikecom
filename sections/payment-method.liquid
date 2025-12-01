@@ -1,0 +1,531 @@
+<style>
+  /* HARD RESET FOR THIS SECTION ONLY */
+  .rinos-payment-page,
+  .rinos-payment-page * {
+    box-sizing: border-box;
+  }
+
+  .rinos-payment-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 14px 80px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+    color: #111827;
+  }
+
+  /* HEADINGS */
+  .rinos-payment-section-title {
+    font-size: 17px !important;
+    line-height: 1.4 !important;
+    margin: 14px 0 10px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b7280;
+  }
+
+  .rinos-payment-page .payment-subtitle {
+    color: #6b7280;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 26px !important;
+    max-width: 780px;
+  }
+
+  /* GRID / CARDS */
+  .rinos-payment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 34px;
+  }
+
+  .rinos-payment-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px 22px 20px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+
+  .rinos-payment-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
+    border-color: #111827;
+  }
+
+  .rinos-payment-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+
+  .rinos-payment-card-title {
+    font-size: 18px !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+  }
+
+  .rinos-payment-card-icon-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .rinos-payment-card-icon-group img {
+    max-height: 32px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* TEXT */
+  .rinos-payment-page p,
+  .rinos-payment-page li {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: #4b5563;
+  }
+
+  .rinos-payment-card p {
+    margin: 0 0 8px;
+  }
+
+  .rinos-payment-card ul {
+    margin: 6px 0 6px 20px;
+    padding: 0;
+  }
+
+  .rinos-payment-card li {
+    margin-bottom: 4px;
+  }
+
+  .rinos-payment-page small {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: #9ca3af;
+    display: block;
+    margin-top: 6px;
+  }
+
+  /* BANK DETAILS BOX */
+  .bank-details {
+    margin-top: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #f9fafb;
+    font-size: 15px !important;
+    border: 1px dashed #e5e7eb;
+  }
+
+  .bank-details p {
+    margin: 0 0 4px;
+    font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+    font-size: 14px !important;
+  }
+
+  .rinos-note {
+    font-size: 14px !important;
+    color: #9ca3af;
+    margin-top: -4px;
+    margin-bottom: 26px;
+  }
+
+  /* REFERRAL SECTION */
+  .rinos-referral {
+    margin-top: 28px;
+    background: linear-gradient(135deg, #020617, #111827);
+    border-radius: 20px;
+    padding: 24px 22px 22px;
+    color: #f9fafb;
+    display: grid;
+    grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.8fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .rinos-referral {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .rinos-referral h3 {
+    margin: 0 0 10px;
+    font-size: 22px !important;
+    line-height: 1.4 !important;
+    color: #f9fafb !important;
+  }
+
+  .rinos-referral p {
+    margin: 0 0 8px;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: #e5e7eb;
+  }
+
+  .rinos-referral ul {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 15px !important;
+    color: #e5e7eb;
+  }
+
+  .rinos-referral-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(248, 250, 252, 0.1);
+    font-size: 13px !important;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+  }
+
+  .rinos-referral-cta {
+    align-self: center;
+    justify-self: flex-start;
+  }
+
+  .rinos-referral-cta a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(248, 250, 252, 0.32);
+    font-size: 15px !important;
+    text-decoration: none;
+    color: #f9fafb;
+    gap: 8px;
+    transition: background 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+  }
+
+  .rinos-referral-cta a:hover {
+    background: #f9fafb;
+    color: #020617;
+    border-color: transparent;
+    transform: translateY(-1px);
+  }
+
+  .rinos-referral-cta span {
+    font-size: 15px !important;
+  }
+
+  .rinos-referral ul,
+  .rinos-referral li {
+    color: #e5e7eb !important;
+  }
+</style>
+
+<div class="rinos-payment-page">
+  <p class="payment-subtitle" data-i18n="subtitle">
+    Choose the payment option that fits you best. All transactions are processed securely. Availability of individual methods can vary depending on your country and currency.
+  </p>
+
+  <!-- GLOBAL PAYMENT METHODS -->
+  <h3 class="rinos-payment-section-title" data-i18n="global_title">Global payment methods</h3>
+  <div class="rinos-payment-grid">
+    <!-- Bank transfer -->
+    <div class="rinos-payment-card">
+      <div>
+        <div class="rinos-payment-card-header">
+          <div class="rinos-payment-card-title" data-i18n="bank_title">Bank transfer (SEPA)</div>
+          <div class="rinos-payment-card-icon-group">
+            <img src="https://cdn.shopify.com/s/files/1/0612/2078/2333/files/Banktransfer_480x480.jpg?v=1638746966" alt="Bank transfer icon">
+          </div>
+        </div>
+        <p data-i18n="bank_p1">
+          You can pay your order conveniently via classic bank transfer. As soon as we receive your payment, we prepare your bike for dispatch.
+        </p>
+        <div class="bank-details">
+          <p data-i18n="bank_bankname">Commerzbank</p>
+          <p data-i18n="bank_accholder">Account holder: Rinos Bikes GmbH</p>
+          <p data-i18n="bank_sort">SORT CODE: 17040000 &nbsp;•&nbsp; Account no: 0202151700</p>
+          <p data-i18n="bank_bic">Swift/BIC: COBADEFFXXX</p>
+          <p data-i18n="bank_iban">IBAN: DE08170400000202151700</p>
+        </div>
+      </div>
+      <small data-i18n="bank_small">Transfers from EU countries are usually received within 1–2 business days.</small>
+    </div>
+
+    <!-- Cards -->
+    <div class="rinos-payment-card">
+      <div>
+        <div class="rinos-payment-card-header">
+          <div class="rinos-payment-card-title" data-i18n="cards_title">Credit &amp; debit cards</div>
+          <div class="rinos-payment-card-icon-group">
+            <img src="https://cdn.shopify.com/s/files/1/0698/1638/5801/files/visa_america_union_pay.png?v=1764582145" alt="Visa, Mastercard &amp; UnionPay">
+            <img src="https://cdn.shopify.com/s/files/1/0698/1638/5801/files/america_express.png?v=1764582145" alt="American Express">
+            <img src="https://cdn.shopify.com/s/files/1/0698/1638/5801/files/images_35942284-8793-4206-9b2b-e7e2691591ff.png?v=1764582145" alt="Maestro">
+          </div>
+        </div>
+        <p data-i18n="cards_p1">
+          Pay securely with your preferred card. We support major credit and debit cards through our trusted payment partners.
+        </p>
+        <p data-i18n="cards_p2">
+          Your card data is processed via encrypted connections and is never stored by us.
+        </p>
+      </div>
+      <small data-i18n="cards_small">Some card options may depend on your region and issuing bank.</small>
+    </div>
+
+    <!-- PayPal -->
+    <div class="rinos-payment-card">
+      <div>
+        <div class="rinos-payment-card-header">
+          <div class="rinos-payment-card-title" data-i18n="paypal_title">PayPal</div>
+          <div class="rinos-payment-card-icon-group">
+            <img src="https://cdn.shopify.com/s/files/1/0612/2078/2333/files/Paypal_480x480.jpg?v=1638746978" alt="PayPal logo">
+          </div>
+        </div>
+        <p data-i18n="paypal_p1">
+          Pay quickly and easily using your PayPal account. You simply log in with your e-mail address and password – without having to enter your card or bank details again.
+        </p>
+        <p data-i18n="paypal_p2">
+          Payments made via PayPal are credited immediately, which allows us to start preparing your bike without delay.
+        </p>
+      </div>
+      <small data-i18n="paypal_small">PayPal may offer you additional buyer protection, depending on your country.</small>
+    </div>
+
+    <!-- Klarna -->
+    <div class="rinos-payment-card">
+      <div>
+        <div class="rinos-payment-card-header">
+          <div class="rinos-payment-card-title" data-i18n="klarna_title">Klarna</div>
+          <div class="rinos-payment-card-icon-group">
+            <img src="https://cdn.shopify.com/s/files/1/0612/2078/2333/files/Klarna_480x480.png?v=1638746951" alt="Klarna logo">
+          </div>
+        </div>
+        <p data-i18n="klarna_p1">
+          With Klarna you can pay now, pay later or split your purchase into instalments – depending on the options available in your country and your personal Klarna profile.
+        </p>
+        <p data-i18n="klarna_p2">
+          All Klarna payments are handled via Klarna’s own secure platform.
+        </p>
+      </div>
+      <small data-i18n="klarna_small">“Pay later” and instalment options are subject to Klarna’s approval.</small>
+    </div>
+
+    <!-- Amazon Pay -->
+    <div class="rinos-payment-card">
+      <div>
+        <div class="rinos-payment-card-header">
+          <div class="rinos-payment-card-title" data-i18n="amazon_title">Amazon Pay</div>
+          <div class="rinos-payment-card-icon-group">
+            <img src="https://cdn.shopify.com/s/files/1/0612/2078/2333/files/Amazon_pay_480x480.png?v=1638746939" alt="Amazon Pay logo">
+          </div>
+        </div>
+        <p data-i18n="amazon_p1">
+          Use the payment methods stored in your Amazon account and check out in just a few clicks – with the same security and convenience you know from Amazon.
+        </p>
+      </div>
+      <small data-i18n="amazon_small">You stay on our site while Amazon securely processes your payment in the background.</small>
+    </div>
+  </div>
+
+  <p class="rinos-note" data-i18n="note_fast">
+    Additionally, depending on your device and region, fast checkout methods such as Google Pay or Shop Pay can be available during checkout.
+  </p>
+
+  <!-- COUNTRY / CURRENCY SPECIFIC METHODS -->
+  <h3 class="rinos-payment-section-title" data-i18n="country_title">Country &amp; currency specific options</h3>
+  <div class="rinos-payment-grid">
+    <!-- BLIK -->
+    <div class="rinos-payment-card">
+      <div>
+        <div class="rinos-payment-card-header">
+          <div class="rinos-payment-card-title" data-i18n="blik_title">BLIK (Poland)</div>
+          <div class="rinos-payment-card-icon-group">
+            <img src="https://cdn.shopify.com/s/files/1/0698/1638/5801/files/blik-logo-png_seeklogo-313495.png?v=1764582145" alt="BLIK logo">
+          </div>
+        </div>
+        <p data-i18n="blik_p1">
+          If you are paying from Poland, you can use BLIK for a fast and convenient mobile payment. Simply confirm the BLIK code in your banking app to complete the purchase.
+        </p>
+      </div>
+      <small data-i18n="blik_small">Available only for customers using participating Polish banks.</small>
+    </div>
+
+    <!-- Stablecoin / Crypto -->
+    <div class="rinos-payment-card">
+      <div>
+        <div class="rinos-payment-card-header">
+          <div class="rinos-payment-card-title" data-i18n="stable_title">Stablecoin payment (on request)</div>
+          <div class="rinos-payment-card-icon-group">
+            <img src="https://cdn.shopify.com/s/files/1/0698/1638/5801/files/Stable_coin.png?v=1764582146" alt="Stablecoin payment">
+          </div>
+        </div>
+        <p data-i18n="stable_p1">
+          We also support selected stablecoin payments on request. This is a convenient option for international customers who prefer to pay in digital currencies pegged to fiat (e.g. USD stablecoins).
+        </p>
+        <p data-i18n="stable_p2">
+          If you would like to pay via stablecoin, please contact us before placing your order so we can confirm the current options, supported currencies and exchange rate.
+        </p>
+      </div>
+      <small data-i18n="stable_small">Stablecoin availability depends on currency, network and current agreements.</small>
+    </div>
+  </div>
+
+  <!-- WORKPLACE BIKE LEASING (GERMANY) -->
+  <h3 class="rinos-payment-section-title" data-i18n="leasing_title">Workplace bike leasing (Germany)</h3>
+  <div class="rinos-payment-grid">
+    <!-- JobRad -->
+    <div class="rinos-payment-card">
+      <div>
+        <div class="rinos-payment-card-header">
+          <div class="rinos-payment-card-title" data-i18n="jobrad_title">JobRad</div>
+          <div class="rinos-payment-card-icon-group">
+            <img src="https://cdn.shopify.com/s/files/1/0698/1638/5801/files/JobRad-Logo_3zu2.webp?v=1764585908" alt="JobRad logo">
+          </div>
+        </div>
+        <p data-i18n="jobrad_p1">
+          With JobRad you can get your Rinos bike as a company bike via your employer. Your company leases the bike and you use it for commuting, everyday life and sports.
+        </p>
+        <p data-i18n="jobrad_p2">
+          The monthly leasing rate is usually paid via salary conversion from your gross salary, which can make the total cost significantly lower compared to a direct purchase.
+        </p>
+        <p data-i18n="jobrad_p3">
+          Your employer needs an active JobRad contract. Once that is in place, we can provide an offer for your chosen Rinos bike.
+        </p>
+      </div>
+      <small data-i18n="jobrad_small">Exact savings depend on your salary, tax class and the agreement with your employer.</small>
+    </div>
+
+    <!-- BusinessBike -->
+    <div class="rinos-payment-card">
+      <div>
+        <div class="rinos-payment-card-header">
+          <div class="rinos-payment-card-title" data-i18n="bbike_title">BusinessBike</div>
+          <div class="rinos-payment-card-icon-group">
+            <img src="https://cdn.shopify.com/s/files/1/0698/1638/5801/files/Business_bike.png?v=1764585908" alt="BusinessBike logo">
+          </div>
+        </div>
+        <p data-i18n="bbike_p1">
+          BusinessBike offers digital, simple company bike leasing for employers and employees in Germany. Your employer signs a framework contract and you select your desired bike.
+        </p>
+        <p data-i18n="bbike_p2">
+          The leasing instalments are usually deducted from your gross salary over a fixed term, often with insurance and service packages included.
+        </p>
+        <p data-i18n="bbike_p3">
+          Once your employer is registered with BusinessBike, we can create an individual quote for your Rinos bike.
+        </p>
+      </div>
+      <small data-i18n="bbike_small">Depending on setup, you can save a noticeable amount compared to a classic purchase.</small>
+    </div>
+
+    <!-- Lease a Bike -->
+    <div class="rinos-payment-card">
+      <div>
+        <div class="rinos-payment-card-header">
+          <div class="rinos-payment-card-title" data-i18n="lease_title">Lease a Bike</div>
+          <div class="rinos-payment-card-icon-group">
+            <img src="https://cdn.shopify.com/s/files/1/0698/1638/5801/files/lease_a_bike.webp?v=1764585908" alt="Lease a Bike logo">
+          </div>
+        </div>
+        <p data-i18n="lease_p1">
+          Lease a Bike is a company bike platform where your employer leases the bike and you use it privately and for work. The monthly rate is paid through deferred compensation from your gross salary.
+        </p>
+        <p data-i18n="lease_p2">
+          This model combines tax advantages with full-service packages (e.g. insurance, maintenance) depending on the tariff your employer chooses.
+        </p>
+        <p data-i18n="lease_p3">
+          If your company already works with Lease a Bike, we can supply your Rinos bike through their portal.
+        </p>
+      </div>
+      <small data-i18n="lease_small">Availability and conditions are defined by your employer’s contract with Lease a Bike.</small>
+    </div>
+
+    <!-- Mein Dienstrad -->
+    <div class="rinos-payment-card">
+      <div>
+        <div class="rinos-payment-card-header">
+          <div class="rinos-payment-card-title" data-i18n="dienstrad_title">Mein Dienstrad</div>
+          <div class="rinos-payment-card-icon-group">
+            <img src="https://cdn.shopify.com/s/files/1/0698/1638/5801/files/mein-dienstrad.de.png?v=1764585908" alt="Mein Dienstrad logo">
+          </div>
+        </div>
+        <p data-i18n="dienstrad_p1">
+          Via mein-dienstrad.de you can also lease a Rinos bike as a company bike if your employer participates in their programme.
+        </p>
+        <p data-i18n="dienstrad_p2">
+          Typically you register on the platform with your employer’s code, choose your dream bike and the leasing instalments are deducted monthly from your gross salary.
+        </p>
+        <p data-i18n="dienstrad_p3">
+          Contact us with your employer details and desired Rinos model so we can check the process with Mein Dienstrad.
+        </p>
+      </div>
+      <small data-i18n="dienstrad_small">As with other leasing providers, the concrete conditions depend on your employer’s contract.</small>
+    </div>
+  </div>
+
+  <!-- Referral & athlete section -->
+  <div class="rinos-referral">
+    <div>
+      <div class="rinos-referral-badge">
+        <span data-i18n="ref_badge">Community &amp; athletes</span>
+      </div>
+      <h3 data-i18n="ref_title">Referral program &amp; athlete deals</h3>
+      <p data-i18n="ref_p1">
+        We grow together with our community. If you love your Rinos bike and want to bring your friends or training partners on board, you can benefit from our referral possibilities.
+      </p>
+      <ul>
+        <li data-i18n="ref_li1">Recommend Rinos to friends, family or teammates.</li>
+        <li data-i18n="ref_li2">Earn rewards or discounts when a bike is purchased through your recommendation (depending on campaign).</li>
+        <li data-i18n="ref_li3">Perfect for cycling clubs, group rides and local communities.</li>
+      </ul>
+      <p data-i18n="ref_p2">
+        Are you a triathlete, cyclist or another performance-focused athlete who wants to ride our bikes in training or racing? Get in touch with us – we will check together what kind of support or special pricing is possible.
+      </p>
+    </div>
+    <div class="rinos-referral-cta">
+      <a href="/pages/contact">
+        <span data-i18n="ref_cta">Contact us about referral &amp; athlete options</span>
+        <span>→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var locale = {{ request.locale.iso_code | json | default: '"en"' }};
+    fetch('{{ "payment-method.json" | asset_url }}')
+      .then(function(r) { return r.json(); })
+      .then(function(all) {
+        var dict = all[locale] || all['en'];
+        if (!dict) return;
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+          var key = el.getAttribute('data-i18n');
+          if (dict[key]) {
+            el.innerHTML = dict[key];
+          }
+        });
+      })
+      .catch(function(e) {
+        console.warn('payment-method translations failed', e);
+      });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Payment methods",
+  "settings": [],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Payment methods"
+    }
+  ]
+}
+{% endschema %}
