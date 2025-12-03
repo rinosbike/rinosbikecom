@@ -422,6 +422,7 @@
     },
     "anglesports_frame_size_yDYafn": {
       "type": "anglesports-frame-size",
+      "disabled": true,
       "name": "Gravel Anglesports Geometry Chart",
       "settings": {
         "geometry_image": "shopify://shop_images/Sizing_Chart_Sandman4_6_7_Angle_Sport.png"
