@@ -498,43 +498,33 @@
 </div>
 
 <script>
-  (function() {
-    // 1) Get current locale from Shopify, e.g. "en", "en-GB", "de"
-    var rawLocale = {{ request.locale.iso_code | json | default: '"en"' }};
-    var shortLocale = rawLocale.split('-')[0]; // "en-GB" → "en"
+document.addEventListener('DOMContentLoaded', function() {
 
-    // 2) Build URL to JSON in Assets + cache-buster
-    var url = '{{ "translation-payment-method.json" | asset_url }}?v={{ "now" | date: "%s" }}';
+  var locale = {{ localization.language.iso_code | json }};
+  var translationsUrl = {{ "translation-payment-method.json" | asset_url | json }};
 
-    // 3) Fetch translations
-    fetch(url)
-      .then(function(r) {
-        if (!r.ok) {
-          throw new Error('HTTP status ' + r.status);
-        }
-        return r.json();
-      })
-      .then(function(all) {
-        // 4) Pick dictionary for current locale
-        var dict = all[rawLocale] || all[shortLocale] || all['en'];
-        if (!dict) {
-          console.warn('No dictionary found for locale', rawLocale);
-          return;
-        }
+  fetch(translationsUrl)
+    .then(function(r) {
+      if (!r.ok) throw new Error('Failed to load translation JSON');
+      return r.json();
+    })
+    .then(function(all) {
+      var base = locale.split('-')[0];
+      var dict = all[locale] || all[base] || all['en'];
+      if (!dict) return;
 
-        // 5) Apply translations to all [data-i18n] elements
-        document.querySelectorAll('[data-i18n]').forEach(function(el) {
-          var key = el.getAttribute('data-i18n');
-          if (dict[key]) {
-            el.innerHTML = dict[key];
-          }
-        });
-      })
-      .catch(function(e) {
-        console.warn('payment-method translations failed', e);
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (dict[key]) el.innerHTML = dict[key];
       });
-  })();
+    })
+    .catch(function(e) {
+      console.warn("payment-method translations failed:", e);
+    });
+
+});
 </script>
+
 
 
 {% schema %}
