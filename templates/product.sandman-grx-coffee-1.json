@@ -15,8 +15,8 @@
         "heading_kgmQyk": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Sandman 7.</strong> GRX820. <em>Top of the line.</em>",
-            "heading_size": "h1"
+            "heading": "Sandman GRX Coffee  Edition.",
+            "heading_size": "h0"
           }
         },
         "text_6fTdVN": {
@@ -45,12 +45,12 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/att.uph39nUk7j_KQqCRfb7twp3kPsDHpugDhw9HqI8D3jM_c53091d1-79e8-4c9c-b54c-3be41af371c6.jpg",
+        "image": "shopify://shop_images/coffee-beans-texture.jpg",
         "image_overlay_opacity": 30,
         "image_height": "small",
         "desktop_content_position": "top-right",
         "show_text_box": false,
-        "desktop_content_alignment": "right",
+        "desktop_content_alignment": "center",
         "color_scheme": "background-2",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
@@ -161,7 +161,7 @@
         "heading_zpYfc4": {
           "type": "heading",
           "settings": {
-            "heading": "Made<em><strong> for Gravel.</strong></em> Discover Rinos Sandman 7",
+            "heading": "Made<em><strong> for Gravel.</strong></em> Discover Rinos Sandman GRX Coffee edition.",
             "heading_size": "h2"
           }
         },
@@ -197,10 +197,10 @@
         "row_XtrB4E": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/dominika.pairofwheels_449098967_393205517073597_634453419878547017_n.jpg",
-            "caption": "Sandman 7",
-            "heading": "<em><strong>Shimano GRX820</strong></em>. Shimano's Premium Mechanical Gravel Groupset.",
-            "text": "<p>The GRX820 represents Shimano's top-tier mechanical gravel technology, combining innovations from both Ultegra road and Deore XT mountain bike lineups</p><p>Twenty-four gears through a 2×12 drivetrain. The 48-31T crankset paired with an 11-34T cassette gives you tighter gear steps than 11-speed systems—you're shifting less to find the right cadence. </p><p>The Shadow RD+ rear derailleur features an adjustable clutch mechanism. Dial it up for rocky singletrack, back it off for smooth roads.</p><p>The shifter hoods use a matt-textured, anti-slip coating with a flattened lever blade for better grip in wet conditions.</p><p>This is where Shimano's gravel engineering becomes visible in your riding, not just on paper.</p>",
+            "image": "shopify://shop_images/Sandman8Coffee7.png",
+            "caption": "SANDMAN GRX COFFEE",
+            "heading": "<strong>Shimano GRX. Choose Your Performance Level.</strong>",
+            "text": "<p>The Sandman GRX Coffee - Special Edition combines proven gravel engineering with your choice of three Shimano GRX groupsets. Whether you select the GRX400, GRX600, or premium GRX820, each represents Shimano's mechanical gravel technology innovations.</p>",
             "button_label": "",
             "button_link": ""
           }
@@ -208,10 +208,10 @@
         "row_qEgUHQ": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/Q14A5971.jpg",
-            "caption": "Sandman 7",
+            "image": "shopify://shop_images/Group804_e8382fd4-d70d-4117-82b8-af10d4ab5f26.png",
+            "caption": "SANDMAN GRX COFFEE",
             "heading": "<em><strong>Gearing </strong></em>Built for Variable Terrain.",
-            "text": "<p>The 48-31T crankset uses a 2.5mm wider chainline than standard road groupsets, designed specifically for gravel to improve mud clearance and accommodate wider tires. </p><p>The 48-tooth outer ring gives you higher top-end speed than the Sandman 6's 46T when the gravel opens up. The 31-tooth inner ring paired with the 34-tooth largest cog still climbs without issue.</p><p>Twenty-four distinct gear combinations with smaller steps between ratios. Rolling terrain, technical climbs, fast descents, you maintain cadence without constantly hunting for the right gear.</p>",
+            "text": "<p>All Sandman GRX Coffee models use a gravel-optimized chainline designed specifically for gravel to improve mud clearance and accommodate wider tires. The multiple gear configurations provide smaller steps between ratios—rolling terrain, technical climbs, fast descents, you maintain cadence without constantly hunting for the right gear.</p>",
             "button_label": "",
             "button_link": ""
           }
@@ -219,10 +219,10 @@
         "row_QPgLT3": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/dominika.pairofwheels_453056389_850498639917776_8492373170969487287_n.jpg",
-            "caption": "Sandman 7",
-            "heading": "<em><strong>Twenty Four</strong></em><strong> Speeds. </strong>",
-            "text": "<p>The GRX820 on the Sandman 7 delivers twelve-speed precision, tighter gear spacing, and better component longevity, this is where Shimano's engineering takes a measurable step up. </p><p>Same TORAY T800 carbon frame. Lighter at 9.6kg versus 9.8kg.</p><p>The difference: Ice Technologies brake rotors with aluminum cores that dissipate heat without warping, Servo Wave brake action for better modulation, ceramic pistons in the calipers for heat resistance, adjustable clutch tension. </p><p>Components that perform after months of hard riding, not just the first few weeks.</p>",
+            "image": "shopify://shop_images/Group800_0a3ad865-d544-4c34-84b9-3a47e46cde56.png",
+            "caption": "SANDMAN GRX COFFEE ",
+            "heading": "<strong>Where Engineering Meets Performance</strong>",
+            "text": "<p>Built on a TORAY T800 carbon frame at 9.6 kg (GRX820) or 9.8 kg (GRX400/600), the Sandman GRX Coffee delivers lightweight performance. The GRX820 features Ice Technologies brake rotors with aluminum cores that dissipate heat without warping, Servo Wave brake action for better modulation, and ceramic pistons in the calipers for heat resistance.</p><p>Components that perform after months of hard riding, not just the first few weeks. This is where Shimano's engineering takes a measurable step up.</p>",
             "button_label": "",
             "button_link": ""
           }
@@ -235,7 +235,7 @@
       ],
       "name": "t:sections.multirow.presets.name",
       "settings": {
-        "image_height": "small",
+        "image_height": "adapt",
         "desktop_image_width": "small",
         "heading_size": "h2",
         "text_style": "body",
@@ -252,6 +252,7 @@
     },
     "video_javi_w_EVzKBG": {
       "type": "video-javi-w",
+      "disabled": true,
       "name": "Video + Text Feature",
       "settings": {
         "layout": "left",
@@ -408,6 +409,7 @@
         "video_thumbnail": "shopify://shop_images/Group_757.jpg",
         "title": "Assemble Your Sandman",
         "subtitle": "Watch how simple it is to set up your Rinos gravel bike. Everything you need, step by step.",
+        "watch_text": "Watch the guide",
         "video_title": "Gravel Bike Assembly Video",
         "video_alt": "Rinos Sandman Gravel bike assembly",
         "benefit_1_title": "Easy to Follow",
