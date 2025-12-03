@@ -1,5 +1,6 @@
 {
   "en": {
+    "title": "Payment methods",
     "subtitle": "Choose the payment option that fits you best. All transactions are processed securely. Availability of individual methods can vary depending on your country and currency.",
     "global_title": "Global payment methods",
     "bank_title": "Bank transfer (SEPA)",
@@ -66,6 +67,7 @@
   },
 
   "de": {
+    "title": "Zahlungsmethoden",
     "subtitle": "Wählen Sie die Zahlungsoption, die am besten zu Ihnen passt. Alle Transaktionen werden sicher verarbeitet. Die Verfügbarkeit einzelner Zahlungsmethoden kann je nach Land und Währung variieren.",
     "global_title": "Globale Zahlungsmethoden",
     "bank_title": "Banküberweisung (SEPA)",
@@ -132,6 +134,7 @@
   },
 
   "es": {
+  "title": "Métodos de pago",
     "subtitle": "Elige la opción de pago que mejor se adapte a ti. Todas las transacciones se procesan de forma segura. La disponibilidad de cada método puede variar según tu país y tu moneda.",
     "global_title": "Métodos de pago globales",
     "bank_title": "Transferencia bancaria (SEPA)",
@@ -198,6 +201,7 @@
   },
 
   "fr": {
+   "title": "Moyens de paiement",
     "subtitle": "Choisissez le mode de paiement qui vous convient le mieux. Toutes les transactions sont traitées de manière sécurisée. La disponibilité de chaque méthode peut varier selon votre pays et votre devise.",
     "global_title": "Modes de paiement globaux",
     "bank_title": "Virement bancaire (SEPA)",
@@ -264,6 +268,7 @@
   },
 
   "pl": {
+   "title": "Metody płatności",
     "subtitle": "Wybierz metodę płatności, która najlepiej Ci odpowiada. Wszystkie transakcje są przetwarzane w bezpieczny sposób. Dostępność poszczególnych metod może się różnić w zależności od kraju i waluty.",
     "global_title": "Globalne metody płatności",
     "bank_title": "Przelew bankowy (SEPA)",
@@ -330,6 +335,7 @@
   },
 
   "bg": {
+    "title": "Методи на плащане",
     "subtitle": "Изберете начина на плащане, който ви подхожда най-добре. Всички транзакции се обработват сигурно. Наличността на отделните методи може да варира в зависимост от вашата страна и валута.",
     "global_title": "Глобални методи за плащане",
     "bank_title": "Банков превод (SEPA)",
