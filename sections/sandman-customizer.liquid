@@ -1,0 +1,1218 @@
+{% comment %}
+  Rinos Sandman Bike Customizer Section
+  Compatible with Dawn 12.0.0
+
+  Usage: Add to sections/ folder, then create a page template that uses this section
+{% endcomment %}
+
+{{ 'sandman-customizer.css' | asset_url | stylesheet_tag }}
+
+<div class="sandman-customizer" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    <div class="customizer-header">
+      <h1 class="customizer-title">{{ section.settings.title | default: 'Build Your Sandman' }}</h1>
+      <p class="customizer-subtitle">{{ section.settings.subtitle | default: 'Configure your perfect gravel bike' }}</p>
+    </div>
+
+    <div class="customizer-container">
+      <!-- Left: Image Display -->
+      <div class="customizer-image-column">
+        <div class="customizer-image-wrapper" id="bike-image-wrapper">
+          <img
+            id="bike-main-image"
+            src="{{ section.settings.default_image | image_url: width: 800 | default: 'https://placehold.co/800x800/f5f5f5/208D8D?text=Sandman+Gravel+Bike' }}"
+            alt="Sandman Custom Build"
+            loading="eager"
+          >
+          <span class="build-badge">Complete Build</span>
+        </div>
+
+        <!-- Build Summary -->
+        <div class="build-summary" id="build-summary">
+          <h3>Your Configuration</h3>
+          <div class="summary-grid">
+            <div class="summary-item">
+              <span class="summary-label">Frame:</span>
+              <span class="summary-value" id="summary-frame">Black-Green Matte - M</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Drivetrain:</span>
+              <span class="summary-value" id="summary-drivetrain">Shimano SORA 2x9</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Brakes:</span>
+              <span class="summary-value" id="summary-brakes">Mechanical Disc</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Wheels:</span>
+              <span class="summary-value" id="summary-wheels">Aluminum 28"</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Tires:</span>
+              <span class="summary-value" id="summary-tires">32c All-Road</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Accessories:</span>
+              <span class="summary-value" id="summary-accessories">None selected</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Configuration Form -->
+      <div class="customizer-form-column">
+        <form id="customizer-form" class="customizer-form">
+
+          <!-- Section 1: Frame Color -->
+          <div class="config-section" data-section="color">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span class="section-number">1</span>
+                Frame Color
+              </h2>
+              <span class="section-price" id="color-price">Included</span>
+            </div>
+            <div class="option-grid color-grid">
+              {% assign colors = "black-green:Black-Green Matte:0:#2d3a2e|gold:Gold:0:#c9a227|blue:Blue:0:#1e4d7b|ivory:Ivory:0:#f5f5dc|coffee:Coffee:150:#6f4e37" | split: "|" %}
+              {% for color in colors %}
+                {% assign color_parts = color | split: ":" %}
+                {% assign color_id = color_parts[0] %}
+                {% assign color_name = color_parts[1] %}
+                {% assign color_price = color_parts[2] %}
+                {% assign color_hex = color_parts[3] %}
+                <label class="option-card color-option {% if forloop.first %}selected{% endif %}" data-option="color" data-value="{{ color_id }}" data-price="{{ color_price }}" data-name="{{ color_name }}">
+                  <input type="radio" name="frame_color" value="{{ color_id }}" {% if forloop.first %}checked{% endif %} hidden>
+                  <span class="color-swatch" style="background-color: {{ color_hex }};"></span>
+                  <span class="option-name">{{ color_name }}</span>
+                  <span class="option-price">{% if color_price == "0" %}Included{% else %}+€{{ color_price }}{% endif %}</span>
+                </label>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Section 2: Frame Size -->
+          <div class="config-section" data-section="size">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span class="section-number">2</span>
+                Frame Size
+              </h2>
+              <span class="section-info">All sizes same price</span>
+            </div>
+            <div class="option-grid size-grid">
+              {% assign sizes = "xs:XS (50cm):155-165cm|s:S (52cm):165-172cm|m:M (54cm):172-180cm|l:L (56cm):180-188cm|xl:XL (58cm):188-195cm" | split: "|" %}
+              {% for size in sizes %}
+                {% assign size_parts = size | split: ":" %}
+                {% assign size_id = size_parts[0] %}
+                {% assign size_name = size_parts[1] %}
+                {% assign size_height = size_parts[2] %}
+                <label class="option-card size-option {% if size_id == 'm' %}selected{% endif %}" data-option="size" data-value="{{ size_id }}" data-price="0" data-name="{{ size_name }}">
+                  <input type="radio" name="frame_size" value="{{ size_id }}" {% if size_id == 'm' %}checked{% endif %} hidden>
+                  <span class="option-name">{{ size_name }}</span>
+                  <span class="option-detail">{{ size_height }}</span>
+                </label>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Section 3: Drivetrain -->
+          <div class="config-section" data-section="drivetrain">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span class="section-number">3</span>
+                Drivetrain
+              </h2>
+              <span class="section-price" id="drivetrain-price">Included</span>
+            </div>
+            <div class="option-list">
+              {% assign drivetrains = "sora:Shimano SORA:2x9, 18 speeds:0:entry|105:Shimano 105 R7000:2x11, 22 speeds:200:entry|grx400:Shimano GRX 400:2x10, 20 speeds, Hydraulic:350:mid|grx600:Shimano GRX 600:2x11, 22 speeds, Hydraulic:650:mid:popular|ultegra:Shimano Ultegra R8000:2x11, 22 speeds:1050:premium|grx820:Shimano GRX 820:2x12, 24 speeds, Hydraulic:1050:premium|105di2:Shimano 105 Di2 R7150:2x12, 24 speeds, Electronic:1450:elite|ultegradi2:Shimano Ultegra Di2 R8100:2x12, 24 speeds, Electronic:1950:elite" | split: "|" %}
+              {% for dt in drivetrains %}
+                {% assign dt_parts = dt | split: ":" %}
+                {% assign dt_id = dt_parts[0] %}
+                {% assign dt_name = dt_parts[1] %}
+                {% assign dt_specs = dt_parts[2] %}
+                {% assign dt_price = dt_parts[3] %}
+                {% assign dt_tier = dt_parts[4] %}
+                {% assign dt_badge = dt_parts[5] %}
+                <label class="option-card drivetrain-option {% if forloop.first %}selected{% endif %} tier-{{ dt_tier }}" data-option="drivetrain" data-value="{{ dt_id }}" data-price="{{ dt_price }}" data-name="{{ dt_name }}" data-specs="{{ dt_specs }}" {% if dt_specs contains 'Hydraulic' %}data-hydraulic="true"{% endif %} {% if dt_specs contains 'Electronic' %}data-electronic="true"{% endif %}>
+                  <input type="radio" name="drivetrain" value="{{ dt_id }}" {% if forloop.first %}checked{% endif %} hidden>
+                  <div class="option-content">
+                    <div class="option-main">
+                      <span class="option-name">{{ dt_name }}</span>
+                      {% if dt_badge == 'popular' %}
+                        <span class="option-badge popular">Most Popular</span>
+                      {% endif %}
+                      {% if dt_specs contains 'Electronic' %}
+                        <span class="option-badge electronic">Electronic</span>
+                      {% endif %}
+                    </div>
+                    <span class="option-specs">{{ dt_specs }}</span>
+                  </div>
+                  <span class="option-price">{% if dt_price == "0" %}Included{% else %}+€{{ dt_price }}{% endif %}</span>
+                </label>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Section 4: Brakes -->
+          <div class="config-section" data-section="brakes">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span class="section-number">4</span>
+                Braking System
+              </h2>
+              <span class="section-price" id="brakes-price">Included</span>
+            </div>
+            <div class="option-grid brakes-grid">
+              <label class="option-card brake-option selected" data-option="brakes" data-value="mechanical" data-price="0" data-name="Mechanical Disc Brakes">
+                <input type="radio" name="brakes" value="mechanical" checked hidden>
+                <span class="option-name">Mechanical Disc</span>
+                <span class="option-detail">Cable-actuated, reliable</span>
+                <span class="option-price">Included</span>
+              </label>
+              <label class="option-card brake-option" data-option="brakes" data-value="hydraulic" data-price="350" data-name="Hydraulic Disc Brakes">
+                <input type="radio" name="brakes" value="hydraulic" hidden>
+                <span class="option-name">Hydraulic Disc</span>
+                <span class="option-detail">Superior stopping power</span>
+                <span class="option-price" id="hydraulic-price">+€350</span>
+              </label>
+            </div>
+            <p class="section-note" id="brakes-note" style="display: none;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
+              Hydraulic brakes included with selected drivetrain
+            </p>
+          </div>
+
+          <!-- Section 5: Wheels -->
+          <div class="config-section" data-section="wheels">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span class="section-number">5</span>
+                Wheel Rims
+              </h2>
+              <span class="section-price" id="wheels-price">Included</span>
+            </div>
+            <div class="option-grid wheels-grid">
+              <label class="option-card wheel-option selected" data-option="wheels" data-value="aluminum" data-price="0" data-name="Aluminum Rims 28&quot;">
+                <input type="radio" name="wheels" value="aluminum" checked hidden>
+                <span class="option-name">Aluminum 28"</span>
+                <span class="option-detail">Durable, easy maintenance</span>
+                <span class="option-price">Included</span>
+              </label>
+              <label class="option-card wheel-option" data-option="wheels" data-value="carbon" data-price="800" data-name="Carbon Rims 28&quot;">
+                <input type="radio" name="wheels" value="carbon" hidden>
+                <span class="option-name">Carbon 28"</span>
+                <span class="option-detail">Lightweight, aerodynamic</span>
+                <span class="option-price">+€800</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Section 6: Tires -->
+          <div class="config-section" data-section="tires">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span class="section-number">6</span>
+                Tire Width
+              </h2>
+              <span class="section-info">All widths included free</span>
+            </div>
+            <div class="option-grid tires-grid">
+              <label class="option-card tire-option" data-option="tires" data-value="28c" data-price="0" data-name="28c Road Tires">
+                <input type="radio" name="tires" value="28c" hidden>
+                <span class="option-name">28c Road</span>
+                <span class="option-detail">Fast on pavement</span>
+                <span class="option-price">Included</span>
+              </label>
+              <label class="option-card tire-option selected" data-option="tires" data-value="32c" data-price="0" data-name="32c All-Road Tires">
+                <input type="radio" name="tires" value="32c" checked hidden>
+                <span class="option-name">32c All-Road</span>
+                <span class="option-detail">Versatile choice</span>
+                <span class="option-price">Included</span>
+              </label>
+              <label class="option-card tire-option" data-option="tires" data-value="40c" data-price="0" data-name="40c Gravel Tires">
+                <input type="radio" name="tires" value="40c" hidden>
+                <span class="option-name">40c Gravel</span>
+                <span class="option-detail">Off-road ready</span>
+                <span class="option-price">Included</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Section 7: Accessories -->
+          <div class="config-section" data-section="accessories">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span class="section-number">7</span>
+                Accessories
+              </h2>
+              <span class="section-price" id="accessories-price">+€0</span>
+            </div>
+            <p class="section-subtitle">Select all that apply</p>
+            <div class="option-grid accessories-grid">
+              {% assign accessories = "garmin:Garmin/GPS Holder:45|bottle:Water Bottle Holder:25|framebag:Bikepacking Frame Bag:120|frontlight:Front Light (USB-C):65|rearlight:Rear Light (USB-C):55|kickstand:Adjustable Kickstand:35|mudguards:Mud Guard Set:40|handlebarbag:Handlebar Bag:85" | split: "|" %}
+              {% for acc in accessories %}
+                {% assign acc_parts = acc | split: ":" %}
+                {% assign acc_id = acc_parts[0] %}
+                {% assign acc_name = acc_parts[1] %}
+                {% assign acc_price = acc_parts[2] %}
+                <label class="option-card accessory-option" data-option="accessory" data-value="{{ acc_id }}" data-price="{{ acc_price }}" data-name="{{ acc_name }}">
+                  <input type="checkbox" name="accessories[]" value="{{ acc_id }}" hidden>
+                  <span class="checkbox-indicator"></span>
+                  <span class="option-name">{{ acc_name }}</span>
+                  <span class="option-price">+€{{ acc_price }}</span>
+                </label>
+              {% endfor %}
+            </div>
+          </div>
+
+        </form>
+
+        <!-- Sticky Price Footer -->
+        <div class="price-footer" id="price-footer">
+          <div class="price-breakdown">
+            <div class="price-line">
+              <span>Bike Base (Carbon Frame + SORA)</span>
+              <span>€1,450</span>
+            </div>
+            <div class="price-line" id="upgrades-line">
+              <span>Component Upgrades</span>
+              <span id="upgrades-total">+€0</span>
+            </div>
+            <div class="price-line" id="accessories-line">
+              <span>Accessories</span>
+              <span id="accessories-total">+€0</span>
+            </div>
+            <div class="price-line total">
+              <span>Total</span>
+              <span id="total-price">€1,450</span>
+            </div>
+            <p class="vat-note">All prices include 19% VAT</p>
+          </div>
+          <button type="button" class="add-to-cart-btn" id="add-to-cart-btn">
+            <span class="btn-text">Add Custom Build to Cart</span>
+            <span class="btn-price" id="btn-price">€1,450</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Sandman Customizer Styles - Dawn 12.0.0 Compatible */
+
+  :root {
+    --customizer-primary: {{ section.settings.primary_color | default: '#208D8D' }};
+    --customizer-primary-hover: {{ section.settings.primary_hover | default: '#1A7575' }};
+    --customizer-text: #1F2121;
+    --customizer-text-light: #6B7280;
+    --customizer-border: #E5E5E5;
+    --customizer-bg: #FFFFFF;
+    --customizer-bg-light: #F9FAFB;
+    --customizer-success: #10B981;
+    --customizer-warning: #F59E0B;
+  }
+
+  .sandman-customizer {
+    padding: 40px 0 120px;
+    background: var(--customizer-bg);
+  }
+
+  .customizer-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .customizer-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--customizer-text);
+    margin: 0 0 8px;
+  }
+
+  .customizer-subtitle {
+    font-size: 1.125rem;
+    color: var(--customizer-text-light);
+    margin: 0;
+  }
+
+  .customizer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  /* Image Column */
+  .customizer-image-column {
+    position: sticky;
+    top: 20px;
+  }
+
+  .customizer-image-wrapper {
+    position: relative;
+    background: var(--customizer-bg-light);
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 1;
+  }
+
+  .customizer-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+  }
+
+  .build-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--customizer-primary);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .build-summary {
+    margin-top: 24px;
+    padding: 20px;
+    background: var(--customizer-bg-light);
+    border-radius: 12px;
+  }
+
+  .build-summary h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 16px;
+    color: var(--customizer-text);
+  }
+
+  .summary-grid {
+    display: grid;
+    gap: 8px;
+  }
+
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+  }
+
+  .summary-label {
+    color: var(--customizer-text-light);
+  }
+
+  .summary-value {
+    color: var(--customizer-text);
+    font-weight: 500;
+  }
+
+  /* Form Column */
+  .customizer-form-column {
+    min-width: 0;
+  }
+
+  .config-section {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--customizer-border);
+  }
+
+  .config-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--customizer-text);
+    margin: 0;
+  }
+
+  .section-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--customizer-primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .section-price {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--customizer-primary);
+  }
+
+  .section-info {
+    font-size: 0.75rem;
+    color: var(--customizer-text-light);
+    background: var(--customizer-bg-light);
+    padding: 4px 10px;
+    border-radius: 12px;
+  }
+
+  .section-subtitle {
+    font-size: 0.875rem;
+    color: var(--customizer-text-light);
+    margin: 0 0 12px;
+  }
+
+  .section-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: #E0F2FE;
+    color: #0369A1;
+    border-radius: 8px;
+    font-size: 0.813rem;
+  }
+
+  /* Option Grids */
+  .option-grid {
+    display: grid;
+    gap: 12px;
+  }
+
+  .color-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .size-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .brakes-grid,
+  .wheels-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tires-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .accessories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .option-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Option Cards */
+  .option-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 12px;
+    background: var(--customizer-bg);
+    border: 2px solid var(--customizer-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+
+  .option-card:hover {
+    border-color: var(--customizer-primary);
+    background: var(--customizer-bg-light);
+  }
+
+  .option-card.selected {
+    border-color: var(--customizer-primary);
+    background: rgba(32, 141, 141, 0.05);
+  }
+
+  .option-card.selected::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 20px;
+    height: 20px;
+    background: var(--customizer-primary);
+    border-radius: 0 10px 0 8px;
+  }
+
+  .option-card.selected::after {
+    content: '✓';
+    position: absolute;
+    top: 0;
+    right: 4px;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+
+  .option-card {
+    position: relative;
+  }
+
+  /* Color Options */
+  .color-option {
+    padding: 12px 8px;
+  }
+
+  .color-swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--customizer-border);
+    margin-bottom: 8px;
+  }
+
+  .color-option.selected .color-swatch {
+    border-color: var(--customizer-primary);
+    box-shadow: 0 0 0 3px rgba(32, 141, 141, 0.2);
+  }
+
+  /* Size Options */
+  .size-option .option-detail {
+    font-size: 0.75rem;
+    color: var(--customizer-text-light);
+    margin-top: 4px;
+  }
+
+  /* Drivetrain Options */
+  .drivetrain-option {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 16px;
+  }
+
+  .drivetrain-option .option-content {
+    flex: 1;
+  }
+
+  .drivetrain-option .option-main {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .drivetrain-option .option-name {
+    font-weight: 600;
+  }
+
+  .drivetrain-option .option-specs {
+    font-size: 0.813rem;
+    color: var(--customizer-text-light);
+  }
+
+  .drivetrain-option .option-price {
+    font-weight: 600;
+    color: var(--customizer-primary);
+    white-space: nowrap;
+  }
+
+  .option-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.688rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .option-badge.popular {
+    background: var(--customizer-warning);
+    color: white;
+  }
+
+  .option-badge.electronic {
+    background: #8B5CF6;
+    color: white;
+  }
+
+  /* Accessory Options */
+  .accessory-option {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    text-align: left;
+  }
+
+  .checkbox-indicator {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--customizer-border);
+    border-radius: 4px;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+
+  .accessory-option.selected .checkbox-indicator {
+    background: var(--customizer-primary);
+    border-color: var(--customizer-primary);
+  }
+
+  .accessory-option.selected .checkbox-indicator::after {
+    content: '✓';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    height: 100%;
+  }
+
+  .accessory-option .option-name {
+    flex: 1;
+    font-weight: 500;
+  }
+
+  .accessory-option .option-price {
+    font-weight: 600;
+    color: var(--customizer-primary);
+  }
+
+  .accessory-option.selected::before,
+  .accessory-option.selected::after {
+    display: none;
+  }
+
+  /* General Option Styles */
+  .option-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--customizer-text);
+  }
+
+  .option-detail {
+    font-size: 0.75rem;
+    color: var(--customizer-text-light);
+  }
+
+  .option-price {
+    font-size: 0.75rem;
+    color: var(--customizer-text-light);
+    margin-top: 4px;
+  }
+
+  /* Price Footer */
+  .price-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid var(--customizer-border);
+    padding: 16px 24px;
+    z-index: 100;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .price-footer .page-width {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .price-breakdown {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .price-line {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.813rem;
+  }
+
+  .price-line span:first-child {
+    color: var(--customizer-text-light);
+  }
+
+  .price-line span:last-child {
+    font-weight: 600;
+    color: var(--customizer-text);
+  }
+
+  .price-line.total span:last-child {
+    font-size: 1.5rem;
+    color: var(--customizer-primary);
+  }
+
+  .vat-note {
+    font-size: 0.75rem;
+    color: var(--customizer-text-light);
+    margin: 0;
+  }
+
+  .add-to-cart-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: var(--customizer-primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .add-to-cart-btn:hover {
+    background: var(--customizer-primary-hover);
+  }
+
+  .add-to-cart-btn .btn-price {
+    padding-left: 12px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  /* Responsive */
+  @media (max-width: 1023px) {
+    .customizer-container {
+      grid-template-columns: 1fr;
+    }
+
+    .customizer-image-column {
+      position: relative;
+      top: 0;
+    }
+
+    .color-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .size-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .sandman-customizer {
+      padding: 24px 0 140px;
+    }
+
+    .customizer-title {
+      font-size: 1.75rem;
+    }
+
+    .customizer-container {
+      gap: 24px;
+    }
+
+    .color-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .size-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .brakes-grid,
+    .wheels-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tires-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .accessories-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .price-footer {
+      padding: 12px 16px;
+    }
+
+    .price-breakdown {
+      display: none;
+    }
+
+    .add-to-cart-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const customizer = {
+      basePrice: 1450,
+      prices: {
+        color: 0,
+        drivetrain: 0,
+        brakes: 0,
+        wheels: 0,
+        accessories: 0
+      },
+      selections: {
+        color: { id: 'black-green', name: 'Black-Green Matte', price: 0 },
+        size: { id: 'm', name: 'M (54cm)', price: 0 },
+        drivetrain: { id: 'sora', name: 'Shimano SORA', specs: '2x9, 18 speeds', price: 0, hydraulic: false },
+        brakes: { id: 'mechanical', name: 'Mechanical Disc Brakes', price: 0 },
+        wheels: { id: 'aluminum', name: 'Aluminum Rims 28"', price: 0 },
+        tires: { id: '32c', name: '32c All-Road Tires', price: 0 },
+        accessories: []
+      },
+
+      init() {
+        this.bindEvents();
+        this.loadFromStorage();
+        this.updateUI();
+      },
+
+      bindEvents() {
+        // Single-select options (radio behavior)
+        document.querySelectorAll('.option-card:not(.accessory-option)').forEach(card => {
+          card.addEventListener('click', (e) => {
+            const option = card.dataset.option;
+            const value = card.dataset.value;
+            const price = parseInt(card.dataset.price) || 0;
+            const name = card.dataset.name;
+            const specs = card.dataset.specs || '';
+            const hydraulic = card.dataset.hydraulic === 'true';
+
+            // Deselect siblings
+            card.closest('.option-grid, .option-list').querySelectorAll('.option-card').forEach(c => {
+              c.classList.remove('selected');
+              const input = c.querySelector('input');
+              if (input) input.checked = false;
+            });
+
+            // Select this one
+            card.classList.add('selected');
+            const input = card.querySelector('input');
+            if (input) input.checked = true;
+
+            // Update selection
+            if (option === 'drivetrain') {
+              this.selections.drivetrain = { id: value, name: name, specs: specs, price: price, hydraulic: hydraulic };
+              this.prices.drivetrain = price;
+              this.handleHydraulicBrakes();
+            } else {
+              this.selections[option] = { id: value, name: name, price: price };
+              this.prices[option] = price;
+            }
+
+            this.updateUI();
+            this.saveToStorage();
+          });
+        });
+
+        // Multi-select accessories (checkbox behavior)
+        document.querySelectorAll('.accessory-option').forEach(card => {
+          card.addEventListener('click', (e) => {
+            const value = card.dataset.value;
+            const price = parseInt(card.dataset.price) || 0;
+            const name = card.dataset.name;
+            const input = card.querySelector('input');
+
+            card.classList.toggle('selected');
+            input.checked = card.classList.contains('selected');
+
+            if (card.classList.contains('selected')) {
+              this.selections.accessories.push({ id: value, name: name, price: price });
+            } else {
+              this.selections.accessories = this.selections.accessories.filter(a => a.id !== value);
+            }
+
+            this.prices.accessories = this.selections.accessories.reduce((sum, a) => sum + a.price, 0);
+            this.updateUI();
+            this.saveToStorage();
+          });
+        });
+
+        // Add to cart
+        document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+          this.addToCart();
+        });
+      },
+
+      handleHydraulicBrakes() {
+        const brakesNote = document.getElementById('brakes-note');
+        const hydraulicOption = document.querySelector('.brake-option[data-value="hydraulic"]');
+        const hydraulicPrice = document.getElementById('hydraulic-price');
+
+        if (this.selections.drivetrain.hydraulic) {
+          // Drivetrain includes hydraulic - auto-select and make free
+          brakesNote.style.display = 'flex';
+          hydraulicPrice.textContent = 'Included';
+
+          // Auto-select hydraulic
+          document.querySelectorAll('.brake-option').forEach(c => c.classList.remove('selected'));
+          hydraulicOption.classList.add('selected');
+          hydraulicOption.querySelector('input').checked = true;
+
+          this.selections.brakes = { id: 'hydraulic', name: 'Hydraulic Disc Brakes', price: 0 };
+          this.prices.brakes = 0;
+        } else {
+          brakesNote.style.display = 'none';
+          hydraulicPrice.textContent = '+€350';
+
+          // Recalculate brake price if hydraulic selected
+          if (this.selections.brakes.id === 'hydraulic') {
+            this.selections.brakes.price = 350;
+            this.prices.brakes = 350;
+          }
+        }
+      },
+
+      updateUI() {
+        // Update summary
+        document.getElementById('summary-frame').textContent =
+          `${this.selections.color.name} - ${this.selections.size.name}`;
+        document.getElementById('summary-drivetrain').textContent =
+          `${this.selections.drivetrain.name}`;
+        document.getElementById('summary-brakes').textContent =
+          this.selections.brakes.name;
+        document.getElementById('summary-wheels').textContent =
+          this.selections.wheels.name;
+        document.getElementById('summary-tires').textContent =
+          this.selections.tires.name;
+        document.getElementById('summary-accessories').textContent =
+          this.selections.accessories.length > 0
+            ? this.selections.accessories.map(a => a.name).join(', ')
+            : 'None selected';
+
+        // Calculate totals
+        const upgradesTotal = this.prices.color + this.prices.drivetrain + this.prices.brakes + this.prices.wheels;
+        const accessoriesTotal = this.prices.accessories;
+        const total = this.basePrice + upgradesTotal + accessoriesTotal;
+
+        // Update price display
+        document.getElementById('upgrades-total').textContent = `+€${upgradesTotal.toLocaleString()}`;
+        document.getElementById('accessories-total').textContent = `+€${accessoriesTotal.toLocaleString()}`;
+        document.getElementById('total-price').textContent = `€${total.toLocaleString()}`;
+        document.getElementById('btn-price').textContent = `€${total.toLocaleString()}`;
+
+        // Update section prices
+        document.getElementById('color-price').textContent =
+          this.prices.color > 0 ? `+€${this.prices.color}` : 'Included';
+        document.getElementById('drivetrain-price').textContent =
+          this.prices.drivetrain > 0 ? `+€${this.prices.drivetrain}` : 'Included';
+        document.getElementById('brakes-price').textContent =
+          this.prices.brakes > 0 ? `+€${this.prices.brakes}` : 'Included';
+        document.getElementById('wheels-price').textContent =
+          this.prices.wheels > 0 ? `+€${this.prices.wheels}` : 'Included';
+        document.getElementById('accessories-price').textContent =
+          this.prices.accessories > 0 ? `+€${this.prices.accessories}` : '+€0';
+      },
+
+      saveToStorage() {
+        try {
+          localStorage.setItem('sandman_customizer', JSON.stringify({
+            prices: this.prices,
+            selections: this.selections
+          }));
+        } catch (e) {
+          console.log('Could not save to localStorage');
+        }
+      },
+
+      loadFromStorage() {
+        try {
+          const saved = localStorage.getItem('sandman_customizer');
+          if (saved) {
+            const data = JSON.parse(saved);
+            this.prices = data.prices || this.prices;
+            this.selections = data.selections || this.selections;
+
+            // Restore UI selections
+            Object.keys(this.selections).forEach(key => {
+              if (key === 'accessories') {
+                this.selections.accessories.forEach(acc => {
+                  const card = document.querySelector(`.accessory-option[data-value="${acc.id}"]`);
+                  if (card) {
+                    card.classList.add('selected');
+                    card.querySelector('input').checked = true;
+                  }
+                });
+              } else {
+                const card = document.querySelector(`.option-card[data-option="${key}"][data-value="${this.selections[key].id}"]`);
+                if (card) {
+                  card.closest('.option-grid, .option-list')?.querySelectorAll('.option-card').forEach(c => {
+                    c.classList.remove('selected');
+                  });
+                  card.classList.add('selected');
+                  const input = card.querySelector('input');
+                  if (input) input.checked = true;
+                }
+              }
+            });
+
+            this.handleHydraulicBrakes();
+          }
+        } catch (e) {
+          console.log('Could not load from localStorage');
+        }
+      },
+
+      async addToCart() {
+        const btn = document.getElementById('add-to-cart-btn');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span>Adding...</span>';
+        btn.disabled = true;
+
+        const total = this.basePrice + this.prices.color + this.prices.drivetrain +
+                      this.prices.brakes + this.prices.wheels + this.prices.accessories;
+
+        // Build line item properties
+        const properties = {
+          'Frame Color': this.selections.color.name,
+          'Frame Size': this.selections.size.name,
+          'Drivetrain': `${this.selections.drivetrain.name} (${this.selections.drivetrain.specs})`,
+          'Brakes': this.selections.brakes.name,
+          'Wheels': this.selections.wheels.name,
+          'Tires': this.selections.tires.name,
+          'Accessories': this.selections.accessories.length > 0
+            ? this.selections.accessories.map(a => a.name).join(', ')
+            : 'None',
+          '_Custom Build': 'Yes',
+          '_Build Price': `€${total.toLocaleString()}`
+        };
+
+        // Get product variant - using first available variant of the base product
+        // You may need to adjust this to match your actual product handle
+        const productHandle = '{{ section.settings.product_handle | default: "sandman-1" }}';
+
+        try {
+          // Fetch product to get variant ID
+          const productResponse = await fetch(`/products/${productHandle}.js`);
+          const product = await productResponse.json();
+          const variantId = product.variants[0].id;
+
+          // Add to cart
+          const response = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              id: variantId,
+              quantity: 1,
+              properties: properties
+            })
+          });
+
+          if (response.ok) {
+            // Clear storage
+            localStorage.removeItem('sandman_customizer');
+
+            // Show success and redirect
+            btn.innerHTML = '<span>Added! Redirecting...</span>';
+
+            // Trigger cart update event for Dawn theme
+            document.dispatchEvent(new CustomEvent('cart:refresh'));
+
+            setTimeout(() => {
+              window.location.href = '/cart';
+            }, 1000);
+          } else {
+            throw new Error('Failed to add to cart');
+          }
+        } catch (error) {
+          console.error('Add to cart error:', error);
+          btn.innerHTML = '<span>Error - Try Again</span>';
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+          }, 2000);
+        }
+      }
+    };
+
+    customizer.init();
+
+    // Analytics events
+    if (typeof gtag === 'function') {
+      gtag('event', 'customizer_viewed', {
+        'event_category': 'Sandman Customizer'
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Sandman Customizer",
+  "tag": "section",
+  "class": "section-sandman-customizer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Build Your Sandman"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Configure your perfect gravel bike"
+    },
+    {
+      "type": "text",
+      "id": "product_handle",
+      "label": "Product Handle",
+      "default": "sandman-1",
+      "info": "The handle of the base Sandman product (e.g., sandman-1)"
+    },
+    {
+      "type": "image_picker",
+      "id": "default_image",
+      "label": "Default Bike Image"
+    },
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "Primary Color",
+      "default": "#208D8D"
+    },
+    {
+      "type": "color",
+      "id": "primary_hover",
+      "label": "Primary Hover Color",
+      "default": "#1A7575"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sandman Customizer",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

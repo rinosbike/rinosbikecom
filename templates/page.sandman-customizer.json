@@ -1,0 +1,26 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "sandman-customizer",
+      "settings": {
+        "title": "Build Your Sandman",
+        "subtitle": "Configure your perfect gravel bike starting at €1,450",
+        "product_handle": "sandman-1",
+        "primary_color": "#208D8D",
+        "primary_hover": "#1A7575"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
