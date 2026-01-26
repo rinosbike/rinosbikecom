@@ -15,8 +15,9 @@
         "title": "Build Your Sandman",
         "subtitle": "Configure your perfect gravel bike starting at €1,450",
         "product_handle": "sandman-custom-build",
-        "primary_color": "#208D8D",
-        "primary_hover": "#1A7575"
+        "primary_color": "#208d8d",
+        "primary_hover": "#1a7575",
+        "img_complete_coffee": "shopify://shop_images/Group798_da79cc57-888e-41da-a68d-1e96ed937799.png"
       }
     }
   },
