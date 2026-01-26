@@ -39,8 +39,12 @@
               <span class="summary-value" id="summary-frame">Black-Green Matte - M</span>
             </div>
             <div class="summary-item">
-              <span class="summary-label">Drivetrain:</span>
-              <span class="summary-value" id="summary-drivetrain">Shimano SORA 2x9</span>
+              <span class="summary-label">Front Derailleur:</span>
+              <span class="summary-value" id="summary-front-derailleur">2x Double Chainring</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Rear Derailleur:</span>
+              <span class="summary-value" id="summary-rear-derailleur">Shimano SORA</span>
             </div>
             <div class="summary-item">
               <span class="summary-label">Brakes:</span>
@@ -118,18 +122,52 @@
             </div>
           </div>
 
-          <!-- Section 3: Drivetrain -->
-          <div class="config-section" data-section="drivetrain">
+          <!-- Section 3: Front Derailleur -->
+          <div class="config-section" data-section="front-derailleur">
             <div class="section-header">
               <h2 class="section-title">
                 <span class="section-number">3</span>
-                Drivetrain
+                Front Derailleur
               </h2>
-              <span class="section-price" id="drivetrain-price">Included</span>
+              <span class="section-price" id="front-derailleur-price">Included</span>
             </div>
             <div class="option-list">
-              {% assign drivetrains = "sora:Shimano SORA:2x9, 18 speeds:0:entry|105:Shimano 105 R7000:2x11, 22 speeds:200:entry|grx400:Shimano GRX 400:2x10, 20 speeds, Hydraulic:350:mid|grx600:Shimano GRX 600:2x11, 22 speeds, Hydraulic:650:mid:popular|ultegra:Shimano Ultegra R8000:2x11, 22 speeds:1050:premium|grx820:Shimano GRX 820:2x12, 24 speeds, Hydraulic:1050:premium|105di2:Shimano 105 Di2 R7150:2x12, 24 speeds, Electronic:1450:elite|ultegradi2:Shimano Ultegra Di2 R8100:2x12, 24 speeds, Electronic:1950:elite" | split: "|" %}
-              {% for dt in drivetrains %}
+              <label class="option-card derailleur-option selected" data-option="front-derailleur" data-value="2x" data-price="0" data-name="2x Double Chainring">
+                <input type="radio" name="front_derailleur" value="2x" checked hidden>
+                <div class="option-content">
+                  <div class="option-main">
+                    <span class="option-name">2x Double Chainring</span>
+                  </div>
+                  <span class="option-specs">50/34T compact, wide gear range</span>
+                </div>
+                <span class="option-price">Included</span>
+              </label>
+              <label class="option-card derailleur-option" data-option="front-derailleur" data-value="1x" data-price="50" data-name="1x Single Chainring">
+                <input type="radio" name="front_derailleur" value="1x" hidden>
+                <div class="option-content">
+                  <div class="option-main">
+                    <span class="option-name">1x Single Chainring</span>
+                    <span class="option-badge popular">Modern</span>
+                  </div>
+                  <span class="option-specs">40T or 42T, simpler shifting, lighter</span>
+                </div>
+                <span class="option-price">+€50</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Section 4: Rear Derailleur -->
+          <div class="config-section" data-section="rear-derailleur">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span class="section-number">4</span>
+                Rear Derailleur
+              </h2>
+              <span class="section-price" id="rear-derailleur-price">Included</span>
+            </div>
+            <div class="option-list">
+              {% assign derailleurs = "sora:Shimano SORA:9-speed, 11-34T cassette:0:entry|105:Shimano 105 R7000:11-speed, 11-34T cassette:200:entry|grx400:Shimano GRX 400:10-speed, 11-42T cassette, Hydraulic:350:mid|grx600:Shimano GRX 600:11-speed, 11-42T cassette, Hydraulic:650:mid:popular|ultegra:Shimano Ultegra R8000:11-speed, 11-34T cassette:1050:premium|grx820:Shimano GRX 820:12-speed, 10-51T cassette, Hydraulic:1050:premium|105di2:Shimano 105 Di2 R7150:12-speed, Electronic shifting:1450:elite|ultegradi2:Shimano Ultegra Di2 R8100:12-speed, Electronic shifting:1950:elite" | split: "|" %}
+              {% for dt in derailleurs %}
                 {% assign dt_parts = dt | split: ":" %}
                 {% assign dt_id = dt_parts[0] %}
                 {% assign dt_name = dt_parts[1] %}
@@ -137,8 +175,8 @@
                 {% assign dt_price = dt_parts[3] %}
                 {% assign dt_tier = dt_parts[4] %}
                 {% assign dt_badge = dt_parts[5] %}
-                <label class="option-card drivetrain-option {% if forloop.first %}selected{% endif %} tier-{{ dt_tier }}" data-option="drivetrain" data-value="{{ dt_id }}" data-price="{{ dt_price }}" data-name="{{ dt_name }}" data-specs="{{ dt_specs }}" {% if dt_specs contains 'Hydraulic' %}data-hydraulic="true"{% endif %} {% if dt_specs contains 'Electronic' %}data-electronic="true"{% endif %}>
-                  <input type="radio" name="drivetrain" value="{{ dt_id }}" {% if forloop.first %}checked{% endif %} hidden>
+                <label class="option-card derailleur-option {% if forloop.first %}selected{% endif %} tier-{{ dt_tier }}" data-option="rear-derailleur" data-value="{{ dt_id }}" data-price="{{ dt_price }}" data-name="{{ dt_name }}" data-specs="{{ dt_specs }}" {% if dt_specs contains 'Hydraulic' %}data-hydraulic="true"{% endif %} {% if dt_specs contains 'Electronic' %}data-electronic="true"{% endif %}>
+                  <input type="radio" name="rear_derailleur" value="{{ dt_id }}" {% if forloop.first %}checked{% endif %} hidden>
                   <div class="option-content">
                     <div class="option-main">
                       <span class="option-name">{{ dt_name }}</span>
@@ -157,11 +195,11 @@
             </div>
           </div>
 
-          <!-- Section 4: Brakes -->
+          <!-- Section 5: Brakes -->
           <div class="config-section" data-section="brakes">
             <div class="section-header">
               <h2 class="section-title">
-                <span class="section-number">4</span>
+                <span class="section-number">5</span>
                 Braking System
               </h2>
               <span class="section-price" id="brakes-price">Included</span>
@@ -186,11 +224,11 @@
             </p>
           </div>
 
-          <!-- Section 5: Wheels -->
+          <!-- Section 6: Wheels -->
           <div class="config-section" data-section="wheels">
             <div class="section-header">
               <h2 class="section-title">
-                <span class="section-number">5</span>
+                <span class="section-number">6</span>
                 Wheel Rims
               </h2>
               <span class="section-price" id="wheels-price">Included</span>
@@ -211,11 +249,11 @@
             </div>
           </div>
 
-          <!-- Section 6: Tires -->
+          <!-- Section 7: Tires -->
           <div class="config-section" data-section="tires">
             <div class="section-header">
               <h2 class="section-title">
-                <span class="section-number">6</span>
+                <span class="section-number">7</span>
                 Tire Width
               </h2>
               <span class="section-info">All widths included free</span>
@@ -236,11 +274,11 @@
             </div>
           </div>
 
-          <!-- Section 7: Accessories -->
+          <!-- Section 8: Accessories -->
           <div class="config-section" data-section="accessories">
             <div class="section-header">
               <h2 class="section-title">
-                <span class="section-number">7</span>
+                <span class="section-number">8</span>
                 Accessories
               </h2>
               <span class="section-price" id="accessories-price">+€0</span>
@@ -330,14 +368,14 @@
   }
 
   .customizer-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 600;
     color: var(--customizer-text);
-    margin: 0 0 8px;
+    margin: 0 0 12px;
   }
 
   .customizer-subtitle {
-    font-size: 1.125rem;
+    font-size: 1.375rem;
     color: var(--customizer-text-light);
     margin: 0;
   }
@@ -379,9 +417,9 @@
     right: 16px;
     background: var(--customizer-primary);
     color: white;
-    padding: 6px 12px;
+    padding: 8px 16px;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -408,7 +446,7 @@
   }
 
   .build-summary h3 {
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 600;
     margin: 0;
     color: var(--customizer-text);
@@ -418,9 +456,9 @@
     background: var(--customizer-primary);
     color: white;
     border: none;
-    padding: 8px 14px;
+    padding: 10px 18px;
     border-radius: 6px;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s ease;
@@ -432,13 +470,13 @@
 
   .summary-grid {
     display: grid;
-    gap: 8px;
+    gap: 10px;
   }
 
   .summary-item {
     display: flex;
     justify-content: space-between;
-    font-size: 0.875rem;
+    font-size: 1.125rem;
   }
 
   .summary-label {
@@ -475,8 +513,8 @@
   .section-title {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 1.125rem;
+    gap: 14px;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--customizer-text);
     margin: 0;
@@ -486,45 +524,45 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
     background: var(--customizer-primary);
     color: white;
     border-radius: 50%;
-    font-size: 0.875rem;
+    font-size: 1.125rem;
     font-weight: 600;
   }
 
   .section-price {
-    font-size: 0.875rem;
+    font-size: 1.125rem;
     font-weight: 600;
     color: var(--customizer-primary);
   }
 
   .section-info {
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: var(--customizer-text-light);
     background: var(--customizer-bg-light);
-    padding: 4px 10px;
+    padding: 6px 14px;
     border-radius: 12px;
   }
 
   .section-subtitle {
-    font-size: 0.875rem;
+    font-size: 1.125rem;
     color: var(--customizer-text-light);
-    margin: 0 0 12px;
+    margin: 0 0 14px;
   }
 
   .section-note {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-top: 12px;
-    padding: 10px 12px;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 12px 16px;
     background: #E0F2FE;
     color: #0369A1;
     border-radius: 8px;
-    font-size: 0.813rem;
+    font-size: 1.063rem;
   }
 
   /* Option Grids */
@@ -565,7 +603,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 16px 12px;
+    padding: 20px 16px;
     background: var(--customizer-bg);
     border: 2px solid var(--customizer-border);
     border-radius: 12px;
@@ -611,69 +649,71 @@
 
   /* Color Options */
   .color-option {
-    padding: 12px 8px;
+    padding: 16px 12px;
   }
 
   .color-swatch {
-    width: 40px;
-    height: 40px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    border: 2px solid var(--customizer-border);
-    margin-bottom: 8px;
+    border: 3px solid var(--customizer-border);
+    margin-bottom: 10px;
   }
 
   .color-option.selected .color-swatch {
     border-color: var(--customizer-primary);
-    box-shadow: 0 0 0 3px rgba(32, 141, 141, 0.2);
+    box-shadow: 0 0 0 4px rgba(32, 141, 141, 0.2);
   }
 
   /* Size Options */
   .size-option .option-detail {
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: var(--customizer-text-light);
-    margin-top: 4px;
+    margin-top: 6px;
   }
 
-  /* Drivetrain Options */
-  .drivetrain-option {
+  /* Derailleur Options */
+  .derailleur-option {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     text-align: left;
-    padding: 16px;
+    padding: 20px;
   }
 
-  .drivetrain-option .option-content {
+  .derailleur-option .option-content {
     flex: 1;
   }
 
-  .drivetrain-option .option-main {
+  .derailleur-option .option-main {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 4px;
+    gap: 10px;
+    margin-bottom: 6px;
   }
 
-  .drivetrain-option .option-name {
+  .derailleur-option .option-name {
     font-weight: 600;
+    font-size: 1.125rem;
   }
 
-  .drivetrain-option .option-specs {
-    font-size: 0.813rem;
+  .derailleur-option .option-specs {
+    font-size: 1rem;
     color: var(--customizer-text-light);
   }
 
-  .drivetrain-option .option-price {
+  .derailleur-option .option-price {
     font-weight: 600;
+    font-size: 1.125rem;
     color: var(--customizer-primary);
     white-space: nowrap;
   }
 
   .option-badge {
     display: inline-block;
-    padding: 2px 8px;
+    padding: 4px 10px;
     border-radius: 10px;
-    font-size: 0.688rem;
+    font-size: 0.875rem;
     font-weight: 600;
     text-transform: uppercase;
   }
@@ -693,14 +733,14 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 12px;
-    padding: 14px 16px;
+    gap: 14px;
+    padding: 18px 20px;
     text-align: left;
   }
 
   .checkbox-indicator {
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
     border: 2px solid var(--customizer-border);
     border-radius: 4px;
     flex-shrink: 0;
@@ -718,7 +758,7 @@
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: bold;
     height: 100%;
   }
@@ -726,10 +766,12 @@
   .accessory-option .option-name {
     flex: 1;
     font-weight: 500;
+    font-size: 1.125rem;
   }
 
   .accessory-option .option-price {
     font-weight: 600;
+    font-size: 1.125rem;
     color: var(--customizer-primary);
   }
 
@@ -740,20 +782,20 @@
 
   /* General Option Styles */
   .option-name {
-    font-size: 0.875rem;
+    font-size: 1.125rem;
     font-weight: 500;
     color: var(--customizer-text);
   }
 
   .option-detail {
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: var(--customizer-text-light);
   }
 
   .option-price {
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: var(--customizer-text-light);
-    margin-top: 4px;
+    margin-top: 6px;
   }
 
   /* Price Footer */
@@ -782,14 +824,14 @@
   .price-breakdown {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 28px;
     flex-wrap: wrap;
   }
 
   .price-line {
     display: flex;
     flex-direction: column;
-    font-size: 0.813rem;
+    font-size: 1.063rem;
   }
 
   .price-line span:first-child {
@@ -802,12 +844,12 @@
   }
 
   .price-line.total span:last-child {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: var(--customizer-primary);
   }
 
   .vat-note {
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: var(--customizer-text-light);
     margin: 0;
   }
@@ -815,13 +857,13 @@
   .add-to-cart-btn {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 16px 32px;
+    gap: 14px;
+    padding: 18px 36px;
     background: var(--customizer-primary);
     color: white;
     border: none;
     border-radius: 12px;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s ease;
@@ -864,7 +906,11 @@
     }
 
     .customizer-title {
-      font-size: 1.75rem;
+      font-size: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
     }
 
     .customizer-container {
@@ -918,7 +964,8 @@
       basePrice: 1450,
       prices: {
         color: 0,
-        drivetrain: 0,
+        'front-derailleur': 0,
+        'rear-derailleur': 0,
         brakes: 0,
         wheels: 0,
         accessories: 0
@@ -926,15 +973,15 @@
       selections: {
         color: { id: 'black-green', name: 'Black-Green Matte', price: 0 },
         size: { id: 'm', name: 'M (54cm)', price: 0 },
-        drivetrain: { id: 'sora', name: 'Shimano SORA', specs: '2x9, 18 speeds', price: 0, hydraulic: false },
+        'front-derailleur': { id: '2x', name: '2x Double Chainring', price: 0 },
+        'rear-derailleur': { id: 'sora', name: 'Shimano SORA', specs: '9-speed', price: 0, hydraulic: false },
         brakes: { id: 'mechanical', name: 'Mechanical Disc Brakes', price: 0 },
         wheels: { id: 'aluminum', name: 'Aluminum Rims 28"', price: 0 },
         tires: { id: '28c', name: '28c Road Tires', price: 0 },
         accessories: []
       },
 
-      // Image view system - URLs should be updated with actual image paths
-      // Starts with 'frame' since first section is Frame Color; 'complete' is shown at the end
+      // Image view system - separate images for each component
       currentView: 'frame',
       imageViews: {
         complete: {
@@ -951,19 +998,27 @@
           'ivory': '{{ section.settings.img_frame_ivory | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5dc/333333?text=Ivory+Frame" }}',
           'coffee': '{{ section.settings.img_frame_coffee | image_url: width: 800 | default: "https://placehold.co/800x800/6f4e37/ffffff?text=Coffee+Frame" }}'
         },
-        drivetrain: {
-          'sora': '{{ section.settings.img_drivetrain_sora | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=SORA+Drivetrain" }}',
-          '105': '{{ section.settings.img_drivetrain_105 | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=105+Drivetrain" }}',
-          'grx400': '{{ section.settings.img_drivetrain_grx400 | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=GRX400+Drivetrain" }}',
-          'grx600': '{{ section.settings.img_drivetrain_grx600 | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=GRX600+Drivetrain" }}',
-          'grx820': '{{ section.settings.img_drivetrain_grx820 | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=GRX820+Drivetrain" }}',
-          'ultegra': '{{ section.settings.img_drivetrain_ultegra | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=Ultegra+Drivetrain" }}',
-          '105di2': '{{ section.settings.img_drivetrain_105di2 | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=105+Di2+Drivetrain" }}',
-          'ultegradi2': '{{ section.settings.img_drivetrain_ultegradi2 | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=Ultegra+Di2+Drivetrain" }}'
+        'front-derailleur': {
+          '2x': '{{ section.settings.img_front_derailleur_2x | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=2x+Front+Derailleur" }}',
+          '1x': '{{ section.settings.img_front_derailleur_1x | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=1x+Front+Derailleur" }}'
+        },
+        'rear-derailleur': {
+          'sora': '{{ section.settings.img_rear_derailleur_sora | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=SORA+Rear+Derailleur" }}',
+          '105': '{{ section.settings.img_rear_derailleur_105 | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=105+Rear+Derailleur" }}',
+          'grx400': '{{ section.settings.img_rear_derailleur_grx400 | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=GRX400+Rear+Derailleur" }}',
+          'grx600': '{{ section.settings.img_rear_derailleur_grx600 | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=GRX600+Rear+Derailleur" }}',
+          'grx820': '{{ section.settings.img_rear_derailleur_grx820 | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=GRX820+Rear+Derailleur" }}',
+          'ultegra': '{{ section.settings.img_rear_derailleur_ultegra | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=Ultegra+Rear+Derailleur" }}',
+          '105di2': '{{ section.settings.img_rear_derailleur_105di2 | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=105+Di2+Rear+Derailleur" }}',
+          'ultegradi2': '{{ section.settings.img_rear_derailleur_ultegradi2 | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=Ultegra+Di2+Rear+Derailleur" }}'
+        },
+        brakes: {
+          'mechanical': '{{ section.settings.img_brakes_mechanical | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=Mechanical+Brakes" }}',
+          'hydraulic': '{{ section.settings.img_brakes_hydraulic | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=Hydraulic+Brakes" }}'
         },
         wheels: {
-          'aluminum': '{{ section.settings.img_wheels_aluminum | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=Aluminum+Wheels" }}',
-          'carbon': '{{ section.settings.img_wheels_carbon | image_url: width: 800 | default: "https://placehold.co/800x800/333333/ffffff?text=Carbon+Wheels" }}'
+          'aluminum': '{{ section.settings.img_wheels_aluminum | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=Aluminum+Rims" }}',
+          'carbon': '{{ section.settings.img_wheels_carbon | image_url: width: 800 | default: "https://placehold.co/800x800/333333/ffffff?text=Carbon+Rims" }}'
         },
         accessories: {
           'none': '{{ section.settings.img_accessories_none | image_url: width: 800 | default: "https://placehold.co/800x800/f5f5f5/208D8D?text=No+Accessories" }}',
@@ -974,19 +1029,22 @@
       viewLabels: {
         'complete': 'Complete Build',
         'frame': 'Frame Detail',
-        'drivetrain': 'Drivetrain',
-        'wheels': 'Wheels',
+        'front-derailleur': 'Front Derailleur',
+        'rear-derailleur': 'Rear Derailleur',
+        'brakes': 'Brakes',
+        'wheels': 'Wheel Rims',
         'accessories': 'Accessories'
       },
 
-      // Map config sections to image views
+      // Map config sections to image views - each has its OWN image
       sectionToView: {
-        'color': 'frame',      // Frame Color section shows frame detail
-        'size': 'frame',       // Frame Size section shows frame detail
-        'drivetrain': 'drivetrain',
-        'brakes': 'drivetrain', // Brakes section shows drivetrain (they're related)
+        'color': 'frame',
+        'size': 'frame',
+        'front-derailleur': 'front-derailleur',
+        'rear-derailleur': 'rear-derailleur',
+        'brakes': 'brakes',
         'wheels': 'wheels',
-        'tires': 'wheels',     // Tires section shows wheels
+        'tires': 'wheels',
         'accessories': 'accessories'
       },
 
@@ -1020,13 +1078,18 @@
             if (input) input.checked = true;
 
             // Update selection
-            if (option === 'drivetrain') {
-              this.selections.drivetrain = { id: value, name: name, specs: specs, price: price, hydraulic: hydraulic };
-              this.prices.drivetrain = price;
+            if (option === 'rear-derailleur') {
+              this.selections['rear-derailleur'] = { id: value, name: name, specs: specs, price: price, hydraulic: hydraulic };
+              this.prices['rear-derailleur'] = price;
               this.handleHydraulicBrakes();
+            } else if (option === 'front-derailleur') {
+              this.selections['front-derailleur'] = { id: value, name: name, price: price };
+              this.prices['front-derailleur'] = price;
             } else {
               this.selections[option] = { id: value, name: name, price: price };
-              this.prices[option] = price;
+              if (this.prices.hasOwnProperty(option)) {
+                this.prices[option] = price;
+              }
             }
 
             // Auto-switch to relevant image view based on section
@@ -1105,8 +1168,14 @@
           case 'frame':
             imageUrl = this.imageViews.frame[this.selections.color.id];
             break;
-          case 'drivetrain':
-            imageUrl = this.imageViews.drivetrain[this.selections.drivetrain.id];
+          case 'front-derailleur':
+            imageUrl = this.imageViews['front-derailleur'][this.selections['front-derailleur'].id];
+            break;
+          case 'rear-derailleur':
+            imageUrl = this.imageViews['rear-derailleur'][this.selections['rear-derailleur'].id];
+            break;
+          case 'brakes':
+            imageUrl = this.imageViews.brakes[this.selections.brakes.id];
             break;
           case 'wheels':
             imageUrl = this.imageViews.wheels[this.selections.wheels.id];
@@ -1138,8 +1207,8 @@
         const hydraulicOption = document.querySelector('.brake-option[data-value="hydraulic"]');
         const hydraulicPrice = document.getElementById('hydraulic-price');
 
-        if (this.selections.drivetrain.hydraulic) {
-          // Drivetrain includes hydraulic - auto-select and make free
+        if (this.selections['rear-derailleur'].hydraulic) {
+          // Rear derailleur includes hydraulic - auto-select and make free
           brakesNote.style.display = 'flex';
           hydraulicPrice.textContent = 'Included';
 
@@ -1166,8 +1235,10 @@
         // Update summary
         document.getElementById('summary-frame').textContent =
           `${this.selections.color.name} - ${this.selections.size.name}`;
-        document.getElementById('summary-drivetrain').textContent =
-          `${this.selections.drivetrain.name}`;
+        document.getElementById('summary-front-derailleur').textContent =
+          this.selections['front-derailleur'].name;
+        document.getElementById('summary-rear-derailleur').textContent =
+          this.selections['rear-derailleur'].name;
         document.getElementById('summary-brakes').textContent =
           this.selections.brakes.name;
         document.getElementById('summary-wheels').textContent =
@@ -1180,7 +1251,7 @@
             : 'None selected';
 
         // Calculate totals
-        const upgradesTotal = this.prices.color + this.prices.drivetrain + this.prices.brakes + this.prices.wheels;
+        const upgradesTotal = this.prices.color + this.prices['front-derailleur'] + this.prices['rear-derailleur'] + this.prices.brakes + this.prices.wheels;
         const accessoriesTotal = this.prices.accessories;
         const total = this.basePrice + upgradesTotal + accessoriesTotal;
 
@@ -1193,8 +1264,10 @@
         // Update section prices
         document.getElementById('color-price').textContent =
           this.prices.color > 0 ? `+€${this.prices.color}` : 'Included';
-        document.getElementById('drivetrain-price').textContent =
-          this.prices.drivetrain > 0 ? `+€${this.prices.drivetrain}` : 'Included';
+        document.getElementById('front-derailleur-price').textContent =
+          this.prices['front-derailleur'] > 0 ? `+€${this.prices['front-derailleur']}` : 'Included';
+        document.getElementById('rear-derailleur-price').textContent =
+          this.prices['rear-derailleur'] > 0 ? `+€${this.prices['rear-derailleur']}` : 'Included';
         document.getElementById('brakes-price').textContent =
           this.prices.brakes > 0 ? `+€${this.prices.brakes}` : 'Included';
         document.getElementById('wheels-price').textContent =
@@ -1258,7 +1331,7 @@
         btn.innerHTML = '<span>Adding...</span>';
         btn.disabled = true;
 
-        const upgradesTotal = this.prices.color + this.prices.drivetrain + this.prices.brakes + this.prices.wheels;
+        const upgradesTotal = this.prices.color + this.prices['front-derailleur'] + this.prices['rear-derailleur'] + this.prices.brakes + this.prices.wheels;
         const accessoriesTotal = this.prices.accessories;
         const total = this.basePrice + upgradesTotal + accessoriesTotal;
 
@@ -1266,7 +1339,8 @@
         const properties = {
           'Frame Color': this.selections.color.name,
           'Frame Size': this.selections.size.name,
-          'Drivetrain': `${this.selections.drivetrain.name} (${this.selections.drivetrain.specs})`,
+          'Front Derailleur': this.selections['front-derailleur'].name,
+          'Rear Derailleur': this.selections['rear-derailleur'].name,
           'Brakes': this.selections.brakes.name,
           'Wheels': this.selections.wheels.name,
           'Tires': this.selections.tires.name,
@@ -1447,51 +1521,79 @@
     },
     {
       "type": "header",
-      "content": "Drivetrain Images"
+      "content": "Front Derailleur Images"
     },
     {
       "type": "image_picker",
-      "id": "img_drivetrain_sora",
-      "label": "Drivetrain: SORA"
+      "id": "img_front_derailleur_2x",
+      "label": "Front Derailleur: 2x Double"
     },
     {
       "type": "image_picker",
-      "id": "img_drivetrain_105",
-      "label": "Drivetrain: 105"
-    },
-    {
-      "type": "image_picker",
-      "id": "img_drivetrain_grx400",
-      "label": "Drivetrain: GRX 400"
-    },
-    {
-      "type": "image_picker",
-      "id": "img_drivetrain_grx600",
-      "label": "Drivetrain: GRX 600"
-    },
-    {
-      "type": "image_picker",
-      "id": "img_drivetrain_grx820",
-      "label": "Drivetrain: GRX 820"
-    },
-    {
-      "type": "image_picker",
-      "id": "img_drivetrain_ultegra",
-      "label": "Drivetrain: Ultegra"
-    },
-    {
-      "type": "image_picker",
-      "id": "img_drivetrain_105di2",
-      "label": "Drivetrain: 105 Di2"
-    },
-    {
-      "type": "image_picker",
-      "id": "img_drivetrain_ultegradi2",
-      "label": "Drivetrain: Ultegra Di2"
+      "id": "img_front_derailleur_1x",
+      "label": "Front Derailleur: 1x Single"
     },
     {
       "type": "header",
-      "content": "Wheel Images"
+      "content": "Rear Derailleur Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_rear_derailleur_sora",
+      "label": "Rear Derailleur: SORA"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_rear_derailleur_105",
+      "label": "Rear Derailleur: 105"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_rear_derailleur_grx400",
+      "label": "Rear Derailleur: GRX 400"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_rear_derailleur_grx600",
+      "label": "Rear Derailleur: GRX 600"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_rear_derailleur_grx820",
+      "label": "Rear Derailleur: GRX 820"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_rear_derailleur_ultegra",
+      "label": "Rear Derailleur: Ultegra"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_rear_derailleur_105di2",
+      "label": "Rear Derailleur: 105 Di2"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_rear_derailleur_ultegradi2",
+      "label": "Rear Derailleur: Ultegra Di2"
+    },
+    {
+      "type": "header",
+      "content": "Brakes Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_brakes_mechanical",
+      "label": "Brakes: Mechanical Disc"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_brakes_hydraulic",
+      "label": "Brakes: Hydraulic Disc"
+    },
+    {
+      "type": "header",
+      "content": "Wheel Rims Images"
     },
     {
       "type": "image_picker",
